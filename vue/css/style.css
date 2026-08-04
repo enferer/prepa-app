@@ -255,12 +255,31 @@ tbody tr:hover { background: var(--bg-elev2); }
 @media (max-width: 720px) {
   .grid-3 { grid-template-columns: 1fr; }
   .grid-2 { grid-template-columns: 1fr; }
-  .brand h1 { font-size: 1.1rem; }
+  .brand h1 { font-size: 1.05rem; }
+  .brand p { font-size: 0.78rem; }
+  .brand-icon { font-size: 1.4rem; }
   .stat .value { font-size: 1.7rem; }
   .countdown .num { font-size: 2.4rem; }
   .hero-obj { text-align: left; }
   .hero-count .num { font-size: 2.6rem; }
+  .topbar-inner { padding: 8px 12px 0; }
+  .brand-row { gap: 8px; flex-wrap: nowrap; align-items: center; }
+  .brand { gap: 8px; min-width: 0; flex: 1; }
+  .brand h1, .brand p { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .selector { gap: 6px; flex-wrap: nowrap; flex-shrink: 0; }
+  .selector-label { display: none; }
+  .selector select {
+    min-width: 0;
+    max-width: 130px;
+    padding: 6px 22px 6px 8px;
+    font-size: 0.8rem;
+    background-position: right 6px center;
+  }
+  .tabs { margin-top: 8px; }
+  .tab { padding: 8px 12px; font-size: 0.88rem; }
 }
 @media (max-width: 520px) {
   .kpis { grid-template-columns: repeat(2, 1fr); }
+  .brand p { display: none; }
+  .selector select { max-width: 110px; }
 }
