@@ -1,0 +1,84 @@
+{
+  "course": {
+    "nom": "Marathon",
+    "distanceKm": 42.195,
+    "date": "2026-10-25"
+  },
+  "chronoVise": "3h55",
+  "chronoViseSec": 14100,
+  "dateDebutPrepa": "2026-07-19",
+  "nbSemaines": 14,
+  "frequenceSeancesParSemaine": 4,
+  "volumeDepartKmSemaine": 34,
+  "references": {
+    "rp10km": "≈47:50 (10 km @4:44/km, FC 179, le 26/04/2026)",
+    "semi": "Pas de RP semi ; plus longue sortie récente 21,3 km @6:15 (allure EF/modérée)",
+    "plusLongueSortie": "25,4 km (28/09/2025)"
+  },
+  "alluresCibles": {
+    "EF": {
+      "secKm": 395,
+      "affichage": "6:35",
+      "note": "Facile, conversation possible. Correspond à ton EF réelle actuelle."
+    },
+    "SL": {
+      "secKm": 375,
+      "affichage": "6:15",
+      "note": "Sortie longue de base."
+    },
+    "AM": {
+      "secKm": 334,
+      "affichage": "5:34",
+      "note": "Allure marathon cible = allure objectif course."
+    },
+    "Seuil": {
+      "secKm": 310,
+      "affichage": "5:10",
+      "note": "Tempo confortablement dur, ~allure semi."
+    },
+    "VMA": {
+      "secKm": 260,
+      "affichage": "4:20",
+      "note": "Fractionnés courts, rappel de vitesse."
+    }
+  },
+  "blessures": [
+    {
+      "zone": "Cheville droite — releveur / tibial antérieur",
+      "statut": "Gêne légère, ne modifie pas la foulée",
+      "consignes": "Maintenir l'EF. Côte : DESCENTE MARCHÉE et nombre de répétitions réduit tant que ça tire ; réintroduire la descente courue quand la gêne a disparu. Renfo excentrique tibial antérieur + mollet à l'élastique + proprioception. Éviter pliométrie agressive et grosses descentes courues. Surveiller ; avis kiné si aggravation ou douleur au repos."
+    }
+  ],
+  "contraintes": [
+    {
+      "type": "vacances",
+      "periode": "2026-08-29 → 2026-09-09",
+      "detail": "Souhaite courir mais flexibilité totale sur les jours et les séances. Semaine 7 placée en décharge flexible."
+    },
+    {
+      "type": "chaleur",
+      "periode": "Juillet-août (été)",
+      "detail": "Raisonner en effort/FC plutôt qu'en allure, séances tôt le matin, adapter les grosses séances en cas de canicule."
+    }
+  ],
+  "seancesFavorites": [
+    {
+      "nom": "Côte du terril (aller-retour)",
+      "type": "Cotes",
+      "description": "Aller-retour terril : montée 700 m / +35 m courue à ~5:45/km (effort soutenu, proche AM en côte), descente en récupération. Côte de 350 m / +35 m disponible pour des répétitions plus courtes/raides. Version habituelle : 10 A/R ≈ 16 km, utilisée comme sortie longue. Peu d'impact articulaire.",
+      "distanceKm": 16,
+      "frequenceSouhaitee": "Souvent (~toutes les 2-3 semaines)",
+      "contexte": "Fait monter la FC avec peu d'impact articulaire. ADAPTÉE au début à cause de la cheville droite : descente MARCHÉE et nombre de répétitions réduit (6-7 A/R) tant que ça tire ; réintroduction de la descente courue dès que la gêne a disparu."
+    }
+  ],
+  "renforcement": {
+    "actif": true,
+    "frequenceParSemaine": 2,
+    "materiel": [
+      "Poids du corps",
+      "Élastiques"
+    ],
+    "focus": "Prévention cheville droite (excentrique tibial antérieur & mollet à l'élastique + proprioception) + gainage + chaîne postérieure (ischios/fessiers). 2x/sem en base/développement, réduit à 1x/sem en spécifique, gainage léger seulement en affûtage."
+  },
+  "commentairesLibres": "Très bonne base en EF, mais a rarement travaillé les allures un peu plus rapides sur longue distance. Aime les belles sorties longues de 15/20 km (faites jusqu'ici entièrement en EF). Premier marathon. → Le plan développe progressivement l'allure marathon DANS les sorties longues (blocs à AM croissants : 3 → 8 → 12 → 15 → 18 km) tout en préservant le plaisir des SL."
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prépa</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand-row">
+        <div class="brand">
+          <span class="brand-icon">🏃</span>
+          <div>
+            <h1 id="course-nom">Prépa</h1>
+            <p id="course-sous" class="muted"></p>
+          </div>
+        </div>
+        <div class="selector">
+          <label class="selector-item">
+            <span class="selector-label">Profil</span>
+            <select id="sel-profil"></select>
+          </label>
+          <label class="selector-item">
+            <span class="selector-label">Prépa</span>
+            <select id="sel-prepa"></select>
+          </label>
+        </div>
+      </div>
+      <nav class="tabs" id="tabs">
+        <button class="tab active" data-tab="dashboard">Tableau de bord</button>
+        <button class="tab" data-tab="plan">Plan</button>
+        <button class="tab" data-tab="stats">Stats</button>
+        <button class="tab" data-tab="journal">Journal</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="tab-dashboard" class="tab-panel active"></section>
+    <section id="tab-plan" class="tab-panel"></section>
+    <section id="tab-stats" class="tab-panel"></section>
+    <section id="tab-journal" class="tab-panel"></section>
+  </main>
+
+  <footer class="foot muted">
+    <span id="genere-le"></span> · Données locales
+  </footer>
+
+  <script src="vendor/chart.umd.min.js"></script>
+  <script src="data.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

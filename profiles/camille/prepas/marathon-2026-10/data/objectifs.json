@@ -1,0 +1,74 @@
+{
+  "course": {
+    "nom": "Marathon",
+    "distanceKm": 42.195,
+    "date": "2026-10-25"
+  },
+  "chronoVise": "4h00",
+  "chronoViseSec": 14400,
+  "dateDebutPrepa": "2026-07-12",
+  "nbSemaines": 15,
+  "frequenceSeancesParSemaine": 4,
+  "volumeDepartKmSemaine": 34,
+  "references": {
+    "rp10km": "~50:30 (10,1 km à 5:03/km, FC 177, le 26/04/2026)",
+    "semi": "~2:12 (21,2 km à 6:15/km) — jamais couru en compétition",
+    "plusLongueSortie": "21,2 km"
+  },
+  "alluresCibles": {
+    "EF": {
+      "secKm": 400,
+      "affichage": "6:40",
+      "note": "Endurance fondamentale, conversation possible (AM +59 s)."
+    },
+    "SL": {
+      "secKm": 380,
+      "affichage": "6:20",
+      "note": "Allure sortie longue (AM +39 s)."
+    },
+    "AM": {
+      "secKm": 341,
+      "affichage": "5:41",
+      "note": "Allure marathon cible = objectif 4h00."
+    },
+    "Seuil": {
+      "secKm": 320,
+      "affichage": "5:20",
+      "note": "Seuil / tempo, confortablement dur (AM −21 s)."
+    },
+    "VMA": {
+      "secKm": 270,
+      "affichage": "4:30",
+      "note": "Fractionné court, allure 3-5 km."
+    }
+  },
+  "blessures": [
+    {
+      "zone": "Genou",
+      "statut": "sensible",
+      "consignes": "Montée de volume prudente, peu de côtes/descentes traumatisantes, renfo quadriceps/fessiers/chaîne postérieure protecteur. Surveiller toute gêne qui modifie la foulée."
+    }
+  ],
+  "contraintes": [
+    {
+      "type": "vacances",
+      "periode": "2026-08-29 → 2026-09-09",
+      "detail": "Vacances : courir possible mais horaires/jours flexibles, souvent en groupe. Décharge calée sur la semaine 8."
+    },
+    {
+      "type": "chaleur",
+      "periode": "juillet-août",
+      "detail": "Été : raisonner à l'effort/FC plutôt qu'à l'allure, courir tôt le matin, s'hydrater. Une allure dégradée par la chaleur n'est pas un manque de forme."
+    }
+  ],
+  "seancesFavorites": [],
+  "renforcement": {
+    "actif": true,
+    "frequenceParSemaine": 2,
+    "materiel": [
+      "Poids du corps"
+    ],
+    "focus": "Prévention genou (quadriceps, fessiers, chaîne postérieure), gainage et stabilité hanche/genou. Renfo lourd le lundi (48h avant la qualité), core léger le mercredi. Allégé en décharge, arrêté en affûtage."
+  },
+  "commentairesLibres": "Coureuse rapide sur 10 km (5:03/km) avec une base d'endurance modérée (~29 km/sem, plus longue sortie 21 km). Objectif du bloc : construire l'endurance spécifique marathon. 4 séances/sem (Lun/Mer/Ven/Dim). Aime courir en groupe (utile pendant les vacances). Objectif 4h00 sécurisé — réévaluable à la hausse si le volume et les SL passent bien."
+}
