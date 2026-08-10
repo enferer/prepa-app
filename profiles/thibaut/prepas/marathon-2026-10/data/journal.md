@@ -10,3 +10,8 @@ Toujours chaud. Côte du terril (signature) faite avec descente marchée, chevil
 
 ## Semaine 3 (03/08 → 09/08)
 Retour de motivation nette. Décision : nouvelle structure hebdo à partir de maintenant → **Mar EF · Mer qualité · Ven EF · Dim SL** (préférence : ne pas enchaîner fractionné juste après la SL). Le 04/08 j'ai fait l'EF de 7 km à la place du seuil (chaleur) → seuil décalé au mercredi 05/08 (matin tôt). Cheville toujours stable (pas d'aggravation). Renfo : 2 séances faites sur 4 prévues sur S1+S2, à remonter à 2/sem.
+
+Bilan à chaud : très grosse semaine, bon ressenti global. Chaleur présente mais pas insoutenable. Renfo 2/2 tenu. Cheville droite toujours là (pas d'amélioration mais pas d'aggravation, aucun impact perf). Petite séance bonus de 4 km le 08/08 (déplacement fait en courant, non prévu) — pas d'impact sur la SL 20 km du lendemain, exceptionnel. Volume 45,5 km pile la cible.
+
+## Semaine 4 (10/08 → 16/08)
+Semaine de décharge. Vigilance cheville sur la SL du dimanche : plan à 16 km, mais réduction à 13-14 km assumée si la cheville tire.

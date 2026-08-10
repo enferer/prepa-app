@@ -179,8 +179,8 @@
           "type": "EF",
           "titre": "Footing EF (swap du seuil)",
           "description": "7 km EF facile.",
-          "statut": "modifiee",
-          "commentaireCoach": "Seuil prévu → remplacé par EF à cause de la chaleur. 7 km @ 6:34 FC 138 : cohérent. On décale le seuil à mercredi 05/08 (matin tôt de préférence).",
+          "statut": "validee",
+          "commentaireCoach": "Seuil déplacé au mercredi (chaleur). 7,0 km @ 6:34 FC 138 : allure et FC pile dans la cible EF. Nickel.",
           "distanceCibleKm": 7,
           "alluresCibles": "EF 6:35 (facile)"
         },
@@ -189,8 +189,8 @@
           "type": "Renfo",
           "titre": "Renfo prévention (gainage + proprio)",
           "description": "Gainage, proprio cheville D, excentrique mollet à l'élastique. Version courte le jour EF.",
-          "statut": "a_venir",
-          "commentaireCoach": "Version légère le mardi (jour EF facile) : gainage + proprio, ~20 min, à caser en soirée.",
+          "statut": "validee",
+          "commentaireCoach": "Renfo confirmé (1/2 de la semaine). Objectif renfo 2/sem tenu.",
           "dureeCibleMin": 20,
           "focus": "Gainage · proprio cheville D · excentrique mollet (élastique)"
         },
@@ -199,8 +199,8 @@
           "type": "Seuil",
           "titre": "Seuil (tempo) — 2×10 min",
           "description": "2 km éch. + 2×10 min au seuil (5:10) récup 3 min trot + 2 km RAC.",
-          "statut": "a_venir",
-          "commentaireCoach": "Séance clé de la semaine, décalée de lundi à mercredi. Sors tôt le matin (fraîcheur), reste régulier — 5:10 pas plus vite.",
+          "statut": "validee",
+          "commentaireCoach": "8,4 km @ 5:44 moy FC 149 (max 175) — les blocs de seuil sont bien passés, allure globale cohérente avec 2×10 min à 5:10 + éch./RAC. Séance clé de la semaine, dans la poche.",
           "distanceCibleKm": 9,
           "alluresCibles": "Seuil 5:10 · éch./RAC EF 6:35"
         },
@@ -209,8 +209,8 @@
           "type": "Renfo",
           "titre": "Renfo prévention + force (lourd)",
           "description": "Excentrique tibial ant. & mollet, chaîne postérieure, gainage. Après la séance de seuil du matin.",
-          "statut": "a_venir",
-          "commentaireCoach": "Renfo lourd groupé avec le jour dur (mercredi) — on protège les jours de récup (jeudi & samedi).",
+          "statut": "validee",
+          "commentaireCoach": "Renfo lourd confirmé (2/2). Enfin la cadence 2/sem retrouvée — parfait pour la cheville.",
           "dureeCibleMin": 30,
           "focus": "Excentrique tibial ant. & mollet (élastique) · proprioception cheville D · gainage · chaîne postérieure"
         },
@@ -219,18 +219,28 @@
           "type": "EF",
           "titre": "Footing court + 5 lignes droites",
           "description": "9 km EF + 5×20 s d'accélération progressive.",
-          "statut": "a_venir",
-          "commentaireCoach": "EF du vendredi : va chercher les 9 km si la fraîcheur revient, sinon 7 km c'est OK.",
+          "statut": "modifiee",
+          "commentaireCoach": "6,0 km @ 6:37 FC 135 (vs 9 km prévus). Un peu court, mais avec la SL 20 km deux jours plus tard + le bonus 4 km de vendredi, le volume hebdo est pile dans la cible (45,5 vs 45). Rien à corriger.",
           "distanceCibleKm": 9,
           "alluresCibles": "EF 6:35 (facile)"
+        },
+        {
+          "date": "2026-08-08",
+          "type": "EF",
+          "titre": "Bonus — trajet couru (non prévu)",
+          "description": "Déplacement fait en courant : 4,1 km.",
+          "statut": "validee",
+          "commentaireCoach": "🎁 Séance bonus non planifiée : 4,1 km @ 5:55 FC 154 (déplacement). Court, allure soutenue mais SL du lendemain non impactée au ressenti — c'est validé. On ne prend pas l'habitude d'ajouter des séances à la va-vite juste avant une SL, mais ponctuellement c'est OK.",
+          "distanceCibleKm": 4,
+          "alluresCibles": "EF (au ressenti)"
         },
         {
           "date": "2026-08-09",
           "type": "SL",
           "titre": "Sortie longue 20 km",
           "description": "SL 20 km en endurance. Ravito/hydratation comme en course.",
-          "statut": "a_venir",
-          "commentaireCoach": "⭐ Plus longue SL du bloc de base. Départ TÔT (chaleur), gère l'hydratation. 100 % EF, plaisir.",
+          "statut": "validee",
+          "commentaireCoach": "⭐ 20,0 km @ 6:36 FC 137 D+89 : SL de référence, la plus longue de ton bloc de base parfaitement exécutée. FC très basse pour la distance, allure calée EF (chaleur assumée). Aucun impact du bonus de la veille. Grosse séance.",
           "distanceCibleKm": 20,
           "alluresCibles": "SL 6:15 · EF 6:35"
         }
@@ -296,10 +306,10 @@
         {
           "date": "2026-08-16",
           "type": "SL",
-          "titre": "Sortie longue 16 km",
-          "description": "SL 16 km en endurance.",
+          "titre": "Sortie longue 16 km (14 km si cheville tire)",
+          "description": "SL 16 km en endurance. Porte de sortie : 13-14 km si la cheville se rappelle à toi.",
           "statut": "a_venir",
-          "commentaireCoach": "SL de décharge : 16 km, on absorbe avant de repartir plus fort.",
+          "commentaireCoach": "SL de décharge : cible 16 km. Si la cheville tire dès les premiers km ou pendant, coupe à 13-14 km sans discussion — on est en décharge, l'objectif est d'absorber, pas de battre un record. Départ tôt, allure EF pure.",
           "distanceCibleKm": 16,
           "alluresCibles": "SL 6:15 · EF 6:35"
         }
