@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prépa</title>
   <link rel="stylesheet" href="css/style.css">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("prepa.theme");
+        var t = saved || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (_) {}
+    })();
+  </script>
 </head>
 <body>
   <header class="topbar">
@@ -17,31 +26,34 @@
             <p id="course-sous" class="muted"></p>
           </div>
         </div>
-        <div class="selector">
-          <label class="selector-item">
-            <span class="selector-label">Profil</span>
-            <select id="sel-profil"></select>
-          </label>
-          <label class="selector-item">
-            <span class="selector-label">Prépa</span>
-            <select id="sel-prepa"></select>
-          </label>
+        <div class="brand-right">
+          <div class="selector">
+            <label class="selector-item">
+              <span class="selector-label">Profil</span>
+              <select id="sel-profil"></select>
+            </label>
+            <label class="selector-item">
+              <span class="selector-label">Prépa</span>
+              <select id="sel-prepa"></select>
+            </label>
+          </div>
+          <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Basculer thème clair/sombre" title="Thème clair/sombre">🌙</button>
         </div>
       </div>
       <nav class="tabs" id="tabs">
         <button class="tab active" data-tab="dashboard">Tableau de bord</button>
-        <button class="tab" data-tab="plan">Plan</button>
         <button class="tab" data-tab="stats">Stats</button>
         <button class="tab" data-tab="journal">Journal</button>
+        <button class="tab" data-tab="profil">Profil</button>
       </nav>
     </div>
   </header>
 
   <main class="container">
     <section id="tab-dashboard" class="tab-panel active"></section>
-    <section id="tab-plan" class="tab-panel"></section>
     <section id="tab-stats" class="tab-panel"></section>
     <section id="tab-journal" class="tab-panel"></section>
+    <section id="tab-profil" class="tab-panel"></section>
   </main>
 
   <footer class="foot muted">

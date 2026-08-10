@@ -1,22 +1,29 @@
-/* app.js — rendu multi-profils / multi-prépas.
-   Lit window.PREPA_DATA = { genereLe, profils: [{ id, nom, prepaActive, prepas: [...] }] }.
-   Le sélecteur profil+prépa pilote le rendu ; la sélection est persistée en localStorage. */
+/* app.js — rendu multi-profils / multi-prépas. */
 
 const CATALOG = window.PREPA_DATA || { profils: [] };
 const LS_KEY = "prepa.selection";
+const LS_THEME = "prepa.theme";
 
-/* État courant — recalculé à chaque changement de sélecteur. */
 let CURRENT = { profil: null, prepa: null };
 let OBJ = {};
 let PLAN = { semaines: [] };
 let ACTS = [];
 let JOURNAL = [];
+let VIEW_WEEK_IDX = null;
 
 /* ------------------------------------------------------------------ */
-/* Helpers de formatage                                                */
+/* Helpers                                                             */
 /* ------------------------------------------------------------------ */
 const MOIS = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
 const JOURS = ["dim.", "lun.", "mar.", "mer.", "jeu.", "ven.", "sam."];
+const JOURS_LONGS = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
+
+function toISODate(d) {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
 
 function parseISO(s) {
   if (!s) return null;
@@ -58,6 +65,24 @@ function el(html) {
   t.innerHTML = html.trim();
   return t.content.firstElementChild;
 }
+function escapeHtml(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+const ACRONYMES = ["RP", "VMA", "FC", "AM", "EF", "SL", "PPS", "PPG"];
+function humanize(key) {
+  let s = String(key)
+    .replace(/([a-z])([A-Z])/g, "$1 $2")
+    .replace(/([a-zA-Z])(\d)/g, "$1 $2")
+    .replace(/(\d)([a-zA-Z])/g, "$1 $2")
+    .replace(/[_-]+/g, " ")
+    .toLowerCase();
+  s = s.charAt(0).toUpperCase() + s.slice(1);
+  ACRONYMES.forEach((a) => {
+    s = s.replace(new RegExp(`\\b${a}\\b`, "gi"), a);
+  });
+  return s;
+}
 
 function volumeRealise(dateDebut) {
   const start = parseISO(dateDebut);
@@ -82,7 +107,7 @@ function toutesSeances() {
 }
 function typeIcon(type) {
   if (type === "Renfo") return "💪";
-  if (type === "Côtes") return "⛰️";
+  if (type === "Côtes" || type === "Cotes") return "⛰️";
   return "🏃";
 }
 
@@ -111,7 +136,17 @@ function renderHeader() {
   const c = OBJ.course || {};
   const profilNom = CURRENT.profil ? CURRENT.profil.nom : "";
   const prepaNom = c.nom || (CURRENT.prepa ? CURRENT.prepa.nom : "Prépa");
-  document.getElementById("course-nom").textContent = profilNom ? `${profilNom} · ${prepaNom}` : prepaNom;
+  const nomEl = document.getElementById("course-nom");
+  nomEl.textContent = "";
+  if (profilNom) {
+    nomEl.append(document.createTextNode(profilNom));
+    const sep = document.createElement("span");
+    sep.className = "brand-prepa";
+    sep.textContent = ` · ${prepaNom}`;
+    nomEl.appendChild(sep);
+  } else {
+    nomEl.textContent = prepaNom;
+  }
   const parts = [];
   if (c.date) parts.push("Course le " + fmtDate(c.date, true));
   if (OBJ.chronoVise) parts.push("Objectif " + OBJ.chronoVise);
@@ -123,7 +158,7 @@ function renderHeader() {
 }
 
 /* ------------------------------------------------------------------ */
-/* Onglet Dashboard                                                    */
+/* Dashboard                                                           */
 /* ------------------------------------------------------------------ */
 function renderDashboard() {
   const root = document.getElementById("tab-dashboard");
@@ -152,14 +187,6 @@ function renderDashboard() {
       </div>
     </div>`));
 
-  const alerts = buildAlerts();
-  if (alerts.length) {
-    const box = el(`<div style="margin-top:16px"></div>`);
-    alerts.forEach((a) => box.appendChild(el(
-      `<div class="alert ${a.type}"><span class="alert-icon">${a.icon}</span><span>${a.msg}</span></div>`)));
-    root.appendChild(box);
-  }
-
   const s = toutesSeances();
   const faites = s.filter((x) => STATUT_FAIT.includes(x.statut));
   const manquees = s.filter((x) => x.statut === "manquee");
@@ -169,7 +196,6 @@ function renderDashboard() {
 
   const debut = OBJ.dateDebutPrepa;
   const kmDurant = debut ? sommeKm((a) => a.date && a.date >= debut) : sommeKm(() => true);
-  const kmAvant = debut ? sommeKm((a) => a.date && a.date < debut) : 0;
   const kmCibleTotal = (PLAN.semaines || []).reduce((t, w) => t + (w.volumeCibleKm || 0), 0);
 
   const kpis = [
@@ -178,7 +204,7 @@ function renderDashboard() {
     { icon: "⛔", val: manquees.length, label: "Séances loupées", danger: manquees.length > 0 },
     { icon: "🎯", val: assidu != null ? assidu + "%" : "—", label: "Assiduité" },
     { icon: "🏃", val: km(kmDurant, 0), unit: "km", label: "Km depuis le début", sub: kmCibleTotal ? "cible " + km(kmCibleTotal, 0) + " km" : "" },
-    { icon: "📦", val: km(kmAvant, 0), unit: "km", label: "Km avant la prépa" },
+    { icon: "📊", val: km(kmCibleTotal ? (kmDurant / kmCibleTotal) * 100 : 0, 0), unit: "%", label: "Volume vs cible" },
   ];
   const kgrid = el(`<div class="kpis"></div>`);
   kpis.forEach((k) => kgrid.appendChild(el(`
@@ -198,27 +224,10 @@ function renderDashboard() {
       <div class="bar" style="margin-top:8px"><span style="width:${pctAv}%"></span></div>
     </div>`));
 
-  const prochaines = restantes
-    .filter((x) => x.date && parseISO(x.date) >= today)
-    .sort(byDate)
-    .slice(0, 5);
-  root.appendChild(el(`<h2 class="section-title">Prochaines séances</h2>`));
-  if (prochaines.length) {
-    const box = el(`<div></div>`);
-    prochaines.forEach((p) => box.appendChild(renderSeance(p)));
-    root.appendChild(box);
-  } else {
-    root.appendChild(el(`<div class="card muted">Aucune séance à venir programmée. Lance <b>/prepa-update</b> ou <b>/prepa-init</b>.</div>`));
-  }
-
-  if (manquees.length) {
-    root.appendChild(el(`<h2 class="section-title">Séances loupées</h2>`));
-    const box = el(`<div></div>`);
-    manquees.slice().sort(byDate).forEach((m) => box.appendChild(renderSeance(m)));
-    root.appendChild(box);
-  }
-
-  renderSignature(root);
+  const weekHolder = el(`<div id="week-nav-holder" style="margin-top:20px"></div>`);
+  root.appendChild(weekHolder);
+  if (VIEW_WEEK_IDX == null) VIEW_WEEK_IDX = indexSemaineCourante();
+  renderWeekView();
 
   root.appendChild(el(`<h2 class="section-title">Volume hebdomadaire — prévu vs réalisé</h2>`));
   root.appendChild(el(`<div class="card"><div class="chart-box"><canvas id="cv-volume"></canvas></div></div>`));
@@ -231,55 +240,163 @@ function renderDashboard() {
   );
 }
 
-function renderSignature(root) {
-  const favs = OBJ.seancesFavorites || [];
-  const libre = OBJ.commentairesLibres;
-  if (!favs.length && !libre) return;
-
-  root.appendChild(el(`<h2 class="section-title">Mes séances signature</h2>`));
-  if (favs.length) {
-    const grid = el(`<div class="grid ${favs.length > 1 ? "grid-2" : ""}"></div>`);
-    favs.forEach((f) => {
-      const meta = [];
-      if (f.distanceKm) meta.push("📏 " + km(f.distanceKm) + " km");
-      if (f.frequenceSouhaitee) meta.push("🔁 " + escapeHtml(f.frequenceSouhaitee));
-      grid.appendChild(el(`
-        <div class="card">
-          <div class="stitle" style="font-weight:650">
-            <span class="stype" style="width:auto;padding:4px 10px">${escapeHtml(f.type || "?")}</span>
-            <span>${escapeHtml(f.nom || "Séance")}</span>
-          </div>
-          ${f.description ? `<div class="sdesc" style="margin-top:8px">${escapeHtml(f.description)}</div>` : ""}
-          ${meta.length ? `<div class="sallure" style="margin-top:8px">${meta.join(" · ")}</div>` : ""}
-          ${f.contexte ? `<div class="muted small" style="margin-top:6px">${escapeHtml(f.contexte)}</div>` : ""}
-        </div>`));
-    });
-    root.appendChild(grid);
+function indexSemaineCourante() {
+  const today = todayMidnight();
+  const sems = PLAN.semaines || [];
+  for (let i = 0; i < sems.length; i++) {
+    const start = parseISO(sems[i].dateDebut);
+    if (!start) continue;
+    const end = new Date(start);
+    end.setDate(end.getDate() + 7);
+    if (today >= start && today < end) return i;
   }
-  if (libre) {
-    root.appendChild(el(`
-      <div class="card" style="margin-top:12px">
-        <div class="muted small" style="text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px">Note libre</div>
-        <div>${escapeHtml(libre)}</div>
-      </div>`));
-  }
+  const idx = sems.findIndex((s) => parseISO(s.dateDebut) && parseISO(s.dateDebut) >= today);
+  if (idx >= 0) return idx;
+  return Math.max(0, sems.length - 1);
 }
 
-function buildAlerts() {
-  const out = [];
-  (OBJ.blessures || []).forEach((b) => {
-    const txt = typeof b === "string" ? b : b.zone || JSON.stringify(b);
-    out.push({ type: "danger", icon: "🩹", msg: "Blessure suivie : " + txt });
-  });
-  let manquees = 0;
-  (PLAN.semaines || []).forEach((s) => (s.seances || []).forEach((se) => { if (se.statut === "manquee") manquees++; }));
-  if (manquees) out.push({ type: "warn", icon: "⚠️", msg: `${manquees} séance${manquees > 1 ? "s" : ""} manquée${manquees > 1 ? "s" : ""} — pense à en discuter avec le coach (/prepa-update).` });
-  const sc = semaineCourante();
-  if (sc) {
-    const j = JOURNAL.find((e) => e.semaine === sc.numero);
-    if (!j || !j.contenu.trim()) out.push({ type: "ok", icon: "📝", msg: `Journal de la semaine ${sc.numero} vide — note ton ressenti dans data/journal.md.` });
+function relLabel(offset) {
+  if (offset === 0) return "Cette semaine";
+  if (offset === -1) return "Semaine passée";
+  if (offset === 1) return "Semaine prochaine";
+  if (offset < 0) return `Il y a ${-offset} sem.`;
+  return `Dans ${offset} sem.`;
+}
+
+function renderWeekView() {
+  const holder = document.getElementById("week-nav-holder");
+  if (!holder) return;
+  holder.innerHTML = "";
+  const sems = PLAN.semaines || [];
+  if (!sems.length) {
+    holder.appendChild(el(`<div class="card muted">Aucune semaine planifiée.</div>`));
+    return;
   }
-  return out;
+  const currentIdx = indexSemaineCourante();
+  VIEW_WEEK_IDX = Math.max(0, Math.min(sems.length - 1, VIEW_WEEK_IDX ?? currentIdx));
+  const idx = VIEW_WEEK_IDX;
+  const sem = sems[idx];
+  const start = parseISO(sem.dateDebut);
+  const today = todayMidnight();
+  const seances = (sem.seances || []).slice().sort(byDate);
+  const real = volumeRealise(sem.dateDebut);
+  const done = seances.filter((x) => STATUT_FAIT.includes(x.statut)).length;
+  const cible = sem.volumeCibleKm || 0;
+  const offset = idx - currentIdx;
+  const isCurrent = offset === 0;
+
+  const fin = new Date(start);
+  fin.setDate(fin.getDate() + 6);
+  const dates = `${fmtDate(sem.dateDebut)} → ${fmtDate(toISODate(fin))}`;
+
+  const nav = el(`
+    <div class="week-nav">
+      <button class="wn-btn" id="wn-prev" ${idx === 0 ? "disabled" : ""} aria-label="Semaine précédente" title="Semaine précédente">
+        <span class="wn-arrow">‹</span>
+        <span class="wn-btn-label">Préc.</span>
+      </button>
+      <div class="wn-center">
+        <div class="wn-title">
+          <span>${relLabel(offset)}</span>
+          <span class="wk-now">S${sem.numero}${sem.bloc ? " · " + escapeHtml(sem.bloc) : ""}</span>
+        </div>
+        <div class="wn-dates">${dates}</div>
+      </div>
+      <button class="wn-btn" id="wn-next" ${idx === sems.length - 1 ? "disabled" : ""} aria-label="Semaine suivante" title="Semaine suivante">
+        <span class="wn-arrow">›</span>
+        <span class="wn-btn-label">Suiv.</span>
+      </button>
+    </div>`);
+  holder.appendChild(nav);
+  if (!isCurrent) {
+    holder.appendChild(el(`<div class="wn-actions"><button class="wn-today" id="wn-today" type="button"><span class="wn-today-icon">📍</span> Revenir à cette semaine</button></div>`));
+  }
+
+  const meta = el(`
+    <div class="week-meta-row">
+      <span class="wm-chip">🏃 ${done}/${seances.length} séance${seances.length > 1 ? "s" : ""}</span>
+      <span class="wm-chip">📏 ${km(real)}${cible ? " / " + km(cible, 0) : ""} km</span>
+    </div>`);
+  holder.appendChild(meta);
+
+  const strip = el(`<div class="week-strip"></div>`);
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(start);
+    d.setDate(d.getDate() + i);
+    const iso = toISODate(d);
+    const dayS = seances.filter((se) => se.date === iso);
+    const isToday = isCurrent && d.getTime() === today.getTime();
+    const isPast = d.getTime() < today.getTime();
+    strip.appendChild(renderDayRow(d, dayS, { isToday, isPast }));
+  }
+  holder.appendChild(strip);
+
+  if (sem.note) holder.appendChild(el(`<div class="week-note">📝 ${escapeHtml(sem.note)}</div>`));
+
+  document.getElementById("wn-prev").addEventListener("click", () => { VIEW_WEEK_IDX = idx - 1; renderWeekView(); });
+  document.getElementById("wn-next").addEventListener("click", () => { VIEW_WEEK_IDX = idx + 1; renderWeekView(); });
+  const tbtn = document.getElementById("wn-today");
+  if (tbtn) tbtn.addEventListener("click", () => { VIEW_WEEK_IDX = currentIdx; renderWeekView(); });
+}
+
+function renderDayRow(d, seances, { isToday, isPast }) {
+  const cls = ["day-row"];
+  if (isToday) cls.push("today");
+  else if (isPast) cls.push("past");
+  if (!seances.length) cls.push("rest");
+
+  const dow = JOURS[d.getDay()];
+  const num = d.getDate();
+
+  const row = el(`<div class="${cls.join(" ")}"></div>`);
+  row.appendChild(el(`
+    <div class="day-cell">
+      <span>${dow}</span>
+      <span class="day-num">${num}</span>
+    </div>`));
+
+  const content = el(`<div class="day-content"></div>`);
+  if (!seances.length) {
+    content.appendChild(el(`<div class="drest">Repos</div>`));
+  } else {
+    seances.forEach((se) => {
+      const statut = se.statut || "a_venir";
+      const label = { validee: "Validée", a_venir: "À venir", adaptee: "Adaptée", modifiee: "Modifiée", manquee: "Manquée" }[statut] || statut;
+      const meta = [];
+      if (se.type) meta.push(escapeHtml(se.type));
+      if (se.distanceCibleKm) meta.push(km(se.distanceCibleKm) + " km");
+      else if (se.dureeCibleMin) meta.push(se.dureeCibleMin + " min");
+      if (se.alluresCibles) meta.push("🎯 " + escapeHtml(se.alluresCibles));
+
+      const details = [];
+      if (se.description) details.push(`<div class="sdesc">${escapeHtml(se.description)}</div>`);
+      if (se.focus && se.type === "Renfo") details.push(`<div class="sallure">🏋️ ${escapeHtml(se.focus)}</div>`);
+      if (se.commentaireCoach) details.push(`<div class="scoach">💬 ${escapeHtml(se.commentaireCoach)}</div>`);
+
+      const head = `
+        <div class="dtitle">
+          <span class="icn">${typeIcon(se.type)}</span>
+          <span>${escapeHtml(se.titre || "Séance")}</span>
+          <span class="badge ${statut}">${label}</span>
+        </div>
+        <div class="dmeta">${meta.join(" · ")}</div>`;
+
+      if (details.length) {
+        content.appendChild(el(`
+          <details class="dseance">
+            <summary>
+              <div class="dseance-body">${head}</div>
+              <span class="dchev" aria-hidden="true">▾</span>
+            </summary>
+            <div class="dexpand">${details.join("")}</div>
+          </details>`));
+      } else {
+        content.appendChild(el(`<div class="dseance dseance-plain">${head}</div>`));
+      }
+    });
+  }
+  row.appendChild(content);
+  return row;
 }
 
 function renderSeance(s) {
@@ -300,59 +417,134 @@ function renderSeance(s) {
     </div>`);
 }
 
-function renderPlan() {
-  const root = document.getElementById("tab-plan");
-  const sems = PLAN.semaines || [];
-  if (!sems.length) {
-    root.innerHTML = `<div class="empty">Aucun plan pour l'instant.<br>Lance <b>/prepa-init</b> pour le générer.</div>`;
-    return;
-  }
-  root.innerHTML = "";
+/* ------------------------------------------------------------------ */
+/* Stats — comparaison avant / pendant prépa, best efforts, tendances  */
+/* ------------------------------------------------------------------ */
 
-  root.appendChild(el(`
-    <div class="legend card">
-      <div class="legend-row"><span class="legend-title">Types</span><span>🏃 Course</span><span>⛰️ Côtes</span><span>💪 Renfo</span></div>
-      <div class="legend-row"><span class="legend-title">Statuts</span><span class="badge validee">Validée</span><span class="badge a_venir">À venir</span><span class="badge adaptee">Adaptée</span><span class="badge manquee">Manquée</span></div>
-    </div>`));
+/* Classification : allure moyenne pertinente (continu) vs non (fractionné). */
+const TYPE_CONTINU = new Set(["EF", "SL", "AM", "SL AM"]);
+const TYPE_INTERVAL = new Set(["VMA", "Seuil", "Côtes", "Cotes"]);
+function normType(t) {
+  if (!t) return null;
+  if (t === "Cotes") return "Côtes";
+  return t;
+}
+function isCourse(t) {
+  const n = normType(t);
+  return n && n !== "Renfo";
+}
+function typeContinu(t) { return TYPE_CONTINU.has(normType(t)); }
+function typeInterval(t) { return TYPE_INTERVAL.has(normType(t)); }
 
-  const sc = semaineCourante();
-  sems.forEach((s) => {
-    const seances = s.seances || [];
-    const course = seances.filter((x) => x.type !== "Renfo");
-    const renfo = seances.filter((x) => x.type === "Renfo");
-    const isCurrent = sc && s.numero === sc.numero;
-    const real = volumeRealise(s.dateDebut);
-    const done = seances.filter((x) => STATUT_FAIT.includes(x.statut)).length;
+/* Joint activités ↔ séances planifiées par date.
+   Renvoie une copie annotée avec planType + plannedSeance.
+   Si plusieurs séances course le même jour, on apparie par proximité de distance. */
+function joinActivitiesToPlan() {
+  const plannedByDate = {};
+  (PLAN.semaines || []).forEach((sem) =>
+    (sem.seances || []).forEach((se) => {
+      if (!isCourse(se.type) || !se.date) return;
+      (plannedByDate[se.date] = plannedByDate[se.date] || []).push({ ...se, semaine: sem.numero });
+    })
+  );
+  const used = new Set();
+  const key = (p) => `${p.date}::${p.titre}::${p.type}`;
 
-    const fin = parseISO(s.dateDebut);
-    let finStr = "";
-    if (fin) { fin.setDate(fin.getDate() + 6); finStr = " → " + fmtDate(fin.toISOString().slice(0, 10)); }
-
-    const wrap = el(`<div class="week${isCurrent ? " open" : ""}"></div>`);
-    wrap.appendChild(el(`
-      <button class="week-head">
-        <div class="wk-left">
-          <div class="week-bloc">${escapeHtml(s.bloc || "")}</div>
-          <div class="wk-title">Semaine ${s.numero}${isCurrent ? ' <span class="wk-now">en cours</span>' : ""}</div>
-          <div class="wk-meta">${fmtDate(s.dateDebut)}${finStr} · 🏃 ${course.length} · 💪 ${renfo.length} · 📏 ${km(real)}/${km(s.volumeCibleKm, 0)} km · ✅ ${done}/${seances.length}</div>
-        </div>
-        <span class="chevron">▶</span>
-      </button>`));
-
-    const body = el(`<div class="week-body"></div>`);
-    if (s.note) body.appendChild(el(`<p class="wk-note muted small">${escapeHtml(s.note)}</p>`));
-    if (course.length) {
-      body.appendChild(el(`<div class="grp-title">🏃 Course</div>`));
-      course.slice().sort(byDate).forEach((se) => body.appendChild(renderSeance(se)));
-    }
-    if (renfo.length) {
-      body.appendChild(el(`<div class="grp-title">💪 Renforcement</div>`));
-      renfo.slice().sort(byDate).forEach((se) => body.appendChild(renderSeance(se)));
-    }
-    wrap.appendChild(body);
-    wrap.querySelector(".week-head").addEventListener("click", () => wrap.classList.toggle("open"));
-    root.appendChild(wrap);
+  const courseActs = ACTS.filter((a) => (a.type || "").toLowerCase().includes("course"));
+  return courseActs.map((a) => {
+    const day = (plannedByDate[a.date] || []).filter((p) => !used.has(key(p)));
+    if (!day.length) return { ...a, planType: null, planned: null };
+    let best = day[0], bestDiff = Infinity;
+    day.forEach((p) => {
+      const d = Math.abs((p.distanceCibleKm || 0) - (a.distanceKm || 0));
+      if (d < bestDiff) { bestDiff = d; best = p; }
+    });
+    used.add(key(best));
+    return { ...a, planType: normType(best.type), planned: best };
   });
+}
+
+function agrege(acts) {
+  const km = acts.reduce((t, a) => t + (a.distanceKm || 0), 0);
+  const durs = acts.reduce((t, a) => t + (a.dureeSec || 0), 0);
+  const nbSem = acts.length ? Math.max(1, nbSemainesCouvertes(acts)) : 0;
+  return {
+    nb: acts.length,
+    km,
+    durs,
+    kmParSemaine: nbSem ? km / nbSem : 0,
+    seancesParSemaine: nbSem ? acts.length / nbSem : 0,
+    dureeMoy: acts.length ? durs / acts.length : 0,
+    nbSem,
+  };
+}
+
+function statsParType(acts) {
+  const groups = {};
+  acts.forEach((a) => {
+    const k = a.planType || "Hors plan";
+    (groups[k] = groups[k] || []).push(a);
+  });
+  const out = [];
+  Object.entries(groups).forEach(([type, list]) => {
+    const nb = list.length;
+    const km = list.reduce((t, a) => t + (a.distanceKm || 0), 0);
+    const durs = list.reduce((t, a) => t + (a.dureeSec || 0), 0);
+    const paces = list.filter((a) => a.allureMoySecKm).map((a) => a.allureMoySecKm);
+    const fcs = list.filter((a) => a.fcMoy).map((a) => a.fcMoy);
+    const paceMoy = typeContinu(type) && paces.length ? paces.reduce((a, b) => a + b, 0) / paces.length : null;
+    const fcMoy = fcs.length ? Math.round(fcs.reduce((a, b) => a + b, 0) / fcs.length) : null;
+    const cible = OBJ.alluresCibles && OBJ.alluresCibles[type] ? OBJ.alluresCibles[type].secKm : null;
+    out.push({ type, nb, km, durs, paceMoy, cibleSec: cible, fcMoy });
+  });
+  const rank = ["EF", "SL", "AM", "Seuil", "VMA", "Côtes", "Hors plan"];
+  out.sort((a, b) => (rank.indexOf(a.type) + 100) - (rank.indexOf(b.type) + 100));
+  return out;
+}
+
+function nbSemainesCouvertes(acts) {
+  if (!acts.length) return 0;
+  const dates = acts.map((a) => parseISO(a.date)).filter(Boolean).sort((a, b) => a - b);
+  if (!dates.length) return 0;
+  const days = Math.round((dates[dates.length - 1] - dates[0]) / 86400000) + 1;
+  return Math.max(1, days / 7);
+}
+
+function delta(now, prev, opts = {}) {
+  if (now == null || prev == null || prev === 0) return "";
+  const diff = now - prev;
+  const pct = (diff / prev) * 100;
+  const better = opts.lowerIsBetter ? diff < 0 : diff > 0;
+  const cls = Math.abs(pct) < 1 ? "" : better ? "up" : "down";
+  const sign = diff > 0 ? "+" : "";
+  const val = opts.pace ? (sign + (Math.round(diff) + "s/km")) : (sign + Math.round(pct * 10) / 10 + "%");
+  return `<div class="ct-delta ${cls}">${val}</div>`;
+}
+
+function compareTile(label, prevStr, nowStr, deltaHtml) {
+  return `
+    <div class="compare-tile">
+      <div class="ct-label">${label}</div>
+      <div class="ct-rows">
+        <div class="ct-col"><div class="ct-side">Avant prépa</div><div class="ct-val">${prevStr}</div></div>
+        <div class="ct-col now"><div class="ct-side">Pendant prépa</div><div class="ct-val">${nowStr}</div></div>
+      </div>
+      ${deltaHtml}
+    </div>`;
+}
+
+/* Meilleur effort courant : sous-fenêtre continue de distance ≥ D
+   approximée sur une activité (allure moyenne × D). */
+function bestEffort(distMin) {
+  let best = null;
+  ACTS.forEach((a) => {
+    if (!a.distanceKm || !a.allureMoySecKm || a.distanceKm < distMin) return;
+    const t = distMin * a.allureMoySecKm;
+    if (!best || t < best.tempsSec) {
+      best = { tempsSec: t, paceSec: a.allureMoySecKm, date: a.date, titre: a.titre || a.type };
+    }
+  });
+  return best;
 }
 
 function renderStats() {
@@ -362,44 +554,159 @@ function renderStats() {
     return;
   }
   root.innerHTML = "";
-  const labels = ACTS.map((a) => fmtDate(a.date));
 
-  root.appendChild(el(`<h2 class="section-title">Distance par séance</h2>`));
-  root.appendChild(el(`<div class="card"><div class="chart-box short"><canvas id="cv-dist"></canvas></div></div>`));
+  const debut = OBJ.dateDebutPrepa;
+  const joined = joinActivitiesToPlan();
+  const avant = debut ? joined.filter((a) => a.date && a.date < debut) : [];
+  const pendant = debut ? joined.filter((a) => a.date && a.date >= debut) : joined.slice();
+  const aPrev = agrege(avant);
+  const aNow = agrege(pendant);
 
-  root.appendChild(el(`<h2 class="section-title">Allure moyenne (min/km)</h2>`));
-  root.appendChild(el(`<div class="card"><div class="chart-box short"><canvas id="cv-allure"></canvas></div></div>`));
+  /* ---------- Compare avant / pendant (volume seulement) ---------- */
+  root.appendChild(el(`<h2 class="section-title">Avant vs pendant la prépa <span class="sub">${aPrev.nb} → ${aNow.nb} séances</span></h2>`));
+  const cg = el(`<div class="compare-grid"></div>`);
+  cg.appendChild(el(compareTile(
+    "Volume hebdo",
+    km(aPrev.kmParSemaine, 1) + " km",
+    km(aNow.kmParSemaine, 1) + " km",
+    delta(aNow.kmParSemaine, aPrev.kmParSemaine)
+  )));
+  cg.appendChild(el(compareTile(
+    "Séances / semaine",
+    aPrev.seancesParSemaine ? aPrev.seancesParSemaine.toFixed(1) : "—",
+    aNow.seancesParSemaine ? aNow.seancesParSemaine.toFixed(1) : "—",
+    delta(aNow.seancesParSemaine, aPrev.seancesParSemaine)
+  )));
+  cg.appendChild(el(compareTile(
+    "Distance moyenne",
+    aPrev.nb ? km(aPrev.km / aPrev.nb) + " km" : "—",
+    aNow.nb ? km(aNow.km / aNow.nb) + " km" : "—",
+    delta(aNow.nb ? aNow.km / aNow.nb : null, aPrev.nb ? aPrev.km / aPrev.nb : null)
+  )));
+  cg.appendChild(el(compareTile(
+    "Durée moyenne",
+    aPrev.dureeMoy ? fmtDur(aPrev.dureeMoy) : "—",
+    aNow.dureeMoy ? fmtDur(aNow.dureeMoy) : "—",
+    delta(aNow.dureeMoy, aPrev.dureeMoy)
+  )));
+  cg.appendChild(el(compareTile(
+    "Volume total",
+    km(aPrev.km, 0) + " km",
+    km(aNow.km, 0) + " km",
+    ""
+  )));
+  cg.appendChild(el(compareTile(
+    "Semaines couvertes",
+    aPrev.nbSem ? Math.round(aPrev.nbSem) + " sem." : "—",
+    aNow.nbSem ? Math.round(aNow.nbSem) + " sem." : "—",
+    ""
+  )));
+  root.appendChild(cg);
 
-  root.appendChild(el(`<div class="grid grid-2" style="margin-top:16px"></div>`));
-  const grid = root.querySelector(".grid-2");
-  grid.appendChild(el(`<div class="card"><h3 class="small muted" style="margin-bottom:10px">Fréquence cardiaque moyenne</h3><div class="chart-box short"><canvas id="cv-fc"></canvas></div></div>`));
-  grid.appendChild(el(`<div class="card"><h3 class="small muted" style="margin-bottom:10px">Cadence moyenne (ppm)</h3><div class="chart-box short"><canvas id="cv-cad"></canvas></div></div>`));
+  /* ---------- Par type de séance (pendant la prépa) ---------- */
+  const parType = statsParType(pendant);
+  root.appendChild(el(`<h2 class="section-title">Par type de séance <span class="sub">liaison activité ↔ plan par date · pendant la prépa</span></h2>`));
+  if (!parType.length) {
+    root.appendChild(el(`<div class="card muted small">Aucune séance depuis le début de la prépa.</div>`));
+  } else {
+    const grid = el(`<div class="type-grid"></div>`);
+    parType.forEach((s) => {
+      const isInterval = typeInterval(s.type);
+      const isHors = s.type === "Hors plan";
+      const rows = [];
+      rows.push(`<div class="tr-line"><span>Séances</span><b>${s.nb}</b></div>`);
+      rows.push(`<div class="tr-line"><span>Volume</span><b>${km(s.km, 1)} km</b></div>`);
+      rows.push(`<div class="tr-line"><span>Durée moy</span><b>${s.nb ? fmtDur(s.durs / s.nb) : "—"}</b></div>`);
+      if (s.paceMoy != null && !isHors) {
+        let ecart = "";
+        if (s.cibleSec) {
+          const diff = Math.round(s.paceMoy - s.cibleSec);
+          const cls = Math.abs(diff) <= 5 ? "" : diff < 0 ? "up" : "down";
+          const sign = diff > 0 ? "+" : "";
+          ecart = ` <span class="tr-ecart ${cls}">${sign}${diff}s</span>`;
+        }
+        rows.push(`<div class="tr-line"><span>Allure moy</span><b>${fmtPace(s.paceMoy)}/km${ecart}</b></div>`);
+        if (s.cibleSec) rows.push(`<div class="tr-line"><span>Allure cible</span><b class="muted">${fmtPace(s.cibleSec)}/km</b></div>`);
+      } else if (isInterval) {
+        rows.push(`<div class="tr-line tr-note"><span class="muted small">Allure moyenne non pertinente (fractionné)</span></div>`);
+        if (s.cibleSec) rows.push(`<div class="tr-line"><span>Allure cible bloc</span><b>${fmtPace(s.cibleSec)}/km</b></div>`);
+      }
+      if (s.fcMoy) rows.push(`<div class="tr-line"><span>FC moy</span><b>${s.fcMoy} bpm</b></div>`);
+      grid.appendChild(el(`
+        <div class="type-card ${isHors ? "hors" : ""}">
+          <div class="tc-head">
+            <span class="tc-ic">${typeIcon(s.type === "Renfo" ? "Renfo" : s.type)}</span>
+            <span class="tc-name">${escapeHtml(s.type)}</span>
+          </div>
+          <div class="tc-body">${rows.join("")}</div>
+        </div>`));
+    });
+    root.appendChild(grid);
+  }
 
-  root.appendChild(el(`<h2 class="section-title">Dernières activités</h2>`));
-  const rows = [...ACTS].reverse().map((a) => `
+  /* ---------- Best efforts ---------- */
+  root.appendChild(el(`<h2 class="section-title">Meilleurs efforts <span class="sub">estimés depuis l'allure moyenne sur la sortie complète</span></h2>`));
+  const eg = el(`<div class="efforts-grid"></div>`);
+  [
+    { d: 5, l: "5 km" },
+    { d: 10, l: "10 km" },
+    { d: 15, l: "15 km" },
+    { d: 21.0975, l: "Semi" },
+    { d: 30, l: "30 km" },
+  ].forEach(({ d, l }) => {
+    const b = bestEffort(d);
+    eg.appendChild(el(`
+      <div class="effort-card">
+        <div class="e-label">${l}</div>
+        <div class="e-val">${b ? fmtDur(b.tempsSec) : "—"}</div>
+        <div class="e-pace">${b ? fmtPace(b.paceSec) + " /km" : ""}</div>
+        <div class="e-when">${b ? fmtDate(b.date, true) : "aucune séance ≥ " + km(d, 0) + " km"}</div>
+      </div>`));
+  });
+  root.appendChild(eg);
+
+  /* ---------- Répartition volume par type (via plan) ---------- */
+  root.appendChild(el(`<h2 class="section-title">Répartition du volume <span class="sub">par type planifié · pendant la prépa</span></h2>`));
+  const totalRep = parType.reduce((t, s) => t + s.km, 0);
+  const repCard = el(`<div class="card"></div>`);
+  if (!totalRep) {
+    repCard.appendChild(el(`<div class="muted small">Aucune séance dans la période.</div>`));
+  } else {
+    parType.slice().sort((a, b) => b.km - a.km).forEach((s) => {
+      const pct = Math.round((s.km / totalRep) * 100);
+      repCard.appendChild(el(`
+        <div style="margin:8px 0">
+          <div style="display:flex;justify-content:space-between;font-size:.88rem"><span>${escapeHtml(s.type)}</span><span class="muted">${km(s.km, 0)} km · ${pct}%</span></div>
+          <div class="bar"><span style="width:${pct}%"></span></div>
+        </div>`));
+    });
+  }
+  root.appendChild(repCard);
+
+  /* ---------- Dernières activités ---------- */
+  root.appendChild(el(`<h2 class="section-title">Dernières activités <span class="sub">avec type détecté depuis le plan</span></h2>`));
+  const rows = [...joined].reverse().slice(0, 20).map((a) => `
     <tr>
       <td>${fmtDate(a.date, true)}</td>
-      <td>${a.titre || a.type || "—"}</td>
+      <td>${a.planType ? `<span class="type-chip">${escapeHtml(a.planType)}</span>` : `<span class="type-chip hors">Hors plan</span>`}</td>
+      <td>${escapeHtml((a.planned && a.planned.titre) || a.titre || a.type || "—")}</td>
       <td>${km(a.distanceKm)}</td>
       <td>${fmtDur(a.dureeSec)}</td>
       <td>${fmtPace(a.allureMoySecKm)}</td>
       <td>${a.fcMoy || "—"}</td>
-      <td>${a.cadenceMoy || "—"}</td>
     </tr>`).join("");
   root.appendChild(el(`
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Date</th><th>Séance</th><th>Km</th><th>Durée</th><th>Allure</th><th>FC</th><th>Cad.</th></tr></thead>
+        <thead><tr><th>Date</th><th>Type</th><th>Séance</th><th>Km</th><th>Durée</th><th>Allure</th><th>FC</th></tr></thead>
         <tbody>${rows}</tbody>
       </table>
     </div>`));
-
-  chartLine("dist", document.getElementById("cv-dist"), labels, ACTS.map((a) => a.distanceKm), "Distance (km)", CHART_COLORS.accent);
-  chartAllure(document.getElementById("cv-allure"), labels, ACTS.map((a) => a.allureMoySecKm));
-  chartLine("fc", document.getElementById("cv-fc"), labels, ACTS.map((a) => a.fcMoy), "FC moy", CHART_COLORS.ok);
-  chartLine("cad", document.getElementById("cv-cad"), labels, ACTS.map((a) => a.cadenceMoy), "Cadence", CHART_COLORS.warn);
 }
 
+/* ------------------------------------------------------------------ */
+/* Journal                                                             */
+/* ------------------------------------------------------------------ */
 const MOTS_BLESSURE = /\b(blessure|douleur|gêne|gene|tendon|achille|genou|mollet|cheville|contracture|fatigue|repos|kiné|kine)\w*/gi;
 const MOTS_METEO = /\b(canicule|chaleur|pluie|vent|froid|neige|humidit[ée])\w*/gi;
 
@@ -407,7 +714,7 @@ function renderJournal() {
   const root = document.getElementById("tab-journal");
   const entries = (JOURNAL || []).filter((e) => e.titre && e.titre.toLowerCase().includes("semaine"));
   if (!entries.length) {
-    root.innerHTML = `<div class="empty">Journal vide.<br>Écris ton ressenti par semaine dans <b>data/journal.md</b> (sections <code>## Semaine N</code>).</div>`;
+    root.innerHTML = `<div class="empty">Journal vide.<br>Il sera rempli automatiquement par <b>/prepa-update</b>.</div>`;
     return;
   }
   root.innerHTML = "";
@@ -428,14 +735,141 @@ function renderJournal() {
   root.appendChild(card);
 }
 
-function escapeHtml(s) {
-  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+/* ------------------------------------------------------------------ */
+/* Profil                                                              */
+/* ------------------------------------------------------------------ */
+function renderProfil() {
+  const root = document.getElementById("tab-profil");
+  if (!OBJ.course) {
+    root.innerHTML = `<div class="empty">Aucune prépa initialisée.</div>`;
+    return;
+  }
+  root.innerHTML = "";
+  const c = OBJ.course;
+
+  /* Résumé prépa */
+  const pairs = [];
+  if (c.nom) pairs.push(["Course", c.nom + (c.distanceKm ? ` (${km(c.distanceKm)} km)` : "")]);
+  if (c.date) pairs.push(["Date", fmtDate(c.date, true)]);
+  if (OBJ.chronoVise) pairs.push(["Objectif", OBJ.chronoVise]);
+  if (OBJ.dateDebutPrepa) pairs.push(["Début prépa", fmtDate(OBJ.dateDebutPrepa, true)]);
+  if (OBJ.nbSemaines) pairs.push(["Durée", OBJ.nbSemaines + " semaines"]);
+  if (OBJ.frequenceSeancesParSemaine) pairs.push(["Fréquence cible", OBJ.frequenceSeancesParSemaine + " séances / sem."]);
+  if (OBJ.volumeDepartKmSemaine) pairs.push(["Volume de départ", OBJ.volumeDepartKmSemaine + " km / sem."]);
+
+  root.appendChild(el(`<h2 class="section-title">Prépa</h2>`));
+  const card = el(`<div class="card"><div class="pair-list"></div></div>`);
+  const pl = card.querySelector(".pair-list");
+  pairs.forEach(([k, v]) => {
+    pl.appendChild(el(`<div class="k">${escapeHtml(k)}</div>`));
+    pl.appendChild(el(`<div class="v">${escapeHtml(v)}</div>`));
+  });
+  root.appendChild(card);
+
+  /* Références */
+  if (OBJ.references && Object.keys(OBJ.references).length) {
+    root.appendChild(el(`<h2 class="section-title">Références</h2>`));
+    const rc = el(`<div class="card"><div class="pair-list"></div></div>`);
+    const rl = rc.querySelector(".pair-list");
+    Object.entries(OBJ.references).forEach(([k, v]) => {
+      rl.appendChild(el(`<div class="k">${escapeHtml(humanize(k))}</div>`));
+      rl.appendChild(el(`<div class="v">${escapeHtml(String(v))}</div>`));
+    });
+    root.appendChild(rc);
+  }
+
+  /* Allures cibles */
+  if (OBJ.alluresCibles && Object.keys(OBJ.alluresCibles).length) {
+    root.appendChild(el(`<h2 class="section-title">Allures cibles</h2>`));
+    const grid = el(`<div class="allures-grid"></div>`);
+    Object.entries(OBJ.alluresCibles).forEach(([k, a]) => {
+      grid.appendChild(el(`
+        <div class="allure-tile">
+          <div class="a-key">${escapeHtml(k)}</div>
+          <div class="a-val">${escapeHtml(a.affichage || "—")}<span class="unit">/km</span></div>
+          ${a.note ? `<div class="a-note">${escapeHtml(a.note)}</div>` : ""}
+        </div>`));
+    });
+    root.appendChild(grid);
+  }
+
+  /* Séances signature */
+  const favs = OBJ.seancesFavorites || [];
+  if (favs.length) {
+    root.appendChild(el(`<h2 class="section-title">Séances signature</h2>`));
+    const grid = el(`<div class="grid ${favs.length > 1 ? "grid-2" : ""}"></div>`);
+    favs.forEach((f) => {
+      const meta = [];
+      if (f.distanceKm) meta.push("📏 " + km(f.distanceKm) + " km");
+      if (f.frequenceSouhaitee) meta.push("🔁 " + escapeHtml(f.frequenceSouhaitee));
+      grid.appendChild(el(`
+        <div class="card">
+          <div class="stitle" style="font-weight:650">
+            <span class="stype" style="width:auto;padding:4px 10px">${escapeHtml(f.type || "?")}</span>
+            <span>${escapeHtml(f.nom || "Séance")}</span>
+          </div>
+          ${f.description ? `<div class="sdesc" style="margin-top:8px">${escapeHtml(f.description)}</div>` : ""}
+          ${meta.length ? `<div class="sallure" style="margin-top:8px">${meta.join(" · ")}</div>` : ""}
+          ${f.contexte ? `<div class="muted small" style="margin-top:6px">${escapeHtml(f.contexte)}</div>` : ""}
+        </div>`));
+    });
+    root.appendChild(grid);
+  }
+
+  /* Renforcement */
+  if (OBJ.renforcement) {
+    const r = OBJ.renforcement;
+    root.appendChild(el(`<h2 class="section-title">Renforcement</h2>`));
+    const rc = el(`<div class="card"></div>`);
+    const line = [];
+    if (r.actif != null) line.push(r.actif ? "Actif" : "Inactif");
+    if (r.frequenceParSemaine) line.push(r.frequenceParSemaine + "×/sem.");
+    if (line.length) rc.appendChild(el(`<div style="font-weight:600;margin-bottom:6px">${escapeHtml(line.join(" · "))}</div>`));
+    if (r.materiel && r.materiel.length) {
+      const chips = el(`<div class="chips" style="margin-bottom:8px"></div>`);
+      r.materiel.forEach((m) => chips.appendChild(el(`<span class="chip">${escapeHtml(m)}</span>`)));
+      rc.appendChild(chips);
+    }
+    if (r.focus) rc.appendChild(el(`<div class="sdesc">${escapeHtml(r.focus)}</div>`));
+    root.appendChild(rc);
+  }
+
+  /* Blessures */
+  if (OBJ.blessures && OBJ.blessures.length) {
+    root.appendChild(el(`<h2 class="section-title">Blessures suivies</h2>`));
+    OBJ.blessures.forEach((b) => {
+      const zone = typeof b === "string" ? b : b.zone;
+      const box = el(`<div class="callout danger" style="margin-bottom:10px"></div>`);
+      box.appendChild(el(`<div style="font-weight:650">🩹 ${escapeHtml(zone || "—")}</div>`));
+      if (b && b.statut) box.appendChild(el(`<div class="muted small" style="margin-top:4px">${escapeHtml(b.statut)}</div>`));
+      if (b && b.consignes) box.appendChild(el(`<div style="margin-top:6px;font-size:.9rem">${escapeHtml(b.consignes)}</div>`));
+      root.appendChild(box);
+    });
+  }
+
+  /* Contraintes */
+  if (OBJ.contraintes && OBJ.contraintes.length) {
+    root.appendChild(el(`<h2 class="section-title">Contraintes</h2>`));
+    OBJ.contraintes.forEach((c) => {
+      const box = el(`<div class="callout warn" style="margin-bottom:10px"></div>`);
+      const head = [c.type, c.periode].filter(Boolean).map(escapeHtml).join(" · ");
+      if (head) box.appendChild(el(`<div style="font-weight:650">${head}</div>`));
+      if (c.detail) box.appendChild(el(`<div style="margin-top:4px;font-size:.9rem">${escapeHtml(c.detail)}</div>`));
+      root.appendChild(box);
+    });
+  }
+
+  /* Commentaires libres */
+  if (OBJ.commentairesLibres) {
+    root.appendChild(el(`<h2 class="section-title">Note libre</h2>`));
+    root.appendChild(el(`<div class="card"><div class="sdesc">${escapeHtml(OBJ.commentairesLibres)}</div></div>`));
+  }
 }
 
 /* ------------------------------------------------------------------ */
-/* Sélecteur profil / prépa                                            */
+/* Sélecteur + tabs + thème                                            */
 /* ------------------------------------------------------------------ */
-const RENDERERS = { dashboard: renderDashboard, plan: renderPlan, stats: renderStats, journal: renderJournal };
+const RENDERERS = { dashboard: renderDashboard, stats: renderStats, journal: renderJournal, profil: renderProfil };
 let RENDERED = {};
 let CURRENT_TAB = "dashboard";
 
@@ -471,6 +905,7 @@ function applySelection(profil, prepa) {
   PLAN = (prepa && prepa.plan) || { semaines: [] };
   ACTS = (prepa && prepa.activites) || [];
   JOURNAL = (prepa && prepa.journal) || [];
+  VIEW_WEEK_IDX = null;
   RENDERED = {};
   saveSelection();
   renderHeader();
@@ -528,9 +963,6 @@ function populateSelectors() {
   });
 }
 
-/* ------------------------------------------------------------------ */
-/* Navigation onglets                                                  */
-/* ------------------------------------------------------------------ */
 function activateTab(name) {
   CURRENT_TAB = name;
   document.querySelectorAll(".tab").forEach((t) => t.classList.toggle("active", t.dataset.tab === name));
@@ -541,6 +973,27 @@ function setupTabs() {
   document.querySelectorAll(".tab").forEach((t) => t.addEventListener("click", () => activateTab(t.dataset.tab)));
 }
 
+/* Thème clair / sombre */
+function currentTheme() {
+  return document.documentElement.getAttribute("data-theme") || "dark";
+}
+function applyTheme(t) {
+  document.documentElement.setAttribute("data-theme", t);
+  try { localStorage.setItem(LS_THEME, t); } catch (_) {}
+  const btn = document.getElementById("theme-toggle");
+  if (btn) btn.textContent = t === "light" ? "☀️" : "🌙";
+  refreshChartsTheme();
+  RENDERED = {};
+  activateTab(CURRENT_TAB);
+}
+function setupTheme() {
+  const btn = document.getElementById("theme-toggle");
+  if (!btn) return;
+  btn.textContent = currentTheme() === "light" ? "☀️" : "🌙";
+  btn.addEventListener("click", () => applyTheme(currentTheme() === "light" ? "dark" : "light"));
+}
+
 /* Init */
 setupTabs();
+setupTheme();
 populateSelectors();

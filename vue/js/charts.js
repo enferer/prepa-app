@@ -1,20 +1,34 @@
 /* charts.js — construction des graphiques Chart.js pour la prépa. */
 
-const CHART_COLORS = {
-  accent: "#ff6b35",
-  accentSoft: "rgba(255,107,53,0.35)",
-  muted: "#93a1ad",
-  grid: "rgba(147,161,173,0.12)",
-  info: "#4aa8ff",
-  ok: "#35c46b",
-  warn: "#f4b740",
-  text: "#e8edf1",
-};
+function _cssVar(name, fallback) {
+  const v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  return v || fallback;
+}
 
-Chart.defaults.color = CHART_COLORS.muted;
+let CHART_COLORS = {};
+function _rebuildColors() {
+  CHART_COLORS = {
+    accent: _cssVar("--accent", "#ff6b35"),
+    accentSoft: _cssVar("--accent-soft", "rgba(255,107,53,0.35)"),
+    muted: _cssVar("--muted", "#93a1ad"),
+    grid: "rgba(147,161,173,0.18)",
+    info: _cssVar("--info", "#4aa8ff"),
+    ok: _cssVar("--ok", "#35c46b"),
+    warn: _cssVar("--warn", "#f4b740"),
+    text: _cssVar("--text", "#e8edf1"),
+  };
+  Chart.defaults.color = CHART_COLORS.muted;
+  Chart.defaults.borderColor = CHART_COLORS.grid;
+}
+_rebuildColors();
 Chart.defaults.font.family =
   "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif";
-Chart.defaults.borderColor = CHART_COLORS.grid;
+
+function refreshChartsTheme() {
+  _rebuildColors();
+  Object.values(_charts).forEach((c) => { try { c.destroy(); } catch (_) {} });
+  for (const k in _charts) delete _charts[k];
+}
 
 const _charts = {};
 function _register(id, chart) {
@@ -30,7 +44,6 @@ function baseScales(extra = {}) {
   };
 }
 
-/* Volume hebdo : prévu vs réalisé (barres groupées). */
 function chartVolume(canvas, labels, prevus, realises) {
   return _register(
     "volume",
@@ -53,7 +66,6 @@ function chartVolume(canvas, labels, prevus, realises) {
   );
 }
 
-/* Courbe générique (distance, FC, cadence dans le temps). */
 function chartLine(id, canvas, labels, data, label, color, opts = {}) {
   return _register(
     id,
@@ -85,7 +97,6 @@ function chartLine(id, canvas, labels, data, label, color, opts = {}) {
   );
 }
 
-/* Allure : axe Y inversé (plus haut = plus rapide) et formaté m:ss. */
 function chartAllure(canvas, labels, secKm) {
   return _register(
     "allure",
