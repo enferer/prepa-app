@@ -15,3 +15,5 @@ Bilan à chaud : très grosse semaine, bon ressenti global. Chaleur présente ma
 
 ## Semaine 4 (10/08 → 16/08)
 Semaine de décharge. Vigilance cheville sur la SL du dimanche : plan à 16 km, mais réduction à 13-14 km assumée si la cheville tire.
+
+**Bilan à chaud** : semaine horrible côté météo — canicule mer/jeu/ven (>35 °C). VMA du mercredi et EF du vendredi sacrifiées, remplacées par 2 EF (jeu 6 km, sam 7,2 km). Pas de renfo cette semaine (2 séances zappées). SL 15,5 km bouclée dimanche à 6:30 FC 144 par 26 °C, mais **pire ressenti depuis le début de la prépa** : essoufflement d'entrée, FC qui monte haut direct, envie de couper à 10 km — allé au bout par force mentale. Chiffres pourtant identiques aux SL précédentes → probablement l'accumulation chaleur + déshydratation. **Bonne nouvelle : la décharge a fait beaucoup de bien à la cheville, gêne bien plus légère qu'en début de prépa.** Volume 36,7/38 : cible tenue. Demande explicite : passer la SL de S5 au samedi (temp qui baissent).

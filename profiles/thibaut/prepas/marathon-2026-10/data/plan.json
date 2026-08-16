@@ -251,15 +251,15 @@
       "dateDebut": "2026-08-10",
       "bloc": "Base / fondation (décharge)",
       "volumeCibleKm": 38,
-      "note": "Semaine de décharge : volume réduit, VMA courte pour rappel de vitesse.",
+      "note": "🔥 Canicule mer/jeu/ven (>35 °C) → VMA sacrifiée, séances remplacées par de l'EF. Cheville nettement mieux. SL du dim très dure au ressenti malgré 26 °C.",
       "seances": [
         {
           "date": "2026-08-11",
           "type": "EF",
           "titre": "Footing EF",
           "description": "8 km EF facile.",
-          "statut": "a_venir",
-          "commentaireCoach": "",
+          "statut": "validee",
+          "commentaireCoach": "8,0 km @ 6:34 FC 128 (Villeneuve-d'Ascq). Allure et FC pile poil dans la cible EF. Nickel.",
           "distanceCibleKm": 8,
           "alluresCibles": "EF 6:35 (facile)"
         },
@@ -268,8 +268,8 @@
           "type": "Renfo",
           "titre": "Renfo léger / gainage",
           "description": "Gainage + proprio cheville D, sans charge.",
-          "statut": "a_venir",
-          "commentaireCoach": "Décharge : renfo léger uniquement.",
+          "statut": "manquee",
+          "commentaireCoach": "Zappé. En décharge ce n'est pas dramatique, mais on remet le renfo à 2/sem dès S5 : la cheville s'améliore, il ne faut pas relâcher la prévention.",
           "dureeCibleMin": 20,
           "focus": "Gainage · mobilité · proprioception cheville D"
         },
@@ -278,8 +278,8 @@
           "type": "VMA",
           "titre": "VMA courte — 8×45 s",
           "description": "2 km éch. + 8×(45 s à VMA ~4:20 / 45 s trot) + 2 km RAC, terrain plat souple.",
-          "statut": "a_venir",
-          "commentaireCoach": "Rappel de vitesse court, sur surface souple pour ménager la cheville.",
+          "statut": "manquee",
+          "commentaireCoach": "🔥 Sautée à cause de la canicule (>35 °C) — décision assumée, tu as bien fait : de la VMA sous cette chaleur, c'est se griller pour rien. Pas de rattrapage, on avance.",
           "distanceCibleKm": 8,
           "alluresCibles": "VMA 4:20 · récup trot"
         },
@@ -288,18 +288,28 @@
           "type": "Renfo",
           "titre": "Renfo léger / gainage",
           "description": "Gainage + proprio.",
-          "statut": "a_venir",
-          "commentaireCoach": "Groupé avec le jour dur.",
+          "statut": "manquee",
+          "commentaireCoach": "Zappé. Idem : on remet 2/sem dès S5.",
           "dureeCibleMin": 20,
           "focus": "Gainage · proprio cheville D"
         },
         {
-          "date": "2026-08-14",
+          "date": "2026-08-13",
           "type": "EF",
-          "titre": "Footing court + 4 lignes droites",
+          "titre": "Bonus — EF de remplacement (non prévue)",
+          "description": "EF ajoutée jeudi pour maintenir du volume malgré la canicule.",
+          "statut": "validee",
+          "commentaireCoach": "🎁 6,0 km @ 6:40 FC 136 — remplace en partie la VMA sacrifiée. Bonne idée par cette chaleur.",
+          "distanceCibleKm": 6,
+          "alluresCibles": "EF 6:35 (facile)"
+        },
+        {
+          "date": "2026-08-15",
+          "type": "EF",
+          "titre": "Footing court + 4 lignes droites (décalé au samedi)",
           "description": "6 km EF + 4×20 s.",
-          "statut": "a_venir",
-          "commentaireCoach": "",
+          "statut": "adaptee",
+          "commentaireCoach": "Décalé du vendredi (canicule) au samedi. 7,2 km @ 6:28 FC 138 — allure EF cohérente, un poil rapide mais rien de grave. Peut-être un tout petit fond de fatigue vu le ressenti du lendemain.",
           "distanceCibleKm": 6,
           "alluresCibles": "EF 6:35 (facile)"
         },
@@ -308,8 +318,8 @@
           "type": "SL",
           "titre": "Sortie longue 16 km (14 km si cheville tire)",
           "description": "SL 16 km en endurance. Porte de sortie : 13-14 km si la cheville se rappelle à toi.",
-          "statut": "a_venir",
-          "commentaireCoach": "SL de décharge : cible 16 km. Si la cheville tire dès les premiers km ou pendant, coupe à 13-14 km sans discussion — on est en décharge, l'objectif est d'absorber, pas de battre un record. Départ tôt, allure EF pure.",
+          "statut": "validee",
+          "commentaireCoach": "15,5 km @ 6:30 FC 144 : chiffres dans la cible, allure et FC identiques aux SL des semaines précédentes. MAIS ressenti très dur (essoufflement d'entrée, envie de couper à 10 km). Séance validée sur les chiffres, mais on garde en tête que le corps a subi la semaine de canicule + peut-être un début de déshydratation cumulée. Bravo pour être allé au bout, c'est aussi ça la préparation. La cheville s'améliore, c'est la vraie bonne nouvelle. Volume hebdo 36,7/38 : cible tenue malgré tout.",
           "distanceCibleKm": 16,
           "alluresCibles": "SL 6:15 · EF 6:35"
         }
@@ -320,15 +330,15 @@
       "dateDebut": "2026-08-17",
       "bloc": "Développement",
       "volumeCibleKm": 51,
-      "note": "Première SL avec allure marathon.",
+      "note": "🔄 SL décalée au SAMEDI 22/08 (baisse des températures). Structure : Mar EF · Mer côtes · Ven EF court · Sam SL. Première SL avec allure marathon.",
       "seances": [
         {
           "date": "2026-08-18",
           "type": "EF",
           "titre": "Footing EF",
-          "description": "9 km EF facile.",
+          "description": "9 km EF facile. Départ tôt si encore chaud.",
           "statut": "a_venir",
-          "commentaireCoach": "",
+          "commentaireCoach": "Reprise après une semaine subie. Si les jambes sont encore lourdes, ralentis franchement — le but est de relancer, pas de performer.",
           "distanceCibleKm": 9,
           "alluresCibles": "EF 6:35 (facile)"
         },
@@ -338,7 +348,7 @@
           "titre": "Renfo prévention (léger)",
           "description": "Gainage + proprio + excentrique mollet.",
           "statut": "a_venir",
-          "commentaireCoach": "Version courte le mardi.",
+          "commentaireCoach": "On reprend le renfo 2/sem : la cheville s'améliore, on entretient le boulot fait.",
           "dureeCibleMin": 20,
           "focus": "Gainage · proprio cheville D · excentrique mollet"
         },
@@ -348,7 +358,7 @@
           "titre": "Côte du terril (signature) — 7 A/R",
           "description": "Éch. 3 km + 7 A/R (montée courue ~5:45, descente MARCHÉE) + 3 km RAC.",
           "statut": "a_venir",
-          "commentaireCoach": "Ta signature, passage à 7 A/R. Si la cheville ne tire vraiment plus, dis-le moi et on pourra bientôt trotter la descente.",
+          "commentaireCoach": "Ta signature, passage à 7 A/R. Si la cheville ne tire plus du tout, dis-le moi et on trottera la descente à partir de S6.",
           "distanceCibleKm": 13,
           "alluresCibles": "Montée ~5:45 · descente MARCHÉE (récup)"
         },
@@ -358,7 +368,7 @@
           "titre": "Renfo prévention + force (lourd)",
           "description": "Excentrique tibial ant. & mollet, chaîne postérieure, gainage.",
           "statut": "a_venir",
-          "commentaireCoach": "Renfo lourd le jour dur.",
+          "commentaireCoach": "Renfo lourd groupé avec le jour dur. 3 jours avant la SL du samedi = récup OK.",
           "dureeCibleMin": 30,
           "focus": "Excentrique tibial ant. & mollet · proprio · gainage · chaîne postérieure"
         },
@@ -368,17 +378,17 @@
           "titre": "Footing court + lignes droites",
           "description": "7 km EF + 5×20 s.",
           "statut": "a_venir",
-          "commentaireCoach": "",
+          "commentaireCoach": "Veille de SL : LD légères pour réveiller la vitesse, pas plus.",
           "distanceCibleKm": 7,
           "alluresCibles": "EF 6:35 (facile)"
         },
         {
-          "date": "2026-08-23",
+          "date": "2026-08-22",
           "type": "SL",
-          "titre": "Sortie longue + allure marathon (première dose)",
-          "description": "SL 22 km : 19 km EF puis 3 km à AM (5:34) en fin.",
+          "titre": "Sortie longue + allure marathon (première dose) — SAMEDI",
+          "description": "SL 22 km : 19 km EF puis 3 km à AM (5:34) en fin. Décalée au samedi (baisse des températures).",
           "statut": "a_venir",
-          "commentaireCoach": "⭐ Première SL avec AM : 3 km à 5:34 en fin. Début du vrai travail marathon = tenir l'allure sur jambes fatiguées.",
+          "commentaireCoach": "⭐ Première SL avec AM : 3 km à 5:34 en fin. Début du vrai travail marathon = tenir l'allure sur jambes fatiguées. Départ tôt. Deux garde-fous vu le ressenti de dim dernier : (1) hydrate-toi cette semaine (bidon eau sur toi tous les jours), (2) si dès les 5 premiers km tu ressens la même sensation d'essoufflement, tu supprimes le bloc AM et tu fais 22 km EF pur — pas de négociation, on préserve. La règle : par grosse chaleur ou fatigue, on raisonne effort/FC, pas allure.",
           "distanceCibleKm": 22,
           "alluresCibles": "EF 6:15 · finish AM 5:34"
         }
