@@ -4,8 +4,8 @@
     "distanceKm": 42.195,
     "date": "2026-10-25"
   },
-  "chronoVise": "3h55",
-  "chronoViseSec": 14100,
+  "chronoVise": "4h00",
+  "chronoViseSec": 14400,
   "dateDebutPrepa": "2026-07-19",
   "nbSemaines": 14,
   "frequenceSeancesParSemaine": 4,
@@ -19,7 +19,7 @@
     "EF": {
       "secKm": 395,
       "affichage": "6:35",
-      "note": "Facile, conversation possible. Correspond à ton EF réelle actuelle."
+      "note": "Facile, conversation possible. Correspond à ton EF réelle actuelle (6:34 mesurée)."
     },
     "SL": {
       "secKm": 375,
@@ -27,19 +27,19 @@
       "note": "Sortie longue de base."
     },
     "AM": {
-      "secKm": 334,
-      "affichage": "5:34",
-      "note": "Allure marathon cible = allure objectif course."
+      "secKm": 341,
+      "affichage": "5:41",
+      "note": "Allure marathon cible = 4h00 pile. Vise 5:41-5:43 sur les 10 premiers km le jour J."
     },
     "Seuil": {
-      "secKm": 310,
-      "affichage": "5:10",
-      "note": "Tempo confortablement dur, ~allure semi."
+      "secKm": 315,
+      "affichage": "5:15",
+      "note": "Tempo confortablement dur, ~allure semi. Volontairement prudent vs ton RP 10 km (4:47) pour préserver la récup."
     },
     "VMA": {
-      "secKm": 260,
-      "affichage": "4:20",
-      "note": "Fractionnés courts, rappel de vitesse."
+      "secKm": 270,
+      "affichage": "4:30",
+      "note": "Fractionnés courts. Recalé de 4:20 à 4:30 : 4:20 était plus rapide que ton allure 3-5 km réelle."
     }
   },
   "blessures": [
@@ -80,5 +80,5 @@
     ],
     "focus": "Prévention cheville droite (excentrique tibial antérieur & mollet à l'élastique + proprioception) + gainage + chaîne postérieure (ischios/fessiers). 2x/sem en base/développement, réduit à 1x/sem en spécifique, gainage léger seulement en affûtage."
   },
-  "commentairesLibres": "Très bonne base en EF, mais a rarement travaillé les allures un peu plus rapides sur longue distance. Aime les belles sorties longues de 15/20 km (faites jusqu'ici entièrement en EF). Premier marathon. → Le plan développe progressivement l'allure marathon DANS les sorties longues (blocs à AM croissants : 3 → 8 → 12 → 15 → 18 km) tout en préservant le plaisir des SL."
+  "commentairesLibres": "Très bonne base en EF, mais a rarement travaillé les allures plus rapides sur longue distance. Aime les belles sorties longues (faites jusqu'ici entièrement en EF). Premier marathon. → Objectif recalé de 3h55 à 4h00 le 20/08 : l'équivalence VDOT du RP 10 km donnait ~3h50, mais l'endurance spécifique n'est pas construite (jamais plus de 25,4 km, jamais un km à AM sur du long). Sub-4h sécurisé, avec marge sur la fin de course. → Prépa maintenue à 4 séances/sem (récupération déjà tendue à 45 km/sem). Pic de volume abaissé de 63 à 56 km, SL plafonnée à 28 km (~2h55) au lieu de 32. Le travail à AM est progressif DANS les SL : 3 → 6 → 8 → 8 → 12 km."
 }
