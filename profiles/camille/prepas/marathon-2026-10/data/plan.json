@@ -159,7 +159,7 @@
           "date": "2026-07-26",
           "type": "SL",
           "titre": "Sortie longue 15 km",
-          "description": "13 km en endurance.",
+          "description": "15 km en endurance.",
           "statut": "validee",
           "commentaireCoach": "14,8 km @6:18, FC 138 (max 166). Pile l'allure SL, FC remarquablement basse pour 15 km : très belle sortie. Point de vigilance : gêne légère au genou signalée sur cette SL — on en tient compte pour la suite.",
           "distanceCibleKm": 15,
@@ -297,7 +297,7 @@
           "date": "2026-08-09",
           "type": "SL",
           "titre": "Sortie longue 13 km",
-          "description": "12 km EF, sortie de décharge.",
+          "description": "13 km EF, sortie de décharge.",
           "statut": "validee",
           "commentaireCoach": "12,8 km @6:20, FC 148. Pile l'allure SL, FC très saine : SL de décharge nickel.",
           "distanceCibleKm": 13,
@@ -366,7 +366,7 @@
           "date": "2026-08-16",
           "type": "SL",
           "titre": "Sortie longue 19 km",
-          "description": "16 km EF.",
+          "description": "19 km EF.",
           "statut": "validee",
           "commentaireCoach": "19,1 km @6:23, FC 148 (max 164). Pile l'allure SL, FC excellente pour la distance : très belle SL, tu montes en confiance. À signaler : ta petite gêne genou persiste (disparaît à l'arrêt) — reste vigilante.",
           "distanceCibleKm": 19,
@@ -447,8 +447,8 @@
       "numero": 7,
       "bloc": "Développement",
       "dateDebut": "2026-08-24",
-      "volumeCibleKm": 43,
-      "note": "Semaine réagencée à ta demande : SL avancée au vendredi 28 (juste avant le départ en vacances le 29), EF basculée au dimanche. Seuil maintenu mercredi en version complète à ta demande. Tendon revenu à zéro → on reprend normalement, mais surfaces propres uniquement sur la qualité.",
+      "volumeCibleKm": 42,
+      "note": "Semaine réagencée : SL avancée au vendredi 28 (juste avant le départ en vacances le 29), EF basculée au dimanche. Seuil allégé à 2×3 km + 1×2 km (au lieu de 3×3 km demandé initialement) : trop dense une semaine après l'alerte au tendon et 2 jours avant la SL. Tendon revenu à zéro → on reprend normalement, mais surfaces propres uniquement sur la qualité.",
       "seances": [
         {
           "date": "2026-08-24",
@@ -473,11 +473,11 @@
         {
           "date": "2026-08-26",
           "type": "Seuil",
-          "titre": "Seuil 3×3 km",
-          "description": "2 km éch, 3×3 km à 5:20/km (récup 2 min), 1 km rac.",
-          "statut": "a_venir",
-          "commentaireCoach": "Version complète maintenue à ta demande. C'est la séance la plus dense du bloc et elle n'est qu'à 2 jours de la SL : deux conditions non négociables — (1) surface propre et sèche, surtout pas de pavés ; (2) tu tiens 5:20, tu ne descends pas en dessous, l'excès de vitesse ici se paiera vendredi. Au moindre signal du tendon (échauffement compris), tu coupes le 3e bloc et tu finis en EF.",
-          "distanceCibleKm": 10,
+          "titre": "Seuil 2×3 km + 1×2 km",
+          "description": "2 km éch, 2×3 km puis 1×2 km à 5:20/km (récup 2 min trot), 1 km rac.",
+          "statut": "modifiee",
+          "commentaireCoach": "Allégé : 3×3 km faisait +50 % sur ta meilleure séance de seuil, une semaine après l'alerte au tendon et 2 jours avant la SL. Impérativement sur bitume sec ou piste — jamais de pavés mouillés.",
+          "distanceCibleKm": 11,
           "alluresCibles": "Seuil 5:20 · EF 6:40 éch/rac"
         },
         {
@@ -516,8 +516,8 @@
       "numero": 8,
       "bloc": "Développement",
       "dateDebut": "2026-08-31",
-      "volumeCibleKm": 30,
-      "note": "VACANCES (29/08→09/09) + décharge. Cours souple, en groupe, sans jour fixe. L'important : bouger sans forcer.",
+      "volumeCibleKm": 34,
+      "note": "VACANCES (29/08→09/09) + décharge. Cours souple, en groupe, sans montre si tu veux. SL portée à 16 km pour préparer la reprise en douceur.",
       "seances": [
         {
           "date": "2026-08-31",
@@ -562,11 +562,11 @@
         {
           "date": "2026-09-06",
           "type": "SL",
-          "titre": "Sortie longue 12 km",
-          "description": "10 km en endurance, allure libre.",
-          "statut": "a_venir",
-          "commentaireCoach": "Décharge / vacances : SL 10→12 km, souple, possible en groupe.",
-          "distanceCibleKm": 12,
+          "titre": "Sortie longue 16 km",
+          "description": "16 km en endurance, allure libre, en groupe si tu veux.",
+          "statut": "modifiee",
+          "commentaireCoach": "Portée de 12 à 16 km : tu as du temps en vacances, et ça maintient l'élan de ta SL de 22 km. Ça divise par deux le saut de charge à la rentrée.",
+          "distanceCibleKm": 16,
           "alluresCibles": "SL 6:20 · EF 6:40"
         }
       ]
@@ -575,17 +575,17 @@
       "numero": 9,
       "bloc": "Développement",
       "dateDebut": "2026-09-07",
-      "volumeCibleKm": 48,
-      "note": "Retour de vacances : on reprend le fil, seuil + SL qui remonte.",
+      "volumeCibleKm": 42,
+      "note": "Retour de vacances : volume ramené de 48 à 42 km pour éviter un saut de +60 %. Premier contact avec l'allure marathon en fin de SL.",
       "seances": [
         {
           "date": "2026-09-07",
           "type": "EF",
           "titre": "Footing",
-          "description": "8 km EF.",
-          "statut": "a_venir",
+          "description": "7 km EF.",
+          "statut": "modifiee",
           "commentaireCoach": "Facile = facile. C'est le volume EF qui construit ton moteur marathon, ne le cours pas trop vite.",
-          "distanceCibleKm": 8,
+          "distanceCibleKm": 7,
           "alluresCibles": "6:40"
         },
         {
@@ -593,7 +593,7 @@
           "type": "Renfo",
           "titre": "Renfo bas du corps",
           "description": "Circuit force complet, 4 tours.",
-          "statut": "a_venir",
+          "statut": "modifiee",
           "commentaireCoach": "On relance la force après la coupure.",
           "dureeCibleMin": 40,
           "focus": "Chaîne postérieure, quadris/fessiers, gainage"
@@ -603,9 +603,9 @@
           "type": "Seuil",
           "titre": "Seuil 2×3 km",
           "description": "2 km éch, 2×3 km à 5:20/km (récup 2 min), 2 km rac.",
-          "statut": "a_venir",
+          "statut": "modifiee",
           "commentaireCoach": "Reprise en douceur de la qualité, ne cherche pas à rattraper d'un coup.",
-          "distanceCibleKm": 10,
+          "distanceCibleKm": 9,
           "alluresCibles": "Seuil 5:20 · EF 6:40 éch/rac"
         },
         {
@@ -613,7 +613,7 @@
           "type": "Renfo",
           "titre": "Gainage & stabilité",
           "description": "Circuit gainage + proprio.",
-          "statut": "a_venir",
+          "statut": "modifiee",
           "commentaireCoach": "Core d'entretien.",
           "dureeCibleMin": 25,
           "focus": "Gainage, proprioception, stabilité hanche/genou"
@@ -622,21 +622,21 @@
           "date": "2026-09-11",
           "type": "EF",
           "titre": "Footing",
-          "description": "8 km EF.",
-          "statut": "a_venir",
+          "description": "6 km EF.",
+          "statut": "modifiee",
           "commentaireCoach": "Facile = facile. C'est le volume EF qui construit ton moteur marathon, ne le cours pas trop vite.",
-          "distanceCibleKm": 8,
+          "distanceCibleKm": 6,
           "alluresCibles": "6:40"
         },
         {
           "date": "2026-09-13",
           "type": "SL",
-          "titre": "Sortie longue 22 km",
-          "description": "18 km en endurance.",
-          "statut": "a_venir",
-          "commentaireCoach": "SL 18→22 km, on relance après les vacances.",
-          "distanceCibleKm": 22,
-          "alluresCibles": "SL 6:20 · EF 6:40"
+          "titre": "Sortie longue 20 km (finish AM)",
+          "description": "20 km : 17 km en endurance ~6:20/km, puis 3 km à 5:41/km pour finir.",
+          "statut": "modifiee",
+          "commentaireCoach": "Première prise de contact avec l'allure marathon, sur jambes déjà fatiguées. 3 km seulement : on apprend le rythme, on ne cherche pas la performance.",
+          "distanceCibleKm": 20,
+          "alluresCibles": "SL 6:20 · finish AM 5:41"
         }
       ]
     },
@@ -644,17 +644,17 @@
       "numero": 10,
       "bloc": "Spécifique marathon",
       "dateDebut": "2026-09-14",
-      "volumeCibleKm": 52,
-      "note": "Début du spécifique : on ancre l'allure marathon (AM 5:41). Semaine la plus volumineuse jusqu'ici.",
+      "volumeCibleKm": 46,
+      "note": "Début du spécifique : on ancre l'allure marathon (AM 5:41). Volume lissé à 46 km. Premier point de contrôle sur l'objectif.",
       "seances": [
         {
           "date": "2026-09-14",
           "type": "EF",
           "titre": "Footing",
-          "description": "9 km EF.",
-          "statut": "a_venir",
+          "description": "7 km EF.",
+          "statut": "modifiee",
           "commentaireCoach": "Facile = facile. C'est le volume EF qui construit ton moteur marathon, ne le cours pas trop vite.",
-          "distanceCibleKm": 9,
+          "distanceCibleKm": 7,
           "alluresCibles": "6:40"
         },
         {
@@ -662,7 +662,7 @@
           "type": "Renfo",
           "titre": "Renfo entretien",
           "description": "Circuit force allégé, 3 tours.",
-          "statut": "a_venir",
+          "statut": "modifiee",
           "commentaireCoach": "En spécifique on réduit le renfo à 1 séance d'entretien : priorité à la course.",
           "dureeCibleMin": 30,
           "focus": "Chaîne postérieure, quadris/fessiers, gainage"
@@ -672,7 +672,7 @@
           "type": "AM",
           "titre": "Allure marathon 2×4 km",
           "description": "2 km éch, 2×4 km à 5:41/km (récup 3 min), 1 km rac.",
-          "statut": "a_venir",
+          "statut": "modifiee",
           "commentaireCoach": "Tu apprends à sentir ton allure course. Elle doit devenir un réflexe.",
           "distanceCibleKm": 11,
           "alluresCibles": "AM 5:41 · EF 6:40 éch/rac"
@@ -681,21 +681,21 @@
           "date": "2026-09-18",
           "type": "EF",
           "titre": "Footing",
-          "description": "8 km EF.",
-          "statut": "a_venir",
+          "description": "4 km EF léger.",
+          "statut": "modifiee",
           "commentaireCoach": "Facile = facile. C'est le volume EF qui construit ton moteur marathon, ne le cours pas trop vite.",
-          "distanceCibleKm": 8,
+          "distanceCibleKm": 4,
           "alluresCibles": "6:40"
         },
         {
           "date": "2026-09-20",
           "type": "SL",
-          "titre": "Sortie longue 24 km",
-          "description": "22 km en endurance.",
-          "statut": "a_venir",
-          "commentaireCoach": "SL 22→24 km + séance AM en semaine : place à l'endurance spécifique.",
+          "titre": "Sortie longue 24 km (2×4 km AM)",
+          "description": "24 km : 13 km EF, puis 2×4 km à 5:41/km (3 min EF entre), fin EF.",
+          "statut": "modifiee",
+          "commentaireCoach": "Point de contrôle n°1 : note ta FC sur les blocs. FC ≤ 158 et sensation soutenable = bon signe pour les 4h00.",
           "distanceCibleKm": 24,
-          "alluresCibles": "SL 6:20 · EF 6:40"
+          "alluresCibles": "SL 6:20 · blocs AM 5:41"
         }
       ]
     },
@@ -703,17 +703,17 @@
       "numero": 11,
       "bloc": "Spécifique marathon",
       "dateDebut": "2026-09-21",
-      "volumeCibleKm": 51,
-      "note": "SL avec blocs à allure marathon : la séance-clé de la spécifique.",
+      "volumeCibleKm": 48,
+      "note": "SL avec blocs à allure marathon : séance-clé et point de décision sur l'objectif chrono.",
       "seances": [
         {
           "date": "2026-09-21",
           "type": "EF",
           "titre": "Footing",
-          "description": "8 km EF.",
-          "statut": "a_venir",
+          "description": "7 km EF.",
+          "statut": "modifiee",
           "commentaireCoach": "Facile = facile. C'est le volume EF qui construit ton moteur marathon, ne le cours pas trop vite.",
-          "distanceCibleKm": 8,
+          "distanceCibleKm": 7,
           "alluresCibles": "6:40"
         },
         {
@@ -721,7 +721,7 @@
           "type": "Renfo",
           "titre": "Renfo entretien",
           "description": "Circuit force allégé, 3 tours.",
-          "statut": "a_venir",
+          "statut": "modifiee",
           "commentaireCoach": "Entretien de la force.",
           "dureeCibleMin": 30,
           "focus": "Chaîne postérieure, quadris/fessiers, gainage"
@@ -731,7 +731,7 @@
           "type": "Seuil",
           "titre": "Seuil 4×2 km",
           "description": "2 km éch, 4×2 km à 5:20/km (récup 90 s), 1 km rac.",
-          "statut": "a_venir",
+          "statut": "modifiee",
           "commentaireCoach": "On entretient le seuil pour garder de la vitesse sous le pied.",
           "distanceCibleKm": 10,
           "alluresCibles": "Seuil 5:20 · EF 6:40 éch/rac"
@@ -741,7 +741,7 @@
           "type": "EF",
           "titre": "Footing",
           "description": "5 km EF léger.",
-          "statut": "a_venir",
+          "statut": "modifiee",
           "commentaireCoach": "Court avant la grosse SL du dimanche.",
           "distanceCibleKm": 5,
           "alluresCibles": "6:40"
@@ -749,11 +749,11 @@
         {
           "date": "2026-09-27",
           "type": "SL",
-          "titre": "Sortie longue 28 km",
-          "description": "25 km : 12 km EF, puis 2×5 km à 5:41/km (3 min EF entre), fin EF.",
-          "statut": "a_venir",
-          "commentaireCoach": "SL 28 km : ta plus longue avant le pic. Allure SL stricte, c'est la fatigue qu'on travaille.",
-          "distanceCibleKm": 28,
+          "titre": "Sortie longue 26 km (2×5 km AM)",
+          "description": "26 km : 14 km EF, puis 2×5 km à 5:41/km (3 min EF entre), fin EF.",
+          "statut": "modifiee",
+          "commentaireCoach": "LE juge de paix de la prépa (≈2h39). Tenu proprement avec FC ≤ 160 → objectif 4h00 confirmé. Si tu dois lutter ou que la FC dépasse 165 → on recale sereinement à 4h10 (5:55/km).",
+          "distanceCibleKm": 26,
           "alluresCibles": "SL 6:20 · blocs AM 5:41"
         }
       ]
@@ -762,17 +762,17 @@
       "numero": 12,
       "bloc": "Spécifique marathon",
       "dateDebut": "2026-09-28",
-      "volumeCibleKm": 53,
-      "note": "Pic d'endurance : ta plus longue sortie (30 km). 3 semaines avant la course.",
+      "volumeCibleKm": 50,
+      "note": "Pic d'endurance : 30 km avec 15 km à allure marathon. 3 semaines avant la course.",
       "seances": [
         {
           "date": "2026-09-28",
           "type": "EF",
           "titre": "Footing",
-          "description": "7 km EF.",
-          "statut": "a_venir",
+          "description": "6 km EF.",
+          "statut": "modifiee",
           "commentaireCoach": "Facile = facile. C'est le volume EF qui construit ton moteur marathon, ne le cours pas trop vite.",
-          "distanceCibleKm": 7,
+          "distanceCibleKm": 6,
           "alluresCibles": "6:40"
         },
         {
@@ -780,7 +780,7 @@
           "type": "Renfo",
           "titre": "Renfo entretien",
           "description": "Circuit force allégé, 3 tours.",
-          "statut": "a_venir",
+          "statut": "modifiee",
           "commentaireCoach": "Dernière séance de renfo un peu chargée : après on entre en affûtage.",
           "dureeCibleMin": 30,
           "focus": "Chaîne postérieure, quadris/fessiers, gainage"
@@ -790,7 +790,7 @@
           "type": "AM",
           "titre": "Allure marathon 2×3 km",
           "description": "2 km éch, 2×3 km à 5:41/km (récup 2 min), 1 km rac.",
-          "statut": "a_venir",
+          "statut": "modifiee",
           "commentaireCoach": "On garde le contact avec l'allure course, sans se vider avant la grosse SL.",
           "distanceCibleKm": 9,
           "alluresCibles": "AM 5:41 · EF 6:40 éch/rac"
@@ -800,7 +800,7 @@
           "type": "EF",
           "titre": "Footing",
           "description": "5 km EF léger.",
-          "statut": "a_venir",
+          "statut": "modifiee",
           "commentaireCoach": "On économise pour dimanche.",
           "distanceCibleKm": 5,
           "alluresCibles": "6:40"
@@ -808,11 +808,11 @@
         {
           "date": "2026-10-04",
           "type": "SL",
-          "titre": "Sortie longue 32 km",
-          "description": "30 km : 12 km EF, 3×5 km à 5:41/km (5 min EF entre), fin EF. Ravitaillement course.",
-          "statut": "a_venir",
-          "commentaireCoach": "SL pic 30→32 km (cap 30-32). Idéalement avec un bloc à allure marathon en fin de sortie. Puis on affûte.",
-          "distanceCibleKm": 32,
+          "titre": "Sortie longue 30 km (3×5 km AM)",
+          "description": "30 km : 13 km EF, puis 3×5 km à 5:41/km (5 min EF entre), fin EF. Ravitaillement course.",
+          "statut": "modifiee",
+          "commentaireCoach": "Ta sortie de 30 km, celle qui te rassure — et elle rentre dans le plafond de 3h00 (≈2h57) précisément parce qu'on y met 15 km à allure marathon. Le 32 km est supprimé : à 6:20 il faisait 3h23, au-delà du plafond coach. Teste ici ta tenue et ton ravitaillement de course.",
+          "distanceCibleKm": 30,
           "alluresCibles": "SL 6:20 · blocs AM 5:41"
         }
       ]
