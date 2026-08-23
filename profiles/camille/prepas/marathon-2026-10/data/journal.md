@@ -22,3 +22,7 @@ Semaine de décharge très propre : tout coché (EF lun, seuil décalé au jeu, 
 
 Belle semaine (44 km) : EF lun 8 km, seuil 2×3 km avancé au mardi, EF sam, **SL dim 19 km @6:23 FC 148** — la plus grosse depuis longtemps, ressenti OK. Renfo bas du corps et core zappés (à replacer en S6). Genou : toujours cette gêne légère qui disparaît à l'arrêt.
 
+
+## Semaine 6 (17 → 23 août 2026)
+
+37,7 km / 3 courses. EF décalée au mardi (7,35 km @6:40), **VMA 5×1000 mercredi courue sur pavés mouillés** → j'ai dû forcer sur les appuis, et une **nouvelle douleur est apparue derrière le genou (tendon)**. Séance EF du jeudi sautée + **2 jours de repos complet**, qui m'ont vraiment fait du bien. Résultat : **SL de 22 km le samedi @6:10, FC 147, zéro douleur** — plus longue sortie de la prépa. Tendon totalement indolore depuis. Renfo : muscu du lundi faite, core du mercredi non fait (2e fois d'affilée).

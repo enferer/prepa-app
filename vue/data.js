@@ -1,7 +1,7 @@
 // Fichier GÉNÉRÉ par scripts/build_data.py — NE PAS ÉDITER À LA MAIN.
 // Relancer `python3 scripts/build_data.py` après toute modif dans profiles/*/prepas/*/data/.
 window.PREPA_DATA = {
-  "genereLe": "2026-08-22T15:14:38",
+  "genereLe": "2026-08-23T22:40:32",
   "profils": [
     {
       "id": "camille",
@@ -60,6 +60,11 @@ window.PREPA_DATA = {
                 "zone": "Genou",
                 "statut": "sensible",
                 "consignes": "Montée de volume prudente, peu de côtes/descentes traumatisantes, renfo quadriceps/fessiers/chaîne postérieure protecteur. Surveiller toute gêne qui modifie la foulée."
+              },
+              {
+                "zone": "Tendon postérieur du genou (ischio distal / creux poplité)",
+                "statut": "résolue — à surveiller",
+                "consignes": "Apparue le 19/08/2026 sur un fractionné couru sur pavés mouillés (appuis glissants, sol dur et irrégulier). Éteinte en 2 jours de repos complet ; SL de 22 km le 22/08 totalement indolore. Consignes : fractionné et seuil sur surface sèche et régulière (bitume sec, piste, chemin roulant), jamais sur pavés mouillés. Renfo excentrique des ischios, pas de pliométrie tant que la zone est dans le rétro. Si la douleur réapparaît et persiste au-delà d'une semaine ou modifie la foulée → avis kiné."
               }
             ],
             "contraintes": [
@@ -466,35 +471,35 @@ window.PREPA_DATA = {
                 "bloc": "Développement",
                 "dateDebut": "2026-08-17",
                 "volumeCibleKm": 48,
-                "note": "Semaine réagencée à ta demande : SL le samedi, EF déplacée au jeudi. VMA mercredi + genou sensible → dose contrôlée, règle d'arrêt genou.",
+                "note": "Semaine 6 réalisée : 37,7 km / 3 courses. EF décalée au mardi, VMA 5×1000 faite (nouvelle douleur au tendon derrière le genou, apparue sur pavés mouillés), EF du jeudi sacrifiée + 2 jours de repos → SL de 22 km samedi totalement indolore. Bonne gestion.",
                 "seances": [
-                  {
-                    "date": "2026-08-17",
-                    "type": "EF",
-                    "titre": "Footing",
-                    "description": "8 km EF.",
-                    "statut": "a_venir",
-                    "commentaireCoach": "Facile = facile. C'est le volume EF qui construit ton moteur marathon, ne le cours pas trop vite.",
-                    "distanceCibleKm": 8,
-                    "alluresCibles": "6:40"
-                  },
                   {
                     "date": "2026-08-17",
                     "type": "Renfo",
                     "titre": "Renfo bas du corps",
                     "description": "Circuit force complet, 4 tours.",
-                    "statut": "modifiee",
-                    "commentaireCoach": "Replacée après avoir sauté celle de S5. Prioritaire cette semaine : prévention genou. Si le genou tire, tu réduis l'amplitude ou tu bascules sur du core.",
+                    "statut": "validee",
+                    "commentaireCoach": "Musculation 53 min détectée dans Garmin. Bien joué : c'est ta séance de prévention genou, et tu l'as replacée après l'avoir sautée en S5.",
                     "dureeCibleMin": 40,
                     "focus": "Chaîne postérieure, quadris/fessiers (indolore), gainage"
+                  },
+                  {
+                    "date": "2026-08-18",
+                    "type": "EF",
+                    "titre": "Footing",
+                    "description": "8 km EF.",
+                    "statut": "adaptee",
+                    "commentaireCoach": "Décalée lun→mar : 7,35 km @6:40 — exactement l'allure EF cible. Facile = facile, c'est parfait.",
+                    "distanceCibleKm": 8,
+                    "alluresCibles": "6:40"
                   },
                   {
                     "date": "2026-08-19",
                     "type": "VMA",
                     "titre": "VMA 5×1000 m (contrôlée)",
                     "description": "2 km éch, 5×1000 m à ~4:40/km (récup 2 min trot), 2 km rac.",
-                    "statut": "modifiee",
-                    "commentaireCoach": "Placée mercredi pour laisser 2 jours de récup avant la SL du samedi. Genou toujours sensible : allure 4:40 gardée mais RELÂCHÉE, règle d'arrêt ferme au 1er signal (échauffement compris) → tu finis en EF.",
+                    "statut": "validee",
+                    "commentaireCoach": "8,32 km, FC 156, 5:33/km de moyenne (éch/rac inclus) : séance bien menée. MAIS c'est elle qui a déclenché la douleur au tendon derrière le genou — fractionné sur pavés mouillés = sol dur, irrégulier et glissant, on force à chaque appui pour ne pas déraper. La séance est validée, la surface non : à l'avenir, le fractionné se fait sur bitume sec, piste ou chemin roulant.",
                     "distanceCibleKm": 9,
                     "alluresCibles": "VMA 4:30-5:20 · récup trot · EF 6:40 éch"
                   },
@@ -503,8 +508,8 @@ window.PREPA_DATA = {
                     "type": "Renfo",
                     "titre": "Gainage & stabilité",
                     "description": "Circuit gainage + proprio.",
-                    "statut": "a_venir",
-                    "commentaireCoach": "Core d'entretien — glisse-le en fin de footing si tu préfères.",
+                    "statut": "manquee",
+                    "commentaireCoach": "Pas fait — deuxième core zappé d'affilée (déjà manqué en S5). Justement celui qui protège le genou et la stabilité de hanche. On le remonte en priorité en S7.",
                     "dureeCibleMin": 25,
                     "focus": "Gainage, proprioception, stabilité hanche/genou"
                   },
@@ -513,8 +518,8 @@ window.PREPA_DATA = {
                     "type": "EF",
                     "titre": "Footing",
                     "description": "9 km EF.",
-                    "statut": "modifiee",
-                    "commentaireCoach": "Déplacée ven→jeu à ta demande. Bien : ça met un footing facile entre la VMA (mer) et la SL (sam). Vraiment facile — c'est un jour de transition.",
+                    "statut": "manquee",
+                    "commentaireCoach": "Sautée volontairement à cause de la nouvelle douleur au tendon. C'est LA bonne décision : 2 jours de repos ont éteint la gêne et sauvé la sortie longue. Sacrifier un footing facile pour préserver une séance clé, c'est du bon pilotage.",
                     "distanceCibleKm": 9,
                     "alluresCibles": "6:40"
                   },
@@ -523,8 +528,8 @@ window.PREPA_DATA = {
                     "type": "SL",
                     "titre": "Sortie longue 22 km",
                     "description": "22 km en endurance, avec ravitaillement.",
-                    "statut": "modifiee",
-                    "commentaireCoach": "SL 20→22 km, décalée dim→sam à ta demande. Grosse SL du bloc développement : allure SL stricte, hydratation + gel(s), tu écourtes sans hésiter si le genou monte d'un cran.",
+                    "statut": "validee",
+                    "commentaireCoach": "22,05 km @6:10, FC 147 — ta plus longue sortie de tout l'historique, et zéro douleur. Un poil plus rapide que la cible SL (6:20) mais la FC reste très saine : ton endurance a franchi une marche. Gros marqueur pour l'objectif 4h00.",
                     "distanceCibleKm": 22,
                     "alluresCibles": "SL 6:20 · EF 6:40"
                   }
@@ -535,16 +540,16 @@ window.PREPA_DATA = {
                 "bloc": "Développement",
                 "dateDebut": "2026-08-24",
                 "volumeCibleKm": 43,
-                "note": "On allège un peu avant les vacances (décharge la semaine prochaine).",
+                "note": "Semaine réagencée à ta demande : SL avancée au vendredi 28 (juste avant le départ en vacances le 29), EF basculée au dimanche. Seuil maintenu mercredi en version complète à ta demande. Tendon revenu à zéro → on reprend normalement, mais surfaces propres uniquement sur la qualité.",
                 "seances": [
                   {
                     "date": "2026-08-24",
                     "type": "EF",
                     "titre": "Footing",
-                    "description": "8 km EF.",
-                    "statut": "a_venir",
-                    "commentaireCoach": "Facile = facile. C'est le volume EF qui construit ton moteur marathon, ne le cours pas trop vite.",
-                    "distanceCibleKm": 8,
+                    "description": "6 km EF très tranquille.",
+                    "statut": "modifiee",
+                    "commentaireCoach": "Raccourci 8→6 km : tu sors d'une SL de 22 km samedi et la semaine est dense (seuil mer + SL ven). C'est un footing de récup, pas un footing de volume.",
+                    "distanceCibleKm": 6,
                     "alluresCibles": "6:40"
                   },
                   {
@@ -552,10 +557,10 @@ window.PREPA_DATA = {
                     "type": "Renfo",
                     "titre": "Renfo bas du corps",
                     "description": "Circuit force, 3-4 tours.",
-                    "statut": "a_venir",
-                    "commentaireCoach": "Dernière séance de force chargée avant les vacances.",
+                    "statut": "modifiee",
+                    "commentaireCoach": "Dernière séance de force chargée avant les vacances. Adaptée au nouvel épisode : renfo des ischios en excentrique lent et contrôlé (pont fessier une jambe, good morning au poids du corps), zéro saut/pliométrie tant que ce tendon est dans le rétro. Lundi = 48 h avant le seuil, les jambes seront fraîches mercredi.",
                     "dureeCibleMin": 35,
-                    "focus": "Chaîne postérieure, quadris/fessiers, gainage"
+                    "focus": "Chaîne postérieure (excentrique ischios doux), quadris/fessiers, gainage — pas de pliométrie"
                   },
                   {
                     "date": "2026-08-26",
@@ -563,7 +568,7 @@ window.PREPA_DATA = {
                     "titre": "Seuil 3×3 km",
                     "description": "2 km éch, 3×3 km à 5:20/km (récup 2 min), 1 km rac.",
                     "statut": "a_venir",
-                    "commentaireCoach": "Grosse séance de seuil, la plus dense du bloc.",
+                    "commentaireCoach": "Version complète maintenue à ta demande. C'est la séance la plus dense du bloc et elle n'est qu'à 2 jours de la SL : deux conditions non négociables — (1) surface propre et sèche, surtout pas de pavés ; (2) tu tiens 5:20, tu ne descends pas en dessous, l'excès de vitesse ici se paiera vendredi. Au moindre signal du tendon (échauffement compris), tu coupes le 3e bloc et tu finis en EF.",
                     "distanceCibleKm": 10,
                     "alluresCibles": "Seuil 5:20 · EF 6:40 éch/rac"
                   },
@@ -572,30 +577,30 @@ window.PREPA_DATA = {
                     "type": "Renfo",
                     "titre": "Gainage & stabilité",
                     "description": "Circuit gainage + proprio.",
-                    "statut": "a_venir",
-                    "commentaireCoach": "Core d'entretien.",
+                    "statut": "modifiee",
+                    "commentaireCoach": "Priorité de la semaine : c'est le 2e core d'affilée que tu sautes. Proprio unipodale + gainage, 25 min, ça se glisse en fin de footing ou le soir. C'est exactement ce qui rend une hanche et un genou stables sur pavé glissant.",
                     "dureeCibleMin": 25,
                     "focus": "Gainage, proprioception, stabilité hanche/genou"
                   },
                   {
                     "date": "2026-08-28",
-                    "type": "EF",
-                    "titre": "Footing",
-                    "description": "7 km EF.",
-                    "statut": "a_venir",
-                    "commentaireCoach": "Facile = facile. C'est le volume EF qui construit ton moteur marathon, ne le cours pas trop vite.",
-                    "distanceCibleKm": 7,
-                    "alluresCibles": "6:40"
+                    "type": "SL",
+                    "titre": "Sortie longue 18 km",
+                    "description": "18 km en endurance, allure SL ~6:20/km, avec ravitaillement.",
+                    "statut": "modifiee",
+                    "commentaireCoach": "Décalée dim→ven à ta demande, et c'est malin : tu la poses avant le départ en vacances plutôt que de la subir en déplacement. Volontairement 18 km et pas 22 : léger step-back après ta grosse SL de samedi et avant la décharge des vacances — on consolide, on n'empile pas. Allure SL stricte, pas 6:10.",
+                    "distanceCibleKm": 18,
+                    "alluresCibles": "SL 6:20 · EF 6:40"
                   },
                   {
                     "date": "2026-08-30",
-                    "type": "SL",
-                    "titre": "Sortie longue 18 km",
-                    "description": "15 km EF.",
-                    "statut": "a_venir",
-                    "commentaireCoach": "SL 15→18 km (léger step-back avant la décharge S8).",
-                    "distanceCibleKm": 18,
-                    "alluresCibles": "SL 6:20 · EF 6:40"
+                    "type": "EF",
+                    "titre": "Footing vacances",
+                    "description": "7 km EF, allure libre, en groupe si tu veux.",
+                    "statut": "modifiee",
+                    "commentaireCoach": "Échangée avec la SL à ta demande : footing tranquille pour lancer les vacances. Allure totalement libre, terrain de ton choix — c'est du volume facile, rien d'autre. Si c'est en groupe, laisse-toi porter sans jouer la course.",
+                    "distanceCibleKm": 7,
+                    "alluresCibles": "6:40"
                   }
                 ]
               },
@@ -5056,6 +5061,138 @@ window.PREPA_DATA = {
               "altitudeMaxM": null,
               "date": "2026-08-16",
               "dateHeure": "2026-08-16T10:51:58"
+            },
+            {
+              "type": "Musculation",
+              "favori": false,
+              "titre": "Musculation",
+              "distanceKm": 0.0,
+              "calories": 131,
+              "dureeSec": 3183.0,
+              "fcMoy": 86,
+              "fcMax": 125,
+              "teAerobie": null,
+              "cadenceMoy": null,
+              "cadenceMax": null,
+              "allureMoySecKm": null,
+              "meilleureAllureSecKm": null,
+              "ascensionM": null,
+              "descenteM": null,
+              "longueurFouleeM": null,
+              "oscillationVerticale": null,
+              "tempsContactSol": null,
+              "gapMoySecKm": null,
+              "np": null,
+              "tss": 0.0,
+              "puissanceMoy": null,
+              "puissanceMax": null,
+              "pas": 8,
+              "nbTours": null,
+              "tempsDeplacementSec": 3183.0,
+              "tempsEcouleSec": 1.0,
+              "altitudeMinM": null,
+              "altitudeMaxM": null,
+              "date": "2026-08-17",
+              "dateHeure": "2026-08-17T19:00:25"
+            },
+            {
+              "type": "Course à pied",
+              "favori": false,
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "distanceKm": 7.35,
+              "calories": 380,
+              "dureeSec": 2939.0,
+              "fcMoy": 137,
+              "fcMax": 152,
+              "teAerobie": null,
+              "cadenceMoy": null,
+              "cadenceMax": null,
+              "allureMoySecKm": 400,
+              "meilleureAllureSecKm": 351,
+              "ascensionM": 13,
+              "descenteM": 13,
+              "longueurFouleeM": 0.88,
+              "oscillationVerticale": null,
+              "tempsContactSol": null,
+              "gapMoySecKm": null,
+              "np": null,
+              "tss": 0.0,
+              "puissanceMoy": null,
+              "puissanceMax": null,
+              "pas": 8,
+              "nbTours": null,
+              "tempsDeplacementSec": 141.9,
+              "tempsEcouleSec": 8.0,
+              "altitudeMinM": null,
+              "altitudeMaxM": null,
+              "date": "2026-08-18",
+              "dateHeure": "2026-08-18T17:12:12"
+            },
+            {
+              "type": "Course à pied",
+              "favori": false,
+              "titre": "Camphin-en-Pévèle - VMA 5x1000m",
+              "distanceKm": 8.32,
+              "calories": 418,
+              "dureeSec": 2766.0,
+              "fcMoy": 156,
+              "fcMax": 183,
+              "teAerobie": null,
+              "cadenceMoy": null,
+              "cadenceMax": null,
+              "allureMoySecKm": 333,
+              "meilleureAllureSecKm": 230,
+              "ascensionM": 13,
+              "descenteM": 13,
+              "longueurFouleeM": 1.01,
+              "oscillationVerticale": null,
+              "tempsContactSol": null,
+              "gapMoySecKm": null,
+              "np": null,
+              "tss": 0.0,
+              "puissanceMoy": null,
+              "puissanceMax": null,
+              "pas": 8,
+              "nbTours": null,
+              "tempsDeplacementSec": 1.9,
+              "tempsEcouleSec": 14.0,
+              "altitudeMinM": null,
+              "altitudeMaxM": null,
+              "date": "2026-08-19",
+              "dateHeure": "2026-08-19T19:21:50"
+            },
+            {
+              "type": "Course à pied",
+              "favori": false,
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "distanceKm": 22.05,
+              "calories": 1,
+              "dureeSec": 8163.0,
+              "fcMoy": 147,
+              "fcMax": 166,
+              "teAerobie": null,
+              "cadenceMoy": null,
+              "cadenceMax": null,
+              "allureMoySecKm": 370,
+              "meilleureAllureSecKm": 273,
+              "ascensionM": 86,
+              "descenteM": 87,
+              "longueurFouleeM": 0.93,
+              "oscillationVerticale": null,
+              "tempsContactSol": null,
+              "gapMoySecKm": null,
+              "np": null,
+              "tss": 0.0,
+              "puissanceMoy": null,
+              "puissanceMax": null,
+              "pas": 24,
+              "nbTours": null,
+              "tempsDeplacementSec": 14.0,
+              "tempsEcouleSec": 23.0,
+              "altitudeMinM": null,
+              "altitudeMaxM": null,
+              "date": "2026-08-22",
+              "dateHeure": "2026-08-22T10:27:25"
             }
           ],
           "journal": [
@@ -5088,6 +5225,11 @@ window.PREPA_DATA = {
               "semaine": 5,
               "titre": "Semaine 5 (10 → 16 août 2026)",
               "contenu": "Belle semaine (44 km) : EF lun 8 km, seuil 2×3 km avancé au mardi, EF sam, **SL dim 19 km @6:23 FC 148** — la plus grosse depuis longtemps, ressenti OK. Renfo bas du corps et core zappés (à replacer en S6). Genou : toujours cette gêne légère qui disparaît à l'arrêt."
+            },
+            {
+              "semaine": 6,
+              "titre": "Semaine 6 (17 → 23 août 2026)",
+              "contenu": "37,7 km / 3 courses. EF décalée au mardi (7,35 km @6:40), **VMA 5×1000 mercredi courue sur pavés mouillés** → j'ai dû forcer sur les appuis, et une **nouvelle douleur est apparue derrière le genou (tendon)**. Séance EF du jeudi sautée + **2 jours de repos complet**, qui m'ont vraiment fait du bien. Résultat : **SL de 22 km le samedi @6:10, FC 147, zéro douleur** — plus longue sortie de la prépa. Tendon totalement indolore depuis. Renfo : muscu du lundi faite, core du mercredi non fait (2e fois d'affilée)."
             }
           ]
         }
