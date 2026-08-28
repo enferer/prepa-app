@@ -30,3 +30,17 @@ Semaine de bascule, la meilleure depuis le début. Les températures sont retomb
 **Moral** : gros reboost. Envie d'aller chercher les 4h00 à fond.
 
 **Demande** : SL de S6 avancée au **vendredi 28/08** (départ en vacances le 29), EF court permutée au dimanche.
+
+## Semaine 6 (24/08 → 30/08)
+Semaine réagencée autour de la SL avancée au vendredi 28/08 (départ en vacances le 29).
+
+**Bilan à chaud** : 42,4 km sur les 3 séances faites (+ footing du dimanche à venir, cible 49).
+- **Seuil du mardi 25/08** : j'ai fait **4×8 min au lieu de 3×8** — et avec ça je n'arrivais même pas à 12 km, donc la distance cible du plan était fausse. **J'ai eu un peu de mal** : j'ai toujours cette difficulté à garder une allure soutenue longtemps. J'avais aussi **très mal dormi la nuit d'avant**, ça a dû jouer. 10,35 km à 5:43 moy, FC 154 / max 179.
+- **EF mercredi 26/08** : 10 km à 6:32, facile.
+- **SL vendredi 28/08** : 22 km à 5:59, FC 144 / max 166, avec 2×3 km à AM au milieu. **Toujours un bon ressenti sur la sortie longue.**
+
+**Cheville droite** : reste pareil que depuis le début — **ça ne s'aggrave pas**, bon signe. N'a pas tiré sur la SL cette fois.
+
+**Renfo** : la séance prévention + force du mardi a **encore été zappée** (2e semaine de suite).
+
+**Semaine prochaine (vacances)** : sortie longue prévue **vendredi 04/09**, ce sera un **16 km avec 500 m de D+ en mode trail**.

@@ -1,7 +1,7 @@
 // Fichier GÉNÉRÉ par scripts/build_data.py — NE PAS ÉDITER À LA MAIN.
 // Relancer `python3 scripts/build_data.py` après toute modif dans profiles/*/prepas/*/data/.
 window.PREPA_DATA = {
-  "genereLe": "2026-08-28T19:28:20",
+  "genereLe": "2026-08-28T22:29:59",
   "profils": [
     {
       "id": "camille",
@@ -5427,8 +5427,8 @@ window.PREPA_DATA = {
             "blessures": [
               {
                 "zone": "Cheville droite — releveur / tibial antérieur",
-                "statut": "Gêne légère persistante — a tiré en fin de SL 22 km le 22/08, tire encore un peu à J+0. Ne modifie pas la foulée.",
-                "consignes": "Maintenir l'EF. Côte : DESCENTE MARCHÉE et nombre de répétitions réduit tant que ça tire ; réintroduire la descente courue quand la gêne a disparu. Renfo excentrique tibial antérieur + mollet à l'élastique + proprioception. Éviter pliométrie agressive et grosses descentes courues. Surveiller ; avis kiné si aggravation ou douleur au repos. ⚠️ 22/08 : le renfo excentrique tibial ant./mollet a été zappé en S5 et la gêne est réapparue en fin de SL — cette séance redevient prioritaire (2/sem non négociables). Descente toujours marchée sur les côtes tant que ça tire."
+                "statut": "Gêne légère STABLE depuis le début de la prépa — pas d'aggravation, aucun impact sur la foulée ni sur la performance. SL 22 km du 28/08 passée sans que ça tire (contrairement au 22/08). Statu quo satisfaisant, à surveiller.",
+                "consignes": "Maintenir l'EF. ⚠️ 28/08 : le renfo excentrique tibial ant./mollet a été zappé 2 semaines de suite (S5 et S6) → le format 30 min est abandonné, remplacé par un format COURT de 12 min accroché à la fin d'un footing (excentrique tibial ant. + mollet, proprio unipodale, gainage). Côte/trail : DESCENTE en trot contrôlé, marcher tout ce qui est raide ; marcher toutes les descentes si ça tire. Éviter pliométrie agressive. Avis kiné si aggravation ou douleur au repos."
               }
             ],
             "contraintes": [
@@ -5460,9 +5460,9 @@ window.PREPA_DATA = {
                 "Poids du corps",
                 "Élastiques"
               ],
-              "focus": "Prévention cheville droite (excentrique tibial antérieur & mollet à l'élastique + proprioception) + gainage + chaîne postérieure (ischios/fessiers). 2x/sem en base/développement, réduit à 1x/sem en spécifique, gainage léger seulement en affûtage."
+              "focus": "Prévention cheville droite (excentrique tibial antérieur & mollet + proprioception) + gainage + chaîne postérieure. FORMAT COURT 12-15 min collé à la fin d'un footing (le format 30 min ne se fait pas dans la vraie semaine de l'athlète). 2x/sem en base/développement, 1x/sem en spécifique, gainage léger en affûtage."
             },
-            "commentairesLibres": "Très bonne base en EF, mais a rarement travaillé les allures plus rapides sur longue distance. Aime les belles sorties longues (faites jusqu'ici entièrement en EF). Premier marathon. → Objectif recalé de 3h55 à 4h00 le 20/08 : l'équivalence VDOT du RP 10 km donnait ~3h50, mais l'endurance spécifique n'est pas construite (jamais plus de 25,4 km, jamais un km à AM sur du long). Sub-4h sécurisé, avec marge sur la fin de course. → Prépa maintenue à 4 séances/sem (récupération déjà tendue à 45 km/sem). Pic de volume abaissé de 63 à 56 km, SL plafonnée à 28 km (~2h55) au lieu de 32. Le travail à AM est progressif DANS les SL : 3 → 6 → 8 → 8 → 12 km. → 22/08 (S5) : SL de référence — 22 km à 5:58 (FC 142) dont 5 km à AM, sensations excellentes, nutrition de course testée et VALIDÉE (1 pâte de fruits + 1 gel + 500 ml boisson iso sur 2h11) : protocole à rejouer tel quel sur toutes les SL ≥ 20 km puis le jour J, en ajoutant une 2e prise à partir de 26 km. Objectif 4h00 confirmé et bien engagé."
+            "commentairesLibres": "Très bonne base en EF, mais a rarement travaillé les allures plus rapides sur longue distance. Aime les belles sorties longues (faites jusqu'ici entièrement en EF). Premier marathon. → Objectif recalé de 3h55 à 4h00 le 20/08 : l'équivalence VDOT du RP 10 km donnait ~3h50, mais l'endurance spécifique n'est pas construite (jamais plus de 25,4 km, jamais un km à AM sur du long). Sub-4h sécurisé, avec marge sur la fin de course. → Prépa maintenue à 4 séances/sem (récupération déjà tendue à 45 km/sem). Pic de volume abaissé de 63 à 56 km, SL plafonnée à 28 km (~2h55) au lieu de 32. Le travail à AM est progressif DANS les SL : 3 → 6 → 8 → 8 → 12 km. → 22/08 (S5) : SL de référence — 22 km à 5:58 (FC 142) dont 5 km à AM, sensations excellentes, nutrition de course testée et VALIDÉE (1 pâte de fruits + 1 gel + 500 ml boisson iso sur 2h11) : protocole à rejouer tel quel sur toutes les SL ≥ 20 km puis le jour J, en ajoutant une 2e prise à partir de 26 km. Objectif 4h00 confirmé et bien engagé. → 28/08 (S6) : 2e SL de 22 km en 6 jours, à 5:59 pour FC 144, avec 2×3 km à AM au milieu et 7 km EF derrière — mêmes chiffres que S5 sur un format plus dur, sans dérive cardiaque. Cheville stable, n'a pas tiré. Objectif 4h00 confirmé. POINT FAIBLE IDENTIFIÉ : difficulté à tenir une allure soutenue longtemps (a fait 4×8 min au lieu de 3×8 au seuil et a lutté, sur mauvais sommeil). Correctif : les séances de seuil progressent désormais en LONGUEUR de bloc et non en nombre (S8 passe de 4×2 km à 3×2 km), départ à 5:25 plutôt que 5:15, et consigne explicite de ne pas rajouter de répétitions. RENFO : format 30 min abandonné après 2 zaps consécutifs, remplacé par 12 min post-footing. S7 (vacances, décharge) : SL déplacée au vendredi 04/09 sous forme de trail 16 km / D+500 à la demande de l'athlète ; séance vallonnée du mercredi neutralisée en EF plate."
           },
           "plan": {
             "course": {
@@ -5865,25 +5865,25 @@ window.PREPA_DATA = {
                 "dateDebut": "2026-08-24",
                 "bloc": "Développement",
                 "volumeCibleKm": 49,
-                "note": "Retour du seuil. Volume 49 km (+6,5 % vs S5). SL 22 km avec 2 blocs à AM : on double la dose de spécifique.",
+                "note": "Réalisé 48,4/49 km. Seuil sur-dosé (4×8 au lieu de 3×8) et difficile, SL 22 km + 2×3 km AM excellente. Renfo prévention zappé pour la 2e fois → refonte du format en 12 min.",
                 "seances": [
                   {
                     "date": "2026-08-25",
                     "type": "Seuil",
                     "titre": "Seuil 3×8 min",
                     "description": "2 km éch. + 3×8 min au seuil (5:15) récup 2 min trot + 2 km RAC.",
-                    "statut": "modifiee",
-                    "commentaireCoach": "Avancée du mercredi au mardi pour laisser 2 jours pleins avant la SL de vendredi. 24 min de seuil (contre 20 en S3) : tenu régulier, pas de départ trop vite. Sur le plat, aucun risque pour la cheville.",
+                    "statut": "validee",
+                    "commentaireCoach": "Validée, mais lis bien : tu as fait 4×8 min au lieu de 3×8, soit 32 min de seuil contre 24 prévues (+33 %). Le résultat est logique — tu as lutté, et tu avais mal dormi. 10,35 km à 5:43 de moyenne pour FC 154 (max 179, ton niveau de RP 10 km) : tu es monté au-dessus du seuil, ce n'était plus du 'confortablement dur'. Ma cible de 12 km était fausse (elle correspondait à 4×8), je la corrige à 10. Consigne pour la suite : tu ne rajoutes PAS de répétitions. Le seuil ne progresse pas en volume improvisé, il progresse en régularité.",
                     "alluresCibles": "Seuil 5:15 · éch/RAC 6:35",
-                    "distanceCibleKm": 12
+                    "distanceCibleKm": 10
                   },
                   {
                     "date": "2026-08-25",
                     "type": "Renfo",
                     "titre": "Renfo prévention + force — PRIORITÉ",
                     "description": "Excentrique tibial antérieur & mollet à l'élastique, proprio cheville D, chaîne postérieure, gainage.",
-                    "statut": "modifiee",
-                    "commentaireCoach": "Celle-ci n'est plus optionnelle : elle a sauté en S5 et la cheville tire. Placée le jour dur (après le seuil), 3 jours avant la SL : récup suffisante.",
+                    "statut": "manquee",
+                    "commentaireCoach": "Zappée pour la 2e semaine consécutive, alors que je l'avais passée en PRIORITÉ. Constat honnête : le format 30 min ne rentre pas dans ta semaine. Je ne vais pas te la remettre à l'identique une 3e fois — je la refonds en version courte (12 min) collée à la fin d'un footing, chaussures aux pieds, sans matériel à sortir. Objectif : que tu la fasses, pas qu'elle soit parfaite.",
                     "dureeCibleMin": 30,
                     "focus": "Excentrique tibial ant. & mollet · proprio cheville D · gainage · chaîne postérieure"
                   },
@@ -5892,8 +5892,8 @@ window.PREPA_DATA = {
                     "type": "EF",
                     "titre": "Footing EF",
                     "description": "9 km EF facile.",
-                    "statut": "modifiee",
-                    "commentaireCoach": "Permutée avec le seuil. Vraiment facile (6:35+) : c'est du volume de récup entre le seuil et la SL.",
+                    "statut": "validee",
+                    "commentaireCoach": "10 km au lieu de 9, en EF franche 2 jours avant la SL. Bien dosé, tu n'es pas arrivé cuit vendredi.",
                     "alluresCibles": "EF 6:35 (facile)",
                     "distanceCibleKm": 9
                   },
@@ -5902,8 +5902,8 @@ window.PREPA_DATA = {
                     "type": "SL",
                     "titre": "Sortie longue + 2×3 km AM — VENDREDI",
                     "description": "SL 22 km : 8 km EF + 2×3 km à AM (5:41) récup 1 km EF entre les blocs + 7 km EF.",
-                    "statut": "modifiee",
-                    "commentaireCoach": "Décalée du dimanche au vendredi (départ en vacances le 29). Volontairement PAS augmentée malgré ta S5 : tu as déjà fait 22 km / 5 km AM, ici le stimulus change de nature — 6 km à AM mais fractionnés en 2 blocs placés au milieu, donc il reste 7 km EF à courir après. C'est plus dur mentalement que d'accélérer à la fin. Rejoue exactement la même nutrition que samedi. Si la cheville tire avant le km 15, tu coupes le 2e bloc AM.",
+                    "statut": "validee",
+                    "commentaireCoach": "⭐ 22 km à 5:59 pour FC 144 (max 166), soit le calque exact de la SL de S5 (5:58 / FC 142) — mais cette fois avec les blocs AM au milieu et 7 km EF à courir derrière, ce qui est plus dur. Même allure, même FC, format plus exigeant, et bon ressenti : c'est la définition d'une progression réussie. Deux SL de 22 km à 6 jours d'écart absorbées sans dérive cardiaque, l'objectif 4h00 est solide.",
                     "alluresCibles": "EF 6:15 · blocs AM 5:41",
                     "distanceCibleKm": 22
                   },
@@ -5913,7 +5913,7 @@ window.PREPA_DATA = {
                     "titre": "Footing court + lignes droites",
                     "description": "6 km EF + 5×20 s.",
                     "statut": "modifiee",
-                    "commentaireCoach": "Permutée au dimanche : ici ce n'est plus une veille de SL mais un déverrouillage 2 jours après. Très facile, lignes droites seulement si les jambes répondent.",
+                    "commentaireCoach": "Premier jour de vacances : déverrouillage 2 jours après la SL. Très facile, lignes droites seulement si les jambes répondent.",
                     "alluresCibles": "EF 6:35 (facile)",
                     "distanceCibleKm": 6
                   },
@@ -5921,10 +5921,10 @@ window.PREPA_DATA = {
                     "date": "2026-08-30",
                     "type": "Renfo",
                     "titre": "Renfo prévention (léger)",
-                    "description": "Gainage + proprio cheville D + excentrique mollet à l'élastique.",
+                    "description": "Format court : 2×15 excentrique mollet (marche d'escalier) + proprio unipodale 2×45 s/pied + gainage 3×40 s.",
                     "statut": "modifiee",
-                    "commentaireCoach": "Version légère groupée sur le jour facile, en vacances. 2/2 sur la semaine, comme prévu.",
-                    "dureeCibleMin": 20,
+                    "commentaireCoach": "Nouveau format court (12 min, sans matériel) : à faire juste après le footing, avant la douche. C'est le seul moyen qu'elle existe vraiment.",
+                    "dureeCibleMin": 12,
                     "focus": "Gainage · proprio cheville D · excentrique mollet"
                   }
                 ]
@@ -5933,58 +5933,58 @@ window.PREPA_DATA = {
                 "numero": 7,
                 "dateDebut": "2026-08-31",
                 "bloc": "Développement (décharge / vacances)",
-                "volumeCibleKm": 39,
-                "note": "🏖️ Vacances 29/08 → 09/09. Semaine de décharge (-20 %), flexibilité totale sur les jours. Aucune séance n'est sacrée sauf la SL. Volume 39 km.",
+                "volumeCibleKm": 38,
+                "note": "Décharge en vacances, 38 km. SL déplacée au VENDREDI 04/09 sous forme de trail 16 km / D+500 (choix de l'athlète) : l'effort équivaut à une SL plate de ~20 km, ce qui reste compatible avec une décharge. En contrepartie la séance vallonnée du mercredi passe en EF plate — pas deux jours de dénivelé la même semaine avec cette cheville.",
                 "seances": [
                   {
                     "date": "2026-09-01",
                     "type": "EF",
                     "titre": "Footing EF (libre)",
-                    "description": "8 km EF, où tu peux, quand tu peux.",
-                    "statut": "a_venir",
-                    "commentaireCoach": "Découverte du coin en courant. Zéro pression sur l'allure.",
+                    "description": "8 km EF facile, découverte du coin.",
+                    "statut": "adaptee",
+                    "commentaireCoach": "Zéro pression sur l'allure : tu es en vacances et en décharge. Si le terrain est vallonné, tu ralentis, tu ne forces pas.",
                     "alluresCibles": "EF 6:35 (facile)",
                     "distanceCibleKm": 8
                   },
                   {
                     "date": "2026-09-02",
-                    "type": "Cotes",
-                    "titre": "Bosse locale ou fartlek",
-                    "description": "Trouve une bosse : 5-6 montées de 1-2 min, descente marchée. Sinon fartlek 8×1 min soutenu / 1 min trot.",
-                    "statut": "a_venir",
-                    "commentaireCoach": "Version portable de ta séance signature. ⚠️ Si la cheville droite ne tire plus du tout à ce stade, dis-le moi : on repasse la descente en trot dès S8.",
-                    "alluresCibles": "Montées soutenues · récup marchée",
-                    "distanceCibleKm": 9
+                    "type": "EF",
+                    "titre": "Footing EF plat",
+                    "description": "8 km EF sur le plat le plus plat que tu trouves.",
+                    "statut": "adaptee",
+                    "commentaireCoach": "⚠️ Changement : la bosse/fartlek prévue ici saute. Tu fais 500 m de D+ vendredi — deux séances avec du dénivelé la même semaine, c'est la cheville qui paie. Plat et facile.",
+                    "alluresCibles": "EF 6:35 (facile)",
+                    "distanceCibleKm": 8
                   },
                   {
                     "date": "2026-09-02",
                     "type": "Renfo",
-                    "titre": "Renfo (portable)",
-                    "description": "Gainage, mobilité, proprio à l'élastique.",
-                    "statut": "a_venir",
-                    "commentaireCoach": "Une seule séance cette semaine, sans matériel. Le renfo lourd reprend en S8.",
-                    "dureeCibleMin": 20,
-                    "focus": "Gainage · mobilité · proprio cheville D"
+                    "titre": "Renfo cheville — format court (12 min)",
+                    "description": "2×15 excentrique tibial antérieur (pied en l'air, résistance élastique ou main) + 2×15 excentrique mollet sur marche + proprio unipodale 2×45 s/pied + gainage 3×40 s.",
+                    "statut": "adaptee",
+                    "commentaireCoach": "LA séance de la semaine côté prévention, et elle est courte exprès. Tu la fais juste après le footing, en tenue. 500 m de D− vendredi sollicitent précisément le tibial antérieur : ces 12 min sont ton assurance.",
+                    "dureeCibleMin": 12,
+                    "focus": "Excentrique tibial ant. & mollet · proprio cheville D · gainage"
                   },
                   {
                     "date": "2026-09-04",
-                    "type": "EF",
-                    "titre": "Footing EF",
-                    "description": "6 km EF, profite du décor.",
-                    "statut": "a_venir",
-                    "commentaireCoach": "Facile, vraiment.",
-                    "alluresCibles": "EF 6:35 (facile)",
-                    "distanceCibleKm": 6
+                    "type": "SL",
+                    "titre": "Sortie longue TRAIL — 16 km / D+500 — VENDREDI",
+                    "description": "16 km en trail, ~500 m de D+. Effort EF, aucune allure de référence. Montées en trot court ou marche active si c'est raide, descentes contrôlées.",
+                    "statut": "adaptee",
+                    "commentaireCoach": "Validé comme SL de la semaine. 16 km avec 500 m de D+ coûtent à peu près ce que coûte une SL plate de 20 km : on reste dans l'esprit décharge, à condition que tu ne cherches AUCUNE allure — tu régules sur l'effort, comme sur ton terril. ⚠️ Le vrai risque n'est pas la montée, c'est la descente : le tibial antérieur travaille en excentrique et c'est exactement ta zone fragile. Consignes fermes : descentes en trot contrôlé et courtes foulées, tu MARCHES tout ce qui est raide, et si la cheville commence à tirer tu marches toutes les descentes restantes. Nutrition : rejoue le protocole validé (pâte de fruits + gel + 500 ml iso) si tu dépasses 1h45. Prévois d'être un peu cassé le lendemain : c'est normal en trail, ce n'est pas un signal de forme.",
+                    "alluresCibles": "Effort EF — pas d'allure cible (dénivelé)",
+                    "distanceCibleKm": 16
                   },
                   {
                     "date": "2026-09-06",
-                    "type": "SL",
-                    "titre": "Sortie longue EF pure",
-                    "description": "SL 16 km en endurance, sans bloc AM.",
-                    "statut": "a_venir",
-                    "commentaireCoach": "Seule séance à ne pas rater cette semaine. EF pure volontairement : la décharge sert à assimiler S5-S6, pas à ajouter du stimulus. Repère un parcours plat la veille.",
-                    "alluresCibles": "EF/SL 6:15",
-                    "distanceCibleKm": 16
+                    "type": "EF",
+                    "titre": "Footing de récupération",
+                    "description": "6 km très lents, sur le plat.",
+                    "statut": "adaptee",
+                    "commentaireCoach": "Remplace la SL du dimanche, qui est passée au vendredi. Vraiment lent (6:45+) : on nettoie les jambes après le trail, on ne s'entraîne pas.",
+                    "alluresCibles": "EF 6:45+ (très facile)",
+                    "distanceCibleKm": 6
                   }
                 ]
               },
@@ -5993,7 +5993,7 @@ window.PREPA_DATA = {
                 "dateDebut": "2026-09-07",
                 "bloc": "Développement",
                 "volumeCibleKm": 51,
-                "note": "Reprise de charge après les vacances. Volume 51 km. Seuil long (4×2 km) + SL 24 km avec 2×4 km à AM.",
+                "note": "Reprise de charge après les vacances. Volume 51 km. Seuil recalibré à 3×2 km (blocs plus longs, pas plus nombreux) + SL 24 km avec 2×4 km à AM.",
                 "seances": [
                   {
                     "date": "2026-09-08",
@@ -6008,31 +6008,31 @@ window.PREPA_DATA = {
                   {
                     "date": "2026-09-08",
                     "type": "Renfo",
-                    "titre": "Renfo prévention (léger)",
-                    "description": "Gainage + proprio + excentrique mollet.",
-                    "statut": "a_venir",
-                    "commentaireCoach": "Reprise du renfo 2/sem : c'est le dernier bloc où on peut construire de la force.",
-                    "dureeCibleMin": 20,
+                    "titre": "Renfo cheville — format court (12 min)",
+                    "description": "Excentrique tibial ant. + mollet, proprio unipodale, gainage 3×40 s.",
+                    "statut": "modifiee",
+                    "commentaireCoach": "Format court systématisé : collé à la fin du footing du mardi. 12 min, pas 20.",
+                    "dureeCibleMin": 12,
                     "focus": "Gainage · proprio · excentrique mollet"
                   },
                   {
                     "date": "2026-09-09",
                     "type": "Seuil",
-                    "titre": "Seuil 4×2 km",
-                    "description": "2 km éch. + 4×2 km au seuil (5:15) récup 2:30 trot + 1,5 km RAC.",
-                    "statut": "a_venir",
-                    "commentaireCoach": "Passage au seuil long (8 km cumulés). C'est la séance qui construit ta capacité à tenir 5:41 sans dériver. Régularité entre les 4 blocs : le 4e doit être au même chrono que le 1er.",
-                    "alluresCibles": "Seuil 5:15 · éch/RAC 6:35",
-                    "distanceCibleKm": 12
+                    "titre": "Seuil 3×2 km",
+                    "description": "2 km éch. + 3×2 km au seuil (5:15-5:25) récup 2:30 trot + 1,5 km RAC.",
+                    "statut": "modifiee",
+                    "commentaireCoach": "Recalibrée : 3×2 km au lieu de 4×2 km. Tu as lutté sur 32 min de seuil en S6, je ne t'en mets pas 42. Le progrès ici n'est pas la quantité mais la LONGUEUR du bloc : 10 min d'affilée au lieu de 8, c'est exactement ta difficulté ('tenir une allure soutenue longtemps'). Pars à 5:25, pas à 5:15, et vise un 3e bloc aussi rapide que le 1er. Un seuil réussi se termine avec l'impression que tu aurais pu en faire un de plus.",
+                    "alluresCibles": "Seuil 5:15-5:25 · éch/RAC 6:35",
+                    "distanceCibleKm": 10
                   },
                   {
                     "date": "2026-09-09",
                     "type": "Renfo",
-                    "titre": "Renfo prévention + force",
-                    "description": "Excentrique tibial ant. & mollet, chaîne postérieure, gainage.",
-                    "statut": "a_venir",
-                    "commentaireCoach": "Dernier bloc de renfo appuyé. À partir de S9 on passe à 1/sem d'entretien.",
-                    "dureeCibleMin": 30,
+                    "titre": "Renfo cheville + chaîne postérieure — court (15 min)",
+                    "description": "Excentrique tibial ant. & mollet + fentes/pont fessier 2×12 + gainage.",
+                    "statut": "modifiee",
+                    "commentaireCoach": "Groupée sur le jour dur (après le seuil), 4 jours avant la SL. 15 min max : la version 30 min ne se fait jamais, celle-ci se fait.",
+                    "dureeCibleMin": 15,
                     "focus": "Excentrique tibial ant. & mollet · proprio · gainage · chaîne postérieure"
                   },
                   {
@@ -6087,11 +6087,11 @@ window.PREPA_DATA = {
                   {
                     "date": "2026-09-16",
                     "type": "Renfo",
-                    "titre": "Renfo entretien",
+                    "titre": "Renfo entretien — court (12 min)",
                     "description": "Excentrique mollet, proprio, gainage, chaîne postérieure — charges allégées.",
-                    "statut": "a_venir",
-                    "commentaireCoach": "Passage à 1 renfo/sem en spécifique. On entretient, on ne construit plus.",
-                    "dureeCibleMin": 25,
+                    "statut": "modifiee",
+                    "commentaireCoach": "Passage à 1 renfo/sem en spécifique. On entretient, on ne construit plus. Format ramené à 12 min et accroché à une séance de course : sur cette prépa, un renfo court fait vaut infiniment mieux qu'un renfo long zappé.",
+                    "dureeCibleMin": 12,
                     "focus": "Excentrique mollet · proprio · gainage"
                   },
                   {
@@ -6141,16 +6141,16 @@ window.PREPA_DATA = {
                     "statut": "a_venir",
                     "commentaireCoach": "Volume de seuil réduit (6 km) et RAC raccourci pour arriver frais sur les 30 km de dimanche. Qualité > quantité cette semaine.",
                     "alluresCibles": "Seuil 5:15 · éch/RAC 6:35",
-                    "distanceCibleKm": 11
+                    "distanceCibleKm": 10
                   },
                   {
                     "date": "2026-09-23",
                     "type": "Renfo",
-                    "titre": "Renfo entretien (léger)",
+                    "titre": "Renfo entretien (léger) — court (12 min)",
                     "description": "Gainage, mobilité, proprio. Rien de lourd sur les jambes.",
-                    "statut": "a_venir",
-                    "commentaireCoach": "Allégé : ~48 h de récup avant la SL, on ne prend aucun risque sur les jambes.",
-                    "dureeCibleMin": 20,
+                    "statut": "modifiee",
+                    "commentaireCoach": "Allégé : ~48 h de récup avant la SL, on ne prend aucun risque sur les jambes. Format ramené à 12 min et accroché à une séance de course : sur cette prépa, un renfo court fait vaut infiniment mieux qu'un renfo long zappé.",
+                    "dureeCibleMin": 12,
                     "focus": "Gainage · mobilité · proprio"
                   },
                   {
@@ -6205,11 +6205,11 @@ window.PREPA_DATA = {
                   {
                     "date": "2026-09-30",
                     "type": "Renfo",
-                    "titre": "Renfo entretien (léger)",
+                    "titre": "Renfo entretien (léger) — court (12 min)",
                     "description": "Gainage, mobilité, proprio.",
-                    "statut": "a_venir",
-                    "commentaireCoach": "Plus rien de lourd d'ici la course. Uniquement de l'entretien.",
-                    "dureeCibleMin": 20,
+                    "statut": "modifiee",
+                    "commentaireCoach": "Plus rien de lourd d'ici la course. Uniquement de l'entretien. Format ramené à 12 min et accroché à une séance de course : sur cette prépa, un renfo court fait vaut infiniment mieux qu'un renfo long zappé.",
+                    "dureeCibleMin": 12,
                     "focus": "Gainage · mobilité · proprio"
                   },
                   {
@@ -6259,16 +6259,16 @@ window.PREPA_DATA = {
                     "statut": "a_venir",
                     "commentaireCoach": "Format court : on rappelle l'intensité sans creuser la fatigue. Sensations vives attendues.",
                     "alluresCibles": "Seuil 5:15 · éch/RAC 6:35",
-                    "distanceCibleKm": 10
+                    "distanceCibleKm": 8
                   },
                   {
                     "date": "2026-10-07",
                     "type": "Renfo",
-                    "titre": "Renfo léger",
+                    "titre": "Renfo léger — court (12 min)",
                     "description": "Gainage + mobilité + proprio. Aucune charge.",
-                    "statut": "a_venir",
-                    "commentaireCoach": "Dernier renfo de la prépa. Purement préventif.",
-                    "dureeCibleMin": 15,
+                    "statut": "modifiee",
+                    "commentaireCoach": "Dernier renfo de la prépa. Purement préventif. Format ramené à 12 min et accroché à une séance de course : sur cette prépa, un renfo court fait vaut infiniment mieux qu'un renfo long zappé.",
+                    "dureeCibleMin": 12,
                     "focus": "Gainage · mobilité · proprio"
                   },
                   {
@@ -14313,6 +14313,105 @@ window.PREPA_DATA = {
               "altitudeMaxM": null,
               "date": "2026-08-22",
               "dateHeure": "2026-08-22T10:48:58"
+            },
+            {
+              "type": "Course à pied",
+              "favori": false,
+              "titre": "Villeneuve-d'Ascq - fractionné seul 25/08",
+              "distanceKm": 10.35,
+              "calories": 680,
+              "dureeSec": 3546.0,
+              "fcMoy": 154,
+              "fcMax": 179,
+              "teAerobie": 3.9,
+              "cadenceMoy": 163,
+              "cadenceMax": 173,
+              "allureMoySecKm": 343,
+              "meilleureAllureSecKm": 213,
+              "ascensionM": 9,
+              "descenteM": 10,
+              "longueurFouleeM": 1.07,
+              "oscillationVerticale": 9.2,
+              "tempsContactSol": 266,
+              "gapMoySecKm": 347,
+              "np": 291,
+              "tss": 0.0,
+              "puissanceMoy": 279,
+              "puissanceMax": 459,
+              "pas": 10,
+              "nbTours": 15,
+              "tempsDeplacementSec": 39.0,
+              "tempsEcouleSec": 46.0,
+              "altitudeMinM": null,
+              "altitudeMaxM": null,
+              "date": "2026-08-25",
+              "dateHeure": "2026-08-25T12:10:25"
+            },
+            {
+              "type": "Course à pied",
+              "favori": false,
+              "titre": "Libercourt Course à pied",
+              "distanceKm": 10.01,
+              "calories": 644,
+              "dureeSec": 3921.0,
+              "fcMoy": 133,
+              "fcMax": 146,
+              "teAerobie": 3.0,
+              "cadenceMoy": 163,
+              "cadenceMax": 167,
+              "allureMoySecKm": 392,
+              "meilleureAllureSecKm": 295,
+              "ascensionM": 52,
+              "descenteM": 53,
+              "longueurFouleeM": 0.93,
+              "oscillationVerticale": 8.9,
+              "tempsContactSol": 279,
+              "gapMoySecKm": 391,
+              "np": 252,
+              "tss": 0.0,
+              "puissanceMoy": 250,
+              "puissanceMax": 363,
+              "pas": 11,
+              "nbTours": 11,
+              "tempsDeplacementSec": 29.0,
+              "tempsEcouleSec": 66.0,
+              "altitudeMinM": null,
+              "altitudeMaxM": null,
+              "date": "2026-08-26",
+              "dateHeure": "2026-08-26T16:56:46"
+            },
+            {
+              "type": "Course à pied",
+              "favori": false,
+              "titre": "Libercourt - sortie longue 28/08",
+              "distanceKm": 22.01,
+              "calories": 1,
+              "dureeSec": 7905.0,
+              "fcMoy": 144,
+              "fcMax": 166,
+              "teAerobie": 4.1,
+              "cadenceMoy": 165,
+              "cadenceMax": 171,
+              "allureMoySecKm": 359,
+              "meilleureAllureSecKm": 312,
+              "ascensionM": 115,
+              "descenteM": 114,
+              "longueurFouleeM": 1.01,
+              "oscillationVerticale": 9.2,
+              "tempsContactSol": 272,
+              "gapMoySecKm": 359,
+              "np": 274,
+              "tss": 0.0,
+              "puissanceMoy": 272,
+              "puissanceMax": 344,
+              "pas": 22,
+              "nbTours": 23,
+              "tempsDeplacementSec": 29.0,
+              "tempsEcouleSec": 68.0,
+              "altitudeMinM": null,
+              "altitudeMaxM": null,
+              "date": "2026-08-28",
+              "dateHeure": "2026-08-28T07:58:50"
             }
           ],
           "journal": [
@@ -14345,6 +14444,11 @@ window.PREPA_DATA = {
               "semaine": 5,
               "titre": "Semaine 5 (17/08 → 23/08)",
               "contenu": "Semaine de bascule, la meilleure depuis le début. Les températures sont retombées.\n\n**Bilan à chaud** : 4 séances, 53 km (cible 46). EF du mardi rallongée à 10 km à 6:30 pour FC 132 (FC la plus basse de la prépa). Côte du terril (signature) faite mercredi, 13,8 km / D+222, descente marchée, cheville OK sur la séance. SL avancée au **samedi** comme demandé : **22 km au lieu de 20, avec 5 km à AM en fin au lieu de 3** — je me sentais tellement bien que j'ai rallongé. 5:58 de moyenne, FC 142. **Sensations folles.**\n\n**Premier test d'alimentation en course : 1 pâte de fruits + 1 gel + 500 ml de boisson iso → tout s'est très bien déroulé**, aucun souci digestif. Protocole à garder.\n\n**Cheville droite** : a tiré un peu sur la fin de la SL, et tire encore un peu le lendemain. Le problème n'est donc pas totalement résolu. À noter : **le renfo prévention/force du mercredi (excentrique tibial ant.) a été zappé** — 1 seule séance de renfo sur les 2 prévues (le léger du mardi).\n\n**Moral** : gros reboost. Envie d'aller chercher les 4h00 à fond.\n\n**Demande** : SL de S6 avancée au **vendredi 28/08** (départ en vacances le 29), EF court permutée au dimanche."
+            },
+            {
+              "semaine": 6,
+              "titre": "Semaine 6 (24/08 → 30/08)",
+              "contenu": "Semaine réagencée autour de la SL avancée au vendredi 28/08 (départ en vacances le 29).\n\n**Bilan à chaud** : 42,4 km sur les 3 séances faites (+ footing du dimanche à venir, cible 49).\n- **Seuil du mardi 25/08** : j'ai fait **4×8 min au lieu de 3×8** — et avec ça je n'arrivais même pas à 12 km, donc la distance cible du plan était fausse. **J'ai eu un peu de mal** : j'ai toujours cette difficulté à garder une allure soutenue longtemps. J'avais aussi **très mal dormi la nuit d'avant**, ça a dû jouer. 10,35 km à 5:43 moy, FC 154 / max 179.\n- **EF mercredi 26/08** : 10 km à 6:32, facile.\n- **SL vendredi 28/08** : 22 km à 5:59, FC 144 / max 166, avec 2×3 km à AM au milieu. **Toujours un bon ressenti sur la sortie longue.**\n\n**Cheville droite** : reste pareil que depuis le début — **ça ne s'aggrave pas**, bon signe. N'a pas tiré sur la SL cette fois.\n\n**Renfo** : la séance prévention + force du mardi a **encore été zappée** (2e semaine de suite).\n\n**Semaine prochaine (vacances)** : sortie longue prévue **vendredi 04/09**, ce sera un **16 km avec 500 m de D+ en mode trail**."
             }
           ]
         }
