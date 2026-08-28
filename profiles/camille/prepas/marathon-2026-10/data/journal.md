@@ -26,3 +26,13 @@ Belle semaine (44 km) : EF lun 8 km, seuil 2×3 km avancé au mardi, EF sam, **S
 ## Semaine 6 (17 → 23 août 2026)
 
 37,7 km / 3 courses. EF décalée au mardi (7,35 km @6:40), **VMA 5×1000 mercredi courue sur pavés mouillés** → j'ai dû forcer sur les appuis, et une **nouvelle douleur est apparue derrière le genou (tendon)**. Séance EF du jeudi sautée + **2 jours de repos complet**, qui m'ont vraiment fait du bien. Résultat : **SL de 22 km le samedi @6:10, FC 147, zéro douleur** — plus longue sortie de la prépa. Tendon totalement indolore depuis. Renfo : muscu du lundi faite, core du mercredi non fait (2e fois d'affilée).
+
+## Semaine 7 (24 → 30 août 2026)
+
+37,4 km / 3 courses, **tout validé**. EF lun 7,35 km @6:37 FC 130, **seuil avancé au mardi : 12 km @5:42 moy, FC 161** (meilleure séance de seuil de la prépa, surface sèche), **SL vendredi 18 km @6:12 FC 147** — même FC que la SL de 22 km du 22/08 pour 10 s/km de plus. SL avancée au vendredi avant le départ en vacances le 29.
+
+**Genou : douleur toujours présente mais stable, sans évolution depuis la S2** (~5 semaines). Aucun impact sur la foulée, disparaît à l'arrêt. Le tendon postérieur (épisode du 19/08) reste éteint. Jamais consulté → avis kiné recommandé par le coach pendant les vacances.
+
+Renfo : **1 séance sur 2** (le 26/08). Le bas du corps du lundi a sauté.
+
+Semaine 8 : vacances + décharge. SL déplacée au **vendredi 04/09** et passée en **trail 16 km / 500 m D+** à ma demande.
