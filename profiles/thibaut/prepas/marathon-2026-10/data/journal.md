@@ -44,3 +44,19 @@ Semaine réagencée autour de la SL avancée au vendredi 28/08 (départ en vacan
 **Renfo** : la séance prévention + force du mardi a **encore été zappée** (2e semaine de suite).
 
 **Semaine prochaine (vacances)** : sortie longue prévue **vendredi 04/09**, ce sera un **16 km avec 500 m de D+ en mode trail**.
+
+## Semaine 7 (31/08 → 06/09) — vacances
+Semaine de vacances à Saint-Rémy-de-Provence, tout en trail, sans séance structurée. **Rentré une journée plus tard que prévu (le 10/09).**
+
+**Bilan à chaud** : 37,2 km sur 3 séances (cible 38), + une longue marche de 2h10 le 31/08.
+- **Mardi 01/09** : trail 13,6 km / **D+882** en 1h49, FC 140. Séance de découverte partie bien plus loin que prévu, mais effort très contenu.
+- **Mercredi 02/09** : 6,5 km plat à 6:27, FC 145. Facile.
+- **Vendredi 04/09** : **SL trail 17,07 km / D+463** en 1h58, 6:57/km, FC 147. Bon ressenti, la sortie longue commandée par le coach faite comme demandé.
+- Lundi 07/09 (dernier jour) : trail 9,3 km / D+587.
+- Mercredi 09/09 : trail 5 km / D+586 à 6:01.
+
+**Cheville droite** : **a bien tenu tout le bloc trail malgré l'absence totale de renfo**, pas vraiment de douleur. 1 345 m de D+ cumulés sur la semaine sans que ça tire.
+
+**Renfo** : **aucune séance** (3e semaine consécutive).
+
+**Semaine 8** : seuil décalé au **vendredi 11/09** (retour de vacances), **SL de 24 km maintenue dimanche 13/09 avec 2×4 km à AM** (plan initial conservé à ma demande).
