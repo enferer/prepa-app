@@ -517,15 +517,15 @@
       "bloc": "Développement",
       "dateDebut": "2026-08-31",
       "volumeCibleKm": 34,
-      "note": "VACANCES (29/08→09/09) + décharge, 34 km. SL déplacée au vendredi 04/09 et passée en trail 16 km / 500 m D+ à la demande de Camille : travail de force spécifique bienvenu en décharge, encadré par des consignes de descente à cause du genou. Dimanche devient une récup plate, sautable. Cours souple, en groupe, sans montre si tu veux.",
+      "note": "VACANCES (29/08→09/09) + décharge — SEMAINE RÉALISÉE : 36,9 km, 3 courses, 100 % en trail provençal (D+ cumulé ≈ 920 m). EF du lundi décalée au mardi et transformée en trail de 13,4 km, SL trail du vendredi faite exactement comme commandée (17 km / 465 m D+ en 2h00), récup du dimanche sautée comme prévu. FC élevée sur toutes les sorties (157-164) : chaleur + dénivelé, pas un signal de forme. FAIT MAJEUR : la gêne au genou, présente en continu depuis le 26/07, a disparu pendant ces vacances. Renfo : aucune des séances faite.",
       "seances": [
         {
           "date": "2026-08-31",
           "type": "EF",
           "titre": "Footing libre",
           "description": "6 km EF, quand tu veux, où tu veux.",
-          "statut": "a_venir",
-          "commentaireCoach": "Vacances : garde le rythme mais sans pression. Décale les jours selon ton emploi du temps.",
+          "statut": "modifiee",
+          "commentaireCoach": "Décalée au mardi 01/09 et largement débordée : 13,4 km / D+336 / 1h39 à 7:26 au lieu de 6 km EF. Je ne te le reproche pas — c'était les vacances, au feeling, sur un terrain magnifique, et la tête compte autant que les jambes. Mais sois lucide : à FC 157 sur 1h39, ce n'était pas une EF, c'était une sortie longue déguisée en footing. En décharge, ça mange une partie du bénéfice de la décharge.",
           "distanceCibleKm": 6,
           "alluresCibles": "6:40"
         },
@@ -534,8 +534,8 @@
           "type": "Renfo",
           "titre": "Mobilité & gainage léger",
           "description": "Mobilité et gainage, sans matériel.",
-          "statut": "a_venir",
-          "commentaireCoach": "Renfo allégé en décharge, mais oriente-le genou : quadriceps en contrôle et proprio sur une jambe. C'est le meilleur préparateur possible aux 500 m de descente de vendredi, et c'est faisable dans un salon de location.",
+          "statut": "manquee",
+          "commentaireCoach": "Non faite. C'est la 3e séance de renfo consécutive qui saute depuis la S7 — j'y reviens dans le rapport, parce que ton genou vient justement de se calmer et que le renfo est ce qui le maintiendra calme.",
           "dureeCibleMin": 20,
           "focus": "Mobilité, gainage léger, quadriceps (chaise, fentes lentes) et proprioception unipodale — préparation du genou aux descentes"
         },
@@ -544,8 +544,8 @@
           "type": "EF",
           "titre": "Footing groupe",
           "description": "7 km à l'allure du groupe, allure libre.",
-          "statut": "a_venir",
-          "commentaireCoach": "Cours avec les autres, c'est parfait pour la tête. Reste dans le facile.",
+          "statut": "validee",
+          "commentaireCoach": "6,5 km @6:36, D+121, en groupe. Exactement ce qui était demandé. Parfait.",
           "distanceCibleKm": 7,
           "alluresCibles": "EF 6:40 (allure du groupe)"
         },
@@ -554,8 +554,8 @@
           "type": "SL",
           "titre": "Sortie longue trail 16 km (500 m D+)",
           "description": "16 km en trail, ~500 m D+. Raisonner en durée et en effort, pas en allure : vise ~2h00-2h15, FC en zone SL. Montées raides en marche rapide assumée, descentes en petites foulées rapides et amorties, jamais en freinage jambe tendue.",
-          "statut": "modifiee",
-          "commentaireCoach": "Déplacée du dimanche au vendredi et transformée en trail à ta demande. Je valide : en décharge, du D+ à effort maîtrisé est un excellent travail de force spécifique, et le terrain souple soulage les articulations par rapport au bitume. Deux garde-fous, à cause du genou : 500 m D+ sur 16 km, ce sont surtout 500 m de DESCENTE, et c'est la descente qui charge le genou, pas la montée. Donc foulée courte et fréquente en descente, on marche celles qui sont raides, et si le genou se met à parler EN descente (et pas seulement à sourdre), tu marches la fin — ce n'est pas négociable un jour de décharge. Oublie l'allure : sur ce profil, 7:30-8:00/km est normal et ne veut rien dire.",
+          "statut": "validee",
+          "commentaireCoach": "Commande exécutée au millimètre : 17,0 km, 465 m D+, 2h00:50 — j'avais dit 16 km / 500 D+ en 2h00-2h15. Et surtout : 465 m de descente encaissés sans que le genou ne dise quoi que ce soit. C'est la meilleure nouvelle de ta quinzaine. FC 164 de moyenne, c'est haut, mais entre la chaleur de Provence et le profil, c'est cohérent — on juge cette sortie à l'effort, pas au cardio. Excellent travail de force spécifique.",
           "distanceCibleKm": 16,
           "alluresCibles": "Effort SL — allure libre (D+), ~2h00-2h15"
         },
@@ -564,8 +564,8 @@
           "type": "EF",
           "titre": "Footing récup (ou repos)",
           "description": "5 km EF très souple, terrain plat et roulant. Repos complet si les quadriceps sont cuits par les descentes.",
-          "statut": "modifiee",
-          "commentaireCoach": "Échangée avec la SL : c'est désormais la récup du trail de vendredi, pas une séance. Terrain plat obligatoire — après 500 m de descente, tes quadriceps auront des courbatures d'impact, et c'est le moment où le genou est le plus exposé. Si les jambes sont bois, tu sautes sans état d'âme : on est en décharge, et la semaine 9 reprend fort.",
+          "statut": "manquee",
+          "commentaireCoach": "Sautée — et c'était explicitement autorisé : après 465 m de descente, laisser les quadriceps tranquilles était le bon choix. Aucun regret à avoir, la décharge a joué son rôle.",
           "distanceCibleKm": 5,
           "alluresCibles": "6:40"
         }
@@ -576,15 +576,15 @@
       "bloc": "Développement",
       "dateDebut": "2026-09-07",
       "volumeCibleKm": 42,
-      "note": "Retour de vacances : volume ramené de 48 à 42 km pour éviter un saut de +60 %. Premier contact avec l'allure marathon en fin de SL.",
+      "note": "Retour de vacances (rentrée décalée d'un jour, au 10/09). Semaine réagencée avec Camille : le seuil du mercredi, remplacé sur place par une EF de dernier jour de vacances, est décalé au VENDREDI 11/09 et allégé à 3×2 km ; l'EF du vendredi passe au mercredi 09/09 (faite). Le seuil est allégé plutôt que la SL parce qu'il ne reste qu'un jour de récup avant dimanche et que la SL est la séance à valeur ajoutée : premier contact avec l'allure marathon ET premier kilomètre sur du plat depuis le 28/08. Volume attendu ≈ 44 km (cible 42). Renfo entièrement manqué cette semaine : priorité absolue à sa relance lundi 14/09.",
       "seances": [
         {
           "date": "2026-09-07",
           "type": "EF",
           "titre": "Footing",
           "description": "7 km EF.",
-          "statut": "modifiee",
-          "commentaireCoach": "Facile = facile. C'est le volume EF qui construit ton moteur marathon, ne le cours pas trop vite.",
+          "statut": "validee",
+          "commentaireCoach": "Faite en version trail aux Baux, en deux tronçons : 4,6 km de montée sèche (D+235, 8:23/km) puis 4,7 km de descente (D-238, 6:25/km), 9,3 km au total. Plus dur qu'une EF, mais du bon travail de force — et là encore, 238 m de descente sans réveiller le genou. Je la valide.",
           "distanceCibleKm": 7,
           "alluresCibles": "6:40"
         },
@@ -593,19 +593,19 @@
           "type": "Renfo",
           "titre": "Renfo bas du corps",
           "description": "Circuit force complet, 4 tours.",
-          "statut": "modifiee",
-          "commentaireCoach": "On relance la force après la coupure.",
+          "statut": "manquee",
+          "commentaireCoach": "Non faite. Relance obligatoire lundi 14/09 — voir le rapport, ce n'est plus négociable.",
           "dureeCibleMin": 40,
           "focus": "Chaîne postérieure, quadris/fessiers, gainage"
         },
         {
-          "date": "2026-09-09",
+          "date": "2026-09-11",
           "type": "Seuil",
-          "titre": "Seuil 2×3 km",
-          "description": "2 km éch, 2×3 km à 5:20/km (récup 2 min), 2 km rac.",
+          "titre": "Seuil 3×2 km",
+          "description": "2 km éch, 3×2 km à 5:20/km (récup 2 min trot), 2 km rac. ≈ 10 km. Terrain PLAT et surface sèche.",
           "statut": "modifiee",
-          "commentaireCoach": "Reprise en douceur de la qualité, ne cherche pas à rattraper d'un coup.",
-          "distanceCibleKm": 9,
+          "commentaireCoach": "Décalée du mercredi au vendredi à ta demande (EF de dernier jour de vacances mercredi), et allégée de 2×3 km à 3×2 km. Pourquoi 3×2 plutôt que 2×3 alors que tu te sens fraîche : il ne reste qu'un jour avant la SL de dimanche, et des blocs de 2 km fatiguent moins qu'un bloc de 3 km pour un volume de qualité quasi identique (6 km contre 6 km). Tu gardes la stimulation du seuil sans hypothéquer dimanche. Deux consignes : PLAT et surface sèche — c'est un fractionné sur pavés mouillés qui t'avait déclenché le tendon postérieur le 19/08, on ne rejoue pas ça. Et tiens 5:20, ne pars pas plus vite : ce sont tes premiers kilomètres rapides depuis le 25/08.",
+          "distanceCibleKm": 10,
           "alluresCibles": "Seuil 5:20 · EF 6:40 éch/rac"
         },
         {
@@ -613,28 +613,28 @@
           "type": "Renfo",
           "titre": "Gainage & stabilité",
           "description": "Circuit gainage + proprio.",
-          "statut": "modifiee",
-          "commentaireCoach": "Core d'entretien.",
+          "statut": "manquee",
+          "commentaireCoach": "Non faite. 5e séance de renfo consécutive manquée depuis la S7.",
           "dureeCibleMin": 25,
           "focus": "Gainage, proprioception, stabilité hanche/genou"
         },
         {
-          "date": "2026-09-11",
+          "date": "2026-09-09",
           "type": "EF",
-          "titre": "Footing",
-          "description": "6 km EF.",
-          "statut": "modifiee",
-          "commentaireCoach": "Facile = facile. C'est le volume EF qui construit ton moteur marathon, ne le cours pas trop vite.",
-          "distanceCibleKm": 6,
+          "titre": "Footing dernier jour de vacances",
+          "description": "5 km EF.",
+          "statut": "validee",
+          "commentaireCoach": "Échangée avec le seuil : tu as fait ce footing mercredi, dernier jour de vacances, et décalé la qualité au vendredi. 5,0 km @6:07 avec D+139 et FC 155 — un peu rapide pour une EF, mais sur ce profil et par cette chaleur c'est cohérent. Bon choix d'avoir gardé le seuil pour une fois rentrée, au frais et sur du plat.",
+          "distanceCibleKm": 5,
           "alluresCibles": "6:40"
         },
         {
           "date": "2026-09-13",
           "type": "SL",
           "titre": "Sortie longue 20 km (finish AM)",
-          "description": "20 km : 17 km en endurance ~6:20/km, puis 3 km à 5:41/km pour finir.",
+          "description": "20 km : 17 km en endurance ~6:20/km, puis 3 km à 5:41/km pour finir. Terrain PLAT — c'est le point important de cette sortie.",
           "statut": "modifiee",
-          "commentaireCoach": "Première prise de contact avec l'allure marathon, sur jambes déjà fatiguées. 3 km seulement : on apprend le rythme, on ne cherche pas la performance.",
+          "commentaireCoach": "Maintenue en intégralité, finish à allure marathon compris : c'est la séance que je protège cette semaine, et c'est pour elle que j'ai allégé le seuil de vendredi. Deux raisons. D'abord c'est ton premier contact de la prépa avec l'allure marathon, sur jambes déjà fatiguées — exactement la sensation du 30e kilomètre. Ensuite, tu n'as pas posé un pied sur du plat depuis le 28/08 : deux semaines de trail t'ont donné de la force, mais tu as perdu tes repères d'allure, et tes 3 km à 5:41 vont te les rendre. Ne juge pas tes 17 premiers kilomètres à la montre : après ce bloc de trail, 6:20 va te sembler bizarre pendant une demi-heure, c'est normal. Et note bien ta FC sur les 3 derniers kilomètres, c'est mon premier indicateur sérieux pour les 4h00.",
           "distanceCibleKm": 20,
           "alluresCibles": "SL 6:20 · finish AM 5:41"
         }

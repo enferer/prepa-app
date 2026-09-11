@@ -36,3 +36,19 @@ Belle semaine (44 km) : EF lun 8 km, seuil 2×3 km avancé au mardi, EF sam, **S
 Renfo : **1 séance sur 2** (le 26/08). Le bas du corps du lundi a sauté.
 
 Semaine 8 : vacances + décharge. SL déplacée au **vendredi 04/09** et passée en **trail 16 km / 500 m D+** à ma demande.
+
+## Semaine 8 (31 août → 6 septembre 2026) — vacances, décharge
+
+36,9 km / 3 courses, **100 % en trail en Provence** (~920 m D+ cumulés), tout au feeling. EF du lundi décalée au mardi et transformée en **trail de 13,4 km (D+336, FC 157)**, footing groupe mercredi 6,5 km, et surtout la **SL trail du vendredi 04/09 : 17 km / 465 m D+ / 2h00** — pile la commande. Récup du dimanche sautée (autorisée).
+
+**Chaleur difficile** sur toutes les sorties, FC élevée en conséquence (157-164). **Sommeil pas optimal** (vacances, soirées tardives). Aucune sortie sur du plat.
+
+**Genou : plus aucune douleur.** La gêne présente en continu depuis le 26/07 a disparu pendant ces vacances, y compris sur 465 m de descente.
+
+Renfo : **aucune séance faite.**
+
+## Semaine 9 (7 → 13 septembre 2026) — retour de vacances
+
+Rentrée décalée d'un jour (retour le 10/09 au lieu du 09/09). Lundi 07/09 : **A/R aux Baux, 9,3 km** (4,6 km de montée D+235 puis 4,7 km de descente). Mercredi 09/09 : **EF 5 km @6:07** pour le dernier jour de vacances, **à la place du seuil**. Seuil décalé au **vendredi 11/09** (allégé en 3×2 km), SL maintenue dimanche 13/09.
+
+Jambes fraîches au retour malgré le sommeil. Genou toujours silencieux. Renfo : **aucune séance faite** (5e d'affilée depuis la S7).
