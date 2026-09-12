@@ -21,6 +21,9 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from details import charger_fiches  # noqa: E402  (module local, stdlib only)
+
 ROOT = Path(__file__).resolve().parent.parent
 PROFILES_DIR = ROOT / "profiles"
 VUE = ROOT / "vue"
@@ -282,7 +285,22 @@ def build_prepa(prepa_dir):
     journal_md = data_dir / "journal.md"
 
     activites = parse_garmin(garmin)
+
+    # Fiches compactes issues de garmin_raw/, rattachées aux activités par
+    # dateHeure (le CSV Garmin ne porte pas d'activityId). Le brut lui-même
+    # n'entre jamais ni dans activites.json ni dans la vue.
+    fiches = charger_fiches(data_dir)
+    for act in activites:
+        fiche = fiches.get(act.get("dateHeure"))
+        act["activityId"] = fiche["activityId"] if fiche else None
+        act["aDetail"] = bool(fiche)
+
     activites_json.write_text(json.dumps(activites, ensure_ascii=False, indent=2), encoding="utf-8")
+    detail_json = data_dir / "detail_seances.json"
+    if fiches:
+        detail_json.write_text(
+            json.dumps(sorted(fiches.values(), key=lambda f: f["dateHeure"]),
+                       ensure_ascii=False, indent=2), encoding="utf-8")
 
     objectifs = load_json(objectifs_json, {})
     plan = load_json(plan_json, {"semaines": []})
@@ -297,6 +315,7 @@ def build_prepa(prepa_dir):
         "objectifs": objectifs,
         "plan": plan,
         "activites": activites,
+        "details": sorted(fiches.values(), key=lambda f: f["dateHeure"]),
         "journal": parse_journal(journal_md),
     }, erreurs, len(activites)
 
@@ -319,6 +338,7 @@ def build_profil(profil_dir, filtre_prepa=None):
                     "objectifs": load_json(data_dir / "objectifs.json", {}),
                     "plan": load_json(data_dir / "plan.json", {"semaines": []}),
                     "activites": load_json(data_dir / "activites.json", []),
+                    "details": load_json(data_dir / "detail_seances.json", []),
                     "journal": parse_journal(data_dir / "journal.md"),
                 })
                 continue
@@ -326,7 +346,9 @@ def build_profil(profil_dir, filtre_prepa=None):
             prepas.append(payload)
             if err:
                 erreurs_totales.append((profile["id"], pd.name, err))
-            print(f"  ✅ {profile['id']}/{pd.name} : {nb} activité(s)")
+            nb_det = len(payload.get("details") or [])
+            detail_txt = f", {nb_det} avec détails" if nb_det else ""
+            print(f"  ✅ {profile['id']}/{pd.name} : {nb} activité(s){detail_txt}")
 
     return {
         "id": profile.get("id", profil_dir.name),

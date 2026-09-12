@@ -20,6 +20,40 @@ Dans tout ce qui suit, **`DATA`** = `profiles/<profil>/prepas/<slug>/data/`, et 
 
 Garde sa réponse en tête comme **grille de lecture pour tout le reste**. Si elle mentionne douleur/fatigue/événement notable, croise-la explicitement avec les écarts constatés (§3-4) et propose de la consigner dans `DATA/journal.md`. Un « RAS » n'appelle pas de traitement particulier.
 
+## 1bis. Récupérer les activités Garmin
+
+Synchronise `DATA/garmin.csv` depuis Garmin Connect — ne demande jamais à l'athlète de copier ses séances à la main :
+
+```bash
+.venv/bin/python scripts/garmin_sync.py --profil <profil> --prepa <slug> --details
+```
+
+Le script ne récupère que les activités postérieures à la dernière ligne du CSV, dédoublonne par date+heure et archive le détail de chaque nouvelle séance dans `DATA/garmin_raw/`. Il est relançable sans risque.
+
+Le compte Garmin utilisé est celui de `profiles/<profil>/.env`, et le script refuse de tourner si le compte connecté ne correspond pas au profil ciblé — pas de risque de mélanger les athlètes.
+
+Si le script échoue (identifiants absents, MFA, panne Garmin), **ne bloque pas** : dis-le à l'athlète et poursuis avec le `garmin.csv` existant, qu'il peut compléter à la main.
+
+## 1ter. Les deux niveaux de lecture — RÈGLE IMPORTANTE
+
+Il y a **deux sources, deux usages**. Les confondre est la principale façon de rater cette analyse.
+
+| Niveau | Source | Commande | Sert à |
+|---|---|---|---|
+| **Global** | `activites.json` (issu du CSV) | `analyze.py --profil … --prepa …` | Tendances de fond : volume hebdo, progression des allures, dérive FC, charge. **Toujours** sur tout l'historique. |
+| **Détaillé** | `detail_seances.json` (extrait de `garmin_raw/`) | `analyze.py --profil … --prepa … --nouvelles` | Juger l'exécution d'une séance : tenue des blocs, dérive intra-séance, récups, météo. **Uniquement** les séances jamais analysées. |
+
+Règles :
+
+- **Ne lis jamais `garmin_raw/*.json` directement.** Ce sont des dumps de ~40 Ko par séance : les ouvrir noie l'analyse dans du bruit (GPS point par point, métadonnées device). `detail_seances.json` en est l'extrait utile (~3 Ko), et `analyze.py --nouvelles` te le rend déjà mis en forme.
+- **Le détail ne sert qu'aux séances neuves.** Pour juger une tendance (« il progresse au seuil »), reviens au niveau global — comparer deux séances tour par tour à la main produit des conclusions anecdotiques.
+- Pour revoir une séance ancienne précise : `analyze.py --profil … --prepa … --seance 2026-09-11`.
+- **À la fin de la mise à jour**, marque les séances traitées :
+  `python3 scripts/analyze.py --profil <profil> --prepa <slug> --marquer-analysees`
+  Sans ça, les mêmes séances ressortiront comme neuves au prochain update.
+
+Ce que le détail apporte et que le CSV ne dira jamais : l'allure **de chaque bloc** (une moyenne globale mélange échauffement, blocs et récup — inexploitable sur un fractionné), la dérive FC d'un bloc au suivant, le respect des temps de récup, la température réelle et le temps passé par zone de FC.
+
 ## 2. Charger le contexte
 - Lis **`coach/COACH.md`** (méthodologie, règles d'adaptation §4, règles d'interaction §5).
 - Lance `python3 scripts/build_data.py --profil <profil> --prepa <slug>` pour rafraîchir `activites.json`.
@@ -31,6 +65,8 @@ Garde sa réponse en tête comme **grille de lecture pour tout le reste**. Si el
 Pour chaque activité récente non traitée, trouve la **séance prévue la plus proche** (date ± quelques jours, type cohérent). Une séance prévue sans activité correspondante = potentiellement manquée.
 
 ## 4. Traiter chaque rapprochement
+Pour toute séance à blocs (seuil, VMA, côtes, SL avec portions à AM), **juge sur les tours** (§1ter), pas sur la moyenne de la séance : une séance peut être parfaitement exécutée et afficher une allure moyenne médiocre.
+
 - **Conforme** (écart faible, allures/FC cohérentes) → `statut: "validee"` + `commentaireCoach` court et encourageant. Pas besoin de questionner.
 - **Écart significatif** (déclencheurs §5 de COACH.md : écart distance/durée > 20 %, séance clé sautée, FC suspecte, mention de douleur) → **AskUserQuestion AVANT toute adaptation**. Demande la cause avec des options claires (fatigue, douleur/blessure, manque de temps, météo, mental…).
 
@@ -50,4 +86,5 @@ Tiens compte des **séances signature** de `objectifs.json` (§6 de COACH.md) : 
 ## 8. Régénérer et rapporter
 - Lance `python3 scripts/build_data.py --profil <profil> --prepa <slug>` et **vérifie sa sortie** : s'il affiche `❌ VALIDATION …`, corrige avant de continuer.
 - Produis le **rapport de coach** (§8 de COACH.md) : bilan de la semaine, points d'attention, ce que tu as changé et pourquoi, consignes pour la semaine à venir (1-2 séances clés).
+- Marque les séances analysées : `python3 scripts/analyze.py --profil <profil> --prepa <slug> --marquer-analysees`.
 - Propose un **commit git** pour tracer l'évolution (ex. `git add -A && git commit -m "MàJ <profil>/<slug> semaine N"`).

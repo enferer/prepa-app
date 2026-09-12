@@ -1,7 +1,7 @@
 // Fichier GÉNÉRÉ par scripts/build_data.py — NE PAS ÉDITER À LA MAIN.
 // Relancer `python3 scripts/build_data.py` après toute modif dans profiles/*/prepas/*/data/.
 window.PREPA_DATA = {
-  "genereLe": "2026-09-11T16:12:35",
+  "genereLe": "2026-09-12T11:49:58",
   "profils": [
     {
       "id": "camille",
@@ -1100,7 +1100,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 61,
               "date": "2025-11-25",
-              "dateHeure": "2025-11-25T19:42:30"
+              "dateHeure": "2025-11-25T19:42:30",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1133,7 +1135,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 37,
               "altitudeMaxM": 61,
               "date": "2025-11-26",
-              "dateHeure": "2025-11-26T17:20:26"
+              "dateHeure": "2025-11-26T17:20:26",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1166,7 +1170,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 43,
               "altitudeMaxM": 62,
               "date": "2025-11-28",
-              "dateHeure": "2025-11-28T12:23:49"
+              "dateHeure": "2025-11-28T12:23:49",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1199,7 +1205,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 55,
               "date": "2025-11-30",
-              "dateHeure": "2025-11-30T14:57:34"
+              "dateHeure": "2025-11-30T14:57:34",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1232,7 +1240,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 37,
               "altitudeMaxM": 61,
               "date": "2025-12-03",
-              "dateHeure": "2025-12-03T17:27:11"
+              "dateHeure": "2025-12-03T17:27:11",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1265,7 +1275,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 61,
               "date": "2025-12-05",
-              "dateHeure": "2025-12-05T17:54:33"
+              "dateHeure": "2025-12-05T17:54:33",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1298,7 +1310,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 61,
               "date": "2025-12-09",
-              "dateHeure": "2025-12-09T19:44:49"
+              "dateHeure": "2025-12-09T19:44:49",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1331,7 +1345,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 61,
               "date": "2025-12-10",
-              "dateHeure": "2025-12-10T17:30:42"
+              "dateHeure": "2025-12-10T17:30:42",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1364,7 +1380,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 64,
               "date": "2025-12-13",
-              "dateHeure": "2025-12-13T19:02:55"
+              "dateHeure": "2025-12-13T19:02:55",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1397,7 +1415,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 61,
               "date": "2025-12-14",
-              "dateHeure": "2025-12-14T14:25:30"
+              "dateHeure": "2025-12-14T14:25:30",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1430,7 +1450,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 61,
               "date": "2025-12-16",
-              "dateHeure": "2025-12-16T18:46:17"
+              "dateHeure": "2025-12-16T18:46:17",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1463,7 +1485,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 61,
               "date": "2025-12-17",
-              "dateHeure": "2025-12-17T17:28:34"
+              "dateHeure": "2025-12-17T17:28:34",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1496,7 +1520,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 61,
               "date": "2025-12-21",
-              "dateHeure": "2025-12-21T17:54:04"
+              "dateHeure": "2025-12-21T17:54:04",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1529,7 +1555,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 61,
               "date": "2025-12-23",
-              "dateHeure": "2025-12-23T17:38:08"
+              "dateHeure": "2025-12-23T17:38:08",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1562,7 +1590,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 32,
               "altitudeMaxM": 73,
               "date": "2025-12-25",
-              "dateHeure": "2025-12-25T14:38:29"
+              "dateHeure": "2025-12-25T14:38:29",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Marche à pied",
@@ -1595,7 +1625,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 32,
               "altitudeMaxM": 61,
               "date": "2025-12-27",
-              "dateHeure": "2025-12-27T14:46:41"
+              "dateHeure": "2025-12-27T14:46:41",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1628,7 +1660,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 61,
               "date": "2025-12-28",
-              "dateHeure": "2025-12-28T14:49:46"
+              "dateHeure": "2025-12-28T14:49:46",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1661,7 +1695,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 32,
               "altitudeMaxM": 61,
               "date": "2025-12-30",
-              "dateHeure": "2025-12-30T19:39:53"
+              "dateHeure": "2025-12-30T19:39:53",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1694,7 +1730,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 24,
               "altitudeMaxM": 35,
               "date": "2026-01-02",
-              "dateHeure": "2026-01-02T14:32:42"
+              "dateHeure": "2026-01-02T14:32:42",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1727,7 +1765,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 64,
               "date": "2026-01-03",
-              "dateHeure": "2026-01-03T14:43:39"
+              "dateHeure": "2026-01-03T14:43:39",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1760,7 +1800,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 61,
               "date": "2026-01-09",
-              "dateHeure": "2026-01-09T17:15:19"
+              "dateHeure": "2026-01-09T17:15:19",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1793,7 +1835,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 61,
               "date": "2026-01-10",
-              "dateHeure": "2026-01-10T15:59:02"
+              "dateHeure": "2026-01-10T15:59:02",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1826,7 +1870,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 32,
               "altitudeMaxM": 61,
               "date": "2026-01-13",
-              "dateHeure": "2026-01-13T19:43:56"
+              "dateHeure": "2026-01-13T19:43:56",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1859,7 +1905,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 44,
               "altitudeMaxM": 62,
               "date": "2026-01-14",
-              "dateHeure": "2026-01-14T17:07:52"
+              "dateHeure": "2026-01-14T17:07:52",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1892,7 +1940,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 61,
               "date": "2026-01-15",
-              "dateHeure": "2026-01-15T18:09:23"
+              "dateHeure": "2026-01-15T18:09:23",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1925,7 +1975,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 55,
               "date": "2026-01-18",
-              "dateHeure": "2026-01-18T11:11:13"
+              "dateHeure": "2026-01-18T11:11:13",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1958,7 +2010,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 32,
               "altitudeMaxM": 61,
               "date": "2026-01-20",
-              "dateHeure": "2026-01-20T19:41:26"
+              "dateHeure": "2026-01-20T19:41:26",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -1991,7 +2045,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 32,
               "altitudeMaxM": 61,
               "date": "2026-01-22",
-              "dateHeure": "2026-01-22T19:55:53"
+              "dateHeure": "2026-01-22T19:55:53",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Cyclisme",
@@ -2024,7 +2080,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 72,
               "date": "2026-01-24",
-              "dateHeure": "2026-01-24T14:54:08"
+              "dateHeure": "2026-01-24T14:54:08",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2057,7 +2115,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 64,
               "date": "2026-01-25",
-              "dateHeure": "2026-01-25T11:21:56"
+              "dateHeure": "2026-01-25T11:21:56",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2090,7 +2150,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 47,
               "date": "2026-01-28",
-              "dateHeure": "2026-01-28T12:24:47"
+              "dateHeure": "2026-01-28T12:24:47",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2123,7 +2185,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 61,
               "date": "2026-01-30",
-              "dateHeure": "2026-01-30T17:14:48"
+              "dateHeure": "2026-01-30T17:14:48",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2156,7 +2220,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 32,
               "altitudeMaxM": 61,
               "date": "2026-02-01",
-              "dateHeure": "2026-02-01T11:05:24"
+              "dateHeure": "2026-02-01T11:05:24",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2189,7 +2255,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 32,
               "altitudeMaxM": 61,
               "date": "2026-02-03",
-              "dateHeure": "2026-02-03T19:54:10"
+              "dateHeure": "2026-02-03T19:54:10",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2222,7 +2290,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 47,
               "date": "2026-02-04",
-              "dateHeure": "2026-02-04T12:26:42"
+              "dateHeure": "2026-02-04T12:26:42",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2255,7 +2325,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 61,
               "date": "2026-02-06",
-              "dateHeure": "2026-02-06T17:35:14"
+              "dateHeure": "2026-02-06T17:35:14",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2288,7 +2360,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 57,
               "date": "2026-02-08",
-              "dateHeure": "2026-02-08T13:12:09"
+              "dateHeure": "2026-02-08T13:12:09",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2321,7 +2395,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 32,
               "altitudeMaxM": 61,
               "date": "2026-02-11",
-              "dateHeure": "2026-02-11T18:50:41"
+              "dateHeure": "2026-02-11T18:50:41",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2354,7 +2430,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 28,
               "altitudeMaxM": 55,
               "date": "2026-02-14",
-              "dateHeure": "2026-02-14T11:04:40"
+              "dateHeure": "2026-02-14T11:04:40",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2387,7 +2465,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 32,
               "altitudeMaxM": 61,
               "date": "2026-02-17",
-              "dateHeure": "2026-02-17T18:35:57"
+              "dateHeure": "2026-02-17T18:35:57",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2420,7 +2500,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 47,
               "date": "2026-02-18",
-              "dateHeure": "2026-02-18T12:24:09"
+              "dateHeure": "2026-02-18T12:24:09",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2453,7 +2535,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 32,
               "altitudeMaxM": 61,
               "date": "2026-02-20",
-              "dateHeure": "2026-02-20T18:00:13"
+              "dateHeure": "2026-02-20T18:00:13",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2486,7 +2570,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 19,
               "altitudeMaxM": 85,
               "date": "2026-02-22",
-              "dateHeure": "2026-02-22T15:42:04"
+              "dateHeure": "2026-02-22T15:42:04",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2519,7 +2605,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 32,
               "altitudeMaxM": 61,
               "date": "2026-02-24",
-              "dateHeure": "2026-02-24T19:48:51"
+              "dateHeure": "2026-02-24T19:48:51",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2552,7 +2640,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 53,
               "altitudeMaxM": 66,
               "date": "2026-02-25",
-              "dateHeure": "2026-02-25T17:43:12"
+              "dateHeure": "2026-02-25T17:43:12",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2585,7 +2675,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 47,
               "date": "2026-02-25",
-              "dateHeure": "2026-02-25T12:20:14"
+              "dateHeure": "2026-02-25T12:20:14",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2618,7 +2710,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 32,
               "altitudeMaxM": 73,
               "date": "2026-03-01",
-              "dateHeure": "2026-03-01T15:16:04"
+              "dateHeure": "2026-03-01T15:16:04",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2651,7 +2745,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 20,
               "altitudeMaxM": 41,
               "date": "2026-03-04",
-              "dateHeure": "2026-03-04T17:42:45"
+              "dateHeure": "2026-03-04T17:42:45",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2684,7 +2780,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 31,
               "altitudeMaxM": 54,
               "date": "2026-03-06",
-              "dateHeure": "2026-03-06T12:20:23"
+              "dateHeure": "2026-03-06T12:20:23",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2717,7 +2815,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 61,
               "date": "2026-03-15",
-              "dateHeure": "2026-03-15T10:31:31"
+              "dateHeure": "2026-03-15T10:31:31",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2750,7 +2850,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 43,
               "altitudeMaxM": 61,
               "date": "2026-03-17",
-              "dateHeure": "2026-03-17T19:56:46"
+              "dateHeure": "2026-03-17T19:56:46",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2783,7 +2885,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 47,
               "date": "2026-03-18",
-              "dateHeure": "2026-03-18T12:18:03"
+              "dateHeure": "2026-03-18T12:18:03",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2816,7 +2920,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 54,
               "date": "2026-03-29",
-              "dateHeure": "2026-03-29T18:53:38"
+              "dateHeure": "2026-03-29T18:53:38",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2849,7 +2955,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 44,
               "altitudeMaxM": 55,
               "date": "2026-04-01",
-              "dateHeure": "2026-04-01T12:27:19"
+              "dateHeure": "2026-04-01T12:27:19",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2882,7 +2990,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 57,
               "date": "2026-04-03",
-              "dateHeure": "2026-04-03T12:13:51"
+              "dateHeure": "2026-04-03T12:13:51",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2915,7 +3025,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 64,
               "date": "2026-04-06",
-              "dateHeure": "2026-04-06T17:55:42"
+              "dateHeure": "2026-04-06T17:55:42",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2948,7 +3060,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 20,
               "altitudeMaxM": 35,
               "date": "2026-04-08",
-              "dateHeure": "2026-04-08T17:28:00"
+              "dateHeure": "2026-04-08T17:28:00",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -2981,7 +3095,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 57,
               "date": "2026-04-13",
-              "dateHeure": "2026-04-13T12:22:06"
+              "dateHeure": "2026-04-13T12:22:06",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3014,7 +3130,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 52,
               "altitudeMaxM": 74,
               "date": "2026-04-14",
-              "dateHeure": "2026-04-14T19:48:36"
+              "dateHeure": "2026-04-14T19:48:36",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3047,7 +3165,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 45,
               "date": "2026-04-15",
-              "dateHeure": "2026-04-15T18:38:48"
+              "dateHeure": "2026-04-15T18:38:48",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3080,7 +3200,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 59,
               "date": "2026-04-17",
-              "dateHeure": "2026-04-17T17:11:48"
+              "dateHeure": "2026-04-17T17:11:48",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3113,7 +3235,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 57,
               "date": "2026-04-20",
-              "dateHeure": "2026-04-20T19:03:50"
+              "dateHeure": "2026-04-20T19:03:50",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3146,7 +3270,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 58,
               "date": "2026-04-22",
-              "dateHeure": "2026-04-22T17:16:33"
+              "dateHeure": "2026-04-22T17:16:33",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3179,7 +3305,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 48,
               "altitudeMaxM": 57,
               "date": "2026-04-24",
-              "dateHeure": "2026-04-24T16:35:33"
+              "dateHeure": "2026-04-24T16:35:33",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Marche à pied",
@@ -3212,7 +3340,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 31,
               "altitudeMaxM": 63,
               "date": "2026-04-26",
-              "dateHeure": "2026-04-26T17:35:58"
+              "dateHeure": "2026-04-26T17:35:58",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3245,7 +3375,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 22,
               "altitudeMaxM": 47,
               "date": "2026-04-26",
-              "dateHeure": "2026-04-26T10:07:58"
+              "dateHeure": "2026-04-26T10:07:58",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3278,7 +3410,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 48,
               "altitudeMaxM": 57,
               "date": "2026-04-29",
-              "dateHeure": "2026-04-29T12:22:12"
+              "dateHeure": "2026-04-29T12:22:12",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3311,7 +3445,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 64,
               "date": "2026-04-30",
-              "dateHeure": "2026-04-30T17:30:22"
+              "dateHeure": "2026-04-30T17:30:22",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3344,7 +3480,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 67,
               "altitudeMaxM": 99,
               "date": "2026-05-01",
-              "dateHeure": "2026-05-01T16:54:00"
+              "dateHeure": "2026-05-01T16:54:00",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3377,7 +3515,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 57,
               "date": "2026-05-05",
-              "dateHeure": "2026-05-05T20:23:44"
+              "dateHeure": "2026-05-05T20:23:44",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Marche à pied",
@@ -3410,7 +3550,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 31,
               "altitudeMaxM": 62,
               "date": "2026-05-08",
-              "dateHeure": "2026-05-08T17:05:10"
+              "dateHeure": "2026-05-08T17:05:10",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3443,7 +3585,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 57,
               "date": "2026-05-08",
-              "dateHeure": "2026-05-08T11:41:46"
+              "dateHeure": "2026-05-08T11:41:46",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3476,7 +3620,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 19,
               "altitudeMaxM": 85,
               "date": "2026-05-10",
-              "dateHeure": "2026-05-10T11:26:04"
+              "dateHeure": "2026-05-10T11:26:04",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3509,7 +3655,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 48,
               "altitudeMaxM": 57,
               "date": "2026-05-12",
-              "dateHeure": "2026-05-12T18:37:25"
+              "dateHeure": "2026-05-12T18:37:25",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3542,7 +3690,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 48,
               "altitudeMaxM": 57,
               "date": "2026-05-13",
-              "dateHeure": "2026-05-13T17:17:24"
+              "dateHeure": "2026-05-13T17:17:24",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Marche à pied",
@@ -3575,7 +3725,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 31,
               "altitudeMaxM": 62,
               "date": "2026-05-15",
-              "dateHeure": "2026-05-15T18:24:42"
+              "dateHeure": "2026-05-15T18:24:42",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3608,7 +3760,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 55,
               "date": "2026-05-16",
-              "dateHeure": "2026-05-16T10:37:08"
+              "dateHeure": "2026-05-16T10:37:08",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3641,7 +3795,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 59,
               "date": "2026-05-18",
-              "dateHeure": "2026-05-18T18:13:25"
+              "dateHeure": "2026-05-18T18:13:25",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3674,7 +3830,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 54,
               "altitudeMaxM": 77,
               "date": "2026-05-19",
-              "dateHeure": "2026-05-19T19:45:56"
+              "dateHeure": "2026-05-19T19:45:56",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3707,7 +3865,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 35,
               "date": "2026-05-20",
-              "dateHeure": "2026-05-20T17:21:10"
+              "dateHeure": "2026-05-20T17:21:10",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3740,7 +3900,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 23,
               "altitudeMaxM": 49,
               "date": "2026-05-23",
-              "dateHeure": "2026-05-23T09:10:46"
+              "dateHeure": "2026-05-23T09:10:46",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3773,7 +3935,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 59,
               "date": "2026-05-27",
-              "dateHeure": "2026-05-27T12:04:56"
+              "dateHeure": "2026-05-27T12:04:56",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3806,7 +3970,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 57,
               "date": "2026-05-29",
-              "dateHeure": "2026-05-29T07:17:58"
+              "dateHeure": "2026-05-29T07:17:58",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3839,7 +4005,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 64,
               "date": "2026-05-31",
-              "dateHeure": "2026-05-31T16:07:52"
+              "dateHeure": "2026-05-31T16:07:52",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3872,7 +4040,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 44,
               "date": "2026-05-31",
-              "dateHeure": "2026-05-31T08:59:53"
+              "dateHeure": "2026-05-31T08:59:53",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3905,7 +4075,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 57,
               "date": "2026-06-04",
-              "dateHeure": "2026-06-04T18:15:05"
+              "dateHeure": "2026-06-04T18:15:05",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3938,7 +4110,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 55,
               "date": "2026-06-05",
-              "dateHeure": "2026-06-05T12:35:02"
+              "dateHeure": "2026-06-05T12:35:02",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -3971,7 +4145,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 76,
               "date": "2026-06-07",
-              "dateHeure": "2026-06-07T09:38:26"
+              "dateHeure": "2026-06-07T09:38:26",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -4004,7 +4180,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 57,
               "date": "2026-06-10",
-              "dateHeure": "2026-06-10T12:12:10"
+              "dateHeure": "2026-06-10T12:12:10",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -4037,7 +4215,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 19,
               "altitudeMaxM": 82,
               "date": "2026-06-13",
-              "dateHeure": "2026-06-13T10:06:19"
+              "dateHeure": "2026-06-13T10:06:19",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -4070,7 +4250,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 57,
               "date": "2026-06-17",
-              "dateHeure": "2026-06-17T12:15:54"
+              "dateHeure": "2026-06-17T12:15:54",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -4103,7 +4285,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 809,
               "altitudeMaxM": 821,
               "date": "2026-06-19",
-              "dateHeure": "2026-06-19T18:52:39"
+              "dateHeure": "2026-06-19T18:52:39",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -4136,7 +4320,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 1,
               "altitudeMaxM": 1,
               "date": "2026-06-21",
-              "dateHeure": "2026-06-21T08:59:56"
+              "dateHeure": "2026-06-21T08:59:56",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -4169,7 +4355,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 4,
               "altitudeMaxM": 40,
               "date": "2026-06-26",
-              "dateHeure": "2026-06-26T16:57:34"
+              "dateHeure": "2026-06-26T16:57:34",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -4202,7 +4390,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 4,
               "altitudeMaxM": 45,
               "date": "2026-06-28",
-              "dateHeure": "2026-06-28T10:11:22"
+              "dateHeure": "2026-06-28T10:11:22",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -4235,7 +4425,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 66,
               "date": "2026-07-01",
-              "dateHeure": "2026-07-01T17:17:51"
+              "dateHeure": "2026-07-01T17:17:51",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -4268,7 +4460,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 48,
               "altitudeMaxM": 57,
               "date": "2026-07-03",
-              "dateHeure": "2026-07-03T12:10:58"
+              "dateHeure": "2026-07-03T12:10:58",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -4301,7 +4495,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 59,
               "date": "2026-07-06",
-              "dateHeure": "2026-07-06T19:55:49"
+              "dateHeure": "2026-07-06T19:55:49",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -4334,7 +4530,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 26,
               "altitudeMaxM": 55,
               "date": "2026-07-08",
-              "dateHeure": "2026-07-08T17:41:31"
+              "dateHeure": "2026-07-08T17:41:31",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -4367,7 +4565,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 57,
               "date": "2026-07-10",
-              "dateHeure": "2026-07-10T18:24:34"
+              "dateHeure": "2026-07-10T18:24:34",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -4400,7 +4600,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 57,
               "date": "2026-07-13",
-              "dateHeure": "2026-07-13T20:23:03"
+              "dateHeure": "2026-07-13T20:23:03",
+              "activityId": 23585963908,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -4433,7 +4635,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 57,
               "date": "2026-07-15",
-              "dateHeure": "2026-07-15T20:17:19"
+              "dateHeure": "2026-07-15T20:17:19",
+              "activityId": 23611159886,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -4466,7 +4670,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 57,
               "date": "2026-07-17",
-              "dateHeure": "2026-07-17T12:21:06"
+              "dateHeure": "2026-07-17T12:21:06",
+              "activityId": 23629367108,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -4499,7 +4705,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 59,
               "date": "2026-07-19",
-              "dateHeure": "2026-07-19T11:41:45"
+              "dateHeure": "2026-07-19T11:41:45",
+              "activityId": 23652350280,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -4532,7 +4740,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 57,
               "date": "2026-07-20",
-              "dateHeure": "2026-07-20T18:00:44"
+              "dateHeure": "2026-07-20T18:00:44",
+              "activityId": 23667255497,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -4565,7 +4775,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 45,
               "date": "2026-07-22",
-              "dateHeure": "2026-07-22T17:51:41"
+              "dateHeure": "2026-07-22T17:51:41",
+              "activityId": 23693039308,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -4598,7 +4810,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 57,
               "date": "2026-07-24",
-              "dateHeure": "2026-07-24T12:11:59"
+              "dateHeure": "2026-07-24T12:11:59",
+              "activityId": 23713676572,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -4631,7 +4845,44 @@ window.PREPA_DATA = {
               "altitudeMinM": 35,
               "altitudeMaxM": 57,
               "date": "2026-07-26",
-              "dateHeure": "2026-07-26T11:31:00"
+              "dateHeure": "2026-07-26T11:31:00",
+              "activityId": 23739610036,
+              "aDetail": true
+            },
+            {
+              "type": "Marche à pied",
+              "favori": false,
+              "titre": "Attiches Marche à pied",
+              "distanceKm": 5.15,
+              "calories": 230,
+              "dureeSec": 3823.0,
+              "fcMoy": 89,
+              "fcMax": 122,
+              "teAerobie": null,
+              "cadenceMoy": 110,
+              "cadenceMax": 133,
+              "allureMoySecKm": 742,
+              "meilleureAllureSecKm": 510,
+              "ascensionM": 31,
+              "descenteM": 33,
+              "longueurFouleeM": 0.74,
+              "oscillationVerticale": null,
+              "tempsContactSol": null,
+              "gapMoySecKm": null,
+              "np": null,
+              "tss": null,
+              "puissanceMoy": null,
+              "puissanceMax": null,
+              "pas": 7412,
+              "nbTours": 6,
+              "tempsDeplacementSec": 3719.0,
+              "tempsEcouleSec": 3823.0,
+              "altitudeMinM": 31,
+              "altitudeMaxM": 62,
+              "date": "2026-07-29",
+              "dateHeure": "2026-07-29T20:17:35",
+              "activityId": 23780560427,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -4664,7 +4915,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-07-30",
-              "dateHeure": "2026-07-30T06:09:45"
+              "dateHeure": "2026-07-30T06:09:45",
+              "activityId": 23784012630,
+              "aDetail": true
             },
             {
               "type": "Musculation",
@@ -4697,7 +4950,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-07-31",
-              "dateHeure": "2026-07-31T18:59:03"
+              "dateHeure": "2026-07-31T18:59:03",
+              "activityId": 23803241836,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -4730,7 +4985,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-07-31",
-              "dateHeure": "2026-07-31T17:50:34"
+              "dateHeure": "2026-07-31T17:50:34",
+              "activityId": 23802778022,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -4763,7 +5020,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-02",
-              "dateHeure": "2026-08-02T10:43:04"
+              "dateHeure": "2026-08-02T10:43:04",
+              "activityId": 23822736146,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -4796,7 +5055,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-03",
-              "dateHeure": "2026-08-03T20:04:54"
+              "dateHeure": "2026-08-03T20:04:54",
+              "activityId": 23839947032,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -4829,7 +5090,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-06",
-              "dateHeure": "2026-08-06T19:19:16"
+              "dateHeure": "2026-08-06T19:19:16",
+              "activityId": 23878275591,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -4862,7 +5125,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-07",
-              "dateHeure": "2026-08-07T19:36:52"
+              "dateHeure": "2026-08-07T19:36:52",
+              "activityId": 23890499864,
+              "aDetail": true
             },
             {
               "type": "Musculation",
@@ -4895,7 +5160,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-07",
-              "dateHeure": "2026-08-07T18:21:39"
+              "dateHeure": "2026-08-07T18:21:39",
+              "activityId": 23889796689,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -4928,7 +5195,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-09",
-              "dateHeure": "2026-08-09T10:11:36"
+              "dateHeure": "2026-08-09T10:11:36",
+              "activityId": 23908775984,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -4961,7 +5230,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-10",
-              "dateHeure": "2026-08-10T19:24:28"
+              "dateHeure": "2026-08-10T19:24:28",
+              "activityId": 23926647830,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -4994,7 +5265,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-11",
-              "dateHeure": "2026-08-11T17:14:37"
+              "dateHeure": "2026-08-11T17:14:37",
+              "activityId": 23938312568,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -5027,7 +5300,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-15",
-              "dateHeure": "2026-08-15T19:13:56"
+              "dateHeure": "2026-08-15T19:13:56",
+              "activityId": 23990009845,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -5060,7 +5335,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-16",
-              "dateHeure": "2026-08-16T10:51:58"
+              "dateHeure": "2026-08-16T10:51:58",
+              "activityId": 23996951604,
+              "aDetail": true
             },
             {
               "type": "Musculation",
@@ -5093,7 +5370,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-17",
-              "dateHeure": "2026-08-17T19:00:25"
+              "dateHeure": "2026-08-17T19:00:25",
+              "activityId": 24013375962,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -5126,7 +5405,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-18",
-              "dateHeure": "2026-08-18T17:12:12"
+              "dateHeure": "2026-08-18T17:12:12",
+              "activityId": 24024821575,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -5159,7 +5440,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-19",
-              "dateHeure": "2026-08-19T19:21:50"
+              "dateHeure": "2026-08-19T19:21:50",
+              "activityId": 24039832812,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -5192,7 +5475,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-22",
-              "dateHeure": "2026-08-22T10:27:25"
+              "dateHeure": "2026-08-22T10:27:25",
+              "activityId": 24070995222,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -5225,7 +5510,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 57,
               "date": "2026-08-24",
-              "dateHeure": "2026-08-24T18:35:23"
+              "dateHeure": "2026-08-24T18:35:23",
+              "activityId": 24100001843,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -5258,7 +5545,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 47,
               "altitudeMaxM": 59,
               "date": "2026-08-25",
-              "dateHeure": "2026-08-25T17:54:50"
+              "dateHeure": "2026-08-25T17:54:50",
+              "activityId": 24112919457,
+              "aDetail": true
             },
             {
               "type": "Musculation",
@@ -5291,7 +5580,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-26",
-              "dateHeure": "2026-08-26T13:02:14"
+              "dateHeure": "2026-08-26T13:02:14",
+              "activityId": 24122249846,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -5324,7 +5615,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 31,
               "altitudeMaxM": 57,
               "date": "2026-08-28",
-              "dateHeure": "2026-08-28T16:52:00"
+              "dateHeure": "2026-08-28T16:52:00",
+              "activityId": 24150666251,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -5357,7 +5650,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 80,
               "altitudeMaxM": 162,
               "date": "2026-08-30",
-              "dateHeure": "2026-08-30T10:33:42"
+              "dateHeure": "2026-08-30T10:33:42",
+              "activityId": 24176306284,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -5390,7 +5685,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 80,
               "altitudeMaxM": 302,
               "date": "2026-09-01",
-              "dateHeure": "2026-09-01T09:55:35"
+              "dateHeure": "2026-09-01T09:55:35",
+              "activityId": 24194190629,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -5423,7 +5720,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 60,
               "altitudeMaxM": 171,
               "date": "2026-09-02",
-              "dateHeure": "2026-09-02T10:50:41"
+              "dateHeure": "2026-09-02T10:50:41",
+              "activityId": 24207650064,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -5456,7 +5755,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 80,
               "altitudeMaxM": 384,
               "date": "2026-09-04",
-              "dateHeure": "2026-09-04T09:58:25"
+              "dateHeure": "2026-09-04T09:58:25",
+              "activityId": 24233045473,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -5489,7 +5790,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 80,
               "altitudeMaxM": 302,
               "date": "2026-09-07",
-              "dateHeure": "2026-09-07T10:39:30"
+              "dateHeure": "2026-09-07T10:39:30",
+              "activityId": 24268333898,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -5522,7 +5825,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 81,
               "altitudeMaxM": 302,
               "date": "2026-09-07",
-              "dateHeure": "2026-09-07T09:53:46"
+              "dateHeure": "2026-09-07T09:53:46",
+              "activityId": 24268069914,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -5555,7 +5860,7526 @@ window.PREPA_DATA = {
               "altitudeMinM": 80,
               "altitudeMaxM": 162,
               "date": "2026-09-09",
-              "dateHeure": "2026-09-09T15:52:37"
+              "dateHeure": "2026-09-09T15:52:37",
+              "activityId": 24297730626,
+              "aDetail": true
+            },
+            {
+              "type": "Course à pied",
+              "favori": false,
+              "titre": "Camphin-en-Pévèle - Seuil 3x2km",
+              "distanceKm": 10.38,
+              "calories": 543,
+              "dureeSec": 3571.0,
+              "fcMoy": 159,
+              "fcMax": 178,
+              "teAerobie": null,
+              "cadenceMoy": 177,
+              "cadenceMax": 192,
+              "allureMoySecKm": 344,
+              "meilleureAllureSecKm": 240,
+              "ascensionM": 21,
+              "descenteM": 21,
+              "longueurFouleeM": 0.98,
+              "oscillationVerticale": null,
+              "tempsContactSol": null,
+              "gapMoySecKm": null,
+              "np": null,
+              "tss": null,
+              "puissanceMoy": null,
+              "puissanceMax": null,
+              "pas": 10524,
+              "nbTours": 13,
+              "tempsDeplacementSec": 3566.0,
+              "tempsEcouleSec": 3573.0,
+              "altitudeMinM": 47,
+              "altitudeMaxM": 59,
+              "date": "2026-09-12",
+              "dateHeure": "2026-09-12T10:12:24",
+              "activityId": 24330571181,
+              "aDetail": true
+            }
+          ],
+          "details": [
+            {
+              "activityId": 23585963908,
+              "dateHeure": "2026-07-13T20:23:03",
+              "date": "2026-07-13",
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 7.33,
+              "dureeSec": 2947,
+              "allureMoySecKm": 402,
+              "gapMoySecKm": null,
+              "fcMoy": 137,
+              "fcMax": 148,
+              "fcMin": 81,
+              "cadenceMoy": 169,
+              "denivelePosM": 13,
+              "deniveleNegM": 13,
+              "calories": 376,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 398,
+                  "allureSecKm": 398,
+                  "gapSecKm": null,
+                  "fcMoy": 130,
+                  "fcMax": 140,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 396,
+                  "allureSecKm": 396,
+                  "gapSecKm": null,
+                  "fcMoy": 139,
+                  "fcMax": 144,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 409,
+                  "allureSecKm": 409,
+                  "gapSecKm": null,
+                  "fcMoy": 136,
+                  "fcMax": 143,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 408,
+                  "allureSecKm": 408,
+                  "gapSecKm": null,
+                  "fcMoy": 138,
+                  "fcMax": 142,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 407,
+                  "allureSecKm": 407,
+                  "gapSecKm": null,
+                  "fcMoy": 141,
+                  "fcMax": 148,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 400,
+                  "allureSecKm": 400,
+                  "gapSecKm": null,
+                  "fcMoy": 137,
+                  "fcMax": 144,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 396,
+                  "allureSecKm": 396,
+                  "gapSecKm": null,
+                  "fcMoy": 140,
+                  "fcMax": 147,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.334,
+                  "dureeSec": 132,
+                  "allureSecKm": 396,
+                  "gapSecKm": null,
+                  "fcMoy": 140,
+                  "fcMax": 142,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 30,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 655,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 2242,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 27.2,
+                "ressentiC": 27.2,
+                "humidite": 51,
+                "ventKmh": 24.1,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23611159886,
+              "dateHeure": "2026-07-15T20:17:19",
+              "date": "2026-07-15",
+              "titre": "Camphin-en-Pévèle - Seuil 2x2km",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 8.32,
+              "dureeSec": 3026,
+              "allureMoySecKm": 364,
+              "gapMoySecKm": null,
+              "fcMoy": 155,
+              "fcMax": 179,
+              "fcMin": 84,
+              "cadenceMoy": 174,
+              "denivelePosM": 12,
+              "deniveleNegM": 12,
+              "calories": 440,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "LACTATE_THRESHOLD",
+              "chargeEntrainement": null,
+              "rpe": 30,
+              "ressenti": 50,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 405,
+                  "allureSecKm": 405,
+                  "gapSecKm": null,
+                  "fcMoy": 132,
+                  "fcMax": 141,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 0,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 397,
+                  "allureSecKm": 397,
+                  "gapSecKm": null,
+                  "fcMoy": 142,
+                  "fcMax": 145,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 323,
+                  "allureSecKm": 323,
+                  "gapSecKm": null,
+                  "fcMoy": 161,
+                  "fcMax": 172,
+                  "cadenceMoy": 178,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 5,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 318,
+                  "allureSecKm": 318,
+                  "gapSecKm": null,
+                  "fcMoy": 173,
+                  "fcMax": 178,
+                  "cadenceMoy": 179,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 0.267,
+                  "dureeSec": 120,
+                  "allureSecKm": 450,
+                  "gapSecKm": null,
+                  "fcMoy": 156,
+                  "fcMax": 179,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 318,
+                  "allureSecKm": 318,
+                  "gapSecKm": null,
+                  "fcMoy": 167,
+                  "fcMax": 173,
+                  "cadenceMoy": 181,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 313,
+                  "allureSecKm": 312,
+                  "gapSecKm": null,
+                  "fcMoy": 172,
+                  "fcMax": 176,
+                  "cadenceMoy": 181,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.296,
+                  "dureeSec": 120,
+                  "allureSecKm": 406,
+                  "gapSecKm": null,
+                  "fcMoy": 157,
+                  "fcMax": 174,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 397,
+                  "allureSecKm": 397,
+                  "gapSecKm": null,
+                  "fcMoy": 155,
+                  "fcMax": 159,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "COOLDOWN"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 0.762,
+                  "dureeSec": 316,
+                  "allureSecKm": 414,
+                  "gapSecKm": null,
+                  "fcMoy": 149,
+                  "fcMax": 154,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": null,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 0,
+                  "intensite": "COOLDOWN"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 14,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 159,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 1276,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 1437,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 120,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 28.9,
+                "ressentiC": 28.9,
+                "humidite": 33,
+                "ventKmh": 17.7,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23629367108,
+              "dateHeure": "2026-07-17T12:21:06",
+              "date": "2026-07-17",
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 7.33,
+              "dureeSec": 3023,
+              "allureMoySecKm": 413,
+              "gapMoySecKm": null,
+              "fcMoy": 145,
+              "fcMax": 161,
+              "fcMin": 87,
+              "cadenceMoy": 170,
+              "denivelePosM": 12,
+              "deniveleNegM": 13,
+              "calories": 392,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 396,
+                  "allureSecKm": 396,
+                  "gapSecKm": null,
+                  "fcMoy": 132,
+                  "fcMax": 147,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 398,
+                  "allureSecKm": 398,
+                  "gapSecKm": null,
+                  "fcMoy": 144,
+                  "fcMax": 150,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 417,
+                  "allureSecKm": 417,
+                  "gapSecKm": null,
+                  "fcMoy": 143,
+                  "fcMax": 146,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 427,
+                  "allureSecKm": 427,
+                  "gapSecKm": null,
+                  "fcMoy": 147,
+                  "fcMax": 152,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 427,
+                  "allureSecKm": 427,
+                  "gapSecKm": null,
+                  "fcMoy": 147,
+                  "fcMax": 152,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 418,
+                  "allureSecKm": 418,
+                  "gapSecKm": null,
+                  "fcMoy": 148,
+                  "fcMax": 153,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 409,
+                  "allureSecKm": 409,
+                  "gapSecKm": null,
+                  "fcMoy": 153,
+                  "fcMax": 160,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.326,
+                  "dureeSec": 130,
+                  "allureSecKm": 399,
+                  "gapSecKm": null,
+                  "fcMoy": 158,
+                  "fcMax": 161,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 29,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 128,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 2547,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 305,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 25.0,
+                "ressentiC": 25.0,
+                "humidite": 54,
+                "ventKmh": 11.3,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23652350280,
+              "dateHeure": "2026-07-19T11:41:45",
+              "date": "2026-07-19",
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 12.28,
+              "dureeSec": 4559,
+              "allureMoySecKm": 371,
+              "gapMoySecKm": null,
+              "fcMoy": 146,
+              "fcMax": 155,
+              "fcMin": 86,
+              "cadenceMoy": 174,
+              "denivelePosM": 21,
+              "deniveleNegM": 20,
+              "calories": 634,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 380,
+                  "allureSecKm": 380,
+                  "gapSecKm": null,
+                  "fcMoy": 138,
+                  "fcMax": 150,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 365,
+                  "allureSecKm": 365,
+                  "gapSecKm": null,
+                  "fcMoy": 151,
+                  "fcMax": 155,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 372,
+                  "allureSecKm": 372,
+                  "gapSecKm": null,
+                  "fcMoy": 147,
+                  "fcMax": 151,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 371,
+                  "allureSecKm": 371,
+                  "gapSecKm": null,
+                  "fcMoy": 149,
+                  "fcMax": 154,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 369,
+                  "allureSecKm": 369,
+                  "gapSecKm": null,
+                  "fcMoy": 149,
+                  "fcMax": 155,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 374,
+                  "allureSecKm": 374,
+                  "gapSecKm": null,
+                  "fcMoy": 148,
+                  "fcMax": 153,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 387,
+                  "allureSecKm": 387,
+                  "gapSecKm": null,
+                  "fcMoy": 146,
+                  "fcMax": 154,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 6,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 370,
+                  "allureSecKm": 370,
+                  "gapSecKm": null,
+                  "fcMoy": 145,
+                  "fcMax": 150,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 371,
+                  "allureSecKm": 371,
+                  "gapSecKm": null,
+                  "fcMoy": 143,
+                  "fcMax": 149,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 371,
+                  "allureSecKm": 371,
+                  "gapSecKm": null,
+                  "fcMoy": 145,
+                  "fcMax": 149,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 363,
+                  "allureSecKm": 363,
+                  "gapSecKm": null,
+                  "fcMoy": 148,
+                  "fcMax": 152,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 363,
+                  "allureSecKm": 363,
+                  "gapSecKm": null,
+                  "fcMoy": 145,
+                  "fcMax": 154,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 0.282,
+                  "dureeSec": 101,
+                  "allureSecKm": 359,
+                  "gapSecKm": null,
+                  "fcMoy": 143,
+                  "fcMax": 147,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 13,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 62,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 4446,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 27,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 20.0,
+                "ressentiC": 20.0,
+                "humidite": 53,
+                "ventKmh": 12.9,
+                "description": "Mostly Cloudy",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23667255497,
+              "dateHeure": "2026-07-20T18:00:44",
+              "date": "2026-07-20",
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 7.35,
+              "dureeSec": 3105,
+              "allureMoySecKm": 422,
+              "gapMoySecKm": null,
+              "fcMoy": 134,
+              "fcMax": 150,
+              "fcMin": 73,
+              "cadenceMoy": 169,
+              "denivelePosM": 15,
+              "deniveleNegM": 15,
+              "calories": 372,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 396,
+                  "allureSecKm": 396,
+                  "gapSecKm": null,
+                  "fcMoy": 133,
+                  "fcMax": 146,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 417,
+                  "allureSecKm": 417,
+                  "gapSecKm": null,
+                  "fcMoy": 140,
+                  "fcMax": 150,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 435,
+                  "allureSecKm": 435,
+                  "gapSecKm": null,
+                  "fcMoy": 136,
+                  "fcMax": 142,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 436,
+                  "allureSecKm": 436,
+                  "gapSecKm": null,
+                  "fcMoy": 133,
+                  "fcMax": 141,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 430,
+                  "allureSecKm": 430,
+                  "gapSecKm": null,
+                  "fcMoy": 133,
+                  "fcMax": 141,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 424,
+                  "allureSecKm": 424,
+                  "gapSecKm": null,
+                  "fcMoy": 132,
+                  "fcMax": 138,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 423,
+                  "allureSecKm": 423,
+                  "gapSecKm": null,
+                  "fcMoy": 133,
+                  "fcMax": 140,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.354,
+                  "dureeSec": 144,
+                  "allureSecKm": 405,
+                  "gapSecKm": null,
+                  "fcMoy": 134,
+                  "fcMax": 139,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 15,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 1865,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 1211,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 22.2,
+                "ressentiC": 22.2,
+                "humidite": 41,
+                "ventKmh": 19.3,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23693039308,
+              "dateHeure": "2026-07-22T17:51:41",
+              "date": "2026-07-22",
+              "titre": "Libercourt - 3x6min",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 8.32,
+              "dureeSec": 3011,
+              "allureMoySecKm": 362,
+              "gapMoySecKm": null,
+              "fcMoy": 154,
+              "fcMax": 181,
+              "fcMin": 74,
+              "cadenceMoy": 174,
+              "denivelePosM": 44,
+              "deniveleNegM": 43,
+              "calories": 439,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "LACTATE_THRESHOLD",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 408,
+                  "allureSecKm": 408,
+                  "gapSecKm": null,
+                  "fcMoy": 128,
+                  "fcMax": 144,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 395,
+                  "allureSecKm": 395,
+                  "gapSecKm": null,
+                  "fcMoy": 140,
+                  "fcMax": 148,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 1,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 307,
+                  "allureSecKm": 307,
+                  "gapSecKm": null,
+                  "fcMoy": 164,
+                  "fcMax": 171,
+                  "cadenceMoy": 178,
+                  "puissanceMoy": null,
+                  "denivelePosM": 9,
+                  "deniveleNegM": 2,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 0.172,
+                  "dureeSec": 53,
+                  "allureSecKm": 308,
+                  "gapSecKm": null,
+                  "fcMoy": 169,
+                  "fcMax": 171,
+                  "cadenceMoy": 179,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 8,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 0.282,
+                  "dureeSec": 120,
+                  "allureSecKm": 426,
+                  "gapSecKm": null,
+                  "fcMoy": 156,
+                  "fcMax": 172,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": null,
+                  "denivelePosM": 7,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 304,
+                  "allureSecKm": 304,
+                  "gapSecKm": null,
+                  "fcMoy": 169,
+                  "fcMax": 177,
+                  "cadenceMoy": 179,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 6,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 0.183,
+                  "dureeSec": 56,
+                  "allureSecKm": 305,
+                  "gapSecKm": null,
+                  "fcMoy": 174,
+                  "fcMax": 177,
+                  "cadenceMoy": 180,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.179,
+                  "dureeSec": 74,
+                  "allureSecKm": 412,
+                  "gapSecKm": null,
+                  "fcMoy": 154,
+                  "fcMax": 176,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 303,
+                  "allureSecKm": 303,
+                  "gapSecKm": null,
+                  "fcMoy": 173,
+                  "fcMax": 181,
+                  "cadenceMoy": 178,
+                  "puissanceMoy": null,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 8,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 0.192,
+                  "dureeSec": 57,
+                  "allureSecKm": 299,
+                  "gapSecKm": null,
+                  "fcMoy": 172,
+                  "fcMax": 178,
+                  "cadenceMoy": 184,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 0.039,
+                  "dureeSec": 19,
+                  "allureSecKm": 473,
+                  "gapSecKm": null,
+                  "fcMoy": 176,
+                  "fcMax": 179,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 411,
+                  "allureSecKm": 411,
+                  "gapSecKm": null,
+                  "fcMoy": 157,
+                  "fcMax": 172,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 8,
+                  "deniveleNegM": 2,
+                  "intensite": "COOLDOWN"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 1.0,
+                  "dureeSec": 401,
+                  "allureSecKm": 401,
+                  "gapSecKm": null,
+                  "fcMoy": 154,
+                  "fcMax": 167,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 13,
+                  "intensite": "COOLDOWN"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 0.268,
+                  "dureeSec": 103,
+                  "allureSecKm": 383,
+                  "gapSecKm": null,
+                  "fcMoy": 152,
+                  "fcMax": 157,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "COOLDOWN"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 9,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 320,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 1042,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 1330,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 290,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 22.2,
+                "ressentiC": 22.2,
+                "humidite": 53,
+                "ventKmh": 17.7,
+                "description": "Mostly Cloudy",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23713676572,
+              "dateHeure": "2026-07-24T12:11:59",
+              "date": "2026-07-24",
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 7.67,
+              "dureeSec": 3283,
+              "allureMoySecKm": 428,
+              "gapMoySecKm": null,
+              "fcMoy": 134,
+              "fcMax": 146,
+              "fcMin": 76,
+              "cadenceMoy": 168,
+              "denivelePosM": 13,
+              "deniveleNegM": 13,
+              "calories": 388,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 418,
+                  "allureSecKm": 418,
+                  "gapSecKm": null,
+                  "fcMoy": 128,
+                  "fcMax": 142,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 418,
+                  "allureSecKm": 418,
+                  "gapSecKm": null,
+                  "fcMoy": 133,
+                  "fcMax": 138,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 423,
+                  "allureSecKm": 423,
+                  "gapSecKm": null,
+                  "fcMoy": 133,
+                  "fcMax": 140,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 430,
+                  "allureSecKm": 430,
+                  "gapSecKm": null,
+                  "fcMoy": 138,
+                  "fcMax": 146,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 439,
+                  "allureSecKm": 439,
+                  "gapSecKm": null,
+                  "fcMoy": 137,
+                  "fcMax": 142,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 432,
+                  "allureSecKm": 432,
+                  "gapSecKm": null,
+                  "fcMoy": 132,
+                  "fcMax": 139,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 429,
+                  "allureSecKm": 429,
+                  "gapSecKm": null,
+                  "fcMoy": 135,
+                  "fcMax": 144,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.671,
+                  "dureeSec": 294,
+                  "allureSecKm": 438,
+                  "gapSecKm": null,
+                  "fcMoy": 136,
+                  "fcMax": 142,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 26,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 1973,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 1270,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 23.9,
+                "ressentiC": 23.9,
+                "humidite": 47,
+                "ventKmh": 8.0,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23739610036,
+              "dateHeure": "2026-07-26T11:31:00",
+              "date": "2026-07-26",
+              "titre": "Camphin-en-Pévèle Autre",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 14.78,
+              "dureeSec": 5582,
+              "allureMoySecKm": 378,
+              "gapMoySecKm": null,
+              "fcMoy": 138,
+              "fcMax": 166,
+              "fcMin": 75,
+              "cadenceMoy": null,
+              "denivelePosM": 52,
+              "deniveleNegM": 51,
+              "calories": 0,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": null,
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 14.777,
+                  "dureeSec": 6782,
+                  "allureSecKm": 459,
+                  "gapSecKm": null,
+                  "fcMoy": 138,
+                  "fcMax": 166,
+                  "cadenceMoy": null,
+                  "puissanceMoy": null,
+                  "denivelePosM": 52,
+                  "deniveleNegM": 50,
+                  "intensite": null
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 188,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 323,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 3364,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 1750,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 20.0,
+                "ressentiC": 20.0,
+                "humidite": 73,
+                "ventKmh": 22.5,
+                "description": "Cloudy",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23780560427,
+              "dateHeure": "2026-07-29T20:17:35",
+              "date": "2026-07-29",
+              "titre": "Attiches Marche à pied",
+              "type": "walking",
+              "lieu": "Attiches",
+              "distanceKm": 5.15,
+              "dureeSec": 3823,
+              "allureMoySecKm": 742,
+              "gapMoySecKm": null,
+              "fcMoy": 89,
+              "fcMax": 122,
+              "fcMin": 77,
+              "cadenceMoy": 110,
+              "denivelePosM": 31,
+              "deniveleNegM": 33,
+              "calories": 230,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "RECOVERY",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 739,
+                  "allureSecKm": 739,
+                  "gapSecKm": null,
+                  "fcMoy": 86,
+                  "fcMax": 95,
+                  "cadenceMoy": 114,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 13,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 759,
+                  "allureSecKm": 759,
+                  "gapSecKm": null,
+                  "fcMoy": 86,
+                  "fcMax": 93,
+                  "cadenceMoy": 114,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 12,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 753,
+                  "allureSecKm": 752,
+                  "gapSecKm": null,
+                  "fcMoy": 86,
+                  "fcMax": 93,
+                  "cadenceMoy": 109,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 5,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 756,
+                  "allureSecKm": 756,
+                  "gapSecKm": null,
+                  "fcMoy": 98,
+                  "fcMax": 122,
+                  "cadenceMoy": 107,
+                  "puissanceMoy": null,
+                  "denivelePosM": 19,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 714,
+                  "allureSecKm": 714,
+                  "gapSecKm": null,
+                  "fcMoy": 91,
+                  "fcMax": 98,
+                  "cadenceMoy": 105,
+                  "puissanceMoy": null,
+                  "denivelePosM": 10,
+                  "deniveleNegM": 3,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 0.15,
+                  "dureeSec": 103,
+                  "allureSecKm": 687,
+                  "gapSecKm": null,
+                  "fcMoy": 90,
+                  "fcMax": 92,
+                  "cadenceMoy": 120,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 261,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 102,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 0,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 36.1,
+                "ressentiC": 36.1,
+                "humidite": 18,
+                "ventKmh": 9.7,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23784012630,
+              "dateHeure": "2026-07-30T06:09:45",
+              "date": "2026-07-30",
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 7.18,
+              "dureeSec": 2994,
+              "allureMoySecKm": 417,
+              "gapMoySecKm": null,
+              "fcMoy": 135,
+              "fcMax": 146,
+              "fcMin": 66,
+              "cadenceMoy": 171,
+              "denivelePosM": 14,
+              "deniveleNegM": 14,
+              "calories": 364,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 433,
+                  "allureSecKm": 433,
+                  "gapSecKm": null,
+                  "fcMoy": 128,
+                  "fcMax": 141,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 420,
+                  "allureSecKm": 420,
+                  "gapSecKm": null,
+                  "fcMoy": 137,
+                  "fcMax": 141,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 424,
+                  "allureSecKm": 424,
+                  "gapSecKm": null,
+                  "fcMoy": 135,
+                  "fcMax": 142,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 413,
+                  "allureSecKm": 413,
+                  "gapSecKm": null,
+                  "fcMoy": 136,
+                  "fcMax": 142,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 415,
+                  "allureSecKm": 415,
+                  "gapSecKm": null,
+                  "fcMoy": 136,
+                  "fcMax": 139,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 413,
+                  "allureSecKm": 413,
+                  "gapSecKm": null,
+                  "fcMoy": 134,
+                  "fcMax": 138,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 403,
+                  "allureSecKm": 404,
+                  "gapSecKm": null,
+                  "fcMoy": 137,
+                  "fcMax": 143,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.182,
+                  "dureeSec": 71,
+                  "allureSecKm": 393,
+                  "gapSecKm": null,
+                  "fcMoy": 141,
+                  "fcMax": 146,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 17,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 1346,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 1607,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 18.9,
+                "ressentiC": 18.9,
+                "humidite": 73,
+                "ventKmh": 8.0,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23802778022,
+              "dateHeure": "2026-07-31T17:50:34",
+              "date": "2026-07-31",
+              "titre": "Camphin-en-Pévèle - VMA 8x400m",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 8.08,
+              "dureeSec": 2963,
+              "allureMoySecKm": 367,
+              "gapMoySecKm": null,
+              "fcMoy": 154,
+              "fcMax": 189,
+              "fcMin": 72,
+              "cadenceMoy": 172,
+              "denivelePosM": 10,
+              "deniveleNegM": 9,
+              "calories": 425,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "TEMPO",
+              "chargeEntrainement": null,
+              "rpe": 30,
+              "ressenti": 75,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 406,
+                  "allureSecKm": 406,
+                  "gapSecKm": null,
+                  "fcMoy": 129,
+                  "fcMax": 142,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 406,
+                  "allureSecKm": 406,
+                  "gapSecKm": null,
+                  "fcMoy": 140,
+                  "fcMax": 151,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 0,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 0.4,
+                  "dureeSec": 108,
+                  "allureSecKm": 270,
+                  "gapSecKm": null,
+                  "fcMoy": 167,
+                  "fcMax": 179,
+                  "cadenceMoy": 184,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 0.202,
+                  "dureeSec": 90,
+                  "allureSecKm": 446,
+                  "gapSecKm": null,
+                  "fcMoy": 158,
+                  "fcMax": 179,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 0.4,
+                  "dureeSec": 108,
+                  "allureSecKm": 269,
+                  "gapSecKm": null,
+                  "fcMoy": 166,
+                  "fcMax": 180,
+                  "cadenceMoy": 186,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 0.213,
+                  "dureeSec": 90,
+                  "allureSecKm": 423,
+                  "gapSecKm": null,
+                  "fcMoy": 160,
+                  "fcMax": 179,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 0.4,
+                  "dureeSec": 108,
+                  "allureSecKm": 270,
+                  "gapSecKm": null,
+                  "fcMoy": 168,
+                  "fcMax": 182,
+                  "cadenceMoy": 185,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.199,
+                  "dureeSec": 90,
+                  "allureSecKm": 453,
+                  "gapSecKm": null,
+                  "fcMoy": 161,
+                  "fcMax": 182,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 0.4,
+                  "dureeSec": 109,
+                  "allureSecKm": 272,
+                  "gapSecKm": null,
+                  "fcMoy": 171,
+                  "fcMax": 188,
+                  "cadenceMoy": 187,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 0.131,
+                  "dureeSec": 90,
+                  "allureSecKm": 686,
+                  "gapSecKm": null,
+                  "fcMoy": 151,
+                  "fcMax": 189,
+                  "cadenceMoy": 125,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 0.4,
+                  "dureeSec": 108,
+                  "allureSecKm": 270,
+                  "gapSecKm": null,
+                  "fcMoy": 165,
+                  "fcMax": 183,
+                  "cadenceMoy": 187,
+                  "puissanceMoy": null,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 0.201,
+                  "dureeSec": 90,
+                  "allureSecKm": 447,
+                  "gapSecKm": null,
+                  "fcMoy": 165,
+                  "fcMax": 183,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 0.4,
+                  "dureeSec": 111,
+                  "allureSecKm": 278,
+                  "gapSecKm": null,
+                  "fcMoy": 172,
+                  "fcMax": 184,
+                  "cadenceMoy": 186,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 0.204,
+                  "dureeSec": 90,
+                  "allureSecKm": 442,
+                  "gapSecKm": null,
+                  "fcMoy": 164,
+                  "fcMax": 185,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 15,
+                  "distanceKm": 0.4,
+                  "dureeSec": 105,
+                  "allureSecKm": 263,
+                  "gapSecKm": null,
+                  "fcMoy": 175,
+                  "fcMax": 186,
+                  "cadenceMoy": 189,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 16,
+                  "distanceKm": 0.202,
+                  "dureeSec": 90,
+                  "allureSecKm": 446,
+                  "gapSecKm": null,
+                  "fcMoy": 166,
+                  "fcMax": 186,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 17,
+                  "distanceKm": 0.4,
+                  "dureeSec": 108,
+                  "allureSecKm": 270,
+                  "gapSecKm": null,
+                  "fcMoy": 173,
+                  "fcMax": 186,
+                  "cadenceMoy": 187,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 18,
+                  "distanceKm": 0.149,
+                  "dureeSec": 90,
+                  "allureSecKm": 605,
+                  "gapSecKm": null,
+                  "fcMoy": 157,
+                  "fcMax": 188,
+                  "cadenceMoy": 113,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 19,
+                  "distanceKm": 1.0,
+                  "dureeSec": 406,
+                  "allureSecKm": 406,
+                  "gapSecKm": null,
+                  "fcMoy": 148,
+                  "fcMax": 157,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "COOLDOWN"
+                },
+                {
+                  "index": 20,
+                  "distanceKm": 0.381,
+                  "dureeSec": 161,
+                  "allureSecKm": 422,
+                  "gapSecKm": null,
+                  "fcMoy": 152,
+                  "fcMax": 156,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 0,
+                  "intensite": "COOLDOWN"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 33,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 378,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 1286,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 600,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 640,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 23.9,
+                "ressentiC": 23.9,
+                "humidite": 57,
+                "ventKmh": 17.7,
+                "description": "Mostly Cloudy",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23803241836,
+              "dateHeure": "2026-07-31T18:59:03",
+              "date": "2026-07-31",
+              "titre": "Musculation",
+              "type": "strength_training",
+              "lieu": null,
+              "distanceKm": null,
+              "dureeSec": 1505,
+              "allureMoySecKm": null,
+              "gapMoySecKm": null,
+              "fcMoy": 103,
+              "fcMax": 139,
+              "fcMin": 81,
+              "cadenceMoy": null,
+              "denivelePosM": null,
+              "deniveleNegM": null,
+              "calories": 95,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 0.0,
+                  "dureeSec": 1505,
+                  "allureSecKm": null,
+                  "gapSecKm": null,
+                  "fcMoy": 103,
+                  "fcMax": 139,
+                  "cadenceMoy": null,
+                  "puissanceMoy": null,
+                  "denivelePosM": null,
+                  "deniveleNegM": null,
+                  "intensite": null
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 899,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 176,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 8,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": null,
+                "ressentiC": null,
+                "humidite": null,
+                "ventKmh": null,
+                "description": null,
+                "station": null
+              }
+            },
+            {
+              "activityId": 23822736146,
+              "dateHeure": "2026-08-02T10:43:04",
+              "date": "2026-08-02",
+              "titre": "Libercourt Course à pied",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 18.51,
+              "dureeSec": 7114,
+              "allureMoySecKm": 384,
+              "gapMoySecKm": null,
+              "fcMoy": 159,
+              "fcMax": 177,
+              "fcMin": 88,
+              "cadenceMoy": 174,
+              "denivelePosM": 113,
+              "deniveleNegM": 113,
+              "calories": 1028,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "LACTATE_THRESHOLD",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 390,
+                  "allureSecKm": 390,
+                  "gapSecKm": null,
+                  "fcMoy": 141,
+                  "fcMax": 153,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 397,
+                  "allureSecKm": 397,
+                  "gapSecKm": null,
+                  "fcMoy": 158,
+                  "fcMax": 164,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 24,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 388,
+                  "allureSecKm": 388,
+                  "gapSecKm": null,
+                  "fcMoy": 151,
+                  "fcMax": 157,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 8,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 396,
+                  "allureSecKm": 396,
+                  "gapSecKm": null,
+                  "fcMoy": 151,
+                  "fcMax": 156,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 384,
+                  "allureSecKm": 384,
+                  "gapSecKm": null,
+                  "fcMoy": 152,
+                  "fcMax": 156,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 7,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 386,
+                  "allureSecKm": 386,
+                  "gapSecKm": null,
+                  "fcMoy": 150,
+                  "fcMax": 158,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 8,
+                  "deniveleNegM": 12,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 389,
+                  "allureSecKm": 389,
+                  "gapSecKm": null,
+                  "fcMoy": 155,
+                  "fcMax": 163,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 10,
+                  "deniveleNegM": 18,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 397,
+                  "allureSecKm": 397,
+                  "gapSecKm": null,
+                  "fcMoy": 148,
+                  "fcMax": 158,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 385,
+                  "allureSecKm": 385,
+                  "gapSecKm": null,
+                  "fcMoy": 164,
+                  "fcMax": 174,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 10,
+                  "deniveleNegM": 12,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 380,
+                  "allureSecKm": 380,
+                  "gapSecKm": null,
+                  "fcMoy": 165,
+                  "fcMax": 176,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 371,
+                  "allureSecKm": 371,
+                  "gapSecKm": null,
+                  "fcMoy": 166,
+                  "fcMax": 177,
+                  "cadenceMoy": 177,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 367,
+                  "allureSecKm": 367,
+                  "gapSecKm": null,
+                  "fcMoy": 170,
+                  "fcMax": 175,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 9,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 1.0,
+                  "dureeSec": 371,
+                  "allureSecKm": 371,
+                  "gapSecKm": null,
+                  "fcMoy": 159,
+                  "fcMax": 166,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 1.0,
+                  "dureeSec": 388,
+                  "allureSecKm": 388,
+                  "gapSecKm": null,
+                  "fcMoy": 164,
+                  "fcMax": 169,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 7,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 15,
+                  "distanceKm": 1.0,
+                  "dureeSec": 390,
+                  "allureSecKm": 390,
+                  "gapSecKm": null,
+                  "fcMoy": 164,
+                  "fcMax": 172,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 16,
+                  "distanceKm": 1.0,
+                  "dureeSec": 389,
+                  "allureSecKm": 389,
+                  "gapSecKm": null,
+                  "fcMoy": 167,
+                  "fcMax": 171,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 17,
+                  "distanceKm": 1.0,
+                  "dureeSec": 389,
+                  "allureSecKm": 389,
+                  "gapSecKm": null,
+                  "fcMoy": 166,
+                  "fcMax": 173,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 18,
+                  "distanceKm": 1.0,
+                  "dureeSec": 372,
+                  "allureSecKm": 371,
+                  "gapSecKm": null,
+                  "fcMoy": 163,
+                  "fcMax": 167,
+                  "cadenceMoy": 177,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 23,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 19,
+                  "distanceKm": 0.506,
+                  "dureeSec": 190,
+                  "allureSecKm": 375,
+                  "gapSecKm": null,
+                  "fcMoy": 167,
+                  "fcMax": 170,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 9,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 84,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 2152,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 4818,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 33,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 25.0,
+                "ressentiC": 25.0,
+                "humidite": 36,
+                "ventKmh": 17.7,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23839947032,
+              "dateHeure": "2026-08-03T20:04:54",
+              "date": "2026-08-03",
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 6.4,
+              "dureeSec": 2572,
+              "allureMoySecKm": 402,
+              "gapMoySecKm": null,
+              "fcMoy": 141,
+              "fcMax": 151,
+              "fcMin": 75,
+              "cadenceMoy": 170,
+              "denivelePosM": 13,
+              "deniveleNegM": 12,
+              "calories": 335,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 404,
+                  "allureSecKm": 404,
+                  "gapSecKm": null,
+                  "fcMoy": 132,
+                  "fcMax": 143,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 391,
+                  "allureSecKm": 391,
+                  "gapSecKm": null,
+                  "fcMoy": 142,
+                  "fcMax": 146,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 405,
+                  "allureSecKm": 405,
+                  "gapSecKm": null,
+                  "fcMoy": 140,
+                  "fcMax": 145,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 404,
+                  "allureSecKm": 404,
+                  "gapSecKm": null,
+                  "fcMoy": 143,
+                  "fcMax": 149,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 411,
+                  "allureSecKm": 411,
+                  "gapSecKm": null,
+                  "fcMoy": 144,
+                  "fcMax": 149,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 395,
+                  "allureSecKm": 395,
+                  "gapSecKm": null,
+                  "fcMoy": 144,
+                  "fcMax": 151,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 0.399,
+                  "dureeSec": 163,
+                  "allureSecKm": 408,
+                  "gapSecKm": null,
+                  "fcMoy": 144,
+                  "fcMax": 150,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 25,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 248,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 2286,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 31.1,
+                "ressentiC": 31.1,
+                "humidite": 36,
+                "ventKmh": 17.7,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23878275591,
+              "dateHeure": "2026-08-06T19:19:16",
+              "date": "2026-08-06",
+              "titre": "Camphin-en-Pévèle - Seuil 2x2km",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 7.35,
+              "dureeSec": 2499,
+              "allureMoySecKm": 340,
+              "gapMoySecKm": null,
+              "fcMoy": 152,
+              "fcMax": 174,
+              "fcMin": 62,
+              "cadenceMoy": 177,
+              "denivelePosM": 12,
+              "deniveleNegM": 13,
+              "calories": 368,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "LACTATE_THRESHOLD",
+              "chargeEntrainement": null,
+              "rpe": 30,
+              "ressenti": 50,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 399,
+                  "allureSecKm": 399,
+                  "gapSecKm": null,
+                  "fcMoy": 124,
+                  "fcMax": 144,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 388,
+                  "allureSecKm": 388,
+                  "gapSecKm": null,
+                  "fcMoy": 137,
+                  "fcMax": 144,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 306,
+                  "allureSecKm": 306,
+                  "gapSecKm": null,
+                  "fcMoy": 161,
+                  "fcMax": 168,
+                  "cadenceMoy": 180,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 4,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 300,
+                  "allureSecKm": 300,
+                  "gapSecKm": null,
+                  "fcMoy": 170,
+                  "fcMax": 174,
+                  "cadenceMoy": 183,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 0.313,
+                  "dureeSec": 120,
+                  "allureSecKm": 384,
+                  "gapSecKm": null,
+                  "fcMoy": 153,
+                  "fcMax": 172,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 302,
+                  "allureSecKm": 302,
+                  "gapSecKm": null,
+                  "fcMoy": 167,
+                  "fcMax": 173,
+                  "cadenceMoy": 183,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 300,
+                  "allureSecKm": 300,
+                  "gapSecKm": null,
+                  "fcMoy": 168,
+                  "fcMax": 172,
+                  "cadenceMoy": 184,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.328,
+                  "dureeSec": 120,
+                  "allureSecKm": 365,
+                  "gapSecKm": null,
+                  "fcMoy": 151,
+                  "fcMax": 169,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 0.706,
+                  "dureeSec": 264,
+                  "allureSecKm": 374,
+                  "gapSecKm": null,
+                  "fcMoy": 147,
+                  "fcMax": 152,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "COOLDOWN"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 23,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 418,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 777,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 1239,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 22.2,
+                "ressentiC": 22.2,
+                "humidite": 43,
+                "ventKmh": 16.1,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23889796689,
+              "dateHeure": "2026-08-07T18:21:39",
+              "date": "2026-08-07",
+              "titre": "Musculation",
+              "type": "strength_training",
+              "lieu": null,
+              "distanceKm": null,
+              "dureeSec": 3302,
+              "allureMoySecKm": null,
+              "gapMoySecKm": null,
+              "fcMoy": 68,
+              "fcMax": 119,
+              "fcMin": 42,
+              "cadenceMoy": null,
+              "denivelePosM": null,
+              "deniveleNegM": null,
+              "calories": 91,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "UNKNOWN",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 0.0,
+                  "dureeSec": 3302,
+                  "allureSecKm": null,
+                  "gapSecKm": null,
+                  "fcMoy": 68,
+                  "fcMax": 119,
+                  "cadenceMoy": null,
+                  "puissanceMoy": null,
+                  "denivelePosM": null,
+                  "deniveleNegM": null,
+                  "intensite": null
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 375,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 44,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 0,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": null,
+                "ressentiC": null,
+                "humidite": null,
+                "ventKmh": null,
+                "description": null,
+                "station": null
+              }
+            },
+            {
+              "activityId": 23890499864,
+              "dateHeure": "2026-08-07T19:36:52",
+              "date": "2026-08-07",
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 6.43,
+              "dureeSec": 2634,
+              "allureMoySecKm": 410,
+              "gapMoySecKm": null,
+              "fcMoy": 132,
+              "fcMax": 142,
+              "fcMin": 72,
+              "cadenceMoy": 170,
+              "denivelePosM": 11,
+              "deniveleNegM": 10,
+              "calories": 327,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 410,
+                  "allureSecKm": 410,
+                  "gapSecKm": null,
+                  "fcMoy": 126,
+                  "fcMax": 140,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 402,
+                  "allureSecKm": 402,
+                  "gapSecKm": null,
+                  "fcMoy": 137,
+                  "fcMax": 142,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 413,
+                  "allureSecKm": 413,
+                  "gapSecKm": null,
+                  "fcMoy": 132,
+                  "fcMax": 139,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 416,
+                  "allureSecKm": 416,
+                  "gapSecKm": null,
+                  "fcMoy": 134,
+                  "fcMax": 140,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 418,
+                  "allureSecKm": 418,
+                  "gapSecKm": null,
+                  "fcMoy": 132,
+                  "fcMax": 137,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 401,
+                  "allureSecKm": 401,
+                  "gapSecKm": null,
+                  "fcMoy": 131,
+                  "fcMax": 136,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 0.427,
+                  "dureeSec": 174,
+                  "allureSecKm": 409,
+                  "gapSecKm": null,
+                  "fcMoy": 135,
+                  "fcMax": 139,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 36,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 1919,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 654,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 25.0,
+                "ressentiC": 25.0,
+                "humidite": 32,
+                "ventKmh": 8.0,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23908775984,
+              "dateHeure": "2026-08-09T10:11:36",
+              "date": "2026-08-09",
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 12.81,
+              "dureeSec": 4871,
+              "allureMoySecKm": 380,
+              "gapMoySecKm": null,
+              "fcMoy": 148,
+              "fcMax": 160,
+              "fcMin": 81,
+              "cadenceMoy": 175,
+              "denivelePosM": 22,
+              "deniveleNegM": 22,
+              "calories": 672,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 388,
+                  "allureSecKm": 388,
+                  "gapSecKm": null,
+                  "fcMoy": 136,
+                  "fcMax": 152,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 376,
+                  "allureSecKm": 376,
+                  "gapSecKm": null,
+                  "fcMoy": 149,
+                  "fcMax": 159,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 376,
+                  "allureSecKm": 376,
+                  "gapSecKm": null,
+                  "fcMoy": 151,
+                  "fcMax": 160,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 386,
+                  "allureSecKm": 386,
+                  "gapSecKm": null,
+                  "fcMoy": 148,
+                  "fcMax": 155,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 386,
+                  "allureSecKm": 386,
+                  "gapSecKm": null,
+                  "fcMoy": 149,
+                  "fcMax": 154,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 392,
+                  "allureSecKm": 392,
+                  "gapSecKm": null,
+                  "fcMoy": 145,
+                  "fcMax": 150,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 392,
+                  "allureSecKm": 392,
+                  "gapSecKm": null,
+                  "fcMoy": 141,
+                  "fcMax": 154,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 376,
+                  "allureSecKm": 376,
+                  "gapSecKm": null,
+                  "fcMoy": 148,
+                  "fcMax": 156,
+                  "cadenceMoy": 179,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 374,
+                  "allureSecKm": 374,
+                  "gapSecKm": null,
+                  "fcMoy": 147,
+                  "fcMax": 155,
+                  "cadenceMoy": 178,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 374,
+                  "allureSecKm": 374,
+                  "gapSecKm": null,
+                  "fcMoy": 153,
+                  "fcMax": 158,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 375,
+                  "allureSecKm": 375,
+                  "gapSecKm": null,
+                  "fcMoy": 154,
+                  "fcMax": 158,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 369,
+                  "allureSecKm": 369,
+                  "gapSecKm": null,
+                  "fcMoy": 154,
+                  "fcMax": 158,
+                  "cadenceMoy": 178,
+                  "puissanceMoy": null,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 0.813,
+                  "dureeSec": 307,
+                  "allureSecKm": 377,
+                  "gapSecKm": null,
+                  "fcMoy": 153,
+                  "fcMax": 158,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 41,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 115,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 4032,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 653,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 23.9,
+                "ressentiC": 23.9,
+                "humidite": 41,
+                "ventKmh": 4.8,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23926647830,
+              "dateHeure": "2026-08-10T19:24:28",
+              "date": "2026-08-10",
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 8.13,
+              "dureeSec": 3191,
+              "allureMoySecKm": 393,
+              "gapMoySecKm": null,
+              "fcMoy": 130,
+              "fcMax": 143,
+              "fcMin": 84,
+              "cadenceMoy": 173,
+              "denivelePosM": 15,
+              "deniveleNegM": 15,
+              "calories": 403,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 393,
+                  "allureSecKm": 393,
+                  "gapSecKm": null,
+                  "fcMoy": 126,
+                  "fcMax": 137,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 394,
+                  "allureSecKm": 394,
+                  "gapSecKm": null,
+                  "fcMoy": 133,
+                  "fcMax": 143,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 396,
+                  "allureSecKm": 396,
+                  "gapSecKm": null,
+                  "fcMoy": 131,
+                  "fcMax": 138,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 404,
+                  "allureSecKm": 404,
+                  "gapSecKm": null,
+                  "fcMoy": 131,
+                  "fcMax": 137,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 398,
+                  "allureSecKm": 398,
+                  "gapSecKm": null,
+                  "fcMoy": 130,
+                  "fcMax": 137,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 381,
+                  "allureSecKm": 381,
+                  "gapSecKm": null,
+                  "fcMoy": 129,
+                  "fcMax": 134,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 383,
+                  "allureSecKm": 383,
+                  "gapSecKm": null,
+                  "fcMoy": 130,
+                  "fcMax": 138,
+                  "cadenceMoy": 177,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 387,
+                  "allureSecKm": 387,
+                  "gapSecKm": null,
+                  "fcMoy": 131,
+                  "fcMax": 140,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 0.126,
+                  "dureeSec": 53,
+                  "allureSecKm": 422,
+                  "gapSecKm": null,
+                  "fcMoy": 133,
+                  "fcMax": 139,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 24,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 2895,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 258,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 25.0,
+                "ressentiC": 25.0,
+                "humidite": 51,
+                "ventKmh": 19.3,
+                "description": "Mostly Clear",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23938312568,
+              "dateHeure": "2026-08-11T17:14:37",
+              "date": "2026-08-11",
+              "titre": "Camphin-en-Pévèle - Seuil 2x3km",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 9.96,
+              "dureeSec": 3583,
+              "allureMoySecKm": 360,
+              "gapMoySecKm": null,
+              "fcMoy": 154,
+              "fcMax": 179,
+              "fcMin": 77,
+              "cadenceMoy": 174,
+              "denivelePosM": 17,
+              "deniveleNegM": 18,
+              "calories": 520,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "LACTATE_THRESHOLD",
+              "chargeEntrainement": null,
+              "rpe": 40,
+              "ressenti": 75,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 413,
+                  "allureSecKm": 413,
+                  "gapSecKm": null,
+                  "fcMoy": 128,
+                  "fcMax": 139,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 0,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 414,
+                  "allureSecKm": 414,
+                  "gapSecKm": null,
+                  "fcMoy": 135,
+                  "fcMax": 141,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 323,
+                  "allureSecKm": 323,
+                  "gapSecKm": null,
+                  "fcMoy": 159,
+                  "fcMax": 164,
+                  "cadenceMoy": 178,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 5,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 326,
+                  "allureSecKm": 326,
+                  "gapSecKm": null,
+                  "fcMoy": 165,
+                  "fcMax": 168,
+                  "cadenceMoy": 178,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 325,
+                  "allureSecKm": 325,
+                  "gapSecKm": null,
+                  "fcMoy": 165,
+                  "fcMax": 169,
+                  "cadenceMoy": 179,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 0.227,
+                  "dureeSec": 120,
+                  "allureSecKm": 528,
+                  "gapSecKm": null,
+                  "fcMoy": 140,
+                  "fcMax": 164,
+                  "cadenceMoy": 140,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 322,
+                  "allureSecKm": 322,
+                  "gapSecKm": null,
+                  "fcMoy": 160,
+                  "fcMax": 171,
+                  "cadenceMoy": 182,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 319,
+                  "allureSecKm": 319,
+                  "gapSecKm": null,
+                  "fcMoy": 167,
+                  "fcMax": 174,
+                  "cadenceMoy": 184,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 316,
+                  "allureSecKm": 316,
+                  "gapSecKm": null,
+                  "fcMoy": 173,
+                  "fcMax": 179,
+                  "cadenceMoy": 185,
+                  "puissanceMoy": null,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 0.158,
+                  "dureeSec": 120,
+                  "allureSecKm": 760,
+                  "gapSecKm": null,
+                  "fcMoy": 143,
+                  "fcMax": 177,
+                  "cadenceMoy": 115,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 379,
+                  "allureSecKm": 379,
+                  "gapSecKm": null,
+                  "fcMoy": 154,
+                  "fcMax": 161,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 4,
+                  "intensite": "COOLDOWN"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 0.57,
+                  "dureeSec": 207,
+                  "allureSecKm": 363,
+                  "gapSecKm": null,
+                  "fcMoy": 156,
+                  "fcMax": 159,
+                  "cadenceMoy": 180,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "COOLDOWN"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 33,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 656,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 544,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 2211,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 124,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 27.2,
+                "ressentiC": 27.2,
+                "humidite": 32,
+                "ventKmh": 17.7,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23990009845,
+              "dateHeure": "2026-08-15T19:13:56",
+              "date": "2026-08-15",
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 7.34,
+              "dureeSec": 3085,
+              "allureMoySecKm": 421,
+              "gapMoySecKm": null,
+              "fcMoy": 136,
+              "fcMax": 144,
+              "fcMin": 93,
+              "cadenceMoy": 173,
+              "denivelePosM": 9,
+              "deniveleNegM": 9,
+              "calories": 379,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 414,
+                  "allureSecKm": 414,
+                  "gapSecKm": null,
+                  "fcMoy": 132,
+                  "fcMax": 144,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 421,
+                  "allureSecKm": 421,
+                  "gapSecKm": null,
+                  "fcMoy": 138,
+                  "fcMax": 144,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 427,
+                  "allureSecKm": 427,
+                  "gapSecKm": null,
+                  "fcMoy": 136,
+                  "fcMax": 140,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 427,
+                  "allureSecKm": 427,
+                  "gapSecKm": null,
+                  "fcMoy": 138,
+                  "fcMax": 142,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 431,
+                  "allureSecKm": 431,
+                  "gapSecKm": null,
+                  "fcMoy": 136,
+                  "fcMax": 140,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 408,
+                  "allureSecKm": 408,
+                  "gapSecKm": null,
+                  "fcMoy": 136,
+                  "fcMax": 141,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 417,
+                  "allureSecKm": 417,
+                  "gapSecKm": null,
+                  "fcMoy": 136,
+                  "fcMax": 143,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.337,
+                  "dureeSec": 140,
+                  "allureSecKm": 414,
+                  "gapSecKm": null,
+                  "fcMoy": 138,
+                  "fcMax": 140,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 15,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 1005,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 2049,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 27.8,
+                "ressentiC": 28.9,
+                "humidite": 55,
+                "ventKmh": 20.9,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23996951604,
+              "dateHeure": "2026-08-16T10:51:58",
+              "date": "2026-08-16",
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 19.14,
+              "dureeSec": 7325,
+              "allureMoySecKm": 383,
+              "gapMoySecKm": null,
+              "fcMoy": 148,
+              "fcMax": 164,
+              "fcMin": 98,
+              "cadenceMoy": 174,
+              "denivelePosM": 81,
+              "deniveleNegM": 81,
+              "calories": 1010,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 397,
+                  "allureSecKm": 397,
+                  "gapSecKm": null,
+                  "fcMoy": 137,
+                  "fcMax": 148,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 385,
+                  "allureSecKm": 385,
+                  "gapSecKm": null,
+                  "fcMoy": 146,
+                  "fcMax": 149,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 389,
+                  "allureSecKm": 389,
+                  "gapSecKm": null,
+                  "fcMoy": 149,
+                  "fcMax": 162,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 387,
+                  "allureSecKm": 387,
+                  "gapSecKm": null,
+                  "fcMoy": 139,
+                  "fcMax": 146,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 6,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 386,
+                  "allureSecKm": 386,
+                  "gapSecKm": null,
+                  "fcMoy": 146,
+                  "fcMax": 164,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 11,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 384,
+                  "allureSecKm": 384,
+                  "gapSecKm": null,
+                  "fcMoy": 141,
+                  "fcMax": 154,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 17,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 393,
+                  "allureSecKm": 393,
+                  "gapSecKm": null,
+                  "fcMoy": 148,
+                  "fcMax": 155,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 12,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 379,
+                  "allureSecKm": 379,
+                  "gapSecKm": null,
+                  "fcMoy": 141,
+                  "fcMax": 149,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 6,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 383,
+                  "allureSecKm": 383,
+                  "gapSecKm": null,
+                  "fcMoy": 152,
+                  "fcMax": 164,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 11,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 377,
+                  "allureSecKm": 377,
+                  "gapSecKm": null,
+                  "fcMoy": 143,
+                  "fcMax": 150,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 9,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 374,
+                  "allureSecKm": 374,
+                  "gapSecKm": null,
+                  "fcMoy": 148,
+                  "fcMax": 157,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 7,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 391,
+                  "allureSecKm": 391,
+                  "gapSecKm": null,
+                  "fcMoy": 156,
+                  "fcMax": 161,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 19,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 1.0,
+                  "dureeSec": 383,
+                  "allureSecKm": 383,
+                  "gapSecKm": null,
+                  "fcMoy": 142,
+                  "fcMax": 155,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 19,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 1.0,
+                  "dureeSec": 387,
+                  "allureSecKm": 387,
+                  "gapSecKm": null,
+                  "fcMoy": 148,
+                  "fcMax": 153,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 15,
+                  "distanceKm": 1.0,
+                  "dureeSec": 382,
+                  "allureSecKm": 382,
+                  "gapSecKm": null,
+                  "fcMoy": 149,
+                  "fcMax": 154,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 16,
+                  "distanceKm": 1.0,
+                  "dureeSec": 373,
+                  "allureSecKm": 373,
+                  "gapSecKm": null,
+                  "fcMoy": 151,
+                  "fcMax": 157,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 17,
+                  "distanceKm": 1.0,
+                  "dureeSec": 381,
+                  "allureSecKm": 381,
+                  "gapSecKm": null,
+                  "fcMoy": 154,
+                  "fcMax": 162,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 18,
+                  "distanceKm": 1.0,
+                  "dureeSec": 373,
+                  "allureSecKm": 373,
+                  "gapSecKm": null,
+                  "fcMoy": 159,
+                  "fcMax": 164,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 19,
+                  "distanceKm": 1.0,
+                  "dureeSec": 373,
+                  "allureSecKm": 373,
+                  "gapSecKm": null,
+                  "fcMoy": 159,
+                  "fcMax": 163,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 20,
+                  "distanceKm": 0.138,
+                  "dureeSec": 48,
+                  "allureSecKm": 347,
+                  "gapSecKm": null,
+                  "fcMoy": 161,
+                  "fcMax": 162,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 39,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 306,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 5295,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 1684,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 22.8,
+                "ressentiC": 22.8,
+                "humidite": 65,
+                "ventKmh": 11.3,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 24013375962,
+              "dateHeure": "2026-08-17T19:00:25",
+              "date": "2026-08-17",
+              "titre": "Musculation",
+              "type": "strength_training",
+              "lieu": null,
+              "distanceKm": null,
+              "dureeSec": 3183,
+              "allureMoySecKm": null,
+              "gapMoySecKm": null,
+              "fcMoy": 86,
+              "fcMax": 125,
+              "fcMin": 50,
+              "cadenceMoy": null,
+              "denivelePosM": null,
+              "deniveleNegM": null,
+              "calories": 131,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "UNKNOWN",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 0.0,
+                  "dureeSec": 3183,
+                  "allureSecKm": null,
+                  "gapSecKm": null,
+                  "fcMoy": 86,
+                  "fcMax": 125,
+                  "cadenceMoy": null,
+                  "puissanceMoy": null,
+                  "denivelePosM": null,
+                  "deniveleNegM": null,
+                  "intensite": null
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 923,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 100,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 0,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": null,
+                "ressentiC": null,
+                "humidite": null,
+                "ventKmh": null,
+                "description": null,
+                "station": null
+              }
+            },
+            {
+              "activityId": 24024821575,
+              "dateHeure": "2026-08-18T17:12:12",
+              "date": "2026-08-18",
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 7.35,
+              "dureeSec": 2939,
+              "allureMoySecKm": 400,
+              "gapMoySecKm": null,
+              "fcMoy": 137,
+              "fcMax": 152,
+              "fcMin": 77,
+              "cadenceMoy": 170,
+              "denivelePosM": 13,
+              "deniveleNegM": 13,
+              "calories": 380,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 398,
+                  "allureSecKm": 398,
+                  "gapSecKm": null,
+                  "fcMoy": 129,
+                  "fcMax": 143,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 399,
+                  "allureSecKm": 399,
+                  "gapSecKm": null,
+                  "fcMoy": 138,
+                  "fcMax": 142,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 397,
+                  "allureSecKm": 397,
+                  "gapSecKm": null,
+                  "fcMoy": 136,
+                  "fcMax": 143,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 392,
+                  "allureSecKm": 392,
+                  "gapSecKm": null,
+                  "fcMoy": 144,
+                  "fcMax": 152,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 406,
+                  "allureSecKm": 406,
+                  "gapSecKm": null,
+                  "fcMoy": 138,
+                  "fcMax": 144,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 400,
+                  "allureSecKm": 400,
+                  "gapSecKm": null,
+                  "fcMoy": 136,
+                  "fcMax": 139,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 404,
+                  "allureSecKm": 404,
+                  "gapSecKm": null,
+                  "fcMoy": 138,
+                  "fcMax": 145,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.349,
+                  "dureeSec": 142,
+                  "allureSecKm": 407,
+                  "gapSecKm": null,
+                  "fcMoy": 138,
+                  "fcMax": 141,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 16,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 810,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 2093,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 22.2,
+                "ressentiC": 22.2,
+                "humidite": 83,
+                "ventKmh": 17.7,
+                "description": "Mostly Cloudy",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 24039832812,
+              "dateHeure": "2026-08-19T19:21:50",
+              "date": "2026-08-19",
+              "titre": "Camphin-en-Pévèle - VMA 5x1000m",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 8.32,
+              "dureeSec": 2766,
+              "allureMoySecKm": 333,
+              "gapMoySecKm": null,
+              "fcMoy": 156,
+              "fcMax": 183,
+              "fcMin": 74,
+              "cadenceMoy": 178,
+              "denivelePosM": 13,
+              "deniveleNegM": 13,
+              "calories": 418,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "VO2MAX",
+              "chargeEntrainement": null,
+              "rpe": 30,
+              "ressenti": 75,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 402,
+                  "allureSecKm": 402,
+                  "gapSecKm": null,
+                  "fcMoy": 126,
+                  "fcMax": 138,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 396,
+                  "allureSecKm": 396,
+                  "gapSecKm": null,
+                  "fcMoy": 134,
+                  "fcMax": 141,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 286,
+                  "allureSecKm": 286,
+                  "gapSecKm": null,
+                  "fcMoy": 167,
+                  "fcMax": 173,
+                  "cadenceMoy": 182,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 5,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 0.275,
+                  "dureeSec": 120,
+                  "allureSecKm": 437,
+                  "gapSecKm": null,
+                  "fcMoy": 147,
+                  "fcMax": 173,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 280,
+                  "allureSecKm": 280,
+                  "gapSecKm": null,
+                  "fcMoy": 171,
+                  "fcMax": 179,
+                  "cadenceMoy": 186,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 0.287,
+                  "dureeSec": 120,
+                  "allureSecKm": 418,
+                  "gapSecKm": null,
+                  "fcMoy": 154,
+                  "fcMax": 178,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 279,
+                  "allureSecKm": 279,
+                  "gapSecKm": null,
+                  "fcMoy": 173,
+                  "fcMax": 181,
+                  "cadenceMoy": 186,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.295,
+                  "dureeSec": 120,
+                  "allureSecKm": 406,
+                  "gapSecKm": null,
+                  "fcMoy": 153,
+                  "fcMax": 177,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 281,
+                  "allureSecKm": 281,
+                  "gapSecKm": null,
+                  "fcMoy": 173,
+                  "fcMax": 181,
+                  "cadenceMoy": 186,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 0.271,
+                  "dureeSec": 120,
+                  "allureSecKm": 442,
+                  "gapSecKm": null,
+                  "fcMoy": 155,
+                  "fcMax": 180,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 276,
+                  "allureSecKm": 276,
+                  "gapSecKm": null,
+                  "fcMoy": 175,
+                  "fcMax": 183,
+                  "cadenceMoy": 187,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 0.187,
+                  "dureeSec": 81,
+                  "allureSecKm": 434,
+                  "gapSecKm": null,
+                  "fcMoy": 160,
+                  "fcMax": 177,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "RECOVERY"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 26,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 632,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 563,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 683,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 834,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 17.8,
+                "ressentiC": 17.8,
+                "humidite": 88,
+                "ventKmh": 8.0,
+                "description": "Mostly Cloudy",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 24070995222,
+              "dateHeure": "2026-08-22T10:27:25",
+              "date": "2026-08-22",
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 22.05,
+              "dureeSec": 8163,
+              "allureMoySecKm": 370,
+              "gapMoySecKm": null,
+              "fcMoy": 147,
+              "fcMax": 166,
+              "fcMin": 72,
+              "cadenceMoy": 175,
+              "denivelePosM": 86,
+              "deniveleNegM": 87,
+              "calories": 1141,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 377,
+                  "allureSecKm": 377,
+                  "gapSecKm": null,
+                  "fcMoy": 136,
+                  "fcMax": 147,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 375,
+                  "allureSecKm": 375,
+                  "gapSecKm": null,
+                  "fcMoy": 145,
+                  "fcMax": 153,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 378,
+                  "allureSecKm": 379,
+                  "gapSecKm": null,
+                  "fcMoy": 147,
+                  "fcMax": 160,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 380,
+                  "allureSecKm": 380,
+                  "gapSecKm": null,
+                  "fcMoy": 140,
+                  "fcMax": 146,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 6,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 386,
+                  "allureSecKm": 386,
+                  "gapSecKm": null,
+                  "fcMoy": 143,
+                  "fcMax": 153,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 10,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 400,
+                  "allureSecKm": 400,
+                  "gapSecKm": null,
+                  "fcMoy": 144,
+                  "fcMax": 157,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 389,
+                  "allureSecKm": 389,
+                  "gapSecKm": null,
+                  "fcMoy": 141,
+                  "fcMax": 148,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 6,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 376,
+                  "allureSecKm": 376,
+                  "gapSecKm": null,
+                  "fcMoy": 149,
+                  "fcMax": 159,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 11,
+                  "deniveleNegM": 6,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 386,
+                  "allureSecKm": 386,
+                  "gapSecKm": null,
+                  "fcMoy": 148,
+                  "fcMax": 155,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 14,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 372,
+                  "allureSecKm": 372,
+                  "gapSecKm": null,
+                  "fcMoy": 140,
+                  "fcMax": 150,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 17,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 374,
+                  "allureSecKm": 374,
+                  "gapSecKm": null,
+                  "fcMoy": 151,
+                  "fcMax": 156,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 12,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 360,
+                  "allureSecKm": 360,
+                  "gapSecKm": null,
+                  "fcMoy": 148,
+                  "fcMax": 153,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 6,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 1.0,
+                  "dureeSec": 368,
+                  "allureSecKm": 368,
+                  "gapSecKm": null,
+                  "fcMoy": 150,
+                  "fcMax": 163,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 12,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 1.0,
+                  "dureeSec": 358,
+                  "allureSecKm": 358,
+                  "gapSecKm": null,
+                  "fcMoy": 145,
+                  "fcMax": 155,
+                  "cadenceMoy": 177,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 6,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 15,
+                  "distanceKm": 1.0,
+                  "dureeSec": 374,
+                  "allureSecKm": 374,
+                  "gapSecKm": null,
+                  "fcMoy": 153,
+                  "fcMax": 161,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 7,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 16,
+                  "distanceKm": 1.0,
+                  "dureeSec": 371,
+                  "allureSecKm": 371,
+                  "gapSecKm": null,
+                  "fcMoy": 151,
+                  "fcMax": 159,
+                  "cadenceMoy": 177,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 17,
+                  "distanceKm": 1.0,
+                  "dureeSec": 369,
+                  "allureSecKm": 369,
+                  "gapSecKm": null,
+                  "fcMoy": 146,
+                  "fcMax": 152,
+                  "cadenceMoy": 177,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 18,
+                  "distanceKm": 1.0,
+                  "dureeSec": 376,
+                  "allureSecKm": 376,
+                  "gapSecKm": null,
+                  "fcMoy": 149,
+                  "fcMax": 154,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 19,
+                  "distanceKm": 1.0,
+                  "dureeSec": 383,
+                  "allureSecKm": 383,
+                  "gapSecKm": null,
+                  "fcMoy": 145,
+                  "fcMax": 154,
+                  "cadenceMoy": 178,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 20,
+                  "distanceKm": 1.0,
+                  "dureeSec": 340,
+                  "allureSecKm": 340,
+                  "gapSecKm": null,
+                  "fcMoy": 154,
+                  "fcMax": 159,
+                  "cadenceMoy": 179,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 21,
+                  "distanceKm": 1.0,
+                  "dureeSec": 333,
+                  "allureSecKm": 333,
+                  "gapSecKm": null,
+                  "fcMoy": 157,
+                  "fcMax": 162,
+                  "cadenceMoy": 179,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 22,
+                  "distanceKm": 1.0,
+                  "dureeSec": 325,
+                  "allureSecKm": 325,
+                  "gapSecKm": null,
+                  "fcMoy": 163,
+                  "fcMax": 166,
+                  "cadenceMoy": 179,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 23,
+                  "distanceKm": 0.047,
+                  "dureeSec": 14,
+                  "allureSecKm": 297,
+                  "gapSecKm": null,
+                  "fcMoy": 163,
+                  "fcMax": 164,
+                  "cadenceMoy": 178,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 36,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 238,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 6323,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 1545,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 17.8,
+                "ressentiC": 17.8,
+                "humidite": 68,
+                "ventKmh": 9.7,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 24100001843,
+              "dateHeure": "2026-08-24T18:35:23",
+              "date": "2026-08-24",
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 7.35,
+              "dureeSec": 2920,
+              "allureMoySecKm": 397,
+              "gapMoySecKm": null,
+              "fcMoy": 130,
+              "fcMax": 143,
+              "fcMin": 67,
+              "cadenceMoy": 169,
+              "denivelePosM": 11,
+              "deniveleNegM": 12,
+              "calories": 366,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 394,
+                  "allureSecKm": 394,
+                  "gapSecKm": null,
+                  "fcMoy": 125,
+                  "fcMax": 143,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 388,
+                  "allureSecKm": 388,
+                  "gapSecKm": null,
+                  "fcMoy": 134,
+                  "fcMax": 139,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 407,
+                  "allureSecKm": 407,
+                  "gapSecKm": null,
+                  "fcMoy": 131,
+                  "fcMax": 139,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 409,
+                  "allureSecKm": 409,
+                  "gapSecKm": null,
+                  "fcMoy": 131,
+                  "fcMax": 138,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 405,
+                  "allureSecKm": 405,
+                  "gapSecKm": null,
+                  "fcMoy": 130,
+                  "fcMax": 137,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 390,
+                  "allureSecKm": 390,
+                  "gapSecKm": null,
+                  "fcMoy": 131,
+                  "fcMax": 137,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 389,
+                  "allureSecKm": 389,
+                  "gapSecKm": null,
+                  "fcMoy": 131,
+                  "fcMax": 139,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.355,
+                  "dureeSec": 138,
+                  "allureSecKm": 388,
+                  "gapSecKm": null,
+                  "fcMoy": 133,
+                  "fcMax": 138,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 23,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 2550,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 319,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 22.2,
+                "ressentiC": 22.2,
+                "humidite": 46,
+                "ventKmh": 19.3,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 24112919457,
+              "dateHeure": "2026-08-25T17:54:50",
+              "date": "2026-08-25",
+              "titre": "Camphin-en-Pévèle - Seuil 2x3km + 1x2km",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 12.01,
+              "dureeSec": 4114,
+              "allureMoySecKm": 342,
+              "gapMoySecKm": null,
+              "fcMoy": 161,
+              "fcMax": 179,
+              "fcMin": 81,
+              "cadenceMoy": 175,
+              "denivelePosM": 18,
+              "deniveleNegM": 17,
+              "calories": 636,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "LACTATE_THRESHOLD",
+              "chargeEntrainement": null,
+              "rpe": 30,
+              "ressenti": 50,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 389,
+                  "allureSecKm": 389,
+                  "gapSecKm": null,
+                  "fcMoy": 134,
+                  "fcMax": 145,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 0,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 394,
+                  "allureSecKm": 394,
+                  "gapSecKm": null,
+                  "fcMoy": 142,
+                  "fcMax": 147,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 325,
+                  "allureSecKm": 325,
+                  "gapSecKm": null,
+                  "fcMoy": 159,
+                  "fcMax": 167,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 325,
+                  "allureSecKm": 325,
+                  "gapSecKm": null,
+                  "fcMoy": 164,
+                  "fcMax": 170,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 318,
+                  "allureSecKm": 318,
+                  "gapSecKm": null,
+                  "fcMoy": 167,
+                  "fcMax": 170,
+                  "cadenceMoy": 177,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 0.285,
+                  "dureeSec": 120,
+                  "allureSecKm": 421,
+                  "gapSecKm": null,
+                  "fcMoy": 153,
+                  "fcMax": 168,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 320,
+                  "allureSecKm": 320,
+                  "gapSecKm": null,
+                  "fcMoy": 165,
+                  "fcMax": 172,
+                  "cadenceMoy": 178,
+                  "puissanceMoy": null,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 312,
+                  "allureSecKm": 312,
+                  "gapSecKm": null,
+                  "fcMoy": 170,
+                  "fcMax": 173,
+                  "cadenceMoy": 179,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 313,
+                  "allureSecKm": 313,
+                  "gapSecKm": null,
+                  "fcMoy": 172,
+                  "fcMax": 177,
+                  "cadenceMoy": 178,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 0.299,
+                  "dureeSec": 120,
+                  "allureSecKm": 402,
+                  "gapSecKm": null,
+                  "fcMoy": 161,
+                  "fcMax": 177,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 317,
+                  "allureSecKm": 317,
+                  "gapSecKm": null,
+                  "fcMoy": 171,
+                  "fcMax": 177,
+                  "cadenceMoy": 179,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 4,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 319,
+                  "allureSecKm": 319,
+                  "gapSecKm": null,
+                  "fcMoy": 175,
+                  "fcMax": 179,
+                  "cadenceMoy": 181,
+                  "puissanceMoy": null,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 1.0,
+                  "dureeSec": 384,
+                  "allureSecKm": 384,
+                  "gapSecKm": null,
+                  "fcMoy": 161,
+                  "fcMax": 178,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 0,
+                  "intensite": "COOLDOWN"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 0.429,
+                  "dureeSec": 159,
+                  "allureSecKm": 371,
+                  "gapSecKm": null,
+                  "fcMoy": 156,
+                  "fcMax": 158,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "COOLDOWN"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 14,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 130,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 855,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 2712,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 385,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 25.0,
+                "ressentiC": 25.0,
+                "humidite": 44,
+                "ventKmh": 14.5,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 24122249846,
+              "dateHeure": "2026-08-26T13:02:14",
+              "date": "2026-08-26",
+              "titre": "Musculation",
+              "type": "strength_training",
+              "lieu": null,
+              "distanceKm": null,
+              "dureeSec": 2474,
+              "allureMoySecKm": null,
+              "gapMoySecKm": null,
+              "fcMoy": 87,
+              "fcMax": 127,
+              "fcMin": 55,
+              "cadenceMoy": null,
+              "denivelePosM": null,
+              "deniveleNegM": null,
+              "calories": 107,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "UNKNOWN",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 0.0,
+                  "dureeSec": 2474,
+                  "allureSecKm": null,
+                  "gapSecKm": null,
+                  "fcMoy": 87,
+                  "fcMax": 127,
+                  "cadenceMoy": null,
+                  "puissanceMoy": null,
+                  "denivelePosM": null,
+                  "deniveleNegM": null,
+                  "intensite": null
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 742,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 140,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 0,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": null,
+                "ressentiC": null,
+                "humidite": null,
+                "ventKmh": null,
+                "description": null,
+                "station": null
+              }
+            },
+            {
+              "activityId": 24150666251,
+              "dateHeure": "2026-08-28T16:52:00",
+              "date": "2026-08-28",
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 18.0,
+              "dureeSec": 6696,
+              "allureMoySecKm": 372,
+              "gapMoySecKm": null,
+              "fcMoy": 147,
+              "fcMax": 165,
+              "fcMin": 64,
+              "cadenceMoy": 174,
+              "denivelePosM": 66,
+              "deniveleNegM": 66,
+              "calories": 942,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 380,
+                  "allureSecKm": 380,
+                  "gapSecKm": null,
+                  "fcMoy": 132,
+                  "fcMax": 145,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 374,
+                  "allureSecKm": 374,
+                  "gapSecKm": null,
+                  "fcMoy": 143,
+                  "fcMax": 149,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 373,
+                  "allureSecKm": 373,
+                  "gapSecKm": null,
+                  "fcMoy": 148,
+                  "fcMax": 161,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 375,
+                  "allureSecKm": 375,
+                  "gapSecKm": null,
+                  "fcMoy": 141,
+                  "fcMax": 147,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 391,
+                  "allureSecKm": 391,
+                  "gapSecKm": null,
+                  "fcMoy": 140,
+                  "fcMax": 148,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 10,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 384,
+                  "allureSecKm": 384,
+                  "gapSecKm": null,
+                  "fcMoy": 146,
+                  "fcMax": 154,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 381,
+                  "allureSecKm": 381,
+                  "gapSecKm": null,
+                  "fcMoy": 145,
+                  "fcMax": 153,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 375,
+                  "allureSecKm": 375,
+                  "gapSecKm": null,
+                  "fcMoy": 152,
+                  "fcMax": 158,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 9,
+                  "deniveleNegM": 6,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 377,
+                  "allureSecKm": 377,
+                  "gapSecKm": null,
+                  "fcMoy": 152,
+                  "fcMax": 160,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 12,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 365,
+                  "allureSecKm": 365,
+                  "gapSecKm": null,
+                  "fcMoy": 143,
+                  "fcMax": 153,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 15,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 379,
+                  "allureSecKm": 379,
+                  "gapSecKm": null,
+                  "fcMoy": 158,
+                  "fcMax": 165,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 13,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 365,
+                  "allureSecKm": 365,
+                  "gapSecKm": null,
+                  "fcMoy": 144,
+                  "fcMax": 159,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 1.0,
+                  "dureeSec": 378,
+                  "allureSecKm": 378,
+                  "gapSecKm": null,
+                  "fcMoy": 154,
+                  "fcMax": 165,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 10,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 1.0,
+                  "dureeSec": 359,
+                  "allureSecKm": 359,
+                  "gapSecKm": null,
+                  "fcMoy": 148,
+                  "fcMax": 152,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 15,
+                  "distanceKm": 1.0,
+                  "dureeSec": 367,
+                  "allureSecKm": 367,
+                  "gapSecKm": null,
+                  "fcMoy": 150,
+                  "fcMax": 158,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 16,
+                  "distanceKm": 1.0,
+                  "dureeSec": 362,
+                  "allureSecKm": 362,
+                  "gapSecKm": null,
+                  "fcMoy": 149,
+                  "fcMax": 156,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 17,
+                  "distanceKm": 1.0,
+                  "dureeSec": 365,
+                  "allureSecKm": 365,
+                  "gapSecKm": null,
+                  "fcMoy": 150,
+                  "fcMax": 153,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 18,
+                  "distanceKm": 1.0,
+                  "dureeSec": 344,
+                  "allureSecKm": 344,
+                  "gapSecKm": null,
+                  "fcMoy": 152,
+                  "fcMax": 162,
+                  "cadenceMoy": 177,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 31,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 208,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 5326,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 1107,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 18.9,
+                "ressentiC": 18.9,
+                "humidite": 83,
+                "ventKmh": 17.7,
+                "description": "Mostly Cloudy",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 24176306284,
+              "dateHeure": "2026-08-30T10:33:42",
+              "date": "2026-08-30",
+              "titre": "Saint-Rémy-de-Provence Course à pied",
+              "type": "running",
+              "lieu": "Saint-Rémy-de-Provence",
+              "distanceKm": 5.09,
+              "dureeSec": 2276,
+              "allureMoySecKm": 448,
+              "gapMoySecKm": null,
+              "fcMoy": 143,
+              "fcMax": 169,
+              "fcMin": 94,
+              "cadenceMoy": 159,
+              "denivelePosM": 128,
+              "deniveleNegM": 120,
+              "calories": 290,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 439,
+                  "allureSecKm": 439,
+                  "gapSecKm": null,
+                  "fcMoy": 143,
+                  "fcMax": 159,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": null,
+                  "denivelePosM": 37,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 470,
+                  "allureSecKm": 470,
+                  "gapSecKm": null,
+                  "fcMoy": 149,
+                  "fcMax": 166,
+                  "cadenceMoy": 153,
+                  "puissanceMoy": null,
+                  "denivelePosM": 35,
+                  "deniveleNegM": 11,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 475,
+                  "allureSecKm": 475,
+                  "gapSecKm": null,
+                  "fcMoy": 142,
+                  "fcMax": 166,
+                  "cadenceMoy": 141,
+                  "puissanceMoy": null,
+                  "denivelePosM": 44,
+                  "deniveleNegM": 24,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 435,
+                  "allureSecKm": 435,
+                  "gapSecKm": null,
+                  "fcMoy": 146,
+                  "fcMax": 169,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": null,
+                  "denivelePosM": 11,
+                  "deniveleNegM": 40,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 423,
+                  "allureSecKm": 423,
+                  "gapSecKm": null,
+                  "fcMoy": 136,
+                  "fcMax": 146,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 45,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 0.086,
+                  "dureeSec": 35,
+                  "allureSecKm": 405,
+                  "gapSecKm": null,
+                  "fcMoy": 145,
+                  "fcMax": 146,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 32,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 590,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 1117,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 531,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 26.1,
+                "ressentiC": 26.1,
+                "humidite": 51,
+                "ventKmh": 8.0,
+                "description": "Fair",
+                "station": "Avignon-Caumont Airport"
+              }
+            },
+            {
+              "activityId": 24194190629,
+              "dateHeure": "2026-09-01T09:55:35",
+              "date": "2026-09-01",
+              "titre": "Saint-Rémy-de-Provence Course à pied",
+              "type": "running",
+              "lieu": "Saint-Rémy-de-Provence",
+              "distanceKm": 13.37,
+              "dureeSec": 5962,
+              "allureMoySecKm": 446,
+              "gapMoySecKm": null,
+              "fcMoy": 157,
+              "fcMax": 185,
+              "fcMin": 93,
+              "cadenceMoy": 154,
+              "denivelePosM": 336,
+              "deniveleNegM": 334,
+              "calories": 814,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "VO2MAX",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 399,
+                  "allureSecKm": 399,
+                  "gapSecKm": null,
+                  "fcMoy": 149,
+                  "fcMax": 169,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 33,
+                  "deniveleNegM": 9,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 406,
+                  "allureSecKm": 406,
+                  "gapSecKm": null,
+                  "fcMoy": 164,
+                  "fcMax": 177,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 37,
+                  "deniveleNegM": 10,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 398,
+                  "allureSecKm": 398,
+                  "gapSecKm": null,
+                  "fcMoy": 155,
+                  "fcMax": 170,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 27,
+                  "deniveleNegM": 33,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 431,
+                  "allureSecKm": 431,
+                  "gapSecKm": null,
+                  "fcMoy": 173,
+                  "fcMax": 179,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": null,
+                  "denivelePosM": 53,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 584,
+                  "allureSecKm": 584,
+                  "gapSecKm": null,
+                  "fcMoy": 156,
+                  "fcMax": 185,
+                  "cadenceMoy": 129,
+                  "puissanceMoy": null,
+                  "denivelePosM": 62,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 383,
+                  "allureSecKm": 383,
+                  "gapSecKm": null,
+                  "fcMoy": 158,
+                  "fcMax": 170,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 427,
+                  "allureSecKm": 427,
+                  "gapSecKm": null,
+                  "fcMoy": 170,
+                  "fcMax": 183,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": null,
+                  "denivelePosM": 39,
+                  "deniveleNegM": 11,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 378,
+                  "allureSecKm": 378,
+                  "gapSecKm": null,
+                  "fcMoy": 154,
+                  "fcMax": 183,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 8,
+                  "deniveleNegM": 15,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 442,
+                  "allureSecKm": 442,
+                  "gapSecKm": null,
+                  "fcMoy": 168,
+                  "fcMax": 181,
+                  "cadenceMoy": 160,
+                  "puissanceMoy": null,
+                  "denivelePosM": 29,
+                  "deniveleNegM": 14,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 740,
+                  "allureSecKm": 740,
+                  "gapSecKm": null,
+                  "fcMoy": 143,
+                  "fcMax": 174,
+                  "cadenceMoy": 97,
+                  "puissanceMoy": null,
+                  "denivelePosM": 43,
+                  "deniveleNegM": 32,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 585,
+                  "allureSecKm": 585,
+                  "gapSecKm": null,
+                  "fcMoy": 147,
+                  "fcMax": 168,
+                  "cadenceMoy": 126,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 90,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 355,
+                  "allureSecKm": 355,
+                  "gapSecKm": null,
+                  "fcMoy": 150,
+                  "fcMax": 158,
+                  "cadenceMoy": 178,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 55,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 1.0,
+                  "dureeSec": 321,
+                  "allureSecKm": 321,
+                  "gapSecKm": null,
+                  "fcMoy": 160,
+                  "fcMax": 170,
+                  "cadenceMoy": 183,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 50,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 0.367,
+                  "dureeSec": 112,
+                  "allureSecKm": 305,
+                  "gapSecKm": null,
+                  "fcMoy": 172,
+                  "fcMax": 176,
+                  "cadenceMoy": 186,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 9,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 163,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 420,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 1579,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 3138,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 656,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 25.0,
+                "ressentiC": 25.0,
+                "humidite": 44,
+                "ventKmh": 24.1,
+                "description": "Fair",
+                "station": "Avignon-Caumont Airport"
+              }
+            },
+            {
+              "activityId": 24207650064,
+              "dateHeure": "2026-09-02T10:50:41",
+              "date": "2026-09-02",
+              "titre": "Saint-Rémy-de-Provence Course à pied",
+              "type": "running",
+              "lieu": "Saint-Rémy-de-Provence",
+              "distanceKm": 6.49,
+              "dureeSec": 2571,
+              "allureMoySecKm": 396,
+              "gapMoySecKm": null,
+              "fcMoy": 154,
+              "fcMax": 182,
+              "fcMin": 103,
+              "cadenceMoy": 168,
+              "denivelePosM": 121,
+              "deniveleNegM": 118,
+              "calories": 375,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "TEMPO",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 408,
+                  "allureSecKm": 408,
+                  "gapSecKm": null,
+                  "fcMoy": 150,
+                  "fcMax": 167,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 36,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 447,
+                  "allureSecKm": 447,
+                  "gapSecKm": null,
+                  "fcMoy": 157,
+                  "fcMax": 182,
+                  "cadenceMoy": 154,
+                  "puissanceMoy": null,
+                  "denivelePosM": 32,
+                  "deniveleNegM": 11,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 385,
+                  "allureSecKm": 384,
+                  "gapSecKm": null,
+                  "fcMoy": 161,
+                  "fcMax": 182,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 32,
+                  "deniveleNegM": 46,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 373,
+                  "allureSecKm": 373,
+                  "gapSecKm": null,
+                  "fcMoy": 151,
+                  "fcMax": 164,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 39,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 380,
+                  "allureSecKm": 380,
+                  "gapSecKm": null,
+                  "fcMoy": 148,
+                  "fcMax": 164,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 23,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 418,
+                  "allureSecKm": 418,
+                  "gapSecKm": null,
+                  "fcMoy": 154,
+                  "fcMax": 163,
+                  "cadenceMoy": 158,
+                  "puissanceMoy": null,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 0.488,
+                  "dureeSec": 160,
+                  "allureSecKm": 328,
+                  "gapSecKm": null,
+                  "fcMoy": 164,
+                  "fcMax": 179,
+                  "cadenceMoy": 182,
+                  "puissanceMoy": null,
+                  "denivelePosM": 10,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 15,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 136,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 1187,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 1099,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 133,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 26.1,
+                "ressentiC": 26.1,
+                "humidite": 45,
+                "ventKmh": 9.7,
+                "description": "Fair",
+                "station": "Avignon-Caumont Airport"
+              }
+            },
+            {
+              "activityId": 24233045473,
+              "dateHeure": "2026-09-04T09:58:25",
+              "date": "2026-09-04",
+              "titre": "Saint-Rémy-de-Provence Course à pied",
+              "type": "running",
+              "lieu": "Saint-Rémy-de-Provence",
+              "distanceKm": 17.01,
+              "dureeSec": 7250,
+              "allureMoySecKm": 426,
+              "gapMoySecKm": null,
+              "fcMoy": 164,
+              "fcMax": 187,
+              "fcMin": 95,
+              "cadenceMoy": 163,
+              "denivelePosM": 465,
+              "deniveleNegM": 462,
+              "calories": 1040,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "VO2MAX",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 408,
+                  "allureSecKm": 408,
+                  "gapSecKm": null,
+                  "fcMoy": 152,
+                  "fcMax": 167,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 36,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 409,
+                  "allureSecKm": 409,
+                  "gapSecKm": null,
+                  "fcMoy": 172,
+                  "fcMax": 180,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 54,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 561,
+                  "allureSecKm": 561,
+                  "gapSecKm": null,
+                  "fcMoy": 152,
+                  "fcMax": 181,
+                  "cadenceMoy": 136,
+                  "puissanceMoy": null,
+                  "denivelePosM": 42,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 458,
+                  "allureSecKm": 457,
+                  "gapSecKm": null,
+                  "fcMoy": 172,
+                  "fcMax": 183,
+                  "cadenceMoy": 159,
+                  "puissanceMoy": null,
+                  "denivelePosM": 48,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 402,
+                  "allureSecKm": 402,
+                  "gapSecKm": null,
+                  "fcMoy": 168,
+                  "fcMax": 182,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 16,
+                  "deniveleNegM": 32,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 500,
+                  "allureSecKm": 500,
+                  "gapSecKm": null,
+                  "fcMoy": 174,
+                  "fcMax": 187,
+                  "cadenceMoy": 152,
+                  "puissanceMoy": null,
+                  "denivelePosM": 37,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 396,
+                  "allureSecKm": 396,
+                  "gapSecKm": null,
+                  "fcMoy": 172,
+                  "fcMax": 184,
+                  "cadenceMoy": 177,
+                  "puissanceMoy": null,
+                  "denivelePosM": 23,
+                  "deniveleNegM": 17,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 579,
+                  "allureSecKm": 578,
+                  "gapSecKm": null,
+                  "fcMoy": 173,
+                  "fcMax": 182,
+                  "cadenceMoy": 138,
+                  "puissanceMoy": null,
+                  "denivelePosM": 88,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 331,
+                  "allureSecKm": 331,
+                  "gapSecKm": null,
+                  "fcMoy": 150,
+                  "fcMax": 183,
+                  "cadenceMoy": 180,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 82,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 367,
+                  "allureSecKm": 368,
+                  "gapSecKm": null,
+                  "fcMoy": 154,
+                  "fcMax": 161,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 94,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 395,
+                  "allureSecKm": 395,
+                  "gapSecKm": null,
+                  "fcMoy": 155,
+                  "fcMax": 163,
+                  "cadenceMoy": 160,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 68,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 372,
+                  "allureSecKm": 372,
+                  "gapSecKm": null,
+                  "fcMoy": 159,
+                  "fcMax": 169,
+                  "cadenceMoy": 179,
+                  "puissanceMoy": null,
+                  "denivelePosM": 14,
+                  "deniveleNegM": 34,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 1.0,
+                  "dureeSec": 381,
+                  "allureSecKm": 381,
+                  "gapSecKm": null,
+                  "fcMoy": 163,
+                  "fcMax": 170,
+                  "cadenceMoy": 178,
+                  "puissanceMoy": null,
+                  "denivelePosM": 7,
+                  "deniveleNegM": 21,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 1.0,
+                  "dureeSec": 502,
+                  "allureSecKm": 502,
+                  "gapSecKm": null,
+                  "fcMoy": 157,
+                  "fcMax": 172,
+                  "cadenceMoy": 147,
+                  "puissanceMoy": null,
+                  "denivelePosM": 15,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 15,
+                  "distanceKm": 1.0,
+                  "dureeSec": 471,
+                  "allureSecKm": 471,
+                  "gapSecKm": null,
+                  "fcMoy": 169,
+                  "fcMax": 183,
+                  "cadenceMoy": 156,
+                  "puissanceMoy": null,
+                  "denivelePosM": 65,
+                  "deniveleNegM": 30,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 16,
+                  "distanceKm": 1.0,
+                  "dureeSec": 375,
+                  "allureSecKm": 375,
+                  "gapSecKm": null,
+                  "fcMoy": 169,
+                  "fcMax": 185,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 13,
+                  "deniveleNegM": 32,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 17,
+                  "distanceKm": 1.0,
+                  "dureeSec": 341,
+                  "allureSecKm": 341,
+                  "gapSecKm": null,
+                  "fcMoy": 174,
+                  "fcMax": 181,
+                  "cadenceMoy": 181,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 44,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 16,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 201,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 1107,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 4291,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 1627,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 25.0,
+                "ressentiC": 25.0,
+                "humidite": 44,
+                "ventKmh": 6.4,
+                "description": "Fair",
+                "station": "Avignon-Caumont Airport"
+              }
+            },
+            {
+              "activityId": 24268069914,
+              "dateHeure": "2026-09-07T09:53:46",
+              "date": "2026-09-07",
+              "titre": "Saint-Rémy-de-Provence Course à pied",
+              "type": "running",
+              "lieu": "Saint-Rémy-de-Provence",
+              "distanceKm": 4.64,
+              "dureeSec": 2334,
+              "allureMoySecKm": 503,
+              "gapMoySecKm": null,
+              "fcMoy": 162,
+              "fcMax": 186,
+              "fcMin": 99,
+              "cadenceMoy": 148,
+              "denivelePosM": 235,
+              "deniveleNegM": 15,
+              "calories": 344,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "LACTATE_THRESHOLD",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 410,
+                  "allureSecKm": 410,
+                  "gapSecKm": null,
+                  "fcMoy": 152,
+                  "fcMax": 170,
+                  "cadenceMoy": 173,
+                  "puissanceMoy": null,
+                  "denivelePosM": 35,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 421,
+                  "allureSecKm": 421,
+                  "gapSecKm": null,
+                  "fcMoy": 170,
+                  "fcMax": 179,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": null,
+                  "denivelePosM": 61,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 547,
+                  "allureSecKm": 547,
+                  "gapSecKm": null,
+                  "fcMoy": 158,
+                  "fcMax": 180,
+                  "cadenceMoy": 137,
+                  "puissanceMoy": null,
+                  "denivelePosM": 41,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 685,
+                  "allureSecKm": 685,
+                  "gapSecKm": null,
+                  "fcMoy": 167,
+                  "fcMax": 179,
+                  "cadenceMoy": 119,
+                  "puissanceMoy": null,
+                  "denivelePosM": 77,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 0.641,
+                  "dureeSec": 272,
+                  "allureSecKm": 424,
+                  "gapSecKm": null,
+                  "fcMoy": 166,
+                  "fcMax": 186,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 21,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 18,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 89,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 444,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 1409,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 374,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 27.2,
+                "ressentiC": 28.3,
+                "humidite": 66,
+                "ventKmh": 4.8,
+                "description": "Fair",
+                "station": "Avignon-Caumont Airport"
+              }
+            },
+            {
+              "activityId": 24268333898,
+              "dateHeure": "2026-09-07T10:39:30",
+              "date": "2026-09-07",
+              "titre": "Les Baux-de-Provence Course à pied",
+              "type": "running",
+              "lieu": "Les Baux-de-Provence",
+              "distanceKm": 4.66,
+              "dureeSec": 1797,
+              "allureMoySecKm": 385,
+              "gapMoySecKm": null,
+              "fcMoy": 159,
+              "fcMax": 175,
+              "fcMin": 110,
+              "cadenceMoy": 170,
+              "denivelePosM": 22,
+              "deniveleNegM": 238,
+              "calories": 264,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "TEMPO",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 435,
+                  "allureSecKm": 435,
+                  "gapSecKm": null,
+                  "fcMoy": 156,
+                  "fcMax": 169,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": null,
+                  "denivelePosM": 7,
+                  "deniveleNegM": 44,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 382,
+                  "allureSecKm": 382,
+                  "gapSecKm": null,
+                  "fcMoy": 161,
+                  "fcMax": 175,
+                  "cadenceMoy": 162,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 73,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 383,
+                  "allureSecKm": 383,
+                  "gapSecKm": null,
+                  "fcMoy": 159,
+                  "fcMax": 166,
+                  "cadenceMoy": 174,
+                  "puissanceMoy": null,
+                  "denivelePosM": 8,
+                  "deniveleNegM": 40,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 361,
+                  "allureSecKm": 360,
+                  "gapSecKm": null,
+                  "fcMoy": 159,
+                  "fcMax": 164,
+                  "cadenceMoy": 177,
+                  "puissanceMoy": null,
+                  "denivelePosM": 7,
+                  "deniveleNegM": 53,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 0.664,
+                  "dureeSec": 237,
+                  "allureSecKm": 356,
+                  "gapSecKm": null,
+                  "fcMoy": 162,
+                  "fcMax": 170,
+                  "cadenceMoy": 177,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 28,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 6,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 20,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 208,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 1559,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 4,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 27.2,
+                "ressentiC": 28.3,
+                "humidite": 66,
+                "ventKmh": 4.8,
+                "description": "Fair",
+                "station": "Avignon-Caumont Airport"
+              }
+            },
+            {
+              "activityId": 24297730626,
+              "dateHeure": "2026-09-09T15:52:37",
+              "date": "2026-09-09",
+              "titre": "Saint-Rémy-de-Provence Course à pied",
+              "type": "running",
+              "lieu": "Saint-Rémy-de-Provence",
+              "distanceKm": 5.03,
+              "dureeSec": 1845,
+              "allureMoySecKm": 367,
+              "gapMoySecKm": null,
+              "fcMoy": 155,
+              "fcMax": 191,
+              "fcMin": 88,
+              "cadenceMoy": 168,
+              "denivelePosM": 139,
+              "deniveleNegM": 135,
+              "calories": 272,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "TEMPO",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 380,
+                  "allureSecKm": 380,
+                  "gapSecKm": null,
+                  "fcMoy": 152,
+                  "fcMax": 171,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": null,
+                  "denivelePosM": 41,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 424,
+                  "allureSecKm": 424,
+                  "gapSecKm": null,
+                  "fcMoy": 157,
+                  "fcMax": 178,
+                  "cadenceMoy": 156,
+                  "puissanceMoy": null,
+                  "denivelePosM": 43,
+                  "deniveleNegM": 12,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 398,
+                  "allureSecKm": 398,
+                  "gapSecKm": null,
+                  "fcMoy": 145,
+                  "fcMax": 176,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": null,
+                  "denivelePosM": 41,
+                  "deniveleNegM": 26,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 405,
+                  "allureSecKm": 405,
+                  "gapSecKm": null,
+                  "fcMoy": 154,
+                  "fcMax": 176,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": null,
+                  "denivelePosM": 10,
+                  "deniveleNegM": 43,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 232,
+                  "allureSecKm": 232,
+                  "gapSecKm": null,
+                  "fcMoy": 176,
+                  "fcMax": 191,
+                  "cadenceMoy": 193,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 47,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 41,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 121,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 641,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 779,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 244,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 22.8,
+                "ressentiC": 22.8,
+                "humidite": 47,
+                "ventKmh": 30.6,
+                "description": "Fair",
+                "station": "Avignon-Caumont Airport"
+              }
+            },
+            {
+              "activityId": 24330571181,
+              "dateHeure": "2026-09-12T10:12:24",
+              "date": "2026-09-12",
+              "titre": "Camphin-en-Pévèle - Seuil 3x2km",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 10.38,
+              "dureeSec": 3571,
+              "allureMoySecKm": 344,
+              "gapMoySecKm": null,
+              "fcMoy": 159,
+              "fcMax": 178,
+              "fcMin": 83,
+              "cadenceMoy": 177,
+              "denivelePosM": 21,
+              "deniveleNegM": 21,
+              "calories": 543,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "LACTATE_THRESHOLD",
+              "chargeEntrainement": null,
+              "rpe": 30,
+              "ressenti": 50,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 406,
+                  "allureSecKm": 406,
+                  "gapSecKm": null,
+                  "fcMoy": 136,
+                  "fcMax": 148,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 0,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 397,
+                  "allureSecKm": 397,
+                  "gapSecKm": null,
+                  "fcMoy": 141,
+                  "fcMax": 147,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 4,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 311,
+                  "allureSecKm": 311,
+                  "gapSecKm": null,
+                  "fcMoy": 160,
+                  "fcMax": 164,
+                  "cadenceMoy": 180,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 314,
+                  "allureSecKm": 314,
+                  "gapSecKm": null,
+                  "fcMoy": 165,
+                  "fcMax": 170,
+                  "cadenceMoy": 181,
+                  "puissanceMoy": null,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 0.292,
+                  "dureeSec": 120,
+                  "allureSecKm": 411,
+                  "gapSecKm": null,
+                  "fcMoy": 155,
+                  "fcMax": 169,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 320,
+                  "allureSecKm": 320,
+                  "gapSecKm": null,
+                  "fcMoy": 162,
+                  "fcMax": 169,
+                  "cadenceMoy": 181,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 315,
+                  "allureSecKm": 315,
+                  "gapSecKm": null,
+                  "fcMoy": 172,
+                  "fcMax": 178,
+                  "cadenceMoy": 182,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.287,
+                  "dureeSec": 120,
+                  "allureSecKm": 418,
+                  "gapSecKm": null,
+                  "fcMoy": 159,
+                  "fcMax": 175,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 315,
+                  "allureSecKm": 315,
+                  "gapSecKm": null,
+                  "fcMoy": 167,
+                  "fcMax": 172,
+                  "cadenceMoy": 180,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 5,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 311,
+                  "allureSecKm": 311,
+                  "gapSecKm": null,
+                  "fcMoy": 172,
+                  "fcMax": 175,
+                  "cadenceMoy": 182,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 359,
+                  "allureSecKm": 359,
+                  "gapSecKm": null,
+                  "fcMoy": 163,
+                  "fcMax": 171,
+                  "cadenceMoy": 175,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 4,
+                  "intensite": "COOLDOWN"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 0.784,
+                  "dureeSec": 276,
+                  "allureSecKm": 352,
+                  "gapSecKm": null,
+                  "fcMoy": 161,
+                  "fcMax": 165,
+                  "cadenceMoy": 176,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "COOLDOWN"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 11,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 145,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 855,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 2396,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 152,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 17.8,
+                "ressentiC": 17.8,
+                "humidite": 83,
+                "ventKmh": 11.3,
+                "description": "Fair",
+                "station": "Lille"
+              }
             }
           ],
           "journal": [
@@ -6666,7 +14490,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 56,
               "date": "2025-01-04",
-              "dateHeure": "2025-01-04T16:46:24"
+              "dateHeure": "2025-01-04T16:46:24",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -6699,7 +14525,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 57,
               "date": "2025-01-07",
-              "dateHeure": "2025-01-07T11:36:07"
+              "dateHeure": "2025-01-07T11:36:07",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -6732,7 +14560,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 40,
               "altitudeMaxM": 54,
               "date": "2025-01-11",
-              "dateHeure": "2025-01-11T15:47:54"
+              "dateHeure": "2025-01-11T15:47:54",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -6765,7 +14595,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 42,
               "altitudeMaxM": 58,
               "date": "2025-01-18",
-              "dateHeure": "2025-01-18T14:54:37"
+              "dateHeure": "2025-01-18T14:54:37",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -6798,7 +14630,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 39,
               "altitudeMaxM": 54,
               "date": "2025-01-20",
-              "dateHeure": "2025-01-20T12:05:55"
+              "dateHeure": "2025-01-20T12:05:55",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -6831,7 +14665,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 38,
               "altitudeMaxM": 55,
               "date": "2025-01-22",
-              "dateHeure": "2025-01-22T12:47:47"
+              "dateHeure": "2025-01-22T12:47:47",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -6864,7 +14700,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 13,
               "altitudeMaxM": 25,
               "date": "2025-01-26",
-              "dateHeure": "2025-01-26T11:10:50"
+              "dateHeure": "2025-01-26T11:10:50",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -6897,7 +14735,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 40,
               "altitudeMaxM": 55,
               "date": "2025-01-29",
-              "dateHeure": "2025-01-29T17:38:50"
+              "dateHeure": "2025-01-29T17:38:50",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -6930,7 +14770,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 25,
               "altitudeMaxM": 30,
               "date": "2025-02-01",
-              "dateHeure": "2025-02-01T16:20:12"
+              "dateHeure": "2025-02-01T16:20:12",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -6963,7 +14805,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 52,
               "altitudeMaxM": 56,
               "date": "2025-02-03",
-              "dateHeure": "2025-02-03T18:06:31"
+              "dateHeure": "2025-02-03T18:06:31",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -6996,7 +14840,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 32,
               "altitudeMaxM": 55,
               "date": "2025-02-05",
-              "dateHeure": "2025-02-05T11:55:46"
+              "dateHeure": "2025-02-05T11:55:46",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7029,7 +14875,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 45,
               "altitudeMaxM": 55,
               "date": "2025-02-07",
-              "dateHeure": "2025-02-07T16:48:47"
+              "dateHeure": "2025-02-07T16:48:47",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7062,7 +14910,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 33,
               "altitudeMaxM": 56,
               "date": "2025-02-09",
-              "dateHeure": "2025-02-09T16:27:14"
+              "dateHeure": "2025-02-09T16:27:14",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7095,7 +14945,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 55,
               "altitudeMaxM": 56,
               "date": "2025-02-09",
-              "dateHeure": "2025-02-09T15:58:51"
+              "dateHeure": "2025-02-09T15:58:51",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7128,7 +14980,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 56,
               "date": "2025-02-12",
-              "dateHeure": "2025-02-12T17:41:23"
+              "dateHeure": "2025-02-12T17:41:23",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7161,7 +15015,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 55,
               "altitudeMaxM": 57,
               "date": "2025-02-12",
-              "dateHeure": "2025-02-12T17:14:21"
+              "dateHeure": "2025-02-12T17:14:21",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7194,7 +15050,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 31,
               "altitudeMaxM": 56,
               "date": "2025-02-16",
-              "dateHeure": "2025-02-16T16:46:58"
+              "dateHeure": "2025-02-16T16:46:58",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7227,7 +15085,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 51,
               "altitudeMaxM": 53,
               "date": "2025-02-16",
-              "dateHeure": "2025-02-16T16:38:39"
+              "dateHeure": "2025-02-16T16:38:39",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7260,7 +15120,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 52,
               "altitudeMaxM": 55,
               "date": "2025-02-16",
-              "dateHeure": "2025-02-16T16:17:45"
+              "dateHeure": "2025-02-16T16:17:45",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7293,7 +15155,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 35,
               "altitudeMaxM": 57,
               "date": "2025-02-23",
-              "dateHeure": "2025-02-23T15:56:31"
+              "dateHeure": "2025-02-23T15:56:31",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7326,7 +15190,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 38,
               "altitudeMaxM": 54,
               "date": "2025-02-24",
-              "dateHeure": "2025-02-24T17:50:13"
+              "dateHeure": "2025-02-24T17:50:13",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7359,7 +15225,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 35,
               "altitudeMaxM": 60,
               "date": "2025-02-26",
-              "dateHeure": "2025-02-26T12:00:21"
+              "dateHeure": "2025-02-26T12:00:21",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7392,7 +15260,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 37,
               "altitudeMaxM": 54,
               "date": "2025-02-27",
-              "dateHeure": "2025-02-27T17:26:37"
+              "dateHeure": "2025-02-27T17:26:37",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7425,7 +15295,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 52,
               "altitudeMaxM": 55,
               "date": "2025-02-28",
-              "dateHeure": "2025-02-28T17:41:40"
+              "dateHeure": "2025-02-28T17:41:40",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7458,7 +15330,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 53,
               "altitudeMaxM": 56,
               "date": "2025-02-28",
-              "dateHeure": "2025-02-28T17:20:38"
+              "dateHeure": "2025-02-28T17:20:38",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7491,7 +15365,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 42,
               "altitudeMaxM": 54,
               "date": "2025-03-04",
-              "dateHeure": "2025-03-04T17:58:16"
+              "dateHeure": "2025-03-04T17:58:16",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7524,7 +15400,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 44,
               "altitudeMaxM": 58,
               "date": "2025-03-07",
-              "dateHeure": "2025-03-07T12:10:50"
+              "dateHeure": "2025-03-07T12:10:50",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7557,7 +15435,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 40,
               "altitudeMaxM": 55,
               "date": "2025-03-19",
-              "dateHeure": "2025-03-19T17:55:30"
+              "dateHeure": "2025-03-19T17:55:30",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7590,7 +15470,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 57,
               "date": "2025-03-20",
-              "dateHeure": "2025-03-20T12:30:30"
+              "dateHeure": "2025-03-20T12:30:30",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7623,7 +15505,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 37,
               "altitudeMaxM": 64,
               "date": "2025-03-26",
-              "dateHeure": "2025-03-26T12:17:08"
+              "dateHeure": "2025-03-26T12:17:08",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7656,7 +15540,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 42,
               "altitudeMaxM": 57,
               "date": "2025-04-01",
-              "dateHeure": "2025-04-01T18:22:15"
+              "dateHeure": "2025-04-01T18:22:15",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7689,7 +15575,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 58,
               "date": "2025-04-03",
-              "dateHeure": "2025-04-03T12:00:01"
+              "dateHeure": "2025-04-03T12:00:01",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7722,7 +15610,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 54,
               "date": "2025-04-05",
-              "dateHeure": "2025-04-05T15:43:19"
+              "dateHeure": "2025-04-05T15:43:19",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7755,7 +15645,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 37,
               "altitudeMaxM": 54,
               "date": "2025-04-07",
-              "dateHeure": "2025-04-07T18:07:35"
+              "dateHeure": "2025-04-07T18:07:35",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7788,7 +15680,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 39,
               "altitudeMaxM": 56,
               "date": "2025-04-11",
-              "dateHeure": "2025-04-11T12:16:11"
+              "dateHeure": "2025-04-11T12:16:11",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7821,7 +15715,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 32,
               "altitudeMaxM": 57,
               "date": "2025-04-13",
-              "dateHeure": "2025-04-13T11:21:04"
+              "dateHeure": "2025-04-13T11:21:04",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7854,7 +15750,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 36,
               "altitudeMaxM": 56,
               "date": "2025-04-15",
-              "dateHeure": "2025-04-15T17:52:55"
+              "dateHeure": "2025-04-15T17:52:55",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7887,7 +15785,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 39,
               "altitudeMaxM": 56,
               "date": "2025-04-17",
-              "dateHeure": "2025-04-17T12:19:01"
+              "dateHeure": "2025-04-17T12:19:01",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7920,7 +15820,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 56,
               "date": "2025-04-20",
-              "dateHeure": "2025-04-20T16:55:41"
+              "dateHeure": "2025-04-20T16:55:41",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7953,7 +15855,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 45,
               "altitudeMaxM": 59,
               "date": "2025-04-23",
-              "dateHeure": "2025-04-23T18:22:24"
+              "dateHeure": "2025-04-23T18:22:24",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -7986,7 +15890,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 43,
               "altitudeMaxM": 58,
               "date": "2025-04-25",
-              "dateHeure": "2025-04-25T12:32:07"
+              "dateHeure": "2025-04-25T12:32:07",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8019,7 +15925,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 33,
               "altitudeMaxM": 56,
               "date": "2025-04-27",
-              "dateHeure": "2025-04-27T13:46:13"
+              "dateHeure": "2025-04-27T13:46:13",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8052,7 +15960,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 35,
               "altitudeMaxM": 58,
               "date": "2025-04-30",
-              "dateHeure": "2025-04-30T11:58:42"
+              "dateHeure": "2025-04-30T11:58:42",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8085,7 +15995,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 42,
               "altitudeMaxM": 58,
               "date": "2025-05-02",
-              "dateHeure": "2025-05-02T12:57:41"
+              "dateHeure": "2025-05-02T12:57:41",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8118,7 +16030,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 43,
               "altitudeMaxM": 55,
               "date": "2025-05-05",
-              "dateHeure": "2025-05-05T18:25:32"
+              "dateHeure": "2025-05-05T18:25:32",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8151,7 +16065,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 37,
               "altitudeMaxM": 56,
               "date": "2025-05-06",
-              "dateHeure": "2025-05-06T18:19:01"
+              "dateHeure": "2025-05-06T18:19:01",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8184,7 +16100,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 34,
               "altitudeMaxM": 56,
               "date": "2025-05-08",
-              "dateHeure": "2025-05-08T17:09:54"
+              "dateHeure": "2025-05-08T17:09:54",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8217,7 +16135,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 56,
               "date": "2025-05-08",
-              "dateHeure": "2025-05-08T16:35:12"
+              "dateHeure": "2025-05-08T16:35:12",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8250,7 +16170,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 32,
               "altitudeMaxM": 65,
               "date": "2025-05-10",
-              "dateHeure": "2025-05-10T16:31:45"
+              "dateHeure": "2025-05-10T16:31:45",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8283,7 +16205,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 45,
               "altitudeMaxM": 57,
               "date": "2025-05-12",
-              "dateHeure": "2025-05-12T18:37:51"
+              "dateHeure": "2025-05-12T18:37:51",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8316,7 +16240,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 39,
               "altitudeMaxM": 58,
               "date": "2025-05-14",
-              "dateHeure": "2025-05-14T17:38:50"
+              "dateHeure": "2025-05-14T17:38:50",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8349,7 +16275,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 37,
               "altitudeMaxM": 62,
               "date": "2025-05-16",
-              "dateHeure": "2025-05-16T11:58:16"
+              "dateHeure": "2025-05-16T11:58:16",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8382,7 +16310,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 79,
               "altitudeMaxM": 162,
               "date": "2025-05-18",
-              "dateHeure": "2025-05-18T10:48:25"
+              "dateHeure": "2025-05-18T10:48:25",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8415,7 +16345,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 82,
               "altitudeMaxM": 317,
               "date": "2025-05-20",
-              "dateHeure": "2025-05-20T10:58:59"
+              "dateHeure": "2025-05-20T10:58:59",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8448,7 +16380,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 81,
               "altitudeMaxM": 186,
               "date": "2025-05-22",
-              "dateHeure": "2025-05-22T10:01:32"
+              "dateHeure": "2025-05-22T10:01:32",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8481,7 +16415,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 79,
               "altitudeMaxM": 163,
               "date": "2025-05-23",
-              "dateHeure": "2025-05-23T17:07:10"
+              "dateHeure": "2025-05-23T17:07:10",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8514,7 +16450,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 34,
               "altitudeMaxM": 58,
               "date": "2025-05-29",
-              "dateHeure": "2025-05-29T16:26:50"
+              "dateHeure": "2025-05-29T16:26:50",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8547,7 +16485,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 43,
               "altitudeMaxM": 60,
               "date": "2025-05-30",
-              "dateHeure": "2025-05-30T13:08:31"
+              "dateHeure": "2025-05-30T13:08:31",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8580,7 +16520,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 31,
               "altitudeMaxM": 56,
               "date": "2025-06-01",
-              "dateHeure": "2025-06-01T15:23:33"
+              "dateHeure": "2025-06-01T15:23:33",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8613,7 +16555,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 40,
               "altitudeMaxM": 56,
               "date": "2025-06-03",
-              "dateHeure": "2025-06-03T18:09:04"
+              "dateHeure": "2025-06-03T18:09:04",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8646,7 +16590,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 39,
               "altitudeMaxM": 55,
               "date": "2025-06-05",
-              "dateHeure": "2025-06-05T12:23:48"
+              "dateHeure": "2025-06-05T12:23:48",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8679,7 +16625,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 44,
               "altitudeMaxM": 58,
               "date": "2025-06-06",
-              "dateHeure": "2025-06-06T12:44:53"
+              "dateHeure": "2025-06-06T12:44:53",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8712,7 +16660,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 34,
               "altitudeMaxM": 57,
               "date": "2025-06-08",
-              "dateHeure": "2025-06-08T21:08:21"
+              "dateHeure": "2025-06-08T21:08:21",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8745,7 +16695,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 46,
               "altitudeMaxM": 57,
               "date": "2025-06-10",
-              "dateHeure": "2025-06-10T18:22:43"
+              "dateHeure": "2025-06-10T18:22:43",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8778,7 +16730,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 54,
               "altitudeMaxM": 59,
               "date": "2025-06-11",
-              "dateHeure": "2025-06-11T17:42:35"
+              "dateHeure": "2025-06-11T17:42:35",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8811,7 +16765,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 34,
               "altitudeMaxM": 61,
               "date": "2025-06-15",
-              "dateHeure": "2025-06-15T15:36:29"
+              "dateHeure": "2025-06-15T15:36:29",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8844,7 +16800,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 36,
               "altitudeMaxM": 58,
               "date": "2025-06-18",
-              "dateHeure": "2025-06-18T13:00:33"
+              "dateHeure": "2025-06-18T13:00:33",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8877,7 +16835,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 35,
               "altitudeMaxM": 58,
               "date": "2025-06-20",
-              "dateHeure": "2025-06-20T22:43:10"
+              "dateHeure": "2025-06-20T22:43:10",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8910,7 +16870,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 53,
               "altitudeMaxM": 56,
               "date": "2025-07-04",
-              "dateHeure": "2025-07-04T18:17:11"
+              "dateHeure": "2025-07-04T18:17:11",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8943,7 +16905,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 57,
               "date": "2025-07-10",
-              "dateHeure": "2025-07-10T17:22:49"
+              "dateHeure": "2025-07-10T17:22:49",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -8976,7 +16940,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 42,
               "altitudeMaxM": 57,
               "date": "2025-07-16",
-              "dateHeure": "2025-07-16T12:17:07"
+              "dateHeure": "2025-07-16T12:17:07",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9009,7 +16975,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 42,
               "altitudeMaxM": 56,
               "date": "2025-07-19",
-              "dateHeure": "2025-07-19T17:59:13"
+              "dateHeure": "2025-07-19T17:59:13",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9042,7 +17010,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 44,
               "altitudeMaxM": 59,
               "date": "2025-07-26",
-              "dateHeure": "2025-07-26T16:57:42"
+              "dateHeure": "2025-07-26T16:57:42",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9075,7 +17045,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 48,
               "altitudeMaxM": 59,
               "date": "2025-07-28",
-              "dateHeure": "2025-07-28T18:33:04"
+              "dateHeure": "2025-07-28T18:33:04",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9108,7 +17080,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 35,
               "altitudeMaxM": 58,
               "date": "2025-07-30",
-              "dateHeure": "2025-07-30T12:37:46"
+              "dateHeure": "2025-07-30T12:37:46",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9141,7 +17115,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 63,
               "altitudeMaxM": 89,
               "date": "2025-08-02",
-              "dateHeure": "2025-08-02T16:13:18"
+              "dateHeure": "2025-08-02T16:13:18",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9174,7 +17150,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 40,
               "altitudeMaxM": 56,
               "date": "2025-08-05",
-              "dateHeure": "2025-08-05T17:22:46"
+              "dateHeure": "2025-08-05T17:22:46",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9207,7 +17185,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 33,
               "altitudeMaxM": 54,
               "date": "2025-08-07",
-              "dateHeure": "2025-08-07T19:22:46"
+              "dateHeure": "2025-08-07T19:22:46",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9240,7 +17220,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 19,
               "altitudeMaxM": 38,
               "date": "2025-08-09",
-              "dateHeure": "2025-08-09T14:12:22"
+              "dateHeure": "2025-08-09T14:12:22",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9273,7 +17255,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 55,
               "altitudeMaxM": 59,
               "date": "2025-08-11",
-              "dateHeure": "2025-08-11T20:49:07"
+              "dateHeure": "2025-08-11T20:49:07",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9306,7 +17290,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 42,
               "date": "2025-08-17",
-              "dateHeure": "2025-08-17T12:04:09"
+              "dateHeure": "2025-08-17T12:04:09",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9339,7 +17325,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 44,
               "date": "2025-08-19",
-              "dateHeure": "2025-08-19T11:19:42"
+              "dateHeure": "2025-08-19T11:19:42",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9372,7 +17360,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 20,
               "altitudeMaxM": 31,
               "date": "2025-08-22",
-              "dateHeure": "2025-08-22T16:51:14"
+              "dateHeure": "2025-08-22T16:51:14",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9405,7 +17395,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 23,
               "altitudeMaxM": 58,
               "date": "2025-08-23",
-              "dateHeure": "2025-08-23T16:03:28"
+              "dateHeure": "2025-08-23T16:03:28",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9438,7 +17430,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 26,
               "altitudeMaxM": 41,
               "date": "2025-08-26",
-              "dateHeure": "2025-08-26T19:29:52"
+              "dateHeure": "2025-08-26T19:29:52",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9471,7 +17465,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 28,
               "altitudeMaxM": 41,
               "date": "2025-08-28",
-              "dateHeure": "2025-08-28T12:01:06"
+              "dateHeure": "2025-08-28T12:01:06",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9504,7 +17500,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 67,
               "date": "2025-08-31",
-              "dateHeure": "2025-08-31T15:48:30"
+              "dateHeure": "2025-08-31T15:48:30",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9537,7 +17535,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 43,
               "date": "2025-09-02",
-              "dateHeure": "2025-09-02T12:14:22"
+              "dateHeure": "2025-09-02T12:14:22",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9570,7 +17570,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 25,
               "altitudeMaxM": 33,
               "date": "2025-09-04",
-              "dateHeure": "2025-09-04T13:19:17"
+              "dateHeure": "2025-09-04T13:19:17",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9603,7 +17605,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 25,
               "altitudeMaxM": 58,
               "date": "2025-09-04",
-              "dateHeure": "2025-09-04T12:15:05"
+              "dateHeure": "2025-09-04T12:15:05",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9636,7 +17640,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 31,
               "altitudeMaxM": 68,
               "date": "2025-09-07",
-              "dateHeure": "2025-09-07T12:31:56"
+              "dateHeure": "2025-09-07T12:31:56",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9669,7 +17675,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 61,
               "date": "2025-09-09",
-              "dateHeure": "2025-09-09T12:24:56"
+              "dateHeure": "2025-09-09T12:24:56",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9702,7 +17710,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 28,
               "altitudeMaxM": 42,
               "date": "2025-09-11",
-              "dateHeure": "2025-09-11T12:21:00"
+              "dateHeure": "2025-09-11T12:21:00",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9735,7 +17745,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 24,
               "altitudeMaxM": 59,
               "date": "2025-09-13",
-              "dateHeure": "2025-09-13T10:45:12"
+              "dateHeure": "2025-09-13T10:45:12",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9768,7 +17780,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 40,
               "date": "2025-09-16",
-              "dateHeure": "2025-09-16T12:29:46"
+              "dateHeure": "2025-09-16T12:29:46",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9801,7 +17815,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 24,
               "altitudeMaxM": 59,
               "date": "2025-09-18",
-              "dateHeure": "2025-09-18T12:12:51"
+              "dateHeure": "2025-09-18T12:12:51",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9834,7 +17850,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 20,
               "altitudeMaxM": 32,
               "date": "2025-09-21",
-              "dateHeure": "2025-09-21T11:37:30"
+              "dateHeure": "2025-09-21T11:37:30",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9867,7 +17885,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 22,
               "altitudeMaxM": 60,
               "date": "2025-09-23",
-              "dateHeure": "2025-09-23T12:14:53"
+              "dateHeure": "2025-09-23T12:14:53",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9900,7 +17920,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 21,
               "altitudeMaxM": 56,
               "date": "2025-09-26",
-              "dateHeure": "2025-09-26T18:39:37"
+              "dateHeure": "2025-09-26T18:39:37",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9933,7 +17955,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 19,
               "altitudeMaxM": 93,
               "date": "2025-09-28",
-              "dateHeure": "2025-09-28T07:59:59"
+              "dateHeure": "2025-09-28T07:59:59",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9966,7 +17990,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 25,
               "altitudeMaxM": 41,
               "date": "2025-10-03",
-              "dateHeure": "2025-10-03T12:11:23"
+              "dateHeure": "2025-10-03T12:11:23",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -9999,7 +18025,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 21,
               "altitudeMaxM": 61,
               "date": "2025-10-05",
-              "dateHeure": "2025-10-05T15:55:55"
+              "dateHeure": "2025-10-05T15:55:55",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10032,7 +18060,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 24,
               "altitudeMaxM": 38,
               "date": "2025-10-06",
-              "dateHeure": "2025-10-06T18:18:20"
+              "dateHeure": "2025-10-06T18:18:20",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10065,7 +18095,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 31,
               "altitudeMaxM": 71,
               "date": "2025-10-10",
-              "dateHeure": "2025-10-10T12:46:28"
+              "dateHeure": "2025-10-10T12:46:28",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10098,7 +18130,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 25,
               "altitudeMaxM": 59,
               "date": "2025-10-12",
-              "dateHeure": "2025-10-12T16:41:47"
+              "dateHeure": "2025-10-12T16:41:47",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10131,7 +18165,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 26,
               "altitudeMaxM": 40,
               "date": "2025-10-14",
-              "dateHeure": "2025-10-14T18:46:18"
+              "dateHeure": "2025-10-14T18:46:18",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied sur piste",
@@ -10164,7 +18200,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 26,
               "altitudeMaxM": 30,
               "date": "2025-10-16",
-              "dateHeure": "2025-10-16T18:04:44"
+              "dateHeure": "2025-10-16T18:04:44",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10197,7 +18235,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 68,
               "date": "2025-10-18",
-              "dateHeure": "2025-10-18T13:31:57"
+              "dateHeure": "2025-10-18T13:31:57",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10230,7 +18270,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 24,
               "altitudeMaxM": 58,
               "date": "2025-10-20",
-              "dateHeure": "2025-10-20T12:20:35"
+              "dateHeure": "2025-10-20T12:20:35",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied sur piste",
@@ -10263,7 +18305,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 28,
               "altitudeMaxM": 30,
               "date": "2025-10-24",
-              "dateHeure": "2025-10-24T18:17:30"
+              "dateHeure": "2025-10-24T18:17:30",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10296,7 +18340,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 60,
               "date": "2025-10-26",
-              "dateHeure": "2025-10-26T15:14:41"
+              "dateHeure": "2025-10-26T15:14:41",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10329,7 +18375,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 68,
               "date": "2025-10-28",
-              "dateHeure": "2025-10-28T12:11:55"
+              "dateHeure": "2025-10-28T12:11:55",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied sur piste",
@@ -10362,7 +18410,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 24,
               "altitudeMaxM": 30,
               "date": "2025-10-30",
-              "dateHeure": "2025-10-30T18:19:37"
+              "dateHeure": "2025-10-30T18:19:37",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10395,7 +18445,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 20,
               "altitudeMaxM": 54,
               "date": "2025-11-01",
-              "dateHeure": "2025-11-01T15:56:33"
+              "dateHeure": "2025-11-01T15:56:33",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10428,7 +18480,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 47,
               "date": "2025-11-03",
-              "dateHeure": "2025-11-03T12:14:35"
+              "dateHeure": "2025-11-03T12:14:35",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10461,7 +18515,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 45,
               "date": "2025-11-05",
-              "dateHeure": "2025-11-05T12:13:39"
+              "dateHeure": "2025-11-05T12:13:39",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied sur piste",
@@ -10494,7 +18550,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 25,
               "altitudeMaxM": 30,
               "date": "2025-11-06",
-              "dateHeure": "2025-11-06T18:34:53"
+              "dateHeure": "2025-11-06T18:34:53",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10527,7 +18585,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 23,
               "altitudeMaxM": 61,
               "date": "2025-11-09",
-              "dateHeure": "2025-11-09T13:45:21"
+              "dateHeure": "2025-11-09T13:45:21",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10560,7 +18620,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 24,
               "altitudeMaxM": 63,
               "date": "2025-11-11",
-              "dateHeure": "2025-11-11T14:50:59"
+              "dateHeure": "2025-11-11T14:50:59",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10593,7 +18655,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 68,
               "date": "2025-11-16",
-              "dateHeure": "2025-11-16T12:30:32"
+              "dateHeure": "2025-11-16T12:30:32",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10626,7 +18690,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 19,
               "altitudeMaxM": 36,
               "date": "2025-11-17",
-              "dateHeure": "2025-11-17T18:24:53"
+              "dateHeure": "2025-11-17T18:24:53",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied sur piste",
@@ -10659,7 +18725,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 24,
               "altitudeMaxM": 32,
               "date": "2025-11-20",
-              "dateHeure": "2025-11-20T17:19:40"
+              "dateHeure": "2025-11-20T17:19:40",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10692,7 +18760,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 28,
               "altitudeMaxM": 72,
               "date": "2025-11-22",
-              "dateHeure": "2025-11-22T12:57:59"
+              "dateHeure": "2025-11-22T12:57:59",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied sur piste",
@@ -10725,7 +18795,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 25,
               "altitudeMaxM": 30,
               "date": "2025-11-25",
-              "dateHeure": "2025-11-25T18:18:07"
+              "dateHeure": "2025-11-25T18:18:07",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10758,7 +18830,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 26,
               "altitudeMaxM": 32,
               "date": "2025-11-27",
-              "dateHeure": "2025-11-27T18:55:25"
+              "dateHeure": "2025-11-27T18:55:25",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10791,7 +18865,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 75,
               "date": "2025-11-28",
-              "dateHeure": "2025-11-28T12:10:04"
+              "dateHeure": "2025-11-28T12:10:04",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10824,7 +18900,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 19,
               "altitudeMaxM": 54,
               "date": "2025-11-30",
-              "dateHeure": "2025-11-30T14:57:34"
+              "dateHeure": "2025-11-30T14:57:34",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10857,7 +18935,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 20,
               "altitudeMaxM": 57,
               "date": "2025-12-02",
-              "dateHeure": "2025-12-02T18:34:56"
+              "dateHeure": "2025-12-02T18:34:56",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied sur piste",
@@ -10890,7 +18970,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 20,
               "altitudeMaxM": 30,
               "date": "2025-12-03",
-              "dateHeure": "2025-12-03T18:35:34"
+              "dateHeure": "2025-12-03T18:35:34",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10923,7 +19005,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 20,
               "altitudeMaxM": 29,
               "date": "2025-12-09",
-              "dateHeure": "2025-12-09T18:38:57"
+              "dateHeure": "2025-12-09T18:38:57",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10956,7 +19040,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 64,
               "date": "2025-12-12",
-              "dateHeure": "2025-12-12T12:22:05"
+              "dateHeure": "2025-12-12T12:22:05",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -10989,7 +19075,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 25,
               "altitudeMaxM": 63,
               "date": "2025-12-13",
-              "dateHeure": "2025-12-13T19:02:55"
+              "dateHeure": "2025-12-13T19:02:55",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11022,7 +19110,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 24,
               "altitudeMaxM": 35,
               "date": "2025-12-15",
-              "dateHeure": "2025-12-15T19:12:42"
+              "dateHeure": "2025-12-15T19:12:42",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11055,7 +19145,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 66,
               "date": "2025-12-17",
-              "dateHeure": "2025-12-17T18:56:44"
+              "dateHeure": "2025-12-17T18:56:44",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11088,7 +19180,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 64,
               "date": "2025-12-19",
-              "dateHeure": "2025-12-19T12:17:26"
+              "dateHeure": "2025-12-19T12:17:26",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11121,7 +19215,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 23,
               "altitudeMaxM": 32,
               "date": "2025-12-21",
-              "dateHeure": "2025-12-21T17:34:15"
+              "dateHeure": "2025-12-21T17:34:15",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11154,7 +19250,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 21,
               "altitudeMaxM": 56,
               "date": "2025-12-23",
-              "dateHeure": "2025-12-23T12:22:08"
+              "dateHeure": "2025-12-23T12:22:08",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11187,7 +19285,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 23,
               "altitudeMaxM": 64,
               "date": "2025-12-25",
-              "dateHeure": "2025-12-25T19:19:08"
+              "dateHeure": "2025-12-25T19:19:08",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11220,7 +19320,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 22,
               "altitudeMaxM": 63,
               "date": "2025-12-26",
-              "dateHeure": "2025-12-26T12:54:57"
+              "dateHeure": "2025-12-26T12:54:57",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11253,7 +19355,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 20,
               "altitudeMaxM": 62,
               "date": "2025-12-28",
-              "dateHeure": "2025-12-28T14:10:53"
+              "dateHeure": "2025-12-28T14:10:53",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11286,7 +19390,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 25,
               "altitudeMaxM": 35,
               "date": "2025-12-30",
-              "dateHeure": "2025-12-30T13:09:26"
+              "dateHeure": "2025-12-30T13:09:26",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11319,7 +19425,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 23,
               "altitudeMaxM": 33,
               "date": "2025-12-31",
-              "dateHeure": "2025-12-31T13:19:08"
+              "dateHeure": "2025-12-31T13:19:08",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11352,7 +19460,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 23,
               "altitudeMaxM": 36,
               "date": "2026-01-02",
-              "dateHeure": "2026-01-02T14:32:41"
+              "dateHeure": "2026-01-02T14:32:41",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11385,7 +19495,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 19,
               "altitudeMaxM": 62,
               "date": "2026-01-03",
-              "dateHeure": "2026-01-03T14:43:38"
+              "dateHeure": "2026-01-03T14:43:38",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11418,7 +19530,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 24,
               "altitudeMaxM": 35,
               "date": "2026-01-10",
-              "dateHeure": "2026-01-10T14:06:51"
+              "dateHeure": "2026-01-10T14:06:51",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied sur piste",
@@ -11451,7 +19565,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 26,
               "altitudeMaxM": 30,
               "date": "2026-01-12",
-              "dateHeure": "2026-01-12T18:25:30"
+              "dateHeure": "2026-01-12T18:25:30",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11484,7 +19600,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-01-14",
-              "dateHeure": "2026-01-14T17:30:00"
+              "dateHeure": "2026-01-14T17:30:00",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11517,7 +19635,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 26,
               "altitudeMaxM": 64,
               "date": "2026-01-14",
-              "dateHeure": "2026-01-14T17:20:31"
+              "dateHeure": "2026-01-14T17:20:31",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11550,7 +19670,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 36,
               "altitudeMaxM": 41,
               "date": "2026-01-16",
-              "dateHeure": "2026-01-16T17:07:01"
+              "dateHeure": "2026-01-16T17:07:01",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11583,7 +19705,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 23,
               "altitudeMaxM": 54,
               "date": "2026-01-18",
-              "dateHeure": "2026-01-18T11:11:12"
+              "dateHeure": "2026-01-18T11:11:12",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11616,7 +19740,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 24,
               "altitudeMaxM": 35,
               "date": "2026-01-21",
-              "dateHeure": "2026-01-21T17:57:25"
+              "dateHeure": "2026-01-21T17:57:25",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11649,7 +19775,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 38,
               "altitudeMaxM": 56,
               "date": "2026-01-23",
-              "dateHeure": "2026-01-23T12:11:58"
+              "dateHeure": "2026-01-23T12:11:58",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11682,7 +19810,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 23,
               "altitudeMaxM": 65,
               "date": "2026-01-25",
-              "dateHeure": "2026-01-25T11:21:56"
+              "dateHeure": "2026-01-25T11:21:56",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11715,7 +19845,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 36,
               "altitudeMaxM": 43,
               "date": "2026-01-28",
-              "dateHeure": "2026-01-28T12:16:46"
+              "dateHeure": "2026-01-28T12:16:46",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11748,7 +19880,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 25,
               "altitudeMaxM": 63,
               "date": "2026-01-29",
-              "dateHeure": "2026-01-29T17:20:02"
+              "dateHeure": "2026-01-29T17:20:02",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11781,7 +19915,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 57,
               "date": "2026-02-02",
-              "dateHeure": "2026-02-02T12:11:27"
+              "dateHeure": "2026-02-02T12:11:27",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied sur piste",
@@ -11814,7 +19950,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 30,
               "date": "2026-02-04",
-              "dateHeure": "2026-02-04T17:31:41"
+              "dateHeure": "2026-02-04T17:31:41",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11847,7 +19985,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 24,
               "altitudeMaxM": 57,
               "date": "2026-02-07",
-              "dateHeure": "2026-02-07T12:58:22"
+              "dateHeure": "2026-02-07T12:58:22",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11880,7 +20020,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 66,
               "date": "2026-02-10",
-              "dateHeure": "2026-02-10T17:37:28"
+              "dateHeure": "2026-02-10T17:37:28",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11913,7 +20055,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 38,
               "altitudeMaxM": 43,
               "date": "2026-02-12",
-              "dateHeure": "2026-02-12T12:24:15"
+              "dateHeure": "2026-02-12T12:24:15",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11946,7 +20090,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 23,
               "altitudeMaxM": 58,
               "date": "2026-02-14",
-              "dateHeure": "2026-02-14T11:04:40"
+              "dateHeure": "2026-02-14T11:04:40",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -11979,7 +20125,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 19,
               "altitudeMaxM": 51,
               "date": "2026-02-19",
-              "dateHeure": "2026-02-19T17:12:12"
+              "dateHeure": "2026-02-19T17:12:12",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12012,7 +20160,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 18,
               "altitudeMaxM": 101,
               "date": "2026-02-22",
-              "dateHeure": "2026-02-22T15:41:36"
+              "dateHeure": "2026-02-22T15:41:36",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied sur piste",
@@ -12045,7 +20195,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 28,
               "altitudeMaxM": 30,
               "date": "2026-02-24",
-              "dateHeure": "2026-02-24T18:05:02"
+              "dateHeure": "2026-02-24T18:05:02",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12078,7 +20230,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 23,
               "altitudeMaxM": 57,
               "date": "2026-02-25",
-              "dateHeure": "2026-02-25T15:53:11"
+              "dateHeure": "2026-02-25T15:53:11",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12111,7 +20265,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 37,
               "date": "2026-03-03",
-              "dateHeure": "2026-03-03T17:56:57"
+              "dateHeure": "2026-03-03T17:56:57",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12144,7 +20300,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 18,
               "altitudeMaxM": 34,
               "date": "2026-03-04",
-              "dateHeure": "2026-03-04T17:42:44"
+              "dateHeure": "2026-03-04T17:42:44",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12177,7 +20335,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 24,
               "altitudeMaxM": 58,
               "date": "2026-03-06",
-              "dateHeure": "2026-03-06T17:32:48"
+              "dateHeure": "2026-03-06T17:32:48",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12210,7 +20370,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 21,
               "altitudeMaxM": 54,
               "date": "2026-03-10",
-              "dateHeure": "2026-03-10T18:10:29"
+              "dateHeure": "2026-03-10T18:10:29",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12243,7 +20405,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 38,
               "altitudeMaxM": 55,
               "date": "2026-03-18",
-              "dateHeure": "2026-03-18T12:06:05"
+              "dateHeure": "2026-03-18T12:06:05",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12276,7 +20440,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 28,
               "altitudeMaxM": 67,
               "date": "2026-03-22",
-              "dateHeure": "2026-03-22T16:43:12"
+              "dateHeure": "2026-03-22T16:43:12",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12309,7 +20475,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 44,
               "altitudeMaxM": 50,
               "date": "2026-03-27",
-              "dateHeure": "2026-03-27T12:17:06"
+              "dateHeure": "2026-03-27T12:17:06",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12342,7 +20510,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 66,
               "date": "2026-03-29",
-              "dateHeure": "2026-03-29T12:32:45"
+              "dateHeure": "2026-03-29T12:32:45",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12375,7 +20545,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 26,
               "altitudeMaxM": 62,
               "date": "2026-04-01",
-              "dateHeure": "2026-04-01T18:02:55"
+              "dateHeure": "2026-04-01T18:02:55",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12408,7 +20580,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 65,
               "date": "2026-04-06",
-              "dateHeure": "2026-04-06T17:55:41"
+              "dateHeure": "2026-04-06T17:55:41",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12441,7 +20615,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 24,
               "altitudeMaxM": 59,
               "date": "2026-04-11",
-              "dateHeure": "2026-04-11T12:02:19"
+              "dateHeure": "2026-04-11T12:02:19",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12474,7 +20650,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 40,
               "altitudeMaxM": 57,
               "date": "2026-04-13",
-              "dateHeure": "2026-04-13T12:04:31"
+              "dateHeure": "2026-04-13T12:04:31",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied sur piste",
@@ -12507,7 +20685,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 28,
               "altitudeMaxM": 37,
               "date": "2026-04-15",
-              "dateHeure": "2026-04-15T18:38:50"
+              "dateHeure": "2026-04-15T18:38:50",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12540,7 +20720,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 67,
               "date": "2026-04-17",
-              "dateHeure": "2026-04-17T12:07:51"
+              "dateHeure": "2026-04-17T12:07:51",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12573,7 +20755,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 23,
               "altitudeMaxM": 55,
               "date": "2026-04-19",
-              "dateHeure": "2026-04-19T11:42:29"
+              "dateHeure": "2026-04-19T11:42:29",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12606,7 +20790,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 31,
               "altitudeMaxM": 47,
               "date": "2026-04-21",
-              "dateHeure": "2026-04-21T18:16:51"
+              "dateHeure": "2026-04-21T18:16:51",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12639,7 +20825,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 39,
               "altitudeMaxM": 57,
               "date": "2026-04-23",
-              "dateHeure": "2026-04-23T12:12:16"
+              "dateHeure": "2026-04-23T12:12:16",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12672,7 +20860,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 28,
               "altitudeMaxM": 36,
               "date": "2026-04-25",
-              "dateHeure": "2026-04-25T11:58:22"
+              "dateHeure": "2026-04-25T11:58:22",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12705,7 +20895,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 23,
               "altitudeMaxM": 43,
               "date": "2026-04-26",
-              "dateHeure": "2026-04-26T10:07:57"
+              "dateHeure": "2026-04-26T10:07:57",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12738,7 +20930,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 41,
               "date": "2026-04-29",
-              "dateHeure": "2026-04-29T18:33:16"
+              "dateHeure": "2026-04-29T18:33:16",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12771,7 +20965,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 25,
               "altitudeMaxM": 63,
               "date": "2026-04-30",
-              "dateHeure": "2026-04-30T17:30:22"
+              "dateHeure": "2026-04-30T17:30:22",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12804,7 +21000,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 69,
               "altitudeMaxM": 96,
               "date": "2026-05-01",
-              "dateHeure": "2026-05-01T16:53:58"
+              "dateHeure": "2026-05-01T16:53:58",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12837,7 +21035,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 66,
               "date": "2026-05-04",
-              "dateHeure": "2026-05-04T17:23:29"
+              "dateHeure": "2026-05-04T17:23:29",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12870,7 +21070,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 36,
               "altitudeMaxM": 54,
               "date": "2026-05-06",
-              "dateHeure": "2026-05-06T12:13:30"
+              "dateHeure": "2026-05-06T12:13:30",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12903,7 +21105,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 40,
               "date": "2026-05-09",
-              "dateHeure": "2026-05-09T12:21:38"
+              "dateHeure": "2026-05-09T12:21:38",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12936,7 +21140,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 17,
               "altitudeMaxM": 103,
               "date": "2026-05-10",
-              "dateHeure": "2026-05-10T11:26:03"
+              "dateHeure": "2026-05-10T11:26:03",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -12969,7 +21175,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 66,
               "date": "2026-05-12",
-              "dateHeure": "2026-05-12T10:02:27"
+              "dateHeure": "2026-05-12T10:02:27",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied sur piste",
@@ -13002,7 +21210,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 33,
               "date": "2026-05-13",
-              "dateHeure": "2026-05-13T11:52:41"
+              "dateHeure": "2026-05-13T11:52:41",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13035,7 +21245,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 23,
               "altitudeMaxM": 58,
               "date": "2026-05-15",
-              "dateHeure": "2026-05-15T13:50:42"
+              "dateHeure": "2026-05-15T13:50:42",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13068,7 +21280,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 19,
               "altitudeMaxM": 57,
               "date": "2026-05-16",
-              "dateHeure": "2026-05-16T10:37:08"
+              "dateHeure": "2026-05-16T10:37:08",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13101,7 +21315,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 24,
               "altitudeMaxM": 57,
               "date": "2026-05-18",
-              "dateHeure": "2026-05-18T16:11:58"
+              "dateHeure": "2026-05-18T16:11:58",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied sur piste",
@@ -13134,7 +21350,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 26,
               "altitudeMaxM": 30,
               "date": "2026-05-20",
-              "dateHeure": "2026-05-20T17:21:11"
+              "dateHeure": "2026-05-20T17:21:11",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13167,7 +21385,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 25,
               "altitudeMaxM": 44,
               "date": "2026-05-23",
-              "dateHeure": "2026-05-23T09:10:46"
+              "dateHeure": "2026-05-23T09:10:46",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13200,7 +21420,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 28,
               "altitudeMaxM": 42,
               "date": "2026-05-25",
-              "dateHeure": "2026-05-25T10:37:45"
+              "dateHeure": "2026-05-25T10:37:45",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13233,7 +21455,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 29,
               "altitudeMaxM": 43,
               "date": "2026-05-27",
-              "dateHeure": "2026-05-27T18:23:40"
+              "dateHeure": "2026-05-27T18:23:40",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13266,7 +21490,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 67,
               "date": "2026-05-28",
-              "dateHeure": "2026-05-28T07:46:32"
+              "dateHeure": "2026-05-28T07:46:32",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13299,7 +21525,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 64,
               "date": "2026-05-31",
-              "dateHeure": "2026-05-31T16:07:52"
+              "dateHeure": "2026-05-31T16:07:52",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13332,7 +21560,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 28,
               "altitudeMaxM": 41,
               "date": "2026-05-31",
-              "dateHeure": "2026-05-31T08:59:53"
+              "dateHeure": "2026-05-31T08:59:53",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13365,7 +21595,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 28,
               "altitudeMaxM": 66,
               "date": "2026-06-04",
-              "dateHeure": "2026-06-04T17:10:08"
+              "dateHeure": "2026-06-04T17:10:08",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13398,7 +21630,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 65,
               "date": "2026-06-04",
-              "dateHeure": "2026-06-04T12:11:01"
+              "dateHeure": "2026-06-04T12:11:01",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13431,7 +21665,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 40,
               "altitudeMaxM": 46,
               "date": "2026-06-09",
-              "dateHeure": "2026-06-09T12:24:51"
+              "dateHeure": "2026-06-09T12:24:51",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13464,7 +21700,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 66,
               "date": "2026-06-10",
-              "dateHeure": "2026-06-10T18:11:20"
+              "dateHeure": "2026-06-10T18:11:20",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13497,7 +21735,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 19,
               "altitudeMaxM": 99,
               "date": "2026-06-13",
-              "dateHeure": "2026-06-13T10:06:19"
+              "dateHeure": "2026-06-13T10:06:19",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13530,7 +21770,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 37,
               "altitudeMaxM": 58,
               "date": "2026-06-15",
-              "dateHeure": "2026-06-15T12:16:50"
+              "dateHeure": "2026-06-15T12:16:50",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13563,7 +21805,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 65,
               "date": "2026-06-17",
-              "dateHeure": "2026-06-17T17:52:03"
+              "dateHeure": "2026-06-17T17:52:03",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13596,7 +21840,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 811,
               "altitudeMaxM": 825,
               "date": "2026-06-19",
-              "dateHeure": "2026-06-19T18:52:37"
+              "dateHeure": "2026-06-19T18:52:37",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13629,7 +21875,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 1,
               "altitudeMaxM": 1,
               "date": "2026-06-21",
-              "dateHeure": "2026-06-21T08:59:54"
+              "dateHeure": "2026-06-21T08:59:54",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13662,7 +21910,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 2,
               "altitudeMaxM": 47,
               "date": "2026-06-26",
-              "dateHeure": "2026-06-26T16:57:34"
+              "dateHeure": "2026-06-26T16:57:34",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13695,7 +21945,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 1,
               "altitudeMaxM": 49,
               "date": "2026-06-28",
-              "dateHeure": "2026-06-28T10:11:21"
+              "dateHeure": "2026-06-28T10:11:21",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13728,7 +21980,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 65,
               "date": "2026-07-01",
-              "dateHeure": "2026-07-01T17:17:50"
+              "dateHeure": "2026-07-01T17:17:50",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13761,7 +22015,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 35,
               "altitudeMaxM": 54,
               "date": "2026-07-03",
-              "dateHeure": "2026-07-03T12:08:52"
+              "dateHeure": "2026-07-03T12:08:52",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13794,7 +22050,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 21,
               "altitudeMaxM": 56,
               "date": "2026-07-05",
-              "dateHeure": "2026-07-05T19:14:22"
+              "dateHeure": "2026-07-05T19:14:22",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13827,7 +22085,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 24,
               "altitudeMaxM": 58,
               "date": "2026-07-08",
-              "dateHeure": "2026-07-08T17:41:30"
+              "dateHeure": "2026-07-08T17:41:30",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13860,7 +22120,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 28,
               "altitudeMaxM": 62,
               "date": "2026-07-10",
-              "dateHeure": "2026-07-10T12:02:51"
+              "dateHeure": "2026-07-10T12:02:51",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13893,7 +22155,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 283,
               "altitudeMaxM": 424,
               "date": "2026-07-18",
-              "dateHeure": "2026-07-18T09:28:19"
+              "dateHeure": "2026-07-18T09:28:19",
+              "activityId": null,
+              "aDetail": false
             },
             {
               "type": "Course à pied",
@@ -13926,7 +22190,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 23,
               "altitudeMaxM": 33,
               "date": "2026-07-22",
-              "dateHeure": "2026-07-22T17:51:41"
+              "dateHeure": "2026-07-22T17:51:41",
+              "activityId": 23693016459,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -13959,7 +22225,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 34,
               "date": "2026-07-24",
-              "dateHeure": "2026-07-24T17:11:56"
+              "dateHeure": "2026-07-24T17:11:56",
+              "activityId": 23716820187,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -13992,7 +22260,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 36,
               "altitudeMaxM": 63,
               "date": "2026-07-26",
-              "dateHeure": "2026-07-26T11:31:50"
+              "dateHeure": "2026-07-26T11:31:50",
+              "activityId": 23737831657,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14025,7 +22295,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 59,
               "date": "2026-07-28",
-              "dateHeure": "2026-07-28T12:03:55"
+              "dateHeure": "2026-07-28T12:03:55",
+              "activityId": 23761614390,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14058,7 +22330,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 28,
               "altitudeMaxM": 44,
               "date": "2026-07-30",
-              "dateHeure": "2026-07-30T12:12:19"
+              "dateHeure": "2026-07-30T12:12:19",
+              "activityId": 23787073979,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14091,7 +22365,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 37,
               "altitudeMaxM": 54,
               "date": "2026-07-31",
-              "dateHeure": "2026-07-31T12:07:43"
+              "dateHeure": "2026-07-31T12:07:43",
+              "activityId": 23798953268,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14124,7 +22400,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 67,
               "date": "2026-08-02",
-              "dateHeure": "2026-08-02T10:43:03"
+              "dateHeure": "2026-08-02T10:43:03",
+              "activityId": 23822749617,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14157,7 +22435,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 23,
               "altitudeMaxM": 56,
               "date": "2026-08-04",
-              "dateHeure": "2026-08-04T08:36:06"
+              "dateHeure": "2026-08-04T08:36:06",
+              "activityId": 23845131558,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14190,7 +22470,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 35,
               "altitudeMaxM": 45,
               "date": "2026-08-05",
-              "dateHeure": "2026-08-05T12:10:13"
+              "dateHeure": "2026-08-05T12:10:13",
+              "activityId": 23860455796,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14223,7 +22505,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 41,
               "altitudeMaxM": 56,
               "date": "2026-08-07",
-              "dateHeure": "2026-08-07T12:19:17"
+              "dateHeure": "2026-08-07T12:19:17",
+              "activityId": 23885552303,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14256,7 +22540,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 31,
               "altitudeMaxM": 68,
               "date": "2026-08-08",
-              "dateHeure": "2026-08-08T17:19:15"
+              "dateHeure": "2026-08-08T17:19:15",
+              "activityId": 23901345658,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14289,7 +22575,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 65,
               "date": "2026-08-09",
-              "dateHeure": "2026-08-09T10:14:33"
+              "dateHeure": "2026-08-09T10:14:33",
+              "activityId": 23909513985,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14322,7 +22610,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 38,
               "altitudeMaxM": 57,
               "date": "2026-08-11",
-              "dateHeure": "2026-08-11T12:11:50"
+              "dateHeure": "2026-08-11T12:11:50",
+              "activityId": 23934509276,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14355,7 +22645,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 30,
               "altitudeMaxM": 44,
               "date": "2026-08-13",
-              "dateHeure": "2026-08-13T11:45:31"
+              "dateHeure": "2026-08-13T11:45:31",
+              "activityId": 23960253632,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14388,7 +22680,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 25,
               "altitudeMaxM": 59,
               "date": "2026-08-15",
-              "dateHeure": "2026-08-15T18:46:59"
+              "dateHeure": "2026-08-15T18:46:59",
+              "activityId": 23989948684,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14421,7 +22715,9 @@ window.PREPA_DATA = {
               "altitudeMinM": 27,
               "altitudeMaxM": 62,
               "date": "2026-08-16",
-              "dateHeure": "2026-08-16T13:16:37"
+              "dateHeure": "2026-08-16T13:16:37",
+              "activityId": 23998747277,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14454,7 +22750,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-18",
-              "dateHeure": "2026-08-18T17:09:08"
+              "dateHeure": "2026-08-18T17:09:08",
+              "activityId": 24024994828,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14487,7 +22785,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-19",
-              "dateHeure": "2026-08-19T17:44:27"
+              "dateHeure": "2026-08-19T17:44:27",
+              "activityId": 24039063704,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14520,7 +22820,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-21",
-              "dateHeure": "2026-08-21T08:38:41"
+              "dateHeure": "2026-08-21T08:38:41",
+              "activityId": 24057511723,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14553,7 +22855,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-22",
-              "dateHeure": "2026-08-22T10:48:58"
+              "dateHeure": "2026-08-22T10:48:58",
+              "activityId": 24071189193,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14586,7 +22890,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-25",
-              "dateHeure": "2026-08-25T12:10:25"
+              "dateHeure": "2026-08-25T12:10:25",
+              "activityId": 24108411102,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14619,7 +22925,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-26",
-              "dateHeure": "2026-08-26T16:56:46"
+              "dateHeure": "2026-08-26T16:56:46",
+              "activityId": 24125399712,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14652,7 +22960,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-28",
-              "dateHeure": "2026-08-28T07:58:50"
+              "dateHeure": "2026-08-28T07:58:50",
+              "activityId": 24145459845,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14685,7 +22995,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-30",
-              "dateHeure": "2026-08-30T10:33:41"
+              "dateHeure": "2026-08-30T10:33:41",
+              "activityId": 24169273037,
+              "aDetail": true
             },
             {
               "type": "Marche à pied",
@@ -14718,7 +23030,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-08-31",
-              "dateHeure": "2026-08-31T09:47:17"
+              "dateHeure": "2026-08-31T09:47:17",
+              "activityId": 24181955689,
+              "aDetail": true
             },
             {
               "type": "Trail",
@@ -14751,7 +23065,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-09-01",
-              "dateHeure": "2026-09-01T09:55:34"
+              "dateHeure": "2026-09-01T09:55:34",
+              "activityId": 24194348100,
+              "aDetail": true
             },
             {
               "type": "Course à pied",
@@ -14784,7 +23100,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-09-02",
-              "dateHeure": "2026-09-02T10:50:41"
+              "dateHeure": "2026-09-02T10:50:41",
+              "activityId": 24207573196,
+              "aDetail": true
             },
             {
               "type": "Trail",
@@ -14817,7 +23135,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-09-04",
-              "dateHeure": "2026-09-04T09:58:21"
+              "dateHeure": "2026-09-04T09:58:21",
+              "activityId": 24233053518,
+              "aDetail": true
             },
             {
               "type": "Trail",
@@ -14850,7 +23170,9 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-09-07",
-              "dateHeure": "2026-09-07T09:53:45"
+              "dateHeure": "2026-09-07T09:53:45",
+              "activityId": 24268304485,
+              "aDetail": true
             },
             {
               "type": "Trail",
@@ -14883,7 +23205,6854 @@ window.PREPA_DATA = {
               "altitudeMinM": null,
               "altitudeMaxM": null,
               "date": "2026-09-09",
-              "dateHeure": "2026-09-09T15:52:38"
+              "dateHeure": "2026-09-09T15:52:38",
+              "activityId": 24297674600,
+              "aDetail": true
+            },
+            {
+              "type": "Course à pied",
+              "favori": false,
+              "titre": "Libercourt - seuil 3*2km",
+              "distanceKm": 10.72,
+              "calories": 689,
+              "dureeSec": 3755.0,
+              "fcMoy": 142,
+              "fcMax": 162,
+              "teAerobie": 3.4,
+              "cadenceMoy": 164,
+              "cadenceMax": 175,
+              "allureMoySecKm": 350,
+              "meilleureAllureSecKm": 265,
+              "ascensionM": 10,
+              "descenteM": 9,
+              "longueurFouleeM": 1.04,
+              "oscillationVerticale": 9.3,
+              "tempsContactSol": 270,
+              "gapMoySecKm": 351,
+              "np": 281,
+              "tss": null,
+              "puissanceMoy": 276,
+              "puissanceMax": 422,
+              "pas": 10298,
+              "nbTours": 13,
+              "tempsDeplacementSec": 3744.0,
+              "tempsEcouleSec": 3755.0,
+              "altitudeMinM": 24,
+              "altitudeMaxM": 30,
+              "date": "2026-09-11",
+              "dateHeure": "2026-09-11T19:20:37",
+              "activityId": 24324900978,
+              "aDetail": true
+            }
+          ],
+          "details": [
+            {
+              "activityId": 23693016459,
+              "dateHeure": "2026-07-22T17:51:41",
+              "date": "2026-07-22",
+              "titre": "Libercourt - 3x6min",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 8.37,
+              "dureeSec": 3047,
+              "allureMoySecKm": 364,
+              "gapMoySecKm": 364,
+              "fcMoy": 144,
+              "fcMax": 171,
+              "fcMin": 101,
+              "cadenceMoy": 166,
+              "denivelePosM": 30,
+              "deniveleNegM": 27,
+              "calories": 561,
+              "teAerobie": 3.5,
+              "teAnaerobie": 0.1,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 107.3,
+              "rpe": 50,
+              "ressenti": 50,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 412,
+                  "allureSecKm": 412,
+                  "gapSecKm": 410,
+                  "fcMoy": 128,
+                  "fcMax": 141,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 237,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 2,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 398,
+                  "allureSecKm": 397,
+                  "gapSecKm": 399,
+                  "fcMoy": 125,
+                  "fcMax": 136,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 249,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 1,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 306,
+                  "allureSecKm": 306,
+                  "gapSecKm": 312,
+                  "fcMoy": 155,
+                  "fcMax": 164,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 317,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 5,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 0.179,
+                  "dureeSec": 54,
+                  "allureSecKm": 301,
+                  "gapSecKm": 313,
+                  "fcMoy": 158,
+                  "fcMax": 160,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 299,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 0.281,
+                  "dureeSec": 120,
+                  "allureSecKm": 428,
+                  "gapSecKm": 402,
+                  "fcMoy": 146,
+                  "fcMax": 161,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 242,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 303,
+                  "allureSecKm": 303,
+                  "gapSecKm": 310,
+                  "fcMoy": 161,
+                  "fcMax": 169,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 314,
+                  "denivelePosM": 7,
+                  "deniveleNegM": 3,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 0.183,
+                  "dureeSec": 57,
+                  "allureSecKm": 310,
+                  "gapSecKm": 311,
+                  "fcMoy": 167,
+                  "fcMax": 171,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": 329,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 2,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.279,
+                  "dureeSec": 120,
+                  "allureSecKm": 430,
+                  "gapSecKm": 403,
+                  "fcMoy": 151,
+                  "fcMax": 167,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": 249,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 306,
+                  "allureSecKm": 306,
+                  "gapSecKm": 309,
+                  "fcMoy": 161,
+                  "fcMax": 171,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 318,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 3,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 0.181,
+                  "dureeSec": 54,
+                  "allureSecKm": 301,
+                  "gapSecKm": 311,
+                  "fcMoy": 162,
+                  "fcMax": 164,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": 296,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 410,
+                  "allureSecKm": 410,
+                  "gapSecKm": 400,
+                  "fcMoy": 144,
+                  "fcMax": 165,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 249,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "COOLDOWN"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 405,
+                  "allureSecKm": 405,
+                  "gapSecKm": 399,
+                  "fcMoy": 137,
+                  "fcMax": 143,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 255,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 5,
+                  "intensite": "COOLDOWN"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 0.265,
+                  "dureeSec": 102,
+                  "allureSecKm": 386,
+                  "gapSecKm": 399,
+                  "fcMoy": 134,
+                  "fcMax": 137,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": 235,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "COOLDOWN"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 93,
+                  "borneBasse": 100
+                },
+                {
+                  "zone": 2,
+                  "secondes": 1084,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 1109,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 759,
+                  "borneBasse": 159
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 179
+                }
+              ],
+              "meteo": {
+                "temperatureC": 22.2,
+                "ressentiC": 22.2,
+                "humidite": 53,
+                "ventKmh": 17.7,
+                "description": "Mostly Cloudy",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23716820187,
+              "dateHeure": "2026-07-24T17:11:56",
+              "date": "2026-07-24",
+              "titre": "Libercourt Course à pied",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 5.01,
+              "dureeSec": 1956,
+              "allureMoySecKm": 390,
+              "gapMoySecKm": 391,
+              "fcMoy": 139,
+              "fcMax": 150,
+              "fcMin": 86,
+              "cadenceMoy": 165,
+              "denivelePosM": 16,
+              "deniveleNegM": 12,
+              "calories": 335,
+              "teAerobie": 2.5,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 42.9,
+              "rpe": 10,
+              "ressenti": 50,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 379,
+                  "allureSecKm": 379,
+                  "gapSecKm": 378,
+                  "fcMoy": 134,
+                  "fcMax": 143,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 258,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 398,
+                  "allureSecKm": 398,
+                  "gapSecKm": 398,
+                  "fcMoy": 137,
+                  "fcMax": 145,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 244,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 388,
+                  "allureSecKm": 388,
+                  "gapSecKm": 393,
+                  "fcMoy": 136,
+                  "fcMax": 144,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 248,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 391,
+                  "allureSecKm": 390,
+                  "gapSecKm": 389,
+                  "fcMoy": 146,
+                  "fcMax": 150,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 253,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 396,
+                  "allureSecKm": 396,
+                  "gapSecKm": 399,
+                  "fcMoy": 143,
+                  "fcMax": 150,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 244,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 44,
+                  "borneBasse": 100
+                },
+                {
+                  "zone": 2,
+                  "secondes": 608,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 1290,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 159
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 179
+                }
+              ],
+              "meteo": {
+                "temperatureC": 27.2,
+                "ressentiC": 27.2,
+                "humidite": 39,
+                "ventKmh": 4.8,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23737831657,
+              "dateHeure": "2026-07-26T11:31:50",
+              "date": "2026-07-26",
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 14.6,
+              "dureeSec": 5517,
+              "allureMoySecKm": 378,
+              "gapMoySecKm": 377,
+              "fcMoy": 144,
+              "fcMax": 162,
+              "fcMin": 96,
+              "cadenceMoy": 166,
+              "denivelePosM": 95,
+              "deniveleNegM": 91,
+              "calories": 993,
+              "teAerobie": 3.6,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 108.6,
+              "rpe": 40,
+              "ressenti": 50,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 383,
+                  "allureSecKm": 383,
+                  "gapSecKm": 378,
+                  "fcMoy": 136,
+                  "fcMax": 147,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 280,
+                  "denivelePosM": 9,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 374,
+                  "allureSecKm": 374,
+                  "gapSecKm": 374,
+                  "fcMoy": 142,
+                  "fcMax": 146,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 280,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 378,
+                  "allureSecKm": 378,
+                  "gapSecKm": 371,
+                  "fcMoy": 144,
+                  "fcMax": 154,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 272,
+                  "denivelePosM": 11,
+                  "deniveleNegM": 10,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 377,
+                  "allureSecKm": 377,
+                  "gapSecKm": 382,
+                  "fcMoy": 142,
+                  "fcMax": 150,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 266,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 11,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 388,
+                  "allureSecKm": 388,
+                  "gapSecKm": 387,
+                  "fcMoy": 142,
+                  "fcMax": 153,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 252,
+                  "denivelePosM": 9,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 382,
+                  "allureSecKm": 382,
+                  "gapSecKm": 385,
+                  "fcMoy": 130,
+                  "fcMax": 142,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 248,
+                  "denivelePosM": 8,
+                  "deniveleNegM": 12,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 376,
+                  "allureSecKm": 376,
+                  "gapSecKm": 366,
+                  "fcMoy": 142,
+                  "fcMax": 150,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 272,
+                  "denivelePosM": 11,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 373,
+                  "allureSecKm": 373,
+                  "gapSecKm": 380,
+                  "fcMoy": 142,
+                  "fcMax": 149,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 249,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 379,
+                  "allureSecKm": 379,
+                  "gapSecKm": 370,
+                  "fcMoy": 152,
+                  "fcMax": 162,
+                  "cadenceMoy": 162,
+                  "puissanceMoy": 264,
+                  "denivelePosM": 16,
+                  "deniveleNegM": 6,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 371,
+                  "allureSecKm": 371,
+                  "gapSecKm": 376,
+                  "fcMoy": 137,
+                  "fcMax": 145,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 246,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 378,
+                  "allureSecKm": 378,
+                  "gapSecKm": 376,
+                  "fcMoy": 149,
+                  "fcMax": 155,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 259,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 370,
+                  "allureSecKm": 370,
+                  "gapSecKm": 369,
+                  "fcMoy": 156,
+                  "fcMax": 161,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": 289,
+                  "denivelePosM": 11,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 1.0,
+                  "dureeSec": 378,
+                  "allureSecKm": 378,
+                  "gapSecKm": 379,
+                  "fcMoy": 152,
+                  "fcMax": 159,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": 280,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 1.0,
+                  "dureeSec": 381,
+                  "allureSecKm": 381,
+                  "gapSecKm": 384,
+                  "fcMoy": 152,
+                  "fcMax": 160,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 261,
+                  "denivelePosM": 7,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 15,
+                  "distanceKm": 0.604,
+                  "dureeSec": 230,
+                  "allureSecKm": 380,
+                  "gapSecKm": 380,
+                  "fcMoy": 145,
+                  "fcMax": 152,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": 248,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 94,
+                  "borneBasse": 100
+                },
+                {
+                  "zone": 2,
+                  "secondes": 930,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 4364,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 117,
+                  "borneBasse": 159
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 179
+                }
+              ],
+              "meteo": {
+                "temperatureC": 20.0,
+                "ressentiC": 20.0,
+                "humidite": 73,
+                "ventKmh": 22.5,
+                "description": "Cloudy",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23761614390,
+              "dateHeure": "2026-07-28T12:03:55",
+              "date": "2026-07-28",
+              "titre": "Libercourt - Terrils",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 10.75,
+              "dureeSec": 4279,
+              "allureMoySecKm": 398,
+              "gapMoySecKm": 390,
+              "fcMoy": 152,
+              "fcMax": 186,
+              "fcMin": 80,
+              "cadenceMoy": 156,
+              "denivelePosM": 156,
+              "deniveleNegM": 157,
+              "calories": 746,
+              "teAerobie": 3.6,
+              "teAnaerobie": 0.1,
+              "teLabel": "LACTATE_THRESHOLD",
+              "chargeEntrainement": 109.9,
+              "rpe": 60,
+              "ressenti": 50,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 398,
+                  "allureSecKm": 398,
+                  "gapSecKm": 395,
+                  "fcMoy": 136,
+                  "fcMax": 151,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": 251,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 1,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 0.685,
+                  "dureeSec": 257,
+                  "allureSecKm": 375,
+                  "gapSecKm": 374,
+                  "fcMoy": 135,
+                  "fcMax": 144,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 260,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 6,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 0.694,
+                  "dureeSec": 232,
+                  "allureSecKm": 334,
+                  "gapSecKm": 305,
+                  "fcMoy": 163,
+                  "fcMax": 173,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 353,
+                  "denivelePosM": 27,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 0.74,
+                  "dureeSec": 340,
+                  "allureSecKm": 459,
+                  "gapSecKm": 470,
+                  "fcMoy": 134,
+                  "fcMax": 175,
+                  "cadenceMoy": 148,
+                  "puissanceMoy": 183,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 28,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 0.737,
+                  "dureeSec": 253,
+                  "allureSecKm": 344,
+                  "gapSecKm": 318,
+                  "fcMoy": 163,
+                  "fcMax": 175,
+                  "cadenceMoy": 162,
+                  "puissanceMoy": 338,
+                  "denivelePosM": 27,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 0.742,
+                  "dureeSec": 316,
+                  "allureSecKm": 426,
+                  "gapSecKm": 447,
+                  "fcMoy": 141,
+                  "fcMax": 171,
+                  "cadenceMoy": 148,
+                  "puissanceMoy": 192,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 28,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 0.736,
+                  "dureeSec": 252,
+                  "allureSecKm": 343,
+                  "gapSecKm": 312,
+                  "fcMoy": 169,
+                  "fcMax": 181,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 346,
+                  "denivelePosM": 29,
+                  "deniveleNegM": 1,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.735,
+                  "dureeSec": 320,
+                  "allureSecKm": 435,
+                  "gapSecKm": 458,
+                  "fcMoy": 149,
+                  "fcMax": 180,
+                  "cadenceMoy": 151,
+                  "puissanceMoy": 191,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 28,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 0.734,
+                  "dureeSec": 251,
+                  "allureSecKm": 342,
+                  "gapSecKm": 307,
+                  "fcMoy": 174,
+                  "fcMax": 183,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 350,
+                  "denivelePosM": 29,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 0.739,
+                  "dureeSec": 324,
+                  "allureSecKm": 438,
+                  "gapSecKm": 449,
+                  "fcMoy": 151,
+                  "fcMax": 181,
+                  "cadenceMoy": 148,
+                  "puissanceMoy": 192,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 28,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 0.732,
+                  "dureeSec": 248,
+                  "allureSecKm": 338,
+                  "gapSecKm": 310,
+                  "fcMoy": 177,
+                  "fcMax": 186,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 347,
+                  "denivelePosM": 27,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 0.734,
+                  "dureeSec": 362,
+                  "allureSecKm": 493,
+                  "gapSecKm": 512,
+                  "fcMoy": 148,
+                  "fcMax": 185,
+                  "cadenceMoy": 140,
+                  "puissanceMoy": 163,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 29,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 1.0,
+                  "dureeSec": 413,
+                  "allureSecKm": 413,
+                  "gapSecKm": 413,
+                  "fcMoy": 154,
+                  "fcMax": 162,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 239,
+                  "denivelePosM": 7,
+                  "deniveleNegM": 1,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 0.734,
+                  "dureeSec": 299,
+                  "allureSecKm": 407,
+                  "gapSecKm": 412,
+                  "fcMoy": 151,
+                  "fcMax": 160,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 233,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 6,
+                  "intensite": "ACTIVE"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 51,
+                  "borneBasse": 100
+                },
+                {
+                  "zone": 2,
+                  "secondes": 918,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 1949,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 937,
+                  "borneBasse": 159
+                },
+                {
+                  "zone": 5,
+                  "secondes": 391,
+                  "borneBasse": 179
+                }
+              ],
+              "meteo": {
+                "temperatureC": 25.0,
+                "ressentiC": 25.0,
+                "humidite": 44,
+                "ventKmh": 9.7,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23787073979,
+              "dateHeure": "2026-07-30T12:12:19",
+              "date": "2026-07-30",
+              "titre": "Libercourt Course à pied",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 5.3,
+              "dureeSec": 2145,
+              "allureMoySecKm": 404,
+              "gapMoySecKm": 404,
+              "fcMoy": 135,
+              "fcMax": 153,
+              "fcMin": 65,
+              "cadenceMoy": 162,
+              "denivelePosM": 14,
+              "deniveleNegM": 17,
+              "calories": 353,
+              "teAerobie": 2.5,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 42.2,
+              "rpe": 30,
+              "ressenti": 75,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 393,
+                  "allureSecKm": 393,
+                  "gapSecKm": 394,
+                  "fcMoy": 127,
+                  "fcMax": 150,
+                  "cadenceMoy": 162,
+                  "puissanceMoy": 244,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 408,
+                  "allureSecKm": 408,
+                  "gapSecKm": 399,
+                  "fcMoy": 134,
+                  "fcMax": 140,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 247,
+                  "denivelePosM": 8,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 402,
+                  "allureSecKm": 402,
+                  "gapSecKm": 407,
+                  "fcMoy": 135,
+                  "fcMax": 142,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 245,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 429,
+                  "allureSecKm": 429,
+                  "gapSecKm": 431,
+                  "fcMoy": 137,
+                  "fcMax": 146,
+                  "cadenceMoy": 151,
+                  "puissanceMoy": 219,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 397,
+                  "allureSecKm": 397,
+                  "gapSecKm": 398,
+                  "fcMoy": 141,
+                  "fcMax": 153,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 248,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 0.305,
+                  "dureeSec": 116,
+                  "allureSecKm": 381,
+                  "gapSecKm": 379,
+                  "fcMoy": 144,
+                  "fcMax": 147,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 255,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 57,
+                  "borneBasse": 100
+                },
+                {
+                  "zone": 2,
+                  "secondes": 1219,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 840,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 159
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 179
+                }
+              ],
+              "meteo": {
+                "temperatureC": 23.9,
+                "ressentiC": 23.9,
+                "humidite": 61,
+                "ventKmh": 19.3,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23798953268,
+              "dateHeure": "2026-07-31T12:07:43",
+              "date": "2026-07-31",
+              "titre": "Villeneuve-d'Ascq Course à pied",
+              "type": "running",
+              "lieu": "Villeneuve-d'Ascq",
+              "distanceKm": 5.97,
+              "dureeSec": 2304,
+              "allureMoySecKm": 386,
+              "gapMoySecKm": 385,
+              "fcMoy": 138,
+              "fcMax": 154,
+              "fcMin": 88,
+              "cadenceMoy": 163,
+              "denivelePosM": 42,
+              "deniveleNegM": 44,
+              "calories": 394,
+              "teAerobie": 2.8,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 51.9,
+              "rpe": 30,
+              "ressenti": 75,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 392,
+                  "allureSecKm": 392,
+                  "gapSecKm": 390,
+                  "fcMoy": 127,
+                  "fcMax": 150,
+                  "cadenceMoy": 155,
+                  "puissanceMoy": 252,
+                  "denivelePosM": 11,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 368,
+                  "allureSecKm": 368,
+                  "gapSecKm": 373,
+                  "fcMoy": 134,
+                  "fcMax": 141,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 258,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 11,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 391,
+                  "allureSecKm": 391,
+                  "gapSecKm": 380,
+                  "fcMoy": 141,
+                  "fcMax": 153,
+                  "cadenceMoy": 161,
+                  "puissanceMoy": 272,
+                  "denivelePosM": 13,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 388,
+                  "allureSecKm": 389,
+                  "gapSecKm": 390,
+                  "fcMoy": 139,
+                  "fcMax": 145,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 251,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 9,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 399,
+                  "allureSecKm": 399,
+                  "gapSecKm": 397,
+                  "fcMoy": 143,
+                  "fcMax": 154,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 248,
+                  "denivelePosM": 13,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 0.968,
+                  "dureeSec": 365,
+                  "allureSecKm": 377,
+                  "gapSecKm": 378,
+                  "fcMoy": 143,
+                  "fcMax": 150,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 251,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 86,
+                  "borneBasse": 100
+                },
+                {
+                  "zone": 2,
+                  "secondes": 972,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 1230,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 159
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 179
+                }
+              ],
+              "meteo": {
+                "temperatureC": 23.9,
+                "ressentiC": 23.9,
+                "humidite": 61,
+                "ventKmh": 16.1,
+                "description": "Mostly Cloudy",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23822749617,
+              "dateHeure": "2026-08-02T10:43:03",
+              "date": "2026-08-02",
+              "titre": "Libercourt Course à pied",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 18.52,
+              "dureeSec": 7109,
+              "allureMoySecKm": 384,
+              "gapMoySecKm": 384,
+              "fcMoy": 144,
+              "fcMax": 164,
+              "fcMin": 84,
+              "cadenceMoy": 165,
+              "denivelePosM": 77,
+              "deniveleNegM": 80,
+              "calories": 1236,
+              "teAerobie": 4.0,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 137.0,
+              "rpe": 50,
+              "ressenti": 75,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 388,
+                  "allureSecKm": 388,
+                  "gapSecKm": 385,
+                  "fcMoy": 127,
+                  "fcMax": 138,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 266,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 399,
+                  "allureSecKm": 399,
+                  "gapSecKm": 376,
+                  "fcMoy": 144,
+                  "fcMax": 150,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 285,
+                  "denivelePosM": 23,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 389,
+                  "allureSecKm": 389,
+                  "gapSecKm": 390,
+                  "fcMoy": 142,
+                  "fcMax": 153,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 263,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 6,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 395,
+                  "allureSecKm": 395,
+                  "gapSecKm": 396,
+                  "fcMoy": 140,
+                  "fcMax": 146,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 249,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 383,
+                  "allureSecKm": 383,
+                  "gapSecKm": 389,
+                  "fcMoy": 143,
+                  "fcMax": 149,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 249,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 383,
+                  "allureSecKm": 383,
+                  "gapSecKm": 391,
+                  "fcMoy": 141,
+                  "fcMax": 147,
+                  "cadenceMoy": 161,
+                  "puissanceMoy": 250,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 389,
+                  "allureSecKm": 389,
+                  "gapSecKm": 382,
+                  "fcMoy": 143,
+                  "fcMax": 151,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 268,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 390,
+                  "allureSecKm": 390,
+                  "gapSecKm": 394,
+                  "fcMoy": 135,
+                  "fcMax": 146,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 251,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 385,
+                  "allureSecKm": 385,
+                  "gapSecKm": 386,
+                  "fcMoy": 142,
+                  "fcMax": 149,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 250,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 377,
+                  "allureSecKm": 377,
+                  "gapSecKm": 378,
+                  "fcMoy": 148,
+                  "fcMax": 155,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 266,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 374,
+                  "allureSecKm": 374,
+                  "gapSecKm": 375,
+                  "fcMoy": 149,
+                  "fcMax": 153,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 261,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 366,
+                  "allureSecKm": 366,
+                  "gapSecKm": 362,
+                  "fcMoy": 154,
+                  "fcMax": 159,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 265,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 1.0,
+                  "dureeSec": 369,
+                  "allureSecKm": 369,
+                  "gapSecKm": 377,
+                  "fcMoy": 142,
+                  "fcMax": 155,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 263,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 1.0,
+                  "dureeSec": 385,
+                  "allureSecKm": 385,
+                  "gapSecKm": 383,
+                  "fcMoy": 147,
+                  "fcMax": 153,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 263,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 15,
+                  "distanceKm": 1.0,
+                  "dureeSec": 395,
+                  "allureSecKm": 395,
+                  "gapSecKm": 393,
+                  "fcMoy": 148,
+                  "fcMax": 153,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 247,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 16,
+                  "distanceKm": 1.0,
+                  "dureeSec": 389,
+                  "allureSecKm": 389,
+                  "gapSecKm": 384,
+                  "fcMoy": 151,
+                  "fcMax": 164,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 254,
+                  "denivelePosM": 8,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 17,
+                  "distanceKm": 1.0,
+                  "dureeSec": 387,
+                  "allureSecKm": 387,
+                  "gapSecKm": 386,
+                  "fcMoy": 148,
+                  "fcMax": 155,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 247,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 11,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 18,
+                  "distanceKm": 1.0,
+                  "dureeSec": 370,
+                  "allureSecKm": 371,
+                  "gapSecKm": 387,
+                  "fcMoy": 143,
+                  "fcMax": 149,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": 239,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 22,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 19,
+                  "distanceKm": 0.521,
+                  "dureeSec": 195,
+                  "allureSecKm": 374,
+                  "gapSecKm": 383,
+                  "fcMoy": 149,
+                  "fcMax": 152,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": 247,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 24,
+                  "borneBasse": 100
+                },
+                {
+                  "zone": 2,
+                  "secondes": 1220,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 5804,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 41,
+                  "borneBasse": 159
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 179
+                }
+              ],
+              "meteo": {
+                "temperatureC": 25.0,
+                "ressentiC": 25.0,
+                "humidite": 36,
+                "ventKmh": 17.7,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23845131558,
+              "dateHeure": "2026-08-04T08:36:06",
+              "date": "2026-08-04",
+              "titre": "Libercourt Course à pied",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 7.02,
+              "dureeSec": 2767,
+              "allureMoySecKm": 394,
+              "gapMoySecKm": 391,
+              "fcMoy": 138,
+              "fcMax": 171,
+              "fcMin": 90,
+              "cadenceMoy": 162,
+              "denivelePosM": 78,
+              "deniveleNegM": 82,
+              "calories": 457,
+              "teAerobie": 2.9,
+              "teAnaerobie": 0.3,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 62.0,
+              "rpe": 30,
+              "ressenti": 75,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 396,
+                  "allureSecKm": 396,
+                  "gapSecKm": 396,
+                  "fcMoy": 140,
+                  "fcMax": 152,
+                  "cadenceMoy": 161,
+                  "puissanceMoy": 255,
+                  "denivelePosM": 7,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 400,
+                  "allureSecKm": 400,
+                  "gapSecKm": 389,
+                  "fcMoy": 130,
+                  "fcMax": 143,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 259,
+                  "denivelePosM": 11,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 385,
+                  "allureSecKm": 385,
+                  "gapSecKm": 382,
+                  "fcMoy": 136,
+                  "fcMax": 150,
+                  "cadenceMoy": 162,
+                  "puissanceMoy": 259,
+                  "denivelePosM": 18,
+                  "deniveleNegM": 28,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 397,
+                  "allureSecKm": 397,
+                  "gapSecKm": 374,
+                  "fcMoy": 141,
+                  "fcMax": 171,
+                  "cadenceMoy": 159,
+                  "puissanceMoy": 270,
+                  "denivelePosM": 31,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 396,
+                  "allureSecKm": 396,
+                  "gapSecKm": 398,
+                  "fcMoy": 139,
+                  "fcMax": 151,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 243,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 15,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 399,
+                  "allureSecKm": 399,
+                  "gapSecKm": 405,
+                  "fcMoy": 139,
+                  "fcMax": 152,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 237,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 18,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 391,
+                  "allureSecKm": 391,
+                  "gapSecKm": 396,
+                  "fcMoy": 141,
+                  "fcMax": 150,
+                  "cadenceMoy": 159,
+                  "puissanceMoy": 238,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 28,
+                  "borneBasse": 100
+                },
+                {
+                  "zone": 2,
+                  "secondes": 1201,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 1508,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 18,
+                  "borneBasse": 159
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 179
+                }
+              ],
+              "meteo": {
+                "temperatureC": 22.8,
+                "ressentiC": 22.8,
+                "humidite": 73,
+                "ventKmh": 9.7,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23860455796,
+              "dateHeure": "2026-08-05T12:10:13",
+              "date": "2026-08-05",
+              "titre": "Villeneuve-d'Ascq - fractionné seuil",
+              "type": "running",
+              "lieu": "Villeneuve-d'Ascq",
+              "distanceKm": 8.39,
+              "dureeSec": 2887,
+              "allureMoySecKm": 344,
+              "gapMoySecKm": 347,
+              "fcMoy": 149,
+              "fcMax": 175,
+              "fcMin": 109,
+              "cadenceMoy": 165,
+              "denivelePosM": 23,
+              "deniveleNegM": 28,
+              "calories": 542,
+              "teAerobie": 3.6,
+              "teAnaerobie": 0.1,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 112.6,
+              "rpe": 50,
+              "ressenti": 75,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 365,
+                  "allureSecKm": 365,
+                  "gapSecKm": 376,
+                  "fcMoy": 132,
+                  "fcMax": 145,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 263,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 375,
+                  "allureSecKm": 375,
+                  "gapSecKm": 376,
+                  "fcMoy": 130,
+                  "fcMax": 138,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 267,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 3,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 297,
+                  "allureSecKm": 297,
+                  "gapSecKm": 300,
+                  "fcMoy": 156,
+                  "fcMax": 164,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 327,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 1,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 300,
+                  "allureSecKm": 300,
+                  "gapSecKm": 306,
+                  "fcMoy": 163,
+                  "fcMax": 168,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 321,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 4,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 0.399,
+                  "dureeSec": 180,
+                  "allureSecKm": 451,
+                  "gapSecKm": 454,
+                  "fcMoy": 144,
+                  "fcMax": 168,
+                  "cadenceMoy": 151,
+                  "puissanceMoy": 214,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 1,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 305,
+                  "allureSecKm": 305,
+                  "gapSecKm": 306,
+                  "fcMoy": 158,
+                  "fcMax": 166,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": 317,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 4,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 293,
+                  "allureSecKm": 294,
+                  "gapSecKm": 297,
+                  "fcMoy": 167,
+                  "fcMax": 174,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": 336,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 3,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 396,
+                  "allureSecKm": 396,
+                  "gapSecKm": 390,
+                  "fcMoy": 150,
+                  "fcMax": 175,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 248,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 2,
+                  "intensite": "COOLDOWN"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 0.97,
+                  "dureeSec": 372,
+                  "allureSecKm": 384,
+                  "gapSecKm": 382,
+                  "fcMoy": 144,
+                  "fcMax": 147,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": 254,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 9,
+                  "intensite": "COOLDOWN"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 26,
+                  "borneBasse": 100
+                },
+                {
+                  "zone": 2,
+                  "secondes": 597,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 1331,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 933,
+                  "borneBasse": 159
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 179
+                }
+              ],
+              "meteo": {
+                "temperatureC": 22.8,
+                "ressentiC": 22.8,
+                "humidite": 69,
+                "ventKmh": 20.9,
+                "description": "Mostly Cloudy",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23885552303,
+              "dateHeure": "2026-08-07T12:19:17",
+              "date": "2026-08-07",
+              "titre": "Villeneuve-d'Ascq Course à pied",
+              "type": "running",
+              "lieu": "Villeneuve-d'Ascq",
+              "distanceKm": 6.01,
+              "dureeSec": 2383,
+              "allureMoySecKm": 397,
+              "gapMoySecKm": 395,
+              "fcMoy": 135,
+              "fcMax": 154,
+              "fcMin": 73,
+              "cadenceMoy": 164,
+              "denivelePosM": 46,
+              "deniveleNegM": 43,
+              "calories": 397,
+              "teAerobie": 2.7,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 49.8,
+              "rpe": 20,
+              "ressenti": 75,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 405,
+                  "allureSecKm": 405,
+                  "gapSecKm": 398,
+                  "fcMoy": 123,
+                  "fcMax": 144,
+                  "cadenceMoy": 162,
+                  "puissanceMoy": 255,
+                  "denivelePosM": 12,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 386,
+                  "allureSecKm": 386,
+                  "gapSecKm": 392,
+                  "fcMoy": 129,
+                  "fcMax": 134,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 245,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 10,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 395,
+                  "allureSecKm": 395,
+                  "gapSecKm": 381,
+                  "fcMoy": 138,
+                  "fcMax": 152,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 261,
+                  "denivelePosM": 16,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 385,
+                  "allureSecKm": 385,
+                  "gapSecKm": 388,
+                  "fcMoy": 139,
+                  "fcMax": 152,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 248,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 10,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 413,
+                  "allureSecKm": 413,
+                  "gapSecKm": 409,
+                  "fcMoy": 143,
+                  "fcMax": 154,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 243,
+                  "denivelePosM": 12,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 395,
+                  "allureSecKm": 395,
+                  "gapSecKm": 400,
+                  "fcMoy": 139,
+                  "fcMax": 147,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 239,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 76,
+                  "borneBasse": 100
+                },
+                {
+                  "zone": 2,
+                  "secondes": 1322,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 960,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 159
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 179
+                }
+              ],
+              "meteo": {
+                "temperatureC": 22.8,
+                "ressentiC": 22.8,
+                "humidite": 38,
+                "ventKmh": 4.8,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23901345658,
+              "dateHeure": "2026-08-08T17:19:15",
+              "date": "2026-08-08",
+              "titre": "Libercourt Course à pied",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 4.11,
+              "dureeSec": 1462,
+              "allureMoySecKm": 355,
+              "gapMoySecKm": 350,
+              "fcMoy": 154,
+              "fcMax": 168,
+              "fcMin": 88,
+              "cadenceMoy": 165,
+              "denivelePosM": 37,
+              "deniveleNegM": 11,
+              "calories": 286,
+              "teAerobie": 3.1,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 69.6,
+              "rpe": 20,
+              "ressenti": 50,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 372,
+                  "allureSecKm": 372,
+                  "gapSecKm": 356,
+                  "fcMoy": 144,
+                  "fcMax": 167,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 287,
+                  "denivelePosM": 18,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 363,
+                  "allureSecKm": 363,
+                  "gapSecKm": 350,
+                  "fcMoy": 153,
+                  "fcMax": 161,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 296,
+                  "denivelePosM": 18,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 344,
+                  "allureSecKm": 344,
+                  "gapSecKm": 347,
+                  "fcMoy": 158,
+                  "fcMax": 166,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 279,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 343,
+                  "allureSecKm": 343,
+                  "gapSecKm": 348,
+                  "fcMoy": 160,
+                  "fcMax": 168,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 277,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 0.114,
+                  "dureeSec": 40,
+                  "allureSecKm": 347,
+                  "gapSecKm": 339,
+                  "fcMoy": 166,
+                  "fcMax": 167,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 286,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 15,
+                  "borneBasse": 100
+                },
+                {
+                  "zone": 2,
+                  "secondes": 87,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 745,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 604,
+                  "borneBasse": 159
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 179
+                }
+              ],
+              "meteo": {
+                "temperatureC": 28.9,
+                "ressentiC": 28.9,
+                "humidite": 23,
+                "ventKmh": 8.0,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23909513985,
+              "dateHeure": "2026-08-09T10:14:33",
+              "date": "2026-08-09",
+              "titre": "Libercourt Course à pied",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 20.02,
+              "dureeSec": 7928,
+              "allureMoySecKm": 396,
+              "gapMoySecKm": 396,
+              "fcMoy": 137,
+              "fcMax": 154,
+              "fcMin": 82,
+              "cadenceMoy": 165,
+              "denivelePosM": 89,
+              "deniveleNegM": 93,
+              "calories": 1292,
+              "teAerobie": 3.8,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 122.2,
+              "rpe": 50,
+              "ressenti": 50,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 386,
+                  "allureSecKm": 386,
+                  "gapSecKm": 386,
+                  "fcMoy": 124,
+                  "fcMax": 135,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 255,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 404,
+                  "allureSecKm": 404,
+                  "gapSecKm": 381,
+                  "fcMoy": 138,
+                  "fcMax": 146,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 270,
+                  "denivelePosM": 22,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 395,
+                  "allureSecKm": 395,
+                  "gapSecKm": 395,
+                  "fcMoy": 134,
+                  "fcMax": 141,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 246,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 393,
+                  "allureSecKm": 393,
+                  "gapSecKm": 400,
+                  "fcMoy": 131,
+                  "fcMax": 139,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 239,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 394,
+                  "allureSecKm": 394,
+                  "gapSecKm": 396,
+                  "fcMoy": 133,
+                  "fcMax": 141,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 245,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 401,
+                  "allureSecKm": 401,
+                  "gapSecKm": 404,
+                  "fcMoy": 135,
+                  "fcMax": 143,
+                  "cadenceMoy": 160,
+                  "puissanceMoy": 239,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 394,
+                  "allureSecKm": 394,
+                  "gapSecKm": 389,
+                  "fcMoy": 136,
+                  "fcMax": 141,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 255,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 392,
+                  "allureSecKm": 392,
+                  "gapSecKm": 393,
+                  "fcMoy": 136,
+                  "fcMax": 146,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 248,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 395,
+                  "allureSecKm": 395,
+                  "gapSecKm": 390,
+                  "fcMoy": 137,
+                  "fcMax": 145,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 254,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 403,
+                  "allureSecKm": 403,
+                  "gapSecKm": 398,
+                  "fcMoy": 139,
+                  "fcMax": 147,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 245,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 404,
+                  "allureSecKm": 404,
+                  "gapSecKm": 410,
+                  "fcMoy": 135,
+                  "fcMax": 141,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 237,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 6,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 402,
+                  "allureSecKm": 402,
+                  "gapSecKm": 405,
+                  "fcMoy": 137,
+                  "fcMax": 142,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 234,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 6,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 1.0,
+                  "dureeSec": 400,
+                  "allureSecKm": 400,
+                  "gapSecKm": 401,
+                  "fcMoy": 137,
+                  "fcMax": 143,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 242,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 6,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 1.0,
+                  "dureeSec": 394,
+                  "allureSecKm": 394,
+                  "gapSecKm": 397,
+                  "fcMoy": 138,
+                  "fcMax": 143,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 239,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 15,
+                  "distanceKm": 1.0,
+                  "dureeSec": 395,
+                  "allureSecKm": 395,
+                  "gapSecKm": 394,
+                  "fcMoy": 138,
+                  "fcMax": 146,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 244,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 16,
+                  "distanceKm": 1.0,
+                  "dureeSec": 399,
+                  "allureSecKm": 400,
+                  "gapSecKm": 399,
+                  "fcMoy": 138,
+                  "fcMax": 145,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 244,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 17,
+                  "distanceKm": 1.0,
+                  "dureeSec": 396,
+                  "allureSecKm": 396,
+                  "gapSecKm": 385,
+                  "fcMoy": 143,
+                  "fcMax": 151,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": 264,
+                  "denivelePosM": 13,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 18,
+                  "distanceKm": 1.0,
+                  "dureeSec": 393,
+                  "allureSecKm": 393,
+                  "gapSecKm": 403,
+                  "fcMoy": 142,
+                  "fcMax": 154,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 238,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 12,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 19,
+                  "distanceKm": 1.0,
+                  "dureeSec": 389,
+                  "allureSecKm": 389,
+                  "gapSecKm": 401,
+                  "fcMoy": 141,
+                  "fcMax": 148,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 240,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 21,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 20,
+                  "distanceKm": 1.0,
+                  "dureeSec": 394,
+                  "allureSecKm": 394,
+                  "gapSecKm": 396,
+                  "fcMoy": 148,
+                  "fcMax": 154,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 244,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 24,
+                  "borneBasse": 100
+                },
+                {
+                  "zone": 2,
+                  "secondes": 4851,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 3032,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 159
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 179
+                }
+              ],
+              "meteo": {
+                "temperatureC": 23.9,
+                "ressentiC": 23.9,
+                "humidite": 41,
+                "ventKmh": 4.8,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23934509276,
+              "dateHeure": "2026-08-11T12:11:50",
+              "date": "2026-08-11",
+              "titre": "Villeneuve-d'Ascq Course à pied",
+              "type": "running",
+              "lieu": "Villeneuve-d'Ascq",
+              "distanceKm": 8.02,
+              "dureeSec": 3160,
+              "allureMoySecKm": 394,
+              "gapMoySecKm": 395,
+              "fcMoy": 128,
+              "fcMax": 154,
+              "fcMin": 92,
+              "cadenceMoy": 164,
+              "denivelePosM": 44,
+              "deniveleNegM": 50,
+              "calories": 505,
+              "teAerobie": 2.7,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 52.7,
+              "rpe": 20,
+              "ressenti": 75,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 388,
+                  "allureSecKm": 388,
+                  "gapSecKm": 392,
+                  "fcMoy": 117,
+                  "fcMax": 125,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 257,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 390,
+                  "allureSecKm": 390,
+                  "gapSecKm": 388,
+                  "fcMoy": 121,
+                  "fcMax": 132,
+                  "cadenceMoy": 162,
+                  "puissanceMoy": 251,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 390,
+                  "allureSecKm": 390,
+                  "gapSecKm": 389,
+                  "fcMoy": 124,
+                  "fcMax": 132,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 246,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 393,
+                  "allureSecKm": 393,
+                  "gapSecKm": 394,
+                  "fcMoy": 131,
+                  "fcMax": 143,
+                  "cadenceMoy": 161,
+                  "puissanceMoy": 251,
+                  "denivelePosM": 11,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 393,
+                  "allureSecKm": 393,
+                  "gapSecKm": 383,
+                  "fcMoy": 134,
+                  "fcMax": 154,
+                  "cadenceMoy": 162,
+                  "puissanceMoy": 259,
+                  "denivelePosM": 14,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 396,
+                  "allureSecKm": 396,
+                  "gapSecKm": 406,
+                  "fcMoy": 132,
+                  "fcMax": 139,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 234,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 12,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 401,
+                  "allureSecKm": 400,
+                  "gapSecKm": 400,
+                  "fcMoy": 134,
+                  "fcMax": 140,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 258,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 404,
+                  "allureSecKm": 404,
+                  "gapSecKm": 409,
+                  "fcMoy": 132,
+                  "fcMax": 138,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 252,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 9,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 351,
+                  "borneBasse": 100
+                },
+                {
+                  "zone": 2,
+                  "secondes": 2584,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 209,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 159
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 179
+                }
+              ],
+              "meteo": {
+                "temperatureC": 22.8,
+                "ressentiC": 22.8,
+                "humidite": 47,
+                "ventKmh": 19.3,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23960253632,
+              "dateHeure": "2026-08-13T11:45:31",
+              "date": "2026-08-13",
+              "titre": "Libercourt Course à pied",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 6.02,
+              "dureeSec": 2409,
+              "allureMoySecKm": 400,
+              "gapMoySecKm": 400,
+              "fcMoy": 136,
+              "fcMax": 150,
+              "fcMin": 71,
+              "cadenceMoy": 164,
+              "denivelePosM": 24,
+              "deniveleNegM": 25,
+              "calories": 400,
+              "teAerobie": 2.6,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 48.2,
+              "rpe": 20,
+              "ressenti": 50,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 402,
+                  "allureSecKm": 402,
+                  "gapSecKm": 397,
+                  "fcMoy": 122,
+                  "fcMax": 135,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 246,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 404,
+                  "allureSecKm": 404,
+                  "gapSecKm": 397,
+                  "fcMoy": 137,
+                  "fcMax": 143,
+                  "cadenceMoy": 162,
+                  "puissanceMoy": 253,
+                  "denivelePosM": 11,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 400,
+                  "allureSecKm": 400,
+                  "gapSecKm": 408,
+                  "fcMoy": 136,
+                  "fcMax": 142,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 236,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 417,
+                  "allureSecKm": 417,
+                  "gapSecKm": 415,
+                  "fcMoy": 141,
+                  "fcMax": 150,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 234,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 397,
+                  "allureSecKm": 397,
+                  "gapSecKm": 399,
+                  "fcMoy": 140,
+                  "fcMax": 147,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 246,
+                  "denivelePosM": 7,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 384,
+                  "allureSecKm": 384,
+                  "gapSecKm": 384,
+                  "fcMoy": 140,
+                  "fcMax": 147,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 246,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 23,
+                  "borneBasse": 100
+                },
+                {
+                  "zone": 2,
+                  "secondes": 1139,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 1213,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 159
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 179
+                }
+              ],
+              "meteo": {
+                "temperatureC": 32.2,
+                "ressentiC": 32.2,
+                "humidite": 23,
+                "ventKmh": 4.8,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23989948684,
+              "dateHeure": "2026-08-15T18:46:59",
+              "date": "2026-08-15",
+              "titre": "Libercourt Course à pied",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 7.18,
+              "dureeSec": 2784,
+              "allureMoySecKm": 388,
+              "gapMoySecKm": 382,
+              "fcMoy": 138,
+              "fcMax": 169,
+              "fcMin": 80,
+              "cadenceMoy": 163,
+              "denivelePosM": 89,
+              "deniveleNegM": 90,
+              "calories": 478,
+              "teAerobie": 3.0,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 67.3,
+              "rpe": 30,
+              "ressenti": 50,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 383,
+                  "allureSecKm": 383,
+                  "gapSecKm": 384,
+                  "fcMoy": 121,
+                  "fcMax": 134,
+                  "cadenceMoy": 161,
+                  "puissanceMoy": 258,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 373,
+                  "allureSecKm": 373,
+                  "gapSecKm": 362,
+                  "fcMoy": 136,
+                  "fcMax": 149,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 277,
+                  "denivelePosM": 9,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 394,
+                  "allureSecKm": 394,
+                  "gapSecKm": 374,
+                  "fcMoy": 147,
+                  "fcMax": 154,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 286,
+                  "denivelePosM": 26,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 385,
+                  "allureSecKm": 385,
+                  "gapSecKm": 400,
+                  "fcMoy": 138,
+                  "fcMax": 153,
+                  "cadenceMoy": 160,
+                  "puissanceMoy": 236,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 36,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 401,
+                  "allureSecKm": 401,
+                  "gapSecKm": 367,
+                  "fcMoy": 151,
+                  "fcMax": 169,
+                  "cadenceMoy": 162,
+                  "puissanceMoy": 280,
+                  "denivelePosM": 32,
+                  "deniveleNegM": 15,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 385,
+                  "allureSecKm": 385,
+                  "gapSecKm": 390,
+                  "fcMoy": 138,
+                  "fcMax": 147,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 253,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 22,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 394,
+                  "allureSecKm": 394,
+                  "gapSecKm": 394,
+                  "fcMoy": 137,
+                  "fcMax": 145,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 251,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 6,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.179,
+                  "dureeSec": 71,
+                  "allureSecKm": 397,
+                  "gapSecKm": 405,
+                  "fcMoy": 134,
+                  "fcMax": 136,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 247,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 78,
+                  "borneBasse": 100
+                },
+                {
+                  "zone": 2,
+                  "secondes": 1414,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 1125,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 144,
+                  "borneBasse": 159
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 179
+                }
+              ],
+              "meteo": {
+                "temperatureC": 27.8,
+                "ressentiC": 28.9,
+                "humidite": 55,
+                "ventKmh": 20.9,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 23998747277,
+              "dateHeure": "2026-08-16T13:16:37",
+              "date": "2026-08-16",
+              "titre": "Libercourt Course à pied",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 15.51,
+              "dureeSec": 6050,
+              "allureMoySecKm": 390,
+              "gapMoySecKm": 390,
+              "fcMoy": 144,
+              "fcMax": 164,
+              "fcMin": 84,
+              "cadenceMoy": 165,
+              "denivelePosM": 73,
+              "deniveleNegM": 72,
+              "calories": 1026,
+              "teAerobie": 3.5,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 112.1,
+              "rpe": 40,
+              "ressenti": 0,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 398,
+                  "allureSecKm": 398,
+                  "gapSecKm": 394,
+                  "fcMoy": 126,
+                  "fcMax": 134,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 254,
+                  "denivelePosM": 9,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 385,
+                  "allureSecKm": 384,
+                  "gapSecKm": 366,
+                  "fcMoy": 145,
+                  "fcMax": 155,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 284,
+                  "denivelePosM": 21,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 389,
+                  "allureSecKm": 389,
+                  "gapSecKm": 389,
+                  "fcMoy": 143,
+                  "fcMax": 149,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 255,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 6,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 383,
+                  "allureSecKm": 383,
+                  "gapSecKm": 381,
+                  "fcMoy": 144,
+                  "fcMax": 150,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 268,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 378,
+                  "allureSecKm": 378,
+                  "gapSecKm": 381,
+                  "fcMoy": 148,
+                  "fcMax": 153,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 261,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 426,
+                  "allureSecKm": 426,
+                  "gapSecKm": 424,
+                  "fcMoy": 143,
+                  "fcMax": 152,
+                  "cadenceMoy": 150,
+                  "puissanceMoy": 229,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 9,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 394,
+                  "allureSecKm": 394,
+                  "gapSecKm": 391,
+                  "fcMoy": 144,
+                  "fcMax": 152,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 246,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 383,
+                  "allureSecKm": 383,
+                  "gapSecKm": 391,
+                  "fcMoy": 145,
+                  "fcMax": 151,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 246,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 388,
+                  "allureSecKm": 388,
+                  "gapSecKm": 391,
+                  "fcMoy": 147,
+                  "fcMax": 151,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 244,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 383,
+                  "allureSecKm": 383,
+                  "gapSecKm": 381,
+                  "fcMoy": 151,
+                  "fcMax": 157,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 252,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 391,
+                  "allureSecKm": 391,
+                  "gapSecKm": 389,
+                  "fcMoy": 143,
+                  "fcMax": 164,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 249,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 392,
+                  "allureSecKm": 392,
+                  "gapSecKm": 387,
+                  "fcMoy": 146,
+                  "fcMax": 153,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 254,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 1.0,
+                  "dureeSec": 387,
+                  "allureSecKm": 387,
+                  "gapSecKm": 383,
+                  "fcMoy": 150,
+                  "fcMax": 157,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 261,
+                  "denivelePosM": 11,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 1.0,
+                  "dureeSec": 399,
+                  "allureSecKm": 399,
+                  "gapSecKm": 407,
+                  "fcMoy": 143,
+                  "fcMax": 151,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 237,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 11,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 15,
+                  "distanceKm": 1.0,
+                  "dureeSec": 381,
+                  "allureSecKm": 381,
+                  "gapSecKm": 394,
+                  "fcMoy": 142,
+                  "fcMax": 150,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 242,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 18,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 16,
+                  "distanceKm": 0.51,
+                  "dureeSec": 194,
+                  "allureSecKm": 380,
+                  "gapSecKm": 384,
+                  "fcMoy": 149,
+                  "fcMax": 160,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 252,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 35,
+                  "borneBasse": 100
+                },
+                {
+                  "zone": 2,
+                  "secondes": 917,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 5027,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 57,
+                  "borneBasse": 159
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 179
+                }
+              ],
+              "meteo": {
+                "temperatureC": 25.0,
+                "ressentiC": 25.0,
+                "humidite": 54,
+                "ventKmh": 9.7,
+                "description": "Mostly Cloudy",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 24024994828,
+              "dateHeure": "2026-08-18T17:09:08",
+              "date": "2026-08-18",
+              "titre": "Libercourt Course à pied",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 10.02,
+              "dureeSec": 3906,
+              "allureMoySecKm": 390,
+              "gapMoySecKm": 390,
+              "fcMoy": 132,
+              "fcMax": 148,
+              "fcMin": 92,
+              "cadenceMoy": 164,
+              "denivelePosM": 54,
+              "deniveleNegM": 52,
+              "calories": 638,
+              "teAerobie": 3.0,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 66.7,
+              "rpe": 30,
+              "ressenti": 75,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 380,
+                  "allureSecKm": 380,
+                  "gapSecKm": 378,
+                  "fcMoy": 123,
+                  "fcMax": 133,
+                  "cadenceMoy": 161,
+                  "puissanceMoy": 258,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 400,
+                  "allureSecKm": 400,
+                  "gapSecKm": 378,
+                  "fcMoy": 135,
+                  "fcMax": 148,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 270,
+                  "denivelePosM": 24,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 384,
+                  "allureSecKm": 384,
+                  "gapSecKm": 386,
+                  "fcMoy": 129,
+                  "fcMax": 137,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 247,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 391,
+                  "allureSecKm": 391,
+                  "gapSecKm": 402,
+                  "fcMoy": 126,
+                  "fcMax": 136,
+                  "cadenceMoy": 162,
+                  "puissanceMoy": 233,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 389,
+                  "allureSecKm": 389,
+                  "gapSecKm": 393,
+                  "fcMoy": 132,
+                  "fcMax": 140,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 243,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 399,
+                  "allureSecKm": 399,
+                  "gapSecKm": 399,
+                  "fcMoy": 135,
+                  "fcMax": 141,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 261,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 385,
+                  "allureSecKm": 385,
+                  "gapSecKm": 377,
+                  "fcMoy": 139,
+                  "fcMax": 145,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 278,
+                  "denivelePosM": 10,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 399,
+                  "allureSecKm": 399,
+                  "gapSecKm": 398,
+                  "fcMoy": 137,
+                  "fcMax": 145,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 265,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 380,
+                  "allureSecKm": 380,
+                  "gapSecKm": 396,
+                  "fcMoy": 134,
+                  "fcMax": 140,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 258,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 22,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 391,
+                  "allureSecKm": 391,
+                  "gapSecKm": 397,
+                  "fcMoy": 133,
+                  "fcMax": 142,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 257,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 6,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 75,
+                  "borneBasse": 100
+                },
+                {
+                  "zone": 2,
+                  "secondes": 3273,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 547,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 159
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 179
+                }
+              ],
+              "meteo": {
+                "temperatureC": 22.2,
+                "ressentiC": 22.2,
+                "humidite": 83,
+                "ventKmh": 17.7,
+                "description": "Mostly Cloudy",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 24039063704,
+              "dateHeure": "2026-08-19T17:44:27",
+              "date": "2026-08-19",
+              "titre": "Libercourt - Terrils",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 13.76,
+              "dureeSec": 5220,
+              "allureMoySecKm": 379,
+              "gapMoySecKm": 371,
+              "fcMoy": 137,
+              "fcMax": 172,
+              "fcMin": 75,
+              "cadenceMoy": 159,
+              "denivelePosM": 222,
+              "deniveleNegM": 222,
+              "calories": 890,
+              "teAerobie": 3.6,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 116.6,
+              "rpe": 50,
+              "ressenti": 75,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 383,
+                  "allureSecKm": 383,
+                  "gapSecKm": 386,
+                  "fcMoy": 117,
+                  "fcMax": 128,
+                  "cadenceMoy": 162,
+                  "puissanceMoy": 263,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 3,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 0.722,
+                  "dureeSec": 277,
+                  "allureSecKm": 383,
+                  "gapSecKm": 379,
+                  "fcMoy": 123,
+                  "fcMax": 128,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 259,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 6,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 0.733,
+                  "dureeSec": 246,
+                  "allureSecKm": 335,
+                  "gapSecKm": 306,
+                  "fcMoy": 150,
+                  "fcMax": 161,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 351,
+                  "denivelePosM": 28,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 0.734,
+                  "dureeSec": 288,
+                  "allureSecKm": 392,
+                  "gapSecKm": 409,
+                  "fcMoy": 128,
+                  "fcMax": 157,
+                  "cadenceMoy": 155,
+                  "puissanceMoy": 217,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 30,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 0.732,
+                  "dureeSec": 245,
+                  "allureSecKm": 335,
+                  "gapSecKm": 307,
+                  "fcMoy": 154,
+                  "fcMax": 163,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 349,
+                  "denivelePosM": 28,
+                  "deniveleNegM": 1,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 0.741,
+                  "dureeSec": 306,
+                  "allureSecKm": 413,
+                  "gapSecKm": 428,
+                  "fcMoy": 127,
+                  "fcMax": 162,
+                  "cadenceMoy": 147,
+                  "puissanceMoy": 200,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 30,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 0.739,
+                  "dureeSec": 248,
+                  "allureSecKm": 336,
+                  "gapSecKm": 305,
+                  "fcMoy": 155,
+                  "fcMax": 167,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 352,
+                  "denivelePosM": 29,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.74,
+                  "dureeSec": 307,
+                  "allureSecKm": 414,
+                  "gapSecKm": 431,
+                  "fcMoy": 128,
+                  "fcMax": 162,
+                  "cadenceMoy": 156,
+                  "puissanceMoy": 209,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 29,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 0.741,
+                  "dureeSec": 248,
+                  "allureSecKm": 334,
+                  "gapSecKm": 307,
+                  "fcMoy": 155,
+                  "fcMax": 169,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 352,
+                  "denivelePosM": 30,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 0.74,
+                  "dureeSec": 309,
+                  "allureSecKm": 418,
+                  "gapSecKm": 436,
+                  "fcMoy": 130,
+                  "fcMax": 164,
+                  "cadenceMoy": 152,
+                  "puissanceMoy": 201,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 30,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 0.74,
+                  "dureeSec": 244,
+                  "allureSecKm": 329,
+                  "gapSecKm": 300,
+                  "fcMoy": 158,
+                  "fcMax": 170,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 358,
+                  "denivelePosM": 29,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 0.735,
+                  "dureeSec": 314,
+                  "allureSecKm": 428,
+                  "gapSecKm": 448,
+                  "fcMoy": 130,
+                  "fcMax": 166,
+                  "cadenceMoy": 145,
+                  "puissanceMoy": 194,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 29,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 0.74,
+                  "dureeSec": 250,
+                  "allureSecKm": 337,
+                  "gapSecKm": 307,
+                  "fcMoy": 153,
+                  "fcMax": 166,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 348,
+                  "denivelePosM": 29,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 0.739,
+                  "dureeSec": 324,
+                  "allureSecKm": 438,
+                  "gapSecKm": 459,
+                  "fcMoy": 129,
+                  "fcMax": 165,
+                  "cadenceMoy": 154,
+                  "puissanceMoy": 195,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 29,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 15,
+                  "distanceKm": 0.743,
+                  "dureeSec": 249,
+                  "allureSecKm": 335,
+                  "gapSecKm": 300,
+                  "fcMoy": 158,
+                  "fcMax": 172,
+                  "cadenceMoy": 162,
+                  "puissanceMoy": 348,
+                  "denivelePosM": 29,
+                  "deniveleNegM": 1,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 16,
+                  "distanceKm": 1.0,
+                  "dureeSec": 425,
+                  "allureSecKm": 426,
+                  "gapSecKm": 448,
+                  "fcMoy": 130,
+                  "fcMax": 168,
+                  "cadenceMoy": 152,
+                  "puissanceMoy": 203,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 30,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 17,
+                  "distanceKm": 1.0,
+                  "dureeSec": 386,
+                  "allureSecKm": 386,
+                  "gapSecKm": 378,
+                  "fcMoy": 135,
+                  "fcMax": 142,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 258,
+                  "denivelePosM": 7,
+                  "deniveleNegM": 3,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 18,
+                  "distanceKm": 0.442,
+                  "dureeSec": 173,
+                  "allureSecKm": 390,
+                  "gapSecKm": 390,
+                  "fcMoy": 132,
+                  "fcMax": 138,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 244,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 2,
+                  "intensite": "RECOVERY"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 139,
+                  "borneBasse": 100
+                },
+                {
+                  "zone": 2,
+                  "secondes": 3200,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 892,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 955,
+                  "borneBasse": 159
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 179
+                }
+              ],
+              "meteo": {
+                "temperatureC": 17.2,
+                "ressentiC": 17.2,
+                "humidite": 94,
+                "ventKmh": 0.0,
+                "description": "Light Rain",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 24057511723,
+              "dateHeure": "2026-08-21T08:38:41",
+              "date": "2026-08-21",
+              "titre": "Libercourt Course à pied",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 7.16,
+              "dureeSec": 2737,
+              "allureMoySecKm": 382,
+              "gapMoySecKm": 377,
+              "fcMoy": 140,
+              "fcMax": 169,
+              "fcMin": 91,
+              "cadenceMoy": 164,
+              "denivelePosM": 91,
+              "deniveleNegM": 75,
+              "calories": 477,
+              "teAerobie": 3.0,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 69.1,
+              "rpe": 30,
+              "ressenti": 50,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 386,
+                  "allureSecKm": 386,
+                  "gapSecKm": 391,
+                  "fcMoy": 131,
+                  "fcMax": 142,
+                  "cadenceMoy": 161,
+                  "puissanceMoy": 260,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 388,
+                  "allureSecKm": 388,
+                  "gapSecKm": 379,
+                  "fcMoy": 138,
+                  "fcMax": 150,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 264,
+                  "denivelePosM": 11,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 378,
+                  "allureSecKm": 378,
+                  "gapSecKm": 360,
+                  "fcMoy": 151,
+                  "fcMax": 162,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 289,
+                  "denivelePosM": 25,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 378,
+                  "allureSecKm": 378,
+                  "gapSecKm": 387,
+                  "fcMoy": 135,
+                  "fcMax": 152,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 246,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 19,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 390,
+                  "allureSecKm": 390,
+                  "gapSecKm": 363,
+                  "fcMoy": 149,
+                  "fcMax": 169,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 282,
+                  "denivelePosM": 32,
+                  "deniveleNegM": 16,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 381,
+                  "allureSecKm": 382,
+                  "gapSecKm": 384,
+                  "fcMoy": 137,
+                  "fcMax": 148,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 249,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 20,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 377,
+                  "allureSecKm": 377,
+                  "gapSecKm": 376,
+                  "fcMoy": 140,
+                  "fcMax": 148,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 257,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 6,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.161,
+                  "dureeSec": 59,
+                  "allureSecKm": 365,
+                  "gapSecKm": 379,
+                  "fcMoy": 138,
+                  "fcMax": 140,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": 252,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 48,
+                  "borneBasse": 99
+                },
+                {
+                  "zone": 2,
+                  "secondes": 1430,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 922,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 324,
+                  "borneBasse": 158
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 178
+                }
+              ],
+              "meteo": {
+                "temperatureC": 16.1,
+                "ressentiC": 16.1,
+                "humidite": 88,
+                "ventKmh": 8.0,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 24071189193,
+              "dateHeure": "2026-08-22T10:48:58",
+              "date": "2026-08-22",
+              "titre": "Libercourt - sortie longue 22/07",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 22.01,
+              "dureeSec": 7871,
+              "allureMoySecKm": 358,
+              "gapMoySecKm": 357,
+              "fcMoy": 142,
+              "fcMax": 163,
+              "fcMin": 79,
+              "cadenceMoy": 166,
+              "denivelePosM": 108,
+              "deniveleNegM": 107,
+              "calories": 1409,
+              "teAerobie": 4.0,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 162.0,
+              "rpe": 60,
+              "ressenti": 100,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 368,
+                  "allureSecKm": 368,
+                  "gapSecKm": 364,
+                  "fcMoy": 128,
+                  "fcMax": 143,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 273,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 1,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 366,
+                  "allureSecKm": 366,
+                  "gapSecKm": 348,
+                  "fcMoy": 143,
+                  "fcMax": 150,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 297,
+                  "denivelePosM": 24,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 366,
+                  "allureSecKm": 366,
+                  "gapSecKm": 371,
+                  "fcMoy": 134,
+                  "fcMax": 146,
+                  "cadenceMoy": 162,
+                  "puissanceMoy": 265,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 7,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 370,
+                  "allureSecKm": 370,
+                  "gapSecKm": 377,
+                  "fcMoy": 133,
+                  "fcMax": 138,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 258,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 9,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 371,
+                  "allureSecKm": 371,
+                  "gapSecKm": 371,
+                  "fcMoy": 138,
+                  "fcMax": 143,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 257,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 363,
+                  "allureSecKm": 363,
+                  "gapSecKm": 359,
+                  "fcMoy": 140,
+                  "fcMax": 148,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 270,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 1,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 365,
+                  "allureSecKm": 365,
+                  "gapSecKm": 362,
+                  "fcMoy": 139,
+                  "fcMax": 144,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 265,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 360,
+                  "allureSecKm": 360,
+                  "gapSecKm": 360,
+                  "fcMoy": 141,
+                  "fcMax": 152,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 272,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 3,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 361,
+                  "allureSecKm": 361,
+                  "gapSecKm": 356,
+                  "fcMoy": 143,
+                  "fcMax": 148,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 273,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 365,
+                  "allureSecKm": 365,
+                  "gapSecKm": 371,
+                  "fcMoy": 140,
+                  "fcMax": 154,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 259,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 12,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 365,
+                  "allureSecKm": 365,
+                  "gapSecKm": 373,
+                  "fcMoy": 135,
+                  "fcMax": 145,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 249,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 14,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 369,
+                  "allureSecKm": 369,
+                  "gapSecKm": 358,
+                  "fcMoy": 144,
+                  "fcMax": 154,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": 291,
+                  "denivelePosM": 16,
+                  "deniveleNegM": 2,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 1.0,
+                  "dureeSec": 370,
+                  "allureSecKm": 370,
+                  "gapSecKm": 363,
+                  "fcMoy": 146,
+                  "fcMax": 152,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 279,
+                  "denivelePosM": 13,
+                  "deniveleNegM": 1,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 1.0,
+                  "dureeSec": 363,
+                  "allureSecKm": 363,
+                  "gapSecKm": 370,
+                  "fcMoy": 136,
+                  "fcMax": 145,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 263,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 8,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 15,
+                  "distanceKm": 1.0,
+                  "dureeSec": 359,
+                  "allureSecKm": 359,
+                  "gapSecKm": 365,
+                  "fcMoy": 138,
+                  "fcMax": 144,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 264,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 7,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 16,
+                  "distanceKm": 1.0,
+                  "dureeSec": 362,
+                  "allureSecKm": 362,
+                  "gapSecKm": 363,
+                  "fcMoy": 140,
+                  "fcMax": 147,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 273,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 2,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 17,
+                  "distanceKm": 1.0,
+                  "dureeSec": 365,
+                  "allureSecKm": 365,
+                  "gapSecKm": 365,
+                  "fcMoy": 143,
+                  "fcMax": 151,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 271,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 4,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 18,
+                  "distanceKm": 1.0,
+                  "dureeSec": 334,
+                  "allureSecKm": 334,
+                  "gapSecKm": 333,
+                  "fcMoy": 153,
+                  "fcMax": 157,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 295,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 19,
+                  "distanceKm": 1.0,
+                  "dureeSec": 334,
+                  "allureSecKm": 334,
+                  "gapSecKm": 326,
+                  "fcMoy": 157,
+                  "fcMax": 163,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 303,
+                  "denivelePosM": 10,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 20,
+                  "distanceKm": 1.0,
+                  "dureeSec": 332,
+                  "allureSecKm": 332,
+                  "gapSecKm": 330,
+                  "fcMoy": 158,
+                  "fcMax": 163,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": 298,
+                  "denivelePosM": 7,
+                  "deniveleNegM": 1,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 21,
+                  "distanceKm": 1.0,
+                  "dureeSec": 333,
+                  "allureSecKm": 333,
+                  "gapSecKm": 345,
+                  "fcMoy": 147,
+                  "fcMax": 154,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": 268,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 24,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 22,
+                  "distanceKm": 1.0,
+                  "dureeSec": 328,
+                  "allureSecKm": 328,
+                  "gapSecKm": 334,
+                  "fcMoy": 152,
+                  "fcMax": 156,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": 282,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 9,
+                  "intensite": "ACTIVE"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 40,
+                  "borneBasse": 99
+                },
+                {
+                  "zone": 2,
+                  "secondes": 2666,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 4765,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 386,
+                  "borneBasse": 158
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 178
+                }
+              ],
+              "meteo": {
+                "temperatureC": 20.0,
+                "ressentiC": 20.0,
+                "humidite": 60,
+                "ventKmh": 12.9,
+                "description": "Mostly Clear",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 24108411102,
+              "dateHeure": "2026-08-25T12:10:25",
+              "date": "2026-08-25",
+              "titre": "Villeneuve-d'Ascq - fractionné seul 25/08",
+              "type": "running",
+              "lieu": "Villeneuve-d'Ascq",
+              "distanceKm": 10.35,
+              "dureeSec": 3546,
+              "allureMoySecKm": 343,
+              "gapMoySecKm": 347,
+              "fcMoy": 154,
+              "fcMax": 179,
+              "fcMin": 94,
+              "cadenceMoy": 163,
+              "denivelePosM": 9,
+              "deniveleNegM": 10,
+              "calories": 680,
+              "teAerobie": 3.9,
+              "teAnaerobie": 0.7,
+              "teLabel": "LACTATE_THRESHOLD",
+              "chargeEntrainement": 146.0,
+              "rpe": 60,
+              "ressenti": 25,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 382,
+                  "allureSecKm": 382,
+                  "gapSecKm": 387,
+                  "fcMoy": 122,
+                  "fcMax": 133,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 259,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 5,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 384,
+                  "allureSecKm": 384,
+                  "gapSecKm": 381,
+                  "fcMoy": 135,
+                  "fcMax": 144,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 254,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 1,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 290,
+                  "allureSecKm": 290,
+                  "gapSecKm": 300,
+                  "fcMoy": 159,
+                  "fcMax": 168,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 323,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 0.642,
+                  "dureeSec": 190,
+                  "allureSecKm": 296,
+                  "gapSecKm": 305,
+                  "fcMoy": 165,
+                  "fcMax": 176,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 321,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 0.3,
+                  "dureeSec": 120,
+                  "allureSecKm": 400,
+                  "gapSecKm": 385,
+                  "fcMoy": 154,
+                  "fcMax": 172,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 250,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 300,
+                  "allureSecKm": 300,
+                  "gapSecKm": 312,
+                  "fcMoy": 165,
+                  "fcMax": 179,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 317,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 0.607,
+                  "dureeSec": 180,
+                  "allureSecKm": 297,
+                  "gapSecKm": 304,
+                  "fcMoy": 169,
+                  "fcMax": 178,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": 317,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.275,
+                  "dureeSec": 120,
+                  "allureSecKm": 436,
+                  "gapSecKm": 440,
+                  "fcMoy": 141,
+                  "fcMax": 165,
+                  "cadenceMoy": 159,
+                  "puissanceMoy": 223,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 303,
+                  "allureSecKm": 303,
+                  "gapSecKm": 311,
+                  "fcMoy": 164,
+                  "fcMax": 173,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": 313,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 0.572,
+                  "dureeSec": 177,
+                  "allureSecKm": 309,
+                  "gapSecKm": 312,
+                  "fcMoy": 171,
+                  "fcMax": 174,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 316,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 0.28,
+                  "dureeSec": 120,
+                  "allureSecKm": 428,
+                  "gapSecKm": 417,
+                  "fcMoy": 146,
+                  "fcMax": 173,
+                  "cadenceMoy": 149,
+                  "puissanceMoy": 215,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 307,
+                  "allureSecKm": 307,
+                  "gapSecKm": 311,
+                  "fcMoy": 170,
+                  "fcMax": 179,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 314,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 0.563,
+                  "dureeSec": 173,
+                  "allureSecKm": 307,
+                  "gapSecKm": 310,
+                  "fcMoy": 172,
+                  "fcMax": 175,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 311,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 0.132,
+                  "dureeSec": 120,
+                  "allureSecKm": 908,
+                  "gapSecKm": 827,
+                  "fcMoy": 148,
+                  "fcMax": 173,
+                  "cadenceMoy": 80,
+                  "puissanceMoy": 71,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 15,
+                  "distanceKm": 0.98,
+                  "dureeSec": 381,
+                  "allureSecKm": 389,
+                  "gapSecKm": 396,
+                  "fcMoy": 149,
+                  "fcMax": 166,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 247,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "COOLDOWN"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 81,
+                  "borneBasse": 99
+                },
+                {
+                  "zone": 2,
+                  "secondes": 750,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 810,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 1825,
+                  "borneBasse": 158
+                },
+                {
+                  "zone": 5,
+                  "secondes": 70,
+                  "borneBasse": 178
+                }
+              ],
+              "meteo": {
+                "temperatureC": 18.9,
+                "ressentiC": 18.9,
+                "humidite": 60,
+                "ventKmh": 12.9,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 24125399712,
+              "dateHeure": "2026-08-26T16:56:46",
+              "date": "2026-08-26",
+              "titre": "Libercourt Course à pied",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 10.01,
+              "dureeSec": 3921,
+              "allureMoySecKm": 392,
+              "gapMoySecKm": 391,
+              "fcMoy": 133,
+              "fcMax": 146,
+              "fcMin": 96,
+              "cadenceMoy": 163,
+              "denivelePosM": 52,
+              "deniveleNegM": 53,
+              "calories": 644,
+              "teAerobie": 3.0,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 68.2,
+              "rpe": 30,
+              "ressenti": 0,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 378,
+                  "allureSecKm": 378,
+                  "gapSecKm": 375,
+                  "fcMoy": 124,
+                  "fcMax": 134,
+                  "cadenceMoy": 162,
+                  "puissanceMoy": 263,
+                  "denivelePosM": 7,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 400,
+                  "allureSecKm": 400,
+                  "gapSecKm": 376,
+                  "fcMoy": 136,
+                  "fcMax": 144,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 275,
+                  "denivelePosM": 21,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 390,
+                  "allureSecKm": 390,
+                  "gapSecKm": 388,
+                  "fcMoy": 135,
+                  "fcMax": 143,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 254,
+                  "denivelePosM": 7,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 396,
+                  "allureSecKm": 396,
+                  "gapSecKm": 404,
+                  "fcMoy": 133,
+                  "fcMax": 138,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 244,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 9,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 400,
+                  "allureSecKm": 400,
+                  "gapSecKm": 403,
+                  "fcMoy": 131,
+                  "fcMax": 139,
+                  "cadenceMoy": 161,
+                  "puissanceMoy": 239,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 397,
+                  "allureSecKm": 397,
+                  "gapSecKm": 398,
+                  "fcMoy": 132,
+                  "fcMax": 138,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 242,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 403,
+                  "allureSecKm": 403,
+                  "gapSecKm": 397,
+                  "fcMoy": 134,
+                  "fcMax": 144,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 250,
+                  "denivelePosM": 8,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 386,
+                  "allureSecKm": 386,
+                  "gapSecKm": 379,
+                  "fcMoy": 139,
+                  "fcMax": 146,
+                  "cadenceMoy": 161,
+                  "puissanceMoy": 257,
+                  "denivelePosM": 8,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 386,
+                  "allureSecKm": 386,
+                  "gapSecKm": 404,
+                  "fcMoy": 131,
+                  "fcMax": 142,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 231,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 24,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 383,
+                  "allureSecKm": 383,
+                  "gapSecKm": 388,
+                  "fcMoy": 133,
+                  "fcMax": 141,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 247,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 53,
+                  "borneBasse": 99
+                },
+                {
+                  "zone": 2,
+                  "secondes": 3335,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 526,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 158
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 178
+                }
+              ],
+              "meteo": {
+                "temperatureC": 28.9,
+                "ressentiC": 28.9,
+                "humidite": 43,
+                "ventKmh": 8.0,
+                "description": "Fair",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 24145459845,
+              "dateHeure": "2026-08-28T07:58:50",
+              "date": "2026-08-28",
+              "titre": "Libercourt - sortie longue 28/08",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 22.01,
+              "dureeSec": 7905,
+              "allureMoySecKm": 359,
+              "gapMoySecKm": 359,
+              "fcMoy": 144,
+              "fcMax": 166,
+              "fcMin": 93,
+              "cadenceMoy": 165,
+              "denivelePosM": 115,
+              "deniveleNegM": 114,
+              "calories": 1438,
+              "teAerobie": 4.1,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 168.9,
+              "rpe": 60,
+              "ressenti": 75,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 370,
+                  "allureSecKm": 371,
+                  "gapSecKm": 357,
+                  "fcMoy": 133,
+                  "fcMax": 149,
+                  "cadenceMoy": 162,
+                  "puissanceMoy": 283,
+                  "denivelePosM": 15,
+                  "deniveleNegM": 0,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 369,
+                  "allureSecKm": 369,
+                  "gapSecKm": 357,
+                  "fcMoy": 149,
+                  "fcMax": 155,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 285,
+                  "denivelePosM": 19,
+                  "deniveleNegM": 0,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 365,
+                  "allureSecKm": 365,
+                  "gapSecKm": 371,
+                  "fcMoy": 141,
+                  "fcMax": 150,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 255,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 10,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 374,
+                  "allureSecKm": 374,
+                  "gapSecKm": 380,
+                  "fcMoy": 139,
+                  "fcMax": 146,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 249,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 8,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 370,
+                  "allureSecKm": 370,
+                  "gapSecKm": 371,
+                  "fcMoy": 143,
+                  "fcMax": 152,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 264,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 1,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 368,
+                  "allureSecKm": 368,
+                  "gapSecKm": 368,
+                  "fcMoy": 144,
+                  "fcMax": 150,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 266,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 2,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 368,
+                  "allureSecKm": 368,
+                  "gapSecKm": 367,
+                  "fcMoy": 143,
+                  "fcMax": 149,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 265,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 3,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 371,
+                  "allureSecKm": 371,
+                  "gapSecKm": 364,
+                  "fcMoy": 144,
+                  "fcMax": 154,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 272,
+                  "denivelePosM": 9,
+                  "deniveleNegM": 1,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 336,
+                  "allureSecKm": 336,
+                  "gapSecKm": 330,
+                  "fcMoy": 152,
+                  "fcMax": 159,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 303,
+                  "denivelePosM": 11,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 338,
+                  "allureSecKm": 337,
+                  "gapSecKm": 350,
+                  "fcMoy": 146,
+                  "fcMax": 155,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 269,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 18,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 332,
+                  "allureSecKm": 332,
+                  "gapSecKm": 338,
+                  "fcMoy": 147,
+                  "fcMax": 157,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 283,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 8,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 365,
+                  "allureSecKm": 365,
+                  "gapSecKm": 365,
+                  "fcMoy": 140,
+                  "fcMax": 152,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 262,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 5,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 1.0,
+                  "dureeSec": 336,
+                  "allureSecKm": 336,
+                  "gapSecKm": 327,
+                  "fcMoy": 149,
+                  "fcMax": 156,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 307,
+                  "denivelePosM": 13,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 1.0,
+                  "dureeSec": 338,
+                  "allureSecKm": 338,
+                  "gapSecKm": 328,
+                  "fcMoy": 159,
+                  "fcMax": 166,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 313,
+                  "denivelePosM": 15,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 15,
+                  "distanceKm": 1.0,
+                  "dureeSec": 334,
+                  "allureSecKm": 334,
+                  "gapSecKm": 339,
+                  "fcMoy": 151,
+                  "fcMax": 160,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 281,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 11,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 16,
+                  "distanceKm": 1.0,
+                  "dureeSec": 361,
+                  "allureSecKm": 360,
+                  "gapSecKm": 367,
+                  "fcMoy": 144,
+                  "fcMax": 152,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 261,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 8,
+                  "intensite": "COOLDOWN"
+                },
+                {
+                  "index": 17,
+                  "distanceKm": 1.0,
+                  "dureeSec": 366,
+                  "allureSecKm": 366,
+                  "gapSecKm": 368,
+                  "fcMoy": 144,
+                  "fcMax": 151,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 263,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 4,
+                  "intensite": "COOLDOWN"
+                },
+                {
+                  "index": 18,
+                  "distanceKm": 1.0,
+                  "dureeSec": 370,
+                  "allureSecKm": 370,
+                  "gapSecKm": 367,
+                  "fcMoy": 143,
+                  "fcMax": 149,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 262,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 1,
+                  "intensite": "COOLDOWN"
+                },
+                {
+                  "index": 19,
+                  "distanceKm": 1.0,
+                  "dureeSec": 371,
+                  "allureSecKm": 371,
+                  "gapSecKm": 366,
+                  "fcMoy": 145,
+                  "fcMax": 150,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 273,
+                  "denivelePosM": 11,
+                  "deniveleNegM": 0,
+                  "intensite": "COOLDOWN"
+                },
+                {
+                  "index": 20,
+                  "distanceKm": 1.0,
+                  "dureeSec": 369,
+                  "allureSecKm": 369,
+                  "gapSecKm": 377,
+                  "fcMoy": 141,
+                  "fcMax": 150,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 260,
+                  "denivelePosM": 4,
+                  "deniveleNegM": 12,
+                  "intensite": "COOLDOWN"
+                },
+                {
+                  "index": 21,
+                  "distanceKm": 1.0,
+                  "dureeSec": 363,
+                  "allureSecKm": 363,
+                  "gapSecKm": 377,
+                  "fcMoy": 136,
+                  "fcMax": 145,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": 254,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 19,
+                  "intensite": "COOLDOWN"
+                },
+                {
+                  "index": 22,
+                  "distanceKm": 1.0,
+                  "dureeSec": 367,
+                  "allureSecKm": 368,
+                  "gapSecKm": 366,
+                  "fcMoy": 142,
+                  "fcMax": 146,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": 265,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "COOLDOWN"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 41,
+                  "borneBasse": 99
+                },
+                {
+                  "zone": 2,
+                  "secondes": 1098,
+                  "borneBasse": 119
+                },
+                {
+                  "zone": 3,
+                  "secondes": 6440,
+                  "borneBasse": 139
+                },
+                {
+                  "zone": 4,
+                  "secondes": 313,
+                  "borneBasse": 158
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 178
+                }
+              ],
+              "meteo": {
+                "temperatureC": 16.1,
+                "ressentiC": 16.1,
+                "humidite": 100,
+                "ventKmh": 12.9,
+                "description": "Fog",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 24169273037,
+              "dateHeure": "2026-08-30T10:33:41",
+              "date": "2026-08-30",
+              "titre": "Saint-Rémy-de-Provence Course à pied",
+              "type": "running",
+              "lieu": "Saint-Rémy-de-Provence",
+              "distanceKm": 5.06,
+              "dureeSec": 2243,
+              "allureMoySecKm": 443,
+              "gapMoySecKm": 421,
+              "fcMoy": 131,
+              "fcMax": 165,
+              "fcMin": 88,
+              "cadenceMoy": 153,
+              "denivelePosM": 134,
+              "deniveleNegM": 133,
+              "calories": 342,
+              "teAerobie": 2.4,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 40.8,
+              "rpe": 30,
+              "ressenti": 50,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 431,
+                  "allureSecKm": 431,
+                  "gapSecKm": 400,
+                  "fcMoy": 128,
+                  "fcMax": 137,
+                  "cadenceMoy": 156,
+                  "puissanceMoy": 261,
+                  "denivelePosM": 35,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 429,
+                  "allureSecKm": 429,
+                  "gapSecKm": 373,
+                  "fcMoy": 136,
+                  "fcMax": 157,
+                  "cadenceMoy": 156,
+                  "puissanceMoy": 269,
+                  "denivelePosM": 41,
+                  "deniveleNegM": 17,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 500,
+                  "allureSecKm": 501,
+                  "gapSecKm": 454,
+                  "fcMoy": 130,
+                  "fcMax": 152,
+                  "cadenceMoy": 135,
+                  "puissanceMoy": 214,
+                  "denivelePosM": 40,
+                  "deniveleNegM": 25,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 433,
+                  "allureSecKm": 433,
+                  "gapSecKm": 431,
+                  "fcMoy": 139,
+                  "fcMax": 165,
+                  "cadenceMoy": 157,
+                  "puissanceMoy": 227,
+                  "denivelePosM": 18,
+                  "deniveleNegM": 48,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 424,
+                  "allureSecKm": 424,
+                  "gapSecKm": 453,
+                  "fcMoy": 125,
+                  "fcMax": 131,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 213,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 41,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 0.064,
+                  "dureeSec": 27,
+                  "allureSecKm": 415,
+                  "gapSecKm": 442,
+                  "fcMoy": 124,
+                  "fcMax": 126,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 223,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 124,
+                  "borneBasse": 99
+                },
+                {
+                  "zone": 2,
+                  "secondes": 1581,
+                  "borneBasse": 118
+                },
+                {
+                  "zone": 3,
+                  "secondes": 480,
+                  "borneBasse": 138
+                },
+                {
+                  "zone": 4,
+                  "secondes": 47,
+                  "borneBasse": 158
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 177
+                }
+              ],
+              "meteo": {
+                "temperatureC": 23.9,
+                "ressentiC": 23.9,
+                "humidite": 57,
+                "ventKmh": 4.8,
+                "description": "Fair",
+                "station": "Avignon-Caumont Airport"
+              }
+            },
+            {
+              "activityId": 24181955689,
+              "dateHeure": "2026-08-31T09:47:17",
+              "date": "2026-08-31",
+              "titre": "Saint-Rémy-de-Provence Marche à pied",
+              "type": "walking",
+              "lieu": "Saint-Rémy-de-Provence",
+              "distanceKm": 6.53,
+              "dureeSec": 7820,
+              "allureMoySecKm": 1198,
+              "gapMoySecKm": null,
+              "fcMoy": 96,
+              "fcMax": 144,
+              "fcMin": 68,
+              "cadenceMoy": 62,
+              "denivelePosM": 205,
+              "deniveleNegM": 219,
+              "calories": 546,
+              "teAerobie": 0.6,
+              "teAnaerobie": 0.0,
+              "teLabel": "RECOVERY",
+              "chargeEntrainement": 7.7,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 838,
+                  "allureSecKm": 838,
+                  "gapSecKm": null,
+                  "fcMoy": 110,
+                  "fcMax": 136,
+                  "cadenceMoy": 88,
+                  "puissanceMoy": null,
+                  "denivelePosM": 41,
+                  "deniveleNegM": 9,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 953,
+                  "allureSecKm": 953,
+                  "gapSecKm": null,
+                  "fcMoy": 99,
+                  "fcMax": 126,
+                  "cadenceMoy": 91,
+                  "puissanceMoy": null,
+                  "denivelePosM": 38,
+                  "deniveleNegM": 18,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 1287,
+                  "allureSecKm": 1287,
+                  "gapSecKm": null,
+                  "fcMoy": 98,
+                  "fcMax": 144,
+                  "cadenceMoy": 56,
+                  "puissanceMoy": null,
+                  "denivelePosM": 30,
+                  "deniveleNegM": 28,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 0.528,
+                  "dureeSec": 1521,
+                  "allureSecKm": 2882,
+                  "gapSecKm": null,
+                  "fcMoy": 104,
+                  "fcMax": 141,
+                  "cadenceMoy": 14,
+                  "puissanceMoy": null,
+                  "denivelePosM": 43,
+                  "deniveleNegM": 60,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 1375,
+                  "allureSecKm": 1376,
+                  "gapSecKm": null,
+                  "fcMoy": 87,
+                  "fcMax": 117,
+                  "cadenceMoy": 53,
+                  "puissanceMoy": null,
+                  "denivelePosM": 31,
+                  "deniveleNegM": 28,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 859,
+                  "allureSecKm": 858,
+                  "gapSecKm": null,
+                  "fcMoy": 89,
+                  "fcMax": 130,
+                  "cadenceMoy": 96,
+                  "puissanceMoy": null,
+                  "denivelePosM": 20,
+                  "deniveleNegM": 43,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 985,
+                  "allureSecKm": 984,
+                  "gapSecKm": null,
+                  "fcMoy": 81,
+                  "fcMax": 91,
+                  "cadenceMoy": 76,
+                  "puissanceMoy": null,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 33,
+                  "intensite": "ACTIVE"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 2002,
+                  "borneBasse": 99
+                },
+                {
+                  "zone": 2,
+                  "secondes": 811,
+                  "borneBasse": 118
+                },
+                {
+                  "zone": 3,
+                  "secondes": 70,
+                  "borneBasse": 138
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 158
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 177
+                }
+              ],
+              "meteo": {
+                "temperatureC": 26.1,
+                "ressentiC": 26.1,
+                "humidite": 58,
+                "ventKmh": 12.9,
+                "description": "Fair",
+                "station": "Avignon-Caumont Airport"
+              }
+            },
+            {
+              "activityId": 24194348100,
+              "dateHeure": "2026-09-01T09:55:34",
+              "date": "2026-09-01",
+              "titre": "Saint-Rémy-de-Provence Trail",
+              "type": "trail_running",
+              "lieu": "Saint-Rémy-de-Provence",
+              "distanceKm": 13.64,
+              "dureeSec": 6557,
+              "allureMoySecKm": 481,
+              "gapMoySecKm": 453,
+              "fcMoy": 140,
+              "fcMax": 183,
+              "fcMin": 84,
+              "cadenceMoy": 130,
+              "denivelePosM": 399,
+              "deniveleNegM": 390,
+              "calories": 990,
+              "teAerobie": 3.6,
+              "teAnaerobie": 1.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 137.1,
+              "rpe": 70,
+              "ressenti": 75,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 399,
+                  "allureSecKm": 399,
+                  "gapSecKm": 375,
+                  "fcMoy": 135,
+                  "fcMax": 154,
+                  "cadenceMoy": 161,
+                  "puissanceMoy": 317,
+                  "denivelePosM": 30,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 405,
+                  "allureSecKm": 405,
+                  "gapSecKm": 362,
+                  "fcMoy": 154,
+                  "fcMax": 165,
+                  "cadenceMoy": 158,
+                  "puissanceMoy": 282,
+                  "denivelePosM": 41,
+                  "deniveleNegM": 23,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 398,
+                  "allureSecKm": 398,
+                  "gapSecKm": 389,
+                  "fcMoy": 146,
+                  "fcMax": 163,
+                  "cadenceMoy": 161,
+                  "puissanceMoy": 257,
+                  "denivelePosM": 22,
+                  "deniveleNegM": 30,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 424,
+                  "allureSecKm": 424,
+                  "gapSecKm": 350,
+                  "fcMoy": 164,
+                  "fcMax": 170,
+                  "cadenceMoy": 157,
+                  "puissanceMoy": 303,
+                  "denivelePosM": 62,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 573,
+                  "allureSecKm": 573,
+                  "gapSecKm": 447,
+                  "fcMoy": 149,
+                  "fcMax": 181,
+                  "cadenceMoy": 116,
+                  "puissanceMoy": 201,
+                  "denivelePosM": 71,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 385,
+                  "allureSecKm": 385,
+                  "gapSecKm": 380,
+                  "fcMoy": 144,
+                  "fcMax": 158,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 254,
+                  "denivelePosM": 9,
+                  "deniveleNegM": 13,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 379,
+                  "allureSecKm": 379,
+                  "gapSecKm": 333,
+                  "fcMoy": 157,
+                  "fcMax": 180,
+                  "cadenceMoy": 156,
+                  "puissanceMoy": 305,
+                  "denivelePosM": 50,
+                  "deniveleNegM": 15,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 398,
+                  "allureSecKm": 398,
+                  "gapSecKm": 401,
+                  "fcMoy": 144,
+                  "fcMax": 183,
+                  "cadenceMoy": 154,
+                  "puissanceMoy": 247,
+                  "denivelePosM": 12,
+                  "deniveleNegM": 27,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 400,
+                  "allureSecKm": 400,
+                  "gapSecKm": 383,
+                  "fcMoy": 152,
+                  "fcMax": 166,
+                  "cadenceMoy": 158,
+                  "puissanceMoy": 264,
+                  "denivelePosM": 24,
+                  "deniveleNegM": 14,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 1280,
+                  "allureSecKm": 1280,
+                  "gapSecKm": 1125,
+                  "fcMoy": 117,
+                  "fcMax": 168,
+                  "cadenceMoy": 55,
+                  "puissanceMoy": 73,
+                  "denivelePosM": 55,
+                  "deniveleNegM": 37,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 480,
+                  "allureSecKm": 480,
+                  "gapSecKm": 486,
+                  "fcMoy": 137,
+                  "fcMax": 166,
+                  "cadenceMoy": 125,
+                  "puissanceMoy": 179,
+                  "denivelePosM": 22,
+                  "deniveleNegM": 75,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 509,
+                  "allureSecKm": 509,
+                  "gapSecKm": 545,
+                  "fcMoy": 131,
+                  "fcMax": 146,
+                  "cadenceMoy": 121,
+                  "puissanceMoy": 167,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 79,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 1.0,
+                  "dureeSec": 335,
+                  "allureSecKm": 335,
+                  "gapSecKm": 360,
+                  "fcMoy": 140,
+                  "fcMax": 151,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 274,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 51,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 0.64,
+                  "dureeSec": 194,
+                  "allureSecKm": 303,
+                  "gapSecKm": 317,
+                  "fcMoy": 154,
+                  "fcMax": 160,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": 322,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 22,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 544,
+                  "borneBasse": 99
+                },
+                {
+                  "zone": 2,
+                  "secondes": 1535,
+                  "borneBasse": 118
+                },
+                {
+                  "zone": 3,
+                  "secondes": 2946,
+                  "borneBasse": 138
+                },
+                {
+                  "zone": 4,
+                  "secondes": 1046,
+                  "borneBasse": 158
+                },
+                {
+                  "zone": 5,
+                  "secondes": 163,
+                  "borneBasse": 177
+                }
+              ],
+              "meteo": {
+                "temperatureC": 25.0,
+                "ressentiC": 25.0,
+                "humidite": 44,
+                "ventKmh": 24.1,
+                "description": "Fair",
+                "station": "Avignon-Caumont Airport"
+              }
+            },
+            {
+              "activityId": 24207573196,
+              "dateHeure": "2026-09-02T10:50:41",
+              "date": "2026-09-02",
+              "titre": "Saint-Rémy-de-Provence Course à pied",
+              "type": "running",
+              "lieu": "Saint-Rémy-de-Provence",
+              "distanceKm": 6.47,
+              "dureeSec": 2499,
+              "allureMoySecKm": 387,
+              "gapMoySecKm": 372,
+              "fcMoy": 145,
+              "fcMax": 176,
+              "fcMin": 100,
+              "cadenceMoy": 164,
+              "denivelePosM": 149,
+              "deniveleNegM": 134,
+              "calories": 450,
+              "teAerobie": 3.0,
+              "teAnaerobie": 0.4,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 77.1,
+              "rpe": 50,
+              "ressenti": 75,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 408,
+                  "allureSecKm": 408,
+                  "gapSecKm": 365,
+                  "fcMoy": 139,
+                  "fcMax": 155,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 288,
+                  "denivelePosM": 43,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 430,
+                  "allureSecKm": 430,
+                  "gapSecKm": 385,
+                  "fcMoy": 149,
+                  "fcMax": 170,
+                  "cadenceMoy": 155,
+                  "puissanceMoy": 260,
+                  "denivelePosM": 44,
+                  "deniveleNegM": 23,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 384,
+                  "allureSecKm": 384,
+                  "gapSecKm": 369,
+                  "fcMoy": 153,
+                  "fcMax": 176,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 265,
+                  "denivelePosM": 30,
+                  "deniveleNegM": 52,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 373,
+                  "allureSecKm": 373,
+                  "gapSecKm": 387,
+                  "fcMoy": 138,
+                  "fcMax": 151,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 243,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 36,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 378,
+                  "allureSecKm": 378,
+                  "gapSecKm": 380,
+                  "fcMoy": 139,
+                  "fcMax": 149,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 263,
+                  "denivelePosM": 12,
+                  "deniveleNegM": 18,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 377,
+                  "allureSecKm": 377,
+                  "gapSecKm": 367,
+                  "fcMoy": 145,
+                  "fcMax": 157,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 268,
+                  "denivelePosM": 12,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 0.466,
+                  "dureeSec": 149,
+                  "allureSecKm": 320,
+                  "gapSecKm": 324,
+                  "fcMoy": 158,
+                  "fcMax": 173,
+                  "cadenceMoy": 172,
+                  "puissanceMoy": 306,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 5,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 48,
+                  "borneBasse": 99
+                },
+                {
+                  "zone": 2,
+                  "secondes": 621,
+                  "borneBasse": 118
+                },
+                {
+                  "zone": 3,
+                  "secondes": 1473,
+                  "borneBasse": 138
+                },
+                {
+                  "zone": 4,
+                  "secondes": 357,
+                  "borneBasse": 158
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 177
+                }
+              ],
+              "meteo": {
+                "temperatureC": 26.1,
+                "ressentiC": 26.1,
+                "humidite": 45,
+                "ventKmh": 9.7,
+                "description": "Fair",
+                "station": "Avignon-Caumont Airport"
+              }
+            },
+            {
+              "activityId": 24233053518,
+              "dateHeure": "2026-09-04T09:58:21",
+              "date": "2026-09-04",
+              "titre": "Saint-Rémy-de-Provence Trail",
+              "type": "trail_running",
+              "lieu": "Saint-Rémy-de-Provence",
+              "distanceKm": 17.07,
+              "dureeSec": 7116,
+              "allureMoySecKm": 417,
+              "gapMoySecKm": 392,
+              "fcMoy": 147,
+              "fcMax": 188,
+              "fcMin": 94,
+              "cadenceMoy": 153,
+              "denivelePosM": 502,
+              "deniveleNegM": 494,
+              "calories": 1221,
+              "teAerobie": 4.0,
+              "teAnaerobie": 1.3,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 170.8,
+              "rpe": 70,
+              "ressenti": 50,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 405,
+                  "allureSecKm": 405,
+                  "gapSecKm": 371,
+                  "fcMoy": 144,
+                  "fcMax": 159,
+                  "cadenceMoy": 160,
+                  "puissanceMoy": 292,
+                  "denivelePosM": 41,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 411,
+                  "allureSecKm": 411,
+                  "gapSecKm": 372,
+                  "fcMoy": 153,
+                  "fcMax": 161,
+                  "cadenceMoy": 162,
+                  "puissanceMoy": 287,
+                  "denivelePosM": 39,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 0.633,
+                  "dureeSec": 321,
+                  "allureSecKm": 508,
+                  "gapSecKm": 433,
+                  "fcMoy": 147,
+                  "fcMax": 163,
+                  "cadenceMoy": 136,
+                  "puissanceMoy": 228,
+                  "denivelePosM": 33,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 497,
+                  "allureSecKm": 497,
+                  "gapSecKm": 441,
+                  "fcMoy": 139,
+                  "fcMax": 160,
+                  "cadenceMoy": 135,
+                  "puissanceMoy": 226,
+                  "denivelePosM": 52,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 443,
+                  "allureSecKm": 443,
+                  "gapSecKm": 390,
+                  "fcMoy": 153,
+                  "fcMax": 167,
+                  "cadenceMoy": 146,
+                  "puissanceMoy": 252,
+                  "denivelePosM": 43,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 412,
+                  "allureSecKm": 412,
+                  "gapSecKm": 395,
+                  "fcMoy": 153,
+                  "fcMax": 163,
+                  "cadenceMoy": 162,
+                  "puissanceMoy": 247,
+                  "denivelePosM": 29,
+                  "deniveleNegM": 48,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 501,
+                  "allureSecKm": 501,
+                  "gapSecKm": 420,
+                  "fcMoy": 151,
+                  "fcMax": 166,
+                  "cadenceMoy": 143,
+                  "puissanceMoy": 227,
+                  "denivelePosM": 56,
+                  "deniveleNegM": 24,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 450,
+                  "allureSecKm": 450,
+                  "gapSecKm": 372,
+                  "fcMoy": 156,
+                  "fcMax": 177,
+                  "cadenceMoy": 146,
+                  "puissanceMoy": 273,
+                  "denivelePosM": 60,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 373,
+                  "allureSecKm": 373,
+                  "gapSecKm": 341,
+                  "fcMoy": 152,
+                  "fcMax": 188,
+                  "cadenceMoy": 160,
+                  "puissanceMoy": 275,
+                  "denivelePosM": 40,
+                  "deniveleNegM": 47,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 0.382,
+                  "dureeSec": 119,
+                  "allureSecKm": 312,
+                  "gapSecKm": 340,
+                  "fcMoy": 133,
+                  "fcMax": 135,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": 241,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 28,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 336,
+                  "allureSecKm": 336,
+                  "gapSecKm": 376,
+                  "fcMoy": 140,
+                  "fcMax": 150,
+                  "cadenceMoy": 151,
+                  "puissanceMoy": 177,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 116,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 383,
+                  "allureSecKm": 383,
+                  "gapSecKm": 405,
+                  "fcMoy": 136,
+                  "fcMax": 147,
+                  "cadenceMoy": 150,
+                  "puissanceMoy": 212,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 59,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 13,
+                  "distanceKm": 1.0,
+                  "dureeSec": 365,
+                  "allureSecKm": 365,
+                  "gapSecKm": 374,
+                  "fcMoy": 141,
+                  "fcMax": 156,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 254,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 29,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 14,
+                  "distanceKm": 1.0,
+                  "dureeSec": 386,
+                  "allureSecKm": 386,
+                  "gapSecKm": 395,
+                  "fcMoy": 144,
+                  "fcMax": 153,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 243,
+                  "denivelePosM": 7,
+                  "deniveleNegM": 13,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 15,
+                  "distanceKm": 1.0,
+                  "dureeSec": 500,
+                  "allureSecKm": 501,
+                  "gapSecKm": 473,
+                  "fcMoy": 132,
+                  "fcMax": 154,
+                  "cadenceMoy": 135,
+                  "puissanceMoy": 188,
+                  "denivelePosM": 23,
+                  "deniveleNegM": 15,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 16,
+                  "distanceKm": 1.0,
+                  "dureeSec": 477,
+                  "allureSecKm": 477,
+                  "gapSecKm": 385,
+                  "fcMoy": 153,
+                  "fcMax": 171,
+                  "cadenceMoy": 146,
+                  "puissanceMoy": 246,
+                  "denivelePosM": 59,
+                  "deniveleNegM": 21,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 17,
+                  "distanceKm": 1.0,
+                  "dureeSec": 378,
+                  "allureSecKm": 378,
+                  "gapSecKm": 385,
+                  "fcMoy": 153,
+                  "fcMax": 170,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": 247,
+                  "denivelePosM": 16,
+                  "deniveleNegM": 42,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 18,
+                  "distanceKm": 1.0,
+                  "dureeSec": 339,
+                  "allureSecKm": 339,
+                  "gapSecKm": 357,
+                  "fcMoy": 151,
+                  "fcMax": 157,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": 258,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 38,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 19,
+                  "distanceKm": 0.052,
+                  "dureeSec": 18,
+                  "allureSecKm": 340,
+                  "gapSecKm": 353,
+                  "fcMoy": 155,
+                  "fcMax": 155,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": 269,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 136,
+                  "borneBasse": 99
+                },
+                {
+                  "zone": 2,
+                  "secondes": 1459,
+                  "borneBasse": 118
+                },
+                {
+                  "zone": 3,
+                  "secondes": 4209,
+                  "borneBasse": 138
+                },
+                {
+                  "zone": 4,
+                  "secondes": 1136,
+                  "borneBasse": 158
+                },
+                {
+                  "zone": 5,
+                  "secondes": 162,
+                  "borneBasse": 177
+                }
+              ],
+              "meteo": {
+                "temperatureC": 25.0,
+                "ressentiC": 25.0,
+                "humidite": 44,
+                "ventKmh": 6.4,
+                "description": "Fair",
+                "station": "Avignon-Caumont Airport"
+              }
+            },
+            {
+              "activityId": 24268304485,
+              "dateHeure": "2026-09-07T09:53:45",
+              "date": "2026-09-07",
+              "titre": "Saint-Rémy-de-Provence Trail",
+              "type": "trail_running",
+              "lieu": "Saint-Rémy-de-Provence",
+              "distanceKm": 9.33,
+              "dureeSec": 4130,
+              "allureMoySecKm": 442,
+              "gapMoySecKm": 417,
+              "fcMoy": 145,
+              "fcMax": 181,
+              "fcMin": 68,
+              "cadenceMoy": 147,
+              "denivelePosM": 266,
+              "deniveleNegM": 262,
+              "calories": 685,
+              "teAerobie": 3.2,
+              "teAnaerobie": 0.2,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 93.7,
+              "rpe": 50,
+              "ressenti": 0,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 411,
+                  "allureSecKm": 411,
+                  "gapSecKm": 369,
+                  "fcMoy": 136,
+                  "fcMax": 154,
+                  "cadenceMoy": 161,
+                  "puissanceMoy": 284,
+                  "denivelePosM": 37,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 418,
+                  "allureSecKm": 418,
+                  "gapSecKm": 377,
+                  "fcMoy": 156,
+                  "fcMax": 166,
+                  "cadenceMoy": 160,
+                  "puissanceMoy": 283,
+                  "denivelePosM": 44,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 546,
+                  "allureSecKm": 546,
+                  "gapSecKm": 477,
+                  "fcMoy": 143,
+                  "fcMax": 168,
+                  "cadenceMoy": 125,
+                  "puissanceMoy": 203,
+                  "denivelePosM": 48,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 679,
+                  "allureSecKm": 679,
+                  "gapSecKm": 487,
+                  "fcMoy": 152,
+                  "fcMax": 165,
+                  "cadenceMoy": 116,
+                  "puissanceMoy": 197,
+                  "denivelePosM": 90,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 413,
+                  "allureSecKm": 413,
+                  "gapSecKm": 398,
+                  "fcMoy": 145,
+                  "fcMax": 181,
+                  "cadenceMoy": 157,
+                  "puissanceMoy": 240,
+                  "denivelePosM": 30,
+                  "deniveleNegM": 43,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 442,
+                  "allureSecKm": 442,
+                  "gapSecKm": 445,
+                  "fcMoy": 147,
+                  "fcMax": 155,
+                  "cadenceMoy": 140,
+                  "puissanceMoy": 184,
+                  "denivelePosM": 17,
+                  "deniveleNegM": 73,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 372,
+                  "allureSecKm": 371,
+                  "gapSecKm": 396,
+                  "fcMoy": 141,
+                  "fcMax": 149,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 232,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 45,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 368,
+                  "allureSecKm": 368,
+                  "gapSecKm": 399,
+                  "fcMoy": 139,
+                  "fcMax": 147,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 230,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 48,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 362,
+                  "allureSecKm": 362,
+                  "gapSecKm": 387,
+                  "fcMoy": 142,
+                  "fcMax": 150,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 238,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 44,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 0.333,
+                  "dureeSec": 119,
+                  "allureSecKm": 359,
+                  "gapSecKm": 372,
+                  "fcMoy": 143,
+                  "fcMax": 148,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 253,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 31,
+                  "borneBasse": 99
+                },
+                {
+                  "zone": 2,
+                  "secondes": 802,
+                  "borneBasse": 118
+                },
+                {
+                  "zone": 3,
+                  "secondes": 2642,
+                  "borneBasse": 138
+                },
+                {
+                  "zone": 4,
+                  "secondes": 616,
+                  "borneBasse": 158
+                },
+                {
+                  "zone": 5,
+                  "secondes": 7,
+                  "borneBasse": 177
+                }
+              ],
+              "meteo": {
+                "temperatureC": 27.2,
+                "ressentiC": 28.3,
+                "humidite": 66,
+                "ventKmh": 4.8,
+                "description": "Fair",
+                "station": "Avignon-Caumont Airport"
+              }
+            },
+            {
+              "activityId": 24297674600,
+              "dateHeure": "2026-09-09T15:52:38",
+              "date": "2026-09-09",
+              "titre": "Saint-Rémy-de-Provence Trail",
+              "type": "trail_running",
+              "lieu": "Saint-Rémy-de-Provence",
+              "distanceKm": 5.05,
+              "dureeSec": 1822,
+              "allureMoySecKm": 361,
+              "gapMoySecKm": 344,
+              "fcMoy": 147,
+              "fcMax": 192,
+              "fcMin": 88,
+              "cadenceMoy": 154,
+              "denivelePosM": 151,
+              "deniveleNegM": 143,
+              "calories": 340,
+              "teAerobie": 2.9,
+              "teAnaerobie": 2.3,
+              "teLabel": "TEMPO",
+              "chargeEntrainement": 105.1,
+              "rpe": 30,
+              "ressenti": 75,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 378,
+                  "allureSecKm": 379,
+                  "gapSecKm": 346,
+                  "fcMoy": 147,
+                  "fcMax": 184,
+                  "cadenceMoy": 150,
+                  "puissanceMoy": 296,
+                  "denivelePosM": 36,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 422,
+                  "allureSecKm": 422,
+                  "gapSecKm": 381,
+                  "fcMoy": 140,
+                  "fcMax": 166,
+                  "cadenceMoy": 146,
+                  "puissanceMoy": 258,
+                  "denivelePosM": 45,
+                  "deniveleNegM": 21,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 392,
+                  "allureSecKm": 392,
+                  "gapSecKm": 354,
+                  "fcMoy": 141,
+                  "fcMax": 171,
+                  "cadenceMoy": 160,
+                  "puissanceMoy": 297,
+                  "denivelePosM": 50,
+                  "deniveleNegM": 26,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 398,
+                  "allureSecKm": 398,
+                  "gapSecKm": 393,
+                  "fcMoy": 147,
+                  "fcMax": 171,
+                  "cadenceMoy": 154,
+                  "puissanceMoy": 238,
+                  "denivelePosM": 18,
+                  "deniveleNegM": 56,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 219,
+                  "allureSecKm": 219,
+                  "gapSecKm": 236,
+                  "fcMoy": 167,
+                  "fcMax": 191,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 393,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 39,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 0.047,
+                  "dureeSec": 13,
+                  "allureSecKm": 287,
+                  "gapSecKm": 256,
+                  "fcMoy": 191,
+                  "fcMax": 192,
+                  "cadenceMoy": 177,
+                  "puissanceMoy": 410,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 25,
+                  "borneBasse": 99
+                },
+                {
+                  "zone": 2,
+                  "secondes": 624,
+                  "borneBasse": 118
+                },
+                {
+                  "zone": 3,
+                  "secondes": 723,
+                  "borneBasse": 138
+                },
+                {
+                  "zone": 4,
+                  "secondes": 234,
+                  "borneBasse": 158
+                },
+                {
+                  "zone": 5,
+                  "secondes": 194,
+                  "borneBasse": 177
+                }
+              ],
+              "meteo": {
+                "temperatureC": 22.8,
+                "ressentiC": 22.8,
+                "humidite": 47,
+                "ventKmh": 30.6,
+                "description": "Fair",
+                "station": "Avignon-Caumont Airport"
+              }
+            },
+            {
+              "activityId": 24324900978,
+              "dateHeure": "2026-09-11T19:20:37",
+              "date": "2026-09-11",
+              "titre": "Libercourt - seuil 3*2km",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 10.72,
+              "dureeSec": 3755,
+              "allureMoySecKm": 350,
+              "gapMoySecKm": 351,
+              "fcMoy": 142,
+              "fcMax": 162,
+              "fcMin": 82,
+              "cadenceMoy": 164,
+              "denivelePosM": 10,
+              "deniveleNegM": 9,
+              "calories": 689,
+              "teAerobie": 3.4,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 109.8,
+              "rpe": 50,
+              "ressenti": 100,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 387,
+                  "allureSecKm": 387,
+                  "gapSecKm": 382,
+                  "fcMoy": 130,
+                  "fcMax": 144,
+                  "cadenceMoy": 160,
+                  "puissanceMoy": 253,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 0,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 385,
+                  "allureSecKm": 385,
+                  "gapSecKm": 389,
+                  "fcMoy": 124,
+                  "fcMax": 131,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 253,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 0,
+                  "intensite": "WARMUP"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 312,
+                  "allureSecKm": 312,
+                  "gapSecKm": 318,
+                  "fcMoy": 144,
+                  "fcMax": 152,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 312,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 316,
+                  "allureSecKm": 316,
+                  "gapSecKm": 320,
+                  "fcMoy": 146,
+                  "fcMax": 156,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 302,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 1,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 0.362,
+                  "dureeSec": 150,
+                  "allureSecKm": 414,
+                  "gapSecKm": 406,
+                  "fcMoy": 137,
+                  "fcMax": 146,
+                  "cadenceMoy": 159,
+                  "puissanceMoy": 234,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 2,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 317,
+                  "allureSecKm": 317,
+                  "gapSecKm": 319,
+                  "fcMoy": 146,
+                  "fcMax": 151,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 304,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 1,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 319,
+                  "allureSecKm": 319,
+                  "gapSecKm": 318,
+                  "fcMoy": 151,
+                  "fcMax": 159,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 305,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 0.344,
+                  "dureeSec": 150,
+                  "allureSecKm": 436,
+                  "gapSecKm": 421,
+                  "fcMoy": 141,
+                  "fcMax": 153,
+                  "cadenceMoy": 153,
+                  "puissanceMoy": 219,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "RECOVERY"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 313,
+                  "allureSecKm": 313,
+                  "gapSecKm": 320,
+                  "fcMoy": 153,
+                  "fcMax": 159,
+                  "cadenceMoy": 167,
+                  "puissanceMoy": 303,
+                  "denivelePosM": 2,
+                  "deniveleNegM": 1,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 319,
+                  "allureSecKm": 319,
+                  "gapSecKm": 321,
+                  "fcMoy": 156,
+                  "fcMax": 162,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 302,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "ACTIVE"
+                },
+                {
+                  "index": 11,
+                  "distanceKm": 1.0,
+                  "dureeSec": 391,
+                  "allureSecKm": 391,
+                  "gapSecKm": 387,
+                  "fcMoy": 142,
+                  "fcMax": 158,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 244,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 2,
+                  "intensite": "COOLDOWN"
+                },
+                {
+                  "index": 12,
+                  "distanceKm": 1.0,
+                  "dureeSec": 392,
+                  "allureSecKm": 392,
+                  "gapSecKm": 386,
+                  "fcMoy": 136,
+                  "fcMax": 143,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 249,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 0,
+                  "intensite": "COOLDOWN"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 26,
+                  "borneBasse": 99
+                },
+                {
+                  "zone": 2,
+                  "secondes": 1202,
+                  "borneBasse": 118
+                },
+                {
+                  "zone": 3,
+                  "secondes": 2391,
+                  "borneBasse": 138
+                },
+                {
+                  "zone": 4,
+                  "secondes": 121,
+                  "borneBasse": 158
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 177
+                }
+              ],
+              "meteo": {
+                "temperatureC": 21.1,
+                "ressentiC": 21.1,
+                "humidite": 69,
+                "ventKmh": 9.7,
+                "description": "Partly Cloudy",
+                "station": "Lille"
+              }
             }
           ],
           "journal": [

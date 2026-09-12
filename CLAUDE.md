@@ -31,13 +31,18 @@ Pour **toute question d'entraînement, d'allure, d'adaptation ou de comportement
 
 | Fichier | Qui l'édite | Rôle |
 |---|---|---|
-| `garmin.csv` | **L'utilisateur** | Export Garmin (format FR), séances réellement effectuées. |
+| `garmin.csv` | `garmin_sync.py` ou **l'utilisateur** | Séances réellement effectuées, au format de l'export Garmin. Synchronisé automatiquement, complétable à la main. |
 | `journal.md` | **L'utilisateur** | Journal par semaine (`## Semaine N`) : humeur, blessures, météo, ressenti. |
 | `objectifs.json` | Skill `/prepa-init` | Course, date, chrono visé, allures cibles, références, contraintes. |
 | `plan.json` | Skills | Plan complet : semaines → séances, avec statuts. |
 | `activites.json` | **Généré** | Version normalisée de `garmin.csv`. Ne jamais éditer à la main. |
+| `garmin_raw/<id>.json` | `garmin_sync.py --details` | Dump brut d'une séance (~40 Ko) : splits, zones FC, météo. **Ne jamais lire directement.** |
+| `detail_seances.json` | **Généré** | Extrait utile des dumps (~3 Ko/séance). C'est *cette* source qu'on lit. |
+| `etat_analyse.json` | `analyze.py --marquer-analysees` | Séances déjà passées en revue, pour ne pas les réanalyser. |
 
-Seuls `garmin.csv` et `journal.md` sont édités à la main. Tout le reste est géré par les skills.
+Seuls `garmin.csv` et `journal.md` sont éditables à la main — et `garmin.csv` est normalement rempli par `garmin_sync.py`. Tout le reste est géré par les skills.
+
+Avec `--details`, `garmin_sync.py` archive aussi `data/garmin_raw/<activityId>.json` : splits par km, temps dans chaque zone FC, training effect aérobie **et** anaérobie, météo, VO2max. Ces données n'existent pas dans l'export CSV et ne sont pas encore exploitées par la vue.
 
 ## Règle d'or : régénérer la vue
 
@@ -51,6 +56,39 @@ python3 scripts/build_data.py --profil thibaut --prepa marathon-2026-10   # 1 pr
 
 Le script scanne `profiles/*/prepas/*/data/`, parse chaque `garmin.csv` → `activites.json`, valide `plan.json`/`objectifs.json` contre `coach/SCHEMA.md`, et écrit un **catalogue complet** dans `vue/data.js` (`window.PREPA_DATA = { profils: [{ id, nom, prepaActive, prepas: [...] }] }`). Il affiche `❌ VALIDATION …` en cas d'écart de contrat — **toujours vérifier sa sortie**.
 
+## Synchronisation Garmin
+
+`scripts/garmin_sync.py` récupère les activités depuis Garmin Connect et les ajoute à `garmin.csv`, au format exact de l'export officiel (il réutilise les en-têtes du fichier existant). Plus besoin de copier les séances à la main.
+
+```bash
+.venv/bin/python scripts/garmin_sync.py --profil thibaut --prepa marathon-2026-10            # depuis la dernière activité connue
+.venv/bin/python scripts/garmin_sync.py --profil thibaut --prepa marathon-2026-10 --dry-run  # aperçu, n'écrit rien
+.venv/bin/python scripts/garmin_sync.py --profil thibaut --prepa marathon-2026-10 --depuis 2026-09-01 --details
+.venv/bin/python scripts/garmin_sync.py --profil camille --prepa marathon-2026-10            # autre athlète, autre compte Garmin
+```
+
+- **Dépendances** : ce script est le seul à sortir de la stdlib (`garminconnect`). Il tourne dans `.venv/` (Python 3.12) — les autres scripts restent en `python3` système.
+- **Identifiants, un jeu par profil** : `GARMIN_EMAIL` / `GARMIN_PASSWORD` dans **`profiles/<profil>/.env`** — chaque athlète a son compte Garmin. Un `.env` à la racine sert de repli pour les profils sans fichier dédié (voir `.env.example`) ; tous sont gitignorés.
+- **Sessions isolées** : les tokens OAuth sont cachés dans `~/.garminconnect/<profil>` (~1 an), un dossier par athlète — deux profils ne s'écrasent donc jamais.
+- **Garde-fou d'identité** : au premier sync réussi, le compte Garmin connecté est mémorisé dans `profile.json` (`garminDisplayName`). Aux suivants, un compte qui ne correspond pas **arrête** le sync au lieu d'écrire les activités d'un athlète dans le CSV d'un autre.
+- **Idempotent** : dédoublonnage par date+heure, relançable sans créer de doublons.
+- Après sync, **toujours** relancer `build_data.py` (règle d'or ci-dessus).
+
+## Détail des séances : deux niveaux, à ne pas confondre
+
+Les dumps `garmin_raw/` sont volumineux et bruyants. `scripts/details.py` en extrait une **fiche compacte** par séance (tours, zones FC, météo, training effect), matérialisée dans `detail_seances.json` et injectée dans la vue. **Rien ne lit le brut, ni la vue ni le coach.**
+
+| Niveau | Source | Commande | Usage |
+|---|---|---|---|
+| Global | `activites.json` | `analyze.py …` | Tendances de fond (volume, allures, FC) sur tout l'historique. |
+| Détaillé | `detail_seances.json` | `analyze.py … --nouvelles` | Exécution d'une séance : tours, dérive FC, récups. Séances neuves uniquement. |
+
+```bash
+python3 scripts/analyze.py --profil thibaut --prepa marathon-2026-10 --nouvelles          # séances jamais analysées
+python3 scripts/analyze.py --profil thibaut --prepa marathon-2026-10 --seance 2026-09-11  # une séance précise
+python3 scripts/analyze.py --profil thibaut --prepa marathon-2026-10 --marquer-analysees  # clôture (fin de /prepa-update)
+```
+
 ## Contrat de données & analyse
 
 - **[`coach/SCHEMA.md`](coach/SCHEMA.md)** — forme exacte d'`objectifs.json` et `plan.json` attendue par la vue. **Fait foi**.
@@ -59,7 +97,15 @@ Le script scanne `profiles/*/prepas/*/data/`, parse chaque `garmin.csv` → `act
 
 ## La vue (`vue/`)
 
-Page web autonome : ouvrir `vue/index.html` par double-clic. Dans le header, deux dropdowns (**Profil** / **Prépa**) permettent de basculer entre les prépas ; la sélection est persistée en `localStorage`. Quatre onglets : Dashboard, Plan, Stats, Journal.
+Page web autonome : ouvrir `vue/index.html` par double-clic. Dans le header, deux dropdowns (**Profil** / **Prépa**) permettent de basculer entre les prépas ; la sélection est persistée en `localStorage`. Cinq onglets : Tableau de bord, **Séances**, Stats, Journal, Profil.
+
+L'onglet **Séances** navigue sortie par sortie (liste chronologique + fiche détaillée : graphe d'allure par tour, zones de FC, météo), alimenté par `detail_seances.json`. Flèches ◀ ▶ ou touches gauche/droite pour passer d'une séance à l'autre.
+
+Le tableau se lit en deux modes, via la bascule **Blocs / Tours** :
+- **Blocs** (défaut) — les tours consécutifs de même intensité sont regroupés : les 3×2 km d'un seuil apparaissent en 3 lignes, avec allure et FC agrégées (FC pondérée par la durée) et le détail km par km en colonne. C'est la lecture utile pour juger l'exécution d'une séance à blocs.
+- **Tours** — le découpage brut de la montre.
+
+La bascule n'apparaît que sur les séances **structurées** (dont les tours mélangent plusieurs intensités). Sur une sortie en auto-lap, tout serait fondu en un bloc unique : la vue reste donc km par km.
 
 ## Skills
 

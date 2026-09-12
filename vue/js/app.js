@@ -9,6 +9,9 @@ let OBJ = {};
 let PLAN = { semaines: [] };
 let ACTS = [];
 let JOURNAL = [];
+let DETAILS = [];
+let SEANCE_SEL = null;
+let SX_MODE = "blocs"; // "blocs" | "tours" — ignoré si la séance n'est pas structurée
 let VIEW_WEEK_IDX = null;
 
 /* ------------------------------------------------------------------ */
@@ -735,6 +738,291 @@ function renderJournal() {
   root.appendChild(card);
 }
 
+
+/* ------------------------------------------------------------------ */
+/* Séances — navigation sortie par sortie (données garmin_raw)         */
+/* ------------------------------------------------------------------ */
+/* Les fiches détaillées portent le typeKey Garmin (running, trail_running…),
+   pas les types du plan (EF, SL, Renfo) gérés par typeIcon(). */
+const ICONE_GARMIN = {
+  running: "🏃", track_running: "🏃", treadmill_running: "🏃", indoor_running: "🏃",
+  trail_running: "⛰️", hiking: "🥾", walking: "🚶",
+  cycling: "🚴", road_biking: "🚴", mountain_biking: "🚵", gravel_cycling: "🚴",
+  indoor_cycling: "🚴", virtual_ride: "🚴",
+  strength_training: "💪", indoor_cardio: "🤸", yoga: "🧘",
+  lap_swimming: "🏊", open_water_swimming: "🏊", rowing: "🚣", elliptical: "🏋️",
+};
+function iconeGarmin(typeKey) {
+  return ICONE_GARMIN[typeKey] || "🏃";
+}
+
+const INTENSITE_LABEL = {
+  WARMUP: "échauffement",
+  ACTIVE: "actif",
+  INTERVAL: "intervalle",
+  REST: "récup",
+  RECOVERY: "récup",
+  COOLDOWN: "retour au calme",
+};
+
+/* Une séance est "structurée" si ses tours mélangent plusieurs intensités
+   (échauffement / actif / récup). Sur une sortie en auto-lap, Garmin marque
+   tous les kilomètres INTERVAL : les mettre en avant n'apprendrait rien. */
+/* Dénivelé net d'un tour : D+ moins D-, signé. Une portion descendante
+   ressort en négatif, ce qu'un simple D+ masquerait. */
+function deniveleNet(tour) {
+  const pos = tour.denivelePosM || 0;
+  const neg = tour.deniveleNegM || 0;
+  const net = Math.round(pos - neg);
+  if (net === 0) return `<span class="muted">0</span>`;
+  return `${net > 0 ? "+" : "−"}${Math.abs(net)}`;
+}
+
+/* Regroupe les tours CONSÉCUTIFS de même intensité : deux tours ACTIVE qui
+   se suivent forment un bloc de 2 km, un tour REST isolé reste une récup.
+   On ne devine rien — c'est le découpage que la montre a enregistré. */
+function grouperEnBlocs(tours) {
+  const blocs = [];
+  (tours || []).forEach((t) => {
+    const dernier = blocs[blocs.length - 1];
+    if (dernier && dernier.intensite === t.intensite) dernier.tours.push(t);
+    else blocs.push({ intensite: t.intensite, tours: [t] });
+  });
+
+  let nActif = 0;
+  return blocs.map((b) => {
+    const distanceKm = b.tours.reduce((s, x) => s + (x.distanceKm || 0), 0);
+    const dureeSec = b.tours.reduce((s, x) => s + (x.dureeSec || 0), 0);
+    const actif = b.intensite === "ACTIVE" || b.intensite === "INTERVAL";
+    if (actif) nActif += 1;
+    // FC moyenne pondérée par la durée : une récup courte ne doit pas peser
+    // autant qu'un kilomètre d'effort.
+    const avecFc = b.tours.filter((x) => x.fcMoy);
+    const totalFc = avecFc.reduce((s, x) => s + (x.dureeSec || 0), 0);
+    return {
+      intensite: b.intensite,
+      actif,
+      libelle: actif ? `Bloc ${nActif}` : INTENSITE_LABEL[b.intensite] || "tour",
+      tours: b.tours,
+      distanceKm,
+      dureeSec,
+      allureSecKm: distanceKm > 0 ? Math.round(dureeSec / distanceKm) : null,
+      fcMoy: totalFc ? Math.round(avecFc.reduce((s, x) => s + x.fcMoy * (x.dureeSec || 0), 0) / totalFc) : null,
+      fcMax: Math.max(0, ...b.tours.map((x) => x.fcMax || 0)) || null,
+      fcDebut: b.tours[0].fcMoy || null,
+      fcFin: b.tours[b.tours.length - 1].fcMoy || null,
+      denivelePosM: b.tours.reduce((s, x) => s + (x.denivelePosM || 0), 0),
+      deniveleNegM: b.tours.reduce((s, x) => s + (x.deniveleNegM || 0), 0),
+    };
+  });
+}
+
+function estStructuree(tours) {
+  return new Set((tours || []).map((t) => t.intensite)).size > 1;
+}
+
+function seanceCourante() {
+  return DETAILS.find((d) => d.activityId === SEANCE_SEL) || DETAILS[0] || null;
+}
+
+function renderSeances() {
+  const root = document.getElementById("tab-seances");
+  if (!DETAILS.length) {
+    root.innerHTML = `<div class="empty">Aucun détail de séance.<br>
+      Lance <b>garmin_sync.py --backfill</b> puis <b>build_data.py</b> pour les récupérer.</div>`;
+    return;
+  }
+  root.innerHTML = `
+    <div class="sx-layout">
+      <aside class="card sx-list" id="sx-list"></aside>
+      <div class="card sx-detail" id="sx-detail"></div>
+    </div>`;
+  renderSeanceList();
+  renderSeanceDetail();
+}
+
+function renderSeanceList() {
+  const host = document.getElementById("sx-list");
+  if (!host) return;
+  host.innerHTML = "";
+  let moisCourant = null;
+  DETAILS.forEach((d) => {
+    const mois = (d.date || "").slice(0, 7);
+    if (mois !== moisCourant) {
+      moisCourant = mois;
+      const dt = parseISO(d.date);
+      host.appendChild(el(`<div class="sx-month">${dt ? MOIS[dt.getMonth()] + " " + dt.getFullYear() : mois}</div>`));
+    }
+    const actif = d.activityId === SEANCE_SEL ? " actif" : "";
+    const item = el(`
+      <button class="sx-item${actif}" data-id="${d.activityId}" type="button">
+        <span class="sx-item-date">${fmtDate(d.date, true)}</span>
+        <span class="sx-item-titre">${iconeGarmin(d.type)} ${escapeHtml(d.titre || "Séance")}</span>
+        <span class="sx-item-meta">${km(d.distanceKm)} km · ${fmtPace(d.allureMoySecKm)}/km${d.fcMoy ? " · FC " + d.fcMoy : ""}</span>
+      </button>`);
+    item.addEventListener("click", () => selectSeance(d.activityId));
+    host.appendChild(item);
+  });
+}
+
+function selectSeance(id) {
+  SEANCE_SEL = id;
+  renderSeanceList();
+  renderSeanceDetail();
+  const actif = document.querySelector(".sx-item.actif");
+  if (actif) actif.scrollIntoView({ block: "nearest" });
+}
+
+function decaleSeance(pas) {
+  const i = DETAILS.findIndex((d) => d.activityId === SEANCE_SEL);
+  const suivant = DETAILS[i + pas];
+  if (suivant) selectSeance(suivant.activityId);
+}
+
+function kpiTile(label, valeur, unite, sub) {
+  return `<div class="kpi"><div class="kpi-label">${label}</div>
+    <div class="kpi-val">${valeur}${unite ? `<span class="kpi-unit">${unite}</span>` : ""}</div>
+    ${sub ? `<div class="kpi-sub">${sub}</div>` : ""}</div>`;
+}
+
+function renderSeanceDetail() {
+  const host = document.getElementById("sx-detail");
+  const d = seanceCourante();
+  if (!host || !d) return;
+  const i = DETAILS.findIndex((x) => x.activityId === d.activityId);
+
+  const kpis = [
+    kpiTile("Distance", km(d.distanceKm, 2), " km"),
+    kpiTile("Durée", fmtDur(d.dureeSec), ""),
+    kpiTile("Allure", fmtPace(d.allureMoySecKm), " /km"),
+    kpiTile("FC moy", d.fcMoy || "--", "", d.fcMax ? `max ${d.fcMax}` : ""),
+    kpiTile("D+", d.denivelePosM != null ? d.denivelePosM : "--", " m"),
+    kpiTile("Cadence", d.cadenceMoy || "--", " ppm"),
+  ].join("");
+
+  const m = d.meteo || {};
+  const meteoHtml = m.temperatureC != null
+    ? `<span class="chip">🌡️ ${m.temperatureC}°C${m.ressentiC != null && m.ressentiC !== m.temperatureC ? ` (ressenti ${m.ressentiC}°)` : ""}</span>
+       <span class="chip">💨 ${m.ventKmh} km/h</span>
+       <span class="chip">💧 ${m.humidite}%</span>`
+    : "";
+  const teHtml = d.teAerobie != null
+    ? `<span class="chip">TE aéro ${d.teAerobie}</span>
+       <span class="chip">TE anaéro ${d.teAnaerobie != null ? d.teAnaerobie : "--"}</span>
+       ${d.chargeEntrainement != null ? `<span class="chip">charge ${d.chargeEntrainement}</span>` : ""}`
+    : "";
+
+  // Sous 30 s la zone est du bruit de transition ; sous 5 % de la séance,
+  // le segment est trop étroit pour porter un libellé lisible.
+  const zones = (d.zonesFC || []).filter((z) => (z.secondes || 0) >= 30);
+  const totalZ = zones.reduce((s, z) => s + z.secondes, 0) || 1;
+  const zonesHtml = zones.length
+    ? `<div class="section-title">Temps par zone de FC</div>
+       <div class="sx-zones">
+         ${zones.map((z) => `
+           <div class="sx-zone" style="flex:${z.secondes}" title="Zone ${z.zone} — ${Math.round(z.secondes / 60)} min">
+             <div class="sx-zone-bar z${z.zone}"></div>
+             ${z.secondes / totalZ >= 0.05
+               ? `<div class="sx-zone-lbl">Z${z.zone}<br><span class="muted">${Math.round(z.secondes / 60)}'</span></div>`
+               : ""}
+           </div>`).join("")}
+       </div>`
+    : "";
+
+  const tours = d.tours || [];
+  const structuree = estStructuree(tours);
+  const parBlocs = structuree && SX_MODE === "blocs";
+  const blocs = parBlocs ? grouperEnBlocs(tours) : [];
+
+  const bascule = structuree
+    ? `<div class="sx-switch">
+         <button type="button" class="${parBlocs ? "on" : ""}" data-mode="blocs">Blocs</button>
+         <button type="button" class="${parBlocs ? "" : "on"}" data-mode="tours">Tours</button>
+       </div>`
+    : "";
+
+  const ligneBloc = (b) => `
+    <tr class="${b.actif ? "sx-actif" : ""}">
+      <td>${b.libelle}</td>
+      <td>${km(b.distanceKm, 2)}</td>
+      <td>${fmtDur(b.dureeSec)}</td>
+      <td><b>${fmtPace(b.allureSecKm)}</b></td>
+      <td>${b.fcMoy || "--"}${b.fcMax ? ` <span class="muted">/${b.fcMax}</span>` : ""}</td>
+      <td class="sx-detail-cell">${b.tours.length > 1
+        ? b.tours.map((x) => fmtPace(x.allureSecKm)).join(" · ")
+        : '<span class="muted">—</span>'}</td>
+      <td>${deniveleNet(b)}</td>
+    </tr>`;
+
+  const ligneTour = (x) => `
+    <tr class="${structuree && (x.intensite === "ACTIVE" || x.intensite === "INTERVAL") ? "sx-actif" : ""}">
+      <td>${x.index}</td>
+      ${structuree ? `<td>${INTENSITE_LABEL[x.intensite] || "--"}</td>` : ""}
+      <td>${km(x.distanceKm, 2)}</td>
+      <td>${fmtDur(x.dureeSec)}</td>
+      <td><b>${fmtPace(x.allureSecKm)}</b></td>
+      <td>${x.fcMoy || "--"}${x.fcMax ? ` <span class="muted">/${x.fcMax}</span>` : ""}</td>
+      <td>${deniveleNet(x)}</td>
+    </tr>`;
+
+  const titre = parBlocs
+    ? `${blocs.filter((b) => b.actif).length} bloc(s) d'effort`
+    : `${tours.length} tours${structuree ? "" : ` <span class="muted small">· auto-lap, séance non structurée</span>`}`;
+
+  const enTete = parBlocs
+    ? `<tr><th>Bloc</th><th>Dist.</th><th>Temps</th><th>Allure</th><th>FC</th><th>Détail / km</th><th>Dénivelé</th></tr>`
+    : `<tr><th>#</th>${structuree ? "<th>Type</th>" : ""}<th>Dist.</th><th>Temps</th><th>Allure</th><th>FC</th><th>Dénivelé</th></tr>`;
+
+  const toursHtml = tours.length
+    ? `<div class="sx-tours-head">
+         <div class="section-title">${titre}</div>
+         ${bascule}
+       </div>
+       <div class="chart-box sx-chart"><canvas id="sx-canvas"></canvas></div>
+       <div class="table-wrap"><table class="sx-table">
+         <thead>${enTete}</thead>
+         <tbody>${(parBlocs ? blocs.map(ligneBloc) : tours.map(ligneTour)).join("")}</tbody>
+       </table></div>`
+    : `<div class="empty">Pas de découpage en tours pour cette séance.</div>`;
+
+  host.innerHTML = `
+    <div class="sx-head">
+      <button class="sx-nav" id="sx-prev" type="button" ${i >= DETAILS.length - 1 ? "disabled" : ""} title="Séance précédente">◀</button>
+      <div class="sx-head-txt">
+        <h2>${iconeGarmin(d.type)} ${escapeHtml(d.titre || "Séance")}</h2>
+        <p class="muted">${fmtDate(d.date, true)}${d.lieu ? " · " + escapeHtml(d.lieu) : ""}</p>
+      </div>
+      <button class="sx-nav" id="sx-next" type="button" ${i <= 0 ? "disabled" : ""} title="Séance suivante">▶</button>
+    </div>
+    <div class="kpis sx-kpis">${kpis}</div>
+    <div class="chips">${teHtml}${meteoHtml}</div>
+    ${zonesHtml}
+    ${toursHtml}`;
+
+  const prev = document.getElementById("sx-prev");
+  const next = document.getElementById("sx-next");
+  if (prev) prev.addEventListener("click", () => decaleSeance(1));
+  if (next) next.addEventListener("click", () => decaleSeance(-1));
+
+  host.querySelectorAll(".sx-switch button").forEach((b) =>
+    b.addEventListener("click", () => {
+      SX_MODE = b.dataset.mode;
+      renderSeanceDetail();
+    })
+  );
+
+  const canvas = document.getElementById("sx-canvas");
+  if (canvas && tours.length) chartTours(canvas, tours, structuree);
+}
+
+/* Flèches clavier quand l'onglet Séances est actif */
+document.addEventListener("keydown", (e) => {
+  if (CURRENT_TAB !== "seances") return;
+  if (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
+  if (e.key === "ArrowLeft") { decaleSeance(1); e.preventDefault(); }
+  if (e.key === "ArrowRight") { decaleSeance(-1); e.preventDefault(); }
+});
+
 /* ------------------------------------------------------------------ */
 /* Profil                                                              */
 /* ------------------------------------------------------------------ */
@@ -869,7 +1157,7 @@ function renderProfil() {
 /* ------------------------------------------------------------------ */
 /* Sélecteur + tabs + thème                                            */
 /* ------------------------------------------------------------------ */
-const RENDERERS = { dashboard: renderDashboard, stats: renderStats, journal: renderJournal, profil: renderProfil };
+const RENDERERS = { dashboard: renderDashboard, seances: renderSeances, stats: renderStats, journal: renderJournal, profil: renderProfil };
 let RENDERED = {};
 let CURRENT_TAB = "dashboard";
 
@@ -905,6 +1193,8 @@ function applySelection(profil, prepa) {
   PLAN = (prepa && prepa.plan) || { semaines: [] };
   ACTS = (prepa && prepa.activites) || [];
   JOURNAL = (prepa && prepa.journal) || [];
+  DETAILS = ((prepa && prepa.details) || []).slice().sort((a, b) => (b.dateHeure || "").localeCompare(a.dateHeure || ""));
+  SEANCE_SEL = DETAILS.length ? DETAILS[0].activityId : null;
   VIEW_WEEK_IDX = null;
   RENDERED = {};
   saveSelection();

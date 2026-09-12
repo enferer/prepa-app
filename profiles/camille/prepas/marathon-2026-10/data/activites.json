@@ -30,7 +30,9 @@
     "altitudeMinM": 41,
     "altitudeMaxM": 61,
     "date": "2025-11-25",
-    "dateHeure": "2025-11-25T19:42:30"
+    "dateHeure": "2025-11-25T19:42:30",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -63,7 +65,9 @@
     "altitudeMinM": 37,
     "altitudeMaxM": 61,
     "date": "2025-11-26",
-    "dateHeure": "2025-11-26T17:20:26"
+    "dateHeure": "2025-11-26T17:20:26",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -96,7 +100,9 @@
     "altitudeMinM": 43,
     "altitudeMaxM": 62,
     "date": "2025-11-28",
-    "dateHeure": "2025-11-28T12:23:49"
+    "dateHeure": "2025-11-28T12:23:49",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -129,7 +135,9 @@
     "altitudeMinM": 27,
     "altitudeMaxM": 55,
     "date": "2025-11-30",
-    "dateHeure": "2025-11-30T14:57:34"
+    "dateHeure": "2025-11-30T14:57:34",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -162,7 +170,9 @@
     "altitudeMinM": 37,
     "altitudeMaxM": 61,
     "date": "2025-12-03",
-    "dateHeure": "2025-12-03T17:27:11"
+    "dateHeure": "2025-12-03T17:27:11",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -195,7 +205,9 @@
     "altitudeMinM": 41,
     "altitudeMaxM": 61,
     "date": "2025-12-05",
-    "dateHeure": "2025-12-05T17:54:33"
+    "dateHeure": "2025-12-05T17:54:33",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -228,7 +240,9 @@
     "altitudeMinM": 41,
     "altitudeMaxM": 61,
     "date": "2025-12-09",
-    "dateHeure": "2025-12-09T19:44:49"
+    "dateHeure": "2025-12-09T19:44:49",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -261,7 +275,9 @@
     "altitudeMinM": 41,
     "altitudeMaxM": 61,
     "date": "2025-12-10",
-    "dateHeure": "2025-12-10T17:30:42"
+    "dateHeure": "2025-12-10T17:30:42",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -294,7 +310,9 @@
     "altitudeMinM": 29,
     "altitudeMaxM": 64,
     "date": "2025-12-13",
-    "dateHeure": "2025-12-13T19:02:55"
+    "dateHeure": "2025-12-13T19:02:55",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -327,7 +345,9 @@
     "altitudeMinM": 30,
     "altitudeMaxM": 61,
     "date": "2025-12-14",
-    "dateHeure": "2025-12-14T14:25:30"
+    "dateHeure": "2025-12-14T14:25:30",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -360,7 +380,9 @@
     "altitudeMinM": 41,
     "altitudeMaxM": 61,
     "date": "2025-12-16",
-    "dateHeure": "2025-12-16T18:46:17"
+    "dateHeure": "2025-12-16T18:46:17",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -393,7 +415,9 @@
     "altitudeMinM": 41,
     "altitudeMaxM": 61,
     "date": "2025-12-17",
-    "dateHeure": "2025-12-17T17:28:34"
+    "dateHeure": "2025-12-17T17:28:34",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -426,7 +450,9 @@
     "altitudeMinM": 41,
     "altitudeMaxM": 61,
     "date": "2025-12-21",
-    "dateHeure": "2025-12-21T17:54:04"
+    "dateHeure": "2025-12-21T17:54:04",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -459,7 +485,9 @@
     "altitudeMinM": 41,
     "altitudeMaxM": 61,
     "date": "2025-12-23",
-    "dateHeure": "2025-12-23T17:38:08"
+    "dateHeure": "2025-12-23T17:38:08",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -492,7 +520,9 @@
     "altitudeMinM": 32,
     "altitudeMaxM": 73,
     "date": "2025-12-25",
-    "dateHeure": "2025-12-25T14:38:29"
+    "dateHeure": "2025-12-25T14:38:29",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Marche à pied",
@@ -525,7 +555,9 @@
     "altitudeMinM": 32,
     "altitudeMaxM": 61,
     "date": "2025-12-27",
-    "dateHeure": "2025-12-27T14:46:41"
+    "dateHeure": "2025-12-27T14:46:41",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -558,7 +590,9 @@
     "altitudeMinM": 30,
     "altitudeMaxM": 61,
     "date": "2025-12-28",
-    "dateHeure": "2025-12-28T14:49:46"
+    "dateHeure": "2025-12-28T14:49:46",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -591,7 +625,9 @@
     "altitudeMinM": 32,
     "altitudeMaxM": 61,
     "date": "2025-12-30",
-    "dateHeure": "2025-12-30T19:39:53"
+    "dateHeure": "2025-12-30T19:39:53",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -624,7 +660,9 @@
     "altitudeMinM": 24,
     "altitudeMaxM": 35,
     "date": "2026-01-02",
-    "dateHeure": "2026-01-02T14:32:42"
+    "dateHeure": "2026-01-02T14:32:42",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -657,7 +695,9 @@
     "altitudeMinM": 29,
     "altitudeMaxM": 64,
     "date": "2026-01-03",
-    "dateHeure": "2026-01-03T14:43:39"
+    "dateHeure": "2026-01-03T14:43:39",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -690,7 +730,9 @@
     "altitudeMinM": 41,
     "altitudeMaxM": 61,
     "date": "2026-01-09",
-    "dateHeure": "2026-01-09T17:15:19"
+    "dateHeure": "2026-01-09T17:15:19",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -723,7 +765,9 @@
     "altitudeMinM": 30,
     "altitudeMaxM": 61,
     "date": "2026-01-10",
-    "dateHeure": "2026-01-10T15:59:02"
+    "dateHeure": "2026-01-10T15:59:02",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -756,7 +800,9 @@
     "altitudeMinM": 32,
     "altitudeMaxM": 61,
     "date": "2026-01-13",
-    "dateHeure": "2026-01-13T19:43:56"
+    "dateHeure": "2026-01-13T19:43:56",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -789,7 +835,9 @@
     "altitudeMinM": 44,
     "altitudeMaxM": 62,
     "date": "2026-01-14",
-    "dateHeure": "2026-01-14T17:07:52"
+    "dateHeure": "2026-01-14T17:07:52",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -822,7 +870,9 @@
     "altitudeMinM": 41,
     "altitudeMaxM": 61,
     "date": "2026-01-15",
-    "dateHeure": "2026-01-15T18:09:23"
+    "dateHeure": "2026-01-15T18:09:23",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -855,7 +905,9 @@
     "altitudeMinM": 27,
     "altitudeMaxM": 55,
     "date": "2026-01-18",
-    "dateHeure": "2026-01-18T11:11:13"
+    "dateHeure": "2026-01-18T11:11:13",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -888,7 +940,9 @@
     "altitudeMinM": 32,
     "altitudeMaxM": 61,
     "date": "2026-01-20",
-    "dateHeure": "2026-01-20T19:41:26"
+    "dateHeure": "2026-01-20T19:41:26",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -921,7 +975,9 @@
     "altitudeMinM": 32,
     "altitudeMaxM": 61,
     "date": "2026-01-22",
-    "dateHeure": "2026-01-22T19:55:53"
+    "dateHeure": "2026-01-22T19:55:53",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Cyclisme",
@@ -954,7 +1010,9 @@
     "altitudeMinM": 29,
     "altitudeMaxM": 72,
     "date": "2026-01-24",
-    "dateHeure": "2026-01-24T14:54:08"
+    "dateHeure": "2026-01-24T14:54:08",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -987,7 +1045,9 @@
     "altitudeMinM": 27,
     "altitudeMaxM": 64,
     "date": "2026-01-25",
-    "dateHeure": "2026-01-25T11:21:56"
+    "dateHeure": "2026-01-25T11:21:56",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1020,7 +1080,9 @@
     "altitudeMinM": 30,
     "altitudeMaxM": 47,
     "date": "2026-01-28",
-    "dateHeure": "2026-01-28T12:24:47"
+    "dateHeure": "2026-01-28T12:24:47",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1053,7 +1115,9 @@
     "altitudeMinM": 30,
     "altitudeMaxM": 61,
     "date": "2026-01-30",
-    "dateHeure": "2026-01-30T17:14:48"
+    "dateHeure": "2026-01-30T17:14:48",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1086,7 +1150,9 @@
     "altitudeMinM": 32,
     "altitudeMaxM": 61,
     "date": "2026-02-01",
-    "dateHeure": "2026-02-01T11:05:24"
+    "dateHeure": "2026-02-01T11:05:24",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1119,7 +1185,9 @@
     "altitudeMinM": 32,
     "altitudeMaxM": 61,
     "date": "2026-02-03",
-    "dateHeure": "2026-02-03T19:54:10"
+    "dateHeure": "2026-02-03T19:54:10",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1152,7 +1220,9 @@
     "altitudeMinM": 30,
     "altitudeMaxM": 47,
     "date": "2026-02-04",
-    "dateHeure": "2026-02-04T12:26:42"
+    "dateHeure": "2026-02-04T12:26:42",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1185,7 +1255,9 @@
     "altitudeMinM": 30,
     "altitudeMaxM": 61,
     "date": "2026-02-06",
-    "dateHeure": "2026-02-06T17:35:14"
+    "dateHeure": "2026-02-06T17:35:14",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1218,7 +1290,9 @@
     "altitudeMinM": 30,
     "altitudeMaxM": 57,
     "date": "2026-02-08",
-    "dateHeure": "2026-02-08T13:12:09"
+    "dateHeure": "2026-02-08T13:12:09",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1251,7 +1325,9 @@
     "altitudeMinM": 32,
     "altitudeMaxM": 61,
     "date": "2026-02-11",
-    "dateHeure": "2026-02-11T18:50:41"
+    "dateHeure": "2026-02-11T18:50:41",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1284,7 +1360,9 @@
     "altitudeMinM": 28,
     "altitudeMaxM": 55,
     "date": "2026-02-14",
-    "dateHeure": "2026-02-14T11:04:40"
+    "dateHeure": "2026-02-14T11:04:40",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1317,7 +1395,9 @@
     "altitudeMinM": 32,
     "altitudeMaxM": 61,
     "date": "2026-02-17",
-    "dateHeure": "2026-02-17T18:35:57"
+    "dateHeure": "2026-02-17T18:35:57",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1350,7 +1430,9 @@
     "altitudeMinM": 30,
     "altitudeMaxM": 47,
     "date": "2026-02-18",
-    "dateHeure": "2026-02-18T12:24:09"
+    "dateHeure": "2026-02-18T12:24:09",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1383,7 +1465,9 @@
     "altitudeMinM": 32,
     "altitudeMaxM": 61,
     "date": "2026-02-20",
-    "dateHeure": "2026-02-20T18:00:13"
+    "dateHeure": "2026-02-20T18:00:13",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1416,7 +1500,9 @@
     "altitudeMinM": 19,
     "altitudeMaxM": 85,
     "date": "2026-02-22",
-    "dateHeure": "2026-02-22T15:42:04"
+    "dateHeure": "2026-02-22T15:42:04",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1449,7 +1535,9 @@
     "altitudeMinM": 32,
     "altitudeMaxM": 61,
     "date": "2026-02-24",
-    "dateHeure": "2026-02-24T19:48:51"
+    "dateHeure": "2026-02-24T19:48:51",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1482,7 +1570,9 @@
     "altitudeMinM": 53,
     "altitudeMaxM": 66,
     "date": "2026-02-25",
-    "dateHeure": "2026-02-25T17:43:12"
+    "dateHeure": "2026-02-25T17:43:12",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1515,7 +1605,9 @@
     "altitudeMinM": 30,
     "altitudeMaxM": 47,
     "date": "2026-02-25",
-    "dateHeure": "2026-02-25T12:20:14"
+    "dateHeure": "2026-02-25T12:20:14",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1548,7 +1640,9 @@
     "altitudeMinM": 32,
     "altitudeMaxM": 73,
     "date": "2026-03-01",
-    "dateHeure": "2026-03-01T15:16:04"
+    "dateHeure": "2026-03-01T15:16:04",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1581,7 +1675,9 @@
     "altitudeMinM": 20,
     "altitudeMaxM": 41,
     "date": "2026-03-04",
-    "dateHeure": "2026-03-04T17:42:45"
+    "dateHeure": "2026-03-04T17:42:45",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1614,7 +1710,9 @@
     "altitudeMinM": 31,
     "altitudeMaxM": 54,
     "date": "2026-03-06",
-    "dateHeure": "2026-03-06T12:20:23"
+    "dateHeure": "2026-03-06T12:20:23",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1647,7 +1745,9 @@
     "altitudeMinM": 30,
     "altitudeMaxM": 61,
     "date": "2026-03-15",
-    "dateHeure": "2026-03-15T10:31:31"
+    "dateHeure": "2026-03-15T10:31:31",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1680,7 +1780,9 @@
     "altitudeMinM": 43,
     "altitudeMaxM": 61,
     "date": "2026-03-17",
-    "dateHeure": "2026-03-17T19:56:46"
+    "dateHeure": "2026-03-17T19:56:46",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1713,7 +1815,9 @@
     "altitudeMinM": 30,
     "altitudeMaxM": 47,
     "date": "2026-03-18",
-    "dateHeure": "2026-03-18T12:18:03"
+    "dateHeure": "2026-03-18T12:18:03",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1746,7 +1850,9 @@
     "altitudeMinM": 30,
     "altitudeMaxM": 54,
     "date": "2026-03-29",
-    "dateHeure": "2026-03-29T18:53:38"
+    "dateHeure": "2026-03-29T18:53:38",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1779,7 +1885,9 @@
     "altitudeMinM": 44,
     "altitudeMaxM": 55,
     "date": "2026-04-01",
-    "dateHeure": "2026-04-01T12:27:19"
+    "dateHeure": "2026-04-01T12:27:19",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1812,7 +1920,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 57,
     "date": "2026-04-03",
-    "dateHeure": "2026-04-03T12:13:51"
+    "dateHeure": "2026-04-03T12:13:51",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1845,7 +1955,9 @@
     "altitudeMinM": 29,
     "altitudeMaxM": 64,
     "date": "2026-04-06",
-    "dateHeure": "2026-04-06T17:55:42"
+    "dateHeure": "2026-04-06T17:55:42",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1878,7 +1990,9 @@
     "altitudeMinM": 20,
     "altitudeMaxM": 35,
     "date": "2026-04-08",
-    "dateHeure": "2026-04-08T17:28:00"
+    "dateHeure": "2026-04-08T17:28:00",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1911,7 +2025,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 57,
     "date": "2026-04-13",
-    "dateHeure": "2026-04-13T12:22:06"
+    "dateHeure": "2026-04-13T12:22:06",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1944,7 +2060,9 @@
     "altitudeMinM": 52,
     "altitudeMaxM": 74,
     "date": "2026-04-14",
-    "dateHeure": "2026-04-14T19:48:36"
+    "dateHeure": "2026-04-14T19:48:36",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -1977,7 +2095,9 @@
     "altitudeMinM": 27,
     "altitudeMaxM": 45,
     "date": "2026-04-15",
-    "dateHeure": "2026-04-15T18:38:48"
+    "dateHeure": "2026-04-15T18:38:48",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2010,7 +2130,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 59,
     "date": "2026-04-17",
-    "dateHeure": "2026-04-17T17:11:48"
+    "dateHeure": "2026-04-17T17:11:48",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2043,7 +2165,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 57,
     "date": "2026-04-20",
-    "dateHeure": "2026-04-20T19:03:50"
+    "dateHeure": "2026-04-20T19:03:50",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2076,7 +2200,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 58,
     "date": "2026-04-22",
-    "dateHeure": "2026-04-22T17:16:33"
+    "dateHeure": "2026-04-22T17:16:33",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2109,7 +2235,9 @@
     "altitudeMinM": 48,
     "altitudeMaxM": 57,
     "date": "2026-04-24",
-    "dateHeure": "2026-04-24T16:35:33"
+    "dateHeure": "2026-04-24T16:35:33",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Marche à pied",
@@ -2142,7 +2270,9 @@
     "altitudeMinM": 31,
     "altitudeMaxM": 63,
     "date": "2026-04-26",
-    "dateHeure": "2026-04-26T17:35:58"
+    "dateHeure": "2026-04-26T17:35:58",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2175,7 +2305,9 @@
     "altitudeMinM": 22,
     "altitudeMaxM": 47,
     "date": "2026-04-26",
-    "dateHeure": "2026-04-26T10:07:58"
+    "dateHeure": "2026-04-26T10:07:58",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2208,7 +2340,9 @@
     "altitudeMinM": 48,
     "altitudeMaxM": 57,
     "date": "2026-04-29",
-    "dateHeure": "2026-04-29T12:22:12"
+    "dateHeure": "2026-04-29T12:22:12",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2241,7 +2375,9 @@
     "altitudeMinM": 29,
     "altitudeMaxM": 64,
     "date": "2026-04-30",
-    "dateHeure": "2026-04-30T17:30:22"
+    "dateHeure": "2026-04-30T17:30:22",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2274,7 +2410,9 @@
     "altitudeMinM": 67,
     "altitudeMaxM": 99,
     "date": "2026-05-01",
-    "dateHeure": "2026-05-01T16:54:00"
+    "dateHeure": "2026-05-01T16:54:00",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2307,7 +2445,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 57,
     "date": "2026-05-05",
-    "dateHeure": "2026-05-05T20:23:44"
+    "dateHeure": "2026-05-05T20:23:44",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Marche à pied",
@@ -2340,7 +2480,9 @@
     "altitudeMinM": 31,
     "altitudeMaxM": 62,
     "date": "2026-05-08",
-    "dateHeure": "2026-05-08T17:05:10"
+    "dateHeure": "2026-05-08T17:05:10",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2373,7 +2515,9 @@
     "altitudeMinM": 41,
     "altitudeMaxM": 57,
     "date": "2026-05-08",
-    "dateHeure": "2026-05-08T11:41:46"
+    "dateHeure": "2026-05-08T11:41:46",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2406,7 +2550,9 @@
     "altitudeMinM": 19,
     "altitudeMaxM": 85,
     "date": "2026-05-10",
-    "dateHeure": "2026-05-10T11:26:04"
+    "dateHeure": "2026-05-10T11:26:04",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2439,7 +2585,9 @@
     "altitudeMinM": 48,
     "altitudeMaxM": 57,
     "date": "2026-05-12",
-    "dateHeure": "2026-05-12T18:37:25"
+    "dateHeure": "2026-05-12T18:37:25",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2472,7 +2620,9 @@
     "altitudeMinM": 48,
     "altitudeMaxM": 57,
     "date": "2026-05-13",
-    "dateHeure": "2026-05-13T17:17:24"
+    "dateHeure": "2026-05-13T17:17:24",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Marche à pied",
@@ -2505,7 +2655,9 @@
     "altitudeMinM": 31,
     "altitudeMaxM": 62,
     "date": "2026-05-15",
-    "dateHeure": "2026-05-15T18:24:42"
+    "dateHeure": "2026-05-15T18:24:42",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2538,7 +2690,9 @@
     "altitudeMinM": 27,
     "altitudeMaxM": 55,
     "date": "2026-05-16",
-    "dateHeure": "2026-05-16T10:37:08"
+    "dateHeure": "2026-05-16T10:37:08",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2571,7 +2725,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 59,
     "date": "2026-05-18",
-    "dateHeure": "2026-05-18T18:13:25"
+    "dateHeure": "2026-05-18T18:13:25",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2604,7 +2760,9 @@
     "altitudeMinM": 54,
     "altitudeMaxM": 77,
     "date": "2026-05-19",
-    "dateHeure": "2026-05-19T19:45:56"
+    "dateHeure": "2026-05-19T19:45:56",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2637,7 +2795,9 @@
     "altitudeMinM": 27,
     "altitudeMaxM": 35,
     "date": "2026-05-20",
-    "dateHeure": "2026-05-20T17:21:10"
+    "dateHeure": "2026-05-20T17:21:10",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2670,7 +2830,9 @@
     "altitudeMinM": 23,
     "altitudeMaxM": 49,
     "date": "2026-05-23",
-    "dateHeure": "2026-05-23T09:10:46"
+    "dateHeure": "2026-05-23T09:10:46",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2703,7 +2865,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 59,
     "date": "2026-05-27",
-    "dateHeure": "2026-05-27T12:04:56"
+    "dateHeure": "2026-05-27T12:04:56",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2736,7 +2900,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 57,
     "date": "2026-05-29",
-    "dateHeure": "2026-05-29T07:17:58"
+    "dateHeure": "2026-05-29T07:17:58",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2769,7 +2935,9 @@
     "altitudeMinM": 29,
     "altitudeMaxM": 64,
     "date": "2026-05-31",
-    "dateHeure": "2026-05-31T16:07:52"
+    "dateHeure": "2026-05-31T16:07:52",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2802,7 +2970,9 @@
     "altitudeMinM": 27,
     "altitudeMaxM": 44,
     "date": "2026-05-31",
-    "dateHeure": "2026-05-31T08:59:53"
+    "dateHeure": "2026-05-31T08:59:53",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2835,7 +3005,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 57,
     "date": "2026-06-04",
-    "dateHeure": "2026-06-04T18:15:05"
+    "dateHeure": "2026-06-04T18:15:05",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2868,7 +3040,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 55,
     "date": "2026-06-05",
-    "dateHeure": "2026-06-05T12:35:02"
+    "dateHeure": "2026-06-05T12:35:02",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2901,7 +3075,9 @@
     "altitudeMinM": 41,
     "altitudeMaxM": 76,
     "date": "2026-06-07",
-    "dateHeure": "2026-06-07T09:38:26"
+    "dateHeure": "2026-06-07T09:38:26",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2934,7 +3110,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 57,
     "date": "2026-06-10",
-    "dateHeure": "2026-06-10T12:12:10"
+    "dateHeure": "2026-06-10T12:12:10",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -2967,7 +3145,9 @@
     "altitudeMinM": 19,
     "altitudeMaxM": 82,
     "date": "2026-06-13",
-    "dateHeure": "2026-06-13T10:06:19"
+    "dateHeure": "2026-06-13T10:06:19",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -3000,7 +3180,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 57,
     "date": "2026-06-17",
-    "dateHeure": "2026-06-17T12:15:54"
+    "dateHeure": "2026-06-17T12:15:54",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -3033,7 +3215,9 @@
     "altitudeMinM": 809,
     "altitudeMaxM": 821,
     "date": "2026-06-19",
-    "dateHeure": "2026-06-19T18:52:39"
+    "dateHeure": "2026-06-19T18:52:39",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -3066,7 +3250,9 @@
     "altitudeMinM": 1,
     "altitudeMaxM": 1,
     "date": "2026-06-21",
-    "dateHeure": "2026-06-21T08:59:56"
+    "dateHeure": "2026-06-21T08:59:56",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -3099,7 +3285,9 @@
     "altitudeMinM": 4,
     "altitudeMaxM": 40,
     "date": "2026-06-26",
-    "dateHeure": "2026-06-26T16:57:34"
+    "dateHeure": "2026-06-26T16:57:34",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -3132,7 +3320,9 @@
     "altitudeMinM": 4,
     "altitudeMaxM": 45,
     "date": "2026-06-28",
-    "dateHeure": "2026-06-28T10:11:22"
+    "dateHeure": "2026-06-28T10:11:22",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -3165,7 +3355,9 @@
     "altitudeMinM": 29,
     "altitudeMaxM": 66,
     "date": "2026-07-01",
-    "dateHeure": "2026-07-01T17:17:51"
+    "dateHeure": "2026-07-01T17:17:51",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -3198,7 +3390,9 @@
     "altitudeMinM": 48,
     "altitudeMaxM": 57,
     "date": "2026-07-03",
-    "dateHeure": "2026-07-03T12:10:58"
+    "dateHeure": "2026-07-03T12:10:58",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -3231,7 +3425,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 59,
     "date": "2026-07-06",
-    "dateHeure": "2026-07-06T19:55:49"
+    "dateHeure": "2026-07-06T19:55:49",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -3264,7 +3460,9 @@
     "altitudeMinM": 26,
     "altitudeMaxM": 55,
     "date": "2026-07-08",
-    "dateHeure": "2026-07-08T17:41:31"
+    "dateHeure": "2026-07-08T17:41:31",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -3297,7 +3495,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 57,
     "date": "2026-07-10",
-    "dateHeure": "2026-07-10T18:24:34"
+    "dateHeure": "2026-07-10T18:24:34",
+    "activityId": null,
+    "aDetail": false
   },
   {
     "type": "Course à pied",
@@ -3330,7 +3530,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 57,
     "date": "2026-07-13",
-    "dateHeure": "2026-07-13T20:23:03"
+    "dateHeure": "2026-07-13T20:23:03",
+    "activityId": 23585963908,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -3363,7 +3565,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 57,
     "date": "2026-07-15",
-    "dateHeure": "2026-07-15T20:17:19"
+    "dateHeure": "2026-07-15T20:17:19",
+    "activityId": 23611159886,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -3396,7 +3600,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 57,
     "date": "2026-07-17",
-    "dateHeure": "2026-07-17T12:21:06"
+    "dateHeure": "2026-07-17T12:21:06",
+    "activityId": 23629367108,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -3429,7 +3635,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 59,
     "date": "2026-07-19",
-    "dateHeure": "2026-07-19T11:41:45"
+    "dateHeure": "2026-07-19T11:41:45",
+    "activityId": 23652350280,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -3462,7 +3670,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 57,
     "date": "2026-07-20",
-    "dateHeure": "2026-07-20T18:00:44"
+    "dateHeure": "2026-07-20T18:00:44",
+    "activityId": 23667255497,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -3495,7 +3705,9 @@
     "altitudeMinM": 27,
     "altitudeMaxM": 45,
     "date": "2026-07-22",
-    "dateHeure": "2026-07-22T17:51:41"
+    "dateHeure": "2026-07-22T17:51:41",
+    "activityId": 23693039308,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -3528,7 +3740,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 57,
     "date": "2026-07-24",
-    "dateHeure": "2026-07-24T12:11:59"
+    "dateHeure": "2026-07-24T12:11:59",
+    "activityId": 23713676572,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -3561,7 +3775,44 @@
     "altitudeMinM": 35,
     "altitudeMaxM": 57,
     "date": "2026-07-26",
-    "dateHeure": "2026-07-26T11:31:00"
+    "dateHeure": "2026-07-26T11:31:00",
+    "activityId": 23739610036,
+    "aDetail": true
+  },
+  {
+    "type": "Marche à pied",
+    "favori": false,
+    "titre": "Attiches Marche à pied",
+    "distanceKm": 5.15,
+    "calories": 230,
+    "dureeSec": 3823.0,
+    "fcMoy": 89,
+    "fcMax": 122,
+    "teAerobie": null,
+    "cadenceMoy": 110,
+    "cadenceMax": 133,
+    "allureMoySecKm": 742,
+    "meilleureAllureSecKm": 510,
+    "ascensionM": 31,
+    "descenteM": 33,
+    "longueurFouleeM": 0.74,
+    "oscillationVerticale": null,
+    "tempsContactSol": null,
+    "gapMoySecKm": null,
+    "np": null,
+    "tss": null,
+    "puissanceMoy": null,
+    "puissanceMax": null,
+    "pas": 7412,
+    "nbTours": 6,
+    "tempsDeplacementSec": 3719.0,
+    "tempsEcouleSec": 3823.0,
+    "altitudeMinM": 31,
+    "altitudeMaxM": 62,
+    "date": "2026-07-29",
+    "dateHeure": "2026-07-29T20:17:35",
+    "activityId": 23780560427,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -3594,7 +3845,9 @@
     "altitudeMinM": null,
     "altitudeMaxM": null,
     "date": "2026-07-30",
-    "dateHeure": "2026-07-30T06:09:45"
+    "dateHeure": "2026-07-30T06:09:45",
+    "activityId": 23784012630,
+    "aDetail": true
   },
   {
     "type": "Musculation",
@@ -3627,7 +3880,9 @@
     "altitudeMinM": null,
     "altitudeMaxM": null,
     "date": "2026-07-31",
-    "dateHeure": "2026-07-31T18:59:03"
+    "dateHeure": "2026-07-31T18:59:03",
+    "activityId": 23803241836,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -3660,7 +3915,9 @@
     "altitudeMinM": null,
     "altitudeMaxM": null,
     "date": "2026-07-31",
-    "dateHeure": "2026-07-31T17:50:34"
+    "dateHeure": "2026-07-31T17:50:34",
+    "activityId": 23802778022,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -3693,7 +3950,9 @@
     "altitudeMinM": null,
     "altitudeMaxM": null,
     "date": "2026-08-02",
-    "dateHeure": "2026-08-02T10:43:04"
+    "dateHeure": "2026-08-02T10:43:04",
+    "activityId": 23822736146,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -3726,7 +3985,9 @@
     "altitudeMinM": null,
     "altitudeMaxM": null,
     "date": "2026-08-03",
-    "dateHeure": "2026-08-03T20:04:54"
+    "dateHeure": "2026-08-03T20:04:54",
+    "activityId": 23839947032,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -3759,7 +4020,9 @@
     "altitudeMinM": null,
     "altitudeMaxM": null,
     "date": "2026-08-06",
-    "dateHeure": "2026-08-06T19:19:16"
+    "dateHeure": "2026-08-06T19:19:16",
+    "activityId": 23878275591,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -3792,7 +4055,9 @@
     "altitudeMinM": null,
     "altitudeMaxM": null,
     "date": "2026-08-07",
-    "dateHeure": "2026-08-07T19:36:52"
+    "dateHeure": "2026-08-07T19:36:52",
+    "activityId": 23890499864,
+    "aDetail": true
   },
   {
     "type": "Musculation",
@@ -3825,7 +4090,9 @@
     "altitudeMinM": null,
     "altitudeMaxM": null,
     "date": "2026-08-07",
-    "dateHeure": "2026-08-07T18:21:39"
+    "dateHeure": "2026-08-07T18:21:39",
+    "activityId": 23889796689,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -3858,7 +4125,9 @@
     "altitudeMinM": null,
     "altitudeMaxM": null,
     "date": "2026-08-09",
-    "dateHeure": "2026-08-09T10:11:36"
+    "dateHeure": "2026-08-09T10:11:36",
+    "activityId": 23908775984,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -3891,7 +4160,9 @@
     "altitudeMinM": null,
     "altitudeMaxM": null,
     "date": "2026-08-10",
-    "dateHeure": "2026-08-10T19:24:28"
+    "dateHeure": "2026-08-10T19:24:28",
+    "activityId": 23926647830,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -3924,7 +4195,9 @@
     "altitudeMinM": null,
     "altitudeMaxM": null,
     "date": "2026-08-11",
-    "dateHeure": "2026-08-11T17:14:37"
+    "dateHeure": "2026-08-11T17:14:37",
+    "activityId": 23938312568,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -3957,7 +4230,9 @@
     "altitudeMinM": null,
     "altitudeMaxM": null,
     "date": "2026-08-15",
-    "dateHeure": "2026-08-15T19:13:56"
+    "dateHeure": "2026-08-15T19:13:56",
+    "activityId": 23990009845,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -3990,7 +4265,9 @@
     "altitudeMinM": null,
     "altitudeMaxM": null,
     "date": "2026-08-16",
-    "dateHeure": "2026-08-16T10:51:58"
+    "dateHeure": "2026-08-16T10:51:58",
+    "activityId": 23996951604,
+    "aDetail": true
   },
   {
     "type": "Musculation",
@@ -4023,7 +4300,9 @@
     "altitudeMinM": null,
     "altitudeMaxM": null,
     "date": "2026-08-17",
-    "dateHeure": "2026-08-17T19:00:25"
+    "dateHeure": "2026-08-17T19:00:25",
+    "activityId": 24013375962,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -4056,7 +4335,9 @@
     "altitudeMinM": null,
     "altitudeMaxM": null,
     "date": "2026-08-18",
-    "dateHeure": "2026-08-18T17:12:12"
+    "dateHeure": "2026-08-18T17:12:12",
+    "activityId": 24024821575,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -4089,7 +4370,9 @@
     "altitudeMinM": null,
     "altitudeMaxM": null,
     "date": "2026-08-19",
-    "dateHeure": "2026-08-19T19:21:50"
+    "dateHeure": "2026-08-19T19:21:50",
+    "activityId": 24039832812,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -4122,7 +4405,9 @@
     "altitudeMinM": null,
     "altitudeMaxM": null,
     "date": "2026-08-22",
-    "dateHeure": "2026-08-22T10:27:25"
+    "dateHeure": "2026-08-22T10:27:25",
+    "activityId": 24070995222,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -4155,7 +4440,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 57,
     "date": "2026-08-24",
-    "dateHeure": "2026-08-24T18:35:23"
+    "dateHeure": "2026-08-24T18:35:23",
+    "activityId": 24100001843,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -4188,7 +4475,9 @@
     "altitudeMinM": 47,
     "altitudeMaxM": 59,
     "date": "2026-08-25",
-    "dateHeure": "2026-08-25T17:54:50"
+    "dateHeure": "2026-08-25T17:54:50",
+    "activityId": 24112919457,
+    "aDetail": true
   },
   {
     "type": "Musculation",
@@ -4221,7 +4510,9 @@
     "altitudeMinM": null,
     "altitudeMaxM": null,
     "date": "2026-08-26",
-    "dateHeure": "2026-08-26T13:02:14"
+    "dateHeure": "2026-08-26T13:02:14",
+    "activityId": 24122249846,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -4254,7 +4545,9 @@
     "altitudeMinM": 31,
     "altitudeMaxM": 57,
     "date": "2026-08-28",
-    "dateHeure": "2026-08-28T16:52:00"
+    "dateHeure": "2026-08-28T16:52:00",
+    "activityId": 24150666251,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -4287,7 +4580,9 @@
     "altitudeMinM": 80,
     "altitudeMaxM": 162,
     "date": "2026-08-30",
-    "dateHeure": "2026-08-30T10:33:42"
+    "dateHeure": "2026-08-30T10:33:42",
+    "activityId": 24176306284,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -4320,7 +4615,9 @@
     "altitudeMinM": 80,
     "altitudeMaxM": 302,
     "date": "2026-09-01",
-    "dateHeure": "2026-09-01T09:55:35"
+    "dateHeure": "2026-09-01T09:55:35",
+    "activityId": 24194190629,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -4353,7 +4650,9 @@
     "altitudeMinM": 60,
     "altitudeMaxM": 171,
     "date": "2026-09-02",
-    "dateHeure": "2026-09-02T10:50:41"
+    "dateHeure": "2026-09-02T10:50:41",
+    "activityId": 24207650064,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -4386,7 +4685,9 @@
     "altitudeMinM": 80,
     "altitudeMaxM": 384,
     "date": "2026-09-04",
-    "dateHeure": "2026-09-04T09:58:25"
+    "dateHeure": "2026-09-04T09:58:25",
+    "activityId": 24233045473,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -4419,7 +4720,9 @@
     "altitudeMinM": 80,
     "altitudeMaxM": 302,
     "date": "2026-09-07",
-    "dateHeure": "2026-09-07T10:39:30"
+    "dateHeure": "2026-09-07T10:39:30",
+    "activityId": 24268333898,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -4452,7 +4755,9 @@
     "altitudeMinM": 81,
     "altitudeMaxM": 302,
     "date": "2026-09-07",
-    "dateHeure": "2026-09-07T09:53:46"
+    "dateHeure": "2026-09-07T09:53:46",
+    "activityId": 24268069914,
+    "aDetail": true
   },
   {
     "type": "Course à pied",
@@ -4485,6 +4790,43 @@
     "altitudeMinM": 80,
     "altitudeMaxM": 162,
     "date": "2026-09-09",
-    "dateHeure": "2026-09-09T15:52:37"
+    "dateHeure": "2026-09-09T15:52:37",
+    "activityId": 24297730626,
+    "aDetail": true
+  },
+  {
+    "type": "Course à pied",
+    "favori": false,
+    "titre": "Camphin-en-Pévèle - Seuil 3x2km",
+    "distanceKm": 10.38,
+    "calories": 543,
+    "dureeSec": 3571.0,
+    "fcMoy": 159,
+    "fcMax": 178,
+    "teAerobie": null,
+    "cadenceMoy": 177,
+    "cadenceMax": 192,
+    "allureMoySecKm": 344,
+    "meilleureAllureSecKm": 240,
+    "ascensionM": 21,
+    "descenteM": 21,
+    "longueurFouleeM": 0.98,
+    "oscillationVerticale": null,
+    "tempsContactSol": null,
+    "gapMoySecKm": null,
+    "np": null,
+    "tss": null,
+    "puissanceMoy": null,
+    "puissanceMax": null,
+    "pas": 10524,
+    "nbTours": 13,
+    "tempsDeplacementSec": 3566.0,
+    "tempsEcouleSec": 3573.0,
+    "altitudeMinM": 47,
+    "altitudeMaxM": 59,
+    "date": "2026-09-12",
+    "dateHeure": "2026-09-12T10:12:24",
+    "activityId": 24330571181,
+    "aDetail": true
   }
 ]

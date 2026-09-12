@@ -136,3 +136,65 @@ function chartAllure(canvas, labels, secKm) {
     })
   );
 }
+
+/* Allure par tour d'une séance : barres verticales, axe inversé (plus haut =
+   plus rapide), couleur selon l'intensité du tour (actif vs échauffement). */
+function chartTours(canvas, tours, structuree = true) {
+  const labels = tours.map((t) => "T" + t.index);
+  const data = tours.map((t) => t.allureSecKm || null);
+  const couleurs = tours.map((t) =>
+    !structuree || t.intensite === "ACTIVE" || t.intensite === "INTERVAL"
+      ? CHART_COLORS.accent
+      : CHART_COLORS.accentSoft
+  );
+  const valides = data.filter((v) => v != null);
+  const min = Math.min(...valides), max = Math.max(...valides);
+  const marge = Math.max(10, (max - min) * 0.15);
+  // L'axe est inversé (rapide en haut) : sans base explicite, Chart.js ancre
+  // les barres à 0, donc en haut du cadre. On les ancre au bas de l'échelle.
+  const base = max + marge;
+
+  return _register(
+    "tours",
+    new Chart(canvas, {
+      type: "bar",
+      data: { labels, datasets: [{ data, base, backgroundColor: couleurs, borderRadius: 4 }] },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              title: (items) => {
+                const t = tours[items[0].dataIndex];
+                return `Tour ${t.index} · ${(t.distanceKm || 0).toFixed(2)} km`;
+              },
+              label: (item) => {
+                const t = tours[item.dataIndex];
+                const p = t.allureSecKm;
+                const pace = p ? `${Math.floor(p / 60)}:${String(p % 60).padStart(2, "0")}/km` : "--";
+                const bits = [pace];
+                if (t.fcMoy) bits.push(`FC ${t.fcMoy}`);
+                if (t.cadenceMoy) bits.push(`cad ${t.cadenceMoy}`);
+                return bits.join(" · ");
+              },
+            },
+          },
+        },
+        scales: {
+          x: { grid: { display: false } },
+          y: {
+            reverse: true,
+            min: Math.max(0, min - marge),
+            max: max + marge,
+            grid: { color: CHART_COLORS.grid },
+            ticks: {
+              callback: (v) => `${Math.floor(v / 60)}:${String(Math.round(v % 60)).padStart(2, "0")}`,
+            },
+          },
+        },
+      },
+    })
+  );
+}
