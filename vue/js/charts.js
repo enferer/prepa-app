@@ -139,10 +139,13 @@ function chartAllure(canvas, labels, secKm) {
 
 /* Allure par tour d'une séance : barres verticales, axe inversé (plus haut =
    plus rapide), couleur selon l'intensité du tour (actif vs échauffement). */
-function chartTours(canvas, tours, structuree = true) {
-  const labels = tours.map((t) => "T" + t.index);
-  const data = tours.map((t) => t.allureSecKm || null);
-  const couleurs = tours.map((t) =>
+/* `items` = les tours bruts, ou les blocs agrégés quand parBlocs vaut true.
+   Les deux portent les mêmes champs (allure, distance, durée, FC), le graphe
+   n'a donc qu'à changer ses libellés et son tooltip. */
+function chartTours(canvas, items, structuree = true, parBlocs = false) {
+  const labels = items.map((t) => (parBlocs ? t.court : "T" + t.index));
+  const data = items.map((t) => t.allureSecKm || null);
+  const couleurs = items.map((t) =>
     !structuree || t.intensite === "ACTIVE" || t.intensite === "INTERVAL"
       ? CHART_COLORS.accent
       : CHART_COLORS.accentSoft
@@ -166,17 +169,21 @@ function chartTours(canvas, tours, structuree = true) {
           legend: { display: false },
           tooltip: {
             callbacks: {
-              title: (items) => {
-                const t = tours[items[0].dataIndex];
-                return `Tour ${t.index} · ${(t.distanceKm || 0).toFixed(2)} km`;
+              title: (ctx) => {
+                const t = items[ctx[0].dataIndex];
+                const nom = parBlocs ? t.libelle : `Tour ${t.index}`;
+                return `${nom} · ${(t.distanceKm || 0).toFixed(2)} km`;
               },
               label: (item) => {
-                const t = tours[item.dataIndex];
+                const t = items[item.dataIndex];
                 const p = t.allureSecKm;
                 const pace = p ? `${Math.floor(p / 60)}:${String(p % 60).padStart(2, "0")}/km` : "--";
                 const bits = [pace];
                 if (t.fcMoy) bits.push(`FC ${t.fcMoy}`);
                 if (t.cadenceMoy) bits.push(`cad ${t.cadenceMoy}`);
+                if (parBlocs && t.tours && t.tours.length > 1) {
+                  bits.push(`${t.tours.length} tours`);
+                }
                 return bits.join(" · ");
               },
             },

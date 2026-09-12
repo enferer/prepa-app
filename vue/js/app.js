@@ -765,6 +765,16 @@ const INTENSITE_LABEL = {
   COOLDOWN: "retour au calme",
 };
 
+/* Version abrégée : sur l'axe d'un graphe, "retour au calme" déborde. */
+const INTENSITE_COURT = {
+  WARMUP: "éch",
+  ACTIVE: "actif",
+  INTERVAL: "int",
+  REST: "réc",
+  RECOVERY: "réc",
+  COOLDOWN: "RAC",
+};
+
 /* Une séance est "structurée" si ses tours mélangent plusieurs intensités
    (échauffement / actif / récup). Sur une sortie en auto-lap, Garmin marque
    tous les kilomètres INTERVAL : les mettre en avant n'apprendrait rien. */
@@ -803,6 +813,7 @@ function grouperEnBlocs(tours) {
       intensite: b.intensite,
       actif,
       libelle: actif ? `Bloc ${nActif}` : INTENSITE_LABEL[b.intensite] || "tour",
+      court: actif ? `B${nActif}` : INTENSITE_COURT[b.intensite] || "—",
       tours: b.tours,
       distanceKm,
       dureeSec,
@@ -1152,7 +1163,9 @@ function renderSeanceDetail() {
   );
 
   const canvas = document.getElementById("sx-canvas");
-  if (canvas && decoupageUtile) chartTours(canvas, tours, structuree);
+  // Le graphe suit la bascule : en mode Blocs il trace un bâton par bloc,
+  // comme le tableau juste en dessous.
+  if (canvas && decoupageUtile) chartTours(canvas, parBlocs ? blocs : tours, structuree, parBlocs);
 }
 
 /* Flèches clavier quand l'onglet Séances est actif */
