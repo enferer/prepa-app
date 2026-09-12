@@ -825,6 +825,30 @@ function seanceCourante() {
   return DETAILS.find((d) => d.activityId === SEANCE_SEL) || DETAILS[0] || null;
 }
 
+/* Sur mobile, liste et fiche sont deux écrans successifs (pattern « master /
+   detail » natif) ; sur desktop les deux panneaux cohabitent et SX_VUE n'a
+   aucun effet — c'est le CSS qui tranche. */
+let SX_VUE = "liste";
+
+/* Les titres Garmin traînent le type d'activité (« … Course à pied »), déjà
+   porté par l'icône. On l'enlève pour que le lieu ou le nom de séance tienne
+   sur une ligne. */
+const SUFFIXES_GARMIN = [
+  " Course à pied", " Course à pied sur tapis", " Trail en course à pied",
+  " Vélo", " Natation", " Marche", " Course",
+];
+function titreCourt(titre) {
+  let t = (titre || "Séance").trim();
+  for (const suf of SUFFIXES_GARMIN) {
+    if (t.length > suf.length && t.endsWith(suf)) { t = t.slice(0, -suf.length).trim(); break; }
+  }
+  return t.replace(/[-–·]\s*$/, "").trim() || (titre || "Séance");
+}
+
+function estMobileSx() {
+  return window.matchMedia("(max-width: 760px)").matches;
+}
+
 function renderSeances() {
   const root = document.getElementById("tab-seances");
   if (!DETAILS.length) {
@@ -833,12 +857,31 @@ function renderSeances() {
     return;
   }
   root.innerHTML = `
-    <div class="sx-layout">
+    <div class="sx-layout vue-${SX_VUE}" id="sx-layout">
       <aside class="card sx-list" id="sx-list"></aside>
       <div class="card sx-detail" id="sx-detail"></div>
-    </div>`;
+    </div>
+    <div class="sx-bottombar" id="sx-bottombar"></div>`;
   renderSeanceList();
   renderSeanceDetail();
+  renderSxBottomBar();
+  attacherSwipeSx();
+}
+
+function appliquerVueSx(v) {
+  SX_VUE = v;
+  const layout = document.getElementById("sx-layout");
+  if (layout) layout.className = `sx-layout vue-${v}`;
+}
+
+function setVueSx(v) {
+  appliquerVueSx(v);
+  window.scrollTo({ top: 0 });
+  if (v === "fiche") renderSeanceDetail();
+  else {
+    const actif = document.querySelector(".sx-item.actif");
+    if (actif) actif.scrollIntoView({ block: "center" });
+  }
 }
 
 function renderSeanceList() {
@@ -854,21 +897,41 @@ function renderSeanceList() {
       host.appendChild(el(`<div class="sx-month">${dt ? MOIS[dt.getMonth()] + " " + dt.getFullYear() : mois}</div>`));
     }
     const actif = d.activityId === SEANCE_SEL ? " actif" : "";
+    const meta = [fmtDate(d.date, true)];
+    if (d.distanceKm) meta.push(`${km(d.distanceKm)} km`);
+    else if (d.dureeSec) meta.push(fmtDur(d.dureeSec));
+    if (d.fcMoy) meta.push("FC " + d.fcMoy);
+    // Sans allure (muscu, vélo…), la colonne de droite montre la durée.
+    const droite = d.allureMoySecKm
+      ? `${fmtPace(d.allureMoySecKm)}<small>/km</small>`
+      : `<span class="muted">${fmtDur(d.dureeSec)}</span>`;
     const item = el(`
       <button class="sx-item${actif}" data-id="${d.activityId}" type="button">
-        <span class="sx-item-date">${fmtDate(d.date, true)}</span>
-        <span class="sx-item-titre">${iconeGarmin(d.type)} ${escapeHtml(d.titre || "Séance")}</span>
-        <span class="sx-item-meta">${km(d.distanceKm)} km · ${fmtPace(d.allureMoySecKm)}/km${d.fcMoy ? " · FC " + d.fcMoy : ""}</span>
+        <span class="sx-item-ic">${iconeGarmin(d.type)}</span>
+        <span class="sx-item-main">
+          <span class="sx-item-titre">${escapeHtml(titreCourt(d.titre))}</span>
+          <span class="sx-item-meta">${meta.join(" · ")}</span>
+        </span>
+        <span class="sx-item-pace">${droite}</span>
       </button>`);
-    item.addEventListener("click", () => selectSeance(d.activityId));
+    item.addEventListener("click", () => selectSeance(d.activityId, true));
     host.appendChild(item);
   });
 }
 
-function selectSeance(id) {
+function selectSeance(id, ouvrir = false) {
   SEANCE_SEL = id;
+  const mobile = estMobileSx();
+  // La bascule vers la fiche doit précéder son rendu : un canvas dessiné dans
+  // un conteneur encore masqué reste vide.
+  if (ouvrir && mobile) appliquerVueSx("fiche");
   renderSeanceList();
   renderSeanceDetail();
+  renderSxBottomBar();
+  if (mobile) {
+    window.scrollTo({ top: 0 });
+    return;
+  }
   const actif = document.querySelector(".sx-item.actif");
   if (actif) actif.scrollIntoView({ block: "nearest" });
 }
@@ -877,6 +940,45 @@ function decaleSeance(pas) {
   const i = DETAILS.findIndex((d) => d.activityId === SEANCE_SEL);
   const suivant = DETAILS[i + pas];
   if (suivant) selectSeance(suivant.activityId);
+}
+
+/* Balayage horizontal sur la fiche = séance précédente / suivante.
+   On ignore les gestes trop verticaux, qui sont du scroll. */
+function attacherSwipeSx() {
+  const host = document.getElementById("sx-detail");
+  if (!host) return;
+  let x0 = null, y0 = null;
+  host.addEventListener("touchstart", (e) => {
+    if (e.touches.length !== 1) { x0 = null; return; }
+    x0 = e.touches[0].clientX;
+    y0 = e.touches[0].clientY;
+  }, { passive: true });
+  host.addEventListener("touchend", (e) => {
+    if (x0 == null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    const dy = e.changedTouches[0].clientY - y0;
+    x0 = null;
+    if (Math.abs(dx) < 70 || Math.abs(dy) > 50) return;
+    decaleSeance(dx < 0 ? 1 : -1);
+  }, { passive: true });
+}
+
+function renderSxBottomBar() {
+  const host = document.getElementById("sx-bottombar");
+  const d = seanceCourante();
+  if (!host || !d) return;
+  const i = DETAILS.findIndex((x) => x.activityId === d.activityId);
+  host.innerHTML = `
+    <button class="sxb-back" type="button">‹ Liste</button>
+    <span class="sxb-pos">${DETAILS.length - i} / ${DETAILS.length}</span>
+    <span class="sxb-arrows">
+      <button class="sxb-arrow" type="button" data-pas="1" ${i >= DETAILS.length - 1 ? "disabled" : ""} aria-label="Séance précédente">◀</button>
+      <button class="sxb-arrow" type="button" data-pas="-1" ${i <= 0 ? "disabled" : ""} aria-label="Séance suivante">▶</button>
+    </span>`;
+  host.querySelector(".sxb-back").addEventListener("click", () => setVueSx("liste"));
+  host.querySelectorAll(".sxb-arrow").forEach((b) =>
+    b.addEventListener("click", () => decaleSeance(Number(b.dataset.pas)))
+  );
 }
 
 function kpiTile(label, valeur, unite, sub) {
@@ -891,13 +993,15 @@ function renderSeanceDetail() {
   if (!host || !d) return;
   const i = DETAILS.findIndex((x) => x.activityId === d.activityId);
 
+  // Une muscu n'a ni distance ni allure : une tuile « -- » est du bruit, on ne
+  // garde que les mesures réellement disponibles.
   const kpis = [
-    kpiTile("Distance", km(d.distanceKm, 2), " km"),
+    d.distanceKm ? kpiTile("Distance", km(d.distanceKm, 2), " km") : "",
     kpiTile("Durée", fmtDur(d.dureeSec), ""),
-    kpiTile("Allure", fmtPace(d.allureMoySecKm), " /km"),
-    kpiTile("FC moy", d.fcMoy || "--", "", d.fcMax ? `max ${d.fcMax}` : ""),
-    kpiTile("D+", d.denivelePosM != null ? d.denivelePosM : "--", " m"),
-    kpiTile("Cadence", d.cadenceMoy || "--", " ppm"),
+    d.allureMoySecKm ? kpiTile("Allure", fmtPace(d.allureMoySecKm), " /km") : "",
+    d.fcMoy ? kpiTile("FC moy", d.fcMoy, "", d.fcMax ? `max ${d.fcMax}` : "") : "",
+    d.denivelePosM ? kpiTile("D+", d.denivelePosM, " m") : "",
+    d.cadenceMoy ? kpiTile("Cadence", d.cadenceMoy, " ppm") : "",
   ].join("");
 
   const m = d.meteo || {};
@@ -965,28 +1069,62 @@ function renderSeanceDetail() {
       <td>${deniveleNet(x)}</td>
     </tr>`;
 
+  /* Sur mobile, un tableau de 7 colonnes impose un scroll horizontal : on
+     redonne les mêmes lignes sous forme de cartes empilées. */
+  const carte = (lbl, sousLbl, o, splits, actif) => `
+    <div class="sx-card${actif ? " actif" : ""}">
+      <div class="sx-card-top">
+        <span class="sx-card-lbl">${lbl}${sousLbl ? ` <i>${sousLbl}</i>` : ""}</span>
+        <span class="sx-card-pace">${fmtPace(o.allureSecKm)}<small>/km</small></span>
+      </div>
+      <div class="sx-card-meta">
+        <span>${km(o.distanceKm, 2)} km</span>
+        <span>${fmtDur(o.dureeSec)}</span>
+        <span>${o.fcMoy ? `FC ${o.fcMoy}${o.fcMax ? `<i>/${o.fcMax}</i>` : ""}` : "FC --"}</span>
+        <span>D± ${deniveleNet(o)} m</span>
+      </div>
+      ${splits ? `<div class="sx-card-splits">${splits}</div>` : ""}
+    </div>`;
+
+  const carteBloc = (b) =>
+    carte(b.libelle, "", b, b.tours.length > 1 ? b.tours.map((x) => fmtPace(x.allureSecKm)).join(" · ") : "", b.actif);
+  const carteTour = (x) =>
+    carte(
+      `Tour ${x.index}`,
+      structuree ? INTENSITE_LABEL[x.intensite] || "" : "",
+      x,
+      "",
+      structuree && (x.intensite === "ACTIVE" || x.intensite === "INTERVAL")
+    );
+
+  const nBlocs = parBlocs ? blocs.filter((b) => b.actif).length : 0;
   const titre = parBlocs
-    ? `${blocs.filter((b) => b.actif).length} bloc(s) d'effort`
-    : `${tours.length} tours${structuree ? "" : ` <span class="muted small">· auto-lap, séance non structurée</span>`}`;
+    ? `${nBlocs} bloc${nBlocs > 1 ? "s" : ""} d'effort`
+    : `${tours.length} tour${tours.length > 1 ? "s" : ""}${structuree ? "" : ` <span class="muted small">· auto-lap, séance non structurée</span>`}`;
 
   const enTete = parBlocs
     ? `<tr><th>Bloc</th><th>Dist.</th><th>Temps</th><th>Allure</th><th>FC</th><th>Détail / km</th><th>Dénivelé</th></tr>`
     : `<tr><th>#</th>${structuree ? "<th>Type</th>" : ""}<th>Dist.</th><th>Temps</th><th>Allure</th><th>FC</th><th>Dénivelé</th></tr>`;
 
-  const toursHtml = tours.length
+  // Un tour unique (ou sans allure : muscu, natation) ne porte aucune
+  // information de découpage — on n'affiche ni graphe ni liste.
+  const decoupageUtile = tours.length > 1 && tours.some((t) => t.allureSecKm != null);
+  const toursHtml = decoupageUtile
     ? `<div class="sx-tours-head">
          <div class="section-title">${titre}</div>
          ${bascule}
        </div>
        <div class="chart-box sx-chart"><canvas id="sx-canvas"></canvas></div>
-       <div class="table-wrap"><table class="sx-table">
+       <div class="table-wrap sx-table-wrap"><table class="sx-table">
          <thead>${enTete}</thead>
          <tbody>${(parBlocs ? blocs.map(ligneBloc) : tours.map(ligneTour)).join("")}</tbody>
-       </table></div>`
-    : `<div class="empty">Pas de découpage en tours pour cette séance.</div>`;
+       </table></div>
+       <div class="sx-cards">${(parBlocs ? blocs.map(carteBloc) : tours.map(carteTour)).join("")}</div>`
+    : "";
 
   host.innerHTML = `
     <div class="sx-head">
+      <button class="sx-back" id="sx-back" type="button" aria-label="Retour à la liste">‹</button>
       <button class="sx-nav" id="sx-prev" type="button" ${i >= DETAILS.length - 1 ? "disabled" : ""} title="Séance précédente">◀</button>
       <div class="sx-head-txt">
         <h2>${iconeGarmin(d.type)} ${escapeHtml(d.titre || "Séance")}</h2>
@@ -1001,8 +1139,10 @@ function renderSeanceDetail() {
 
   const prev = document.getElementById("sx-prev");
   const next = document.getElementById("sx-next");
+  const back = document.getElementById("sx-back");
   if (prev) prev.addEventListener("click", () => decaleSeance(1));
   if (next) next.addEventListener("click", () => decaleSeance(-1));
+  if (back) back.addEventListener("click", () => setVueSx("liste"));
 
   host.querySelectorAll(".sx-switch button").forEach((b) =>
     b.addEventListener("click", () => {
@@ -1012,7 +1152,7 @@ function renderSeanceDetail() {
   );
 
   const canvas = document.getElementById("sx-canvas");
-  if (canvas && tours.length) chartTours(canvas, tours, structuree);
+  if (canvas && decoupageUtile) chartTours(canvas, tours, structuree);
 }
 
 /* Flèches clavier quand l'onglet Séances est actif */
@@ -1195,6 +1335,7 @@ function applySelection(profil, prepa) {
   JOURNAL = (prepa && prepa.journal) || [];
   DETAILS = ((prepa && prepa.details) || []).slice().sort((a, b) => (b.dateHeure || "").localeCompare(a.dateHeure || ""));
   SEANCE_SEL = DETAILS.length ? DETAILS[0].activityId : null;
+  SX_VUE = "liste"; // changer de prépa ramène à la liste, pas à une fiche orpheline
   VIEW_WEEK_IDX = null;
   RENDERED = {};
   saveSelection();
