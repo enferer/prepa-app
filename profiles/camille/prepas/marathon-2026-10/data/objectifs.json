@@ -44,14 +44,14 @@
   },
   "blessures": [
     {
-      "zone": "Genou",
-      "statut": "levée — en surveillance depuis le 09/09/2026",
-      "consignes": "Gêne légère présente en courant du 26/07/2026 au 28/08/2026 (~5 semaines, stable, disparaissant à l'arrêt, sans modification de la foulée). DISPARUE pendant les vacances (29/08→09/09) malgré ~920 m de D+ en une semaine, dont une SL trail de 465 m D+ le 04/09 et 238 m de descente le 07/09 : aucune douleur signalée. Hypothèse : le terrain souple, la baisse de charge, les descentes contrôlées et le repos relatif ont éteint l'irritation. Statut LEVÉE, mais l'historique impose la surveillance — le retour sur bitume plat à partir du 13/09, puis la montée en charge du bloc spécifique (SL 24 → 26 → 30 km), sont précisément le contexte qui l'avait fait apparaître. Consignes : renfo quadriceps/fessiers/proprioception À RELANCER EN PRIORITÉ (aucune séance faite depuis le 26/08) — c'est le principal levier pour que la gêne ne revienne pas ; descentes toujours en foulée courte, jamais de freinage jambe tendue. Si la gêne réapparaît et dépasse une semaine, l'avis kiné redevient la consigne."
+      "zone": "Genou (rotule)",
+      "statut": "présente — gêne légère et stable, surveillance rapprochée (au 13/09/2026)",
+      "consignes": "Gêne rotulienne présente en courant depuis le 26/07/2026. Absente (ou silencieuse) pendant les vacances en trail du 29/08 au 09/09 ; de nouveau ressentie au retour sur bitume plat, au même niveau qu'avant les vacances, confirmé par l'athlète le 13/09/2026 : faible, uniquement pendant la course, disparaissant à l'arrêt, sans modification de la foulée ni douleur au repos. Correspond au stade 1 du protocole (§4 COACH.md) : on maintient l'entraînement, y compris l'intensité, et on surveille. Consignes : renfo quadriceps/fessiers/proprioception DEUX fois par semaine, en format court (12 min et 10 min) accroché aux footings du lundi et du vendredi — l'athlète n'aime pas le renfo et aucune séance n'a été faite entre le 26/08 et le 13/09, d'où ce format minimal négocié. Descentes en foulée courte, jamais de freinage jambe tendue. Points de bascule : si la gêne se réveille au repos ou dans les escaliers, si elle modifie la foulée, ou si elle s'intensifie après les SL de 24 et 26 km (20/09 et 27/09) → suppression de l'intensité puis avis kiné."
     },
     {
       "zone": "Tendon postérieur du genou (ischio distal / creux poplité)",
-      "statut": "résolue — à surveiller",
-      "consignes": "Apparue le 19/08/2026 sur un fractionné couru sur pavés mouillés (appuis glissants, sol dur et irrégulier). Éteinte en 2 jours de repos complet ; SL de 22 km le 22/08 totalement indolore. Consignes : fractionné et seuil sur surface sèche et régulière (bitume sec, piste, chemin roulant), jamais sur pavés mouillés. Renfo excentrique des ischios, pas de pliométrie tant que la zone est dans le rétro. Si la douleur réapparaît et persiste au-delà d'une semaine ou modifie la foulée → avis kiné."
+      "statut": "résolue — confirmée éteinte le 13/09/2026",
+      "consignes": "Apparue le 19/08/2026 sur un fractionné couru sur pavés mouillés (appuis glissants, sol dur et irrégulier). Éteinte en 2 jours de repos complet ; SL de 22 km le 22/08 totalement indolore. Confirmée totalement indolore par l'athlète le 13/09/2026, y compris après le seuil du 12/09 et la SL de 20 km du 13/09. Consignes : fractionné et seuil sur surface sèche et régulière (bitume sec, piste, chemin roulant), jamais sur pavés mouillés. Renfo excentrique des ischios, pas de pliométrie tant que la zone est dans le rétro. Si la douleur réapparaît et persiste au-delà d'une semaine ou modifie la foulée → avis kiné."
     }
   ],
   "contraintes": [
@@ -73,7 +73,7 @@
     "materiel": [
       "Poids du corps"
     ],
-    "focus": "Prévention genou (quadriceps, fessiers, chaîne postérieure), gainage et stabilité hanche/genou. Renfo lourd le lundi (48h avant la qualité), core léger le mercredi. Allégé en décharge, arrêté en affûtage."
+    "focus": "Prévention de la gêne rotulienne (quadriceps, fessiers, proprioception) et gainage. FORMAT COURT IMPOSÉ depuis le 14/09/2026 : l'athlète n'aime pas le renfo et a sauté 5 séances consécutives entre le 26/08 et le 13/09. On abandonne les circuits longs au profit de deux blocs brefs enchaînés aux footings existants — 12 min de force (squats lents, fentes, chaise, ponts fessiers, équilibre) le lundi après l'EF, 10 min de gainage et proprio le vendredi après l'EF. Arrêt du travail de force en affûtage, gainage seul."
   },
   "commentairesLibres": "Coureuse rapide sur 10 km (5:03/km) avec une base d'endurance modérée (~29 km/sem, plus longue sortie 21 km). Objectif du bloc : construire l'endurance spécifique marathon. 4 séances/sem (Lun/Mer/Ven/Dim). Aime courir en groupe (utile pendant les vacances). Objectif 4h00 sécurisé — réévaluable à la hausse si le volume et les SL passent bien."
 }

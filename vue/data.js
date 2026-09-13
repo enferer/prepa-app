@@ -1,7 +1,7 @@
 // Fichier GÉNÉRÉ par scripts/build_data.py — NE PAS ÉDITER À LA MAIN.
 // Relancer `python3 scripts/build_data.py` après toute modif dans profiles/*/prepas/*/data/.
 window.PREPA_DATA = {
-  "genereLe": "2026-09-13T18:51:50",
+  "genereLe": "2026-09-13T22:59:37",
   "profils": [
     {
       "id": "camille",
@@ -57,14 +57,14 @@ window.PREPA_DATA = {
             },
             "blessures": [
               {
-                "zone": "Genou",
-                "statut": "levée — en surveillance depuis le 09/09/2026",
-                "consignes": "Gêne légère présente en courant du 26/07/2026 au 28/08/2026 (~5 semaines, stable, disparaissant à l'arrêt, sans modification de la foulée). DISPARUE pendant les vacances (29/08→09/09) malgré ~920 m de D+ en une semaine, dont une SL trail de 465 m D+ le 04/09 et 238 m de descente le 07/09 : aucune douleur signalée. Hypothèse : le terrain souple, la baisse de charge, les descentes contrôlées et le repos relatif ont éteint l'irritation. Statut LEVÉE, mais l'historique impose la surveillance — le retour sur bitume plat à partir du 13/09, puis la montée en charge du bloc spécifique (SL 24 → 26 → 30 km), sont précisément le contexte qui l'avait fait apparaître. Consignes : renfo quadriceps/fessiers/proprioception À RELANCER EN PRIORITÉ (aucune séance faite depuis le 26/08) — c'est le principal levier pour que la gêne ne revienne pas ; descentes toujours en foulée courte, jamais de freinage jambe tendue. Si la gêne réapparaît et dépasse une semaine, l'avis kiné redevient la consigne."
+                "zone": "Genou (rotule)",
+                "statut": "présente — gêne légère et stable, surveillance rapprochée (au 13/09/2026)",
+                "consignes": "Gêne rotulienne présente en courant depuis le 26/07/2026. Absente (ou silencieuse) pendant les vacances en trail du 29/08 au 09/09 ; de nouveau ressentie au retour sur bitume plat, au même niveau qu'avant les vacances, confirmé par l'athlète le 13/09/2026 : faible, uniquement pendant la course, disparaissant à l'arrêt, sans modification de la foulée ni douleur au repos. Correspond au stade 1 du protocole (§4 COACH.md) : on maintient l'entraînement, y compris l'intensité, et on surveille. Consignes : renfo quadriceps/fessiers/proprioception DEUX fois par semaine, en format court (12 min et 10 min) accroché aux footings du lundi et du vendredi — l'athlète n'aime pas le renfo et aucune séance n'a été faite entre le 26/08 et le 13/09, d'où ce format minimal négocié. Descentes en foulée courte, jamais de freinage jambe tendue. Points de bascule : si la gêne se réveille au repos ou dans les escaliers, si elle modifie la foulée, ou si elle s'intensifie après les SL de 24 et 26 km (20/09 et 27/09) → suppression de l'intensité puis avis kiné."
               },
               {
                 "zone": "Tendon postérieur du genou (ischio distal / creux poplité)",
-                "statut": "résolue — à surveiller",
-                "consignes": "Apparue le 19/08/2026 sur un fractionné couru sur pavés mouillés (appuis glissants, sol dur et irrégulier). Éteinte en 2 jours de repos complet ; SL de 22 km le 22/08 totalement indolore. Consignes : fractionné et seuil sur surface sèche et régulière (bitume sec, piste, chemin roulant), jamais sur pavés mouillés. Renfo excentrique des ischios, pas de pliométrie tant que la zone est dans le rétro. Si la douleur réapparaît et persiste au-delà d'une semaine ou modifie la foulée → avis kiné."
+                "statut": "résolue — confirmée éteinte le 13/09/2026",
+                "consignes": "Apparue le 19/08/2026 sur un fractionné couru sur pavés mouillés (appuis glissants, sol dur et irrégulier). Éteinte en 2 jours de repos complet ; SL de 22 km le 22/08 totalement indolore. Confirmée totalement indolore par l'athlète le 13/09/2026, y compris après le seuil du 12/09 et la SL de 20 km du 13/09. Consignes : fractionné et seuil sur surface sèche et régulière (bitume sec, piste, chemin roulant), jamais sur pavés mouillés. Renfo excentrique des ischios, pas de pliométrie tant que la zone est dans le rétro. Si la douleur réapparaît et persiste au-delà d'une semaine ou modifie la foulée → avis kiné."
               }
             ],
             "contraintes": [
@@ -86,7 +86,7 @@ window.PREPA_DATA = {
               "materiel": [
                 "Poids du corps"
               ],
-              "focus": "Prévention genou (quadriceps, fessiers, chaîne postérieure), gainage et stabilité hanche/genou. Renfo lourd le lundi (48h avant la qualité), core léger le mercredi. Allégé en décharge, arrêté en affûtage."
+              "focus": "Prévention de la gêne rotulienne (quadriceps, fessiers, proprioception) et gainage. FORMAT COURT IMPOSÉ depuis le 14/09/2026 : l'athlète n'aime pas le renfo et a sauté 5 séances consécutives entre le 26/08 et le 13/09. On abandonne les circuits longs au profit de deux blocs brefs enchaînés aux footings existants — 12 min de force (squats lents, fentes, chaise, ponts fessiers, équilibre) le lundi après l'EF, 10 min de gainage et proprio le vendredi après l'EF. Arrêt du travail de force en affûtage, gainage seul."
             },
             "commentairesLibres": "Coureuse rapide sur 10 km (5:03/km) avec une base d'endurance modérée (~29 km/sem, plus longue sortie 21 km). Objectif du bloc : construire l'endurance spécifique marathon. 4 séances/sem (Lun/Mer/Ven/Dim). Aime courir en groupe (utile pendant les vacances). Objectif 4h00 sécurisé — réévaluable à la hausse si le volume et les SL passent bien."
           },
@@ -691,14 +691,14 @@ window.PREPA_DATA = {
                     "focus": "Chaîne postérieure, quadris/fessiers, gainage"
                   },
                   {
-                    "date": "2026-09-11",
-                    "type": "Seuil",
-                    "titre": "Seuil 3×2 km",
-                    "description": "2 km éch, 3×2 km à 5:20/km (récup 2 min trot), 2 km rac. ≈ 10 km. Terrain PLAT et surface sèche.",
-                    "statut": "modifiee",
-                    "commentaireCoach": "Décalée du mercredi au vendredi à ta demande (EF de dernier jour de vacances mercredi), et allégée de 2×3 km à 3×2 km. Pourquoi 3×2 plutôt que 2×3 alors que tu te sens fraîche : il ne reste qu'un jour avant la SL de dimanche, et des blocs de 2 km fatiguent moins qu'un bloc de 3 km pour un volume de qualité quasi identique (6 km contre 6 km). Tu gardes la stimulation du seuil sans hypothéquer dimanche. Deux consignes : PLAT et surface sèche — c'est un fractionné sur pavés mouillés qui t'avait déclenché le tendon postérieur le 19/08, on ne rejoue pas ça. Et tiens 5:20, ne pars pas plus vite : ce sont tes premiers kilomètres rapides depuis le 25/08.",
-                    "distanceCibleKm": 10,
-                    "alluresCibles": "Seuil 5:20 · EF 6:40 éch/rac"
+                    "date": "2026-09-09",
+                    "type": "EF",
+                    "titre": "Footing dernier jour de vacances",
+                    "description": "5 km EF.",
+                    "statut": "validee",
+                    "commentaireCoach": "Échangée avec le seuil : tu as fait ce footing mercredi, dernier jour de vacances, et décalé la qualité au vendredi. 5,0 km @6:07 avec D+139 et FC 155 — un peu rapide pour une EF, mais sur ce profil et par cette chaleur c'est cohérent. Bon choix d'avoir gardé le seuil pour une fois rentrée, au frais et sur du plat.",
+                    "distanceCibleKm": 5,
+                    "alluresCibles": "6:40"
                   },
                   {
                     "date": "2026-09-09",
@@ -711,22 +711,22 @@ window.PREPA_DATA = {
                     "focus": "Gainage, proprioception, stabilité hanche/genou"
                   },
                   {
-                    "date": "2026-09-09",
-                    "type": "EF",
-                    "titre": "Footing dernier jour de vacances",
-                    "description": "5 km EF.",
+                    "date": "2026-09-12",
+                    "type": "Seuil",
+                    "titre": "Seuil 3×2 km",
+                    "description": "2 km éch, 3×2 km à 5:20/km (récup 2 min trot), 2 km rac. ≈ 10 km. Terrain PLAT et surface sèche.",
                     "statut": "validee",
-                    "commentaireCoach": "Échangée avec le seuil : tu as fait ce footing mercredi, dernier jour de vacances, et décalé la qualité au vendredi. 5,0 km @6:07 avec D+139 et FC 155 — un peu rapide pour une EF, mais sur ce profil et par cette chaleur c'est cohérent. Bon choix d'avoir gardé le seuil pour une fois rentrée, au frais et sur du plat.",
-                    "distanceCibleKm": 5,
-                    "alluresCibles": "6:40"
+                    "commentaireCoach": "Décalée encore d'un jour (samedi 12/09 au lieu du vendredi) et donc courue la veille de la SL — ce n'est pas l'idéal, et pourtant la séance est excellente. Tes trois blocs : 5:12, 5:17, 5:13 de moyenne, sur du plat et au sec comme demandé. Deux choses me plaisent : la régularité (6 kilomètres rapides dans une fourchette de 9 secondes) et le fait que ton dernier bloc soit le plus rapide (5:11) — tu as fini en contrôle, pas en survie. La FC monte de 160 à 172 d'un bloc à l'autre, c'est la dérive normale d'une séance de seuil bien menée. Seul reproche, et il est mineur : je t'avais demandé 5:20 et tu as couru 5:14. Six secondes, ça passe ici, mais retiens le principe — sur une séance de seuil l'intérêt est de rester longtemps à la bonne intensité, pas d'aller plus vite que la consigne.",
+                    "distanceCibleKm": 10,
+                    "alluresCibles": "Seuil 5:20 · EF 6:40 éch/rac"
                   },
                   {
                     "date": "2026-09-13",
                     "type": "SL",
                     "titre": "Sortie longue 20 km (finish AM)",
                     "description": "20 km : 17 km en endurance ~6:20/km, puis 3 km à 5:41/km pour finir. Terrain PLAT — c'est le point important de cette sortie.",
-                    "statut": "modifiee",
-                    "commentaireCoach": "Maintenue en intégralité, finish à allure marathon compris : c'est la séance que je protège cette semaine, et c'est pour elle que j'ai allégé le seuil de vendredi. Deux raisons. D'abord c'est ton premier contact de la prépa avec l'allure marathon, sur jambes déjà fatiguées — exactement la sensation du 30e kilomètre. Ensuite, tu n'as pas posé un pied sur du plat depuis le 28/08 : deux semaines de trail t'ont donné de la force, mais tu as perdu tes repères d'allure, et tes 3 km à 5:41 vont te les rendre. Ne juge pas tes 17 premiers kilomètres à la montre : après ce bloc de trail, 6:20 va te sembler bizarre pendant une demi-heure, c'est normal. Et note bien ta FC sur les 3 derniers kilomètres, c'est mon premier indicateur sérieux pour les 4h00.",
+                    "statut": "validee",
+                    "commentaireCoach": "La meilleure séance de ta prépa, et de loin. 20,4 km, 16 km d'endurance à ~6:10, puis 4,4 km à 5:31/km de moyenne (5:37 / 5:38 / 5:29 / 5:29 / 5:25 sur la fin) — tu as fait un kilomètre de plus que les 3 prévus et 10 s/km plus vite que l'allure marathon. Le chiffre qui compte n'est pas l'allure, c'est la FC : 155 à 159 sur ces quatre kilomètres, max 168. Mon point de contrôle était \"FC ≤ 158 sur les blocs à 5:41\" ; tu es dans cette zone à une allure plus rapide, après 16 km de course, et le lendemain d'une séance de seuil. C'est le premier vrai signal solide en faveur des 4h00. Une réserve tout de même : ce n'était pas la commande. Le bloc à allure marathon sert à graver 5:41 dans tes jambes, pas à mesurer ta vitesse de pointe — sur les prochaines SL, tu tiens 5:41 pile, même si tu te sens capable de plus. C'est là que le bénéfice est.",
                     "distanceCibleKm": 20,
                     "alluresCibles": "SL 6:20 · finish AM 5:41"
                   }
@@ -745,19 +745,19 @@ window.PREPA_DATA = {
                     "titre": "Footing",
                     "description": "7 km EF.",
                     "statut": "modifiee",
-                    "commentaireCoach": "Facile = facile. C'est le volume EF qui construit ton moteur marathon, ne le cours pas trop vite.",
+                    "commentaireCoach": "7 km vraiment faciles, à 6:40 : tu sors d'un enchaînement seuil + SL sur deux jours, cette sortie sert à digérer, pas à produire. Tes EF partent souvent trop vite (6:53 de moyenne sur tes sorties faciles récentes, et 6:07 le 09/09) — laisse-toi descendre à 6:40-6:50, c'est ce volume-là qui construit ton moteur de marathon.",
                     "distanceCibleKm": 7,
                     "alluresCibles": "6:40"
                   },
                   {
                     "date": "2026-09-14",
                     "type": "Renfo",
-                    "titre": "Renfo entretien",
-                    "description": "Circuit force allégé, 3 tours.",
+                    "titre": "Renfo express genou — 12 min",
+                    "description": "12 minutes, juste après le footing du lundi, en tenue de course, sans matériel. 3 tours de : 20 squats lents (descente en 3 s), 12 fentes avant par jambe, 30 s de chaise contre un mur, 20 ponts fessiers, 30 s d'équilibre sur une jambe (yeux fermés si tu tiens). 45 s de pause entre les tours.",
                     "statut": "modifiee",
-                    "commentaireCoach": "En spécifique on réduit le renfo à 1 séance d'entretien : priorité à la course.",
-                    "dureeCibleMin": 30,
-                    "focus": "Chaîne postérieure, quadris/fessiers, gainage"
+                    "commentaireCoach": "Tu m'as dit que tu n'aimes pas ça — je l'entends, alors je supprime tout ce qui peut se supprimer. Plus de circuit en 4 tours, plus de séance dédiée à caser dans ta journée : 12 minutes enchaînées à la fin de ton footing, pendant que tu es déjà en tenue et déjà chaude. Je ne négocie pas sur l'existence de cette séance, et voici pourquoi : ta gêne rotulienne dure depuis le 26/07, elle est revenue avec le bitume, et le renfo quadriceps est le seul levier dont tu disposes pour qu'elle ne devienne pas un syndrome fémoro-patellaire à quatre semaines de la course. Six semaines de plan, douze séances de 12 minutes : deux heures et demie au total pour protéger ton marathon.",
+                    "dureeCibleMin": 12,
+                    "focus": "Quadriceps, fessiers, stabilité de la rotule"
                   },
                   {
                     "date": "2026-09-16",
@@ -765,7 +765,7 @@ window.PREPA_DATA = {
                     "titre": "Allure marathon 2×4 km",
                     "description": "2 km éch, 2×4 km à 5:41/km (récup 3 min), 1 km rac.",
                     "statut": "modifiee",
-                    "commentaireCoach": "Tu apprends à sentir ton allure course. Elle doit devenir un réflexe.",
+                    "commentaireCoach": "2×4 km à 5:41, et je pèse le mot : 5:41, pas 5:30. Tu viens de prouver dimanche que tu sais aller plus vite ; l'exercice ici est l'inverse, il s'agit de rendre cette allure automatique au point de la tenir sans montre. Si tes 4 km sortent à 5:35 ou plus rapide, tu rates la séance même en te sentant bien. Récup 3 min en trot entre les deux blocs. Surface sèche et plate.",
                     "distanceCibleKm": 11,
                     "alluresCibles": "AM 5:41 · EF 6:40 éch/rac"
                   },
@@ -775,9 +775,19 @@ window.PREPA_DATA = {
                     "titre": "Footing",
                     "description": "4 km EF léger.",
                     "statut": "modifiee",
-                    "commentaireCoach": "Facile = facile. C'est le volume EF qui construit ton moteur marathon, ne le cours pas trop vite.",
+                    "commentaireCoach": "4 km très légers, uniquement pour débloquer les jambes avant dimanche. Enchaîne le renfo express derrière.",
                     "distanceCibleKm": 4,
                     "alluresCibles": "6:40"
+                  },
+                  {
+                    "date": "2026-09-18",
+                    "type": "Renfo",
+                    "titre": "Gainage + proprio — 10 min",
+                    "description": "10 minutes après l'EF du vendredi : 3×40 s de gainage ventral, 3×30 s de gainage latéral par côté, 2×30 s d'équilibre sur une jambe par côté, 2×15 relevés de bassin. Rien de lourd, pas de charge, c'est du maintien.",
+                    "statut": "modifiee",
+                    "dureeCibleMin": 10,
+                    "focus": "Gainage, stabilité de la hanche et du genou",
+                    "commentaireCoach": "Je préfère deux fois dix minutes accrochées à des footings que tu fais déjà, plutôt qu'une séance de trente minutes que tu ne feras pas — on a cinq semaines de preuves sur ce point. Celle-ci est très légère et ne fatiguera pas tes jambes pour la SL du dimanche."
                   },
                   {
                     "date": "2026-09-20",
@@ -785,7 +795,7 @@ window.PREPA_DATA = {
                     "titre": "Sortie longue 24 km (2×4 km AM)",
                     "description": "24 km : 13 km EF, puis 2×4 km à 5:41/km (3 min EF entre), fin EF.",
                     "statut": "modifiee",
-                    "commentaireCoach": "Point de contrôle n°1 : note ta FC sur les blocs. FC ≤ 158 et sensation soutenable = bon signe pour les 4h00.",
+                    "commentaireCoach": "Point de contrôle n°1 : 24 km, dont 2×4 km à 5:41 après 13 km d'endurance. Même consigne que mercredi, tu tiens 5:41 et tu ne dérives pas vers le seuil. Ce que je surveille, c'est ta FC sur le deuxième bloc : en dessous de 158 avec une sensation soutenable, les 4h00 sont sur les rails. Et note-moi ce que dit ta rotule après coup — c'est ta première sortie au-delà de 22 km, la plus longue de ta vie de coureuse, et c'est exactement le type de charge qui l'avait réveillée en juillet.",
                     "distanceCibleKm": 24,
                     "alluresCibles": "SL 6:20 · blocs AM 5:41"
                   }
@@ -811,12 +821,12 @@ window.PREPA_DATA = {
                   {
                     "date": "2026-09-21",
                     "type": "Renfo",
-                    "titre": "Renfo entretien",
-                    "description": "Circuit force allégé, 3 tours.",
+                    "titre": "Renfo express genou — 12 min",
+                    "description": "Même circuit que la semaine passée, après le footing du lundi : 3 tours de 20 squats lents, 12 fentes par jambe, 30 s de chaise, 20 ponts fessiers, 30 s d'équilibre unipodal.",
                     "statut": "modifiee",
-                    "commentaireCoach": "Entretien de la force.",
-                    "dureeCibleMin": 30,
-                    "focus": "Chaîne postérieure, quadris/fessiers, gainage"
+                    "commentaireCoach": "Format court, accroché au footing. Même logique que la S10 : la régularité prime sur le volume.",
+                    "dureeCibleMin": 12,
+                    "focus": "Quadriceps, fessiers, stabilité de la rotule"
                   },
                   {
                     "date": "2026-09-23",
@@ -839,12 +849,22 @@ window.PREPA_DATA = {
                     "alluresCibles": "6:40"
                   },
                   {
+                    "date": "2026-09-25",
+                    "type": "Renfo",
+                    "titre": "Gainage + proprio — 10 min",
+                    "description": "Après l'EF du vendredi : gainage ventral et latéral, équilibre unipodal, relevés de bassin. 10 min.",
+                    "statut": "modifiee",
+                    "dureeCibleMin": 10,
+                    "focus": "Gainage, stabilité de la hanche et du genou",
+                    "commentaireCoach": "Très léger, sans impact sur la SL du dimanche."
+                  },
+                  {
                     "date": "2026-09-27",
                     "type": "SL",
                     "titre": "Sortie longue 26 km (2×5 km AM)",
                     "description": "26 km : 14 km EF, puis 2×5 km à 5:41/km (3 min EF entre), fin EF.",
                     "statut": "modifiee",
-                    "commentaireCoach": "LE juge de paix de la prépa (≈2h39). Tenu proprement avec FC ≤ 160 → objectif 4h00 confirmé. Si tu dois lutter ou que la FC dépasse 165 → on recale sereinement à 4h10 (5:55/km).",
+                    "commentaireCoach": "LE juge de paix de la prépa : 26 km avec 2×5 km à 5:41 (≈2h39). C'est sur cette séance, et pas sur celle du 13/09, que je trancherai l'objectif. Tenue proprement avec une FC ≤ 160 sur les blocs → on confirme les 4h00, et si la marge est aussi nette que dimanche dernier, on ouvrira la discussion sur un objectif plus ambitieux (3h50, soit 5:27/km). Si tu dois lutter ou que la FC passe 165 → on recale à 4h10 sans aucun état d'âme. Toujours 5:41 sur les blocs : c'est la condition pour que la mesure veuille dire quelque chose.",
                     "distanceCibleKm": 26,
                     "alluresCibles": "SL 6:20 · blocs AM 5:41"
                   }
@@ -870,12 +890,12 @@ window.PREPA_DATA = {
                   {
                     "date": "2026-09-28",
                     "type": "Renfo",
-                    "titre": "Renfo entretien",
-                    "description": "Circuit force allégé, 3 tours.",
+                    "titre": "Renfo express genou — 12 min",
+                    "description": "Dernier circuit force court de la prépa, après le footing du lundi. 3 tours, poids du corps.",
                     "statut": "modifiee",
-                    "commentaireCoach": "Dernière séance de renfo un peu chargée : après on entre en affûtage.",
-                    "dureeCibleMin": 30,
-                    "focus": "Chaîne postérieure, quadris/fessiers, gainage"
+                    "commentaireCoach": "Dernière séance un peu tonique : après la SL de 30 km, on passe en gainage seul pour l'affûtage.",
+                    "dureeCibleMin": 12,
+                    "focus": "Quadriceps, fessiers, stabilité de la rotule"
                   },
                   {
                     "date": "2026-09-30",
@@ -13822,7 +13842,7 @@ window.PREPA_DATA = {
             {
               "semaine": 9,
               "titre": "Semaine 9 (7 → 13 septembre 2026) — retour de vacances",
-              "contenu": "Rentrée décalée d'un jour (retour le 10/09 au lieu du 09/09). Lundi 07/09 : **A/R aux Baux, 9,3 km** (4,6 km de montée D+235 puis 4,7 km de descente). Mercredi 09/09 : **EF 5 km @6:07** pour le dernier jour de vacances, **à la place du seuil**. Seuil décalé au **vendredi 11/09** (allégé en 3×2 km), SL maintenue dimanche 13/09.\n\nJambes fraîches au retour malgré le sommeil. Genou toujours silencieux. Renfo : **aucune séance faite** (5e d'affilée depuis la S7)."
+              "contenu": "Rentrée décalée d'un jour (retour le 10/09 au lieu du 09/09). Lundi 07/09 : **A/R aux Baux, 9,3 km** (4,6 km de montée D+235 puis 4,7 km de descente). Mercredi 09/09 : **EF 5 km @6:07** pour le dernier jour de vacances, **à la place du seuil**. Seuil décalé au **vendredi 11/09** (allégé en 3×2 km), SL maintenue dimanche 13/09.\n\nJambes fraîches au retour malgré le sommeil. Genou toujours silencieux. Renfo : **aucune séance faite** (5e d'affilée depuis la S7).\n\n**Bilan coach du 13/09 :** 45,1 km / 4 courses, semaine complète et la meilleure de la prépa. Seuil décalé au samedi 12/09 (3×2 km, blocs à 5:12 / 5:17 / 5:13, FC 160→172, plat et sec) puis SL le lendemain : 20,4 km, 16 km à ~6:10 puis **4,4 km à 5:31/km avec FC 155-159** — un km de plus et 10 s/km plus vite que la commande, deux jours de suite de qualité, sans casse.\n\n**Genou :** la gêne rotulienne est de retour depuis le retour sur bitume, au **même niveau qu'avant les vacances** — faible, seulement en courant, disparaît à l'arrêt, foulée intacte. Statut repassé de « levée » à « présente, stable, sous surveillance ».\n\n**Renfo :** toujours aucune séance (5 d'affilée). Cause identifiée : **pas de motivation**, le renfo seul ne passe pas. Le format est donc réduit à deux blocs courts accrochés aux footings (12 min force le lundi, 10 min gainage le vendredi)."
             }
           ]
         }

@@ -52,3 +52,9 @@ Renfo : **aucune séance faite.**
 Rentrée décalée d'un jour (retour le 10/09 au lieu du 09/09). Lundi 07/09 : **A/R aux Baux, 9,3 km** (4,6 km de montée D+235 puis 4,7 km de descente). Mercredi 09/09 : **EF 5 km @6:07** pour le dernier jour de vacances, **à la place du seuil**. Seuil décalé au **vendredi 11/09** (allégé en 3×2 km), SL maintenue dimanche 13/09.
 
 Jambes fraîches au retour malgré le sommeil. Genou toujours silencieux. Renfo : **aucune séance faite** (5e d'affilée depuis la S7).
+
+**Bilan coach du 13/09 :** 45,1 km / 4 courses, semaine complète et la meilleure de la prépa. Seuil décalé au samedi 12/09 (3×2 km, blocs à 5:12 / 5:17 / 5:13, FC 160→172, plat et sec) puis SL le lendemain : 20,4 km, 16 km à ~6:10 puis **4,4 km à 5:31/km avec FC 155-159** — un km de plus et 10 s/km plus vite que la commande, deux jours de suite de qualité, sans casse.
+
+**Genou :** la gêne rotulienne est de retour depuis le retour sur bitume, au **même niveau qu'avant les vacances** — faible, seulement en courant, disparaît à l'arrêt, foulée intacte. Statut repassé de « levée » à « présente, stable, sous surveillance ».
+
+**Renfo :** toujours aucune séance (5 d'affilée). Cause identifiée : **pas de motivation**, le renfo seul ne passe pas. Le format est donc réduit à deux blocs courts accrochés aux footings (12 min force le lundi, 10 min gainage le vendredi).
