@@ -574,8 +574,8 @@
           "type": "Seuil",
           "titre": "Seuil 3×2 km — DÉCALÉ AU VENDREDI",
           "description": "2 km éch. + 3×2 km au seuil (5:15-5:25) récup 2:30 trot + 1,5 km RAC. Sur le plat.",
-          "statut": "adaptee",
-          "commentaireCoach": "⚠️ Décalée du mercredi au vendredi : tu es rentré hier, la séance n'était pas faisable avant. Elle reste la séance corrective de la prépa, donc on ne la sacrifie pas — d'autant que tu arrives dessus avec deux semaines sans une seule minute d'intensité dans les jambes, tu es frais pour ça. CONSIGNES FERMES, dans l'ordre d'importance : (1) tu pars à 5:25, pas à 5:15 ; (2) tu fais 3 blocs, PAS 4 — en S6 tu en avais rajouté un et tu as lutté, ici le progrès se mesure à la longueur du bloc (10 min d'affilée) et à la régularité, pas au total ; (3) le 3e bloc doit être aussi rapide que le 1er, si tu le sens partir tu écourtes le 3e plutôt que de finir en agonie. Tu dois terminer en te disant que tu aurais pu en faire un de plus — c'est ça, un seuil réussi. Et c'est aussi la condition pour que dimanche soit jouable.",
+          "statut": "validee",
+          "commentaireCoach": "Exécution clinique : 5:12 / 5:16-5:19 / 5:13-5:19 pour une cible à 5:15, FC de 144 à 156 (max 162), seulement 2 min en Z4. Le correctif posé après S6 (progresser en longueur de bloc, pas en nombre, et ne rien rajouter) a été respecté à la lettre. Et tu sors de deux semaines sans un seul km à allure : retrouver la cible du premier coup dans ces conditions, c'est un très bon signal sur ton moteur. C'est cette séance, pas la SL, qui dit où tu en es.",
           "alluresCibles": "Seuil 5:15-5:25 · éch/RAC 6:35",
           "distanceCibleKm": 10
         },
@@ -584,8 +584,8 @@
           "type": "SL",
           "titre": "Sortie longue 24 km + 2×4 km AM",
           "description": "SL 24 km : 9 km EF (6:15) + 2×4 km à AM (5:41) récup 1 km EF + 6 km EF.",
-          "statut": "a_venir",
-          "commentaireCoach": "⭐ LA séance de la semaine, et la plus exigeante de la prépa à ce jour : nouvelle plus longue sortie (record actuel 22 km) ET volume d'AM porté à 8 km (record 6 km). Tu as choisi de garder le plan initial plutôt que ma version allégée à 2×3 km : je te suis, mais je te dis clairement où est le risque — deux variables progressent en même temps, 48 h seulement après un seuil, et après deux semaines de trail où tu n'as pas couru un seul kilomètre à allure. Le protocole pour que ça passe : (1) les 9 premiers km VRAIMENT à 6:15, pas 6:00 — c'est là que la séance se gagne ou se perd ; (2) si le 1er bloc à 5:41 te demande déjà de te battre, tu coupes le 2e à 3 km, sans état d'âme, et on aura quand même progressé en distance ; (3) nutrition : protocole validé (1 pâte de fruits + 1 gel + 500 ml iso), et vu la durée (~2h30) tu peux ajouter une 2e prise vers 18 km. Note tes sensations sur les 6 derniers km : c'est l'indicateur que je regarderai pour la suite.",
+          "statut": "validee",
+          "commentaireCoach": "Séance dure mais FAITE, et il faut lire les bons chiffres. Les 8 km à AM ont été tenus à 5:34-5:38 pour une cible à 5:41 : tu as couru ton record de volume à allure marathon, sur ton record de distance (24,1 km), plus vite que demandé. L'allure n'est pas le problème. Le problème est la FC : bloc 1 à 155-164, bloc 2 à 168-179, 62 min en Z4, charge 204. Trois causes cumulées. (1) Trois records simultanés : +2 km de distance, +60 % de volume à AM, blocs 5 s/km plus rapides que la cible — et le garde-fou posé le 11/09 (couper le 2e bloc à 3 km si le 1er demande de lutter) n'a pas été appliqué. (2) Les conditions : vent 24,1 km/h contre 12,9 le 22/08, humidité 78 %. Dans ce vent, tenir 5:36 c'est fournir un effort de SEUIL — d'où une FC de seuil. Ta montre affichait AM, ton corps courait un semi. (3) Hydratation : 500 ml sur 2h27 = 200 ml/h, la moitié du nécessaire à 21°C et 78 % d'humidité → dérive cardiaque. La nutrition solide (gel 45', gel 1h25, pâte d'amande 2h) n'est PAS en cause : tu as fait mieux que le protocole du 22/08. Les marches arrivent au km 21-22, APRÈS les 8 km à AM — pas pendant. Tu n'as pas craqué sur la séance, tu as payé la note à la fin. Le sub-4h n'est pas remis en cause par cette sortie.",
           "alluresCibles": "EF 6:15 · blocs AM 5:41",
           "distanceCibleKm": 24
         }
@@ -596,7 +596,7 @@
       "dateDebut": "2026-09-14",
       "bloc": "Spécifique marathon",
       "volumeCibleKm": 54,
-      "note": "Entrée en spécifique. Première séance d'allure marathon en continu. Volume 54 km. Renfo réduit à 1/sem : priorité au travail spécifique.",
+      "note": "Entrée en spécifique, recalée après la SL du 13/09. Principe du bloc : une seule variable augmente à la fois DANS LA SORTIE LONGUE. La séance d'allure du mercredi, elle, se court sur jambes fraîches et garde tout son volume : c'est la séance qui attaque le point faible n°1 (tenir une allure soutenue longtemps). Ce qui change partout, c'est le PLAFOND d'allure.",
       "seances": [
         {
           "date": "2026-09-15",
@@ -611,22 +611,22 @@
         {
           "date": "2026-09-16",
           "type": "AM",
-          "titre": "Allure marathon 8 km en continu",
-          "description": "2 km éch. + 8 km à AM (5:41) en continu + 2 km RAC. Sur plat.",
-          "statut": "a_venir",
-          "commentaireCoach": "⭐ Séance de vérité n°1 : 8 km à 5:41 sur jambes fraîches doivent te paraître FACILES. Si c'est dur, préviens-moi, on rediscute du chrono. Sur plat, sans montre en mode panique : régularité au km.",
-          "alluresCibles": "AM 5:41 · éch/RAC 6:35",
+          "titre": "Allure marathon 8 km en continu — allure plafonnée",
+          "description": "2 km éch. + 8 km à AM en continu + 2 km RAC. Sur plat, parcours abrité si possible. Allure STRICTE 5:41-5:45, jamais plus vite — c'est une limite haute, pas seulement une cible. Si le vent dépasse 20 km/h : on oublie l'allure et on court à la FC, plafond 158 bpm.",
+          "statut": "adaptee",
+          "commentaireCoach": "Je maintiens les 8 km continus, à ta demande, et tu as raison de les défendre : c'est la séance qui travaille ton point faible n°1 identifié depuis S6 — tenir une allure soutenue longtemps. Et tu n'as encore JAMAIS couru 8 km d'AM d'un seul tenant : dimanche c'était 2×4 km avec récup, en fin de sortie longue, dans 24 km/h de vent. Ici c'est sur jambes fraîches, sur 12 km au total, sans rien avant : le coût de récup n'a rien à voir. Ce que je change, et c'est le seul vrai correctif de dimanche, c'est le PLAFOND d'allure : 5:41-5:45, limite haute. Ton défaut n'est pas de courir trop lentement, c'est de grignoter 5 s/km jusqu'à transformer de l'allure marathon en effort de seuil. ⭐ Séance de vérité : ces 8 km doivent te paraître FACILES. Donne-moi ta FC moyenne — j'attends 150-158 par temps calme. Au-delà de 165, la SL du 27/09 repasse à 28 km.",
+          "alluresCibles": "AM 5:41-5:45 (plafond) · éch/RAC 6:35",
           "distanceCibleKm": 12
         },
         {
           "date": "2026-09-16",
           "type": "Renfo",
-          "titre": "Renfo cheville — 10 min, NON NÉGOCIABLE",
-          "description": "Juste après la séance AM, en tenue, sans rentrer : 2×15 excentrique tibial antérieur (élastique ou main) + proprio unipodale 2×45 s/pied + gainage 3×40 s. Pas d'excentrique mollet lourd cette semaine.",
+          "titre": "Proprio cheville — 2 min/jour, sans tenue",
+          "description": "Format quotidien accroché au brossage de dents : équilibre unipodal pied droit 2×45 s (yeux fermés quand c'est acquis) + 15 flexions dorsales de cheville. Aucun matériel, aucune tenue, aucun créneau à trouver.",
           "statut": "modifiee",
-          "commentaireCoach": "Troisième recalibrage du renfo, et le dernier : 4 séances sur les 6 dernières prévues ont été zappées, donc je ne joue plus sur la durée mais sur le déclencheur. Une seule séance par semaine, 10 minutes, accrochée à la fin de la séance du mercredi — tu ne rentres pas, tu ne te changes pas, tu la fais sur place. L'excentrique mollet lourd sort du format (c'est lui qui laisse des courbatures avant les SL). Ce qui reste est ce qui protège vraiment ton tibial antérieur, et ta semaine de trail a montré que c'est payant de l'entretenir.",
-          "dureeCibleMin": 10,
-          "focus": "Excentrique tibial ant. · proprio cheville D · gainage"
+          "commentaireCoach": "Je change de pied, et j'assume. Cinq semaines consécutives sans renfo, après trois recalibrages de format (30 → 15 → 12 → 10 min) : le format n'est pas le problème, c'est que cette séance n'existe pas dans ta vie réelle. Le fait objectif : ta cheville a encaissé 1 345 m de D+ en trail sans renfo et sans douleur, elle n'est plus le facteur limitant de cette prépa. À 6 semaines de la course, m'entêter sur une séance jamais faite te coûte de l'attention pour un bénéfice devenu marginal. Je supprime donc le renfo comme SÉANCE et je garde uniquement l'entretien proprioceptif, sous une forme qui ne demande aucune décision : 2 minutes par jour dans ta salle de bain. Si la cheville se remet à tirer, on rouvre le sujet immédiatement.",
+          "dureeCibleMin": 2,
+          "focus": "Proprioception cheville D · mobilité — entretien quotidien"
         },
         {
           "date": "2026-09-18",
@@ -641,11 +641,11 @@
         {
           "date": "2026-09-20",
           "type": "SL",
-          "titre": "Sortie longue 26 km + 2×4 km AM",
-          "description": "SL 26 km : 10 km EF + 2×4 km à AM (5:41) récup 1,5 km EF + 6,5 km EF.",
-          "statut": "a_venir",
-          "commentaireCoach": "26 km, ta plus longue sortie de tous les temps (record actuel 25,4 km). Blocs AM identiques à S8 : on ajoute de la distance, pas de l'intensité. Une seule variable à la fois.",
-          "alluresCibles": "EF 6:15 · blocs AM 5:41",
+          "titre": "Sortie longue 26 km + 2×3 km AM",
+          "description": "SL 26 km : 10 km EF (6:15-6:25) + 2×3 km à AM récup 2 km EF + 8 km EF. Blocs placés au milieu, jamais en fin de sortie. Ravito : gel à 45 min, gel à 1h25, pâte d'amande à 2h, 4e prise à 2h45. Hydratation : 750 ml MINIMUM, 1 L si vent ou humidité. Si vent > 20 km/h : blocs à la FC (plafond 162).",
+          "statut": "adaptee",
+          "commentaireCoach": "Volontairement contenue : 6 km d'AM au lieu de 8, parce que c'est le prix à payer pour arriver frais sur les 30 km de la semaine suivante. La variable qui monte cette semaine est la DISTANCE (26 km, ton record) — l'AM attendra le 27/09. Deux consignes qui viennent directement de dimanche : les blocs se placent AVANT le km 20 et jamais en fin de sortie (tu as fini en Z4 pendant 62 min parce que l'effort arrivait trop tard), et l'hydratation passe à 750 ml minimum.",
+          "alluresCibles": "EF 6:15-6:25 · blocs AM 5:41-5:45",
           "distanceCibleKm": 26
         }
       ]
@@ -654,7 +654,7 @@
       "numero": 10,
       "dateDebut": "2026-09-21",
       "bloc": "Spécifique marathon (PIC)",
-      "volumeCibleKm": 56,
+      "volumeCibleKm": 57,
       "note": "🔝 PIC DE VOLUME (56 km) et répétition générale. La SL de dimanche est LA séance de la prépa : 30 km, ton palier symbolique. Les séances de semaine sont raccourcies pour lui laisser toute la place. Après cette semaine, tout redescend.",
       "seances": [
         {
@@ -700,11 +700,11 @@
         {
           "date": "2026-09-27",
           "type": "SL",
-          "titre": "⭐ RÉPÉTITION GÉNÉRALE — 30 km dont 2×5 km AM",
-          "description": "SL 30 km : 12 km EF + 2×5 km à AM (5:41) récup 1 km EF + 7 km EF. ~3h02.",
-          "statut": "a_venir",
-          "commentaireCoach": "⭐ LA séance de la prépa, et ton palier des 30 km. Durée estimée ~3h02 : tu seras donc plus longtemps en course que le moment où tu passeras le km 30 le jour J (2h50). Contrepartie du passage de 28 à 30 km : le bloc AM descend de 12 à 10 km — ce sont les km à allure marathon qui coûtent cher, pas les km faciles. Tenue de course, gels, hydratation : réplique exacte du jour J. Deux garde-fous : si la cheville se réveille ou si tu t'écroules avant le 2e bloc AM, tu termines en EF pur, sans discuter. ⚠️ Ne conclus pas trop vite si ça passe bien : le mur du marathon est au km 32-35, et aucune SL ne le reproduit fidèlement. Mais si tu boucles les 10 km à AM sans exploser, 4h00 est acquis.",
-          "alluresCibles": "EF 6:15 · blocs AM 5:41",
+          "titre": "⭐ RÉPÉTITION GÉNÉRALE — 30 km dont 2×4 km AM",
+          "description": "SL 30 km : 8 km EF + 2×4 km à AM récup 2 km EF + 12 km EF. ⚠️ Les DEUX blocs sont bouclés avant le km 22 : les 8 derniers km se courent en EF franche, sans exception. Répétition intégrale du jour J : tenue et chaussures de course, réveil et petit-déj à l'horaire du marathon. Ravito complet (gel 45', gel 1h25, pâte d'amande 2h, 4e prise 2h45) + 1 L de boisson.",
+          "statut": "adaptee",
+          "commentaireCoach": "30 km maintenus à ta demande, et ton argument est meilleur que le mien : pour un premier marathon, avoir déjà franchi le 30e km une fois change ce qui se passe dans ta tête le jour J, et ça vaut plus que les 2 km de fatigue que je t'économisais. Mais 30 km ET 8 km d'AM le même jour, c'est le schéma exact de dimanche en plus gros — donc quatre conditions. (1) Les deux blocs sont finis avant le km 22 ; les 8 derniers km en EF, quoi qu'il arrive. Dimanche, l'effort placé trop tard t'a coûté 62 min en Z4. (2) 1 litre de boisson. (3) Plafond 5:41-5:45 : un seul km sous 5:38 et tu coupes le 2e bloc — cette fois tu appliques le garde-fou. (4) Feu vert conditionnel : si ta FC dépasse 165 sur les 8 km du 16/09 par temps calme, on redescend à 28 km. Je ne t'envoie pas sur 3 heures de course avec un cardio qui ne répond pas.",
+          "alluresCibles": "EF 6:15-6:25 · blocs AM 5:41-5:45",
           "distanceCibleKm": 30
         }
       ]

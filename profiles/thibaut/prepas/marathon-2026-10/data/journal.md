@@ -60,3 +60,26 @@ Semaine de vacances à Saint-Rémy-de-Provence, tout en trail, sans séance stru
 **Renfo** : **aucune séance** (3e semaine consécutive).
 
 **Semaine 8** : seuil décalé au **vendredi 11/09** (retour de vacances), **SL de 24 km maintenue dimanche 13/09 avec 2×4 km à AM** (plan initial conservé à ma demande).
+
+## Semaine 8 (07/09 → 13/09) — retour de vacances
+Première vraie semaine structurée depuis trois semaines. 49,2 km sur 4 séances (cible 51).
+
+- **Seuil vendredi 11/09** : 3×2 km à 5:12-5:19 (cible 5:15), FC 144→156, max 162. **Très simple, très bonnes sensations.** Séance parfaitement exécutée après deux semaines sans un seul km à allure.
+- **SL dimanche 13/09** : 24,1 km (record) à 6:06, FC 154 / max 179, avec 2×4 km à AM courus à 5:34-5:38. **Ressenti catastrophique** : manque d'énergie dès le début, **4 marches** (dont 2 avec la montre en pause, invisibles sur la trace). Gros coup au moral sur l'objectif sub-4h.
+
+**Nutrition** : protocole plus fourni que celui validé le 22/08 → gel à 45 min, gel à 1h25, pâte d'amande à 2h, 500 ml d'iso sur l'ensemble. Petit-déj normal, sommeil correct sur la semaine. La nutrition n'est donc pas en cause.
+
+**Analyse du coach** : trois facteurs cumulés, aucun lié à la forme.
+1. **Trois records simultanés** — distance (24 km), volume à AM (8 km, +60 %), et blocs courus 5 s/km plus vite que la cible, 48 h après un seuil. Le garde-fou posé le 11/09 (couper le 2e bloc à 3 km en cas de lutte) n'a pas été appliqué.
+2. **Conditions hostiles** — vent **24,1 km/h** (contre 12,9 le 22/08) et 78 % d'humidité. Dans ce vent, tenir 5:36 = effort de seuil réel, d'où une FC de seuil (168-179).
+3. **Hydratation insuffisante** — 500 ml sur 2h27, soit ~200 ml/h, la moitié du besoin dans ces conditions → dérive cardiaque.
+
+Les marches arrivent au **km 21-22**, après les 8 km à AM, pas pendant. Cadence effondrée à 143 contre 165.
+
+**Renfo** : **5e semaine consécutive sans aucune séance.** Décision : le renfo sort du plan comme séance planifiée, remplacé par 2 min de proprio quotidienne au brossage de dents. La cheville a absorbé 1 345 m de D+ sans renfo ni douleur, elle n'est plus limitante.
+
+**Cheville droite** : RAS, n'a pas tiré.
+
+**Objectif 4h00 : MAINTENU.** Le seuil du 11/09 (5:15/km pour FC 150) reste la mesure fiable du moteur — et il est 26 s/km plus rapide que l'allure marathon visée.
+
+**Arbitrage du 13/09 (demande de l'athlète)** : demande de conserver une SL à 30 km et un bloc de 8 km d'AM en continu, estimant que le temps de calibration à allure marathon avait trop baissé. **Accordé sur les deux.** Les 8 km continus du mercredi 16/09 étaient une erreur de ma part (séance sur jambes fraîches, elle vise justement le point faible « tenir une allure longtemps », et il n'a jamais couru 8 km d'AM d'un seul tenant). La SL de 30 km est accordée sur la force de son argument : franchir le 30e km une fois avant le jour J vaut plus que les 2 km de fatigue économisés. Contreparties : SL du 20/09 contenue à 2×3 km d'AM, blocs du 30 km bouclés avant le km 22, 1 L de boisson, plafond d'allure 5:41-5:45, et feu vert conditionné à la FC du 16/09. Volume d'AM restant : **56 km** (plan initial 60).
