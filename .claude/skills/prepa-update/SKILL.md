@@ -34,6 +34,8 @@ Le compte Garmin utilisé est celui de `profiles/<profil>/.env`, et le script re
 
 Si le script échoue (identifiants absents, MFA, panne Garmin), **ne bloque pas** : dis-le à l'athlète et poursuis avec le `garmin.csv` existant, qu'il peut compléter à la main.
 
+Ce sync est **inclus** dans l'update : pas besoin de lancer `/prepa-sync` avant. `/prepa-sync` sert uniquement quand on veut rapatrier les activités **sans** analyse ni adaptation (options `--dry-run`, `--depuis`, `--backfill`).
+
 ## 1ter. Les deux niveaux de lecture — RÈGLE IMPORTANTE
 
 Il y a **deux sources, deux usages**. Les confondre est la principale façon de rater cette analyse.

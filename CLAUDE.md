@@ -110,6 +110,7 @@ La bascule n'apparaît que sur les séances **structurées** (dont les tours mé
 ## Skills
 
 - `/prepa-init` — démarre une nouvelle prépa pour un profil. Demande d'abord le profil (existant ou nouveau) et le slug de la prépa, puis le questionnaire habituel.
-- `/prepa-update` — MàJ hebdo d'une prépa. Demande d'abord le profil + la prépa cible, puis rapproche activités et séances prévues et adapte la suite.
+- `/prepa-sync` — synchronise les activités Garmin d'une prépa et régénère la vue. **N'analyse rien et n'adapte rien** : les séances restent « neuves » pour le prochain `/prepa-update`.
+- `/prepa-update` — MàJ hebdo d'une prépa. Inclut déjà le sync Garmin. Demande d'abord le profil + la prépa cible, puis rapproche activités et séances prévues et adapte la suite.
 
 Les skills prennent toujours `--profil <id> --prepa <slug>` en argument des commandes Python.
