@@ -115,6 +115,8 @@ function typeIcon(type) {
 }
 
 const STATUT_FAIT = ["validee"];
+// Le renfo ne compte pas dans l'assiduité : ce sont les séances courues qui font la prépa.
+const estCourse = (x) => x.type !== "Renfo";
 const byDate = (a, b) => (a.date || "").localeCompare(b.date || "");
 
 function semaineCourante() {
@@ -190,7 +192,7 @@ function renderDashboard() {
       </div>
     </div>`));
 
-  const s = toutesSeances();
+  const s = toutesSeances().filter(estCourse);
   const faites = s.filter((x) => STATUT_FAIT.includes(x.statut));
   const manquees = s.filter((x) => x.statut === "manquee");
   const restantes = s.filter((x) => x.statut === "a_venir");
@@ -205,7 +207,7 @@ function renderDashboard() {
     { icon: "✅", val: faites.length, label: "Séances faites" },
     { icon: "🗓️", val: restantes.length, label: "Séances restantes" },
     { icon: "⛔", val: manquees.length, label: "Séances loupées", danger: manquees.length > 0 },
-    { icon: "🎯", val: assidu != null ? assidu + "%" : "—", label: "Assiduité" },
+    { icon: "🎯", val: assidu != null ? assidu + "%" : "—", label: "Assiduité", sub: "hors renfo" },
     { icon: "🏃", val: km(kmDurant, 0), unit: "km", label: "Km depuis le début", sub: kmCibleTotal ? "cible " + km(kmCibleTotal, 0) + " km" : "" },
     { icon: "📊", val: km(kmCibleTotal ? (kmDurant / kmCibleTotal) * 100 : 0, 0), unit: "%", label: "Volume vs cible" },
   ];
@@ -283,7 +285,8 @@ function renderWeekView() {
   const today = todayMidnight();
   const seances = (sem.seances || []).slice().sort(byDate);
   const real = volumeRealise(sem.dateDebut);
-  const done = seances.filter((x) => STATUT_FAIT.includes(x.statut)).length;
+  const courses = seances.filter(estCourse);
+  const done = courses.filter((x) => STATUT_FAIT.includes(x.statut)).length;
   const cible = sem.volumeCibleKm || 0;
   const offset = idx - currentIdx;
   const isCurrent = offset === 0;
@@ -317,7 +320,7 @@ function renderWeekView() {
 
   const meta = el(`
     <div class="week-meta-row">
-      <span class="wm-chip">🏃 ${done}/${seances.length} séance${seances.length > 1 ? "s" : ""}</span>
+      <span class="wm-chip">🏃 ${done}/${courses.length} séance${courses.length > 1 ? "s" : ""}</span>
       <span class="wm-chip">📏 ${km(real)}${cible ? " / " + km(cible, 0) : ""} km</span>
     </div>`);
   holder.appendChild(meta);

@@ -1,7 +1,7 @@
 // Fichier GÉNÉRÉ par scripts/build_data.py — NE PAS ÉDITER À LA MAIN.
 // Relancer `python3 scripts/build_data.py` après toute modif dans profiles/*/prepas/*/data/.
 window.PREPA_DATA = {
-  "genereLe": "2026-09-14T22:06:17",
+  "genereLe": "2026-09-14T22:08:24",
   "profils": [
     {
       "id": "camille",
