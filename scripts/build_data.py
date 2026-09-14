@@ -209,6 +209,7 @@ def load_json(path, defaut):
 # Validation du contrat de données (identique v1)
 # ---------------------------------------------------------------------------
 _STATUTS_CONNUS = {"a_venir", "validee", "manquee"}
+_AUJOURDHUI = datetime.now().strftime("%Y-%m-%d")
 _ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
@@ -253,6 +254,10 @@ def valider_plan(plan):
             if se.get("statut") not in _STATUTS_CONNUS:
                 err.append(f"{sref} : `statut` inconnu ({se.get('statut')!r}). "
                            f"Attendu l'un de {sorted(_STATUTS_CONNUS)}.")
+            elif se.get("statut") != "a_venir" and se.get("date", "") > _AUJOURDHUI:
+                err.append(f"{sref} ({se.get('titre','?')}) : séance du {se.get('date')}, "
+                           f"dans le futur, marquée `{se.get('statut')}`. "
+                           f"Une séance pas encore courue doit rester `a_venir`.")
             if se.get("type") == "Renfo" and not se.get("focus"):
                 err.append(f"{sref} : une séance Renfo devrait porter un `focus`.")
     return err
