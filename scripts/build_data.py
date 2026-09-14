@@ -28,6 +28,10 @@ ROOT = Path(__file__).resolve().parent.parent
 PROFILES_DIR = ROOT / "profiles"
 VUE = ROOT / "vue"
 DATA_JS = VUE / "data.js"
+INDEX_HTML = VUE / "index.html"
+# Assets locaux versionnés à chaque build : sans ça le navigateur ressert
+# indéfiniment l'ancien app.js depuis son cache quand on ouvre index.html en file://.
+_ASSETS = re.compile(r'(?P<f>(?:css/style|js/charts|js/app)\.css|(?:css/style|js/charts|js/app)\.js|data\.js)(?:\?v=\d+)?')
 
 
 # ---------------------------------------------------------------------------
@@ -363,6 +367,17 @@ def build_profil(profil_dir, filtre_prepa=None):
     }, erreurs_totales
 
 
+def versionner_assets():
+    """Ajoute ?v=<horodatage> aux assets locaux d'index.html (anti-cache navigateur)."""
+    if not INDEX_HTML.exists():
+        return
+    version = datetime.now().strftime("%Y%m%d%H%M%S")
+    html = INDEX_HTML.read_text(encoding="utf-8")
+    neuf = _ASSETS.sub(lambda m: f"{m.group('f')}?v={version}", html)
+    if neuf != html:
+        INDEX_HTML.write_text(neuf, encoding="utf-8")
+
+
 def main():
     ap = argparse.ArgumentParser(description="Build multi-profils.")
     ap.add_argument("--profil", help="Ne rebuild que ce profil (les autres restent tels quels dans le catalogue).")
@@ -410,6 +425,7 @@ def main():
         + ";\n"
     )
     DATA_JS.write_text(contenu, encoding="utf-8")
+    versionner_assets()
 
     total_prepas = sum(len(p["prepas"]) for p in profils)
     print(f"\n✅ Catalogue généré : {len(profils)} profil(s), {total_prepas} prépa(s) -> {DATA_JS.relative_to(ROOT)}")
