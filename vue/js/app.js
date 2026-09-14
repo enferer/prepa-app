@@ -114,7 +114,7 @@ function typeIcon(type) {
   return "🏃";
 }
 
-const STATUT_FAIT = ["validee", "adaptee", "modifiee"];
+const STATUT_FAIT = ["validee"];
 const byDate = (a, b) => (a.date || "").localeCompare(b.date || "");
 
 function semaineCourante() {
@@ -364,7 +364,7 @@ function renderDayRow(d, seances, { isToday, isPast }) {
   } else {
     seances.forEach((se) => {
       const statut = se.statut || "a_venir";
-      const label = { validee: "Validée", a_venir: "À venir", adaptee: "Adaptée", modifiee: "Modifiée", manquee: "Manquée" }[statut] || statut;
+      const label = { validee: "Validée", a_venir: "À venir", manquee: "Manquée" }[statut] || statut;
       const meta = [];
       if (se.type) meta.push(escapeHtml(se.type));
       if (se.distanceCibleKm) meta.push(km(se.distanceCibleKm) + " km");
@@ -404,7 +404,7 @@ function renderDayRow(d, seances, { isToday, isPast }) {
 
 function renderSeance(s) {
   const statut = s.statut || "a_venir";
-  const label = { validee: "Validée", a_venir: "À venir", adaptee: "Adaptée", modifiee: "Modifiée", manquee: "Manquée" }[statut] || statut;
+  const label = { validee: "Validée", a_venir: "À venir", manquee: "Manquée" }[statut] || statut;
   const renfo = s.type === "Renfo";
   const meta = s.distanceCibleKm ? " · " + km(s.distanceCibleKm) + " km" : s.dureeCibleMin ? " · " + s.dureeCibleMin + " min" : "";
   return el(`

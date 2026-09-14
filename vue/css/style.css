@@ -240,7 +240,6 @@ h1, h2, h3, h4 { margin: 0; font-weight: 650; }
 .badge { font-size: 0.7rem; font-weight: 650; padding: 2px 9px; border-radius: 99px; text-transform: uppercase; letter-spacing: 0.4px; }
 .badge.validee { background: var(--ok-soft); color: var(--ok); }
 .badge.a_venir { background: var(--bg-elev2); color: var(--muted); }
-.badge.adaptee, .badge.modifiee { background: var(--warn-soft); color: var(--warn); }
 .badge.manquee { background: var(--danger-soft); color: var(--danger); }
 
 /* Tables */

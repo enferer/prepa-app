@@ -75,14 +75,14 @@ Note : `alluresCibles` au niveau **objectifs** est un objet `{ zone: {secKm, aff
 | `type` | chaîne | ✅ | `EF`, `SL`, `Seuil`, `VMA`, `AM`, `Cotes`, `Renfo`, `Marathon`… (pilote l'icône) |
 | `titre` | chaîne | ✅ | titre court |
 | `description` | chaîne | recommandé | détail de la séance |
-| `statut` | chaîne | ✅ | l'un de `a_venir`, `validee`, `adaptee`, `modifiee`, `manquee` |
+| `statut` | chaîne | ✅ | l'un de `a_venir`, `validee`, `manquee` |
 | `commentaireCoach` | chaîne | recommandé | justification / consigne du coach |
 | `alluresCibles` | **chaîne** | course : recommandé | ex. `"Seuil 5:20 · EF 6:40"`. **Objet interdit.** À **omettre** pour un Renfo. |
 | `distanceCibleKm` | nombre | course | distance cible (compte dans le volume) |
 | `dureeCibleMin` | nombre | renfo | durée cible (pour les séances sans distance) |
 | `focus` | chaîne | renfo | objectif du renfo (affiché à la place des allures) |
 
-Statuts « faits » (comptés comme réalisés / assiduité) : `validee`, `adaptee`, `modifiee`. `a_venir` = à faire, `manquee` = ratée.
+Trois statuts, pas un de plus : `a_venir` = à faire, `validee` = réalisée (comptée dans l'assiduité), `manquee` = ratée. Une séance que le coach a ajustée et que l'athlète a faite est `validee` — l'ajustement se raconte dans `commentaireCoach`, pas dans le statut.
 
 Séance **course** : porter `distanceCibleKm` + `alluresCibles` (chaîne). Séance **Renfo** : porter `dureeCibleMin` + `focus`, **sans** `alluresCibles` ni `distanceCibleKm`.
 

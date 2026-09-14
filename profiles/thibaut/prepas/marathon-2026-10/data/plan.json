@@ -51,7 +51,7 @@
           "type": "Seuil",
           "titre": "Seuil (tempo) — 3×6 min",
           "description": "2 km éch. + 3×6 min au seuil (5:10) récup 2 min trot + 2 km RAC.",
-          "statut": "adaptee",
+          "statut": "validee",
           "commentaireCoach": "Décalé J+1 (mercredi au lieu de mardi). Réalisé : 8,4 km @ 6:04 moy, FC 144 — les blocs de seuil sont bien passés avec éch/RAC EF. Belle première touche d'intensité.",
           "distanceCibleKm": 8,
           "alluresCibles": "Seuil 5:10 · éch./RAC EF 6:35"
@@ -71,7 +71,7 @@
           "type": "EF",
           "titre": "Footing EF",
           "description": "8 km EF facile.",
-          "statut": "modifiee",
+          "statut": "validee",
           "commentaireCoach": "Raccourci à 5 km @ 6:30 FC 139 (chaleur). Choix raisonnable, effort maintenu, on ne force pas en canicule.",
           "distanceCibleKm": 8,
           "alluresCibles": "EF 6:35 (facile)"
@@ -130,7 +130,7 @@
           "type": "EF",
           "titre": "Footing EF",
           "description": "8 km EF.",
-          "statut": "modifiee",
+          "statut": "validee",
           "commentaireCoach": "Raccourci à 5,3 km @ 6:44 FC 135 (chaleur). OK, mais on va essayer de replacer les EF tôt le matin pour tenir les distances.",
           "distanceCibleKm": 8,
           "alluresCibles": "EF 6:35 (facile)"
@@ -219,7 +219,7 @@
           "type": "EF",
           "titre": "Footing court + 5 lignes droites",
           "description": "9 km EF + 5×20 s d'accélération progressive.",
-          "statut": "modifiee",
+          "statut": "validee",
           "commentaireCoach": "6,0 km @ 6:37 FC 135 (vs 9 km prévus). Un peu court, mais avec la SL 20 km deux jours plus tard + le bonus 4 km de vendredi, le volume hebdo est pile dans la cible (45,5 vs 45). Rien à corriger.",
           "distanceCibleKm": 9,
           "alluresCibles": "EF 6:35 (facile)"
@@ -308,7 +308,7 @@
           "type": "EF",
           "titre": "Footing court + 4 lignes droites (décalé au samedi)",
           "description": "6 km EF + 4×20 s.",
-          "statut": "adaptee",
+          "statut": "validee",
           "commentaireCoach": "Décalé du vendredi (canicule) au samedi. 7,2 km @ 6:28 FC 138 — allure EF cohérente, un poil rapide mais rien de grave. Peut-être un tout petit fond de fatigue vu le ressenti du lendemain.",
           "distanceCibleKm": 6,
           "alluresCibles": "EF 6:35 (facile)"
@@ -446,7 +446,7 @@
           "type": "EF",
           "titre": "Footing court + lignes droites",
           "description": "6 km EF + 5×20 s.",
-          "statut": "modifiee",
+          "statut": "validee",
           "commentaireCoach": "Premier jour de vacances : déverrouillage 2 jours après la SL. Très facile, lignes droites seulement si les jambes répondent.",
           "alluresCibles": "EF 6:35 (facile)",
           "distanceCibleKm": 6
@@ -456,7 +456,7 @@
           "type": "Renfo",
           "titre": "Renfo prévention (léger)",
           "description": "Format court : 2×15 excentrique mollet (marche d'escalier) + proprio unipodale 2×45 s/pied + gainage 3×40 s.",
-          "statut": "modifiee",
+          "statut": "validee",
           "commentaireCoach": "Nouveau format court (12 min, sans matériel) : à faire juste après le footing, avant la douche. C'est le seul moyen qu'elle existe vraiment.",
           "dureeCibleMin": 12,
           "focus": "Gainage · proprio cheville D · excentrique mollet"
@@ -475,7 +475,7 @@
           "type": "EF",
           "titre": "Trail 13,6 km / D+882 (EF 8 km prévus)",
           "description": "Réalisé : trail 13,64 km en 1h49, 8:01/km, FC 140 (max 183), D+882.",
-          "statut": "modifiee",
+          "statut": "validee",
           "commentaireCoach": "Réalisée en trail, +70 % de distance et 882 m de D+ là où je t'avais mis un footing de découverte de 8 km. Je la valide sans réserve sur un point : FC 140 de moyenne sur 1h49 de montagne, c'est un effort parfaitement contrôlé, tu n'as pas couru, tu as randonné vite. Le seul bémol est structurel : avec 882 m de D+ le mardi et 463 m le vendredi, ta grosse séance de la semaine est tombée en début de semaine et la SL officielle est devenue la deuxième. En décharge et en vacances ça ne coûte rien ; en semaine de charge ça dérèglerait tout le reste. Cheville muette sur les deux : excellent signal.",
           "alluresCibles": "Effort EF — pas d'allure cible (dénivelé)",
           "distanceCibleKm": 13.6
@@ -534,7 +534,7 @@
           "type": "EF",
           "titre": "Footing EF — trail 9,3 km (dernier jour de vacances)",
           "description": "Réalisé : trail 9,33 km en 1h08:50, 7:22/km, FC 145 (max 181), D+587.",
-          "statut": "modifiee",
+          "statut": "validee",
           "commentaireCoach": "Tient le rôle de l'EF du mardi, avancée au lundi et faite en trail. FC 145 pour 7:22/km : c'est le dénivelé qui parle, pas la forme. Dernière séance de vacances, rien à redire.",
           "alluresCibles": "Effort EF — pas d'allure cible (dénivelé)",
           "distanceCibleKm": 9.3
@@ -554,7 +554,7 @@
           "type": "EF",
           "titre": "Footing court trail 5 km",
           "description": "Réalisé : trail 5,05 km en 30:22, 6:01/km, FC 147 (max 192), D+586.",
-          "statut": "modifiee",
+          "statut": "validee",
           "commentaireCoach": "Prend la place du footing + lignes droites qui était prévu vendredi : tu l'as fait mercredi, et à 6:01/km pour 586 m de D+ c'était tout sauf un footing lent. Court, donc sans conséquence — mais garde en tête que cette séance était censée être de la récup active, pas un troisième jour d'effort.",
           "alluresCibles": "Effort EF — pas d'allure cible (dénivelé)",
           "distanceCibleKm": 5.05
@@ -613,7 +613,7 @@
           "type": "AM",
           "titre": "Allure marathon 8 km en continu — allure plafonnée",
           "description": "2 km éch. + 8 km à AM en continu + 2 km RAC. Sur plat, parcours abrité si possible. Allure STRICTE 5:41-5:45, jamais plus vite — c'est une limite haute, pas seulement une cible. Si le vent dépasse 20 km/h : on oublie l'allure et on court à la FC, plafond 158 bpm.",
-          "statut": "adaptee",
+          "statut": "validee",
           "commentaireCoach": "Je maintiens les 8 km continus, à ta demande, et tu as raison de les défendre : c'est la séance qui travaille ton point faible n°1 identifié depuis S6 — tenir une allure soutenue longtemps. Et tu n'as encore JAMAIS couru 8 km d'AM d'un seul tenant : dimanche c'était 2×4 km avec récup, en fin de sortie longue, dans 24 km/h de vent. Ici c'est sur jambes fraîches, sur 12 km au total, sans rien avant : le coût de récup n'a rien à voir. Ce que je change, et c'est le seul vrai correctif de dimanche, c'est le PLAFOND d'allure : 5:41-5:45, limite haute. Ton défaut n'est pas de courir trop lentement, c'est de grignoter 5 s/km jusqu'à transformer de l'allure marathon en effort de seuil. ⭐ Séance de vérité : ces 8 km doivent te paraître FACILES. Donne-moi ta FC moyenne — j'attends 150-158 par temps calme. Au-delà de 165, la SL du 27/09 repasse à 28 km.",
           "alluresCibles": "AM 5:41-5:45 (plafond) · éch/RAC 6:35",
           "distanceCibleKm": 12
@@ -623,7 +623,7 @@
           "type": "Renfo",
           "titre": "Proprio cheville — 2 min/jour, sans tenue",
           "description": "Format quotidien accroché au brossage de dents : équilibre unipodal pied droit 2×45 s (yeux fermés quand c'est acquis) + 15 flexions dorsales de cheville. Aucun matériel, aucune tenue, aucun créneau à trouver.",
-          "statut": "modifiee",
+          "statut": "validee",
           "commentaireCoach": "Je change de pied, et j'assume. Cinq semaines consécutives sans renfo, après trois recalibrages de format (30 → 15 → 12 → 10 min) : le format n'est pas le problème, c'est que cette séance n'existe pas dans ta vie réelle. Le fait objectif : ta cheville a encaissé 1 345 m de D+ en trail sans renfo et sans douleur, elle n'est plus le facteur limitant de cette prépa. À 6 semaines de la course, m'entêter sur une séance jamais faite te coûte de l'attention pour un bénéfice devenu marginal. Je supprime donc le renfo comme SÉANCE et je garde uniquement l'entretien proprioceptif, sous une forme qui ne demande aucune décision : 2 minutes par jour dans ta salle de bain. Si la cheville se remet à tirer, on rouvre le sujet immédiatement.",
           "dureeCibleMin": 2,
           "focus": "Proprioception cheville D · mobilité — entretien quotidien"
@@ -643,7 +643,7 @@
           "type": "SL",
           "titre": "Sortie longue 26 km + 2×3 km AM",
           "description": "SL 26 km : 10 km EF (6:15-6:25) + 2×3 km à AM récup 2 km EF + 8 km EF. Blocs placés au milieu, jamais en fin de sortie. Ravito : gel à 45 min, gel à 1h25, pâte d'amande à 2h, 4e prise à 2h45. Hydratation : 750 ml MINIMUM, 1 L si vent ou humidité. Si vent > 20 km/h : blocs à la FC (plafond 162).",
-          "statut": "adaptee",
+          "statut": "validee",
           "commentaireCoach": "Volontairement contenue : 6 km d'AM au lieu de 8, parce que c'est le prix à payer pour arriver frais sur les 30 km de la semaine suivante. La variable qui monte cette semaine est la DISTANCE (26 km, ton record) — l'AM attendra le 27/09. Deux consignes qui viennent directement de dimanche : les blocs se placent AVANT le km 20 et jamais en fin de sortie (tu as fini en Z4 pendant 62 min parce que l'effort arrivait trop tard), et l'hydratation passe à 750 ml minimum.",
           "alluresCibles": "EF 6:15-6:25 · blocs AM 5:41-5:45",
           "distanceCibleKm": 26
@@ -682,7 +682,7 @@
           "type": "Renfo",
           "titre": "Renfo entretien (léger) — court (12 min)",
           "description": "Gainage, mobilité, proprio. Rien de lourd sur les jambes.",
-          "statut": "modifiee",
+          "statut": "validee",
           "commentaireCoach": "Allégé : ~48 h de récup avant la SL, on ne prend aucun risque sur les jambes. Format ramené à 12 min et accroché à une séance de course : sur cette prépa, un renfo court fait vaut infiniment mieux qu'un renfo long zappé.",
           "dureeCibleMin": 12,
           "focus": "Gainage · mobilité · proprio"
@@ -702,7 +702,7 @@
           "type": "SL",
           "titre": "⭐ RÉPÉTITION GÉNÉRALE — 30 km dont 2×4 km AM",
           "description": "SL 30 km : 8 km EF + 2×4 km à AM récup 2 km EF + 12 km EF. ⚠️ Les DEUX blocs sont bouclés avant le km 22 : les 8 derniers km se courent en EF franche, sans exception. Répétition intégrale du jour J : tenue et chaussures de course, réveil et petit-déj à l'horaire du marathon. Ravito complet (gel 45', gel 1h25, pâte d'amande 2h, 4e prise 2h45) + 1 L de boisson.",
-          "statut": "adaptee",
+          "statut": "validee",
           "commentaireCoach": "30 km maintenus à ta demande, et ton argument est meilleur que le mien : pour un premier marathon, avoir déjà franchi le 30e km une fois change ce qui se passe dans ta tête le jour J, et ça vaut plus que les 2 km de fatigue que je t'économisais. Mais 30 km ET 8 km d'AM le même jour, c'est le schéma exact de dimanche en plus gros — donc quatre conditions. (1) Les deux blocs sont finis avant le km 22 ; les 8 derniers km en EF, quoi qu'il arrive. Dimanche, l'effort placé trop tard t'a coûté 62 min en Z4. (2) 1 litre de boisson. (3) Plafond 5:41-5:45 : un seul km sous 5:38 et tu coupes le 2e bloc — cette fois tu appliques le garde-fou. (4) Feu vert conditionnel : si ta FC dépasse 165 sur les 8 km du 16/09 par temps calme, on redescend à 28 km. Je ne t'envoie pas sur 3 heures de course avec un cardio qui ne répond pas.",
           "alluresCibles": "EF 6:15-6:25 · blocs AM 5:41-5:45",
           "distanceCibleKm": 30
@@ -741,7 +741,7 @@
           "type": "Renfo",
           "titre": "Renfo entretien (léger) — court (12 min)",
           "description": "Gainage, mobilité, proprio.",
-          "statut": "modifiee",
+          "statut": "validee",
           "commentaireCoach": "Plus rien de lourd d'ici la course. Uniquement de l'entretien. Format ramené à 12 min et accroché à une séance de course : sur cette prépa, un renfo court fait vaut infiniment mieux qu'un renfo long zappé.",
           "dureeCibleMin": 12,
           "focus": "Gainage · mobilité · proprio"
@@ -800,7 +800,7 @@
           "type": "Renfo",
           "titre": "Renfo léger — court (12 min)",
           "description": "Gainage + mobilité + proprio. Aucune charge.",
-          "statut": "modifiee",
+          "statut": "validee",
           "commentaireCoach": "Dernier renfo de la prépa. Purement préventif. Format ramené à 12 min et accroché à une séance de course : sur cette prépa, un renfo court fait vaut infiniment mieux qu'un renfo long zappé.",
           "dureeCibleMin": 12,
           "focus": "Gainage · mobilité · proprio"

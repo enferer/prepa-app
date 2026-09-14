@@ -208,7 +208,7 @@ def load_json(path, defaut):
 # ---------------------------------------------------------------------------
 # Validation du contrat de données (identique v1)
 # ---------------------------------------------------------------------------
-_STATUTS_CONNUS = {"a_venir", "validee", "adaptee", "modifiee", "manquee"}
+_STATUTS_CONNUS = {"a_venir", "validee", "manquee"}
 _ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 

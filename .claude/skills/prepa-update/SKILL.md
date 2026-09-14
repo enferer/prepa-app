@@ -76,7 +76,7 @@ Pour toute séance à blocs (seuil, VMA, côtes, SL avec portions à AM), **juge
 Une séance prévue sans activité → `statut: "manquee"`, demande la raison, puis applique les règles §4 de COACH.md (décaler / sacrifier, ne jamais empiler sur la semaine suivante).
 
 ## 6. Adapter la suite
-En fonction des réponses et de COACH.md, adapte les **semaines suivantes** (statut `adaptee` ou `modifiee` sur les séances touchées). Si deux semaines consécutives sont fortement dégradées, **ouvre la discussion sur le recalage de l'objectif chrono**. Trace chaque changement dans `commentaireCoach` avec sa justification.
+En fonction des réponses et de COACH.md, adapte les **semaines suivantes** (elles restent en `a_venir` : le statut dit ce qui a été fait, pas ce que le coach a retouché). Si deux semaines consécutives sont fortement dégradées, **ouvre la discussion sur le recalage de l'objectif chrono**. Trace chaque changement dans `commentaireCoach` avec sa justification.
 
 ## 7. Journal & séances signature
 Croise avec `DATA/journal.md`. Si l'athlète mentionne une douleur ou un contexte notable, tiens-en compte même sans écart chiffré. Si le journal de la semaine est vide, invite-le à le remplir.
