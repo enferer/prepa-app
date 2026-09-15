@@ -12,7 +12,8 @@ Skill **purement technique** : il rapatrie les séances de Garmin Connect et ré
 Ce que ce skill fait :
 - récupérer les nouvelles activités dans `DATA/garmin.csv` (+ détails dans `DATA/garmin_raw/`) ;
 - régénérer `activites.json`, `detail_seances.json` et `vue/data.js` ;
-- lister factuellement ce qui a été ajouté.
+- lister factuellement ce qui a été ajouté ;
+- committer et pousser automatiquement le résultat.
 
 Ce que ce skill **ne fait pas**, même si l'occasion semble bonne :
 - pas de `analyze.py` (ni global, ni `--nouvelles`) ;
@@ -61,7 +62,20 @@ python3 scripts/build_data.py                                    # tout, après 
 
 **Vérifie sa sortie** : s'il affiche `❌ VALIDATION …`, signale-le. Ce type d'erreur vient d'un `plan.json`/`objectifs.json` non conforme, pas du sync — ne le corrige pas ici, mentionne-le et renvoie vers `/prepa-update`.
 
-## 4. Rapporter
+## 4. Commiter et pousser — automatique
+
+Dès que la vue est régénérée, **commit et push sans demander confirmation** :
+
+```bash
+git add -A && git commit -m "Sync Garmin <profil>/<slug>" && git push
+```
+
+- Message : `Sync Garmin <profil>/<slug>` pour une cible, `Sync Garmin tous profils` pour une série.
+- **Rien à committer** (aucune nouvelle activité) : saute cette étape, ne force pas un commit vide.
+- **Échec du push** (pas de remote, conflit, réseau) : signale-le dans le rapport, laisse le commit local en place, ne tente pas de rebase ou de force-push.
+- Si `build_data.py` a affiché `❌ VALIDATION …`, commit quand même la récupération mais mentionne l'erreur.
+
+## 5. Rapporter
 
 Résumé **court et factuel**, sans jugement. Sur plusieurs profils, une section par profil (`Thibaut — marathon-2026-10 : 3 activités`), puis une ligne de total :
 - nombre d'activités ajoutées (ou « aucune nouvelle activité ») ;
@@ -71,5 +85,4 @@ Résumé **court et factuel**, sans jugement. Sur plusieurs profils, une section
 
 Termine en rappelant que ces séances **ne sont pas encore analysées** et que `/prepa-update` s'en chargera.
 
-Propose un **commit git** pour tracer la récupération, par exemple :
-`git add -A && git commit -m "Sync Garmin <profil>/<slug>"` (ou `"Sync Garmin tous profils"`)
+Mentionne enfin l'état du commit/push (fait, ou échec avec la raison).
