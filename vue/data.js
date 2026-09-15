@@ -1,7 +1,7 @@
 // Fichier GÉNÉRÉ par scripts/build_data.py — NE PAS ÉDITER À LA MAIN.
 // Relancer `python3 scripts/build_data.py` après toute modif dans profiles/*/prepas/*/data/.
 window.PREPA_DATA = {
-  "genereLe": "2026-09-14T22:13:47",
+  "genereLe": "2026-09-15T19:47:16",
   "profils": [
     {
       "id": "camille",
@@ -5952,6 +5952,76 @@ window.PREPA_DATA = {
               "date": "2026-09-13",
               "dateHeure": "2026-09-13T10:16:37",
               "activityId": 24343998725,
+              "aDetail": true
+            },
+            {
+              "type": "Musculation",
+              "favori": false,
+              "titre": "Musculation",
+              "distanceKm": null,
+              "calories": 45,
+              "dureeSec": 777.0,
+              "fcMoy": 96,
+              "fcMax": 119,
+              "teAerobie": null,
+              "cadenceMoy": null,
+              "cadenceMax": null,
+              "allureMoySecKm": null,
+              "meilleureAllureSecKm": null,
+              "ascensionM": null,
+              "descenteM": null,
+              "longueurFouleeM": null,
+              "oscillationVerticale": null,
+              "tempsContactSol": null,
+              "gapMoySecKm": null,
+              "np": null,
+              "tss": null,
+              "puissanceMoy": null,
+              "puissanceMax": null,
+              "pas": 46,
+              "nbTours": 1,
+              "tempsDeplacementSec": 777.0,
+              "tempsEcouleSec": 834.0,
+              "altitudeMinM": null,
+              "altitudeMaxM": null,
+              "date": "2026-09-14",
+              "dateHeure": "2026-09-14T20:18:44",
+              "activityId": 24361524368,
+              "aDetail": true
+            },
+            {
+              "type": "Course à pied",
+              "favori": false,
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "distanceKm": 8.02,
+              "calories": 403,
+              "dureeSec": 3193.0,
+              "fcMoy": 132,
+              "fcMax": 142,
+              "teAerobie": null,
+              "cadenceMoy": 170,
+              "cadenceMax": 181,
+              "allureMoySecKm": 398,
+              "meilleureAllureSecKm": 331,
+              "ascensionM": 14,
+              "descenteM": 14,
+              "longueurFouleeM": 0.89,
+              "oscillationVerticale": null,
+              "tempsContactSol": null,
+              "gapMoySecKm": null,
+              "np": null,
+              "tss": null,
+              "puissanceMoy": null,
+              "puissanceMax": null,
+              "pas": 9018,
+              "nbTours": 9,
+              "tempsDeplacementSec": 3191.0,
+              "tempsEcouleSec": 3193.0,
+              "altitudeMinM": 47,
+              "altitudeMaxM": 57,
+              "date": "2026-09-15",
+              "dateHeure": "2026-09-15T18:29:51",
+              "activityId": 24373666587,
               "aDetail": true
             }
           ],
@@ -13789,6 +13859,256 @@ window.PREPA_DATA = {
                 "humidite": 88,
                 "ventKmh": 19.3,
                 "description": "Cloudy",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 24361524368,
+              "dateHeure": "2026-09-14T20:18:44",
+              "date": "2026-09-14",
+              "titre": "Musculation",
+              "type": "strength_training",
+              "lieu": null,
+              "distanceKm": null,
+              "dureeSec": 777,
+              "allureMoySecKm": null,
+              "gapMoySecKm": null,
+              "fcMoy": 96,
+              "fcMax": 119,
+              "fcMin": 61,
+              "cadenceMoy": null,
+              "denivelePosM": null,
+              "deniveleNegM": null,
+              "calories": 45,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "UNKNOWN",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 0.0,
+                  "dureeSec": 777,
+                  "allureSecKm": null,
+                  "gapSecKm": null,
+                  "fcMoy": 96,
+                  "fcMax": 119,
+                  "cadenceMoy": null,
+                  "puissanceMoy": null,
+                  "denivelePosM": null,
+                  "deniveleNegM": null,
+                  "intensite": null
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 370,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 19,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 0,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": null,
+                "ressentiC": null,
+                "humidite": null,
+                "ventKmh": null,
+                "description": null,
+                "station": null
+              }
+            },
+            {
+              "activityId": 24373666587,
+              "dateHeure": "2026-09-15T18:29:51",
+              "date": "2026-09-15",
+              "titre": "Camphin-en-Pévèle Course à pied",
+              "type": "running",
+              "lieu": "Camphin-en-Pévèle",
+              "distanceKm": 8.02,
+              "dureeSec": 3193,
+              "allureMoySecKm": 398,
+              "gapMoySecKm": null,
+              "fcMoy": 132,
+              "fcMax": 142,
+              "fcMin": 72,
+              "cadenceMoy": 170,
+              "denivelePosM": 14,
+              "deniveleNegM": 14,
+              "calories": 403,
+              "teAerobie": null,
+              "teAnaerobie": null,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": null,
+              "rpe": null,
+              "ressenti": null,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 406,
+                  "allureSecKm": 406,
+                  "gapSecKm": null,
+                  "fcMoy": 123,
+                  "fcMax": 136,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 5,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 406,
+                  "allureSecKm": 406,
+                  "gapSecKm": null,
+                  "fcMoy": 136,
+                  "fcMax": 142,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 403,
+                  "allureSecKm": 403,
+                  "gapSecKm": null,
+                  "fcMoy": 131,
+                  "fcMax": 136,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 399,
+                  "allureSecKm": 399,
+                  "gapSecKm": null,
+                  "fcMoy": 133,
+                  "fcMax": 138,
+                  "cadenceMoy": 168,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 398,
+                  "allureSecKm": 398,
+                  "gapSecKm": null,
+                  "fcMoy": 132,
+                  "fcMax": 139,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 395,
+                  "allureSecKm": 395,
+                  "gapSecKm": null,
+                  "fcMoy": 131,
+                  "fcMax": 136,
+                  "cadenceMoy": 169,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 392,
+                  "allureSecKm": 392,
+                  "gapSecKm": null,
+                  "fcMoy": 133,
+                  "fcMax": 140,
+                  "cadenceMoy": 171,
+                  "puissanceMoy": null,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 4,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 388,
+                  "allureSecKm": 388,
+                  "gapSecKm": null,
+                  "fcMoy": 133,
+                  "fcMax": 136,
+                  "cadenceMoy": 170,
+                  "puissanceMoy": null,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 35,
+                  "borneBasse": 97
+                },
+                {
+                  "zone": 2,
+                  "secondes": 2546,
+                  "borneBasse": 116
+                },
+                {
+                  "zone": 3,
+                  "secondes": 585,
+                  "borneBasse": 136
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 155
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 175
+                }
+              ],
+              "meteo": {
+                "temperatureC": 21.1,
+                "ressentiC": 21.1,
+                "humidite": 69,
+                "ventKmh": 20.9,
+                "description": "Fair",
                 "station": "Lille"
               }
             }
@@ -23690,6 +24010,41 @@ window.PREPA_DATA = {
               "dateHeure": "2026-09-13T14:43:00",
               "activityId": 24347940300,
               "aDetail": true
+            },
+            {
+              "type": "Course à pied",
+              "favori": false,
+              "titre": "Libercourt Course à pied",
+              "distanceKm": 10.01,
+              "calories": 635,
+              "dureeSec": 3874.0,
+              "fcMoy": 129,
+              "fcMax": 144,
+              "teAerobie": 2.9,
+              "cadenceMoy": 164,
+              "cadenceMax": 222,
+              "allureMoySecKm": 387,
+              "meilleureAllureSecKm": 312,
+              "ascensionM": 64,
+              "descenteM": 60,
+              "longueurFouleeM": 0.94,
+              "oscillationVerticale": 8.9,
+              "tempsContactSol": 277,
+              "gapMoySecKm": 387,
+              "np": 262,
+              "tss": null,
+              "puissanceMoy": 261,
+              "puissanceMax": 369,
+              "pas": 10562,
+              "nbTours": 11,
+              "tempsDeplacementSec": 3867.0,
+              "tempsEcouleSec": 4115.0,
+              "altitudeMinM": 28,
+              "altitudeMaxM": 65,
+              "date": "2026-09-15",
+              "dateHeure": "2026-09-15T17:17:32",
+              "activityId": 24372662087,
+              "aDetail": true
             }
           ],
           "details": [
@@ -30910,6 +31265,208 @@ window.PREPA_DATA = {
                 "humidite": 78,
                 "ventKmh": 24.1,
                 "description": "Cloudy",
+                "station": "Lille"
+              }
+            },
+            {
+              "activityId": 24372662087,
+              "dateHeure": "2026-09-15T17:17:32",
+              "date": "2026-09-15",
+              "titre": "Libercourt Course à pied",
+              "type": "running",
+              "lieu": "Libercourt",
+              "distanceKm": 10.01,
+              "dureeSec": 3874,
+              "allureMoySecKm": 387,
+              "gapMoySecKm": 387,
+              "fcMoy": 129,
+              "fcMax": 144,
+              "fcMin": 76,
+              "cadenceMoy": 164,
+              "denivelePosM": 64,
+              "deniveleNegM": 60,
+              "calories": 635,
+              "teAerobie": 2.9,
+              "teAnaerobie": 0.0,
+              "teLabel": "AEROBIC_BASE",
+              "chargeEntrainement": 64.0,
+              "rpe": 30,
+              "ressenti": 75,
+              "tours": [
+                {
+                  "index": 1,
+                  "distanceKm": 1.0,
+                  "dureeSec": 384,
+                  "allureSecKm": 384,
+                  "gapSecKm": 378,
+                  "fcMoy": 124,
+                  "fcMax": 138,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 265,
+                  "denivelePosM": 8,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 2,
+                  "distanceKm": 1.0,
+                  "dureeSec": 397,
+                  "allureSecKm": 397,
+                  "gapSecKm": 379,
+                  "fcMoy": 132,
+                  "fcMax": 139,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 271,
+                  "denivelePosM": 21,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 3,
+                  "distanceKm": 1.0,
+                  "dureeSec": 382,
+                  "allureSecKm": 382,
+                  "gapSecKm": 384,
+                  "fcMoy": 130,
+                  "fcMax": 143,
+                  "cadenceMoy": 163,
+                  "puissanceMoy": 251,
+                  "denivelePosM": 6,
+                  "deniveleNegM": 7,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 4,
+                  "distanceKm": 1.0,
+                  "dureeSec": 385,
+                  "allureSecKm": 386,
+                  "gapSecKm": 396,
+                  "fcMoy": 127,
+                  "fcMax": 132,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 234,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 12,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 5,
+                  "distanceKm": 1.0,
+                  "dureeSec": 385,
+                  "allureSecKm": 385,
+                  "gapSecKm": 386,
+                  "fcMoy": 131,
+                  "fcMax": 140,
+                  "cadenceMoy": 164,
+                  "puissanceMoy": 249,
+                  "denivelePosM": 3,
+                  "deniveleNegM": 3,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 6,
+                  "distanceKm": 1.0,
+                  "dureeSec": 393,
+                  "allureSecKm": 393,
+                  "gapSecKm": 396,
+                  "fcMoy": 125,
+                  "fcMax": 139,
+                  "cadenceMoy": 157,
+                  "puissanceMoy": 262,
+                  "denivelePosM": 7,
+                  "deniveleNegM": 1,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 7,
+                  "distanceKm": 1.0,
+                  "dureeSec": 387,
+                  "allureSecKm": 387,
+                  "gapSecKm": 378,
+                  "fcMoy": 132,
+                  "fcMax": 144,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 278,
+                  "denivelePosM": 10,
+                  "deniveleNegM": 0,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 8,
+                  "distanceKm": 1.0,
+                  "dureeSec": 391,
+                  "allureSecKm": 392,
+                  "gapSecKm": 393,
+                  "fcMoy": 131,
+                  "fcMax": 137,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 268,
+                  "denivelePosM": 8,
+                  "deniveleNegM": 6,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 9,
+                  "distanceKm": 1.0,
+                  "dureeSec": 379,
+                  "allureSecKm": 379,
+                  "gapSecKm": 394,
+                  "fcMoy": 127,
+                  "fcMax": 136,
+                  "cadenceMoy": 165,
+                  "puissanceMoy": 261,
+                  "denivelePosM": 0,
+                  "deniveleNegM": 22,
+                  "intensite": "INTERVAL"
+                },
+                {
+                  "index": 10,
+                  "distanceKm": 1.0,
+                  "dureeSec": 384,
+                  "allureSecKm": 384,
+                  "gapSecKm": 389,
+                  "fcMoy": 128,
+                  "fcMax": 136,
+                  "cadenceMoy": 166,
+                  "puissanceMoy": 266,
+                  "denivelePosM": 1,
+                  "deniveleNegM": 8,
+                  "intensite": "INTERVAL"
+                }
+              ],
+              "zonesFC": [
+                {
+                  "zone": 1,
+                  "secondes": 65,
+                  "borneBasse": 99
+                },
+                {
+                  "zone": 2,
+                  "secondes": 3667,
+                  "borneBasse": 118
+                },
+                {
+                  "zone": 3,
+                  "secondes": 106,
+                  "borneBasse": 138
+                },
+                {
+                  "zone": 4,
+                  "secondes": 0,
+                  "borneBasse": 158
+                },
+                {
+                  "zone": 5,
+                  "secondes": 0,
+                  "borneBasse": 177
+                }
+              ],
+              "meteo": {
+                "temperatureC": 22.2,
+                "ressentiC": 22.2,
+                "humidite": 69,
+                "ventKmh": 22.5,
+                "description": "Fair",
                 "station": "Lille"
               }
             }

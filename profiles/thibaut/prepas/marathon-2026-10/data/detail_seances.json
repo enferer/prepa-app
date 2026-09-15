@@ -7218,5 +7218,207 @@
       "description": "Cloudy",
       "station": "Lille"
     }
+  },
+  {
+    "activityId": 24372662087,
+    "dateHeure": "2026-09-15T17:17:32",
+    "date": "2026-09-15",
+    "titre": "Libercourt Course à pied",
+    "type": "running",
+    "lieu": "Libercourt",
+    "distanceKm": 10.01,
+    "dureeSec": 3874,
+    "allureMoySecKm": 387,
+    "gapMoySecKm": 387,
+    "fcMoy": 129,
+    "fcMax": 144,
+    "fcMin": 76,
+    "cadenceMoy": 164,
+    "denivelePosM": 64,
+    "deniveleNegM": 60,
+    "calories": 635,
+    "teAerobie": 2.9,
+    "teAnaerobie": 0.0,
+    "teLabel": "AEROBIC_BASE",
+    "chargeEntrainement": 64.0,
+    "rpe": 30,
+    "ressenti": 75,
+    "tours": [
+      {
+        "index": 1,
+        "distanceKm": 1.0,
+        "dureeSec": 384,
+        "allureSecKm": 384,
+        "gapSecKm": 378,
+        "fcMoy": 124,
+        "fcMax": 138,
+        "cadenceMoy": 163,
+        "puissanceMoy": 265,
+        "denivelePosM": 8,
+        "deniveleNegM": 0,
+        "intensite": "INTERVAL"
+      },
+      {
+        "index": 2,
+        "distanceKm": 1.0,
+        "dureeSec": 397,
+        "allureSecKm": 397,
+        "gapSecKm": 379,
+        "fcMoy": 132,
+        "fcMax": 139,
+        "cadenceMoy": 164,
+        "puissanceMoy": 271,
+        "denivelePosM": 21,
+        "deniveleNegM": 0,
+        "intensite": "INTERVAL"
+      },
+      {
+        "index": 3,
+        "distanceKm": 1.0,
+        "dureeSec": 382,
+        "allureSecKm": 382,
+        "gapSecKm": 384,
+        "fcMoy": 130,
+        "fcMax": 143,
+        "cadenceMoy": 163,
+        "puissanceMoy": 251,
+        "denivelePosM": 6,
+        "deniveleNegM": 7,
+        "intensite": "INTERVAL"
+      },
+      {
+        "index": 4,
+        "distanceKm": 1.0,
+        "dureeSec": 385,
+        "allureSecKm": 386,
+        "gapSecKm": 396,
+        "fcMoy": 127,
+        "fcMax": 132,
+        "cadenceMoy": 164,
+        "puissanceMoy": 234,
+        "denivelePosM": 0,
+        "deniveleNegM": 12,
+        "intensite": "INTERVAL"
+      },
+      {
+        "index": 5,
+        "distanceKm": 1.0,
+        "dureeSec": 385,
+        "allureSecKm": 385,
+        "gapSecKm": 386,
+        "fcMoy": 131,
+        "fcMax": 140,
+        "cadenceMoy": 164,
+        "puissanceMoy": 249,
+        "denivelePosM": 3,
+        "deniveleNegM": 3,
+        "intensite": "INTERVAL"
+      },
+      {
+        "index": 6,
+        "distanceKm": 1.0,
+        "dureeSec": 393,
+        "allureSecKm": 393,
+        "gapSecKm": 396,
+        "fcMoy": 125,
+        "fcMax": 139,
+        "cadenceMoy": 157,
+        "puissanceMoy": 262,
+        "denivelePosM": 7,
+        "deniveleNegM": 1,
+        "intensite": "INTERVAL"
+      },
+      {
+        "index": 7,
+        "distanceKm": 1.0,
+        "dureeSec": 387,
+        "allureSecKm": 387,
+        "gapSecKm": 378,
+        "fcMoy": 132,
+        "fcMax": 144,
+        "cadenceMoy": 166,
+        "puissanceMoy": 278,
+        "denivelePosM": 10,
+        "deniveleNegM": 0,
+        "intensite": "INTERVAL"
+      },
+      {
+        "index": 8,
+        "distanceKm": 1.0,
+        "dureeSec": 391,
+        "allureSecKm": 392,
+        "gapSecKm": 393,
+        "fcMoy": 131,
+        "fcMax": 137,
+        "cadenceMoy": 165,
+        "puissanceMoy": 268,
+        "denivelePosM": 8,
+        "deniveleNegM": 6,
+        "intensite": "INTERVAL"
+      },
+      {
+        "index": 9,
+        "distanceKm": 1.0,
+        "dureeSec": 379,
+        "allureSecKm": 379,
+        "gapSecKm": 394,
+        "fcMoy": 127,
+        "fcMax": 136,
+        "cadenceMoy": 165,
+        "puissanceMoy": 261,
+        "denivelePosM": 0,
+        "deniveleNegM": 22,
+        "intensite": "INTERVAL"
+      },
+      {
+        "index": 10,
+        "distanceKm": 1.0,
+        "dureeSec": 384,
+        "allureSecKm": 384,
+        "gapSecKm": 389,
+        "fcMoy": 128,
+        "fcMax": 136,
+        "cadenceMoy": 166,
+        "puissanceMoy": 266,
+        "denivelePosM": 1,
+        "deniveleNegM": 8,
+        "intensite": "INTERVAL"
+      }
+    ],
+    "zonesFC": [
+      {
+        "zone": 1,
+        "secondes": 65,
+        "borneBasse": 99
+      },
+      {
+        "zone": 2,
+        "secondes": 3667,
+        "borneBasse": 118
+      },
+      {
+        "zone": 3,
+        "secondes": 106,
+        "borneBasse": 138
+      },
+      {
+        "zone": 4,
+        "secondes": 0,
+        "borneBasse": 158
+      },
+      {
+        "zone": 5,
+        "secondes": 0,
+        "borneBasse": 177
+      }
+    ],
+    "meteo": {
+      "temperatureC": 22.2,
+      "ressentiC": 22.2,
+      "humidite": 69,
+      "ventKmh": 22.5,
+      "description": "Fair",
+      "station": "Lille"
+    }
   }
 ]
