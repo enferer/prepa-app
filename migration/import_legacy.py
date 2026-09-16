@@ -165,9 +165,22 @@ def parse_periode(texte):
     return (dates[0] if dates else None, dates[1] if len(dates) > 1 else None)
 
 
+# Une reference peut dire qu'elle n'existe pas : « Pas de RP semi ». Le chiffre qui suit
+# est alors une allure ou une distance, pas un temps de course.
+NEGATIONS = ("pas de", "aucun", "jamais", "non couru", "non renseign")
+
+
+def allure_plausible(temps_sec, distance_m):
+    """Garde-fou : un record doit correspondre a une allure de course credible."""
+    allure = temps_sec / (distance_m / 1000)
+    return 150 <= allure <= 720
+
+
 def parse_temps(texte):
     """Lit un temps « 47:50 », « 1h35 » ou « 3h58:20 » en secondes."""
     if not texte:
+        return None
+    if any(negation in texte.lower() for negation in NEGATIONS):
         return None
     m = re.search(r"(\d+)\s*h\s*(\d{1,2})?(?::(\d{2}))?", texte)
     if m:
@@ -279,7 +292,7 @@ class Migration:
         records = 0
         for cle, distance in DISTANCES_RECORD.items():
             temps = parse_temps(references.get(cle))
-            if not temps:
+            if not temps or not allure_plausible(temps, distance):
                 continue
             self.api.appeler("POST", f"/athletes/{self.athlete_id}/records", {
                 "distanceM": distance,
