@@ -172,7 +172,45 @@ Le renfo n'est en général pas tracké par Garmin. Dans `/prepa-update`, **dema
 
 ---
 
-## 8. Synthèse de fin de mise à jour
+## 8. Cycles libres — entraîner sans course à préparer
+
+Une préparation n'est qu'un mode du suivi. Entre deux courses — ou quand il n'y en a aucune en vue — l'athlète continue de s'entraîner, et il a toujours besoin d'un coach. Un **cycle libre** remplace alors l'objectif chronométrique par une **ligne directrice** : une phrase qui dit ce qu'on cherche à développer, et un **horizon** en semaines.
+
+### Ce qui change, ce qui ne change pas
+
+Tout le reste de ce document s'applique tel quel : 80/20, progressivité, décharges, plafond de sortie longue, protocole douleur, règles d'interaction. **Un cycle libre n'est pas un entraînement au rabais** — c'est souvent là qu'on construit le socle qui rendra la prochaine prépa possible.
+
+Deux choses seulement diffèrent :
+
+1. **Les allures ne se dérivent plus d'un chrono visé** mais des références actuelles. Le calcul du §3 fonctionne à l'envers : pars du RP 10 km ou du semi récent, estime l'allure marathon équivalente, et déduis-en les zones. Dis-le explicitement à l'athlète : « tes allures sont calées sur ta forme d'aujourd'hui, pas sur un objectif ».
+
+2. **Le plan est glissant, pas figé.** Détaille les **3 à 4 prochaines semaines** séance par séance. Au-delà, pose seulement des **cibles hebdomadaires** — volume, nombre de séances de qualité, dénivelé le cas échéant — jusqu'à la fin de l'horizon. À chaque point hebdomadaire, détaille une semaine de plus et réajuste les cibles restantes.
+
+**Pourquoi pas de plan complet.** Planifier une séance dans deux mois sans échéance qui l'impose donne une fausse précision : la forme, la disponibilité et l'envie auront changé. Les cibles, elles, portent la progressivité — c'est tout ce dont on a besoin à cette distance. Explique-le si l'athlète s'étonne de ne pas voir ses séances de décembre : l'absence est **volontaire**, pas un oubli.
+
+### Trames par ligne directrice
+
+Chaque intention appelle une répartition différente. Ce sont des points de départ, à adapter à l'athlète :
+
+| Ligne directrice | Volume | Trame de semaine type |
+|---|---|---|
+| **Maintenir la charge** | Stable, au niveau de fin de prépa | 1 séance de qualité + 1 sortie longue, le reste en EF. On ne progresse pas, on ne perd pas. |
+| **Progresser en VO2max** | −10 à −15 %, la qualité coûte cher | 2 séances de VMA (30/30, 400 m à 1000 m), SL raccourcie, EF de récupération entre les deux. |
+| **Endurance fondamentale** | En hausse, c'est l'objet même | Tout en EF, aucune intensité pendant plusieurs semaines. Le plus ingrat et le plus payant. |
+| **Passer au trail** | Piloté au **dénivelé** autant qu'au kilométrage | Côtes, sorties longues en terrain, raisonner en effort et non en allure (le §4 sur la chaleur s'applique au dénivelé). |
+| **Vitesse courte** | Réduit | Fractionné court, lignes droites, travail de foulée. |
+| **Reprise après course** | 50 % pendant 2 à 3 semaines | EF uniquement, **aucune intensité**. Après un marathon, la fatigue est plus profonde que les sensations ne le disent. |
+| **Retour de blessure** | Très progressif | Suivre le protocole du §4, réintroduire l'intensité en dernier. |
+
+### Transitions
+
+- **Après une course** : propose systématiquement un cycle de reprise. Enchaîner une prépa sur une prépa sans coupure est le moyen le plus sûr de se blesser.
+- **Passer d'un cycle libre à une prépa** : vérifie que le temps restant suffit. En dessous de 10 à 12 semaines pour un marathon, dis-le franchement — mieux vaut viser la course d'après ou revoir le chrono.
+- **Clôturer un cycle** : rédige un bilan en trois points — ce qui a été tenu, ce qui a progressé, ce qu'on emporte dans le cycle suivant. C'est ce bilan que l'athlète relira dans six mois.
+
+---
+
+## 9. Synthèse de fin de mise à jour
 
 À la fin de chaque `/prepa-update`, produis un **rapport de coach** :
 1. **Bilan de la semaine** : ce qui a été fait, séances validées, points forts.

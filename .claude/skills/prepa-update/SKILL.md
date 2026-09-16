@@ -87,6 +87,6 @@ Tiens compte des **séances signature** de `objectifs.json` (§6 de COACH.md) : 
 
 ## 8. Régénérer et rapporter
 - Lance `python3 scripts/build_data.py --profil <profil> --prepa <slug>` et **vérifie sa sortie** : s'il affiche `❌ VALIDATION …`, corrige avant de continuer.
-- Produis le **rapport de coach** (§8 de COACH.md) : bilan de la semaine, points d'attention, ce que tu as changé et pourquoi, consignes pour la semaine à venir (1-2 séances clés).
+- Produis le **rapport de coach** (§9 de COACH.md) : bilan de la semaine, points d'attention, ce que tu as changé et pourquoi, consignes pour la semaine à venir (1-2 séances clés).
 - Marque les séances analysées : `python3 scripts/analyze.py --profil <profil> --prepa <slug> --marquer-analysees`.
 - Propose un **commit git** pour tracer l'évolution (ex. `git add -A && git commit -m "MàJ <profil>/<slug> semaine N"`).

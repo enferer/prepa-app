@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /** Cycles et plan d'entrainement. */
@@ -27,11 +28,17 @@ public class CycleController {
 
     private final CycleService cycleService;
     private final PlanService planService;
+    private final RollingPlanService planGlissant;
     private final AthleteService athletes;
 
-    public CycleController(CycleService cycleService, PlanService planService, AthleteService athletes) {
+    public CycleController(
+            CycleService cycleService,
+            PlanService planService,
+            RollingPlanService planGlissant,
+            AthleteService athletes) {
         this.cycleService = cycleService;
         this.planService = planService;
+        this.planGlissant = planGlissant;
         this.athletes = athletes;
     }
 
@@ -101,6 +108,43 @@ public class CycleController {
         return detail(cycleService.parId(cycleId));
     }
 
+    /** Trame de charge proposee pour un cycle libre : cibles hebdomadaires, sans seances. */
+    @GetMapping("/cycles/{cycleId}/skeleton")
+    public List<RollingPlanService.CibleHebdo> squelette(
+            @PathVariable UUID cycleId,
+            @RequestParam(defaultValue = "30") double volumeDepartKm) {
+        Cycle cycle = cycleService.parId(cycleId);
+        athletes.accessible(cycle.getAthleteId(), CurrentPrincipal.get());
+        return planGlissant.squelette(cycle, volumeDepartKm);
+    }
+
+    /** Ouvre une semaine de plus a la planification detaillee. */
+    @PostMapping("/cycles/{cycleId}/open-next-week")
+    public ResponseEntity<CycleDtos.WeekResponse> ouvrirSemaineSuivante(@PathVariable UUID cycleId) {
+        exigerCoachSurCycle(cycleId);
+        return planGlissant.ouvrirSemaineSuivante(cycleId)
+                .map(semaine -> ResponseEntity.ok(semaineSeule(semaine)))
+                .orElseGet(() -> ResponseEntity.noContent().build());
+    }
+
+    /** Repousse l'horizon d'un cycle libre. */
+    @PostMapping("/cycles/{cycleId}/extend")
+    public List<CycleDtos.WeekResponse> prolonger(
+            @PathVariable UUID cycleId, @RequestParam int semaines) {
+        exigerCoachSurCycle(cycleId);
+        return planGlissant.prolonger(cycleId, semaines).stream()
+                .map(this::semaineSeule)
+                .toList();
+    }
+
+    /** Ce que le cycle a tenu : point de depart du bilan de cloture. */
+    @GetMapping("/cycles/{cycleId}/summary")
+    public RollingPlanService.BilanCycle bilan(@PathVariable UUID cycleId) {
+        Cycle cycle = cycleService.parId(cycleId);
+        athletes.accessible(cycle.getAthleteId(), CurrentPrincipal.get());
+        return planGlissant.bilan(cycleId);
+    }
+
     @PostMapping("/weeks/{weekId}/sessions")
     public CycleDtos.SessionResponse ajouterSeance(
             @PathVariable UUID weekId, @Valid @RequestBody CycleDtos.SessionInput req) {
@@ -152,6 +196,13 @@ public class CycleController {
         exigerCoachSurCycle(seance.getCycleId());
         planService.supprimer(sessionId);
         return ResponseEntity.noContent().build();
+    }
+
+    /** Une semaine sans ses seances : ce que renvoient les operations de plan glissant. */
+    private CycleDtos.WeekResponse semaineSeule(TrainingWeek s) {
+        return new CycleDtos.WeekResponse(
+                s.getId(), s.getNumero(), s.getDateDebut(), s.getBloc(), s.getVolumeCibleKm(),
+                s.getNbQualiteCible(), s.getDeniveleCibleM(), s.isDetaillee(), s.getNote(), List.of());
     }
 
     private CycleDtos.CycleDetailResponse detail(Cycle cycle) {
