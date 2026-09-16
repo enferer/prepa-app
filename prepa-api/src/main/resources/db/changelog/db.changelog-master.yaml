@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/001-extensions.sql
+  - include:
+      file: db/changelog/002-athletes.sql
+  - include:
+      file: db/changelog/003-athlete-profile.sql
+  - include:
+      file: db/changelog/004-cycles.sql
+  - include:
+      file: db/changelog/005-activities.sql
+  - include:
+      file: db/changelog/006-plan.sql
+  - include:
+      file: db/changelog/007-journal-coach.sql
+  - include:
+      file: db/changelog/008-service-keys.sql

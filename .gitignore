@@ -2,3 +2,8 @@
 .venv/
 .env
 __pycache__/
+
+# Refonte v2
+prepa-api/target/
+prepa-web/node_modules/
+prepa-web/dist/

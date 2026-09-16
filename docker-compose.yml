@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: prepa-postgres
+    environment:
+      POSTGRES_DB: prepa
+      POSTGRES_USER: prepa
+      POSTGRES_PASSWORD: prepa
+    ports:
+      - "5433:5432"
+    volumes:
+      - prepa-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U prepa -d prepa"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  prepa-pgdata:
