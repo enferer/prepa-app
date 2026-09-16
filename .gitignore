@@ -7,3 +7,4 @@ __pycache__/
 prepa-api/target/
 prepa-web/node_modules/
 prepa-web/dist/
+migration/sortie/
