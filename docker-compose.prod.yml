@@ -60,7 +60,11 @@ services:
       dockerfile: worker/Dockerfile
     restart: unless-stopped
     depends_on:
-      - api
+      # « demarre » ne suffit pas : l'API met une quarantaine de secondes a repondre, et
+      # le worker qui echoue a son premier passage attend ensuite cinq minutes. On
+      # l'attend vraiment prete.
+      api:
+        condition: service_healthy
     environment:
       PREPA_API_URL: http://api:8080
       PREPA_SERVICE_KEY: ${WORKER_SERVICE_KEY:?cle de service du worker requise}
@@ -77,6 +81,7 @@ services:
     restart: unless-stopped
     depends_on:
       - api
+    # Nginx, lui, peut demarrer avant : il ne joint l'API qu'a la premiere requete.
     ports:
       - "${WEB_PORT:-8080}:80"
     mem_limit: 128m
