@@ -26,12 +26,13 @@ public interface ActivityRepository extends JpaRepository<Activity, UUID> {
             """)
     List<Activity> entre(UUID athleteId, LocalDate debut, LocalDate fin);
 
-    /** Activites jamais passees en revue par le coach. */
+    /** Activites jamais passees en revue par le coach, depuis une date donnee. */
     @Query("""
             select a from Activity a
             where a.athleteId = :athleteId
+              and a.dateLocale >= :depuis
               and not exists (select 1 from AnalysisState s where s.activityId = a.id)
             order by a.startedAt asc
             """)
-    List<Activity> nonAnalysees(UUID athleteId);
+    List<Activity> nonAnalyseesDepuis(UUID athleteId, LocalDate depuis);
 }

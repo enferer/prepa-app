@@ -82,10 +82,16 @@ public class ActivityService {
         return activities.save(activite);
     }
 
-    /** Activites que le coach n'a pas encore passees en revue. */
+    /**
+     * Activites que le coach n'a pas encore passees en revue, bornees dans le temps.
+     *
+     * <p>La borne n'est pas un detail : sans elle, un athlete qui court depuis deux ans se voit
+     * proposer deux cents seances a analyser au premier point. Revenir sur une sortie d'il y a
+     * dix-huit mois n'apprend rien sur la semaine ecoulee.
+     */
     @Transactional(readOnly = true)
-    public List<Activity> nonAnalysees(UUID athleteId) {
-        return activities.nonAnalysees(athleteId);
+    public List<Activity> nonAnalysees(UUID athleteId, LocalDate depuis) {
+        return activities.nonAnalyseesDepuis(athleteId, depuis);
     }
 
     @Transactional

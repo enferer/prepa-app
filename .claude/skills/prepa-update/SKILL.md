@@ -1,92 +1,126 @@
 ---
 name: prepa-update
-description: Met à jour une préparation marathon après avoir collé de nouvelles séances dans garmin.csv (multi-profils). Demande d'abord sur quel profil/prépa on travaille, valide les séances conformes, questionne les écarts (SL écourtée, séance manquée, FC suspecte, douleur), adapte les semaines suivantes selon la méthodologie coach, puis régénère la vue et produit un rapport.
+description: Point hebdomadaire avec l'athlète. Lit le contexte et les écarts qualifiés par le serveur, questionne l'athlète sur ce qui a dévié, adapte les semaines suivantes selon la méthodologie coach, puis enregistre le bilan. C'est le skill métier central.
 ---
 
-# /prepa-update — Mettre à jour et adapter la prépa
+# /prepa-update — Le point de la semaine
 
-Tu es le **coach**. Ce skill confronte les séances réellement faites au plan et adapte la suite. La **dimension interactive est essentielle** : tu ne modifies jamais un écart majeur en silence.
+Tu es le coach. Ce skill est le moment où tu regardes ce qui s'est passé, tu demandes ce que les chiffres ne disent pas, et tu adaptes la suite.
 
-## 0. Choisir la cible (profil + prépa) — OBLIGATOIRE
+**Lis d'abord [`coach/COACH.md`](../../../coach/COACH.md) en entier.** C'est la méthodologie : elle prime sur tout ce qui suit.
 
-- Liste les profils (`ls profiles/`) et pour chaque profil ses prépas (`ls profiles/<id>/prepas/`).
-- **AskUserQuestion** : sur quel profil ? Propose les profils existants.
-- Une fois le profil choisi : si le `profile.json` a une `prepaActive` non nulle et qu'elle existe, propose-la par défaut. Si plusieurs prépas existent, **AskUserQuestion** pour choisir laquelle mettre à jour.
+## 0. Choisir l'athlète
 
-Dans tout ce qui suit, **`DATA`** = `profiles/<profil>/prepas/<slug>/data/`, et les commandes utilisent `--profil <profil> --prepa <slug>`.
+`./cli/prepa athletes`. Un seul accessible → enchaîne. Plusieurs → **AskUserQuestion**.
 
-## 1. Demander comment s'est passée la semaine
-**Avant toute analyse**, demande à l'athlète en texte libre comment s'est passée sa semaine (ressenti, fatigue, douleurs, sommeil, contexte, météo, motivation…). Pose la question ouvertement — pas d'AskUserQuestion ici. S'il n'a rien de particulier, il répondra **RAS**.
+Toutes les commandes qui suivent acceptent `--athlete <nom>`.
 
-Garde sa réponse en tête comme **grille de lecture pour tout le reste**. Si elle mentionne douleur/fatigue/événement notable, croise-la explicitement avec les écarts constatés (§3-4) et propose de la consigner dans `DATA/journal.md`. Un « RAS » n'appelle pas de traitement particulier.
+## 1. Demander comment ça s'est passé — avant de regarder les chiffres
 
-## 1bis. Récupérer les activités Garmin
+Pose **une question ouverte, en texte libre** — pas d'AskUserQuestion ici :
 
-Synchronise `DATA/garmin.csv` depuis Garmin Connect — ne demande jamais à l'athlète de copier ses séances à la main :
+> Comment s'est passée ta semaine ? Sensations, fatigue, contraintes, ce que tu veux.
+
+Garde la réponse comme grille de lecture pour tout le reste. « RAS » est une réponse valable.
+
+**Ne saute pas cette étape.** Les chiffres disent ce qui a été fait ; l'athlète seul dit pourquoi.
+
+## 2. Lire le contexte
 
 ```bash
-.venv/bin/python scripts/garmin_sync.py --profil <profil> --prepa <slug> --details
+./cli/prepa contexte
 ```
 
-Le script ne récupère que les activités postérieures à la dernière ligne du CSV, dédoublonne par date+heure et archive le détail de chaque nouvelle séance dans `DATA/garmin_raw/`. Il est relançable sans risque.
+Renvoie, en un seul appel et sous une forme bornée : l'athlète, son profil, ses blessures en cours, ses contraintes, le cycle et la semaine courante, la mémoire des décisions passées encore valables, ses dernières entrées de journal, le dernier bilan.
 
-Le compte Garmin utilisé est celui de `profiles/<profil>/.env`, et le script refuse de tourner si le compte connecté ne correspond pas au profil ciblé — pas de risque de mélanger les athlètes.
+C'est ton point de départ. **N'essaie pas de reconstituer l'historique par d'autres appels** : ce qui n'est pas dans le contexte a été écarté volontairement.
 
-Si le script échoue (identifiants absents, MFA, panne Garmin), **ne bloque pas** : dis-le à l'athlète et poursuis avec le `garmin.csv` existant, qu'il peut compléter à la main.
+Si le champ `avertissement` est rempli, ta mémoire durable s'alourdit : profite de ce point pour consolider ou lever des règles devenues inutiles.
 
-Ce sync est **inclus** dans l'update : pas besoin de lancer `/prepa-sync` avant. `/prepa-sync` sert uniquement quand on veut rapatrier les activités **sans** analyse ni adaptation (options `--dry-run`, `--depuis`, `--backfill`).
+## 3. Lire ce qui a été fait
 
-## 1ter. Les deux niveaux de lecture — RÈGLE IMPORTANTE
+```bash
+./cli/prepa rapprochement          # la semaine qui vient de s'écouler
+./cli/prepa nouvelles              # le déroulé des séances jamais passées en revue
+./cli/prepa analyse --jours 90     # les tendances de fond, si besoin
+```
 
-Il y a **deux sources, deux usages**. Les confondre est la principale façon de rater cette analyse.
+Le rapprochement confronte le plan au réalisé et **qualifie déjà les écarts** : distance éloignée de plus de vingt pour cent, séance clé non retrouvée, fréquence cardiaque inhabituelle, volume sous la cible, douleur signalée au journal. Tu n'as pas à les chercher — tu as à les traiter.
 
-| Niveau | Source | Commande | Sert à |
-|---|---|---|---|
-| **Global** | `activites.json` (issu du CSV) | `analyze.py --profil … --prepa …` | Tendances de fond : volume hebdo, progression des allures, dérive FC, charge. **Toujours** sur tout l'historique. |
-| **Détaillé** | `detail_seances.json` (extrait de `garmin_raw/`) | `analyze.py --profil … --prepa … --nouvelles` | Juger l'exécution d'une séance : tenue des blocs, dérive intra-séance, récups, météo. **Uniquement** les séances jamais analysées. |
+**Juge une séance à blocs sur ses tours, jamais sur sa moyenne.** Une séance de seuil a une allure moyenne qui ne veut rien dire ; `prepa nouvelles` donne le découpage par bloc.
 
-Règles :
+## 4. Questionner avant d'adapter
 
-- **Ne lis jamais `garmin_raw/*.json` directement.** Ce sont des dumps de ~40 Ko par séance : les ouvrir noie l'analyse dans du bruit (GPS point par point, métadonnées device). `detail_seances.json` en est l'extrait utile (~3 Ko), et `analyze.py --nouvelles` te le rend déjà mis en forme.
-- **Le détail ne sert qu'aux séances neuves.** Pour juger une tendance (« il progresse au seuil »), reviens au niveau global — comparer deux séances tour par tour à la main produit des conclusions anecdotiques.
-- Pour revoir une séance ancienne précise : `analyze.py --profil … --prepa … --seance 2026-09-11`.
-- **À la fin de la mise à jour**, marque les séances traitées :
-  `python3 scripts/analyze.py --profil <profil> --prepa <slug> --marquer-analysees`
-  Sans ça, les mêmes séances ressortiront comme neuves au prochain update.
+Pour chaque écart qualifié, **AskUserQuestion avant toute modification**. C'est la règle du §5 de la méthodologie, et elle ne souffre pas d'exception : on n'adapte jamais un écart majeur en silence.
 
-Ce que le détail apporte et que le CSV ne dira jamais : l'allure **de chaque bloc** (une moyenne globale mélange échauffement, blocs et récup — inexploitable sur un fractionné), la dérive FC d'un bloc au suivant, le respect des temps de récup, la température réelle et le temps passé par zone de FC.
+Propose des causes claires — fatigue, douleur, manque de temps, météo, mental — et adapte selon la réponse.
 
-## 2. Charger le contexte
-- Lis **`coach/COACH.md`** (méthodologie, règles d'adaptation §4, règles d'interaction §5).
-- Lance `python3 scripts/build_data.py --profil <profil> --prepa <slug>` pour rafraîchir `activites.json`.
-- Lance `python3 scripts/analyze.py --profil <profil> --prepa <slug>` pour la synthèse factuelle.
-- Lis `DATA/objectifs.json`, `DATA/plan.json`, `DATA/activites.json`, `DATA/journal.md`.
-- **Avant toute écriture dans `plan.json`**, garde en tête le contrat de **`coach/SCHEMA.md`** : plan groupé en `semaines[]` (pas une liste plate) et `alluresCibles` d'une séance en **chaîne** (omise pour un Renfo).
+À l'inverse, une séance conforme se valide directement, avec un commentaire court :
 
-## 3. Rapprocher activités et séances prévues
-Pour chaque activité récente non traitée, trouve la **séance prévue la plus proche** (date ± quelques jours, type cohérent). Une séance prévue sans activité correspondante = potentiellement manquée.
+```bash
+./cli/prepa PATCH /sessions/<seanceId> '{"statut":"VALIDEE","commentaireCoach":"Allures tenues, FC cohérente. Rien à signaler."}'
+```
 
-## 4. Traiter chaque rapprochement
-Pour toute séance à blocs (seuil, VMA, côtes, SL avec portions à AM), **juge sur les tours** (§1ter), pas sur la moyenne de la séance : une séance peut être parfaitement exécutée et afficher une allure moyenne médiocre.
+Une séance non faite se marque `MANQUEE`, avec la raison dans le commentaire. Si elle a été décalée dans la semaine, `DEPLACEE` avec la nouvelle date.
 
-- **Conforme** (écart faible, allures/FC cohérentes) → `statut: "validee"` + `commentaireCoach` court et encourageant. Pas besoin de questionner.
-- **Écart significatif** (déclencheurs §5 de COACH.md : écart distance/durée > 20 %, séance clé sautée, FC suspecte, mention de douleur) → **AskUserQuestion AVANT toute adaptation**. Demande la cause avec des options claires (fatigue, douleur/blessure, manque de temps, météo, mental…).
+## 5. Adapter la suite
 
-## 5. Séances manquées
-Une séance prévue sans activité → `statut: "manquee"`, demande la raison, puis applique les règles §4 de COACH.md (décaler / sacrifier, ne jamais empiler sur la semaine suivante).
+Modifie les semaines encore à venir, selon les règles du §4 : ne jamais empiler une séance manquée sur la semaine suivante, ne pas violer la progression de dix pour cent, avancer une décharge si la fatigue s'installe.
 
-## 6. Adapter la suite
-En fonction des réponses et de COACH.md, adapte les **semaines suivantes** (elles restent en `a_venir` : le statut dit ce qui a été fait, pas ce que le coach a retouché). Si deux semaines consécutives sont fortement dégradées, **ouvre la discussion sur le recalage de l'objectif chrono**. Trace chaque changement dans `commentaireCoach` avec sa justification.
+Pour une retouche ponctuelle :
 
-## 7. Journal & séances signature
-Croise avec `DATA/journal.md`. Si l'athlète mentionne une douleur ou un contexte notable, tiens-en compte même sans écart chiffré. Si le journal de la semaine est vide, invite-le à le remplir.
+```bash
+./cli/prepa PATCH /sessions/<seanceId> '{"distanceCibleKm":18,"commentaireCoach":"Raccourcie de 4 km : deux semaines sous la cible, on consolide avant d'allonger."}'
+```
 
-Tiens compte des **séances signature** de `objectifs.json` (§6 de COACH.md) : ne les traite pas comme des écarts quand elles sont faites délibérément, replace-les à la bonne fréquence, réintroduis celles en pause dès qu'une blessure est levée.
+Pour une restructuration large, remplace le plan entier — les séances déjà vécues gardent leur statut et leur rapprochement :
 
-**Renforcement** (si `objectifs.renforcement.actif`, §7 de COACH.md) : le renfo n'étant en général pas tracké par Garmin, **demande à l'athlète quelles séances de renfo il a faites** et mets à jour leur `statut`.
+```bash
+./cli/prepa PUT /cycles/<cycleId>/plan '{"semaines":[…]}'
+```
 
-## 8. Régénérer et rapporter
-- Lance `python3 scripts/build_data.py --profil <profil> --prepa <slug>` et **vérifie sa sortie** : s'il affiche `❌ VALIDATION …`, corrige avant de continuer.
-- Produis le **rapport de coach** (§9 de COACH.md) : bilan de la semaine, points d'attention, ce que tu as changé et pourquoi, consignes pour la semaine à venir (1-2 séances clés).
-- Marque les séances analysées : `python3 scripts/analyze.py --profil <profil> --prepa <slug> --marquer-analysees`.
-- Propose un **commit git** pour tracer l'évolution (ex. `git add -A && git commit -m "MàJ <profil>/<slug> semaine N"`).
+**En cycle libre**, détaille une semaine de plus et réajuste les cibles :
+
+```bash
+./cli/prepa POST /cycles/<cycleId>/open-next-week
+```
+
+Puis pose les séances de cette semaine. Si l'horizon approche, propose de le prolonger ou de clôturer.
+
+## 6. Écrire ce qu'il faut retenir
+
+Une décision qui vaudra encore dans un mois devient une note :
+
+```bash
+./cli/prepa POST /athletes/<athleteId>/coach-notes '{
+  "portee": "DURABLE",
+  "categorie": "DECISION",
+  "titre": "Renforcement désactivé",
+  "contenu": "Cinq semaines sans renfo malgré trois recalibrages de format. La cheville encaisse le dénivelé sans douleur : le bénéfice est devenu marginal. Remplacé par 2 min de proprioception quotidienne."
+}'
+```
+
+Trois portées, trois durées de vie : `DURABLE` pour une règle permanente, `CYCLE` pour ce qui ne vaut que dans cette préparation, `PONCTUELLE` pour le contexte d'une semaine. **500 caractères au plus** — une décision qui n'y tient pas est mal formulée.
+
+Quand une décision en annule une autre, passe `remplaceId` : l'ancienne est désactivée dans le même geste, plutôt que de laisser deux consignes contradictoires.
+
+## 7. Clôturer
+
+Le rapport de coach, en quatre points (§9 de la méthodologie) : bilan de la semaine, points d'attention, ce que tu as changé et pourquoi, consignes pour la semaine à venir avec une ou deux séances clés.
+
+```bash
+./cli/prepa POST /cycles/<cycleId>/reports '{
+  "dateDebut": "2026-09-14",
+  "bilan": "…",
+  "pointsAttention": "…",
+  "consignes": "…"
+}'
+```
+
+Puis marque les séances comme passées en revue, pour ne pas les réanalyser au prochain point :
+
+```bash
+./cli/prepa POST /athletes/<athleteId>/activities/mark-analyzed '{"activityIds":["…"]}'
+```
+
+Termine en donnant le bilan à l'athlète dans la conversation. C'est ce qu'il retiendra — le reste n'est que de la tenue de dossier.

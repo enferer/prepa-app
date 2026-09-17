@@ -2,6 +2,8 @@ package app.prepa.activity;
 
 import app.prepa.athlete.AthleteService;
 import app.prepa.auth.CurrentPrincipal;
+import app.prepa.cycle.Cycle;
+import app.prepa.cycle.CycleService;
 import jakarta.validation.Valid;
 import java.util.List;
 import java.util.UUID;
@@ -21,10 +23,12 @@ public class ActivityController {
 
     private final ActivityService activites;
     private final AthleteService athletes;
+    private final CycleService cycles;
 
-    public ActivityController(ActivityService activites, AthleteService athletes) {
+    public ActivityController(ActivityService activites, AthleteService athletes, CycleService cycles) {
         this.activites = activites;
         this.athletes = athletes;
+        this.cycles = cycles;
     }
 
     @GetMapping("/athletes/{athleteId}/activities")
@@ -41,11 +45,24 @@ public class ActivityController {
         return resultat.stream().map(ActivityDtos.ActivityResume::from).toList();
     }
 
-    /** Activites jamais passees en revue : point de depart du bilan hebdomadaire. */
+    /**
+     * Activites jamais passees en revue : point de depart du bilan hebdomadaire.
+     *
+     * <p>Bornees au cycle en cours par defaut — c'est la periode sur laquelle le coach
+     * raisonne. {@code depuis} permet de remonter plus loin quand on reprend un historique.
+     */
     @GetMapping("/athletes/{athleteId}/activities/new")
-    public List<ActivityDtos.ActivityDetail> nouvelles(@PathVariable UUID athleteId) {
+    public List<ActivityDtos.ActivityDetail> nouvelles(
+            @PathVariable UUID athleteId,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+                    java.time.LocalDate depuis) {
         autoriser(athleteId);
-        return activites.nonAnalysees(athleteId).stream()
+        java.time.LocalDate borne = depuis != null
+                ? depuis
+                : cycles.actif(athleteId)
+                        .map(Cycle::getDateDebut)
+                        .orElseGet(() -> java.time.LocalDate.now().minusWeeks(8));
+        return activites.nonAnalysees(athleteId, borne).stream()
                 .map(a -> activites.detail(a.getId()))
                 .toList();
     }

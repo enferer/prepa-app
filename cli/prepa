@@ -1,0 +1,143 @@
+#!/usr/bin/env python3
+"""prepa — client en ligne de commande de l'API de suivi d'entrainement.
+
+Sert de passerelle aux skills Claude Code : ils appellent ce programme plutot que
+de composer des requetes a la main, ce qui garde les identifiants hors des
+conversations et donne une sortie stable a lire.
+
+Configuration : ~/.prepa-cli/config.json
+    { "apiUrl": "https://…", "serviceKey": "psk_…", "athleteParDefaut": "thibaut" }
+
+Usage :
+    prepa athletes                              liste les athletes accessibles
+    prepa contexte [--athlete thibaut]          le paquet de depart d'un point
+    prepa analyse [--jours 90]                  tendances de fond
+    prepa rapprochement [--semaine 2026-09-07]  prevu contre realise, ecarts qualifies
+    prepa nouvelles                             seances jamais passees en revue
+    prepa cycles                                liste des cycles
+    prepa plan <cycleId>                        plan complet d'un cycle
+    prepa GET|POST|PUT|PATCH <chemin> [json]    appel direct, pour le reste
+"""
+
+import argparse
+import json
+import os
+import sys
+import urllib.error
+import urllib.request
+from pathlib import Path
+
+CONFIG = Path(os.environ.get("PREPA_CLI_CONFIG", Path.home() / ".prepa-cli" / "config.json"))
+
+
+def charger_config():
+    if not CONFIG.exists():
+        sortir(
+            f"Configuration absente : {CONFIG}\n"
+            'Cree ce fichier : { "apiUrl": "http://localhost:8080", "serviceKey": "psk_…" }'
+        )
+    try:
+        config = json.loads(CONFIG.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as e:
+        sortir(f"Configuration illisible : {e}")
+    if not config.get("apiUrl") or not config.get("serviceKey"):
+        sortir("La configuration doit contenir apiUrl et serviceKey")
+    return config
+
+
+def sortir(message, code=1):
+    print(message, file=sys.stderr)
+    raise SystemExit(code)
+
+
+def appeler(config, methode, chemin, corps=None):
+    url = f"{config['apiUrl'].rstrip('/')}/api/v1{chemin}"
+    donnees = json.dumps(corps).encode() if corps is not None else None
+    requete = urllib.request.Request(url, data=donnees, method=methode)
+    requete.add_header("X-Service-Key", config["serviceKey"])
+    if donnees is not None:
+        requete.add_header("Content-Type", "application/json")
+    try:
+        with urllib.request.urlopen(requete, timeout=30) as reponse:
+            contenu = reponse.read()
+            return json.loads(contenu) if contenu else None
+    except urllib.error.HTTPError as e:
+        detail = e.read().decode(errors="replace")
+        try:
+            erreur = json.loads(detail)["error"]
+            sortir(f"{e.code} {erreur['code']} — {erreur['message']}")
+        except (json.JSONDecodeError, KeyError):
+            sortir(f"{e.code} — {detail[:400]}")
+    except urllib.error.URLError as e:
+        sortir(f"API injoignable ({url}) : {e.reason}")
+
+
+def resoudre_athlete(config, demande):
+    """Nom d'affichage ou identifiant vers l'identifiant de l'athlete."""
+    cible = demande or config.get("athleteParDefaut")
+    athletes = appeler(config, "GET", "/athletes") or []
+    if not athletes:
+        sortir("Cette cle de service ne donne acces a aucun athlete")
+    if not cible:
+        if len(athletes) == 1:
+            return athletes[0]["id"]
+        noms = ", ".join(a["displayName"] for a in athletes)
+        sortir(f"Precise --athlete parmi : {noms}")
+    for athlete in athletes:
+        if cible.lower() in (athlete["displayName"].lower(), athlete["id"], athlete["email"].lower()):
+            return athlete["id"]
+    sortir(f"Athlete introuvable : {cible}")
+
+
+def afficher(valeur):
+    print(json.dumps(valeur, ensure_ascii=False, indent=2))
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("commande")
+    parser.add_argument("arguments", nargs="*")
+    parser.add_argument("--athlete", help="nom ou identifiant de l'athlete")
+    parser.add_argument("--jours", type=int, default=90)
+    parser.add_argument("--semaine", help="lundi de la semaine a rapprocher (AAAA-MM-JJ)")
+    args = parser.parse_args()
+
+    config = charger_config()
+    commande = args.commande.lower()
+
+    if commande in ("get", "post", "put", "patch", "delete"):
+        if not args.arguments:
+            sortir("Indique le chemin, par exemple : prepa GET /me")
+        chemin = args.arguments[0]
+        corps = json.loads(args.arguments[1]) if len(args.arguments) > 1 else None
+        afficher(appeler(config, commande.upper(), chemin, corps))
+        return 0
+
+    if commande == "athletes":
+        afficher(appeler(config, "GET", "/athletes"))
+        return 0
+
+    athlete_id = resoudre_athlete(config, args.athlete)
+
+    if commande == "contexte":
+        afficher(appeler(config, "GET", f"/athletes/{athlete_id}/coach-context"))
+    elif commande == "analyse":
+        afficher(appeler(config, "GET", f"/athletes/{athlete_id}/analysis?jours={args.jours}"))
+    elif commande == "rapprochement":
+        suffixe = f"?semaine={args.semaine}" if args.semaine else ""
+        afficher(appeler(config, "GET", f"/athletes/{athlete_id}/reconciliation{suffixe}"))
+    elif commande == "nouvelles":
+        afficher(appeler(config, "GET", f"/athletes/{athlete_id}/activities/new"))
+    elif commande == "cycles":
+        afficher(appeler(config, "GET", f"/athletes/{athlete_id}/cycles"))
+    elif commande == "plan":
+        if not args.arguments:
+            sortir("Indique l'identifiant du cycle : prepa plan <cycleId>")
+        afficher(appeler(config, "GET", f"/cycles/{args.arguments[0]}"))
+    else:
+        sortir(f"Commande inconnue : {commande}\n\n{__doc__}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
