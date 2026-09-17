@@ -30,6 +30,7 @@ Usage :
 """
 
 import argparse
+import getpass
 import json
 import re
 import secrets
@@ -661,14 +662,23 @@ def main():
     parser.add_argument("--api", default="http://localhost:8080")
     parser.add_argument("--key", help="cle de service (X-Service-Key)")
     parser.add_argument("--admin-email", default="admin@prepa.local")
-    parser.add_argument("--admin-password", help="mot de passe du compte administrateur")
+    parser.add_argument("--admin-password",
+                        help="mot de passe du compte administrateur ; demande a la saisie s'il est absent")
     parser.add_argument("--profil", action="append", help="profil a migrer, repetable")
     parser.add_argument("--mot-de-passe", help="mot de passe des comptes crees")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
-    if not args.dry_run and not (args.key and args.admin_password):
-        parser.error("--key et --admin-password sont requis (ou --dry-run)")
+    if not args.dry_run:
+        if not args.key:
+            parser.error("--key est requis (ou --dry-run)")
+        # Un mot de passe passe en argument reste dans l'historique du shell et s'affiche
+        # dans la liste des processus. On le demande plutot que de l'exiger sur la ligne
+        # de commande.
+        if not args.admin_password:
+            args.admin_password = getpass.getpass(f"Mot de passe de {args.admin_email} : ")
+        if not args.admin_password:
+            parser.error("mot de passe administrateur vide")
 
     global PROFILES
     PROFILES = args.source.expanduser().resolve()

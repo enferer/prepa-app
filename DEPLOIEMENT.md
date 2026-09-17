@@ -123,13 +123,21 @@ depuis la branche `main`, ou depuis une sauvegarde.
 ```bash
 git worktree add /tmp/ancienne-app main    # ou n'importe quelle copie
 
+read -rsp 'Mot de passe des comptes athletes : ' MDP && echo
 python3 migration/import_legacy.py \
   --source /tmp/ancienne-app/profiles \
-  --api https://prepa.example.org --key "$CLE_SERVICE" \
-  --admin-email toi@example.org --admin-password '…' \
-  --mot-de-passe '…'
+  --api http://vps-75154aed.vps.ovh.net:8080 --key "$CLE_SERVICE" \
+  --admin-email toi@example.org \
+  --mot-de-passe "$MDP"
+unset MDP
 
 python3 migration/verifier.py /tmp/ancienne-app/profiles   # « Migration conforme »
+```
+
+Le mot de passe administrateur est demandé à la saisie : en argument, il resterait dans
+l'historique du shell et s'afficherait dans la liste des processus.
+
+```bash
 ```
 
 Les mots de passe Garmin ne sont pas dans git : ils vivaient dans `profiles/*/.env`,
