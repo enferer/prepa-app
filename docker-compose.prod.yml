@@ -6,8 +6,9 @@
 # Voir .env.prod.example et DEPLOIEMENT.md.
 #
 # Cette machine heberge deja un autre service, qui occupe le port 80. Rien ici ne s'y
-# lie : seul le 443 est publie. Les limites de memoire ne sont pas decoratives — avec
-# 2 Go partages, un conteneur qui grossit sans borne ferait tomber le voisin.
+# lie : l'application est publiee sur WEB_PORT (8080 par defaut). Les limites de memoire
+# ne sont pas decoratives — avec 2 Go partages, un conteneur qui grossit sans borne
+# ferait tomber le voisin.
 
 services:
   postgres:
@@ -74,19 +75,10 @@ services:
     restart: unless-stopped
     depends_on:
       - api
-    environment:
-      PREPA_DOMAINE: ${PREPA_DOMAINE:?nom de domaine requis}
-    volumes:
-      # Les certificats vivent ici. Les perdre ferait redemander un certificat a
-      # chaque redeploiement, et Let's Encrypt limite le nombre d'emissions.
-      - caddy-data:/data
-      - caddy-config:/config
     ports:
-      - "443:443"
+      - "${WEB_PORT:-8080}:80"
     mem_limit: 128m
 
 volumes:
   pgdata:
   garmin-tokens:
-  caddy-data:
-  caddy-config:

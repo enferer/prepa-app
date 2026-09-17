@@ -1,13 +1,16 @@
 # Déploiement
 
-Quatre conteneurs sur un serveur : Postgres, l'API, le worker Garmin, et Caddy qui sert
-l'application, relaie `/api` et termine le TLS. **Seul le port 443 est publié** — ni la
-base, ni l'API ne sont joignables de l'extérieur.
+Quatre conteneurs sur un serveur : Postgres, l'API, le worker Garmin, et Nginx qui sert
+l'application et relaie `/api`. **Seul le port de l'application est publié** — ni la base,
+ni l'API ne sont joignables directement de l'extérieur.
 
 ## 1. Prérequis
 
-Docker et le plugin Compose, un nom de domaine qui pointe sur le serveur, et le port 443
-libre. Rien d'autre : le certificat Let's Encrypt est obtenu et renouvelé tout seul.
+Docker et le plugin Compose, et un port libre sur l'hôte (`WEB_PORT`, 8080 par défaut).
+
+L'application est servie **en clair** : le mot de passe de connexion circule sans
+chiffrement. C'est tenable sur un usage personnel, mais si l'outil sort de ce cadre, un
+terminateur TLS devant `WEB_PORT` est la première chose à ajouter.
 
 ### Cohabitation avec un autre service
 
@@ -16,13 +19,9 @@ approche :
 
 | | `firework-timeline` | `prepa` |
 |---|---|---|
-| Port publié | 80 (HTTP) | 443 (HTTPS) |
+| Port publié | 80 | 8080 (`WEB_PORT`) |
 | Réseau Docker | le sien | le sien |
 | Base | son volume | son volume |
-
-Le certificat est validé par **TLS-ALPN**, qui ne se sert que du 443 — c'est ce qui
-permet d'avoir du HTTPS sans réclamer le port 80 au voisin. La redirection automatique
-HTTP → HTTPS de Caddy est désactivée pour la même raison.
 
 La machine est petite : 1 cœur, 2 Go de mémoire, partagés. Chaque conteneur porte donc
 une limite de mémoire explicite dans `docker-compose.prod.yml`, et la JVM un plafond de
@@ -33,7 +32,6 @@ tas. Ce n'est pas du réglage fin, c'est ce qui empêche un service d'emporter l
 ```bash
 git clone <dépôt> /opt/prepa && cd /opt/prepa
 cp .env.prod.example .env
-# renseigner PREPA_DOMAINE, puis les trois secrets
 
 # Les trois secrets, à générer — ne jamais les reprendre d'un exemple :
 openssl rand -base64 32   # DB_PASSWORD
@@ -78,8 +76,8 @@ docker compose -f docker-compose.prod.yml exec api \
   --header 'Content-Type: application/json' \
   http://localhost:8080/api/v1/admin/service-keys
 
-# depuis l'exterieur, une fois le HTTPS en place :
-curl -X POST https://$PREPA_DOMAINE/api/v1/admin/service-keys \
+# ou depuis l'exterieur :
+curl -X POST http://vps-75154aed.vps.ovh.net:8080/api/v1/admin/service-keys \
   -H "Authorization: Bearer $JETON_ADMIN" -H 'Content-Type: application/json' \
   -d '{"nom":"claude-code","scopes":["read","coach"]}'
 ```
@@ -193,7 +191,7 @@ plus ancienne peut être redémarrée sans perdre de données.
 | Pas de nouvelles séances | `GET /athletes/<id>/sync-status` : `AUTH_ERROR` = identifiants à refaire, `IDENTITE_KO` = mauvais compte relié |
 | L'application affiche une erreur d'authentification | Jeton expiré ; le renouvellement est automatique, sinon se reconnecter |
 | Le worker boucle sur des 429 | Garmin limite le débit ; il reprendra au passage suivant |
-| Le site ne répond pas en HTTPS | `logs web` — si le certificat n'a pu être émis, Caddy le redit à chaque tentative |
+| Le site ne répond pas | `logs web`, puis vérifier que `WEB_PORT` n'est pas pris par un autre service |
 | Un conteneur est tué sans raison | `docker inspect <nom> --format '{{.State.OOMKilled}}'` : la mémoire est partagée avec l'autre service |
 
 Les journaux ne contiennent ni identifiant Garmin ni contenu de journal.
