@@ -81,6 +81,20 @@ class AuthFlowIntegrationTest extends IntegrationTestBase {
     }
 
     @Test
+    @DisplayName("accepte la connexion depuis une origine declaree, la refuse depuis une autre")
+    void originesDuNavigateur() throws Exception {
+        // Un navigateur envoie un en-tete Origin meme quand la page et l'API partagent la
+        // meme origine. Une origine absente de la liste fait echouer la connexion avec un
+        // 403, alors qu'un appel sans cet en-tete — curl, un test qui l'oublie — reussit :
+        // le defaut ne se voit donc qu'une fois dans un navigateur.
+        mvc.perform(login(EMAIL, MOT_DE_PASSE).header("Origin", "http://localhost:5173"))
+                .andExpect(status().isOk());
+
+        mvc.perform(login(EMAIL, MOT_DE_PASSE).header("Origin", "http://ailleurs.example"))
+                .andExpect(status().isForbidden());
+    }
+
+    @Test
     @DisplayName("l'email est insensible a la casse")
     void loginCasseEmail() throws Exception {
         mvc.perform(login(EMAIL.toUpperCase(), MOT_DE_PASSE)).andExpect(status().isOk());
@@ -152,7 +166,8 @@ class AuthFlowIntegrationTest extends IntegrationTestBase {
         assertThat(athletes.existsByEmailIgnoreCase("autre@example.com")).isFalse();
     }
 
-    private org.springframework.test.web.servlet.RequestBuilder login(String email, String motDePasse) {
+    private org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder login(
+            String email, String motDePasse) {
         return post("/api/v1/auth/login")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content("{\"email\":\"" + email + "\",\"motDePasse\":\"" + motDePasse + "\"}");

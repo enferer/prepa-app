@@ -48,6 +48,7 @@ services:
       JWT_SECRET: ${JWT_SECRET:?secret JWT requis}
       CRYPTO_KEY: ${CRYPTO_KEY:?cle de chiffrement requise}
       SPRING_PROFILES_ACTIVE: prod
+      PREPA_ORIGINES: ${PREPA_ORIGINES:?origine web autorisee requise}
       # Un seul coeur : le ramasse-miettes parallele coute plus qu'il ne rapporte.
       JAVA_OPTS: -Xms128m -Xmx420m -XX:+UseSerialGC -XX:MaxMetaspaceSize=160m
     mem_limit: 700m

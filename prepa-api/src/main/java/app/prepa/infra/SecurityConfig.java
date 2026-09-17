@@ -5,6 +5,7 @@ import app.prepa.auth.ServiceKeyAuthFilter;
 import tools.jackson.databind.ObjectMapper;
 import java.util.List;
 import java.util.Map;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,8 +30,24 @@ public class SecurityConfig {
 
     private final ObjectMapper objectMapper;
 
-    public SecurityConfig(ObjectMapper objectMapper) {
+    /**
+     * Origines autorisees a appeler l'API depuis un navigateur.
+     *
+     * <p>La liste depend du deploiement et ne peut donc pas etre figee dans le code : une
+     * installation servie en clair sur un nom de machine ne ressemble ni au poste de
+     * developpement, ni a un site en HTTPS. Le navigateur envoie un en-tete {@code Origin}
+     * meme quand la page et l'API partagent la meme origine ; une liste qui ne la couvre
+     * pas fait echouer la connexion avec un 403, la ou {@code curl} — qui n'envoie pas
+     * cet en-tete — reussit.
+     */
+    private final List<String> originesAutorisees;
+
+    public SecurityConfig(
+            ObjectMapper objectMapper,
+            @Value("${prepa.web.origines-autorisees:http://localhost:*,https://*}")
+                    List<String> originesAutorisees) {
         this.objectMapper = objectMapper;
+        this.originesAutorisees = originesAutorisees;
     }
 
     @Bean
@@ -61,7 +78,7 @@ public class SecurityConfig {
 
     private CorsConfigurationSource corsSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOriginPatterns(List.of("http://localhost:*", "https://*"));
+        config.setAllowedOriginPatterns(originesAutorisees);
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);

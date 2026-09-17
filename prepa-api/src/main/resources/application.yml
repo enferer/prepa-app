@@ -36,6 +36,10 @@ management:
       show-details: never
 
 prepa:
+  web:
+    # Origines autorisees a appeler l'API depuis un navigateur, separees par des virgules.
+    # Depend du deploiement : le poste de developpement n'a pas la meme que le serveur.
+    origines-autorisees: ${PREPA_ORIGINES:http://localhost:*,https://*}
   auth:
     jwt-secret: ${JWT_SECRET:dev-secret-a-remplacer-absolument-en-production-256bits}
     access-token-ttl: PT15M
