@@ -22,8 +22,10 @@ services:
       postgres -c shared_buffers=96MB -c work_mem=4MB
                -c max_connections=30 -c effective_cache_size=256MB
     volumes:
+      # Pas de montage vers les sauvegardes : pg_dump ecrit sur sa sortie standard,
+      # et un repertoire cree par Docker appartiendrait a root — la sauvegarde
+      # planifiee, elle, ne tourne pas en root.
       - pgdata:/var/lib/postgresql/data
-      - ./sauvegardes:/sauvegardes
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-prepa} -d ${DB_NAME:-prepa}"]
       interval: 10s
