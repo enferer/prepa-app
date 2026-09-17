@@ -9,6 +9,8 @@ import app.prepa.athlete.AthleteRepository;
 import app.prepa.domain.BlocEntrainement;
 import app.prepa.domain.LigneDirectrice;
 import app.prepa.domain.StatutCycle;
+import app.prepa.domain.StatutSeance;
+import app.prepa.domain.TypeSeance;
 import app.prepa.domain.TypeCycle;
 import app.prepa.infra.ApiException;
 import java.math.BigDecimal;
@@ -176,6 +178,27 @@ class RollingPlanServiceTest extends IntegrationTestBase {
         // Aucune seance n'est encore validee ni manquee : l'assiduite n'a pas de sens.
         assertThat(bilan.assiduitePct()).isNull();
         assertThat(bilan.nbSemaines()).isEqualTo(4);
+    }
+
+    @Test
+    @DisplayName("exclut le renforcement de l'assiduite")
+    void assiduiteHorsRenforcement() {
+        Cycle cycle = poserPlan(LigneDirectrice.MAINTIEN_CHARGE, (short) 4);
+        TrainingWeek premiere = semaines.findByCycleIdOrderByNumeroAsc(cycle.getId()).getFirst();
+
+        // Deux sorties tenues, et un renforcement marque manque parce que la montre ne
+        // l'enregistre pas : l'assiduite doit rester a cent pour cent.
+        ajouter(premiere, TypeSeance.EF, StatutSeance.VALIDEE, null);
+        ajouter(premiere, TypeSeance.SL, StatutSeance.VALIDEE, null);
+        ajouter(premiere, TypeSeance.RENFO, StatutSeance.MANQUEE, "gainage");
+
+        assertThat(planGlissant.bilan(cycle.getId()).assiduitePct()).isEqualTo(100);
+    }
+
+    private void ajouter(TrainingWeek semaine, TypeSeance type, StatutSeance statut, String focus) {
+        planService.ajouter(semaine.getId(), new CycleDtos.SessionInput(
+                semaine.getDateDebut(), (short) 0, type, type.name(), null, statut, null, null, null,
+                focus, null, null));
     }
 
     private Cycle cycleLibre(LigneDirectrice ligne, short horizon) {

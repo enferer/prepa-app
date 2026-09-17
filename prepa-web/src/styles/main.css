@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+/*
+ * Palette unique, declinee en clair et en sombre. Les vues ne manipulent que ces variables :
+ * changer l'apparence ne demande alors de toucher qu'a ce fichier.
+ */
+@theme {
+  --color-fond: #f7f7f8;
+  --color-surface: #ffffff;
+  --color-appui: #f0f0f2;
+  --color-bordure: #e2e2e6;
+  --color-texte: #16161a;
+  --color-doux: #6b6b76;
+  --color-accent: #2f5fe0;
+  --color-accent-fond: #e8eeff;
+  --color-succes: #1d8a4e;
+  --color-succes-fond: #e6f4ec;
+  --color-alerte: #b4541a;
+  --color-alerte-fond: #fbeee4;
+  --color-manque: #a8323b;
+  --color-manque-fond: #fbe9ea;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html.sombre {
+    color-scheme: dark;
+    --color-fond: #121215;
+    --color-surface: #1b1b20;
+    --color-appui: #24242b;
+    --color-bordure: #32323a;
+    --color-texte: #f2f2f5;
+    --color-doux: #9d9daa;
+    --color-accent: #7ba0ff;
+    --color-accent-fond: #1e2740;
+    --color-succes: #5bc98a;
+    --color-succes-fond: #17301f;
+    --color-alerte: #e0a066;
+    --color-alerte-fond: #33261a;
+    --color-manque: #e88a92;
+    --color-manque-fond: #33191c;
+  }
+
+  body {
+    background-color: var(--color-fond);
+    color: var(--color-texte);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Des chiffres de meme largeur se comparent d'un coup d'oeil en colonne. */
+  .tabulaire {
+    font-variant-numeric: tabular-nums;
+  }
+}

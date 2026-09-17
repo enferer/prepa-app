@@ -186,8 +186,14 @@ public class RollingPlanService {
         List<TrainingWeek> toutes = semaines.findByCycleIdOrderByNumeroAsc(cycleId);
         List<PlannedSession> planifiees = seances.findByCycleIdOrderByDateAscOrdreAsc(cycleId);
 
-        long validees = planifiees.stream().filter(s -> s.getStatut() == StatutSeance.VALIDEE).count();
-        long manquees = planifiees.stream().filter(s -> s.getStatut() == StatutSeance.MANQUEE).count();
+        // Le renforcement et le repos sortent du calcul d'assiduite : la montre ne les
+        // enregistre pas, si bien qu'ils paraissent manques alors qu'ils ont souvent ete faits.
+        // Les compter ferait chuter le chiffre pour une raison etrangere a l'entrainement.
+        List<PlannedSession> retenues = planifiees.stream()
+                .filter(PlannedSession::estCourseAPied)
+                .toList();
+        long validees = retenues.stream().filter(s -> s.getStatut() == StatutSeance.VALIDEE).count();
+        long manquees = retenues.stream().filter(s -> s.getStatut() == StatutSeance.MANQUEE).count();
         long resolues = validees + manquees;
 
         double volumeCible = toutes.stream()

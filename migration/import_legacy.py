@@ -79,6 +79,148 @@ DISTANCES_RECORD = {
 }
 
 
+# ---------------------------------------------------------------------------
+# Dumps Garmin : tours, zones de frequence cardiaque, meteo
+# ---------------------------------------------------------------------------
+
+# Un tour plus court que cela est un artefact — arret de montre, tour fantome de fin
+# d'activite — et non une portion de seance.
+TOUR_MIN_SECONDES = 10
+TOUR_MIN_METRES = 50
+
+# L'API Garmin sert la meteo en unites imperiales quelle que soit la langue du compte.
+def fahrenheit_vers_celsius(f):
+    return round((float(f) - 32) * 5 / 9, 1) if f is not None else None
+
+
+def mph_vers_kmh(mph):
+    return round(float(mph) * 1.609, 1) if mph is not None else None
+
+
+def allure_depuis_vitesse(vitesse_ms):
+    """Vitesse en metres par seconde vers une allure en secondes par kilometre."""
+    if not vitesse_ms:
+        return None
+    secondes = 1000.0 / float(vitesse_ms)
+    # Hors de ces bornes, la valeur est aberrante : montre a l'arret ou pic de GPS.
+    return int(round(secondes)) if 100 < secondes < 3600 else None
+
+
+def entier(valeur):
+    return int(round(float(valeur))) if valeur is not None else None
+
+
+def extraire_tours(brut):
+    tours = []
+    for lap in (brut.get("splits") or {}).get("lapDTOs") or []:
+        duree = lap.get("duration") or 0
+        distance = lap.get("distance") or 0
+        if duree < TOUR_MIN_SECONDES and distance < TOUR_MIN_METRES:
+            continue
+        tours.append({
+            "index": len(tours) + 1,
+            "distanceM": entier(distance),
+            "dureeSec": entier(duree) or 0,
+            "allureSecKm": allure_depuis_vitesse(lap.get("averageSpeed")),
+            "gapSecKm": allure_depuis_vitesse(lap.get("avgGradeAdjustedSpeed")),
+            "fcMoy": entier(lap.get("averageHR")),
+            "fcMax": entier(lap.get("maxHR")),
+            "cadenceMoy": entier(lap.get("averageRunCadence")),
+            "puissanceMoy": entier(lap.get("averagePower")),
+            "denivelePosM": entier(lap.get("elevationGain")),
+            "deniveleNegM": entier(lap.get("elevationLoss")),
+            "intensite": lap.get("intensityType") or "UNKNOWN",
+        })
+    return tours
+
+
+def extraire_zones_fc(brut):
+    zones = []
+    for zone in brut.get("zonesFC") or []:
+        if not isinstance(zone, dict):
+            continue
+        zones.append({
+            "zone": zone.get("zoneNumber"),
+            "secondes": entier(zone.get("secsInZone") or 0),
+            "borneBasse": entier(zone.get("zoneLowBoundary")),
+        })
+    zones.sort(key=lambda z: z["zone"] or 0)
+    return zones
+
+
+def extraire_meteo(brut):
+    meteo = brut.get("meteo")
+    if not isinstance(meteo, dict) or not meteo or "erreur" in meteo:
+        return None
+    return {
+        "temperatureC": fahrenheit_vers_celsius(meteo.get("temp")),
+        "ressentiC": fahrenheit_vers_celsius(meteo.get("apparentTemp")),
+        "humidite": entier(meteo.get("relativeHumidity")),
+        "ventKmh": mph_vers_kmh(meteo.get("windSpeed")),
+        "description": (meteo.get("weatherTypeDTO") or {}).get("desc"),
+    }
+
+
+def extraire_activite(brut):
+    """Un dump brut vers le format d'ingestion de l'API."""
+    resume = brut.get("resume") or {}
+    summary = (brut.get("detail") or {}).get("summaryDTO") or {}
+
+    def valeur(*cles):
+        """Premiere valeur non nulle, cherchee dans le resume detaille puis dans le resume."""
+        for cle in cles:
+            for source in (summary, resume):
+                if source.get(cle) is not None:
+                    return source[cle]
+        return None
+
+    depart = str(resume.get("startTimeLocal") or summary.get("startTimeLocal") or "")
+    depart = depart.replace(" ", "T")[:19]
+    if not depart:
+        return None
+
+    return {
+        "garminActivityId": brut.get("activityId"),
+        "source": "GARMIN_API",
+        "type": TYPES_GARMIN.get((resume.get("activityType") or {}).get("typeKey"), "OTHER"),
+        "typeGarmin": (resume.get("activityType") or {}).get("typeKey"),
+        "titre": resume.get("activityName") or (brut.get("detail") or {}).get("activityName"),
+        "lieu": (brut.get("detail") or {}).get("locationName"),
+        "startedAtLocal": depart,
+        "dureeSec": entier(valeur("duration")) or 0,
+        "distanceM": entier(valeur("distance")),
+        "allureMoySecKm": allure_depuis_vitesse(valeur("averageSpeed")),
+        "gapMoySecKm": allure_depuis_vitesse(valeur("avgGradeAdjustedSpeed")),
+        "fcMoy": entier(valeur("averageHR")),
+        "fcMax": entier(valeur("maxHR")),
+        "fcMin": entier(summary.get("minHR")),
+        "cadenceMoy": entier(valeur("averageRunCadence", "averageRunningCadenceInStepsPerMinute")),
+        "denivelePosM": entier(valeur("elevationGain")),
+        "deniveleNegM": entier(valeur("elevationLoss")),
+        "calories": entier(valeur("calories")),
+        "teAerobie": valeur("trainingEffect", "aerobicTrainingEffect"),
+        "teAnaerobie": valeur("anaerobicTrainingEffect"),
+        "teLabel": summary.get("trainingEffectLabel"),
+        "chargeEntrainement": valeur("activityTrainingLoad"),
+        "tours": extraire_tours(brut),
+        "zonesFc": extraire_zones_fc(brut),
+        "meteo": extraire_meteo(brut),
+    }
+
+
+# Cles techniques Garmin vers les types de l'application.
+TYPES_GARMIN = {
+    "running": "RUN", "track_running": "RUN", "obstacle_run": "RUN", "street_running": "RUN",
+    "trail_running": "TRAIL", "ultra_run": "TRAIL",
+    "treadmill_running": "TREADMILL", "indoor_running": "TREADMILL", "virtual_run": "TREADMILL",
+    "cycling": "BIKE", "road_biking": "BIKE", "mountain_biking": "BIKE", "gravel_cycling": "BIKE",
+    "indoor_cycling": "BIKE", "virtual_ride": "BIKE",
+    "lap_swimming": "SWIM", "open_water_swimming": "SWIM",
+    "strength_training": "STRENGTH", "indoor_cardio": "STRENGTH", "yoga": "STRENGTH",
+    "hiking": "HIKE", "walking": "HIKE",
+}
+
+
 class Api:
     """Client minimal de l'API.
 
@@ -257,6 +399,7 @@ class Migration:
         self.creer_athlete(mot_de_passe)
         self.importer_profil_sportif()
         self.importer_activites()
+        self.importer_details()
         self.creer_cycle()
         self.importer_plan()
         self.importer_journal()
@@ -356,6 +499,39 @@ class Migration:
         self.rapport["activitesAvertissements"] = len(reponse.get("avertissements", []))
         print(f"  activites : {resultat.get('importees', 0)} importees, "
               f"{len(reponse.get('avertissements', []))} avertissements")
+
+    def importer_details(self):
+        """Ajoute tours, zones de frequence cardiaque et meteo aux activites deja importees.
+
+        Le CSV ne porte ni tours ni meteo : ces donnees ne vivent que dans les dumps de
+        l'API, archives seance par seance. C'est aussi par eux que les activites recuperent
+        leur identifiant Garmin, absent de l'export.
+        """
+        dossier = self.data / "garmin_raw"
+        if not dossier.is_dir():
+            self.rapport["details"] = 0
+            return
+
+        lot = []
+        for chemin in sorted(dossier.glob("*.json")):
+            try:
+                brut = json.loads(chemin.read_text(encoding="utf-8"))
+            except (OSError, json.JSONDecodeError):
+                continue
+            activite = extraire_activite(brut)
+            if activite:
+                lot.append(activite)
+
+        if not lot:
+            self.rapport["details"] = 0
+            return
+
+        resultat = self.api.appeler(
+            "POST", f"/athletes/{self.athlete_id}/activities/ingest", lot)
+        self.rapport["details"] = resultat.get("misesAJour", 0)
+        self.rapport["detailsNouvelles"] = resultat.get("importees", 0)
+        print(f"  details   : {resultat.get('misesAJour', 0)} seances enrichies, "
+              f"{resultat.get('importees', 0)} ajoutees, {resultat.get('doublons', 0)} inchangees")
 
     def creer_cycle(self):
         course = self.objectifs.get("course") or self.plan.get("course") or {}

@@ -45,7 +45,7 @@ public class ActivityIngestService {
         for (GarminDtos.ActiviteBrute brute : lot) {
             try {
                 String cle = cleDeDedup(brute);
-                Optional<Activity> existante = activities.findByAthleteIdAndDedupKey(athlete.getId(), cle);
+                Optional<Activity> existante = retrouver(athlete, brute, cle);
                 if (existante.isPresent()) {
                     // Une activite deja connue peut revenir enrichie de ses tours et de sa meteo.
                     if (enrichirSiPossible(existante.get(), brute)) {
@@ -66,15 +66,35 @@ public class ActivityIngestService {
     }
 
     /**
-     * Identifiant Garmin s'il existe, empreinte logique sinon. Le prefixe evite qu'une
-     * empreinte puisse un jour entrer en collision avec un identifiant.
+     * Retrouve une activite deja connue.
+     *
+     * <p>L'identifiant Garmin prime : c'est une cle naturelle et stable. Mais une meme seance
+     * peut arriver deux fois par des chemins differents — d'abord par un export CSV, qui ne
+     * porte aucun identifiant, puis par l'API qui, elle, en a un. La recherche retombe donc
+     * sur l'empreinte temporelle, et l'identifiant est pose au passage sur l'activite
+     * existante plutot que d'en creer une seconde.
+     */
+    private Optional<Activity> retrouver(Athlete athlete, GarminDtos.ActiviteBrute brute, String cle) {
+        if (brute.getGarminActivityId() != null) {
+            Optional<Activity> parIdentifiant =
+                    activities.findByAthleteIdAndGarminActivityId(athlete.getId(), brute.getGarminActivityId());
+            if (parIdentifiant.isPresent()) {
+                return parIdentifiant;
+            }
+        }
+        return activities.findByAthleteIdAndDedupKey(athlete.getId(), cle);
+    }
+
+    /**
+     * Empreinte de deduplication : l'heure de depart locale, a la seconde.
+     *
+     * <p>C'est la seule donnee que l'export CSV et l'API Garmin ecrivent a l'identique — la
+     * distance, elle, est arrondie au dixieme de kilometre dans le CSV et donnee au metre par
+     * l'API, si bien qu'une empreinte qui l'inclurait ferait diverger les deux sources.
+     * On ne demarre pas deux seances a la meme seconde.
      */
     private String cleDeDedup(GarminDtos.ActiviteBrute brute) {
-        if (brute.getGarminActivityId() != null) {
-            return "garmin:" + brute.getGarminActivityId();
-        }
-        String empreinte = brute.getStartedAtLocal() + "|" + brute.getDureeSec() + "|" + brute.getDistanceM();
-        return "sha:" + Hashing.sha256(empreinte);
+        return "t:" + Hashing.sha256(brute.getStartedAtLocal().toString());
     }
 
     private Activity construire(Athlete athlete, GarminDtos.ActiviteBrute brute, String cle) {
