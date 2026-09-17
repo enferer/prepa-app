@@ -134,10 +134,30 @@ def connecter(cible):
     dossier.mkdir(parents=True, exist_ok=True)
 
     api = Garmin(email=cible["email"], password=cible["motDePasse"])
+
+    # Deux chemins, et le second n'est pas un repli exceptionnel : c'est celui du tout
+    # premier passage, ou aucun jeton n'existe encore. Reprendre un jeton absent echoue —
+    # il faut alors s'authentifier par mot de passe, puis ecrire le jeton pour que les
+    # passages suivants s'en passent. Garmin finit par exiger une verification en deux
+    # etapes si le mot de passe est rejoue a chaque fois.
     try:
         api.login(tokenstore=str(dossier))
+        raison_reprise = None
     except Exception as e:
-        raise ErreurWorker(f"connexion Garmin refusee : {e}") from e
+        raison_reprise = e
+
+    # La verification d'identite reste en dehors de ce rattrapage : la rattraper ici
+    # ferait rejouer le mot de passe apres un refus de garde-fou, et donc contournerait
+    # justement ce qu'il protege.
+    if raison_reprise is not None:
+        try:
+            api.login()
+            api.garth.dump(str(dossier))
+        except Exception as e:
+            # On rappelle pourquoi la reprise a echoue : un jeton corrompu et un mot de
+            # passe refuse ne se soignent pas de la meme facon.
+            raise ErreurWorker(
+                f"connexion Garmin refusee : {e} (reprise du jeton : {raison_reprise})") from e
 
     verifier_identite(api, cible)
     return api
