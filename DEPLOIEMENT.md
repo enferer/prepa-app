@@ -59,14 +59,48 @@ resterait dans l'historique du shell :
 
 ```bash
 cd /opt/prepa
-read -rsp 'Mot de passe admin : ' MDP && echo
+read -rsp 'Mot de passe admin       : ' MDP  && echo
+read -rsp 'Confirme le mot de passe : ' MDP2 && echo
+[ "$MDP" = "$MDP2" ] || echo 'LES DEUX SAISIES DIFFERENT — ne va pas plus loin'
+
 timeout 150 docker compose -f docker-compose.prod.yml run --rm --no-deps \
   -e PREPA_SEED_ENABLED=true \
   -e PREPA_SEED_ADMIN_EMAIL=toi@example.org \
   -e PREPA_SEED_ADMIN_PASSWORD="$MDP" \
   api 2>&1 | grep -B3 -A3 'Cle de service'
-unset MDP
 ```
+
+La double saisie n'est pas du zèle : le mot de passe est tapé en aveugle dans un
+conteneur jetable, et rien ne le revérifie ensuite. Une faute de frappe ne se découvre
+qu'au premier usage — souvent bien plus tard. Vérifie donc tout de suite :
+
+```bash
+printf '%s' "$MDP" | python3 -c "
+import json, sys, urllib.request, urllib.error
+corps = json.dumps({'email': 'toi@example.org', 'motDePasse': sys.stdin.read()}).encode()
+requete = urllib.request.Request('http://localhost:8080/api/v1/auth/login', corps,
+                                 {'Content-Type': 'application/json'})
+try:
+    urllib.request.urlopen(requete)
+    print('Connexion OK')
+except urllib.error.HTTPError as e:
+    print('ECHEC', e.code)
+"
+unset MDP MDP2
+```
+
+### Se tromper de mot de passe
+
+Tant que la base ne contient que ce compte, le plus simple est de le refaire : l'amorçage
+s'abstient dès qu'un athlète existe, il faut donc d'abord effacer.
+
+```bash
+docker compose -f docker-compose.prod.yml exec -T postgres \
+  psql -U prepa -d prepa -c 'delete from athletes'
+```
+
+Cela efface **tout athlète et tout ce qui en dépend**. Une fois des données migrées, ce
+n'est plus une option : il faut alors passer par un administrateur encore accessible.
 
 Les journaux affichent **une seule fois** une clé de service. Note-la : c'est celle du
 worker. L'amorçage se coupe tout seul — il n'est actif que sur cette instance jetable, et
