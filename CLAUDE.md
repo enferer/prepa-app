@@ -87,14 +87,12 @@ refus opaque.
 ## Développement
 
 ```bash
-docker compose up -d                              # Postgres local
-cd prepa-api && ./mvnw spring-boot:run            # API sur :8080
-cd prepa-web && npm run dev                       # application sur :5173
+docker compose up -d                    # Postgres sur :5433
+cd prepa-api && ./mvnw spring-boot:run  # API sur :8080
+cd prepa-web && npm run dev             # application sur :5173
 ```
 
-Au premier démarrage, `--prepa.seed.enabled=true` avec `prepa.seed.admin-email` et
-`prepa.seed.admin-password` crée le compte administrateur et affiche **une seule fois** une
-clé de service.
+Démarrage détaillé, comptes et import des données : [DEMARRAGE.md](DEMARRAGE.md).
 
 ```bash
 cd prepa-api && ./mvnw test     # Postgres réel via Testcontainers
