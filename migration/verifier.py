@@ -3,16 +3,26 @@
 
 Usage : python3 migration/verifier.py /chemin/vers/profiles
 
+La base interrogee est celle de la composition docker-compose.yml. Pour verifier une
+installation serveur, lancer depuis /opt/prepa avec :
+
+    PREPA_COMPOSE_FILE=docker-compose.prod.yml python3 migration/verifier.py <profiles>
+
 Un ecart n'est acceptable que s'il est explicable — les seuls attendus ici sont
 les corrections de lecture des exports Garmin. Tout le reste doit tomber juste.
 """
 
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
+
+# Composition a interroger. En local c'est celle de developpement ; sur le serveur, la
+# base tourne sous docker-compose.prod.yml — d'ou le reglage plutot qu'un chemin fige.
+COMPOSE = os.environ.get("PREPA_COMPOSE_FILE", "docker-compose.yml")
 
 # Dossier `profiles/` de l'ancienne application, passe en argument.
 PROFILES = None
@@ -20,8 +30,8 @@ PROFILES = None
 
 def sql(requete):
     sortie = subprocess.run(
-        ["docker", "compose", "exec", "-T", "postgres", "psql", "-U", "prepa", "-d", "prepa",
-         "-tA", "-F", "|", "-c", requete],
+        ["docker", "compose", "-f", COMPOSE, "exec", "-T", "postgres", "psql",
+         "-U", "prepa", "-d", "prepa", "-tA", "-F", "|", "-c", requete],
         capture_output=True, text=True, cwd=RACINE)
     return [l.split("|") for l in sortie.stdout.strip().split("\n") if l]
 
