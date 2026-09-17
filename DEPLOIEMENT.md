@@ -53,19 +53,24 @@ docker compose -f docker-compose.prod.yml up -d --build postgres api
 docker compose -f docker-compose.prod.yml logs -f api   # les migrations s'appliquent ici
 ```
 
-Crée le premier compte administrateur, puis coupe l'amorçage :
+Crée le premier compte administrateur. L'amorçage se fait au démarrage d'une instance
+jetable, et le mot de passe est demandé plutôt qu'écrit dans la commande — sans quoi il
+resterait dans l'historique du shell :
 
 ```bash
-docker compose -f docker-compose.prod.yml stop api
-docker compose -f docker-compose.prod.yml run --rm \
+cd /opt/prepa
+read -rsp 'Mot de passe admin : ' MDP && echo
+timeout 150 docker compose -f docker-compose.prod.yml run --rm --no-deps \
   -e PREPA_SEED_ENABLED=true \
   -e PREPA_SEED_ADMIN_EMAIL=toi@example.org \
-  -e PREPA_SEED_ADMIN_PASSWORD='…' \
-  api
+  -e PREPA_SEED_ADMIN_PASSWORD="$MDP" \
+  api 2>&1 | grep -B3 -A3 'Cle de service'
+unset MDP
 ```
 
 Les journaux affichent **une seule fois** une clé de service. Note-la : c'est celle du
-worker. Relance ensuite normalement.
+worker. L'amorçage se coupe tout seul — il n'est actif que sur cette instance jetable, et
+il s'abstient dès que la base contient un athlète.
 
 Pour créer d'autres clés — une pour les skills, une par athlète si tu veux les cloisonner :
 
@@ -145,11 +150,17 @@ Le worker tourne en continu et n'a **pas besoin du planificateur** :
 - au démarrage, le premier passage est complet : après un arrêt, on ne sait pas ce qui a
   été manqué.
 
-Seule la sauvegarde reste au planificateur :
+Seule la sauvegarde est planifiée. Cette machine n'a pas de `cron` ; elle est portée par
+un minuteur systemd, installé une fois :
 
-```cron
-15 3 * * * /opt/prepa/exploitation/sauvegarde.sh >> /var/log/prepa-sauvegarde.log 2>&1
+```bash
+systemctl list-timers prepa-sauvegarde   # prochaine exécution
+sudo systemctl start prepa-sauvegarde    # forcer une sauvegarde
+journalctl -u prepa-sauvegarde -n 20     # ce qu'elle a fait
 ```
+
+Le minuteur est `Persistent` : une sauvegarde manquée parce que le serveur était éteint
+est rattrapée au démarrage, plutôt que sautée en silence.
 
 `exploitation/sync-nocturne.sh` subsiste pour forcer un passage complet à la main.
 
