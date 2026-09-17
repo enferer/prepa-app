@@ -50,8 +50,9 @@ export const useEntrainement = defineStore('entrainement', () => {
     const concernees = semaines.value
       .flatMap((s) => s.seances)
       .filter((s) => s.type !== 'RENFO' && s.type !== 'REPOS')
-    const tenues = concernees.filter((s) => s.statut === 'VALIDEE').length
-    const manquees = concernees.filter((s) => s.statut === 'MANQUEE').length
+    // Une séance tenue l'est, que le coach l'ait déjà commentée ou non.
+    const tenues = concernees.filter((s) => s.statut === 'REALISEE' || s.statut === 'ANALYSEE').length
+    const manquees = concernees.filter((s) => s.statut === 'NON_REALISEE').length
     const tranchees = tenues + manquees
     return {
       tenues,

@@ -6,9 +6,15 @@ import { dateLongue, km, joursDepuis } from '@/composables/useFormat'
 import type { Seance } from '@/api/types'
 
 const props = defineProps<{ seance: Seance; miseEnAvant?: boolean }>()
-const emit = defineEmits<{ statut: [statut: 'VALIDEE' | 'MANQUEE']; ouvrir: [] }>()
+const emit = defineEmits<{ statut: [statut: 'REALISEE' | 'NON_REALISEE']; ouvrir: [] }>()
 
 const passee = computed(() => joursDepuis(props.seance.date) < 0)
+
+/**
+ * Les séances rapprochées automatiquement n'ont pas besoin d'être confirmées : seules
+ * celles que rien n'est venu renseigner appellent une réponse de l'athlète — typiquement
+ * une sortie faite sans montre.
+ */
 const aTrancher = computed(() => passee.value && props.seance.statut === 'A_VENIR')
 </script>
 
@@ -66,15 +72,15 @@ const aTrancher = computed(() => passee.value && props.seance.statut === 'A_VENI
     <div v-if="aTrancher" class="mt-4 flex gap-2">
       <button
         class="rounded-lg bg-[var(--color-succes)] px-3 py-1.5 text-sm font-medium text-white"
-        @click="emit('statut', 'VALIDEE')"
+        @click="emit('statut', 'REALISEE')"
       >
         Je l'ai faite
       </button>
       <button
         class="rounded-lg border border-[var(--color-bordure)] px-3 py-1.5 text-sm"
-        @click="emit('statut', 'MANQUEE')"
+        @click="emit('statut', 'NON_REALISEE')"
       >
-        Manquée
+        Pas faite
       </button>
     </div>
 

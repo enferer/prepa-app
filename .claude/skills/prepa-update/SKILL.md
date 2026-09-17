@@ -55,13 +55,30 @@ Pour chaque écart qualifié, **AskUserQuestion avant toute modification**. C'es
 
 Propose des causes claires — fatigue, douleur, manque de temps, météo, mental — et adapte selon la réponse.
 
-À l'inverse, une séance conforme se valide directement, avec un commentaire court :
+### Les statuts, et qui les pose
+
+Tu n'as **pas** à marquer une séance comme faite : le serveur l'a déjà constaté quand
+l'activité est arrivée de la montre. Trois états te concernent :
+
+| Statut | Qui le pose | Ce qu'il dit |
+|---|---|---|
+| `REALISEE` | le serveur | une activité correspond — pas encore regardée par toi |
+| `NON_REALISEE` | le serveur | la date est passée, rien n'est venu |
+| `ANALYSEE` | **toi** | tu l'as regardée et commentée |
+
+Ton travail consiste à faire passer les séances de `REALISEE` ou `NON_REALISEE` à
+`ANALYSEE`, en y laissant ce que tu as compris :
 
 ```bash
-./cli/prepa PATCH /sessions/<seanceId> '{"statut":"VALIDEE","commentaireCoach":"Allures tenues, FC cohérente. Rien à signaler."}'
+./cli/prepa PATCH /sessions/<seanceId> '{"statut":"ANALYSEE","commentaireCoach":"Allures tenues, FC cohérente. Rien à signaler."}'
 ```
 
-Une séance non faite se marque `MANQUEE`, avec la raison dans le commentaire. Si elle a été décalée dans la semaine, `DEPLACEE` avec la nouvelle date.
+Une séance `NON_REALISEE` passe aussi en `ANALYSEE` — la raison, elle, vit dans ton
+commentaire. Le constat dit qu'il ne s'est rien passé ; c'est toi qui dis pourquoi, **après
+avoir demandé**. Si elle a été décalée dans la semaine, `DEPLACEE` avec la nouvelle date.
+
+Une séance restée `A_VENIR` alors que sa date est passée est une séance faite sans montre, ou
+que l'athlète n'a pas encore renseignée : demande-lui.
 
 ## 5. Adapter la suite
 
@@ -70,7 +87,7 @@ Modifie les semaines encore à venir, selon les règles du §4 : ne jamais empil
 Pour une retouche ponctuelle :
 
 ```bash
-./cli/prepa PATCH /sessions/<seanceId> '{"distanceCibleKm":18,"commentaireCoach":"Raccourcie de 4 km : deux semaines sous la cible, on consolide avant d'allonger."}'
+./cli/prepa PATCH /sessions/<seanceId> '{"distanceCibleKm":18,"commentaireCoach":"Raccourcie de 4 km : deux semaines sous la cible, on consolide avant d'\''allonger."}'
 ```
 
 Pour une restructuration large, remplace le plan entier — les séances déjà vécues gardent leur statut et leur rapprochement :

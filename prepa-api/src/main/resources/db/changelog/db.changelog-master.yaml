@@ -15,3 +15,5 @@ databaseChangeLog:
       file: db/changelog/007-journal-coach.sql
   - include:
       file: db/changelog/008-service-keys.sql
+  - include:
+      file: db/changelog/009-statuts-seance.sql

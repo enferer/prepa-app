@@ -156,8 +156,10 @@ public class PlanService {
                     .filter(autre -> !autre.getId().equals(sessionId))
                     .ifPresent(PlannedSession::detacher);
             seance.rapprocherDe(activityId, true);
-            if (seance.getStatut() == StatutSeance.A_VENIR) {
-                seance.setStatut(StatutSeance.VALIDEE);
+            // Rapprocher une seance d'une activite, c'est constater qu'elle a eu lieu — sans
+            // pour autant la juger : cela reste au coach.
+            if (seance.getStatut().accepteUnConstatAutomatique()) {
+                seance.setStatut(StatutSeance.REALISEE);
             }
         }
         return seances.save(seance);
@@ -264,7 +266,7 @@ public class PlanService {
         if (precedente.getActivityId() != null) {
             nouvelle.rapprocherDe(precedente.getActivityId(), "MANUEL".equals(precedente.getRapprochement()));
             nouvelle.setStatut(precedente.getStatut());
-        } else if (precedente.getStatut().estResolue()) {
+        } else if (precedente.getStatut().estTranchee()) {
             nouvelle.setStatut(precedente.getStatut());
         }
         if (precedente.getCommentaireAthlete() != null) {

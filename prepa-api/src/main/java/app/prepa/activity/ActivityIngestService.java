@@ -1,6 +1,7 @@
 package app.prepa.activity;
 
 import app.prepa.athlete.Athlete;
+import app.prepa.cycle.ConstatService;
 import app.prepa.garmin.GarminDtos;
 import app.prepa.infra.Hashing;
 import java.math.BigDecimal;
@@ -30,9 +31,11 @@ public class ActivityIngestService {
     private static final Logger log = LoggerFactory.getLogger(ActivityIngestService.class);
 
     private final ActivityRepository activities;
+    private final ConstatService constats;
 
-    public ActivityIngestService(ActivityRepository activities) {
+    public ActivityIngestService(ActivityRepository activities, ConstatService constats) {
         this.activities = activities;
+        this.constats = constats;
     }
 
     @Transactional
@@ -55,7 +58,10 @@ public class ActivityIngestService {
                     }
                     continue;
                 }
-                activities.save(construire(athlete, brute, cle));
+                Activity creee = activities.save(construire(athlete, brute, cle));
+                // Une seance qui arrive de la montre est constatee tout de suite : l'athlete
+                // la voit comptee le soir meme, sans attendre le point hebdomadaire.
+                constats.constaterArrivee(creee);
                 importees++;
             } catch (RuntimeException e) {
                 log.warn("Activite ignoree a l'ingestion", e);

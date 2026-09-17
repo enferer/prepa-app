@@ -186,11 +186,12 @@ class RollingPlanServiceTest extends IntegrationTestBase {
         Cycle cycle = poserPlan(LigneDirectrice.MAINTIEN_CHARGE, (short) 4);
         TrainingWeek premiere = semaines.findByCycleIdOrderByNumeroAsc(cycle.getId()).getFirst();
 
-        // Deux sorties tenues, et un renforcement marque manque parce que la montre ne
-        // l'enregistre pas : l'assiduite doit rester a cent pour cent.
-        ajouter(premiere, TypeSeance.EF, StatutSeance.VALIDEE, null);
-        ajouter(premiere, TypeSeance.SL, StatutSeance.VALIDEE, null);
-        ajouter(premiere, TypeSeance.RENFO, StatutSeance.MANQUEE, "gainage");
+        // Deux sorties tenues — l'une deja analysee, l'autre seulement constatee — et un
+        // renforcement non realise parce que la montre ne l'enregistre pas : l'assiduite
+        // doit rester a cent pour cent.
+        ajouter(premiere, TypeSeance.EF, StatutSeance.REALISEE, null);
+        ajouter(premiere, TypeSeance.SL, StatutSeance.ANALYSEE, null);
+        ajouter(premiere, TypeSeance.RENFO, StatutSeance.NON_REALISEE, "gainage");
 
         assertThat(planGlissant.bilan(cycle.getId()).assiduitePct()).isEqualTo(100);
     }

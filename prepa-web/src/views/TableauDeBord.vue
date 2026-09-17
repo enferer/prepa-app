@@ -42,7 +42,10 @@ const partDeLaCible = computed(() => {
   return (volumeSemaine.value / semaine.value.volumeCibleKm) * 100
 })
 
-/** Séances échues non tranchées : ce que l'athlète peut clarifier tout de suite. */
+/**
+ * Séances échues que rien n'est venu renseigner. Les sorties enregistrées par la montre
+ * sont déjà comptées : ne restent ici que celles faites sans montre, ou pas faites.
+ */
 const aTrancher = computed(() => {
   const aujourdhui = new Date().toISOString().slice(0, 10)
   return entrainement.semaines

@@ -9,7 +9,14 @@
 export type TypeSeance =
   | 'EF' | 'SL' | 'SEUIL' | 'VMA' | 'AM' | 'COTES' | 'RENFO' | 'COURSE' | 'CROSS' | 'REPOS'
 
-export type StatutSeance = 'A_VENIR' | 'VALIDEE' | 'MANQUEE' | 'DEPLACEE' | 'ANNULEE'
+/**
+ * Cycle de vie d'une seance.
+ *
+ * `REALISEE` et `NON_REALISEE` sont des constats poses automatiquement — une sortie est
+ * comptee des que la montre l'a transmise. `ANALYSEE` est le jugement du coach.
+ */
+export type StatutSeance =
+  | 'A_VENIR' | 'REALISEE' | 'NON_REALISEE' | 'ANALYSEE' | 'DEPLACEE' | 'ANNULEE'
 
 export type TypeCycle = 'PREPA' | 'LIBRE'
 

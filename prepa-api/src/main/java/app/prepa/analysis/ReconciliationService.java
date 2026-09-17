@@ -257,7 +257,8 @@ public class ReconciliationService {
         List<Ecart> ecarts = new ArrayList<>();
 
         if (activite == null && seance.estCourseAPied() && seance.getDate().isBefore(LocalDate.now())
-                && seance.getStatut() != StatutSeance.ANNULEE && seance.getStatut() != StatutSeance.DEPLACEE) {
+                && seance.getStatut() != StatutSeance.ANNULEE
+                && seance.getStatut() != StatutSeance.DEPLACEE) {
             boolean cle = seance.getType().estCle();
             ecarts.add(new Ecart(
                     cle ? TypeEcart.SEANCE_CLE_MANQUEE : TypeEcart.SEANCE_MANQUEE,

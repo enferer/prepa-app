@@ -29,16 +29,19 @@ public class CycleController {
     private final CycleService cycleService;
     private final PlanService planService;
     private final RollingPlanService planGlissant;
+    private final ConstatService constats;
     private final AthleteService athletes;
 
     public CycleController(
             CycleService cycleService,
             PlanService planService,
             RollingPlanService planGlissant,
+            ConstatService constats,
             AthleteService athletes) {
         this.cycleService = cycleService;
         this.planService = planService;
         this.planGlissant = planGlissant;
+        this.constats = constats;
         this.athletes = athletes;
     }
 
@@ -144,6 +147,29 @@ public class CycleController {
         athletes.accessible(cycle.getAthleteId(), CurrentPrincipal.get());
         return planGlissant.bilan(cycleId);
     }
+
+    /**
+     * Rejoue le rattachement des activites aux seances sur une periode.
+     * Utile apres un import d'historique ou une refonte du plan.
+     */
+    @PostMapping("/athletes/{athleteId}/reconcile")
+    public RattrapageResponse rattraper(
+            @PathVariable UUID athleteId,
+            @RequestParam(required = false)
+                    @org.springframework.format.annotation.DateTimeFormat(
+                            iso = org.springframework.format.annotation.DateTimeFormat.ISO.DATE)
+                    java.time.LocalDate debut,
+            @RequestParam(required = false)
+                    @org.springframework.format.annotation.DateTimeFormat(
+                            iso = org.springframework.format.annotation.DateTimeFormat.ISO.DATE)
+                    java.time.LocalDate fin) {
+        exigerCoach(athleteId);
+        java.time.LocalDate depuis = debut != null ? debut : java.time.LocalDate.now().minusMonths(6);
+        java.time.LocalDate jusqua = fin != null ? fin : java.time.LocalDate.now();
+        return new RattrapageResponse(constats.rattraper(athleteId, depuis, jusqua));
+    }
+
+    public record RattrapageResponse(int seancesConstatees) {}
 
     @PostMapping("/weeks/{weekId}/sessions")
     public CycleDtos.SessionResponse ajouterSeance(

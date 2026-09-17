@@ -42,6 +42,29 @@ lis d'abord [`coach/COACH.md`](coach/COACH.md). C'est le cerveau du projet : pri
 calcul des allures, règles d'adaptation, protocole douleur, cycles libres, et les cinq
 situations qu'on ne traite **jamais** sans demander la cause à l'athlète.
 
+## Le cycle de vie d'une séance
+
+Trois temps, et la distinction tient à **qui pose le statut** :
+
+| Statut | Posé par | Quand |
+|---|---|---|
+| `A_VENIR` | — | par défaut |
+| `REALISEE` | **le système** | une activité Garmin correspond à la séance |
+| `NON_REALISEE` | **le système** | la date est passée, rien n'est venu (un jour de battement) |
+| `ANALYSEE` | **le coach** | il l'a regardée et commentée |
+| `DEPLACEE` / `ANNULEE` | selon le cas | reportée dans la semaine, ou retirée du plan |
+
+`REALISEE` et `NON_REALISEE` sont des **constats**, posés à l'ingestion : l'athlète voit sa
+sortie comptée le soir même, sans attendre le point hebdomadaire, et le coach n'a pas à
+cocher à la main ce que les données disent déjà. `ANALYSEE` est un **jugement**.
+
+Il n'existe volontairement pas de statut « manquée » automatique : déclarer une séance
+manquée avant d'avoir demandé à l'athlète ce qui s'est passé reviendrait à juger sans savoir.
+Le constat dit qu'il ne s'est rien passé ; la raison vit dans le commentaire du coach.
+
+Un constat n'écrase jamais une décision déjà prise : une séance analysée, déplacée ou annulée
+ne bouge plus.
+
 ## Qui écrit quoi
 
 La ligne de partage est portée par le code, pas par une convention : *l'athlète décrit la
@@ -49,7 +72,7 @@ réalité, il ne redessine pas l'entraînement.*
 
 | | Athlète (application) | Coach (clé de service) |
 |---|---|---|
-| Marquer une séance faite ou manquée | ✅ | ✅ |
+| Marquer une séance faite ou non faite (sortie sans montre) | ✅ | ✅ |
 | Commenter une séance, tenir son journal | ✅ | ✅ (commentaire de coach) |
 | Décaler une séance **dans sa semaine** | ✅ | ✅ (n'importe où) |
 | Saisir un ressenti, signaler une blessure | ✅ | ✅ |

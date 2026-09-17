@@ -192,9 +192,11 @@ public class RollingPlanService {
         List<PlannedSession> retenues = planifiees.stream()
                 .filter(PlannedSession::estCourseAPied)
                 .toList();
-        long validees = retenues.stream().filter(s -> s.getStatut() == StatutSeance.VALIDEE).count();
-        long manquees = retenues.stream().filter(s -> s.getStatut() == StatutSeance.MANQUEE).count();
-        long resolues = validees + manquees;
+        long tenues = retenues.stream().filter(s -> s.getStatut().aEuLieu()).count();
+        long manquees = retenues.stream()
+                .filter(s -> s.getStatut() == StatutSeance.NON_REALISEE)
+                .count();
+        long tranchees = tenues + manquees;
 
         double volumeCible = toutes.stream()
                 .mapToDouble(s -> s.getVolumeCibleKm().doubleValue())
@@ -207,11 +209,11 @@ public class RollingPlanService {
                 cycle.getDateFin(),
                 toutes.size(),
                 planifiees.size(),
-                (int) validees,
+                (int) tenues,
                 (int) manquees,
                 // L'assiduite ne se mesure que sur ce qui est tranche : une seance a venir
                 // n'est ni tenue ni manquee.
-                resolues == 0 ? null : (int) Math.round(validees * 100.0 / resolues),
+                tranchees == 0 ? null : (int) Math.round(tenues * 100.0 / tranchees),
                 Math.round(volumeCible * 10) / 10.0);
     }
 
@@ -222,7 +224,7 @@ public class RollingPlanService {
             LocalDate dateFin,
             int nbSemaines,
             int nbSeances,
-            int seancesValidees,
+            int seancesTenues,
             int seancesManquees,
             Integer assiduitePct,
             double volumeCibleTotalKm) {}
