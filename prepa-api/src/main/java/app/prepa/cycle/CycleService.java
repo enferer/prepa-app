@@ -45,7 +45,7 @@ public class CycleService {
     @Transactional
     public Cycle creer(UUID athleteId, CycleDtos.CreateCycleRequest req) {
         if (cycles.existsByAthleteIdAndSlug(athleteId, req.slug())) {
-            throw ApiException.conflit("Un cycle porte deja cet identifiant");
+            throw ApiException.conflit("Un cycle porte déjà cet identifiant");
         }
         LocalDate debut = lundiDe(req.dateDebut());
         LocalDate fin = calculerFin(req, debut);
@@ -98,7 +98,7 @@ public class CycleService {
     public Cycle convertir(UUID cycleId, CycleDtos.ConvertCycleRequest req) {
         Cycle cycle = parId(cycleId);
         if (cycle.getType() == req.versType()) {
-            throw ApiException.invalide("Le cycle est deja de ce type");
+            throw ApiException.invalide("Le cycle est déjà de ce type");
         }
         cycle.setType(req.versType());
         if (req.versType() == TypeCycle.PREPA) {
@@ -191,7 +191,7 @@ public class CycleService {
 
     private static void exigerCourse(LocalDate courseDate, Integer chronoViseSec) {
         if (courseDate == null || chronoViseSec == null) {
-            throw ApiException.invalide("Une preparation a besoin d'une date de course et d'un chrono vise");
+            throw ApiException.invalide("Une préparation a besoin d'une date de course et d'un chrono visé");
         }
     }
 

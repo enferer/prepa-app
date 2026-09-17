@@ -252,7 +252,7 @@ public class CycleController {
         Principal principal = CurrentPrincipal.get();
         athletes.accessible(athleteId, principal);
         if (!principal.estCoach()) {
-            throw ApiException.forbidden("La construction du plan releve de ton coach");
+            throw ApiException.forbidden("La construction du plan relève de ton coach");
         }
     }
 

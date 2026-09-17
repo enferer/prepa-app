@@ -87,7 +87,9 @@ public class ConstatService {
                 .stream()
                 .filter(s -> s.getActivityId() == null)
                 .filter(PlannedSession::estCourseAPied)
-                .filter(s -> s.getStatut().accepteUnConstatAutomatique())
+                // Une séance déjà jugée par le coach peut tout de même n'avoir jamais été
+                // rattachée à son activité : le rattachement est un fait, pas un jugement.
+                .filter(s -> s.getStatut() != StatutSeance.ANNULEE)
                 .toList();
         if (candidates.isEmpty()) {
             return Optional.empty();
@@ -99,7 +101,11 @@ public class ConstatService {
         }
         PlannedSession choisie = correspondance.get();
         choisie.rapprocherDe(activite.getId(), false);
-        choisie.setStatut(StatutSeance.REALISEE);
+        // Le constat ne revient jamais sur une décision : une séance déjà analysée garde son
+        // statut, elle gagne seulement le lien vers ce qui a été couru.
+        if (choisie.getStatut().accepteUnConstatAutomatique()) {
+            choisie.setStatut(StatutSeance.REALISEE);
+        }
         seances.save(choisie);
         log.debug("Activite {} rattachee a la seance {}", activite.getId(), choisie.getId());
         return Optional.of(choisie);

@@ -87,7 +87,7 @@ public class GarminSyncController {
     private void exigerWorker() {
         Principal principal = CurrentPrincipal.get();
         if (!principal.estCoach() || !principal.aLeScope(ServiceKeyService.SCOPE_INGEST)) {
-            throw ApiException.forbidden("Reserve au service de synchronisation");
+            throw ApiException.forbidden("Réservé au service de synchronisation");
         }
     }
 }

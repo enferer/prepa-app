@@ -141,11 +141,11 @@ public class RollingPlanService {
     public List<TrainingWeek> prolonger(UUID cycleId, int semainesSupplementaires) {
         Cycle cycle = cycles.findById(cycleId).orElseThrow(() -> ApiException.notFound("Cycle"));
         if (cycle.getType() != TypeCycle.LIBRE) {
-            throw ApiException.invalide("Seul un cycle libre se prolonge ; une preparation a une date de course");
+            throw ApiException.invalide("Seul un cycle libre se prolonge ; une préparation a une date de course");
         }
         List<TrainingWeek> existantes = semaines.findByCycleIdOrderByNumeroAsc(cycleId);
         if (existantes.isEmpty()) {
-            throw ApiException.invalide("Ce cycle n'a pas encore de plan a prolonger");
+            throw ApiException.invalide("Ce cycle n'a pas encore de plan à prolonger");
         }
 
         TrainingWeek derniere = existantes.getLast();

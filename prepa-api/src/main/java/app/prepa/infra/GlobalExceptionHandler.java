@@ -32,13 +32,13 @@ public class GlobalExceptionHandler {
         ex.getBindingResult().getFieldErrors()
                 .forEach(e -> champs.putIfAbsent(e.getField(), e.getDefaultMessage()));
         return ResponseEntity.badRequest()
-                .body(ApiErrorResponse.of("VALIDATION_FAILED", "Requete invalide", champs));
+                .body(ApiErrorResponse.of("VALIDATION_FAILED", "Requête invalide", champs));
     }
 
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<ApiErrorResponse> handleConstraint(ConstraintViolationException ex) {
         return ResponseEntity.badRequest()
-                .body(ApiErrorResponse.of("VALIDATION_FAILED", "Requete invalide", Map.of()));
+                .body(ApiErrorResponse.of("VALIDATION_FAILED", "Requête invalide", Map.of()));
     }
 
     /**
@@ -47,9 +47,9 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<ApiErrorResponse> handleCorpsIllisible(HttpMessageNotReadableException ex) {
-        log.debug("Corps de requete illisible", ex);
+        log.debug("Corps de requête illisible", ex);
         return ResponseEntity.badRequest()
-                .body(ApiErrorResponse.of("MALFORMED_REQUEST", "Corps de requete illisible", Map.of()));
+                .body(ApiErrorResponse.of("MALFORMED_REQUEST", "Corps de requête illisible", Map.of()));
     }
 
     @ExceptionHandler(AuthenticationException.class)
@@ -61,7 +61,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(AccessDeniedException.class)
     public ResponseEntity<ApiErrorResponse> handleDenied(AccessDeniedException ex) {
         return ResponseEntity.status(HttpStatus.FORBIDDEN)
-                .body(ApiErrorResponse.of("FORBIDDEN", "Acces refuse", Map.of()));
+                .body(ApiErrorResponse.of("FORBIDDEN", "Accès refusé", Map.of()));
     }
 
     @ExceptionHandler(Exception.class)

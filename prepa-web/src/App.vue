@@ -80,7 +80,11 @@ watch(
       </div>
     </header>
 
-    <main class="mx-auto max-w-5xl px-4 py-5">
+    <!--
+      Aucun contenu ne doit pouvoir élargir la page : un graphique trop large poussait la
+      mise en page entière, jusqu'à faire sortir des onglets de l'écran.
+    -->
+    <main class="mx-auto max-w-5xl overflow-x-hidden px-4 py-5">
       <p
         v-if="entrainement.erreur"
         class="mb-4 rounded-lg bg-[var(--color-manque-fond)] px-4 py-3 text-sm text-[var(--color-manque)]"

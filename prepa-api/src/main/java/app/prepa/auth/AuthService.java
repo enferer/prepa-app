@@ -56,10 +56,10 @@ public class AuthService {
         RefreshToken stocke = refreshTokens.findByTokenHash(Hashing.sha256(refreshToken))
                 .filter(RefreshToken::estUtilisable)
                 .orElseThrow(() -> new ApiException(
-                        HttpStatus.UNAUTHORIZED, "INVALID_REFRESH_TOKEN", "Refresh token invalide ou expire"));
+                        HttpStatus.UNAUTHORIZED, "INVALID_REFRESH_TOKEN", "Jeton de session invalide ou expiré"));
         stocke.revoquer();
         Athlete athlete = athletes.findById(stocke.getAthleteId())
-                .orElseThrow(() -> ApiException.notFound("Athlete"));
+                .orElseThrow(() -> ApiException.notFound("Athlète"));
         return emettre(athlete);
     }
 

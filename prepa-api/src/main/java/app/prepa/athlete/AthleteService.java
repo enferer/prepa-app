@@ -20,7 +20,7 @@ public class AthleteService {
 
     @Transactional(readOnly = true)
     public Athlete parId(UUID id) {
-        return athletes.findById(id).orElseThrow(() -> ApiException.notFound("Athlete"));
+        return athletes.findById(id).orElseThrow(() -> ApiException.notFound("Athlète"));
     }
 
     /**
@@ -30,7 +30,7 @@ public class AthleteService {
     @Transactional(readOnly = true)
     public Athlete accessible(UUID id, Principal principal) {
         if (!principal.peutAcceder(id)) {
-            throw ApiException.forbidden("Cet athlete ne t'est pas accessible");
+            throw ApiException.forbidden("Cet athlète ne t'est pas accessible");
         }
         return parId(id);
     }
@@ -38,7 +38,7 @@ public class AthleteService {
     @Transactional
     public Athlete creer(AthleteDtos.CreateAthleteRequest req) {
         if (athletes.existsByEmailIgnoreCase(req.email())) {
-            throw ApiException.conflit("Un athlete utilise deja cet email");
+            throw ApiException.conflit("Un athlète utilise déjà cet email");
         }
         Athlete athlete = new Athlete(
                 UUID.randomUUID(), req.email(), passwordEncoder.encode(req.motDePasse()), req.displayName());

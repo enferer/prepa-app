@@ -122,7 +122,12 @@ function ouvrirJour(date: string) {
   />
 
   <div v-else class="space-y-5">
-    <h1 class="text-lg font-semibold">Ta saison</h1>
+    <div>
+      <h1 class="text-lg font-semibold">Ta saison</h1>
+      <p class="text-sm text-[var(--color-doux)]">
+        Ce que tu as fait, et ce qui arrive. Pour savoir si tu progresses, va voir Stats.
+      </p>
+    </div>
 
     <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
       <TuileChiffre libelle="Cette année" :valeur="km(bilanAnnee.kmTotal, 0)" :detail="`${bilanAnnee.sorties} sorties`" />

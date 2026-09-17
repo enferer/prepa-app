@@ -2,10 +2,14 @@ package app.prepa.analysis;
 
 import app.prepa.activity.Activity;
 import app.prepa.activity.ActivityLap;
+import app.prepa.activity.ActivityLap;
 import app.prepa.activity.ActivityRepository;
 import app.prepa.athlete.AthleteProfileService;
 import app.prepa.cycle.Cycle;
 import app.prepa.cycle.CycleService;
+import app.prepa.cycle.PlannedSession;
+import app.prepa.domain.IntensiteTour;
+import app.prepa.domain.TypeSeance;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.temporal.IsoFields;
@@ -99,7 +103,9 @@ public class AnalysisService {
                         .orElseThrow()),
                 records(courses),
                 tendanceFc(courses),
-                comparaisonCycle(athleteId, courses));
+                comparaisonCycle(athleteId, courses),
+                alluresParType(athleteId, recentes),
+                repartitionIntensite(athleteId, recentes, seuilFc));
     }
 
     /** Volume, semaine ISO par semaine ISO, sans trou dans la serie. */
@@ -283,9 +289,9 @@ public class AnalysisService {
         }
         int ecart = recente - precedente;
         String lecture = ecart >= 4
-                ? "Frequence cardiaque en hausse a charge comparable : signe de fatigue a croiser avec le journal"
-                : ecart <= -4 ? "Frequence cardiaque en baisse : signe d'une meilleure fraicheur"
-                        : "Frequence cardiaque stable";
+                ? "Fréquence cardiaque en hausse à charge comparable : signe de fatigue à croiser avec le journal"
+                : ecart <= -4 ? "Fréquence cardiaque en baisse : signe d'une meilleure fraîcheur"
+                        : "Fréquence cardiaque stable";
         return new AnalysisDtos.TendanceFc(recente, precedente, ecart, lecture);
     }
 
@@ -318,7 +324,7 @@ public class AnalysisService {
         List<AnalysisDtos.Delta> deltas = new ArrayList<>();
         deltas.add(delta("Volume hebdomadaire",
                 periodeAvant.volume().kmParSemaineMoyen(), periodePendant.volume().kmParSemaineMoyen(), true));
-        deltas.add(delta("Seances par semaine",
+        deltas.add(delta("Séances par semaine",
                 periodeAvant.volume().seancesParSemaine(), periodePendant.volume().seancesParSemaine(), true));
         if (periodeAvant.allureMoySecKm() != null && periodePendant.allureMoySecKm() != null) {
             // Une allure qui baisse est une amelioration : le sens de la comparaison s'inverse.
@@ -356,6 +362,186 @@ public class AnalysisService {
         return new AnalysisDtos.Delta(mesure, arrondi(avant), arrondi(pendant), arrondi(variation), amelioration);
     }
 
+    /**
+     * Allure reellement tenue par type de seance, face a la cible du cycle.
+     *
+     * <p>Sur une seance a intervalles, la moyenne de la sortie melange l'echauffement, les
+     * recuperations et le retour au calme : elle ne se compare a aucune cible. On retient
+     * donc l'allure des seuls blocs d'effort, ponderee par leur duree.
+     */
+    private List<AnalysisDtos.AllureParType> alluresParType(UUID athleteId, List<Activity> courses) {
+        Optional<Cycle> cycle = cycles.actif(athleteId);
+        if (cycle.isEmpty()) {
+            return List.of();
+        }
+        Map<UUID, Activity> parActivite = courses.stream()
+                .collect(java.util.stream.Collectors.toMap(Activity::getId, a -> a, (a, b) -> a));
+
+        Map<TypeSeance, List<Integer>> alluresRetenues = new java.util.EnumMap<>(TypeSeance.class);
+        Map<TypeSeance, Boolean> surBlocs = new java.util.EnumMap<>(TypeSeance.class);
+
+        for (PlannedSession seance : cycles.seancesDe(cycle.get().getId())) {
+            if (seance.getActivityId() == null) {
+                continue;
+            }
+            Activity activite = parActivite.get(seance.getActivityId());
+            if (activite == null) {
+                continue;
+            }
+            Integer allure = seance.getType().estAllureContinue()
+                    ? activite.getAllureMoySecKm()
+                    : allureDesBlocsDEffort(activite);
+            if (allure == null) {
+                continue;
+            }
+            alluresRetenues.computeIfAbsent(seance.getType(), t -> new ArrayList<>()).add(allure);
+            surBlocs.putIfAbsent(seance.getType(), !seance.getType().estAllureContinue());
+        }
+
+        List<AnalysisDtos.AllureParType> resultat = new ArrayList<>();
+        for (var entree : alluresRetenues.entrySet()) {
+            TypeSeance type = entree.getKey();
+            int reelle = (int) Math.round(entree.getValue().stream().mapToInt(Integer::intValue).average().orElse(0));
+            Integer cible = allureCible(cycle.get(), type);
+            resultat.add(new AnalysisDtos.AllureParType(
+                    type.name(),
+                    libelle(type),
+                    entree.getValue().size(),
+                    reelle,
+                    cible,
+                    cible == null ? null : reelle - cible,
+                    Boolean.TRUE.equals(surBlocs.get(type))));
+        }
+        resultat.sort(java.util.Comparator.comparing(AnalysisDtos.AllureParType::type));
+        return resultat;
+    }
+
+    /**
+     * Allure des seuls blocs d'effort, ponderee par leur duree.
+     *
+     * <p>Seuls les tours marques {@code INTERVAL} comptent, et a defaut les tours actifs d'une
+     * seance qui melange plusieurs intensites. Sur une sortie enregistree en tours
+     * automatiques, tous les tours sont actifs : les retenir reviendrait a reprendre l'allure
+     * moyenne de la sortie et a la presenter comme une allure de VMA — un chiffre faux vaut
+     * moins que pas de chiffre du tout.
+     */
+    private Integer allureDesBlocsDEffort(Activity activite) {
+        List<ActivityLap> tours = activite.getTours();
+        boolean structuree = tours.stream()
+                        .map(t -> t.getIntensite() == null ? IntensiteTour.UNKNOWN : t.getIntensite())
+                        .distinct()
+                        .count()
+                > 1;
+
+        // Tous les tours de meme intensite : le decoupage est kilometrique, pas structurel.
+        // Une seance de huit fois quarante-cinq secondes enregistree en tours automatiques
+        // donne huit kilometres tous marques « effort » — en tirer une allure de VMA
+        // reviendrait a annoncer 6:34 la ou l'athlete a couru a 4:10 sur ses fractions.
+        if (!structuree) {
+            return null;
+        }
+        Integer surIntervalles = allurePonderee(tours, java.util.Set.of(IntensiteTour.INTERVAL));
+        return surIntervalles != null ? surIntervalles : allurePonderee(tours, java.util.Set.of(IntensiteTour.ACTIVE));
+    }
+
+    private Integer allurePonderee(List<ActivityLap> tours, java.util.Set<IntensiteTour> retenues) {
+        long distance = 0;
+        long duree = 0;
+        for (ActivityLap tour : tours) {
+            if (retenues.contains(tour.getIntensite()) && tour.getDistanceM() != null && tour.getDistanceM() > 0) {
+                distance += tour.getDistanceM();
+                duree += tour.getDureeSec();
+            }
+        }
+        return distance > 0 ? (int) Math.round(duree / (distance / 1000.0)) : null;
+    }
+
+    /** L'allure visee pour ce type, telle que le coach l'a posee sur le cycle. */
+    private Integer allureCible(Cycle cycle, TypeSeance type) {
+        Object valeur = cycle.getAlluresCibles().get(type.name());
+        if (valeur == null) {
+            valeur = cycle.getAlluresCibles().get(libelleCourt(type));
+        }
+        if (valeur instanceof Map<?, ?> zone && zone.get("secKm") instanceof Number secKm) {
+            return secKm.intValue();
+        }
+        return null;
+    }
+
+    /**
+     * Repartition du volume entre endurance et intensite.
+     *
+     * <p>Le classement suit d'abord le plan — une seance de seuil est de l'intensite, quelle
+     * que soit la frequence cardiaque relevee. Faute de seance rapprochee, on retombe sur la
+     * frequence cardiaque, qui reste le meilleur temoin de l'effort fourni.
+     */
+    private AnalysisDtos.RepartitionIntensite repartitionIntensite(
+            UUID athleteId, List<Activity> courses, int seuilFc) {
+        Map<UUID, TypeSeance> typeParActivite = new java.util.HashMap<>();
+        cycles.actif(athleteId).ifPresent(cycle -> cycles.seancesDe(cycle.getId()).stream()
+                .filter(s -> s.getActivityId() != null)
+                .forEach(s -> typeParActivite.put(s.getActivityId(), s.getType())));
+
+        double facile = 0;
+        double intensite = 0;
+        for (Activity activite : courses) {
+            TypeSeance type = typeParActivite.get(activite.getId());
+            boolean dur = type != null
+                    ? type.estQualite()
+                    : activite.getFcMoy() != null && activite.getFcMoy() > seuilFc;
+            if (dur) {
+                intensite += activite.distanceKm();
+            } else {
+                facile += activite.distanceKm();
+            }
+        }
+
+        double total = facile + intensite;
+        if (total == 0) {
+            return null;
+        }
+        int partFacile = (int) Math.round(facile / total * 100);
+        return new AnalysisDtos.RepartitionIntensite(
+                arrondi(facile), arrondi(intensite), partFacile, 100 - partFacile, lectureRepartition(partFacile));
+    }
+
+    /** Ce que la repartition dit de l'entrainement, en une phrase. */
+    private static String lectureRepartition(int partFacile) {
+        if (partFacile >= 75 && partFacile <= 88) {
+            return "Ton équilibre est bon : l'essentiel du volume en facile, ce qu'il faut d'intensité.";
+        }
+        if (partFacile > 88) {
+            return "Très peu d'intensité. Le volume facile construit le socle, mais sans seuil ni VMA "
+                    + "la progression finit par plafonner.";
+        }
+        return "Beaucoup d'intensité pour le volume couru. C'est le défaut le plus répandu : courir son "
+                + "facile trop vite laisse moins de fraîcheur pour les séances qui comptent.";
+    }
+
+    private static String libelle(TypeSeance type) {
+        return switch (type) {
+            case EF -> "Endurance";
+            case SL -> "Sortie longue";
+            case SEUIL -> "Seuil";
+            case VMA -> "VMA";
+            case AM -> "Allure marathon";
+            case COTES -> "Côtes";
+            case COURSE -> "Course";
+            case CROSS -> "Cross-training";
+            case RENFO -> "Renforcement";
+            case REPOS -> "Repos";
+        };
+    }
+
+    /** Les cles d'allures cibles suivent les abreviations du coach. */
+    private static String libelleCourt(TypeSeance type) {
+        return switch (type) {
+            case SEUIL -> "Seuil";
+            case COTES -> "Côtes";
+            default -> type.name();
+        };
+    }
+
     /** Les activites de course a pied d'un athlete, de la plus ancienne a la plus recente. */
     private List<Activity> coursesAPied(UUID athleteId) {
         return activities.findByAthleteIdOrderByStartedAtDesc(athleteId).stream()
@@ -368,7 +554,8 @@ public class AnalysisService {
     private static AnalysisDtos.Synthese vide() {
         return new AnalysisDtos.Synthese(
                 null, List.of(), new AnalysisDtos.VolumeResume(0, 0, 0, 0, 0, 0, 0),
-                new AnalysisDtos.AllureEf(null, 0, 145, false), List.of(), List.of(), null, List.of(), null, null);
+                new AnalysisDtos.AllureEf(null, 0, 145, false), List.of(), List.of(), null, List.of(), null, null,
+                List.of(), null);
     }
 
     private static Integer allure(int tempsSec, int distanceM) {

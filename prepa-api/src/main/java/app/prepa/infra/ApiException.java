@@ -34,7 +34,7 @@ public class ApiException extends RuntimeException {
         return new ApiException(
                 HttpStatus.FORBIDDEN,
                 "FORBIDDEN_FIELD",
-                "Ce champ ne peut etre modifie que par ton coach",
+                "Ce champ ne peut être modifié que par ton coach",
                 Map.of("champ", champ));
     }
 

@@ -75,7 +75,7 @@ public class IngestController {
     private Athlete cible(UUID athleteId) {
         Principal principal = CurrentPrincipal.get();
         if (principal.estCoach() && !principal.aLeScope(ServiceKeyService.SCOPE_INGEST)) {
-            throw ApiException.forbidden("Cette cle de service n'a pas le droit d'ingerer des activites");
+            throw ApiException.forbidden("Cette clé de service n'a pas le droit d'ingérer des activités");
         }
         return athletes.accessible(athleteId, principal);
     }

@@ -22,9 +22,28 @@ export function useLargeur(conteneur: Ref<HTMLElement | null>, defaut = 600): Re
     largeur.value = Math.floor(element.clientWidth) || defaut
   }
 
-  onMounted(() => observer(conteneur.value))
+  /** Relecture directe, en complément de l'observateur. */
+  function mesurer() {
+    const element = conteneur.value
+    if (element) {
+      const mesure = element.clientWidth
+      if (mesure > 0) largeur.value = Math.floor(mesure)
+    }
+  }
+
+  onMounted(() => {
+    observer(conteneur.value)
+    // Le redimensionnement de la fenêtre en renfort : la rotation d'un téléphone change la
+    // largeur sans toujours produire de notification exploitable sur l'élément lui-même.
+    window.addEventListener('resize', mesurer)
+  })
+
   watch(conteneur, observer)
-  onBeforeUnmount(() => observateur?.disconnect())
+
+  onBeforeUnmount(() => {
+    observateur?.disconnect()
+    window.removeEventListener('resize', mesurer)
+  })
 
   return largeur
 }

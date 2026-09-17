@@ -229,6 +229,28 @@ export interface Synthese {
   records: RecordEstime[]
   tendanceFc?: { fcMoyRecente?: number; fcMoyPrecedente?: number; ecart?: number; lecture: string }
   avantPendantCycle?: Comparaison
+  alluresParType: AllureParType[]
+  repartition?: RepartitionIntensite
+}
+
+/** Allure réellement tenue sur un type de séance, face à l'allure visée. */
+export interface AllureParType {
+  type: TypeSeance
+  libelle: string
+  nbSeances: number
+  allureReelleSecKm?: number
+  allureCibleSecKm?: number
+  ecartSecKm?: number
+  surLesBlocsDEffort: boolean
+}
+
+/** Part du volume couru facile, face à la part couru en intensité. */
+export interface RepartitionIntensite {
+  kmFacile: number
+  kmIntensite: number
+  partFacilePct: number
+  partIntensitePct: number
+  lecture: string
 }
 
 export interface EffortNotable {

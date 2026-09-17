@@ -76,7 +76,7 @@ public class SecurityConfig {
     }
 
     private AccessDeniedHandler accessDeniedHandler() {
-        return (request, response, ex) -> ecrire(response, HttpStatus.FORBIDDEN, "FORBIDDEN", "Acces refuse");
+        return (request, response, ex) -> ecrire(response, HttpStatus.FORBIDDEN, "FORBIDDEN", "Accès refusé");
     }
 
     private void ecrire(jakarta.servlet.http.HttpServletResponse response, HttpStatus status, String code, String msg)

@@ -21,7 +21,10 @@ const largeurDisponible = useLargeur(conteneur)
 /** Écart entre deux cases, constant ; la taille des cases s'ajuste autour. */
 const ECART = 3
 
-const nbMois = computed(() => props.mois ?? 12)
+/** En dessous de cette taille, une case n'est plus distinguable de sa voisine. */
+const TAILLE_MIN = 8
+
+const TAILLE_MAX = 20
 
 /** Kilomètres par jour, tous types de course confondus. */
 const parJour = computed(() => {
@@ -35,11 +38,11 @@ const parJour = computed(() => {
 
 const maximum = computed(() => Math.max(10, ...parJour.value.values()))
 
-/** Les semaines affichées, du lundi le plus ancien jusqu'à aujourd'hui. */
-const semaines = computed(() => {
+/** Toutes les semaines de la période demandée, de la plus ancienne à aujourd'hui. */
+const toutesLesSemaines = computed(() => {
   const fin = new Date()
   const debut = new Date()
-  debut.setMonth(debut.getMonth() - nbMois.value)
+  debut.setMonth(debut.getMonth() - (props.mois ?? 12))
   // On démarre un lundi pour que chaque colonne soit une semaine complète.
   debut.setDate(debut.getDate() - ((debut.getDay() + 6) % 7))
 
@@ -59,17 +62,30 @@ const semaines = computed(() => {
 })
 
 /**
- * Les cases s'agrandissent pour remplir la largeur, dans des bornes qui gardent la grille
- * lisible : trop petites elles disparaissent, trop grandes elles deviennent un damier.
+ * Les semaines réellement affichées : les plus récentes, autant qu'il en tient.
+ *
+ * <p>C'est la largeur qui commande, et non l'inverse. Imposer douze mois sur un écran de
+ * téléphone obligeait à des cases si petites qu'il fallait un plancher — et ce plancher
+ * débordait de l'écran, poussant la page entière jusqu'à faire sortir des onglets de la
+ * navigation. Tronquer garantit que rien ne dépasse, quel que soit l'écran.
  */
+const semaines = computed(() => {
+  const combienTiennent = Math.max(4, Math.floor(largeurDisponible.value / (TAILLE_MIN + ECART)))
+  return toutesLesSemaines.value.slice(-combienTiennent)
+})
+
+/** Les cases s'agrandissent pour occuper la largeur, sans jamais la dépasser. */
 const taille = computed(() => {
-  const brut = largeurDisponible.value / Math.max(1, semaines.value.length) - ECART
-  return Math.max(6, Math.min(20, Math.floor(brut)))
+  const brut = Math.floor(largeurDisponible.value / Math.max(1, semaines.value.length)) - ECART
+  return Math.max(TAILLE_MIN, Math.min(TAILLE_MAX, brut))
 })
 
 const pas = computed(() => taille.value + ECART)
 
 const largeur = computed(() => semaines.value.length * pas.value)
+
+/** Période réellement couverte, pour que la légende ne mente pas. */
+const moisCouverts = computed(() => Math.max(1, Math.round(semaines.value.length / 4.35)))
 
 /** Cinq paliers suffisent : au-delà, l'œil ne distingue plus rien. */
 function teinte(km: number): string {
@@ -88,7 +104,7 @@ const etiquettesMois = computed(() =>
 </script>
 
 <template>
-  <div ref="conteneur" class="w-full">
+  <div ref="conteneur" class="w-full max-w-full overflow-hidden">
     <svg :width="largeur" :height="7 * pas + 18" class="block">
       <text
         v-for="etiquette in etiquettesMois"
@@ -128,6 +144,7 @@ const etiquettesMois = computed(() =>
         :style="{ backgroundColor: teinte(palier * maximum) }"
       />
       <span>plus</span>
+      <span class="ml-1">· {{ moisCouverts }} derniers mois</span>
     </div>
   </div>
 </template>

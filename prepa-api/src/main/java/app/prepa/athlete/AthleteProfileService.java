@@ -156,7 +156,7 @@ public class AthleteProfileService {
     public SignatureSession modifierSignature(
             UUID athleteId, UUID id, ProfileDtos.SignatureSessionRequest req) {
         SignatureSession seance = verifier(
-                signatures.findById(id).orElseThrow(() -> ApiException.notFound("Seance signature")),
+                signatures.findById(id).orElseThrow(() -> ApiException.notFound("Séance signature")),
                 SignatureSession::getAthleteId, athleteId);
         seance.setNom(req.nom());
         seance.setTypeSeance(req.typeSeance());

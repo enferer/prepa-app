@@ -167,7 +167,7 @@ public class PlanService {
 
     @Transactional(readOnly = true)
     public PlannedSession seanceParId(UUID sessionId) {
-        return seances.findById(sessionId).orElseThrow(() -> ApiException.notFound("Seance"));
+        return seances.findById(sessionId).orElseThrow(() -> ApiException.notFound("Séance"));
     }
 
     /** L'athlete de rattachement d'une seance, pour le controle d'acces. */
@@ -213,7 +213,7 @@ public class PlanService {
                 .orElseThrow(() -> ApiException.notFound("Semaine"));
         if (!semaine.contient(nouvelleDate)) {
             throw ApiException.forbidden(
-                    "Tu peux decaler une seance dans sa semaine ; pour la deplacer plus loin, demande a ton coach");
+                    "Tu peux décaler une séance dans sa semaine ; pour la déplacer plus loin, demande à ton coach");
         }
         seance.setDate(nouvelleDate);
         seance.setStatut(StatutSeance.DEPLACEE);
@@ -244,7 +244,7 @@ public class PlanService {
 
     private static void exigerFocusSiRenfo(PlannedSession seance) {
         if (seance.getType() == TypeSeance.RENFO && (seance.getFocus() == null || seance.getFocus().isBlank())) {
-            throw ApiException.invalide("Une seance de renforcement a besoin d'un focus");
+            throw ApiException.invalide("Une séance de renforcement a besoin d'un focus");
         }
     }
 

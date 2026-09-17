@@ -21,7 +21,41 @@ public final class AnalysisDtos {
             EffortNotable plusLongueDeToujours,
             List<RecordEstime> records,
             TendanceFc tendanceFc,
-            Comparaison avantPendantCycle) {}
+            Comparaison avantPendantCycle,
+            List<AllureParType> alluresParType,
+            RepartitionIntensite repartition) {}
+
+    /**
+     * Allure reellement tenue sur un type de seance, face a l'allure visee.
+     *
+     * <p>C'est la mesure qui dit si l'entrainement fait ce qu'il pretend faire. Sur une seance
+     * a intervalles, l'allure retenue est celle des blocs d'effort et non la moyenne de la
+     * sortie : cette derniere melange l'echauffement, les recuperations et le retour au calme,
+     * et ne se compare a aucune cible.
+     */
+    public record AllureParType(
+            String type,
+            String libelle,
+            int nbSeances,
+            Integer allureReelleSecKm,
+            Integer allureCibleSecKm,
+            Integer ecartSecKm,
+            boolean surLesBlocsDEffort) {}
+
+    /**
+     * Part du volume couru facile, face a la part couru en intensite.
+     *
+     * <p>La methodologie demande environ quatre cinquiemes du volume en endurance. C'est le
+     * principe le plus simple a enoncer et le plus souvent trahi : on court son facile trop
+     * vite et son rapide trop lentement. Le rendre visible permet a l'athlete de le verifier
+     * lui-meme.
+     */
+    public record RepartitionIntensite(
+            double kmFacile,
+            double kmIntensite,
+            int partFacilePct,
+            int partIntensitePct,
+            String lecture) {}
 
     public record Fenetre(LocalDate debut, LocalDate fin, int nbCourses, String libelle) {}
 

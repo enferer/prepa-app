@@ -81,7 +81,7 @@ public class CoachController {
         Principal principal = CurrentPrincipal.get();
         athletes.accessible(athleteId, principal);
         if (!principal.estCoach()) {
-            throw ApiException.forbidden("Seul ton coach ecrit ici");
+            throw ApiException.forbidden("Seul ton coach écrit ici");
         }
     }
 }

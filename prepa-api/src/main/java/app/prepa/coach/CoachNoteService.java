@@ -52,9 +52,9 @@ public class CoachNoteService {
 
         if (req.remplaceId() != null) {
             CoachNote precedente = notes.findById(req.remplaceId())
-                    .orElseThrow(() -> ApiException.notFound("Note remplacee"));
+                    .orElseThrow(() -> ApiException.notFound("Note remplacée"));
             if (!precedente.getAthleteId().equals(athleteId)) {
-                throw ApiException.notFound("Note remplacee");
+                throw ApiException.notFound("Note remplacée");
             }
             precedente.desactiver();
             notes.save(precedente);
@@ -104,7 +104,7 @@ public class CoachNoteService {
     public String alerteVolumetrie(UUID athleteId) {
         long durables = notes.countByAthleteIdAndPorteeAndActifTrue(athleteId, CoachNote.Portee.DURABLE);
         return durables > SEUIL_ALERTE_DURABLES
-                ? durables + " regles durables actives : il est temps d'en consolider ou d'en lever"
+                ? durables + " règles durables actives : il est temps d'en consolider ou d'en lever"
                 : null;
     }
 

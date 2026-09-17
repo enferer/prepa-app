@@ -34,7 +34,7 @@ public class ActivityService {
 
     @Transactional(readOnly = true)
     public Activity parId(UUID activityId) {
-        return activities.findById(activityId).orElseThrow(() -> ApiException.notFound("Activite"));
+        return activities.findById(activityId).orElseThrow(() -> ApiException.notFound("Activité"));
     }
 
     @Transactional(readOnly = true)
@@ -100,7 +100,7 @@ public class ActivityService {
         for (UUID id : activityIds) {
             Activity activite = parId(id);
             if (!activite.getAthleteId().equals(athleteId)) {
-                throw ApiException.notFound("Activite");
+                throw ApiException.notFound("Activité");
             }
             if (!etats.existsById(id)) {
                 etats.save(new AnalysisState(id, athleteId));

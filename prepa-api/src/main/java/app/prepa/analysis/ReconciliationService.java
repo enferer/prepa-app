@@ -119,7 +119,7 @@ public class ReconciliationService {
             "Fatigue, jambes lourdes",
             "Douleur ou blessure",
             "Manque de temps, logistique",
-            "Meteo",
+            "Météo",
             "Motivation, mental");
 
     @Transactional(readOnly = true)
@@ -162,7 +162,7 @@ public class ReconciliationService {
                 .forEach(a -> ecarts.add(new Ecart(
                         TypeEcart.SEANCE_HORS_PLAN, null, a.getId(), a.getDateLocale(),
                         "Sortie hors plan le " + a.getDateLocale(),
-                        String.format("%.1f km non prevus au plan", a.distanceKm()),
+                        String.format("%.1f km non prévus au plan", a.distanceKm()),
                         List.of())));
 
         double volumeRealise = realisees.stream()
@@ -177,7 +177,7 @@ public class ReconciliationService {
             ecarts.add(new Ecart(
                     TypeEcart.VOLUME_SOUS_CIBLE, null, null, debut,
                     "Volume de la semaine en dessous de la cible",
-                    String.format("%.1f km realises pour %.0f km vises, soit %.0f %% de la cible",
+                    String.format("%.1f km réalisés pour %.0f km visés, soit %.0f %% de la cible",
                             volumeRealise, cible.doubleValue(), part * 100),
                     CAUSES));
         }
@@ -187,7 +187,7 @@ public class ReconciliationService {
                 .filter(JournalEntry::isDouleur)
                 .forEach(e -> ecarts.add(new Ecart(
                         TypeEcart.DOULEUR_SIGNALEE, null, null, e.getDate(),
-                        "Douleur signalee au journal le " + e.getDate(),
+                        "Douleur signalée au journal le " + e.getDate(),
                         e.getContenu().length() > 300 ? e.getContenu().substring(0, 300) : e.getContenu(),
                         List.of())));
 
@@ -263,8 +263,8 @@ public class ReconciliationService {
             ecarts.add(new Ecart(
                     cle ? TypeEcart.SEANCE_CLE_MANQUEE : TypeEcart.SEANCE_MANQUEE,
                     seance.getId(), null, seance.getDate(),
-                    (cle ? "Seance cle non retrouvee : " : "Seance non retrouvee : ") + seance.getTitre(),
-                    "Prevue le " + seance.getDate() + ", aucune activite correspondante",
+                    (cle ? "Séance clé non retrouvée : " : "Séance non retrouvée : ") + seance.getTitre(),
+                    "Prévue le " + seance.getDate() + ", aucune activité correspondante",
                     CAUSES));
             return ecarts;
         }
@@ -276,8 +276,8 @@ public class ReconciliationService {
                 && Math.abs(rapprochee.ecartDistancePct()) > ECART_DISTANCE_SIGNIFICATIF * 100) {
             ecarts.add(new Ecart(
                     TypeEcart.ECART_DISTANCE, seance.getId(), activite.getId(), activite.getDateLocale(),
-                    "Distance eloignee du plan : " + seance.getTitre(),
-                    String.format("%.1f km realises pour %.1f km prevus (%+.0f %%)",
+                    "Distance éloignée du plan : " + seance.getTitre(),
+                    String.format("%.1f km réalisés pour %.1f km prévus (%+.0f %%)",
                             activite.distanceKm(), seance.getDistanceCibleKm().doubleValue(),
                             rapprochee.ecartDistancePct()),
                     CAUSES));
@@ -314,7 +314,7 @@ public class ReconciliationService {
         }
         return java.util.Optional.of(new Ecart(
                 TypeEcart.FC_SUSPECTE, seance.getId(), activite.getId(), activite.getDateLocale(),
-                "Frequence cardiaque inhabituelle : " + seance.getTitre(),
+                "Fréquence cardiaque inhabituelle : " + seance.getTitre(),
                 String.format("FC moyenne %d contre %d habituellement sur ce type de sortie (%+d)",
                         activite.getFcMoy(), reference, ecart),
                 CAUSES));

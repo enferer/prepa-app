@@ -101,16 +101,31 @@ class ConstatServiceTest extends IntegrationTestBase {
     }
 
     @Test
-    @DisplayName("ne revient pas sur une seance deja analysee par le coach")
+    @DisplayName("rattache une seance deja analysee sans revenir sur le jugement du coach")
     void neJugePasALaPlaceDuCoach() {
         PlannedSession seance = planifier(LocalDate.now().minusDays(1), TypeSeance.EF, 10);
         seance.setStatut(StatutSeance.ANALYSEE);
         seances.save(seance);
+        Activity activite = enregistrer(LocalDate.now().minusDays(1), 10_000);
+
+        assertThat(constats.constaterArrivee(activite)).isPresent();
+
+        // Le rattachement est un fait, le statut un jugement : le premier se pose, le second
+        // ne se defait pas.
+        PlannedSession relue = seances.findById(seance.getId()).orElseThrow();
+        assertThat(relue.getActivityId()).isEqualTo(activite.getId());
+        assertThat(relue.getStatut()).isEqualTo(StatutSeance.ANALYSEE);
+    }
+
+    @Test
+    @DisplayName("laisse une seance annulee en dehors du rattachement")
+    void seanceAnnuleeIgnoree() {
+        PlannedSession seance = planifier(LocalDate.now().minusDays(1), TypeSeance.EF, 10);
+        seance.setStatut(StatutSeance.ANNULEE);
+        seances.save(seance);
 
         assertThat(constats.constaterArrivee(enregistrer(LocalDate.now().minusDays(1), 10_000)))
                 .isEmpty();
-        assertThat(seances.findById(seance.getId()).orElseThrow().getStatut())
-                .isEqualTo(StatutSeance.ANALYSEE);
     }
 
     @Test

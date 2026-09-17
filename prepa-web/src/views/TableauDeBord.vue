@@ -3,6 +3,7 @@ import { computed, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import BandeauCycle from '@/components/cycle/BandeauCycle.vue'
 import CarteSeance from '@/components/cycle/CarteSeance.vue'
+import FicheSeance from '@/components/cycle/FicheSeance.vue'
 import Semainier from '@/components/cycle/Semainier.vue'
 import CarteBase from '@/components/ui/CarteBase.vue'
 import EtatVide from '@/components/ui/EtatVide.vue'
@@ -88,8 +89,24 @@ async function trancher(seance: Seance, statut: StatutSeance) {
   await entrainement.changerStatut(seance, statut)
 }
 
+/**
+ * Ouvre la fiche d'une séance. Cliquer une séance à venir montre la consigne ; cliquer une
+ * séance faite donne le choix d'aller voir ce qui a réellement été couru.
+ */
+const seanceOuverte = ref<Seance | null>(null)
+
+function ouvrirFiche(seance: Seance) {
+  seanceOuverte.value = seance
+}
+
 function ouvrirActivite(seance: Seance) {
   if (seance.activityId) router.push({ name: 'seance', params: { id: seance.activityId } })
+}
+
+async function trancherDepuisLaFiche(statut: StatutSeance) {
+  if (!seanceOuverte.value) return
+  await entrainement.changerStatut(seanceOuverte.value, statut)
+  seanceOuverte.value = null
 }
 </script>
 
@@ -196,7 +213,7 @@ function ouvrirActivite(seance: Seance) {
         v-else
         :semaine="semaine"
         :volume-realise="entrainement.volumeRealise(semaine)"
-        @ouvrir="ouvrirActivite"
+        @ouvrir="ouvrirFiche"
       />
 
       <p v-if="semaine.note" class="mt-3 rounded-lg bg-[var(--color-accent-fond)] px-3 py-2 text-sm">
@@ -219,5 +236,11 @@ function ouvrirActivite(seance: Seance) {
         />
       </div>
     </CarteBase>
+    <FicheSeance
+      :seance="seanceOuverte"
+      @fermer="seanceOuverte = null"
+      @statut="trancherDepuisLaFiche"
+      @ouvrir-activite="seanceOuverte && ouvrirActivite(seanceOuverte)"
+    />
   </div>
 </template>

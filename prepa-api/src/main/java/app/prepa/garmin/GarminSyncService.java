@@ -67,7 +67,7 @@ public class GarminSyncService {
     public EtatSync demanderSync(UUID athleteId) {
         GarminCredentials cred = credentials.findById(athleteId)
                 .orElseThrow(() -> ApiException.invalide(
-                        "Aucun compte Garmin n'est relie a cet athlete : la synchronisation ne peut pas etre lancee"));
+                        "Aucun compte Garmin n'est relié à cet athlète : la synchronisation ne peut pas être lancée"));
         cred.setSyncDemande(true);
         credentials.save(cred);
         return etat(athleteId);
@@ -75,7 +75,7 @@ public class GarminSyncService {
 
     @Transactional(readOnly = true)
     public EtatSync etat(UUID athleteId) {
-        Athlete athlete = athletes.findById(athleteId).orElseThrow(() -> ApiException.notFound("Athlete"));
+        Athlete athlete = athletes.findById(athleteId).orElseThrow(() -> ApiException.notFound("Athlète"));
         Optional<GarminCredentials> cred = credentials.findById(athleteId);
         return new EtatSync(
                 athleteId,

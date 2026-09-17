@@ -34,7 +34,7 @@ public class MeController {
     private java.util.UUID athleteCourant() {
         Principal principal = CurrentPrincipal.get();
         if (principal.athleteId() == null) {
-            throw ApiException.invalide("Cette cle de service n'est rattachee a aucun athlete");
+            throw ApiException.invalide("Cette clé de service n'est rattachée à aucun athlète");
         }
         return principal.athleteId();
     }
