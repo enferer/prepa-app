@@ -119,15 +119,3 @@ d'écrire les séances d'un athlète dans l'historique d'un autre.
 
 Voir [DEPLOIEMENT.md](DEPLOIEMENT.md).
 
-## L'ancienne application
-
-`scripts/`, `vue/` et `profiles/` sont l'application précédente : des scripts Python, une page
-statique, et les données en fichiers. Elle **fonctionne toujours** et reste en place tant que
-la nouvelle n'est pas déployée sur le serveur.
-
-`profiles/` est la source de la migration, et `scripts/build_data.py` fait toujours foi pour
-tout ce qui touche à la lecture des exports Garmin — c'est de lui que vient le portage.
-
-Une fois la nouvelle application en service et les sauvegardes vérifiées, ces trois dossiers
-pourront être archivés. Ne pas les supprimer avant : `profiles/*/.env` contient les
-identifiants Garmin, et rien d'autre ne les détient.

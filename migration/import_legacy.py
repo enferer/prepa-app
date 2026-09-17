@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """Migration des donnees de l'ancienne application vers l'API.
 
-Lit `profiles/<athlete>/prepas/<prepa>/data/` et pousse le contenu par l'API,
-pour que la migration passe par les memes regles de validation et de
-deduplication que l'usage courant — plutot que d'ecrire directement en base.
+Lit l'arborescence `profiles/<athlete>/prepas/<prepa>/data/` de l'ancienne application et
+pousse son contenu par l'API, pour que la migration passe par les memes regles de
+validation et de deduplication que l'usage courant — plutot que d'ecrire en base.
+
+Le dossier source se designe par `--source` : cette application ne le contient plus, il
+faut donc pointer vers une copie de l'ancienne arborescence.
 
 Ce qui est repris :
 
@@ -21,8 +24,9 @@ decouper en notes de coach. Le script l'ecrit dans un fichier a part, a traiter
 a la main.
 
 Usage :
-    python3 migration/import_legacy.py --api http://localhost:8080 --key psk_xxx
-    python3 migration/import_legacy.py --profil thibaut --dry-run
+    python3 migration/import_legacy.py --source /chemin/vers/profiles \
+        --api http://localhost:8080 --key psk_… --admin-password …
+    python3 migration/import_legacy.py --source /chemin/vers/profiles --profil thibaut --dry-run
 """
 
 import argparse
@@ -36,8 +40,10 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
-PROFILES = RACINE / "profiles"
 SORTIE = RACINE / "migration" / "sortie"
+
+# Renseigne par --source : l'arborescence `profiles/` de l'ancienne application.
+PROFILES = None
 
 # L'ancien plan nommait les seances en libelles mixtes ; le nouveau modele a un enum.
 TYPES_SEANCE = {
@@ -647,6 +653,8 @@ class Migration:
 
 def main():
     parser = argparse.ArgumentParser(description="Migration des donnees vers l'API")
+    parser.add_argument("--source", required=True, type=Path,
+                        help="dossier profiles/ de l'ancienne application")
     parser.add_argument("--api", default="http://localhost:8080")
     parser.add_argument("--key", help="cle de service (X-Service-Key)")
     parser.add_argument("--admin-email", default="admin@prepa.local")
@@ -658,6 +666,11 @@ def main():
 
     if not args.dry_run and not (args.key and args.admin_password):
         parser.error("--key et --admin-password sont requis (ou --dry-run)")
+
+    global PROFILES
+    PROFILES = args.source.expanduser().resolve()
+    if not PROFILES.is_dir():
+        parser.error(f"Dossier source introuvable : {PROFILES}")
 
     profils = args.profil or sorted(p.name for p in PROFILES.iterdir() if (p / "profile.json").exists())
     jeton = None if args.dry_run else Api.connecter_admin(args.api, args.admin_email, args.admin_password)

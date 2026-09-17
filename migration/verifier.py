@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Verification de la migration : compare la base aux fichiers d'origine.
 
+Usage : python3 migration/verifier.py /chemin/vers/profiles
+
 Un ecart n'est acceptable que s'il est explicable — les seuls attendus ici sont
 les corrections de lecture des exports Garmin. Tout le reste doit tomber juste.
 """
@@ -11,7 +13,9 @@ import sys
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
-PROFILES = RACINE / "profiles"
+
+# Dossier `profiles/` de l'ancienne application, passe en argument.
+PROFILES = None
 
 
 def sql(requete):
@@ -76,6 +80,16 @@ def verifier(profil):
 
 
 def main():
+    if len(sys.argv) < 2:
+        print("Usage : python3 migration/verifier.py /chemin/vers/profiles", file=sys.stderr)
+        return 2
+
+    global PROFILES
+    PROFILES = Path(sys.argv[1]).expanduser().resolve()
+    if not PROFILES.is_dir():
+        print(f"Dossier source introuvable : {PROFILES}", file=sys.stderr)
+        return 2
+
     profils = sorted(p.name for p in PROFILES.iterdir() if (p / "profile.json").exists())
     total = sum(verifier(p) for p in profils)
     print(f"\n{'Migration conforme.' if total == 0 else f'{total} ecart(s) a expliquer.'}")

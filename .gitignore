@@ -1,10 +1,13 @@
 .DS_Store
-.venv/
-.env
 __pycache__/
 
-# Refonte v2
+# Secrets : configuration de deploiement et identifiants
+.env
+
+# Produits de construction
 prepa-api/target/
 prepa-web/node_modules/
 prepa-web/dist/
+
+# Sorties de migration, propres a une execution
 migration/sortie/

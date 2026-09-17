@@ -88,16 +88,23 @@ serveur pour établir le jeton, qui vaut ensuite environ un an.
 
 ## 5. Migration depuis l'ancienne application
 
-Depuis un poste ayant accès aux fichiers `profiles/` :
+L'ancienne arborescence `profiles/` ne fait plus partie de cette application : récupère-la
+depuis la branche `main`, ou depuis une sauvegarde.
 
 ```bash
+git worktree add /tmp/ancienne-app main    # ou n'importe quelle copie
+
 python3 migration/import_legacy.py \
+  --source /tmp/ancienne-app/profiles \
   --api https://prepa.example.org --key "$CLE_SERVICE" \
   --admin-email toi@example.org --admin-password '…' \
   --mot-de-passe '…'
 
-python3 migration/verifier.py    # doit afficher « Migration conforme »
+python3 migration/verifier.py /tmp/ancienne-app/profiles   # « Migration conforme »
 ```
+
+Les mots de passe Garmin ne sont pas dans git : ils vivaient dans `profiles/*/.env`,
+gitignorés. Il faut les ressaisir (§4).
 
 Le script dépose aussi `migration/sortie/memoire-a-relire-*.md` : le texte cumulatif de
 commentaires de l'ancienne application, à relire et découper en notes de coach. Il n'est

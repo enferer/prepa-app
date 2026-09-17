@@ -11,8 +11,7 @@ import java.util.regex.Pattern;
 /**
  * Conversion des valeurs de l'export CSV Garmin.
  *
- * <p>Portage direct des helpers de {@code scripts/build_data.py}, qui font foi. Les pieges
- * traites ici sont ceux rencontres sur les exports reels : marqueurs de valeur absente
+ * <p>Les pieges traites ici sont ceux rencontres sur les exports reels : marqueurs de valeur absente
  * (<em>--</em>, <em>...</em>, tiret cadratin), separateurs decimaux FR ou US selon la locale
  * de l'export, espaces insecables dans les milliers, durees en {@code HH:MM:SS} comme en
  * {@code MM:SS}, et six formats de date possibles.
