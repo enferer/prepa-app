@@ -59,6 +59,9 @@ services:
     build:
       context: .
       dockerfile: worker/Dockerfile
+    # Ce service-ci reste en vie ; un `docker compose run --rm worker` sans argument fait
+    # au contraire un seul passage complet.
+    command: ["--boucle"]
     restart: unless-stopped
     depends_on:
       # « demarre » ne suffit pas : l'API met une quarantaine de secondes a repondre, et

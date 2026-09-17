@@ -13,7 +13,8 @@ COPY --chown=worker:worker worker/ ./worker/
 # finit par declencher une verification en deux etapes.
 ENV GARMIN_TOKENSTORE=/data/garmin-tokens
 
-# En mode boucle, le worker releve les demandes de synchronisation immediates.
-# Le passage nocturne complet est declenche par le planificateur de l'hote.
+# Sans argument, l'image fait un passage complet et s'arrete — c'est ce qu'on veut d'un
+# `docker compose run`. Le service qui doit rester en vie demande la boucle lui-meme,
+# dans la composition : l'inverse obligeait a repeter le point d'entree pour obtenir un
+# simple passage, et la commande echouait.
 ENTRYPOINT ["python", "-m", "worker.sync"]
-CMD ["--boucle"]
