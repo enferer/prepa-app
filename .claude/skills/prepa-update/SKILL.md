@@ -1,6 +1,6 @@
 ---
 name: prepa-update
-description: Point hebdomadaire avec l'athlète. Lit le contexte et les écarts qualifiés par le serveur, questionne l'athlète sur ce qui a dévié, adapte les semaines suivantes selon la méthodologie coach, puis enregistre le bilan. C'est le skill métier central.
+description: Point hebdomadaire avec l'athlète. Rapatrie les dernières séances Garmin, lit le contexte et les écarts qualifiés par le serveur, questionne sur ce qui a dévié, adapte les semaines suivantes selon la méthodologie coach, puis enregistre le bilan. C'est le skill métier central — celui qu'on lance chaque semaine.
 ---
 
 # /prepa-update — Le point de la semaine
@@ -25,7 +25,29 @@ Garde la réponse comme grille de lecture pour tout le reste. « RAS » est une 
 
 **Ne saute pas cette étape.** Les chiffres disent ce qui a été fait ; l'athlète seul dit pourquoi.
 
-## 2. Lire le contexte
+## 2. Rapatrier les dernières séances
+
+Le serveur synchronise Garmin chaque nuit. Si l'athlète a couru depuis, déclenche une
+synchronisation avant de lire :
+
+```bash
+./cli/prepa POST /athletes/<athleteId>/sync
+```
+
+Le worker relève la demande à son passage suivant, dans les minutes qui viennent. Relis
+l'état une fois :
+
+```bash
+./cli/prepa GET /athletes/<athleteId>/sync-status
+```
+
+S'il est encore en attente, **n'attends pas** : travaille sur ce que la base contient déjà et
+dis-le à l'athlète. Une séance arrivée en retard sera vue au prochain point.
+
+Un statut `AUTH_ERROR` ou `IDENTITE_KO` veut dire que le compte Garmin doit être remis en
+état côté serveur — signale-le sans chercher à le réparer toi-même.
+
+## 3. Lire le contexte
 
 ```bash
 ./cli/prepa contexte
@@ -37,7 +59,7 @@ C'est ton point de départ. **N'essaie pas de reconstituer l'historique par d'au
 
 Si le champ `avertissement` est rempli, ta mémoire durable s'alourdit : profite de ce point pour consolider ou lever des règles devenues inutiles.
 
-## 3. Lire ce qui a été fait
+## 4. Lire ce qui a été fait
 
 ```bash
 ./cli/prepa rapprochement          # la semaine qui vient de s'écouler
@@ -49,7 +71,7 @@ Le rapprochement confronte le plan au réalisé et **qualifie déjà les écarts
 
 **Juge une séance à blocs sur ses tours, jamais sur sa moyenne.** Une séance de seuil a une allure moyenne qui ne veut rien dire ; `prepa nouvelles` donne le découpage par bloc.
 
-## 4. Questionner avant d'adapter
+## 5. Questionner avant d'adapter
 
 Pour chaque écart qualifié, **AskUserQuestion avant toute modification**. C'est la règle du §5 de la méthodologie, et elle ne souffre pas d'exception : on n'adapte jamais un écart majeur en silence.
 
@@ -80,7 +102,7 @@ avoir demandé**. Si elle a été décalée dans la semaine, `DEPLACEE` avec la 
 Une séance restée `A_VENIR` alors que sa date est passée est une séance faite sans montre, ou
 que l'athlète n'a pas encore renseignée : demande-lui.
 
-## 5. Adapter la suite
+## 6. Adapter la suite
 
 Modifie les semaines encore à venir, selon les règles du §4 : ne jamais empiler une séance manquée sur la semaine suivante, ne pas violer la progression de dix pour cent, avancer une décharge si la fatigue s'installe.
 
@@ -104,7 +126,7 @@ Pour une restructuration large, remplace le plan entier — les séances déjà 
 
 Puis pose les séances de cette semaine. Si l'horizon approche, propose de le prolonger ou de clôturer.
 
-## 6. Écrire ce qu'il faut retenir
+## 7. Écrire ce qu'il faut retenir
 
 Une décision qui vaudra encore dans un mois devient une note :
 
@@ -121,7 +143,7 @@ Trois portées, trois durées de vie : `DURABLE` pour une règle permanente, `CY
 
 Quand une décision en annule une autre, passe `remplaceId` : l'ancienne est désactivée dans le même geste, plutôt que de laisser deux consignes contradictoires.
 
-## 7. Clôturer
+## 8. Clôturer
 
 Le rapport de coach, en quatre points (§9 de la méthodologie) : bilan de la semaine, points d'attention, ce que tu as changé et pourquoi, consignes pour la semaine à venir avec une ou deux séances clés.
 

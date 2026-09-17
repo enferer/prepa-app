@@ -141,6 +141,45 @@ class ConstatServiceTest extends IntegrationTestBase {
     }
 
     @Test
+    @DisplayName("refuse un rapprochement que la distance rend invraisemblable")
+    void distanceInvraisemblable() {
+        // Une sortie longue de vingt-quatre kilometres n'est pas le footing de dix prevu
+        // l'avant-veille. La laisser hors plan est plus honnete que de l'y ranger de force :
+        // le coach verra une sortie non prevue, et non une seance validee a tort.
+        PlannedSession footing = planifier(LocalDate.now().minusDays(1), TypeSeance.EF, 10);
+
+        assertThat(constats.constaterArrivee(enregistrer(LocalDate.now().minusDays(1), 24_000)))
+                .isEmpty();
+        assertThat(seances.findById(footing.getId()).orElseThrow().getStatut())
+                .isEqualTo(StatutSeance.A_VENIR);
+    }
+
+    @Test
+    @DisplayName("prefere la seance du jour meme a une seance voisine mieux calibree")
+    void leJourPrime() {
+        PlannedSession veille = planifier(LocalDate.now().minusDays(2), TypeSeance.EF, 10);
+        PlannedSession leJour = planifier(LocalDate.now().minusDays(1), TypeSeance.EF, 12);
+
+        constats.constaterArrivee(enregistrer(LocalDate.now().minusDays(1), 10_500));
+
+        assertThat(seances.findById(leJour.getId()).orElseThrow().getStatut())
+                .isEqualTo(StatutSeance.REALISEE);
+        assertThat(seances.findById(veille.getId()).orElseThrow().getStatut())
+                .isEqualTo(StatutSeance.A_VENIR);
+    }
+
+    @Test
+    @DisplayName("rapproche sur la seule date une seance sans distance cible")
+    void seanceSansCible() {
+        PlannedSession libre = planifier(LocalDate.now().minusDays(1), TypeSeance.EF, null);
+
+        assertThat(constats.constaterArrivee(enregistrer(LocalDate.now().minusDays(1), 14_000)))
+                .isPresent();
+        assertThat(seances.findById(libre.getId()).orElseThrow().getStatut())
+                .isEqualTo(StatutSeance.REALISEE);
+    }
+
+    @Test
     @DisplayName("rattrape les activites arrivees avant que le plan n'existe")
     void rattrapage() {
         Activity activite = enregistrer(LocalDate.now().minusDays(2), 12_000);

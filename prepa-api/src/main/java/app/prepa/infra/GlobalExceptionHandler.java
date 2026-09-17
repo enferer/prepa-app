@@ -6,6 +6,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.AuthenticationException;
@@ -38,6 +39,17 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ApiErrorResponse> handleConstraint(ConstraintViolationException ex) {
         return ResponseEntity.badRequest()
                 .body(ApiErrorResponse.of("VALIDATION_FAILED", "Requete invalide", Map.of()));
+    }
+
+    /**
+     * Corps de requete illisible : JSON malforme, ou valeur hors des valeurs admises pour un
+     * champ enumere. C'est une faute de l'appelant, pas une panne du serveur.
+     */
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<ApiErrorResponse> handleCorpsIllisible(HttpMessageNotReadableException ex) {
+        log.debug("Corps de requete illisible", ex);
+        return ResponseEntity.badRequest()
+                .body(ApiErrorResponse.of("MALFORMED_REQUEST", "Corps de requete illisible", Map.of()));
     }
 
     @ExceptionHandler(AuthenticationException.class)

@@ -40,8 +40,10 @@ def verifier(profil):
         "km": round(sum(a["distanceKm"] or 0 for a in activites), 2),
         "semaines": len(plan["semaines"]),
         "seances": sum(len(s["seances"]) for s in plan["semaines"]),
-        "validees": sum(1 for s in plan["semaines"] for x in s["seances"] if x["statut"] == "validee"),
-        "manquees": sum(1 for s in plan["semaines"] for x in s["seances"] if x["statut"] == "manquee"),
+        # Une seance validee par l'ancien coach avait bien ete passee en revue : elle devient
+        # ANALYSEE. Une seance manquee devient le constat NON_REALISEE.
+        "analysees": sum(1 for s in plan["semaines"] for x in s["seances"] if x["statut"] == "validee"),
+        "non_realisees": sum(1 for s in plan["semaines"] for x in s["seances"] if x["statut"] == "manquee"),
         "volumeCible": round(sum(s["volumeCibleKm"] for s in plan["semaines"]), 1),
     }
 
@@ -56,16 +58,16 @@ def verifier(profil):
           (select count(*) from planned_sessions s join cycles c on c.id = s.cycle_id
              join athletes t on t.id = c.athlete_id where t.display_name = '{nom}'),
           (select count(*) from planned_sessions s join cycles c on c.id = s.cycle_id
-             join athletes t on t.id = c.athlete_id where t.display_name = '{nom}' and s.statut = 'VALIDEE'),
+             join athletes t on t.id = c.athlete_id where t.display_name = '{nom}' and s.statut = 'ANALYSEE'),
           (select count(*) from planned_sessions s join cycles c on c.id = s.cycle_id
-             join athletes t on t.id = c.athlete_id where t.display_name = '{nom}' and s.statut = 'MANQUEE'),
+             join athletes t on t.id = c.athlete_id where t.display_name = '{nom}' and s.statut = 'NON_REALISEE'),
           (select round(sum(w.volume_cible_km), 1) from training_weeks w join cycles c on c.id = w.cycle_id
              join athletes t on t.id = c.athlete_id where t.display_name = '{nom}')
     """)[0]
 
     obtenu = {
         "activites": int(ligne[0]), "km": float(ligne[1]), "semaines": int(ligne[2]),
-        "seances": int(ligne[3]), "validees": int(ligne[4]), "manquees": int(ligne[5]),
+        "seances": int(ligne[3]), "analysees": int(ligne[4]), "non_realisees": int(ligne[5]),
         "volumeCible": float(ligne[6]),
     }
 

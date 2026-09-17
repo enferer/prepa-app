@@ -32,7 +32,7 @@ prepa-app/
 ├── cli/prepa               client des skills
 ├── migration/              import depuis l'ancienne application
 ├── exploitation/           sauvegarde, restauration, passage nocturne
-└── .claude/skills/         prepa-cycle, prepa-update, prepa-sync
+└── .claude/skills/         prepa-cycle, prepa-update
 ```
 
 ## Rôle coach — important
@@ -103,10 +103,15 @@ cd prepa-web && npm run build   # vérifie aussi les types
 
 ## Les skills
 
-- **`/prepa-cycle`** — ouvrir, convertir ou clôturer un cycle.
-- **`/prepa-update`** — le point de la semaine. Lit le contexte et les écarts déjà qualifiés,
-  questionne, adapte, enregistre le bilan.
-- **`/prepa-sync`** — forcer une synchronisation Garmin. N'analyse rien.
+Deux, et deux seulement :
+
+- **`/prepa-cycle`** — ouvrir un cycle, basculer de libre à prépa, clôturer.
+- **`/prepa-update`** — le point de la semaine, à lancer chaque semaine. Rapatrie les
+  dernières séances, lit le contexte et les écarts déjà qualifiés, questionne, adapte,
+  enregistre le bilan.
+
+Le sync Garmin n'a plus son propre skill : il tourne seul chaque nuit sur le serveur, et
+`/prepa-update` le déclenche au démarrage si l'athlète a couru entre-temps.
 
 Ils passent par `cli/prepa` ([documentation](cli/README.md)), configuré dans
 `~/.prepa-cli/config.json`.

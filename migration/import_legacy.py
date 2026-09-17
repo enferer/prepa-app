@@ -61,7 +61,10 @@ TYPES_SEANCE = {
     "Repos": "REPOS",
 }
 
-STATUTS = {"a_venir": "A_VENIR", "validee": "VALIDEE", "manquee": "MANQUEE"}
+# Une seance deja validee par l'ancien coach a bien ete passee en revue : elle devient
+# ANALYSEE. Une seance manquee devient le constat correspondant — la raison, elle, vit
+# dans le commentaire du coach.
+STATUTS = {"a_venir": "A_VENIR", "validee": "ANALYSEE", "manquee": "NON_REALISEE"}
 
 # Les blocs etaient des libelles libres ; on les rattache aux phases connues.
 BLOCS = [

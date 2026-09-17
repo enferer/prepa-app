@@ -37,6 +37,16 @@ public class ConstatService {
     private static final int JOURS_TOLERANCE = 2;
 
     /**
+     * Ecart de distance au-dela duquel une activite ne peut pas etre la seance prevue.
+     *
+     * <p>Sans ce garde-fou, une sortie longue de vingt-quatre kilometres venait se rattacher au
+     * footing de dix prevu l'avant-veille, simplement parce qu'aucune autre seance n'etait
+     * libre. Un rapprochement faux est pire qu'une absence de rapprochement : il fait
+     * disparaitre une seance du radar du coach tout en en validant une autre a tort.
+     */
+    private static final double ECART_DISTANCE_MAX = 0.40;
+
+    /**
      * Delai laisse a une activite pour arriver avant de constater qu'elle n'est pas venue.
      * Une montre se synchronise parfois le lendemain : declarer une seance non faite le soir
      * meme serait souvent faux, et ferait poser au coach une question sans objet.
@@ -83,7 +93,11 @@ public class ConstatService {
             return Optional.empty();
         }
 
-        PlannedSession choisie = meilleureCorrespondance(candidates, activite);
+        Optional<PlannedSession> correspondance = meilleureCorrespondance(candidates, activite);
+        if (correspondance.isEmpty()) {
+            return Optional.empty();
+        }
+        PlannedSession choisie = correspondance.get();
         choisie.rapprocherDe(activite.getId(), false);
         choisie.setStatut(StatutSeance.REALISEE);
         seances.save(choisie);
@@ -143,19 +157,47 @@ public class ConstatService {
     }
 
     /**
-     * Parmi plusieurs seances possibles, celle dont la distance cible approche le mieux la
-     * distance courue — et a defaut, la plus proche en date. Deux seances le meme jour,
-     * un footing et une sortie longue, ne se confondent pas.
+     * La seance que cette activite vient accomplir, s'il y en a une.
+     *
+     * <p>Le jour prime : une seance prevue le jour meme est presque toujours la bonne, et deux
+     * seances ce jour-la — un footing et une sortie longue — se departagent a la distance. Ce
+     * n'est qu'a defaut qu'on regarde les jours voisins, pour rattraper une seance courue en
+     * avance ou en retard.
+     *
+     * <p>Dans tous les cas, la distance doit rester vraisemblable : mieux vaut laisser une
+     * activite hors plan, ce que le coach verra, qu'un rapprochement invente.
      */
-    private PlannedSession meilleureCorrespondance(List<PlannedSession> candidates, Activity activite) {
-        double distanceKm = activite.distanceKm();
-        return candidates.stream()
-                .min(Comparator
-                        .comparingDouble((PlannedSession s) -> s.getDistanceCibleKm() == null
-                                ? Double.MAX_VALUE
-                                : Math.abs(s.getDistanceCibleKm().doubleValue() - distanceKm))
-                        .thenComparingLong(s -> Math.abs(
-                                s.getDate().toEpochDay() - activite.getDateLocale().toEpochDay())))
-                .orElseThrow();
+    private Optional<PlannedSession> meilleureCorrespondance(
+            List<PlannedSession> candidates, Activity activite) {
+        List<PlannedSession> vraisemblables = candidates.stream()
+                .filter(s -> distanceVraisemblable(s, activite))
+                .toList();
+        if (vraisemblables.isEmpty()) {
+            return Optional.empty();
+        }
+        return vraisemblables.stream().min(Comparator
+                .comparingLong((PlannedSession s) -> Math.abs(
+                        s.getDate().toEpochDay() - activite.getDateLocale().toEpochDay()))
+                .thenComparingDouble(s -> ecartDistance(s, activite)));
+    }
+
+    /**
+     * Une seance sans distance cible — un footing libre — se rapproche sur la seule date :
+     * il n'y a rien a comparer.
+     */
+    private boolean distanceVraisemblable(PlannedSession seance, Activity activite) {
+        return seance.getDistanceCibleKm() == null || ecartDistance(seance, activite) <= ECART_DISTANCE_MAX;
+    }
+
+    /** Ecart relatif entre la distance courue et la distance prevue. */
+    private double ecartDistance(PlannedSession seance, Activity activite) {
+        if (seance.getDistanceCibleKm() == null) {
+            return 0;
+        }
+        double cible = seance.getDistanceCibleKm().doubleValue();
+        if (cible <= 0) {
+            return 0;
+        }
+        return Math.abs(activite.distanceKm() - cible) / cible;
     }
 }
