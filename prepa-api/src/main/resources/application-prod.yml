@@ -1,0 +1,39 @@
+# Reglages propres au serveur. Ce qui n'est pas ici vient de application.yml.
+
+spring:
+  jpa:
+    # Le schema est gere par les migrations : Hibernate se contente de verifier
+    # qu'il correspond aux entites, et refuse de demarrer sinon.
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: false
+  datasource:
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 20000
+
+server:
+  error:
+    include-message: never
+    include-stacktrace: never
+    include-binding-errors: never
+  # L'application est derriere un proxy : sans cela, les URL qu'elle produit
+  # seraient en clair et sur le mauvais hote.
+  forward-headers-strategy: framework
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: never
+
+logging:
+  level:
+    root: INFO
+    app.prepa: INFO
+    org.hibernate.SQL: WARN

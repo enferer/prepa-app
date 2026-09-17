@@ -1,0 +1,67 @@
+# Deploiement sur le serveur.
+#
+#   docker compose -f docker-compose.prod.yml up -d --build
+#
+# Les valeurs sensibles viennent d'un fichier .env place a cote, jamais du depot.
+# Voir .env.prod.example et DEPLOIEMENT.md.
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME:-prepa}
+      POSTGRES_USER: ${DB_USER:-prepa}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?mot de passe de base requis}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./sauvegardes:/sauvegardes
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-prepa} -d ${DB_NAME:-prepa}"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+    # Aucun port publie : seul le reseau interne de la composition y accede.
+
+  api:
+    build:
+      context: ./prepa-api
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/${DB_NAME:-prepa}
+      DB_USER: ${DB_USER:-prepa}
+      DB_PASSWORD: ${DB_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET:?secret JWT requis}
+      CRYPTO_KEY: ${CRYPTO_KEY:?cle de chiffrement requise}
+      SPRING_PROFILES_ACTIVE: prod
+    expose:
+      - "8080"
+
+  worker:
+    build:
+      context: .
+      dockerfile: worker/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - api
+    environment:
+      PREPA_API_URL: http://api:8080
+      PREPA_SERVICE_KEY: ${WORKER_SERVICE_KEY:?cle de service du worker requise}
+    volumes:
+      - garmin-tokens:/data/garmin-tokens
+
+  web:
+    build:
+      context: ./prepa-web
+    restart: unless-stopped
+    depends_on:
+      - api
+    ports:
+      - "${WEB_PORT:-8081}:80"
+
+volumes:
+  pgdata:
+  garmin-tokens:

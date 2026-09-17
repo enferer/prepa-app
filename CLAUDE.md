@@ -1,116 +1,133 @@
 # prepa-app
 
-Système de préparation avec dimension coach, **multi-profils** et **multi-prépas**. Une seule app, un seul jeu de scripts et une seule vue web, capable de gérer plusieurs athlètes et plusieurs prépas par athlète.
+Suivi d'entraînement en course à pied, **multi-athlètes**, avec une dimension coach. Une
+application web adossée à une API et à une base Postgres ; le coach, lui, reste Claude Code,
+qui lit et écrit par cette API.
+
+## Le modèle : des cycles, pas seulement des prépas
+
+L'unité de travail est le **cycle** — une période d'entraînement continue avec une intention.
+Il a deux formes :
+
+- **`PREPA`** — une course à une date, un chrono visé, un plan complet jusqu'au jour J.
+- **`LIBRE`** — pas de course en vue : une **ligne directrice** (« maintenir la charge »,
+  « progresser en VO2max », « passer au trail ») et un **horizon** en semaines.
+
+Même structure de semaines et de séances dans les deux cas. Ce qui diffère, c'est la
+planification : en cycle libre, le plan est **glissant** — trois à quatre semaines détaillées
+séance par séance, le reste en cibles hebdomadaires jusqu'à l'horizon. Planifier une séance à
+deux mois sans échéance qui l'impose serait une fausse précision.
+
+Un athlète a **au plus un cycle actif**. Les activités, elles, sont rattachées à l'athlète et
+traversent les cycles : c'est ce qui permet de comparer une période à une autre.
 
 ## Structure
 
 ```
 prepa-app/
-├── coach/                       COACH.md (méthodologie), SCHEMA.md (contrat data)
-├── scripts/                     build_data.py, analyze.py, reset.py
-├── vue/                         page web statique (data.js généré)
-├── .claude/skills/              prepa-init, prepa-update
-└── profiles/
-    ├── <profil>/
-    │   ├── profile.json         { id, nom, prepaActive }
-    │   └── prepas/
-    │       └── <prepa-slug>/
-    │           └── data/        garmin.csv, journal.md, objectifs.json, plan.json, activites.json
-    └── …
+├── coach/COACH.md          la méthodologie — fait autorité
+├── prepa-api/              API Spring Boot 4 / Java 21
+├── prepa-web/              application Vue 3
+├── worker/                 synchronisation Garmin (Python)
+├── cli/prepa               client des skills
+├── migration/              import depuis l'ancienne application
+├── exploitation/           sauvegarde, restauration, passage nocturne
+└── .claude/skills/         prepa-cycle, prepa-update, prepa-sync
 ```
 
-- Un **profil** = un athlète (dossier `profiles/<id>/`).
-- Une **prépa** = une préparation ciblée (dossier `profiles/<id>/prepas/<slug>/`). Un profil peut avoir plusieurs prépas (par exemple `marathon-paris-2026` puis `semi-lyon-mars-2027`).
-- Le champ `prepaActive` du `profile.json` désigne la prépa affichée par défaut dans la vue quand ce profil est sélectionné.
+## Rôle coach — important
 
-## Rôle coach — IMPORTANT
+Pour **toute question d'entraînement, d'allure, d'adaptation ou de comportement de coach**,
+lis d'abord [`coach/COACH.md`](coach/COACH.md). C'est le cerveau du projet : principes,
+calcul des allures, règles d'adaptation, protocole douleur, cycles libres, et les cinq
+situations qu'on ne traite **jamais** sans demander la cause à l'athlète.
 
-Pour **toute question d'entraînement, d'allure, d'adaptation ou de comportement de coach**, tu DOIS d'abord lire [`coach/COACH.md`](coach/COACH.md). C'est le cerveau du projet : méthodologie, calcul des allures, règles d'adaptation, règles d'interaction.
+## Qui écrit quoi
 
-## Fichiers data (dans chaque prépa)
+La ligne de partage est portée par le code, pas par une convention : *l'athlète décrit la
+réalité, il ne redessine pas l'entraînement.*
 
-| Fichier | Qui l'édite | Rôle |
+| | Athlète (application) | Coach (clé de service) |
 |---|---|---|
-| `garmin.csv` | `garmin_sync.py` ou **l'utilisateur** | Séances réellement effectuées, au format de l'export Garmin. Synchronisé automatiquement, complétable à la main. |
-| `journal.md` | **L'utilisateur** | Journal par semaine (`## Semaine N`) : humeur, blessures, météo, ressenti. |
-| `objectifs.json` | Skill `/prepa-init` | Course, date, chrono visé, allures cibles, références, contraintes. |
-| `plan.json` | Skills | Plan complet : semaines → séances, avec statuts. |
-| `activites.json` | **Généré** | Version normalisée de `garmin.csv`. Ne jamais éditer à la main. |
-| `garmin_raw/<id>.json` | `garmin_sync.py --details` | Dump brut d'une séance (~40 Ko) : splits, zones FC, météo. **Ne jamais lire directement.** |
-| `detail_seances.json` | **Généré** | Extrait utile des dumps (~3 Ko/séance). C'est *cette* source qu'on lit. |
-| `etat_analyse.json` | `analyze.py --marquer-analysees` | Séances déjà passées en revue, pour ne pas les réanalyser. |
+| Marquer une séance faite ou manquée | ✅ | ✅ |
+| Commenter une séance, tenir son journal | ✅ | ✅ (commentaire de coach) |
+| Décaler une séance **dans sa semaine** | ✅ | ✅ (n'importe où) |
+| Saisir un ressenti, signaler une blessure | ✅ | ✅ |
+| Type, allures, distance cible d'une séance | ❌ | ✅ |
+| Ajouter ou supprimer une séance, cibles hebdo | ❌ | ✅ |
+| Créer, convertir, clôturer un cycle | ❌ | ✅ |
+| Écrire une note de coach | ❌ | ✅ |
 
-Seuls `garmin.csv` et `journal.md` sont éditables à la main — et `garmin.csv` est normalement rempli par `garmin_sync.py`. Tout le reste est géré par les skills.
+Une tentative interdite renvoie `403 FORBIDDEN_FIELD` **en nommant le champ**, plutôt qu'un
+refus opaque.
 
-Avec `--details`, `garmin_sync.py` archive aussi `data/garmin_raw/<activityId>.json` : splits par km, temps dans chaque zone FC, training effect aérobie **et** anaérobie, météo, VO2max. Ces données n'existent pas dans l'export CSV et ne sont pas encore exploitées par la vue.
-
-## Règle d'or : régénérer la vue
-
-**Après toute modification d'un fichier `data/`**, relance :
+## Développement
 
 ```bash
-python3 scripts/build_data.py                              # tout rebuilder
-python3 scripts/build_data.py --profil thibaut             # 1 profil
-python3 scripts/build_data.py --profil thibaut --prepa marathon-2026-10   # 1 prépa
+docker compose up -d                              # Postgres local
+cd prepa-api && ./mvnw spring-boot:run            # API sur :8080
+cd prepa-web && npm run dev                       # application sur :5173
 ```
 
-Le script scanne `profiles/*/prepas/*/data/`, parse chaque `garmin.csv` → `activites.json`, valide `plan.json`/`objectifs.json` contre `coach/SCHEMA.md`, et écrit un **catalogue complet** dans `vue/data.js` (`window.PREPA_DATA = { profils: [{ id, nom, prepaActive, prepas: [...] }] }`). Il affiche `❌ VALIDATION …` en cas d'écart de contrat — **toujours vérifier sa sortie**.
+Au premier démarrage, `--prepa.seed.enabled=true` avec `prepa.seed.admin-email` et
+`prepa.seed.admin-password` crée le compte administrateur et affiche **une seule fois** une
+clé de service.
+
+```bash
+cd prepa-api && ./mvnw test     # Postgres réel via Testcontainers
+cd prepa-web && npm run build   # vérifie aussi les types
+```
+
+## Les skills
+
+- **`/prepa-cycle`** — ouvrir, convertir ou clôturer un cycle.
+- **`/prepa-update`** — le point de la semaine. Lit le contexte et les écarts déjà qualifiés,
+  questionne, adapte, enregistre le bilan.
+- **`/prepa-sync`** — forcer une synchronisation Garmin. N'analyse rien.
+
+Ils passent par `cli/prepa` ([documentation](cli/README.md)), configuré dans
+`~/.prepa-cli/config.json`.
+
+## Endpoints qui portent le métier
+
+| Endpoint | Ce qu'il donne |
+|---|---|
+| `GET /athletes/{id}/coach-context` | l'état de l'athlète en un appel **borné** — profil, blessures, cycle, semaine, mémoire du coach, journal récent |
+| `GET /athletes/{id}/reconciliation` | prévu contre réalisé, **écarts déjà qualifiés** |
+| `GET /athletes/{id}/analysis` | volume hebdo, allure d'endurance réelle, meilleurs efforts, tendances |
+| `GET /athletes/{id}/activities/new` | séances jamais passées en revue, bornées au cycle |
+| `GET /cycles/{id}/skeleton` | trame de charge d'un cycle libre |
+
+## La mémoire du coach
+
+Les décisions deviennent des `coach_notes` **datées, typées et bornées** — plus un champ de
+commentaires qui grossit sans fin. Trois portées : `DURABLE` (règle permanente), `CYCLE`
+(vraie pour cette préparation), `PONCTUELLE` (purgée après huit semaines). Contenu plafonné à
+**500 caractères** : une décision qui n'y tient pas est mal formulée. Une décision qui en
+annule une autre la désactive explicitement, plutôt que de laisser deux consignes
+contradictoires.
 
 ## Synchronisation Garmin
 
-`scripts/garmin_sync.py` récupère les activités depuis Garmin Connect et les ajoute à `garmin.csv`, au format exact de l'export officiel (il réutilise les en-têtes du fichier existant). Plus besoin de copier les séances à la main.
+Le worker tourne sur le serveur, en continu pour les demandes immédiates et en passage
+nocturne pour le reste. Les identifiants sont chiffrés au repos (AES-GCM) et ne ressortent
+que pour lui. **Garde-fou d'identité** : au premier passage réussi, le compte Garmin est
+mémorisé sur l'athlète ; aux suivants, un compte différent arrête la synchronisation au lieu
+d'écrire les séances d'un athlète dans l'historique d'un autre.
 
-```bash
-.venv/bin/python scripts/garmin_sync.py --profil thibaut --prepa marathon-2026-10            # depuis la dernière activité connue
-.venv/bin/python scripts/garmin_sync.py --profil thibaut --prepa marathon-2026-10 --dry-run  # aperçu, n'écrit rien
-.venv/bin/python scripts/garmin_sync.py --profil thibaut --prepa marathon-2026-10 --depuis 2026-09-01 --details
-.venv/bin/python scripts/garmin_sync.py --profil camille --prepa marathon-2026-10            # autre athlète, autre compte Garmin
-```
+## Déploiement
 
-- **Dépendances** : ce script est le seul à sortir de la stdlib (`garminconnect`). Il tourne dans `.venv/` (Python 3.12) — les autres scripts restent en `python3` système.
-- **Identifiants, un jeu par profil** : `GARMIN_EMAIL` / `GARMIN_PASSWORD` dans **`profiles/<profil>/.env`** — chaque athlète a son compte Garmin. Un `.env` à la racine sert de repli pour les profils sans fichier dédié (voir `.env.example`) ; tous sont gitignorés.
-- **Sessions isolées** : les tokens OAuth sont cachés dans `~/.garminconnect/<profil>` (~1 an), un dossier par athlète — deux profils ne s'écrasent donc jamais.
-- **Garde-fou d'identité** : au premier sync réussi, le compte Garmin connecté est mémorisé dans `profile.json` (`garminDisplayName`). Aux suivants, un compte qui ne correspond pas **arrête** le sync au lieu d'écrire les activités d'un athlète dans le CSV d'un autre.
-- **Idempotent** : dédoublonnage par date+heure, relançable sans créer de doublons.
-- Après sync, **toujours** relancer `build_data.py` (règle d'or ci-dessus).
+Voir [DEPLOIEMENT.md](DEPLOIEMENT.md).
 
-## Détail des séances : deux niveaux, à ne pas confondre
+## L'ancienne application
 
-Les dumps `garmin_raw/` sont volumineux et bruyants. `scripts/details.py` en extrait une **fiche compacte** par séance (tours, zones FC, météo, training effect), matérialisée dans `detail_seances.json` et injectée dans la vue. **Rien ne lit le brut, ni la vue ni le coach.**
+`scripts/`, `vue/` et `profiles/` sont l'application précédente : des scripts Python, une page
+statique, et les données en fichiers. Elle **fonctionne toujours** et reste en place tant que
+la nouvelle n'est pas déployée sur le serveur.
 
-| Niveau | Source | Commande | Usage |
-|---|---|---|---|
-| Global | `activites.json` | `analyze.py …` | Tendances de fond (volume, allures, FC) sur tout l'historique. |
-| Détaillé | `detail_seances.json` | `analyze.py … --nouvelles` | Exécution d'une séance : tours, dérive FC, récups. Séances neuves uniquement. |
+`profiles/` est la source de la migration, et `scripts/build_data.py` fait toujours foi pour
+tout ce qui touche à la lecture des exports Garmin — c'est de lui que vient le portage.
 
-```bash
-python3 scripts/analyze.py --profil thibaut --prepa marathon-2026-10 --nouvelles          # séances jamais analysées
-python3 scripts/analyze.py --profil thibaut --prepa marathon-2026-10 --seance 2026-09-11  # une séance précise
-python3 scripts/analyze.py --profil thibaut --prepa marathon-2026-10 --marquer-analysees  # clôture (fin de /prepa-update)
-```
-
-## Contrat de données & analyse
-
-- **[`coach/SCHEMA.md`](coach/SCHEMA.md)** — forme exacte d'`objectifs.json` et `plan.json` attendue par la vue. **Fait foi**.
-- **`scripts/analyze.py --profil <id> --prepa <slug>`** — synthèse en lecture seule depuis `activites.json` (volume hebdo, allures réelles, meilleurs efforts, tendances FC). À lancer dans `/prepa-init` et `/prepa-update`.
-- **`scripts/reset.py --profil <id> --prepa <slug>`** — reset d'une prépa (option `--full` pour vider aussi `garmin.csv`).
-
-## La vue (`vue/`)
-
-Page web autonome : ouvrir `vue/index.html` par double-clic. Dans le header, deux dropdowns (**Profil** / **Prépa**) permettent de basculer entre les prépas ; la sélection est persistée en `localStorage`. Cinq onglets : Tableau de bord, **Séances**, Stats, Journal, Profil.
-
-L'onglet **Séances** navigue sortie par sortie (liste chronologique + fiche détaillée : graphe d'allure par tour, zones de FC, météo), alimenté par `detail_seances.json`. Flèches ◀ ▶ ou touches gauche/droite pour passer d'une séance à l'autre.
-
-Le tableau se lit en deux modes, via la bascule **Blocs / Tours** :
-- **Blocs** (défaut) — les tours consécutifs de même intensité sont regroupés : les 3×2 km d'un seuil apparaissent en 3 lignes, avec allure et FC agrégées (FC pondérée par la durée) et le détail km par km en colonne. C'est la lecture utile pour juger l'exécution d'une séance à blocs.
-- **Tours** — le découpage brut de la montre.
-
-La bascule n'apparaît que sur les séances **structurées** (dont les tours mélangent plusieurs intensités). Sur une sortie en auto-lap, tout serait fondu en un bloc unique : la vue reste donc km par km.
-
-## Skills
-
-- `/prepa-init` — démarre une nouvelle prépa pour un profil. Demande d'abord le profil (existant ou nouveau) et le slug de la prépa, puis le questionnaire habituel.
-- `/prepa-sync` — synchronise les activités Garmin d'une prépa et régénère la vue. **N'analyse rien et n'adapte rien** : les séances restent « neuves » pour le prochain `/prepa-update`.
-- `/prepa-update` — MàJ hebdo d'une prépa. Inclut déjà le sync Garmin. Demande d'abord le profil + la prépa cible, puis rapproche activités et séances prévues et adapte la suite.
-
-Les skills prennent toujours `--profil <id> --prepa <slug>` en argument des commandes Python.
+Une fois la nouvelle application en service et les sauvegardes vérifiées, ces trois dossiers
+pourront être archivés. Ne pas les supprimer avant : `profiles/*/.env` contient les
+identifiants Garmin, et rien d'autre ne les détient.
