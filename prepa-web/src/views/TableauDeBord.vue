@@ -1,52 +1,82 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import BandeauCycle from '@/components/cycle/BandeauCycle.vue'
 import CarteSeance from '@/components/cycle/CarteSeance.vue'
+import Semainier from '@/components/cycle/Semainier.vue'
 import CarteBase from '@/components/ui/CarteBase.vue'
 import EtatVide from '@/components/ui/EtatVide.vue'
-import EtiquetteType from '@/components/ui/EtiquetteType.vue'
-import PastilleStatut from '@/components/ui/PastilleStatut.vue'
 import TuileChiffre from '@/components/ui/TuileChiffre.vue'
 import { useEntrainement } from '@/stores/entrainement'
-import { dateCourte, jourSemaine, km, pourcentage } from '@/composables/useFormat'
+import { dateCourte, km, pourcentage } from '@/composables/useFormat'
 import type { Seance, StatutSeance } from '@/api/types'
 
 const entrainement = useEntrainement()
 const router = useRouter()
 
 const cycle = computed(() => entrainement.cycleActif?.cycle ?? null)
-const semaine = computed(() => entrainement.semaineCourante)
 
-/** Les sept jours de la semaine en cours, avec leurs séances — la lecture la plus utile au quotidien. */
-const jours = computed(() => {
-  if (!semaine.value) return []
-  return Array.from({ length: 7 }, (_, decalage) => {
-    const jour = new Date(semaine.value!.dateDebut)
-    jour.setDate(jour.getDate() + decalage)
-    const iso = jour.toISOString().slice(0, 10)
-    return {
-      iso,
-      aujourdhui: iso === new Date().toISOString().slice(0, 10),
-      seances: semaine.value!.seances.filter((s) => s.date === iso),
-    }
-  })
-})
+/** Semaine affichée : celle en cours au chargement, puis celle qu'on choisit avec les flèches. */
+const semaineAffichee = ref<string | null>(null)
 
-const volumeSemaine = computed(() =>
-  semaine.value ? entrainement.volumeRealise(semaine.value) : 0,
+watch(
+  () => entrainement.semaineCourante?.id,
+  (id) => {
+    if (id && !semaineAffichee.value) semaineAffichee.value = id
+  },
+  { immediate: true },
 )
 
-const partDeLaCible = computed(() => {
-  if (!semaine.value?.volumeCibleKm) return null
-  return (volumeSemaine.value / semaine.value.volumeCibleKm) * 100
+const semaine = computed(
+  () =>
+    entrainement.semaines.find((s) => s.id === semaineAffichee.value)
+      ?? entrainement.semaineCourante,
+)
+
+const position = computed(() => entrainement.semaines.findIndex((s) => s.id === semaine.value?.id))
+
+function deplacer(pas: number) {
+  const suivante = entrainement.semaines[position.value + pas]
+  if (suivante) semaineAffichee.value = suivante.id
+}
+
+const estLaSemaineCourante = computed(
+  () => semaine.value?.id === entrainement.semaineCourante?.id,
+)
+
+const volumeSemaine = computed(() => (semaine.value ? entrainement.volumeRealise(semaine.value) : 0))
+
+/**
+ * Les phases d'une préparation, en clair. « Spécifique » ne veut rien dire pour qui découvre
+ * l'application ; ce que la semaine cherche à produire, si.
+ */
+const PHASES: Record<string, { nom: string; propos: string }> = {
+  BASE: { nom: 'Fondation', propos: 'construire le socle aérobie' },
+  DEVELOPPEMENT: { nom: 'Développement', propos: 'monter le volume et l’intensité' },
+  SPECIFIQUE: { nom: 'Spécifique', propos: 'travailler l’allure de course' },
+  AFFUTAGE: { nom: 'Affûtage', propos: 'arriver frais le jour J' },
+  DECHARGE: { nom: 'Décharge', propos: 'absorber la charge, récupérer' },
+  LIBRE: { nom: 'Entretien', propos: 'suivre la ligne directrice' },
+  REPRISE: { nom: 'Reprise', propos: 'revenir progressivement' },
+}
+
+const phase = computed(() => (semaine.value?.bloc ? PHASES[semaine.value.bloc] : null))
+
+/** Avancement du cycle : ce qui est derrière, ce qui reste. */
+const avancement = computed(() => {
+  const seances = entrainement.semaines
+    .flatMap((s) => s.seances)
+    .filter((s) => s.type !== 'REPOS')
+  const faites = seances.filter((s) => s.statut === 'REALISEE' || s.statut === 'ANALYSEE').length
+  const restantes = seances.filter((s) => s.statut === 'A_VENIR').length
+  return { faites, restantes, total: seances.length }
 })
 
 /**
- * Séances échues que rien n'est venu renseigner. Les sorties enregistrées par la montre
- * sont déjà comptées : ne restent ici que celles faites sans montre, ou pas faites.
+ * Séances passées que rien n'est venu renseigner : une sortie faite sans montre, ou pas faite.
+ * Celles enregistrées par la montre sont déjà comptées et n'apparaissent pas ici.
  */
-const aTrancher = computed(() => {
+const aClarifier = computed(() => {
   const aujourdhui = new Date().toISOString().slice(0, 10)
   return entrainement.semaines
     .flatMap((s) => s.seances)
@@ -73,33 +103,34 @@ function ouvrirActivite(seance: Seance) {
   />
 
   <div v-else-if="cycle" class="space-y-5">
-    <BandeauCycle :cycle="cycle" :semaine-courante="semaine?.numero" />
+    <BandeauCycle :cycle="cycle" :semaine-courante="entrainement.semaineCourante?.numero" />
 
     <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
       <TuileChiffre
+        libelle="Séances faites"
+        :valeur="String(avancement.faites)"
+        :detail="`${avancement.restantes} encore à faire`"
+      />
+      <TuileChiffre
+        libelle="Séances tenues"
+        :valeur="entrainement.assiduite.pourcentage !== null
+          ? pourcentage(entrainement.assiduite.pourcentage)
+          : '—'"
+        :detail="`${entrainement.assiduite.manquees} non faite${entrainement.assiduite.manquees > 1 ? 's' : ''}`"
+      />
+      <TuileChiffre
         libelle="Cette semaine"
         :valeur="km(volumeSemaine)"
-        :detail="semaine ? `cible ${km(semaine.volumeCibleKm)}` : undefined"
-        :ton="partDeLaCible !== null && partDeLaCible < 75 ? 'alerte' : 'neutre'"
+        :detail="semaine ? `objectif ${km(semaine.volumeCibleKm)}` : undefined"
       />
       <TuileChiffre
-        libelle="Assiduité"
-        :valeur="entrainement.assiduite.pourcentage !== null ? pourcentage(entrainement.assiduite.pourcentage) : '—'"
-        :detail="`${entrainement.assiduite.tenues} tenues · ${entrainement.assiduite.manquees} manquées`"
-      />
-      <TuileChiffre
-        libelle="Séances du cycle"
-        :valeur="String(entrainement.assiduite.total)"
-        :detail="`${cycle.nbSemaines} semaines`"
-      />
-      <TuileChiffre
-        libelle="Bloc"
-        :valeur="semaine?.bloc ? semaine.bloc.toLowerCase() : '—'"
-        :detail="semaine?.detaillee === false ? 'cibles seules' : undefined"
+        libelle="Phase"
+        :valeur="phase?.nom ?? '—'"
+        :detail="phase?.propos"
       />
     </div>
 
-    <CarteBase v-if="entrainement.seancesDuJour.length" titre="Aujourd'hui">
+    <CarteBase v-if="entrainement.seancesDuJour.length" titre="Ta séance du jour">
       <div class="space-y-3">
         <CarteSeance
           v-for="seance in entrainement.seancesDuJour"
@@ -112,49 +143,75 @@ function ouvrirActivite(seance: Seance) {
       </div>
     </CarteBase>
 
-    <CarteBase v-else titre="Aujourd'hui">
+    <CarteBase v-else titre="Ta séance du jour">
       <p class="text-sm text-[var(--color-doux)]">
-        Rien de prévu aujourd'hui. Repos ou séance libre — à toi de voir.
+        Rien de prévu aujourd'hui. Repos, ou sortie libre si l'envie est là.
+      </p>
+    </CarteBase>
+
+    <CarteBase v-if="semaine">
+      <template #entete>
+        <div class="flex items-center gap-1">
+          <button
+            class="rounded-md border border-[var(--color-bordure)] px-2 py-1 text-sm disabled:opacity-40"
+            :disabled="position <= 0"
+            title="Semaine précédente"
+            @click="deplacer(-1)"
+          >
+            ◀
+          </button>
+          <button
+            class="rounded-md border border-[var(--color-bordure)] px-2 py-1 text-sm disabled:opacity-40"
+            :disabled="position >= entrainement.semaines.length - 1"
+            title="Semaine suivante"
+            @click="deplacer(1)"
+          >
+            ▶
+          </button>
+        </div>
+      </template>
+
+      <div class="mb-3">
+        <h2 class="font-semibold">
+          Semaine {{ semaine.numero }}
+          <span v-if="estLaSemaineCourante" class="text-[var(--color-accent)]">— en cours</span>
+        </h2>
+        <p class="text-sm text-[var(--color-doux)]">
+          du {{ dateCourte(semaine.dateDebut) }} au {{ dateCourte(entrainement.finDe(semaine)) }}
+          <template v-if="phase"> · {{ phase.nom.toLowerCase() }}, {{ phase.propos }}</template>
+        </p>
+      </div>
+
+      <p
+        v-if="!semaine.detaillee"
+        class="mb-3 rounded-lg bg-[var(--color-appui)] px-3 py-2 text-sm text-[var(--color-doux)]"
+      >
+        Semaine encore en objectifs seuls — ton coach la détaillera au prochain point.
+        Vise {{ km(semaine.volumeCibleKm) }}<template v-if="semaine.nbQualiteCible">
+          et {{ semaine.nbQualiteCible }} séance<template v-if="semaine.nbQualiteCible > 1">s</template>
+          de qualité</template>.
+      </p>
+
+      <Semainier
+        v-else
+        :semaine="semaine"
+        :volume-realise="entrainement.volumeRealise(semaine)"
+        @ouvrir="ouvrirActivite"
+      />
+
+      <p v-if="semaine.note" class="mt-3 rounded-lg bg-[var(--color-accent-fond)] px-3 py-2 text-sm">
+        <span class="font-medium text-[var(--color-accent)]">Note de ton coach — </span>{{ semaine.note }}
       </p>
     </CarteBase>
 
     <CarteBase
-      v-if="semaine"
-      titre="Ta semaine"
-      :sous-titre="semaine.detaillee === false
-        ? 'Semaine en cibles seules : ton coach la détaillera au prochain point.'
-        : undefined"
-    >
-      <ol class="divide-y divide-[var(--color-bordure)]">
-        <li
-          v-for="jour in jours"
-          :key="jour.iso"
-          class="flex items-start gap-3 py-2"
-          :class="jour.aujourdhui ? 'font-medium' : ''"
-        >
-          <div class="w-20 shrink-0 text-sm" :class="jour.aujourdhui ? 'text-[var(--color-accent)]' : 'text-[var(--color-doux)]'">
-            {{ jourSemaine(jour.iso).slice(0, 3) }} {{ dateCourte(jour.iso) }}
-          </div>
-          <div v-if="!jour.seances.length" class="text-sm text-[var(--color-doux)]">repos</div>
-          <div v-else class="flex flex-wrap items-center gap-2">
-            <template v-for="seance in jour.seances" :key="seance.id">
-              <EtiquetteType :type="seance.type" compact />
-              <span class="text-sm">{{ seance.titre }}</span>
-              <PastilleStatut :statut="seance.statut" />
-            </template>
-          </div>
-        </li>
-      </ol>
-    </CarteBase>
-
-    <CarteBase
-      v-if="aTrancher.length"
-      titre="À clarifier"
-      sous-titre="Ces séances sont passées sans être marquées. Dis à ton coach ce qu'il en est."
+      v-if="aClarifier.length"
+      titre="À confirmer"
+      sous-titre="Ces séances sont passées sans qu'aucune activité ne leur corresponde. Si tu les as faites sans montre, dis-le."
     >
       <div class="space-y-3">
         <CarteSeance
-          v-for="seance in aTrancher"
+          v-for="seance in aClarifier"
           :key="seance.id"
           :seance="seance"
           @statut="(s) => trancher(seance, s)"

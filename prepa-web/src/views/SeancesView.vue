@@ -3,6 +3,7 @@ import { computed, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import BarreZonesFc from '@/components/activity/BarreZonesFc.vue'
 import TableauTours from '@/components/activity/TableauTours.vue'
+import GrapheSeance from '@/components/charts/GrapheSeance.vue'
 import CarteBase from '@/components/ui/CarteBase.vue'
 import EtatVide from '@/components/ui/EtatVide.vue'
 import TuileChiffre from '@/components/ui/TuileChiffre.vue'
@@ -52,15 +53,23 @@ function selectionner(activite: ActivityResume) {
   router.push({ name: 'seance', params: { id: activite.id } })
 }
 
-/** Navigation d'une seance a l'autre, a la souris comme au clavier. */
+function selectionnerParId(id: string) {
+  const activite = liste.value.find((a) => a.id === id)
+  if (activite) selectionner(activite)
+}
+
+/**
+ * Navigation d'une séance à l'autre. La liste va du plus récent au plus ancien : reculer
+ * dans le temps, c'est avancer dans la liste.
+ */
 function deplacer(pas: number) {
   const suivante = liste.value[position.value + pas]
   if (suivante) selectionner(suivante)
 }
 
 function auClavier(evenement: KeyboardEvent) {
-  if (evenement.key === 'ArrowLeft') deplacer(-1)
-  if (evenement.key === 'ArrowRight') deplacer(1)
+  if (evenement.key === 'ArrowLeft') deplacer(1)
+  if (evenement.key === 'ArrowRight') deplacer(-1)
 }
 
 onMounted(() => {
@@ -80,25 +89,47 @@ watch(selection, (activite) => {
     message="Les séances arrivent automatiquement depuis ta montre."
   />
 
-  <div v-else class="grid gap-5 lg:grid-cols-[18rem_1fr]">
-    <!-- Liste chronologique : on se repere d'abord a la date et a la distance. -->
-    <aside class="max-h-[70vh] overflow-y-auto rounded-xl border border-[var(--color-bordure)]">
-      <ol class="divide-y divide-[var(--color-bordure)]">
-        <li v-for="activite in liste" :key="activite.id">
-          <button
-            class="flex w-full items-baseline gap-2 px-3 py-2 text-left text-sm hover:bg-[var(--color-appui)]"
-            :class="activite.id === selection?.id ? 'bg-[var(--color-accent-fond)]' : ''"
-            @click="selectionner(activite)"
-          >
-            <span class="tabulaire w-16 shrink-0 text-xs text-[var(--color-doux)]">
-              {{ activite.date.slice(5) }}
-            </span>
-            <span class="tabulaire w-16 shrink-0 font-medium">{{ distance(activite.distanceM) }}</span>
-            <span class="truncate text-[var(--color-doux)]">{{ activite.titre }}</span>
-          </button>
-        </li>
-      </ol>
-    </aside>
+  <div v-else class="space-y-4">
+    <!--
+      La séance choisie occupe tout l'écran ; le choix se fait dans une liste déroulante.
+      Une colonne permanente de deux cents séances prenait le tiers de la largeur pour
+      quelque chose qu'on ne consulte qu'en changeant de séance.
+    -->
+    <div class="flex flex-wrap items-center gap-2">
+      <select
+        class="min-w-0 flex-1 rounded-lg border border-[var(--color-bordure)] bg-[var(--color-surface)] px-3 py-2 text-sm sm:max-w-md"
+        :value="selection?.id"
+        @change="selectionnerParId(($event.target as HTMLSelectElement).value)"
+      >
+        <option v-for="activite in liste" :key="activite.id" :value="activite.id">
+          {{ dateLongue(activite.date) }} — {{ distance(activite.distanceM) }}
+          {{ activite.titre ? `· ${activite.titre}` : '' }}
+        </option>
+      </select>
+
+      <div class="flex gap-1">
+        <button
+          class="rounded-md border border-[var(--color-bordure)] px-2.5 py-2 text-sm disabled:opacity-40"
+          :disabled="position >= liste.length - 1"
+          title="Séance précédente (flèche gauche)"
+          @click="deplacer(1)"
+        >
+          ◀
+        </button>
+        <button
+          class="rounded-md border border-[var(--color-bordure)] px-2.5 py-2 text-sm disabled:opacity-40"
+          :disabled="position <= 0"
+          title="Séance suivante (flèche droite)"
+          @click="deplacer(-1)"
+        >
+          ▶
+        </button>
+      </div>
+
+      <span class="tabulaire text-xs text-[var(--color-doux)]">
+        {{ position + 1 }} sur {{ liste.length }}
+      </span>
+    </div>
 
     <section v-if="detail" class="space-y-4">
       <header class="flex flex-wrap items-baseline gap-3">
@@ -107,24 +138,6 @@ watch(selection, (activite) => {
           {{ LIBELLES_TYPE[detail.resume.type] }} · {{ dateLongue(detail.resume.date) }}
           <template v-if="detail.lieu"> · {{ detail.lieu }}</template>
         </span>
-        <div class="ml-auto flex gap-1">
-          <button
-            class="rounded-md border border-[var(--color-bordure)] px-2 py-1 text-sm disabled:opacity-40"
-            :disabled="position <= 0"
-            title="Séance précédente"
-            @click="deplacer(-1)"
-          >
-            ◀
-          </button>
-          <button
-            class="rounded-md border border-[var(--color-bordure)] px-2 py-1 text-sm disabled:opacity-40"
-            :disabled="position >= liste.length - 1"
-            title="Séance suivante"
-            @click="deplacer(1)"
-          >
-            ▶
-          </button>
-        </div>
       </header>
 
       <!-- Une séance de renforcement n'a ni distance ni allure : on n'affiche que ce qui existe. -->
@@ -184,8 +197,11 @@ watch(selection, (activite) => {
         <BarreZonesFc :zones="detail.zonesFc" />
       </CarteBase>
 
-      <CarteBase v-if="detail.tours.length" titre="Déroulé">
-        <TableauTours :tours="detail.tours" :blocs="detail.blocs" :structuree="detail.structuree" />
+      <CarteBase v-if="detail.tours.length" titre="Le déroulé de ta séance">
+        <GrapheSeance :tours="detail.tours" />
+        <div class="mt-5 border-t border-[var(--color-bordure)] pt-4">
+          <TableauTours :tours="detail.tours" :blocs="detail.blocs" :structuree="detail.structuree" />
+        </div>
       </CarteBase>
 
       <CarteBase v-else titre="Déroulé">

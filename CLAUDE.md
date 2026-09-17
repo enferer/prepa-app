@@ -124,6 +124,19 @@ Ils passent par `cli/prepa` ([documentation](cli/README.md)), configuré dans
 | `GET /athletes/{id}/activities/new` | séances jamais passées en revue, bornées au cycle |
 | `GET /cycles/{id}/skeleton` | trame de charge d'un cycle libre |
 
+## Les écrans
+
+| Onglet | Ce qu'on y cherche |
+|---|---|
+| **Aujourd'hui** | la séance du jour, la semaine en cours jour par jour, ce qui reste à confirmer |
+| **Saison** | l'année en un coup d'œil : calendrier des sorties, volume mensuel, cycles, échéances |
+| **Séances** | le déroulé d'une sortie — allure, fréquence cardiaque et relief sur le même graphe |
+| **Stats** | volume hebdomadaire contre objectifs, meilleurs efforts, dérive cardiaque |
+| **Journal** | du texte libre, rien d'autre |
+
+Le semainier de l'onglet Aujourd'hui se parcourt avec les flèches : il n'y a pas d'écran
+« plan » séparé, qui redonnait la même information une deuxième fois.
+
 ## La mémoire du coach
 
 Les décisions deviennent des `coach_notes` **datées, typées et bornées** — plus un champ de

@@ -14,7 +14,7 @@ const connecte = computed(() => auth.athlete !== null)
 
 const ONGLETS = [
   { nom: 'tableau-de-bord', libelle: 'Aujourd’hui', icone: '◎' },
-  { nom: 'plan', libelle: 'Plan', icone: '▤' },
+  { nom: 'saison', libelle: 'Saison', icone: '▦' },
   { nom: 'seances', libelle: 'Séances', icone: '▶' },
   { nom: 'stats', libelle: 'Stats', icone: '◫' },
   { nom: 'journal', libelle: 'Journal', icone: '✎' },

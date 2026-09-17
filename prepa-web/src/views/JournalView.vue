@@ -10,45 +10,29 @@ import type { EntreeJournal } from '@/api/types'
 const auth = useAuth()
 
 const entrees = ref<EntreeJournal[]>([])
+const contenu = ref('')
 const chargement = ref(true)
 const envoi = ref(false)
 
 const aujourdhui = new Date().toISOString().slice(0, 10)
-
-/** Saisie du jour : volontairement courte, pour qu'écrire reste une habitude tenable. */
-const saisie = ref({
-  date: aujourdhui,
-  contenu: '',
-  humeur: undefined as number | undefined,
-  fatigue: undefined as number | undefined,
-  douleur: false,
-})
 
 async function charger() {
   if (!auth.athlete) return
   chargement.value = true
   try {
     entrees.value = await journalApi.lister(auth.athlete.id)
-    const dujour = entrees.value.find((e) => e.date === aujourdhui)
-    if (dujour) {
-      saisie.value = {
-        date: dujour.date,
-        contenu: dujour.contenu,
-        humeur: dujour.humeur,
-        fatigue: dujour.fatigue,
-        douleur: dujour.douleur,
-      }
-    }
+    // Réécrire le jour même met à jour l'entrée : on repart de ce qui est déjà écrit.
+    contenu.value = entrees.value.find((e) => e.date === aujourdhui)?.contenu ?? ''
   } finally {
     chargement.value = false
   }
 }
 
 async function enregistrer() {
-  if (!auth.athlete || !saisie.value.contenu.trim()) return
+  if (!auth.athlete || !contenu.value.trim()) return
   envoi.value = true
   try {
-    await journalApi.enregistrer(auth.athlete.id, { ...saisie.value })
+    await journalApi.enregistrer(auth.athlete.id, { date: aujourdhui, contenu: contenu.value })
     await charger()
   } finally {
     envoi.value = false
@@ -64,47 +48,21 @@ onMounted(charger)
 
     <CarteBase
       titre="Aujourd'hui"
-      sous-titre="Ce que la montre ne mesure pas : sommeil, moral, gêne naissante. Ton coach le lit."
+      sous-titre="Ce que la montre ne mesure pas : sommeil, moral, jambes lourdes, une gêne qui commence. Ton coach le lit avant de faire le point."
     >
       <textarea
-        v-model="saisie.contenu"
-        rows="4"
+        v-model="contenu"
+        rows="5"
         placeholder="Jambes lourdes ce matin, mieux après vingt minutes…"
         class="w-full rounded-lg border border-[var(--color-bordure)] bg-[var(--color-fond)] px-3 py-2 text-sm"
       />
-
-      <div class="mt-3 flex flex-wrap items-center gap-4 text-sm">
-        <label class="flex items-center gap-2">
-          <span class="text-[var(--color-doux)]">Humeur</span>
-          <select
-            v-model="saisie.humeur"
-            class="rounded-md border border-[var(--color-bordure)] bg-[var(--color-fond)] px-2 py-1"
-          >
-            <option :value="undefined">—</option>
-            <option v-for="n in 5" :key="n" :value="n">{{ n }}</option>
-          </select>
-        </label>
-
-        <label class="flex items-center gap-2">
-          <span class="text-[var(--color-doux)]">Fatigue</span>
-          <select
-            v-model="saisie.fatigue"
-            class="rounded-md border border-[var(--color-bordure)] bg-[var(--color-fond)] px-2 py-1"
-          >
-            <option :value="undefined">—</option>
-            <option v-for="n in 5" :key="n" :value="n">{{ n }}</option>
-          </select>
-        </label>
-
-        <!-- Cocher une douleur declenche une question du coach au prochain point. -->
-        <label class="flex items-center gap-2">
-          <input v-model="saisie.douleur" type="checkbox" class="accent-[var(--color-manque)]" />
-          <span>Une douleur ou une gêne</span>
-        </label>
-
+      <div class="mt-3 flex items-center justify-between gap-3">
+        <p class="text-xs text-[var(--color-doux)]">
+          Écris comme tu parles. Si tu mentionnes une douleur, ton coach le verra.
+        </p>
         <button
-          class="ml-auto rounded-lg bg-[var(--color-accent)] px-4 py-1.5 font-medium text-white disabled:opacity-60"
-          :disabled="envoi || !saisie.contenu.trim()"
+          class="shrink-0 rounded-lg bg-[var(--color-accent)] px-4 py-1.5 font-medium text-white disabled:opacity-60"
+          :disabled="envoi || !contenu.trim()"
           @click="enregistrer"
         >
           {{ envoi ? 'Enregistrement…' : 'Enregistrer' }}
@@ -123,19 +81,14 @@ onMounted(charger)
     <CarteBase v-else titre="Entrées précédentes">
       <ol class="divide-y divide-[var(--color-bordure)]">
         <li v-for="entree in entrees" :key="entree.id" class="py-3">
-          <div class="flex flex-wrap items-center gap-2 text-sm">
-            <span class="font-medium">{{ dateLongue(entree.date) }}</span>
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-sm font-medium">{{ dateLongue(entree.date) }}</span>
             <span
               v-if="entree.douleur"
               class="rounded-full bg-[var(--color-manque-fond)] px-2 py-0.5 text-xs text-[var(--color-manque)]"
+              title="Ton coach est alerté sur ce point"
             >
-              douleur
-            </span>
-            <span v-if="entree.humeur" class="text-xs text-[var(--color-doux)]">
-              humeur {{ entree.humeur }}/5
-            </span>
-            <span v-if="entree.fatigue" class="text-xs text-[var(--color-doux)]">
-              fatigue {{ entree.fatigue }}/5
+              gêne signalée
             </span>
           </div>
           <p class="mt-1 text-sm whitespace-pre-line text-[var(--color-doux)]">{{ entree.contenu }}</p>

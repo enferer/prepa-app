@@ -34,6 +34,47 @@ const volumeAffiche = computed(() => {
   return (synthese.value?.volumeHebdo ?? []).slice(-semainesVisibles)
 })
 
+/**
+ * La dérive cardiaque, traduite.
+ *
+ * <p>Courir au même rythme avec un cœur qui bat plus vite est le signe le plus précoce
+ * d'une fatigue qui s'installe — bien avant que les allures ne se dégradent. L'inverse
+ * signe une forme qui monte. En dessous de quatre battements, c'est du bruit.
+ */
+const tendanceCardiaque = computed(() => {
+  const tendance = synthese.value?.tendanceFc
+  if (!tendance?.ecart && tendance?.ecart !== 0) return null
+  if (!tendance.fcMoyRecente || !tendance.fcMoyPrecedente) return null
+
+  const ecart = tendance.ecart
+  if (ecart >= 4) {
+    return {
+      ecart,
+      recente: tendance.fcMoyRecente,
+      precedente: tendance.fcMoyPrecedente,
+      ton: 'alerte' as const,
+      message:
+        'Ton cœur bat plus vite pour un entraînement comparable. C’est souvent le premier signe d’une fatigue qui s’installe — ton coach en tiendra compte.',
+    }
+  }
+  if (ecart <= -4) {
+    return {
+      ecart,
+      recente: tendance.fcMoyRecente,
+      precedente: tendance.fcMoyPrecedente,
+      ton: 'succes' as const,
+      message: 'Ton cœur travaille moins pour le même entraînement : ta forme progresse.',
+    }
+  }
+  return {
+    ecart,
+    recente: tendance.fcMoyRecente,
+    precedente: tendance.fcMoyPrecedente,
+    ton: 'neutre' as const,
+    message: 'Rien à signaler : ton cœur réagit comme d’habitude à ton entraînement.',
+  }
+})
+
 /** Cibles hebdomadaires du cycle, pour les superposer au volume realise. */
 const cibles = computed(() => {
   const table: Record<string, number> = {}
@@ -108,16 +149,45 @@ onMounted(charger)
       <GrapheVolume :semaines="volumeAffiche" :cibles="cibles" />
     </CarteBase>
 
+    <!--
+      Ce que dit le cœur à effort comparable. C'est le signal de fatigue le plus fiable
+      dont on dispose sans matériel : le chiffre seul ne parle pas, sa variation si.
+    -->
     <CarteBase
-      v-if="synthese.tendanceFc?.ecart !== undefined && synthese.tendanceFc?.ecart !== null"
-      titre="Fréquence cardiaque"
+      v-if="tendanceCardiaque"
+      titre="Comment tu encaisses"
+      sous-titre="Ta fréquence cardiaque moyenne du mois, comparée au mois précédent."
     >
-      <p class="text-sm">{{ synthese.tendanceFc.lecture }}</p>
-      <p class="tabulaire mt-1 text-sm text-[var(--color-doux)]">
-        {{ synthese.tendanceFc.fcMoyRecente }} bpm sur les 4 dernières semaines,
-        contre {{ synthese.tendanceFc.fcMoyPrecedente }} sur les 4 précédentes
-        ({{ signe(synthese.tendanceFc.ecart) }}).
-      </p>
+      <div class="flex flex-wrap items-center gap-4">
+        <div
+          class="rounded-lg px-3 py-2"
+          :class="tendanceCardiaque.ton === 'alerte'
+            ? 'bg-[var(--color-alerte-fond)]'
+            : tendanceCardiaque.ton === 'succes'
+              ? 'bg-[var(--color-succes-fond)]'
+              : 'bg-[var(--color-appui)]'"
+        >
+          <span
+            class="tabulaire text-2xl font-semibold"
+            :class="tendanceCardiaque.ton === 'alerte'
+              ? 'text-[var(--color-alerte)]'
+              : tendanceCardiaque.ton === 'succes'
+                ? 'text-[var(--color-succes)]'
+                : 'text-[var(--color-texte)]'"
+          >
+            {{ signe(tendanceCardiaque.ecart) }}
+          </span>
+          <span class="ml-1 text-sm text-[var(--color-doux)]">bpm</span>
+        </div>
+
+        <div class="min-w-0 flex-1">
+          <p class="text-sm">{{ tendanceCardiaque.message }}</p>
+          <p class="tabulaire mt-1 text-xs text-[var(--color-doux)]">
+            {{ tendanceCardiaque.recente }} bpm en moyenne ces 4 dernières semaines,
+            {{ tendanceCardiaque.precedente }} bpm les 4 d'avant.
+          </p>
+        </div>
+      </div>
     </CarteBase>
 
     <CarteBase

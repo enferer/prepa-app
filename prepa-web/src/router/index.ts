@@ -17,10 +17,10 @@ const router = createRouter({
       meta: { titre: 'Tableau de bord', connecte: true },
     },
     {
-      path: '/plan',
-      name: 'plan',
-      component: () => import('@/views/PlanView.vue'),
-      meta: { titre: 'Plan', connecte: true },
+      path: '/saison',
+      name: 'saison',
+      component: () => import('@/views/SaisonView.vue'),
+      meta: { titre: 'Saison', connecte: true },
     },
     {
       path: '/seances',
@@ -45,12 +45,6 @@ const router = createRouter({
       name: 'journal',
       component: () => import('@/views/JournalView.vue'),
       meta: { titre: 'Journal', connecte: true },
-    },
-    {
-      path: '/cycles',
-      name: 'cycles',
-      component: () => import('@/views/CyclesView.vue'),
-      meta: { titre: 'Cycles', connecte: true },
     },
     {
       path: '/profil',
