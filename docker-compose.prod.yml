@@ -1,9 +1,13 @@
 # Deploiement sur le serveur.
 #
-#   docker compose -f docker-compose.prod.yml up -d --build
+#   exploitation/deploiement.sh
 #
 # Les valeurs sensibles viennent d'un fichier .env place a cote, jamais du depot.
 # Voir .env.prod.example et DEPLOIEMENT.md.
+#
+# Cette machine heberge deja un autre service, qui occupe le port 80. Rien ici ne s'y
+# lie : seul le 443 est publie. Les limites de memoire ne sont pas decoratives — avec
+# 2 Go partages, un conteneur qui grossit sans borne ferait tomber le voisin.
 
 services:
   postgres:
@@ -13,6 +17,9 @@ services:
       POSTGRES_DB: ${DB_NAME:-prepa}
       POSTGRES_USER: ${DB_USER:-prepa}
       POSTGRES_PASSWORD: ${DB_PASSWORD:?mot de passe de base requis}
+    command: >
+      postgres -c shared_buffers=96MB -c work_mem=4MB
+               -c max_connections=30 -c effective_cache_size=256MB
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./sauvegardes:/sauvegardes
@@ -21,6 +28,7 @@ services:
       interval: 10s
       timeout: 3s
       retries: 10
+    mem_limit: 256m
     # Aucun port publie : seul le reseau interne de la composition y accede.
 
   api:
@@ -37,6 +45,9 @@ services:
       JWT_SECRET: ${JWT_SECRET:?secret JWT requis}
       CRYPTO_KEY: ${CRYPTO_KEY:?cle de chiffrement requise}
       SPRING_PROFILES_ACTIVE: prod
+      # Un seul coeur : le ramasse-miettes parallele coute plus qu'il ne rapporte.
+      JAVA_OPTS: -Xms128m -Xmx420m -XX:+UseSerialGC -XX:MaxMetaspaceSize=160m
+    mem_limit: 700m
     expose:
       - "8080"
 
@@ -50,8 +61,12 @@ services:
     environment:
       PREPA_API_URL: http://api:8080
       PREPA_SERVICE_KEY: ${WORKER_SERVICE_KEY:?cle de service du worker requise}
+      # Passage complet toutes les 30 minutes ; les demandes immediates sont relevees
+      # toutes les 5 minutes entre deux passages.
+      PREPA_INTERVALLE_COMPLET_S: ${SYNC_INTERVALLE_S:-1800}
     volumes:
       - garmin-tokens:/data/garmin-tokens
+    mem_limit: 256m
 
   web:
     build:
@@ -59,9 +74,19 @@ services:
     restart: unless-stopped
     depends_on:
       - api
+    environment:
+      PREPA_DOMAINE: ${PREPA_DOMAINE:?nom de domaine requis}
+    volumes:
+      # Les certificats vivent ici. Les perdre ferait redemander un certificat a
+      # chaque redeploiement, et Let's Encrypt limite le nombre d'emissions.
+      - caddy-data:/data
+      - caddy-config:/config
     ports:
-      - "${WEB_PORT:-8081}:80"
+      - "443:443"
+    mem_limit: 128m
 
 volumes:
   pgdata:
   garmin-tokens:
+  caddy-data:
+  caddy-config:

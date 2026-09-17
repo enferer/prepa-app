@@ -1,20 +1,39 @@
 # Déploiement
 
-Quatre conteneurs sur un serveur : Postgres, l'API, le worker Garmin, et Nginx qui sert
-l'application et relaie `/api`. Aucun port de base de données n'est publié.
+Quatre conteneurs sur un serveur : Postgres, l'API, le worker Garmin, et Caddy qui sert
+l'application, relaie `/api` et termine le TLS. **Seul le port 443 est publié** — ni la
+base, ni l'API ne sont joignables de l'extérieur.
 
 ## 1. Prérequis
 
-Docker et le plugin Compose sur le serveur, un nom de domaine qui pointe dessus, et de quoi
-terminer le TLS — un proxy déjà en place, ou Caddy / Traefik / Nginx + certbot sur l'hôte.
-La composition écoute en clair sur un port local (`WEB_PORT`, 8081 par défaut) : c'est le
-proxy de l'hôte qui publie le HTTPS.
+Docker et le plugin Compose, un nom de domaine qui pointe sur le serveur, et le port 443
+libre. Rien d'autre : le certificat Let's Encrypt est obtenu et renouvelé tout seul.
+
+### Cohabitation avec un autre service
+
+Ce serveur héberge déjà `firework-timeline`, qui occupe le port 80. Rien ici ne s'en
+approche :
+
+| | `firework-timeline` | `prepa` |
+|---|---|---|
+| Port publié | 80 (HTTP) | 443 (HTTPS) |
+| Réseau Docker | le sien | le sien |
+| Base | son volume | son volume |
+
+Le certificat est validé par **TLS-ALPN**, qui ne se sert que du 443 — c'est ce qui
+permet d'avoir du HTTPS sans réclamer le port 80 au voisin. La redirection automatique
+HTTP → HTTPS de Caddy est désactivée pour la même raison.
+
+La machine est petite : 1 cœur, 2 Go de mémoire, partagés. Chaque conteneur porte donc
+une limite de mémoire explicite dans `docker-compose.prod.yml`, et la JVM un plafond de
+tas. Ce n'est pas du réglage fin, c'est ce qui empêche un service d'emporter l'autre.
 
 ## 2. Configuration
 
 ```bash
 git clone <dépôt> /opt/prepa && cd /opt/prepa
 cp .env.prod.example .env
+# renseigner PREPA_DOMAINE, puis les trois secrets
 
 # Les trois secrets, à générer — ne jamais les reprendre d'un exemple :
 openssl rand -base64 32   # DB_PASSWORD
@@ -32,7 +51,7 @@ déjà stockés** : il faudrait les ressaisir. Sauvegarde-la ailleurs que sur le
 `WORKER_SERVICE_KEY` n'existe pas encore : laisse-la vide et démarre sans le worker.
 
 ```bash
-docker compose -f docker-compose.prod.yml up -d --build postgres api web
+docker compose -f docker-compose.prod.yml up -d --build postgres api
 docker compose -f docker-compose.prod.yml logs -f api   # les migrations s'appliquent ici
 ```
 
@@ -53,7 +72,14 @@ worker. Relance ensuite normalement.
 Pour créer d'autres clés — une pour les skills, une par athlète si tu veux les cloisonner :
 
 ```bash
-curl -X POST http://localhost:8081/api/v1/admin/service-keys \
+docker compose -f docker-compose.prod.yml exec api \
+  wget -qO- --post-data '{"nom":"claude-code","scopes":["read","coach"]}' \
+  --header "Authorization: Bearer $JETON_ADMIN" \
+  --header 'Content-Type: application/json' \
+  http://localhost:8080/api/v1/admin/service-keys
+
+# depuis l'exterieur, une fois le HTTPS en place :
+curl -X POST https://$PREPA_DOMAINE/api/v1/admin/service-keys \
   -H "Authorization: Bearer $JETON_ADMIN" -H 'Content-Type: application/json' \
   -d '{"nom":"claude-code","scopes":["read","coach"]}'
 ```
@@ -110,15 +136,24 @@ Le script dépose aussi `migration/sortie/memoire-a-relire-*.md` : le texte cumu
 commentaires de l'ancienne application, à relire et découper en notes de coach. Il n'est
 pas importé tel quel, volontairement — c'est l'occasion de repartir sur une mémoire propre.
 
-## 6. Tâches planifiées
+## 6. Synchronisation Garmin et tâches planifiées
+
+Le worker tourne en continu et n'a **pas besoin du planificateur** :
+
+- toutes les **30 minutes**, un passage complet sur tous les athlètes reliés
+  (`SYNC_INTERVALLE_S` dans `.env`) ;
+- entre deux passages, il relève toutes les 5 minutes les demandes de synchronisation
+  immédiate déclenchées depuis l'application ou par `/prepa-update` ;
+- au démarrage, le premier passage est complet : après un arrêt, on ne sait pas ce qui a
+  été manqué.
+
+Seule la sauvegarde reste au planificateur :
 
 ```cron
-15 3 * * * /opt/prepa/exploitation/sauvegarde.sh    >> /var/log/prepa-sauvegarde.log 2>&1
- 0 4 * * * /opt/prepa/exploitation/sync-nocturne.sh >> /var/log/prepa-sync.log 2>&1
+15 3 * * * /opt/prepa/exploitation/sauvegarde.sh >> /var/log/prepa-sauvegarde.log 2>&1
 ```
 
-Le worker tourne en continu pour les demandes immédiates ; le passage de 4 h rattrape le
-reste.
+`exploitation/sync-nocturne.sh` subsiste pour forcer un passage complet à la main.
 
 ## 7. Vérifier les sauvegardes
 
@@ -137,9 +172,15 @@ sauvegardes s'ils vivent au même endroit.
 ## 8. Mise à jour
 
 ```bash
-cd /opt/prepa && git pull
-docker compose -f docker-compose.prod.yml up -d --build
+/opt/prepa/exploitation/deploiement.sh            # la branche en place
+/opt/prepa/exploitation/deploiement.sh refonte-v2 # en changer
 ```
+
+Le script refuse de partir s'il trouve des modifications non commitées sur le serveur,
+**sauvegarde la base avant de basculer**, ne fait qu'une avance rapide sur la branche
+demandée, reconstruit, redémarre, puis attend que l'API réponde `UP` — et déverse les
+journaux si elle ne revient pas. Il purge enfin les images intermédiaires : sur un petit
+disque, c'est ce qui fait échouer le déploiement suivant.
 
 Les migrations s'appliquent au démarrage de l'API. Elles ne sont qu'additives : une version
 plus ancienne peut être redémarrée sans perdre de données.
@@ -152,5 +193,7 @@ plus ancienne peut être redémarrée sans perdre de données.
 | Pas de nouvelles séances | `GET /athletes/<id>/sync-status` : `AUTH_ERROR` = identifiants à refaire, `IDENTITE_KO` = mauvais compte relié |
 | L'application affiche une erreur d'authentification | Jeton expiré ; le renouvellement est automatique, sinon se reconnecter |
 | Le worker boucle sur des 429 | Garmin limite le débit ; il reprendra au passage suivant |
+| Le site ne répond pas en HTTPS | `logs web` — si le certificat n'a pu être émis, Caddy le redit à chaque tentative |
+| Un conteneur est tué sans raison | `docker inspect <nom> --format '{{.State.OOMKilled}}'` : la mémoire est partagée avec l'autre service |
 
 Les journaux ne contiennent ni identifiant Garmin ni contenu de journal.

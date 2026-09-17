@@ -7,7 +7,10 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-FROM nginx:1.27-alpine
-COPY --from=build /build/dist /usr/share/nginx/html
-COPY nginx-site.conf /etc/nginx/conf.d/default.conf
-EXPOSE 80
+# Caddy sert les fichiers, relaie /api vers l'API et termine le TLS. Un seul conteneur
+# en facade plutot qu'un serveur de fichiers derriere un terminateur TLS : sur une petite
+# machine, chaque processus compte.
+FROM caddy:2-alpine
+COPY --from=build /build/dist /srv
+COPY Caddyfile /etc/caddy/Caddyfile
+EXPOSE 443

@@ -40,6 +40,11 @@ JOURS_PREMIER_SYNC = 120
 # Intervalle de relecture des demandes en mode boucle.
 INTERVALLE_BOUCLE_S = 300
 
+# Intervalle du passage complet, tous athletes relies. Une demande immediate est relevee
+# en quelques minutes ; ce passage-ci rattrape les seances de ceux qui n'ont rien demande
+# — c'est-a-dire le cas courant, l'athlete qui court et ne touche a rien.
+INTERVALLE_COMPLET_S = int(os.environ.get("PREPA_INTERVALLE_COMPLET_S", 1800))
+
 TOKENSTORE = Path(os.environ.get("GARMIN_TOKENSTORE", Path.home() / ".garminconnect"))
 
 TYPES_GARMIN = {
@@ -407,14 +412,24 @@ def main():
     if not args.boucle:
         return 1 if passage(api_prepa, args.demandes, args.athlete, args.depuis, args.dry_run) else 0
 
-    LOG.info("Mode boucle : relecture des demandes toutes les %d secondes", INTERVALLE_BOUCLE_S)
+    LOG.info("Mode boucle : demandes toutes les %d s, passage complet toutes les %d s",
+             INTERVALLE_BOUCLE_S, INTERVALLE_COMPLET_S)
+
+    # Le premier passage est complet : au demarrage, on ne sait pas ce qui a ete manque
+    # pendant que le worker etait arrete.
+    prochain_complet = 0.0
     while True:
+        complet = time.monotonic() >= prochain_complet
         try:
-            passage(api_prepa, seulement_demandes=True, dry_run=args.dry_run)
+            passage(api_prepa, seulement_demandes=not complet, dry_run=args.dry_run)
         except Exception:
             # La boucle survit a tout : un serveur momentanement absent ne doit pas
             # arreter le worker jusqu'au prochain redemarrage.
             LOG.exception("Passage en echec, on reessaiera")
+        if complet:
+            # Replanifie meme en cas d'echec : reessayer en boucle serree n'aiderait pas,
+            # et Garmin repondrait 429.
+            prochain_complet = time.monotonic() + INTERVALLE_COMPLET_S
         time.sleep(INTERVALLE_BOUCLE_S)
 
 

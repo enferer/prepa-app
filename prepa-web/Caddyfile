@@ -1,0 +1,39 @@
+{
+	# Le port 80 appartient a un autre service sur cette machine. Caddy ne doit jamais
+	# tenter de s'y lier : ni pour rediriger le trafic clair, ni pour valider un
+	# certificat. Le certificat est donc obtenu par TLS-ALPN, qui n'utilise que le 443.
+	auto_https disable_redirects
+	http_port 8088
+}
+
+{$PREPA_DOMAINE} {
+	tls {
+		issuer acme {
+			disable_http_challenge
+		}
+	}
+
+	encode gzip
+
+	handle /api/* {
+		reverse_proxy api:8080 {
+			transport http {
+				read_timeout 120s
+			}
+		}
+	}
+
+	handle {
+		root * /srv
+
+		# Les fichiers construits portent une empreinte dans leur nom : ils peuvent etre
+		# gardes indefiniment. La page d'entree, elle, ne doit jamais l'etre, sinon un
+		# deploiement ne parvient pas au navigateur.
+		@assets path /assets/*
+		header @assets Cache-Control "public, max-age=31536000, immutable"
+		header /index.html Cache-Control "no-store"
+
+		try_files {path} /index.html
+		file_server
+	}
+}
