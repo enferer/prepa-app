@@ -76,9 +76,54 @@ public class PlanService {
         }
     }
 
+    /**
+     * Modification d'une semaine : ce qu'elle vise, son bloc, sa note.
+     *
+     * <p>La cible de volume ne se deduit pas des seances, et ce n'est pas un oubli. Une
+     * semaine non detaillee n'a que sa cible — en cycle glissant, c'est meme sa seule
+     * substance. Et sur une semaine detaillee, recalculer la cible a chaque retouche de
+     * seance reviendrait a effacer l'intention du coach chaque fois qu'il ajuste un footing :
+     * l'ecart entre ce qui est vise et ce qui est pose serait toujours nul, donc jamais
+     * lisible. On l'expose (voir {@code volumePlanifieKm}) plutot que de le faire disparaitre.
+     */
+    @Transactional
+    public TrainingWeek modifierSemaine(UUID weekId, CycleDtos.UpdateWeekRequest patch) {
+        TrainingWeek semaine = semaineParId(weekId);
+        if (patch.bloc() != null) {
+            semaine.setBloc(patch.bloc());
+        }
+        if (patch.volumeCibleKm() != null) {
+            semaine.setVolumeCibleKm(patch.volumeCibleKm());
+        }
+        if (patch.nbQualiteCible() != null) {
+            semaine.setNbQualiteCible(patch.nbQualiteCible());
+        }
+        if (patch.deniveleCibleM() != null) {
+            semaine.setDeniveleCibleM(patch.deniveleCibleM());
+        }
+        if (patch.detaillee() != null) {
+            semaine.setDetaillee(patch.detaillee());
+        }
+        if (patch.note() != null) {
+            semaine.setNote(patch.note());
+        }
+        return semaines.save(semaine);
+    }
+
+    @Transactional(readOnly = true)
+    public TrainingWeek semaineParId(UUID weekId) {
+        return semaines.findById(weekId).orElseThrow(() -> ApiException.notFound("Semaine"));
+    }
+
+    /** Les seances d'une semaine, dans l'ordre ou elles se courent. */
+    @Transactional(readOnly = true)
+    public List<PlannedSession> seancesDeLaSemaine(UUID weekId) {
+        return seances.findByWeekIdOrderByDateAscOrdreAsc(weekId);
+    }
+
     @Transactional
     public PlannedSession ajouter(UUID weekId, CycleDtos.SessionInput entree) {
-        TrainingWeek semaine = semaines.findById(weekId).orElseThrow(() -> ApiException.notFound("Semaine"));
+        TrainingWeek semaine = semaineParId(weekId);
         Cycle cycle = cycles.findById(semaine.getCycleId()).orElseThrow(() -> ApiException.notFound("Cycle"));
         return seances.save(construire(cycle, semaine, entree));
     }

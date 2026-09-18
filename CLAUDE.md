@@ -126,6 +126,22 @@ Ils passent par `cli/prepa` ([documentation](cli/README.md)), configuré dans
 | `GET /athletes/{id}/analysis` | volume hebdo, allure d'endurance réelle, meilleurs efforts, tendances |
 | `GET /athletes/{id}/activities/new` | séances jamais passées en revue, bornées au cycle |
 | `GET /cycles/{id}/skeleton` | trame de charge d'un cycle libre |
+| `PATCH /weeks/{id}` | ce qu'une semaine **vise** — volume cible, bloc, note — sans rejouer tout le plan |
+
+### Les trois volumes d'une semaine
+
+Ils ne disent pas la même chose, et les confondre fait perdre l'information qui compte :
+
+| | D'où il vient | Ce qu'il dit |
+|---|---|---|
+| `volumeCibleKm` | **posé** par le coach | ce que la semaine vise. Seule information d'une semaine non détaillée |
+| `volumePlanifieKm` | **calculé** sur les séances | ce que le plan détaille, hors séances annulées |
+| volume réalisé | **calculé** sur les activités | ce qui a été couru — dans `reconciliation` et `analysis` |
+
+La cible ne se recalcule pas quand une séance change de distance : rallonger une sortie longue
+de deux kilomètres ne doit pas réécrire en silence l'intention de la semaine. L'écart entre les
+deux premiers est rendu visible pour que le coach tranche — reprendre les kilomètres ailleurs,
+ou assumer la nouvelle charge avec `PATCH /weeks/{id}`.
 
 ## Les écrans
 

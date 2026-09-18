@@ -12,6 +12,8 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import lombok.Getter;
 import lombok.Setter;
@@ -125,5 +127,20 @@ public class PlannedSession {
     public void detacher() {
         this.activityId = null;
         this.rapprochement = "AUCUN";
+    }
+
+    /**
+     * Ce qu'un ensemble de seances totalise en kilometres — le volume que le plan
+     * <em>detaille</em>, a ne pas confondre avec celui qu'il <em>vise</em>.
+     *
+     * <p>Une seance annulee est sortie du plan : elle ne compte plus. Une seance deplacee, si.
+     * Le renfo n'a pas de distance et s'ecarte de lui-meme.
+     */
+    public static BigDecimal volumePlanifie(List<PlannedSession> seances) {
+        return seances.stream()
+                .filter(s -> s.getStatut() != StatutSeance.ANNULEE)
+                .map(PlannedSession::getDistanceCibleKm)
+                .filter(Objects::nonNull)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 }

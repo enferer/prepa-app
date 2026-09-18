@@ -96,17 +96,57 @@ public final class CycleDtos {
     /** Le cycle avec son plan complet. */
     public record CycleDetailResponse(CycleResponse cycle, List<WeekResponse> semaines) {}
 
+    /**
+     * Une semaine du plan.
+     *
+     * <p>Deux volumes y figurent, et ils ne disent pas la meme chose. {@code volumeCibleKm}
+     * est l'<em>intention</em> du coach pour la semaine — la charge qu'il vise, seule
+     * information disponible tant que la semaine n'est pas detaillee. {@code volumePlanifieKm}
+     * est ce que les seances totalisent une fois posees. Les deux divergent des qu'on retouche
+     * une seance, et c'est normal : la cible ne se recalcule pas toute seule, sinon deplacer un
+     * kilometre d'un footing reecrirait silencieusement l'intention de la semaine. Les exposer
+     * cote a cote rend l'ecart visible plutot que cache — au coach ensuite de trancher : ajuster
+     * les seances, ou assumer la nouvelle cible avec {@code PATCH /weeks/&#123;id&#125;}.
+     *
+     * <p>Ni l'un ni l'autre n'est le volume <em>realise</em> : celui-la se calcule a partir des
+     * activites et vit dans le rapprochement et l'analyse.
+     */
     public record WeekResponse(
             UUID id,
             short numero,
             LocalDate dateDebut,
             BlocEntrainement bloc,
             BigDecimal volumeCibleKm,
+            BigDecimal volumePlanifieKm,
             Short nbQualiteCible,
             Integer deniveleCibleM,
             boolean detaillee,
             String note,
-            List<SessionResponse> seances) {}
+            List<SessionResponse> seances) {
+
+        public static WeekResponse from(TrainingWeek semaine, List<PlannedSession> seances) {
+            return new WeekResponse(
+                    semaine.getId(), semaine.getNumero(), semaine.getDateDebut(), semaine.getBloc(),
+                    semaine.getVolumeCibleKm(), PlannedSession.volumePlanifie(seances),
+                    semaine.getNbQualiteCible(), semaine.getDeniveleCibleM(), semaine.isDetaillee(),
+                    semaine.getNote(), seances.stream().map(SessionResponse::from).toList());
+        }
+    }
+
+    /**
+     * Modification d'une semaine : ses cibles, son bloc, sa note. Reservee au coach.
+     *
+     * <p>Un champ absent est un champ inchange. Ajuster {@code volumeCibleKm} est un acte
+     * delibere — on redit ce que la semaine vise — et non la consequence mecanique d'une
+     * seance retouchee.
+     */
+    public record UpdateWeekRequest(
+            BlocEntrainement bloc,
+            @Positive BigDecimal volumeCibleKm,
+            Short nbQualiteCible,
+            Integer deniveleCibleM,
+            Boolean detaillee,
+            String note) {}
 
     public record SessionResponse(
             UUID id,
@@ -124,14 +164,16 @@ public final class CycleDtos {
             String commentaireCoach,
             String commentaireAthlete,
             UUID activityId,
-            String rapprochement) {
+            String rapprochement,
+            /** Le deroule de la seance, relu depuis sa description — voir {@link StructureSeance}. */
+            List<StructureSeance.BlocPrevu> structure) {
 
         public static SessionResponse from(PlannedSession s) {
             return new SessionResponse(
                     s.getId(), s.getWeekId(), s.getDate(), s.getOrdre(), s.getType(), s.getTitre(),
                     s.getDescription(), s.getStatut(), s.getAlluresTexte(), s.getDistanceCibleKm(),
                     s.getDureeCibleMin(), s.getFocus(), s.getCommentaireCoach(), s.getCommentaireAthlete(),
-                    s.getActivityId(), s.getRapprochement());
+                    s.getActivityId(), s.getRapprochement(), StructureSeance.deduire(s));
         }
     }
 

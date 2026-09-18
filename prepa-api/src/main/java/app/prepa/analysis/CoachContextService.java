@@ -112,12 +112,20 @@ public class CoachContextService {
             int semainesDetaillees,
             int semainesTotal) {}
 
+    /**
+     * La semaine en cours.
+     *
+     * <p>{@code volumeCibleKm} est ce que la semaine vise, {@code volumePlanifieKm} ce que ses
+     * seances totalisent. Un ecart entre les deux n'est pas une anomalie : c'est la trace d'une
+     * adaptation faite seance par seance, que le coach voit ici et decide ou non d'enteriner.
+     */
     public record SemaineResume(
             UUID id,
             Integer numero,
             LocalDate dateDebut,
             String bloc,
             BigDecimal volumeCibleKm,
+            BigDecimal volumePlanifieKm,
             boolean detaillee,
             String note,
             List<SeanceResume> seances) {}
@@ -217,14 +225,15 @@ public class CoachContextService {
         if (semaine == null) {
             return null;
         }
-        List<SeanceResume> seances = cycles.seancesDe(cycle.getId()).stream()
+        List<PlannedSession> deLaSemaine = cycles.seancesDe(cycle.getId()).stream()
                 .filter(s -> s.getWeekId().equals(semaine.getId()))
-                .map(this::seanceResume)
                 .toList();
         return new SemaineResume(
                 semaine.getId(), (int) semaine.getNumero(), semaine.getDateDebut(),
                 semaine.getBloc() == null ? null : semaine.getBloc().name(),
-                semaine.getVolumeCibleKm(), semaine.isDetaillee(), semaine.getNote(), seances);
+                semaine.getVolumeCibleKm(), PlannedSession.volumePlanifie(deLaSemaine),
+                semaine.isDetaillee(), semaine.getNote(),
+                deLaSemaine.stream().map(this::seanceResume).toList());
     }
 
     private SeanceResume seanceResume(PlannedSession s) {

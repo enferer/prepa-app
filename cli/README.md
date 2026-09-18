@@ -51,5 +51,6 @@ accessible.
 prepa contexte --athlete camille
 prepa rapprochement --semaine 2026-09-07
 prepa PATCH /sessions/<id> '{"statut":"VALIDEE","commentaireCoach":"Allures tenues."}'
+prepa PATCH /weeks/<id> '{"volumeCibleKm":57,"note":"Pic de volume."}'
 prepa POST /athletes/<id>/coach-notes '{"portee":"CYCLE","categorie":"DECISION","titre":"…","contenu":"…"}'
 ```

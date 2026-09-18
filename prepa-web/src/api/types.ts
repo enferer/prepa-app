@@ -92,7 +92,10 @@ export interface Semaine {
   numero: number
   dateDebut: string
   bloc?: BlocEntrainement
+  /** Ce que la semaine vise : l'intention du coach, posee a la conception du plan. */
   volumeCibleKm: number
+  /** Ce que les seances totalisent, hors seances annulees. Peut diverger de la cible. */
+  volumePlanifieKm: number
   nbQualiteCible?: number
   deniveleCibleM?: number
   detaillee: boolean

@@ -171,6 +171,28 @@ public class CycleController {
 
     public record RattrapageResponse(int seancesConstatees) {}
 
+    @GetMapping("/weeks/{weekId}")
+    public CycleDtos.WeekResponse semaine(@PathVariable UUID weekId) {
+        TrainingWeek semaine = planService.semaineParId(weekId);
+        athletes.accessible(cycleService.parId(semaine.getCycleId()).getAthleteId(), CurrentPrincipal.get());
+        return semaineGarnie(semaine);
+    }
+
+    /**
+     * Modification d'une semaine : sa cible de volume, son bloc, sa note.
+     *
+     * <p>Redire ce qu'une semaine vise relevait jusqu'ici du remplacement complet du plan —
+     * une transaction lourde pour ajuster un chiffre. Cette route fait le geste simple, et
+     * le reserve au coach : la charge d'une semaine est une decision de conception, pas un
+     * constat que l'athlete poserait lui-meme.
+     */
+    @PatchMapping("/weeks/{weekId}")
+    public CycleDtos.WeekResponse modifierSemaine(
+            @PathVariable UUID weekId, @Valid @RequestBody CycleDtos.UpdateWeekRequest req) {
+        exigerCoachSurCycle(planService.semaineParId(weekId).getCycleId());
+        return semaineGarnie(planService.modifierSemaine(weekId, req));
+    }
+
     @PostMapping("/weeks/{weekId}/sessions")
     public CycleDtos.SessionResponse ajouterSeance(
             @PathVariable UUID weekId, @Valid @RequestBody CycleDtos.SessionInput req) {
@@ -224,24 +246,25 @@ public class CycleController {
         return ResponseEntity.noContent().build();
     }
 
-    /** Une semaine sans ses seances : ce que renvoient les operations de plan glissant. */
+    /**
+     * Une semaine sans ses seances : ce que renvoient les operations de plan glissant, qui
+     * viennent precisement de la creer vide. Son volume planifie vaut donc zero, et c'est exact.
+     */
     private CycleDtos.WeekResponse semaineSeule(TrainingWeek s) {
-        return new CycleDtos.WeekResponse(
-                s.getId(), s.getNumero(), s.getDateDebut(), s.getBloc(), s.getVolumeCibleKm(),
-                s.getNbQualiteCible(), s.getDeniveleCibleM(), s.isDetaillee(), s.getNote(), List.of());
+        return CycleDtos.WeekResponse.from(s, List.of());
+    }
+
+    /** Une semaine avec ses seances, donc avec un volume planifie qui veut dire quelque chose. */
+    private CycleDtos.WeekResponse semaineGarnie(TrainingWeek s) {
+        return CycleDtos.WeekResponse.from(s, planService.seancesDeLaSemaine(s.getId()));
     }
 
     private CycleDtos.CycleDetailResponse detail(Cycle cycle) {
-        Map<UUID, List<CycleDtos.SessionResponse>> parSemaine = cycleService.seancesDe(cycle.getId()).stream()
-                .collect(Collectors.groupingBy(
-                        PlannedSession::getWeekId,
-                        Collectors.mapping(CycleDtos.SessionResponse::from, Collectors.toList())));
+        Map<UUID, List<PlannedSession>> parSemaine = cycleService.seancesDe(cycle.getId()).stream()
+                .collect(Collectors.groupingBy(PlannedSession::getWeekId));
 
         List<CycleDtos.WeekResponse> semaines = cycleService.semainesDe(cycle.getId()).stream()
-                .map(s -> new CycleDtos.WeekResponse(
-                        s.getId(), s.getNumero(), s.getDateDebut(), s.getBloc(), s.getVolumeCibleKm(),
-                        s.getNbQualiteCible(), s.getDeniveleCibleM(), s.isDetaillee(), s.getNote(),
-                        parSemaine.getOrDefault(s.getId(), List.of())))
+                .map(s -> CycleDtos.WeekResponse.from(s, parSemaine.getOrDefault(s.getId(), List.of())))
                 .toList();
 
         return new CycleDtos.CycleDetailResponse(CycleDtos.CycleResponse.from(cycle), semaines);
