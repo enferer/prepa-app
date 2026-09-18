@@ -207,12 +207,12 @@ public class ReconciliationService {
      * activites tombent le meme jour, celle dont la distance approche le mieux la cible.
      */
     private Activity apparier(PlannedSession seance, List<Activity> candidates, Set<UUID> consommees) {
-        if (!seance.estCourseAPied()) {
+        if (!seance.getType().seConstate()) {
             return null;
         }
         List<Activity> memeJour = candidates.stream()
                 .filter(a -> !consommees.contains(a.getId()))
-                .filter(a -> a.getType().estCourseAPied())
+                .filter(a -> seance.getType().estAccompliePar(a.getType()))
                 .filter(a -> Math.abs(a.getDateLocale().toEpochDay() - seance.getDate().toEpochDay())
                         <= JOURS_TOLERANCE)
                 .sorted(Comparator.comparingLong(
@@ -256,7 +256,7 @@ public class ReconciliationService {
     private List<Ecart> qualifier(PlannedSession seance, Activity activite, SeanceRapprochee rapprochee) {
         List<Ecart> ecarts = new ArrayList<>();
 
-        if (activite == null && seance.estCourseAPied() && seance.getDate().isBefore(LocalDate.now())
+        if (activite == null && seance.getType().seConstate() && seance.getDate().isBefore(LocalDate.now())
                 && seance.getStatut() != StatutSeance.ANNULEE
                 && seance.getStatut() != StatutSeance.DEPLACEE) {
             boolean cle = seance.getType().estCle();

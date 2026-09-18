@@ -145,13 +145,58 @@ class ConstatServiceTest extends IntegrationTestBase {
     }
 
     @Test
-    @DisplayName("ne constate aucune absence sur le renforcement, que la montre n'enregistre pas")
-    void renforcementEpargne() {
+    @DisplayName("marque un renfo realise quand la muscu arrive de la montre")
+    void renfoRapprocheDeLaMuscu() {
+        // La montre enregistre les seances de musculation : laisser le renfo eternellement
+        // A_VENIR obligeait l'athlete a cocher a la main ce que les donnees disaient deja.
+        PlannedSession renfo = planifier(LocalDate.now().minusDays(1), TypeSeance.RENFO, null);
+        Activity muscu = enregistrer(LocalDate.now().minusDays(1), 0, TypeActivite.STRENGTH);
+
+        assertThat(constats.constaterArrivee(muscu)).isPresent();
+
+        PlannedSession relue = seances.findById(renfo.getId()).orElseThrow();
+        assertThat(relue.getStatut()).isEqualTo(StatutSeance.REALISEE);
+        assertThat(relue.getActivityId()).isEqualTo(muscu.getId());
+    }
+
+    @Test
+    @DisplayName("ne fait pas passer une muscu pour un footing, ni l'inverse")
+    void chacunSaNature() {
+        PlannedSession footing = planifier(LocalDate.now().minusDays(1), TypeSeance.EF, 10);
+        PlannedSession renfo = planifier(LocalDate.now().minusDays(1), TypeSeance.RENFO, null);
+
+        Activity muscu = enregistrer(LocalDate.now().minusDays(1), 0, TypeActivite.STRENGTH);
+        constats.constaterArrivee(muscu);
+        assertThat(seances.findById(footing.getId()).orElseThrow().getStatut())
+                .isEqualTo(StatutSeance.A_VENIR);
+
+        Activity sortie = enregistrer(LocalDate.now().minusDays(1), 10_000);
+        constats.constaterArrivee(sortie);
+        assertThat(seances.findById(footing.getId()).orElseThrow().getActivityId())
+                .isEqualTo(sortie.getId());
+        assertThat(seances.findById(renfo.getId()).orElseThrow().getActivityId())
+                .isEqualTo(muscu.getId());
+    }
+
+    @Test
+    @DisplayName("constate l'absence d'un renfo comme celle d'un footing")
+    void renfoNonRealise() {
         PlannedSession renfo = planifier(LocalDate.now().minusDays(3), TypeSeance.RENFO, null);
 
         constats.constaterAbsences(athleteId);
 
         assertThat(seances.findById(renfo.getId()).orElseThrow().getStatut())
+                .isEqualTo(StatutSeance.NON_REALISEE);
+    }
+
+    @Test
+    @DisplayName("ne constate rien sur une journee de repos, qui n'attend aucune activite")
+    void reposEpargne() {
+        PlannedSession repos = planifier(LocalDate.now().minusDays(3), TypeSeance.REPOS, null);
+
+        constats.constaterAbsences(athleteId);
+
+        assertThat(seances.findById(repos.getId()).orElseThrow().getStatut())
                 .isEqualTo(StatutSeance.A_VENIR);
     }
 
@@ -214,10 +259,14 @@ class ConstatServiceTest extends IntegrationTestBase {
     }
 
     private Activity enregistrer(LocalDate date, int distanceM) {
+        return enregistrer(date, distanceM, TypeActivite.RUN);
+    }
+
+    private Activity enregistrer(LocalDate date, int distanceM, TypeActivite type) {
         Activity activite = new Activity(
                 UUID.randomUUID(), athleteId, UUID.randomUUID().toString(),
                 date.atTime(9, 0).toInstant(ZoneOffset.UTC), date, 3600);
-        activite.setType(TypeActivite.RUN);
+        activite.setType(type);
         activite.setDistanceM(distanceM);
         return activities.save(activite);
     }

@@ -45,4 +45,32 @@ public enum TypeSeance {
     public boolean estCle() {
         return estQualite() || this == SL;
     }
+
+    /**
+     * L'activite qui accomplit cette seance est-elle de cette nature ?
+     *
+     * <p>Une seance se constate a la nature de ce qui a ete fait, pas au fait qu'on y ait
+     * couru : un renfo s'accomplit par une muscu, du cross-training par du velo ou de la
+     * natation. Confondre « ne compte pas dans le volume » et « ne se rapproche jamais »
+     * laissait le renfo eternellement {@code A_VENIR}, a cocher a la main, alors que la montre
+     * l'avait deja dit.
+     */
+    public boolean estAccompliePar(TypeActivite activite) {
+        return switch (this) {
+            case RENFO -> activite == TypeActivite.STRENGTH;
+            case CROSS -> activite == TypeActivite.BIKE
+                    || activite == TypeActivite.SWIM
+                    || activite == TypeActivite.OTHER;
+            case REPOS -> false;
+            default -> activite.estCourseAPied();
+        };
+    }
+
+    /**
+     * Seances dont l'absence se constate. Le repos n'a rien a constater : il n'attend aucune
+     * activite, et le declarer « non realise » n'aurait pas de sens.
+     */
+    public boolean seConstate() {
+        return this != REPOS;
+    }
 }

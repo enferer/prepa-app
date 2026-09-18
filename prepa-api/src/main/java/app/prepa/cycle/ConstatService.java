@@ -72,9 +72,6 @@ public class ConstatService {
      */
     @Transactional
     public Optional<PlannedSession> constaterArrivee(Activity activite) {
-        if (!activite.getType().estCourseAPied()) {
-            return Optional.empty();
-        }
         Optional<Cycle> cycle = cycles.couvrant(activite.getAthleteId(), activite.getDateLocale()).stream()
                 .findFirst();
         if (cycle.isEmpty()) {
@@ -86,7 +83,8 @@ public class ConstatService {
                 .entre(cycle.get().getId(), date.minusDays(JOURS_TOLERANCE), date.plusDays(JOURS_TOLERANCE))
                 .stream()
                 .filter(s -> s.getActivityId() == null)
-                .filter(PlannedSession::estCourseAPied)
+                // La nature prime : une muscu accomplit un renfo, pas le footing du lendemain.
+                .filter(s -> s.getType().estAccompliePar(activite.getType()))
                 // Une séance déjà jugée par le coach peut tout de même n'avoir jamais été
                 // rattachée à son activité : le rattachement est un fait, pas un jugement.
                 .filter(s -> s.getStatut() != StatutSeance.ANNULEE)
@@ -134,7 +132,7 @@ public class ConstatService {
                 .entre(cycle.get().getId(), cycle.get().getDateDebut(), limite)
                 .stream()
                 .filter(s -> s.getStatut() == StatutSeance.A_VENIR)
-                .filter(PlannedSession::estCourseAPied)
+                .filter(s -> s.getType().seConstate())
                 .filter(s -> s.getActivityId() == null)
                 .toList();
 
@@ -192,6 +190,10 @@ public class ConstatService {
      * il n'y a rien a comparer.
      */
     private boolean distanceVraisemblable(PlannedSession seance, Activity activite) {
+        if (!seance.estCourseAPied()) {
+            // Un renfo n'a pas de kilometres a comparer : la nature et la date suffisent.
+            return true;
+        }
         return seance.getDistanceCibleKm() == null || ecartDistance(seance, activite) <= ECART_DISTANCE_MAX;
     }
 
