@@ -83,20 +83,37 @@ const aConfirmer = computed(
           {{ seance.description }}
         </p>
 
-        <dl class="mt-4 grid grid-cols-2 gap-3">
-          <div v-if="seance.distanceCibleKm" class="rounded-lg bg-[var(--color-appui)] px-3 py-2">
+        <!--
+          Des blocs de même gabarit : deux chiffres côte à côte, puis le texte sur la pleine
+          largeur. Une case à demi-largeur voisine d'une case pleine donnait l'impression
+          qu'il manquait quelque chose là où il n'y avait rien à dire.
+        -->
+        <dl class="mt-4 grid grid-cols-2 items-stretch gap-2">
+          <div
+            v-if="seance.distanceCibleKm"
+            class="flex min-h-16 flex-col justify-between rounded-lg bg-[var(--color-appui)] px-3 py-2"
+          >
             <dt class="text-xs text-[var(--color-doux)]">Distance</dt>
             <dd class="tabulaire font-semibold">{{ km(seance.distanceCibleKm) }}</dd>
           </div>
-          <div v-if="seance.dureeCibleMin" class="rounded-lg bg-[var(--color-appui)] px-3 py-2">
+          <div
+            v-if="seance.dureeCibleMin"
+            class="flex min-h-16 flex-col justify-between rounded-lg bg-[var(--color-appui)] px-3 py-2"
+          >
             <dt class="text-xs text-[var(--color-doux)]">Durée</dt>
             <dd class="tabulaire font-semibold">{{ seance.dureeCibleMin }} min</dd>
           </div>
-          <div v-if="seance.alluresTexte" class="col-span-2 rounded-lg bg-[var(--color-appui)] px-3 py-2">
+          <div
+            v-if="seance.alluresTexte"
+            class="col-span-2 flex min-h-16 flex-col justify-between rounded-lg bg-[var(--color-appui)] px-3 py-2"
+          >
             <dt class="text-xs text-[var(--color-doux)]">Allures à tenir</dt>
             <dd class="font-semibold">{{ seance.alluresTexte }}</dd>
           </div>
-          <div v-if="seance.focus" class="col-span-2 rounded-lg bg-[var(--color-appui)] px-3 py-2">
+          <div
+            v-if="seance.focus"
+            class="col-span-2 flex min-h-16 flex-col justify-between rounded-lg bg-[var(--color-appui)] px-3 py-2"
+          >
             <dt class="text-xs text-[var(--color-doux)]">Focus</dt>
             <dd class="font-medium">{{ seance.focus }}</dd>
           </div>

@@ -16,7 +16,11 @@ import type { Seance } from '@/api/types'
  * le semainier pour ouvrir la fiche d'une séance qu'il avait pourtant sous les yeux.
  */
 const props = defineProps<{ seance: Seance }>()
-const emit = defineEmits<{ ouvrir: []; statut: [statut: 'REALISEE' | 'NON_REALISEE'] }>()
+const emit = defineEmits<{
+  ouvrir: []
+  ouvrirActivite: []
+  statut: [statut: 'REALISEE' | 'NON_REALISEE']
+}>()
 
 const faite = computed(
   () => props.seance.statut === 'REALISEE' || props.seance.statut === 'ANALYSEE',
@@ -94,10 +98,27 @@ const allureCle = computed(() => {
         >{{ seance.commentaireCoach }}
       </p>
 
-      <p class="mt-4 text-sm font-medium text-[var(--color-accent)]">
-        {{ seance.activityId ? 'Voir ce que tu as couru' : 'Voir le détail' }} →
+      <p v-if="!seance.activityId" class="mt-4 text-sm font-medium text-[var(--color-accent)]">
+        Voir le détail →
       </p>
     </button>
+
+    <!--
+      Quand la sortie a été courue, c'est elle qu'on vient voir, pas la consigne qui l'a
+      précédée. Le lien y mène donc directement — auparavant il annonçait « ce que tu as
+      couru » et rouvrait le prévu.
+    -->
+    <div
+      v-if="seance.activityId"
+      class="border-t border-[var(--color-bordure)] px-4 py-3 sm:px-5"
+    >
+      <button
+        class="cursor-pointer text-sm font-medium text-[var(--color-accent)]"
+        @click="emit('ouvrirActivite')"
+      >
+        Ma sortie →
+      </button>
+    </div>
 
     <!-- Trancher reste hors du bouton : cliquer « je l'ai faite » ne doit pas ouvrir la fiche. -->
     <div

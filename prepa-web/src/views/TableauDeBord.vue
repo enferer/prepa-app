@@ -150,6 +150,7 @@ async function trancherDepuisLaFiche(statut: StatutSeance) {
       :key="seance.id"
       :seance="seance"
       @ouvrir="ouvrirFiche(seance)"
+      @ouvrir-activite="ouvrirActivite(seance)"
       @statut="(s) => trancher(seance, s)"
     />
 

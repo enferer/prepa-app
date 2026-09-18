@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import GrapheStructure from '@/components/cycle/GrapheStructure.vue'
+import IconeSeance from '@/components/ui/IconeSeance.vue'
 import { km } from '@/composables/useFormat'
 import type { Seance, Semaine, TypeSeance } from '@/api/types'
 
@@ -60,6 +61,16 @@ function teinte(type: TypeSeance): string {
   return TEINTES[type] ?? 'var(--color-effort-facile)'
 }
 
+/**
+ * Le fond de la pastille : la même teinte, diluée.
+ *
+ * <p>Un aplat léger derrière le pictogramme suffit à faire ressortir les jours où l'on
+ * court, sans ajouter une couleur de plus à la palette.
+ */
+function fond(type: TypeSeance): string {
+  return `color-mix(in srgb, ${teinte(type)} 14%, transparent)`
+}
+
 /** Les libellés courts : dans une colonne large de cent pixels, « Allure marathon » ne tient pas. */
 const COURTS: Record<TypeSeance, string> = {
   EF: 'Endurance', SL: 'Sortie longue', SEUIL: 'Seuil', VMA: 'VMA', AM: 'Allure marathon',
@@ -115,49 +126,65 @@ function marque(seance: Seance): { signe: string; classe: string; titre: string 
     </div>
 
     <!-- Sept colonnes sur écran large, sept lignes sur téléphone : dans les deux cas,
-         un jour = un bloc, et les jours de repos restent visibles. -->
+         un jour = un bloc. Les jours où l'on court sont posés sur une surface pleine ; les
+         jours de repos restent visibles mais s'effacent — c'est le contraste entre les deux
+         qui donne le rythme de la semaine au premier regard. -->
     <ol class="grid gap-2 sm:grid-cols-7">
       <li
         v-for="jour in jours"
         :key="jour.iso"
-        class="rounded-lg border p-2 transition-colors"
+        class="rounded-lg p-2 transition-colors"
         :class="[
           jour.aujourdhui
-            ? 'border-[var(--color-accent)] bg-[var(--color-accent-fond)]'
-            : 'border-[var(--color-bordure)]',
-          jour.passe && !jour.aujourdhui ? 'opacity-70' : '',
+            ? 'outline-2 outline-[var(--color-accent)]'
+            : 'outline-1 outline-[var(--color-bordure)]',
+          jour.seances.length
+            ? 'bg-[var(--color-surface)] shadow-sm'
+            : 'outline-dashed bg-transparent',
+          !jour.seances.length && !jour.aujourdhui ? (jour.passe ? 'opacity-40' : 'opacity-65') : '',
         ]"
       >
         <div class="mb-1.5 flex items-baseline gap-1.5">
           <span
-            class="text-xs font-medium uppercase"
-            :class="jour.aujourdhui ? 'text-[var(--color-accent)]' : 'text-[var(--color-doux)]'"
+            class="text-xs font-semibold uppercase"
+            :class="
+              jour.aujourdhui
+                ? 'text-[var(--color-accent)]'
+                : jour.seances.length
+                  ? 'text-[var(--color-texte)]'
+                  : 'text-[var(--color-doux)]'
+            "
           >
             {{ jour.nom }}
           </span>
           <span class="tabulaire text-xs text-[var(--color-doux)]">{{ jour.numero }}</span>
         </div>
 
-        <p v-if="!jour.seances.length" class="py-1 text-xs text-[var(--color-doux)] opacity-60">
+        <p
+          v-if="!jour.seances.length"
+          class="flex items-center gap-1.5 py-1 text-xs text-[var(--color-doux)]"
+        >
+          <IconeSeance type="REPOS" class="size-3.5 shrink-0" />
           repos
         </p>
 
         <!--
-          Une séance tient en trois signes : un liseré coloré qui dit son intensité, son nom,
-          et le dessin de son déroulé. Le reste — la consigne, les allures — vit dans la fiche,
-          qui s'ouvre d'un clic.
+          Une séance tient en trois signes : un pictogramme coloré qui dit sa nature et son
+          intensité, son nom, et le dessin de son déroulé. Le reste — la consigne, les
+          allures — vit dans la fiche, qui s'ouvre d'un clic.
         -->
         <button
           v-for="seance in jour.seances"
           :key="seance.id"
-          class="mb-1 flex w-full cursor-pointer gap-2 rounded-md bg-[var(--color-surface)] p-1.5 text-left last:mb-0 hover:bg-[var(--color-appui)]"
+          class="mb-1 flex w-full cursor-pointer gap-2 rounded-md p-1.5 text-left last:mb-0 hover:bg-[var(--color-appui)]"
           @click="emit('ouvrir', seance)"
         >
           <span
-            class="w-1 shrink-0 rounded-full"
-            :style="{ backgroundColor: teinte(seance.type) }"
-            aria-hidden="true"
-          />
+            class="grid size-5 shrink-0 place-items-center rounded-md"
+            :style="{ color: teinte(seance.type), backgroundColor: fond(seance.type) }"
+          >
+            <IconeSeance :type="seance.type" class="size-3.5" />
+          </span>
           <span class="min-w-0 flex-1">
             <span class="flex items-baseline gap-1">
               <span class="min-w-0 flex-1 truncate text-xs font-medium">

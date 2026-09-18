@@ -156,12 +156,5 @@ const dessin = computed(() =>
         </span>
       </li>
     </ol>
-
-    <p
-      v-if="variante === 'complet' && blocs.length > 1"
-      class="mt-2 text-xs text-[var(--color-doux)]"
-    >
-      La largeur suit le temps passé, pas la distance.
-    </p>
   </div>
 </template>
