@@ -175,6 +175,30 @@ class WeekPlanIntegrationTest extends IntegrationTestBase {
     }
 
     @Test
+    @DisplayName("refuse au coach un commentaire de seance qui deborde de deux phrases")
+    void commentaireCoachPlafonne() throws Exception {
+        PlannedSession sortieLongue = planifier(TypeSeance.SL, 28);
+        String pave = "x".repeat(PlannedSession.COMMENTAIRE_COACH_MAX + 1);
+
+        // Un commentaire se lit sous une seance, dans une liste : c'est un verdict. Ce qui
+        // demande davantage de place est une decision, et une decision vit dans une note de
+        // coach — datee, bornee, et qu'on retrouve.
+        mvc.perform(patch("/api/v1/sessions/" + sortieLongue.getId())
+                        .header("X-Service-Key", cleCoach)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(
+                                java.util.Map.of("commentaireCoach", pave))))
+                .andExpect(status().isBadRequest());
+
+        mvc.perform(patch("/api/v1/sessions/" + sortieLongue.getId())
+                        .header("X-Service-Key", cleCoach)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(java.util.Map.of(
+                                "commentaireCoach", "Allures tenues, FC coherente. Rien a signaler."))))
+                .andExpect(status().isOk());
+    }
+
+    @Test
     @DisplayName("refuse une cible de volume negative")
     void cibleNegative() throws Exception {
         mvc.perform(patch("/api/v1/weeks/" + semaine.getId())

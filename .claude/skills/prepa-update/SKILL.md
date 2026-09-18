@@ -95,6 +95,12 @@ Ton travail consiste à faire passer les séances de `REALISEE` ou `NON_REALISEE
 ./cli/prepa PATCH /sessions/<seanceId> '{"statut":"ANALYSEE","commentaireCoach":"Allures tenues, FC cohérente. Rien à signaler."}'
 ```
 
+**Deux phrases, pas davantage.** L'API refuse un `commentaireCoach` de plus de **280
+caractères** — ce commentaire se lit sous une séance, dans une liste : il porte le verdict, le
+chiffre qui le fonde et la conséquence, rien d'autre. Le raisonnement complet se dit dans la
+conversation ; ce qui doit survivre au mois va en note de coach (§7) ; le déroulé, l'athlète
+l'a déjà sous les yeux. Voir « Écrire un commentaire de séance » au §5 de la méthodologie.
+
 Une séance `NON_REALISEE` passe aussi en `ANALYSEE` — la raison, elle, vit dans ton
 commentaire. Le constat dit qu'il ne s'est rien passé ; c'est toi qui dis pourquoi, **après
 avoir demandé**. Si elle a été décalée dans la semaine, `DEPLACEE` avec la nouvelle date.

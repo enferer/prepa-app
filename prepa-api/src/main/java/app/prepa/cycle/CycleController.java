@@ -207,7 +207,7 @@ public class CycleController {
      */
     @PatchMapping("/sessions/{sessionId}")
     public CycleDtos.SessionResponse modifierSeance(
-            @PathVariable UUID sessionId, @RequestBody CycleDtos.CoachSessionPatch patch) {
+            @PathVariable UUID sessionId, @Valid @RequestBody CycleDtos.CoachSessionPatch patch) {
         Principal principal = CurrentPrincipal.get();
         PlannedSession seance = planService.seanceParId(sessionId);
         athletes.modifiable(planService.athleteDe(seance), principal);

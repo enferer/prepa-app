@@ -208,7 +208,7 @@ public final class CycleDtos {
             BigDecimal distanceCibleKm,
             Short dureeCibleMin,
             String focus,
-            String commentaireCoach,
+            @Size(max = PlannedSession.COMMENTAIRE_COACH_MAX) String commentaireCoach,
             UUID signatureSessionId,
             /** Le deroule, bloc par bloc. Laisse vide, il sera relu dans la description. */
             @Valid List<BlocSeance> structure) {}
@@ -229,7 +229,7 @@ public final class CycleDtos {
             BigDecimal distanceCibleKm,
             Short dureeCibleMin,
             String focus,
-            String commentaireCoach,
+            @Size(max = PlannedSession.COMMENTAIRE_COACH_MAX) String commentaireCoach,
             LocalDate date,
             Short ordre,
             @Valid List<BlocSeance> structure) {}

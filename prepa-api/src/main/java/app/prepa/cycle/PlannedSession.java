@@ -34,6 +34,13 @@ import lombok.Setter;
 @Setter
 public class PlannedSession {
 
+    /**
+     * Longueur maximale du commentaire de coach : une ou deux phrases. Un commentaire lu
+     * sous une seance est un verdict, pas une analyse — ce qui demande plus de place est
+     * une decision, et une decision vit dans une {@code CoachNote}.
+     */
+    public static final int COMMENTAIRE_COACH_MAX = 280;
+
     @Id
     private UUID id;
 
