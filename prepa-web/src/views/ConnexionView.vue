@@ -8,7 +8,7 @@ const auth = useAuth()
 const entrainement = useEntrainement()
 const router = useRouter()
 
-const email = ref('')
+const identifiant = ref('')
 const motDePasse = ref('')
 const erreur = ref<string | null>(null)
 const envoi = ref(false)
@@ -17,7 +17,7 @@ async function soumettre() {
   erreur.value = null
   envoi.value = true
   try {
-    await auth.connecter(email.value, motDePasse.value)
+    await auth.connecter(identifiant.value, motDePasse.value)
     await entrainement.charger()
     router.push({ name: 'tableau-de-bord' })
   } catch (e) {
@@ -37,11 +37,13 @@ async function soumettre() {
       <h1 class="text-lg font-semibold">Suivi d'entraînement</h1>
       <p class="mt-1 text-sm text-[var(--color-doux)]">Connecte-toi pour retrouver ton plan.</p>
 
-      <label class="mt-5 block text-sm font-medium" for="email">Email</label>
+      <label class="mt-5 block text-sm font-medium" for="identifiant">Email ou nom d'utilisateur</label>
       <input
-        id="email"
-        v-model="email"
-        type="email"
+        id="identifiant"
+        v-model="identifiant"
+        type="text"
+        autocapitalize="none"
+        spellcheck="false"
         autocomplete="username"
         required
         class="mt-1 w-full rounded-lg border border-[var(--color-bordure)] bg-[var(--color-fond)] px-3 py-2"

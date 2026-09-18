@@ -8,9 +8,10 @@ import type {
 /** Appels de l'API, regroupes par domaine. */
 
 export const authApi = {
-  connexion: (email: string, motDePasse: string) =>
+  /** L'identifiant est au choix l'email ou le nom d'utilisateur : c'est l'API qui tranche. */
+  connexion: (identifiant: string, motDePasse: string) =>
     api.post<{ accessToken: string; refreshToken: string; expiresInSec: number }>(
-      '/auth/login', { email, motDePasse }),
+      '/auth/login', { identifiant, motDePasse }),
   deconnexion: (refreshToken: string) => api.post<void>('/auth/logout', { refreshToken }),
   moi: () => api.get<Athlete>('/me'),
 }

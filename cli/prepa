@@ -84,7 +84,11 @@ def resoudre_athlete(config, demande):
         noms = ", ".join(a["displayName"] for a in athletes)
         sortir(f"Precise --athlete parmi : {noms}")
     for athlete in athletes:
-        if cible.lower() in (athlete["displayName"].lower(), athlete["id"], athlete["email"].lower()):
+        # L'email et le nom d'utilisateur ne sont servis que pour l'athlete de la cle : les
+        # autres arrivent sans, d'ou le filtrage des valeurs absentes.
+        reperes = [athlete["id"], athlete["displayName"].lower()]
+        reperes += [athlete[cle].lower() for cle in ("email", "username") if athlete.get(cle)]
+        if cible.lower() in reperes:
             return athlete["id"]
     sortir(f"Athlete introuvable : {cible}")
 

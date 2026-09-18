@@ -38,12 +38,18 @@ public class AuthService {
         this.props = props;
     }
 
+    /**
+     * Connecte un athlete a partir de son email ou de son nom d'utilisateur.
+     *
+     * <p>Le refus reste le meme dans tous les cas : identifiant inconnu et mot de passe faux ne
+     * se distinguent pas, sans quoi la page de connexion dirait qui possede un compte ici.
+     */
     @Transactional
-    public AuthDtos.TokenResponse login(String email, String motDePasse) {
-        Athlete athlete = athletes.findByEmailIgnoreCase(email)
+    public AuthDtos.TokenResponse login(String identifiant, String motDePasse) {
+        Athlete athlete = athletes.findByIdentifiant(identifiant.trim())
                 .filter(a -> passwordEncoder.matches(motDePasse, a.getPasswordHash()))
                 .orElseThrow(() -> new ApiException(
-                        HttpStatus.UNAUTHORIZED, "BAD_CREDENTIALS", "Email ou mot de passe incorrect"));
+                        HttpStatus.UNAUTHORIZED, "BAD_CREDENTIALS", "Identifiant ou mot de passe incorrect"));
         return emettre(athlete);
     }
 

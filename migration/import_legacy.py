@@ -250,7 +250,7 @@ class Api:
         """Ouvre une session administrateur et renvoie son jeton d'acces."""
         requete = urllib.request.Request(
             f"{base.rstrip('/')}/api/v1/auth/login",
-            data=json.dumps({"email": email, "motDePasse": mot_de_passe}).encode(),
+            data=json.dumps({"identifiant": email, "motDePasse": mot_de_passe}).encode(),
             method="POST")
         requete.add_header("Content-Type", "application/json")
         with urllib.request.urlopen(requete) as reponse:

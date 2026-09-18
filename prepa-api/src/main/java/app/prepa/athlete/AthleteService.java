@@ -56,12 +56,44 @@ public class AthleteService {
         if (athletes.existsByEmailIgnoreCase(req.email())) {
             throw ApiException.conflit("Un athlète utilise déjà cet email");
         }
+        UUID id = UUID.randomUUID();
+        String username = req.username() == null || req.username().isBlank()
+                ? Username.depuisNomAffiche(req.displayName(), id)
+                : Username.normaliser(req.username());
+        verifierUsernameLibre(username);
         Athlete athlete = new Athlete(
-                UUID.randomUUID(), req.email(), passwordEncoder.encode(req.motDePasse()), req.displayName());
+                id, req.email(), username, passwordEncoder.encode(req.motDePasse()), req.displayName());
         if (req.role() != null) {
             athlete.setRole(req.role());
         }
         return athletes.save(athlete);
+    }
+
+    /**
+     * Change le nom d'utilisateur d'un compte. Reserve a l'administration : c'est une cle de
+     * connexion, pas une preference d'affichage — la changer coupe l'ancienne porte d'entree.
+     */
+    @Transactional
+    public Athlete renommer(UUID id, AthleteDtos.UpdateAthleteRequest req) {
+        Athlete athlete = parId(id);
+        if (req.username() != null && !req.username().isBlank()) {
+            String username = Username.normaliser(req.username());
+            if (!username.equalsIgnoreCase(athlete.getUsername())) {
+                verifierUsernameLibre(username);
+                athlete.setUsername(username);
+            }
+        }
+        return athletes.save(athlete);
+    }
+
+    private void verifierUsernameLibre(String username) {
+        if (!Username.estValide(username)) {
+            throw ApiException.invalide(
+                    "Nom d'utilisateur invalide : minuscules, chiffres, point, tiret ou souligné, 30 caractères au plus");
+        }
+        if (athletes.existsByUsernameIgnoreCase(username)) {
+            throw ApiException.conflit("Un athlète utilise déjà ce nom d'utilisateur");
+        }
     }
 
     @Transactional

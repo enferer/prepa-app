@@ -8,8 +8,8 @@ export const useAuth = defineStore('auth', () => {
   const athlete = ref<Athlete | null>(null)
   const chargement = ref(false)
 
-  async function connecter(email: string, motDePasse: string) {
-    const reponse = await authApi.connexion(email, motDePasse)
+  async function connecter(identifiant: string, motDePasse: string) {
+    const reponse = await authApi.connexion(identifiant, motDePasse)
     jetons.enregistrer(reponse.accessToken, reponse.refreshToken)
     athlete.value = await authApi.moi()
   }

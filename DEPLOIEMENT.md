@@ -69,6 +69,7 @@ read -rsp 'Confirme le mot de passe : ' MDP2 && echo
 timeout 150 docker compose -f docker-compose.prod.yml run --rm --no-deps \
   -e PREPA_SEED_ENABLED=true \
   -e PREPA_SEED_ADMIN_EMAIL=toi@example.org \
+  -e PREPA_SEED_ADMIN_USERNAME=toi \
   -e PREPA_SEED_ADMIN_PASSWORD="$MDP" \
   api 2>&1 | grep -B3 -A3 'Cle de service'
 ```
@@ -80,7 +81,7 @@ qu'au premier usage — souvent bien plus tard. Vérifie donc tout de suite :
 ```bash
 printf '%s' "$MDP" | python3 -c "
 import json, sys, urllib.request, urllib.error
-corps = json.dumps({'email': 'toi@example.org', 'motDePasse': sys.stdin.read()}).encode()
+corps = json.dumps({'identifiant': 'toi@example.org', 'motDePasse': sys.stdin.read()}).encode()
 requete = urllib.request.Request('http://localhost:8080/api/v1/auth/login', corps,
                                  {'Content-Type': 'application/json'})
 try:

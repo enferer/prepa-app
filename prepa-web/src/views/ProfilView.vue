@@ -62,7 +62,14 @@ onMounted(charger)
 <template>
   <div v-if="profil" class="space-y-5">
     <div class="flex items-center justify-between">
-      <h1 class="text-lg font-semibold">{{ auth.athlete?.displayName }}</h1>
+      <div>
+        <h1 class="text-lg font-semibold">{{ auth.athlete?.displayName }}</h1>
+        <!-- Un identifiant qu'on ignore ne sert a personne : la connexion accepte l'un ou l'autre. -->
+        <p class="text-sm text-[var(--color-doux)]">
+          Connexion : {{ auth.athlete?.email }}
+          <template v-if="auth.athlete?.username"> ou {{ auth.athlete.username }}</template>
+        </p>
+      </div>
       <button class="text-sm text-[var(--color-doux)] hover:underline" @click="deconnecter">
         Se déconnecter
       </button>

@@ -32,6 +32,7 @@ public class SeedRunner implements ApplicationRunner {
     private final String email;
     private final String motDePasse;
     private final String nom;
+    private final String username;
 
     public SeedRunner(
             AthleteRepository athletes,
@@ -39,13 +40,15 @@ public class SeedRunner implements ApplicationRunner {
             ServiceKeyService serviceKeys,
             @org.springframework.beans.factory.annotation.Value("${prepa.seed.admin-email}") String email,
             @org.springframework.beans.factory.annotation.Value("${prepa.seed.admin-password}") String motDePasse,
-            @org.springframework.beans.factory.annotation.Value("${prepa.seed.admin-name:Admin}") String nom) {
+            @org.springframework.beans.factory.annotation.Value("${prepa.seed.admin-name:Admin}") String nom,
+            @org.springframework.beans.factory.annotation.Value("${prepa.seed.admin-username:admin}") String username) {
         this.athletes = athletes;
         this.passwordEncoder = passwordEncoder;
         this.serviceKeys = serviceKeys;
         this.email = email;
         this.motDePasse = motDePasse;
         this.nom = nom;
+        this.username = username;
     }
 
     @Override
@@ -54,7 +57,8 @@ public class SeedRunner implements ApplicationRunner {
             log.info("Seed ignore : la base contient deja des athletes");
             return;
         }
-        Athlete admin = new Athlete(UUID.randomUUID(), email, passwordEncoder.encode(motDePasse), nom);
+        Athlete admin = new Athlete(
+                UUID.randomUUID(), email, username, passwordEncoder.encode(motDePasse), nom);
         admin.setRole("ADMIN");
         athletes.save(admin);
 
@@ -65,10 +69,10 @@ public class SeedRunner implements ApplicationRunner {
         log.warn("""
 
                 ==========================================================================
-                 Compte admin cree : {}
+                 Compte admin cree : {} (nom d'utilisateur : {})
                  Cle de service (notee une seule fois, conserve-la maintenant) :
                  {}
                 ==========================================================================
-                """, email, cle.cle());
+                """, email, username, cle.cle());
     }
 }

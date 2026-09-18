@@ -34,14 +34,17 @@ vers le port 8080 : pas de question de CORS.
 
 ## Se connecter
 
-| Compte | Mot de passe | Ce qu'il voit |
-|---|---|---|
-| `thibaut@prepa.local` | `motdepasse123` | sa prépa marathon, 254 activités |
-| `camille@prepa.local` | `motdepasse123` | sa prépa, 142 activités |
-| `admin@prepa.local` | `motdepasse123` | idem + création de comptes et de clés |
+Le champ d'identifiant accepte **l'email ou le nom d'utilisateur**, indifféremment.
 
-Ces comptes viennent de la migration. **Mots de passe de développement** — à changer au
-déploiement.
+| Compte | Nom d'utilisateur | Mot de passe | Ce qu'il voit |
+|---|---|---|---|
+| `thibaut@prepa.local` | `thibaut` | `motdepasse123` | sa prépa marathon, 254 activités |
+| `camille@prepa.local` | `camille` | `motdepasse123` | sa prépa, 142 activités |
+| `admin@prepa.local` | `admin` | `motdepasse123` | idem + création de comptes et de clés |
+
+Ces comptes viennent de la migration — leur nom d'utilisateur est dérivé du nom affiché, et
+se corrige par `PATCH /admin/athletes/{id}`. **Mots de passe de développement** — à changer
+au déploiement.
 
 ## Si la base est vide
 
@@ -52,6 +55,7 @@ Au tout premier démarrage, ou après un `down -v` :
 cd prepa-api && ./mvnw spring-boot:run \
   -Dspring-boot.run.arguments="--prepa.seed.enabled=true \
     --prepa.seed.admin-email=admin@prepa.local \
+    --prepa.seed.admin-username=admin \
     --prepa.seed.admin-password=motdepasse123"
 ```
 

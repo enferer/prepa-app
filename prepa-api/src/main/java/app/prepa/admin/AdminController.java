@@ -8,6 +8,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import java.util.List;
 import java.util.UUID;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +31,12 @@ public class AdminController {
     @PostMapping("/athletes")
     public AthleteDtos.AthleteResponse creerAthlete(@Valid @RequestBody AthleteDtos.CreateAthleteRequest req) {
         return AthleteDtos.AthleteResponse.from(athleteService.creer(req));
+    }
+
+    @PatchMapping("/athletes/{athleteId}")
+    public AthleteDtos.AthleteResponse majAthlete(
+            @PathVariable UUID athleteId, @Valid @RequestBody AthleteDtos.UpdateAthleteRequest req) {
+        return AthleteDtos.AthleteResponse.from(athleteService.renommer(athleteId, req));
     }
 
     @PostMapping("/service-keys")

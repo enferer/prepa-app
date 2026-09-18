@@ -19,7 +19,7 @@ public class AuthController {
 
     @PostMapping("/login")
     public AuthDtos.TokenResponse login(@Valid @RequestBody AuthDtos.LoginRequest req) {
-        return authService.login(req.email(), req.motDePasse());
+        return authService.login(req.identifiant(), req.motDePasse());
     }
 
     @PostMapping("/refresh")

@@ -33,8 +33,9 @@ export type BlocEntrainement =
 
 export interface Athlete {
   id: string
-  /** Absent des athletes qu'on ne fait que consulter : le menu n'a besoin que du nom. */
+  /** Absents des athletes qu'on ne fait que consulter : le menu n'a besoin que du nom. */
   email?: string
+  username?: string
   displayName: string
   timezone: string
   locale: string

@@ -219,7 +219,7 @@ class WeekPlanIntegrationTest extends IntegrationTestBase {
         String corps = mvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders
                         .post("/api/v1/auth/login")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"email\":\"semaine@example.test\",\"motDePasse\":\"" + MOT_DE_PASSE + "\"}"))
+                        .content("{\"identifiant\":\"semaine@example.test\",\"motDePasse\":\"" + MOT_DE_PASSE + "\"}"))
                 .andExpect(status().isOk())
                 .andReturn()
                 .getResponse()

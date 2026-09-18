@@ -24,6 +24,7 @@ import tools.jackson.databind.ObjectMapper;
 class AuthFlowIntegrationTest extends IntegrationTestBase {
 
     private static final String EMAIL = "athlete@example.com";
+    private static final String USERNAME = "athlete-test";
     private static final String MOT_DE_PASSE = "motdepasse123";
 
     @Autowired
@@ -77,6 +78,7 @@ class AuthFlowIntegrationTest extends IntegrationTestBase {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value(athleteId.toString()))
                 .andExpect(jsonPath("$.email").value(EMAIL))
+                .andExpect(jsonPath("$.username").value(USERNAME))
                 .andExpect(jsonPath("$.role").value("ATHLETE"));
     }
 
@@ -98,6 +100,26 @@ class AuthFlowIntegrationTest extends IntegrationTestBase {
     @DisplayName("l'email est insensible a la casse")
     void loginCasseEmail() throws Exception {
         mvc.perform(login(EMAIL.toUpperCase(), MOT_DE_PASSE)).andExpect(status().isOk());
+    }
+
+    @Test
+    @DisplayName("le nom d'utilisateur ouvre la meme session que l'email, quelle qu'en soit la casse")
+    void loginParNomUtilisateur() throws Exception {
+        String accessToken = jetons(USERNAME, MOT_DE_PASSE).get("accessToken").asString();
+
+        mvc.perform(get("/api/v1/me").header("Authorization", "Bearer " + accessToken))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(athleteId.toString()));
+
+        mvc.perform(login(USERNAME.toUpperCase(), MOT_DE_PASSE)).andExpect(status().isOk());
+    }
+
+    @Test
+    @DisplayName("un nom d'utilisateur inconnu se refuse comme un email inconnu")
+    void loginNomUtilisateurInconnu() throws Exception {
+        mvc.perform(login("personne", MOT_DE_PASSE))
+                .andExpect(status().isUnauthorized())
+                .andExpect(jsonPath("$.error.code").value("BAD_CREDENTIALS"));
     }
 
     @Test
@@ -167,14 +189,14 @@ class AuthFlowIntegrationTest extends IntegrationTestBase {
     }
 
     private org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder login(
-            String email, String motDePasse) {
+            String identifiant, String motDePasse) {
         return post("/api/v1/auth/login")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content("{\"email\":\"" + email + "\",\"motDePasse\":\"" + motDePasse + "\"}");
+                .content("{\"identifiant\":\"" + identifiant + "\",\"motDePasse\":\"" + motDePasse + "\"}");
     }
 
-    private JsonNode jetons(String email, String motDePasse) throws Exception {
-        String corps = mvc.perform(login(email, motDePasse))
+    private JsonNode jetons(String identifiant, String motDePasse) throws Exception {
+        String corps = mvc.perform(login(identifiant, motDePasse))
                 .andExpect(status().isOk())
                 .andReturn()
                 .getResponse()

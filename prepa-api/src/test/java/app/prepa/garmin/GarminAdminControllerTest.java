@@ -206,7 +206,7 @@ class GarminAdminControllerTest extends IntegrationTestBase {
     private String jeton(String email) throws Exception {
         String corps = mvc.perform(post("/api/v1/auth/login")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"email\":\"" + email + "\",\"motDePasse\":\"" + MOT_DE_PASSE + "\"}"))
+                        .content("{\"identifiant\":\"" + email + "\",\"motDePasse\":\"" + MOT_DE_PASSE + "\"}"))
                 .andExpect(status().isOk())
                 .andReturn()
                 .getResponse()

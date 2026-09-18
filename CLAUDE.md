@@ -87,6 +87,15 @@ réalité, il ne redessine pas l'entraînement.*
 Une tentative interdite renvoie `403 FORBIDDEN_FIELD` **en nommant le champ**, plutôt qu'un
 refus opaque.
 
+### L'entrée : email ou nom d'utilisateur
+
+`POST /auth/login` prend un **`identifiant`** — l'email ou le nom d'utilisateur, au choix de
+celui qui tape. Les deux colonnes ne peuvent pas se croiser : un email porte un arobase, un
+nom d'utilisateur ne l'accepte pas. Tout compte en a un, dérivé du nom affiché quand on ne
+le pose pas, et seule l'administration le change (`PATCH /admin/athletes/{id}`) : c'est une
+porte d'entrée, pas une préférence d'affichage. Comme l'email, il n'est pas servi aux autres
+athlètes — les deux ouvrent une session.
+
 ### Les athlètes se voient entre eux, en lecture
 
 Une deuxième ligne traverse la première : *l'entraînement se regarde, la personne non.* Tout

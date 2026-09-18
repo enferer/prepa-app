@@ -20,6 +20,10 @@ public class Athlete {
     @Column(nullable = false)
     private String email;
 
+    /** Second identifiant de connexion : ce qu'on tape quand on n'a pas envie de taper son email. */
+    @Column(nullable = false)
+    private String username;
+
     @Column(name = "password_hash", nullable = false)
     private String passwordHash;
 
@@ -47,11 +51,22 @@ public class Athlete {
 
     protected Athlete() {}
 
-    public Athlete(UUID id, String email, String passwordHash, String displayName) {
+    public Athlete(UUID id, String email, String username, String passwordHash, String displayName) {
         this.id = id;
         this.email = email;
+        this.username = username;
         this.passwordHash = passwordHash;
         this.displayName = displayName;
+    }
+
+    /**
+     * Cree un athlete dont le nom d'utilisateur est derive du nom affiche.
+     *
+     * <p>Aucun compte ne vit sans nom d'utilisateur : quand on ne le pose pas, on le deduit
+     * plutot que de le laisser vide.
+     */
+    public Athlete(UUID id, String email, String passwordHash, String displayName) {
+        this(id, email, Username.depuisNomAffiche(displayName, id), passwordHash, displayName);
     }
 
     @PrePersist
@@ -80,6 +95,14 @@ public class Athlete {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPasswordHash() {

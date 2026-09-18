@@ -61,6 +61,6 @@ class OriginesConfigureesIntegrationTest extends IntegrationTestBase {
     private org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder login() {
         return post("/api/v1/auth/login")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content("{\"email\":\"" + EMAIL + "\",\"motDePasse\":\"" + MOT_DE_PASSE + "\"}");
+                .content("{\"identifiant\":\"" + EMAIL + "\",\"motDePasse\":\"" + MOT_DE_PASSE + "\"}");
     }
 }
