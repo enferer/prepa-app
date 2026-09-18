@@ -165,15 +165,21 @@ public final class CycleDtos {
             String commentaireAthlete,
             UUID activityId,
             String rapprochement,
-            /** Le deroule de la seance, relu depuis sa description — voir {@link StructureSeance}. */
-            List<StructureSeance.BlocPrevu> structure) {
+            /**
+             * Le deroule, pret a dessiner : pose par le coach, ou relu dans la description a
+             * defaut — voir {@link StructureSeance}.
+             */
+            List<StructureSeance.BlocPrevu> structure,
+            /** Vrai quand le deroule vient du coach, faux quand il a fallu relire la phrase. */
+            boolean structureSaisie) {
 
         public static SessionResponse from(PlannedSession s) {
             return new SessionResponse(
                     s.getId(), s.getWeekId(), s.getDate(), s.getOrdre(), s.getType(), s.getTitre(),
                     s.getDescription(), s.getStatut(), s.getAlluresTexte(), s.getDistanceCibleKm(),
                     s.getDureeCibleMin(), s.getFocus(), s.getCommentaireCoach(), s.getCommentaireAthlete(),
-                    s.getActivityId(), s.getRapprochement(), StructureSeance.deduire(s));
+                    s.getActivityId(), s.getRapprochement(), StructureSeance.deduire(s),
+                    s.getStructure() != null && !s.getStructure().isEmpty());
         }
     }
 
@@ -203,7 +209,9 @@ public final class CycleDtos {
             Short dureeCibleMin,
             String focus,
             String commentaireCoach,
-            UUID signatureSessionId) {}
+            UUID signatureSessionId,
+            /** Le deroule, bloc par bloc. Laisse vide, il sera relu dans la description. */
+            @Valid List<BlocSeance> structure) {}
 
     /** Modifications qu'un athlete peut faire lui-meme sur une seance. */
     public record AthleteSessionPatch(
@@ -223,7 +231,8 @@ public final class CycleDtos {
             String focus,
             String commentaireCoach,
             LocalDate date,
-            Short ordre) {}
+            Short ordre,
+            @Valid List<BlocSeance> structure) {}
 
     public record LinkActivityRequest(UUID activityId) {}
 }

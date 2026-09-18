@@ -19,3 +19,5 @@ databaseChangeLog:
       file: db/changelog/009-statuts-seance.sql
   - include:
       file: db/changelog/010-garmin-sync.sql
+  - include:
+      file: db/changelog/011-structure-seance.sql

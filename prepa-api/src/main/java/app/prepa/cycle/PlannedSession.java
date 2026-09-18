@@ -67,6 +67,16 @@ public class PlannedSession {
     @Column(name = "allures_texte")
     private String alluresTexte;
 
+    /**
+     * Le deroule de la seance, pose par le coach.
+     *
+     * <p>Null tant qu'il ne l'a pas ecrit : le deroule est alors relu dans la description, ce
+     * qui reste le cas de toutes les seances d'avant cette colonne. Voir {@link StructureSeance}.
+     */
+    @org.hibernate.annotations.JdbcTypeCode(org.hibernate.type.SqlTypes.JSON)
+    @Column
+    private List<BlocSeance> structure;
+
     @Column(name = "distance_cible_km")
     private BigDecimal distanceCibleKm;
 

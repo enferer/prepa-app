@@ -183,6 +183,11 @@ public class PlanService {
         if (patch.ordre() != null) {
             seance.setOrdre(patch.ordre());
         }
+        if (patch.structure() != null) {
+            // Une liste vide efface le deroule pose : la seance repasse alors a la relecture de
+            // sa description. C'est la seule facon de revenir en arriere sans supprimer la seance.
+            seance.setStructure(patch.structure().isEmpty() ? null : patch.structure());
+        }
         if (patch.date() != null) {
             rattacherASemaine(seance, patch.date());
         }
@@ -283,6 +288,8 @@ public class PlanService {
         seance.setFocus(entree.focus());
         seance.setCommentaireCoach(entree.commentaireCoach());
         seance.setSignatureSessionId(entree.signatureSessionId());
+        seance.setStructure(
+                entree.structure() == null || entree.structure().isEmpty() ? null : entree.structure());
         exigerFocusSiRenfo(seance);
         return seance;
     }

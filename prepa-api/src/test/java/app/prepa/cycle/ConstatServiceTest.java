@@ -210,7 +210,7 @@ class ConstatServiceTest extends IntegrationTestBase {
         return planService.ajouter(semaine.getId(), new CycleDtos.SessionInput(
                 date, (short) 0, type, type.name(), null, null, null,
                 distanceKm == null ? null : BigDecimal.valueOf(distanceKm), null,
-                type == TypeSeance.RENFO ? "gainage" : null, null, null));
+                type == TypeSeance.RENFO ? "gainage" : null, null, null, null));
     }
 
     private Activity enregistrer(LocalDate date, int distanceM) {

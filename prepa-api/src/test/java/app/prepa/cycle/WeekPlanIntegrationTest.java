@@ -207,12 +207,12 @@ class WeekPlanIntegrationTest extends IntegrationTestBase {
         return planService.ajouter(semaine.getId(), new CycleDtos.SessionInput(
                 semaine.getDateDebut(), (short) 0, type, type.name(), null, null, null,
                 distanceKm == null ? null : BigDecimal.valueOf(distanceKm), null,
-                type == TypeSeance.RENFO ? "gainage" : null, null, null));
+                type == TypeSeance.RENFO ? "gainage" : null, null, null, null));
     }
 
     private static CycleDtos.CoachSessionPatch patchStatut(StatutSeance statut) {
         return new CycleDtos.CoachSessionPatch(
-                statut, null, null, null, null, null, null, null, null, null, null);
+                statut, null, null, null, null, null, null, null, null, null, null, null);
     }
 
     private String jetonAthlete() throws Exception {

@@ -49,6 +49,37 @@ Une prépa marathon se découpe en blocs (à adapter au temps disponible avant l
 | **AM** | Allure marathon | Ancrer l'allure cible | Allure objectif course |
 | **Côtes** | Côtes | Force, économie, prévention | Effort sur montée |
 
+### Écrire le déroulé d'une séance
+
+Une séance porte deux choses distinctes, et il faut renseigner **les deux** :
+
+- **`description`** — la consigne, en français, pour l'athlète. « 2 km éch. + 3×1 km à AM (5:41)
+  récup 2 min + 2 km RAC. » C'est ce qu'il lit.
+- **`structure`** — les mêmes blocs, en données, pour que l'application les **dessine**. C'est
+  ce qu'il voit.
+
+```json
+"structure": [
+  { "role": "ECHAUFFEMENT", "distanceKm": 2,  "allureSecKm": 395 },
+  { "role": "EFFORT", "repetitions": 3, "distanceKm": 1, "allureSecKm": 341, "recupSec": 120 },
+  { "role": "RETOUR_AU_CALME", "distanceKm": 2, "allureSecKm": 395 }
+]
+```
+
+Rôles : `ECHAUFFEMENT`, `ENDURANCE`, `EFFORT`, `LIGNES`, `RECUPERATION`, `RETOUR_AU_CALME`.
+Chaque bloc dit sa longueur (`distanceKm`) **ou** sa durée (`dureeSec`) — sans l'une des deux,
+il ne se dessine pas. `repetitions` vaut 1 par défaut, `recupSec` sépare les répétitions.
+
+Trois teintes seulement à l'écran : échauffement, récupération et retour au calme se
+confondent en un palier « facile » ; `LIGNES` et `EFFORT` partagent le palier « intensité ».
+Choisis le rôle pour ce qu'il **est**, pas pour la couleur qu'il produira.
+
+**Renseigne toujours `structure`.** Sans elle, le serveur relit la description pour en déduire
+les blocs — un repli honnête pour les séances écrites avant que ce champ existe, mais une
+lecture de langage naturel se trompe tôt ou tard, et l'athlète voit alors un dessin qui ne
+correspond pas à sa séance. L'application signale d'ailleurs ces déroulés-là comme « déduits
+de la consigne ».
+
 ---
 
 ## 3. Calcul des allures

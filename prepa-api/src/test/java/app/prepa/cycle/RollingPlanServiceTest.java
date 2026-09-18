@@ -199,7 +199,7 @@ class RollingPlanServiceTest extends IntegrationTestBase {
     private void ajouter(TrainingWeek semaine, TypeSeance type, StatutSeance statut, String focus) {
         planService.ajouter(semaine.getId(), new CycleDtos.SessionInput(
                 semaine.getDateDebut(), (short) 0, type, type.name(), null, statut, null, null, null,
-                focus, null, null));
+                focus, null, null, null));
     }
 
     private Cycle cycleLibre(LigneDirectrice ligne, short horizon) {
