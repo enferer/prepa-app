@@ -54,9 +54,13 @@ Trois temps, et la distinction tient à **qui pose le statut** :
 | `ANALYSEE` | **le coach** | il l'a regardée et commentée |
 | `DEPLACEE` / `ANNULEE` | selon le cas | reportée dans la semaine, ou retirée du plan |
 
-`REALISEE` et `NON_REALISEE` sont des **constats**, posés à l'ingestion : l'athlète voit sa
-sortie comptée le soir même, sans attendre le point hebdomadaire, et le coach n'a pas à
-cocher à la main ce que les données disent déjà. `ANALYSEE` est un **jugement**.
+`REALISEE` et `NON_REALISEE` sont des **constats** ; `ANALYSEE` est un **jugement**. Les
+deux constats n'arrivent pas par le même chemin, parce qu'ils ne s'apprennent pas de la
+même façon : qu'une séance ait eu lieu se sait **à l'ingestion**, quand l'activité arrive ;
+qu'elle n'ait *pas* eu lieu ne découle d'aucun événement — c'est le temps qui passe qui le
+dit, et un **passage quotidien** le constate, un jour de battement laissé aux montres. Dans
+les deux cas l'athlète voit sa semaine à jour sans attendre le point hebdomadaire, et le
+coach n'a pas à cocher à la main ce que les données disent déjà.
 
 Il n'existe volontairement pas de statut « manquée » automatique : déclarer une séance
 manquée avant d'avoir demandé à l'athlète ce qui s'est passé reviendrait à juger sans savoir.

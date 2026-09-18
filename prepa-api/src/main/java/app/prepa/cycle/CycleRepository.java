@@ -14,6 +14,8 @@ public interface CycleRepository extends JpaRepository<Cycle, UUID> {
 
     Optional<Cycle> findByAthleteIdAndStatut(UUID athleteId, StatutCycle statut);
 
+    List<Cycle> findByStatut(StatutCycle statut);
+
     Optional<Cycle> findByAthleteIdAndSlug(UUID athleteId, String slug);
 
     boolean existsByAthleteIdAndSlug(UUID athleteId, String slug);

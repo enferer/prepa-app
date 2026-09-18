@@ -414,6 +414,7 @@ class Migration:
         self.importer_plan()
         self.importer_journal()
         self.importer_etat_analyse()
+        self.rattacher_activites()
         self.extraire_memoire_coach()
         return self.rapport
 
@@ -636,6 +637,21 @@ class Migration:
                              {"activityIds": sorted(set(ids))})
         self.rapport["dejaAnalysees"] = len(set(ids))
         print(f"  analysees : {len(set(ids))} activites deja passees en revue")
+
+    def rattacher_activites(self):
+        """Rejoue le rattachement des activites aux seances, plan une fois en place.
+
+        Les activites sont importees avant que le cycle et son plan n'existent : le constat
+        pose a l'ingestion n'avait donc aucune seance a rattacher, et tout le passe restait
+        « a venir ». On le rejoue ici, une fois le plan ecrit.
+        """
+        debut = self.plan.get("dateDebut") or self.objectifs.get("dateDebut")
+        chemin = f"/athletes/{self.athlete_id}/reconcile"
+        if debut:
+            chemin += f"?debut={debut}"
+        resultat = self.api.appeler("POST", chemin) or {}
+        print(f"  constats  : {resultat.get('seancesConstatees', 0)} seances tranchees")
+        self.rapport["seancesConstatees"] = resultat.get("seancesConstatees", 0)
 
     def extraire_memoire_coach(self):
         """Depose le texte cumulatif a relire : il devient des notes de coach a la main."""
