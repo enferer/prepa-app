@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import GrapheStructure from '@/components/cycle/GrapheStructure.vue'
 import IconeSeance from '@/components/ui/IconeSeance.vue'
 import { km } from '@/composables/useFormat'
 import type { Seance, Semaine, TypeSeance } from '@/api/types'
@@ -8,17 +7,19 @@ import type { Seance, Semaine, TypeSeance } from '@/api/types'
 const props = defineProps<{ semaine: Semaine }>()
 const emit = defineEmits<{ ouvrir: [seance: Seance] }>()
 
-const JOURS = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim']
+const JOURS = ['Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.', 'Dim.']
 
 const aujourdhui = new Date().toISOString().slice(0, 10)
 
 /**
  * Les sept jours, chacun avec ses séances.
  *
- * <p>Une semaine d'entraînement se lit comme un calendrier, pas comme une liste : c'est la
- * place des jours de repos entre les séances qui dit si la charge est tenable. On affiche
- * donc les sept jours, même vides — un jour vide ne porte que son nom, sans le mot
- * « repos » répété sept fois pour ne rien apprendre.
+ * <p>Une semaine se lit de haut en bas, un jour par ligne : la date à gauche, ce qu'il y a à
+ * faire à droite. Sept colonnes larges de cent pixels obligeaient à couper les titres —
+ * « Allure mara… » — là où c'est précisément le titre qui dit la séance.
+ *
+ * <p>Les jours de repos gardent leur ligne, en pointillé : c'est leur place entre les
+ * séances qui dit si la charge est tenable.
  */
 const jours = computed(() =>
   Array.from({ length: 7 }, (_, decalage) => {
@@ -39,10 +40,10 @@ const jours = computed(() =>
 )
 
 /**
- * La couleur du liseré d'une séance, sur la même rampe que le déroulé.
+ * La couleur du pictogramme, sur la même rampe que le déroulé de la fiche.
  *
- * <p>C'est ce qui permet de voir la semaine au lieu de la lire : deux traits orange collés
- * disent « deux séances dures d'affilée » sans qu'on ait à déchiffrer les intitulés.
+ * <p>C'est ce qui permet de voir la semaine au lieu de la lire : deux signes orange à un
+ * jour d'écart disent « deux séances dures d'affilée » sans qu'on déchiffre les intitulés.
  */
 const TEINTES: Partial<Record<TypeSeance, string>> = {
   SEUIL: 'var(--color-effort-fort)',
@@ -58,17 +59,34 @@ function teinte(type: TypeSeance): string {
   return TEINTES[type] ?? 'var(--color-effort-facile)'
 }
 
-/** Les libellés courts : dans une colonne large de cent pixels, « Allure marathon » ne tient pas. */
 const COURTS: Record<TypeSeance, string> = {
-  EF: 'Endurance', SL: 'Sortie longue', SEUIL: 'Seuil', VMA: 'VMA', AM: 'Allure marathon',
+  EF: 'EF', SL: 'SL', SEUIL: 'Seuil', VMA: 'VMA', AM: 'AM',
   COTES: 'Côtes', RENFO: 'Renfo', COURSE: 'Course', CROSS: 'Cross', REPOS: 'Repos',
+}
+
+/**
+ * La ligne sous le titre : ce que la séance demande, en une ligne.
+ *
+ * <p>Le déroulé dessiné vivait ici ; il est retourné dans la fiche. Une bande de cent pixels
+ * ne montrait pas grand-chose, et ce qu'on cherche dans un semainier est d'abord la distance
+ * et l'allure à tenir.
+ */
+function details(seance: Seance): string {
+  return [
+    COURTS[seance.type],
+    seance.distanceCibleKm ? km(seance.distanceCibleKm) : null,
+    seance.dureeCibleMin && !seance.distanceCibleKm ? `${seance.dureeCibleMin} min` : null,
+    seance.alluresTexte,
+  ]
+    .filter(Boolean)
+    .join(' · ')
 }
 
 /**
  * Le constat, réduit à un signe.
  *
- * <p>Une pastille « À venir » sur chacune des sept cases n'apprenait rien — c'est l'état par
- * défaut. Seul ce qui s'écarte du plan mérite un signe.
+ * <p>Une pastille « À venir » sur chaque ligne n'apprend rien — c'est l'état par défaut.
+ * Seul ce qui s'écarte du plan mérite un signe.
  */
 function marque(seance: Seance): { signe: string; classe: string; titre: string } | null {
   switch (seance.statut) {
@@ -89,92 +107,79 @@ function marque(seance: Seance): { signe: string; classe: string; titre: string 
 </script>
 
 <template>
-  <!-- Sept colonnes sur écran large, sept lignes sur téléphone : dans les deux cas,
-       un jour = un bloc. Les jours où l'on court sont posés sur une surface pleine ; les
-       jours de repos restent visibles mais s'effacent — c'est le contraste entre les deux
-       qui donne le rythme de la semaine au premier regard. -->
-  <ol class="grid gap-2 sm:grid-cols-7">
+  <ol class="space-y-2">
     <li
       v-for="jour in jours"
       :key="jour.iso"
-      class="rounded-lg p-2 transition-colors"
+      class="flex overflow-hidden rounded-xl border"
       :class="[
         jour.aujourdhui
-          ? 'outline-2 outline-[var(--color-accent)]'
-          : 'outline-1 outline-[var(--color-bordure)]',
-        jour.seances.length
-          ? 'bg-[var(--color-surface)] shadow-sm'
-          : 'outline-dashed bg-transparent',
-        !jour.seances.length && !jour.aujourdhui ? (jour.passe ? 'opacity-35' : 'opacity-60') : '',
+          ? 'border-[var(--color-accent)] bg-[var(--color-accent-fond)]'
+          : jour.seances.length
+            ? 'border-[var(--color-bordure)] bg-[var(--color-surface)]'
+            : 'border-dashed border-[var(--color-bordure)]',
+        !jour.seances.length && !jour.aujourdhui && jour.passe ? 'opacity-50' : '',
       ]"
     >
-      <div class="flex items-baseline gap-1.5">
-        <span
-          class="text-xs font-semibold uppercase"
-          :class="
-            jour.aujourdhui
-              ? 'text-[var(--color-accent)]'
-              : jour.seances.length
-                ? 'text-[var(--color-texte)]'
-                : 'text-[var(--color-doux)]'
-          "
-        >
-          {{ jour.nom }}
-        </span>
-        <span class="tabulaire text-xs text-[var(--color-doux)]">{{ jour.numero }}</span>
-      </div>
+      <!-- Le jour courant porte un trait plein : on retrouve sa ligne sans la chercher. -->
+      <span class="w-1 shrink-0" :class="jour.aujourdhui ? 'bg-[var(--color-accent)]' : ''" />
 
-      <!--
-        Un jour sans séance garde sa hauteur dans la grille à sept colonnes : le vide entre
-        deux séances est une information. Empilé sur téléphone, il se réduit à sa seule
-        ligne de titre — sept cases creuses n'y feraient que du défilement.
-      -->
-      <p v-if="!jour.seances.length" class="hidden h-8 sm:block" />
-
-      <!--
-        Une séance tient en trois signes : un pictogramme coloré qui dit sa nature et son
-        intensité, son nom, et le dessin de son déroulé. Le reste — la consigne, les
-        allures — vit dans la fiche, qui s'ouvre d'un clic.
-      -->
-      <button
-        v-for="seance in jour.seances"
-        :key="seance.id"
-        class="mt-1.5 flex w-full cursor-pointer gap-1.5 rounded-md p-1 text-left hover:bg-[var(--color-appui)]"
-        @click="emit('ouvrir', seance)"
-      >
-        <span class="mt-0.5 shrink-0" :style="{ color: teinte(seance.type) }">
-          <IconeSeance :type="seance.type" class="size-3.5" />
-        </span>
-        <span class="min-w-0 flex-1">
-          <span class="flex items-baseline gap-1">
-            <span class="min-w-0 flex-1 truncate text-xs font-medium" :title="seance.titre">
-              {{ COURTS[seance.type] }}
-            </span>
-            <span
-              v-if="marque(seance)"
-              class="shrink-0 text-xs"
-              :class="marque(seance)!.classe"
-              :title="marque(seance)!.titre"
-            >
-              {{ marque(seance)!.signe }}
-            </span>
-          </span>
-
-          <GrapheStructure
-            v-if="seance.structure.length"
-            :blocs="seance.structure"
-            variante="bandeau"
-            class="mt-1"
-          />
-
-          <span
-            v-if="seance.distanceCibleKm"
-            class="tabulaire mt-1 block text-xs text-[var(--color-doux)]"
+      <div class="flex min-w-0 flex-1 gap-3 p-3">
+        <div class="w-11 shrink-0 text-center">
+          <p
+            class="text-xs font-semibold uppercase"
+            :class="jour.aujourdhui ? 'text-[var(--color-accent)]' : 'text-[var(--color-doux)]'"
           >
-            {{ km(seance.distanceCibleKm, 0) }}
-          </span>
-        </span>
-      </button>
+            {{ jour.nom }}
+          </p>
+          <p
+            class="tabulaire text-xl leading-tight font-semibold"
+            :class="jour.aujourdhui ? 'text-[var(--color-accent)]' : ''"
+          >
+            {{ jour.numero }}
+          </p>
+        </div>
+
+        <p
+          v-if="!jour.seances.length"
+          class="self-center text-sm text-[var(--color-doux)] italic"
+        >
+          Repos
+        </p>
+
+        <!--
+          Une séance tient en deux lignes : son titre, et ce qu'elle demande. Le déroulé
+          dessiné, les consignes et le commentaire du coach vivent dans la fiche, à un clic.
+        -->
+        <ul v-else class="min-w-0 flex-1 divide-y divide-[var(--color-bordure)]">
+          <li v-for="seance in jour.seances" :key="seance.id">
+            <button
+              class="flex w-full cursor-pointer items-start gap-2 py-1.5 text-left"
+              @click="emit('ouvrir', seance)"
+            >
+              <IconeSeance
+                :type="seance.type"
+                class="mt-0.5 size-4 shrink-0"
+                :style="{ color: teinte(seance.type) }"
+              />
+              <span class="min-w-0 flex-1">
+                <span class="block leading-snug font-medium">{{ seance.titre }}</span>
+                <span class="block truncate text-sm text-[var(--color-doux)]">
+                  {{ details(seance) }}
+                </span>
+              </span>
+              <span
+                v-if="marque(seance)"
+                class="shrink-0 text-sm"
+                :class="marque(seance)!.classe"
+                :title="marque(seance)!.titre"
+              >
+                {{ marque(seance)!.signe }}
+              </span>
+            </button>
+          </li>
+        </ul>
+      </div>
     </li>
   </ol>
 </template>

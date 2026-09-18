@@ -7,7 +7,6 @@ import LigneAConfirmer from '@/components/cycle/LigneAConfirmer.vue'
 import SeanceDuJour from '@/components/cycle/SeanceDuJour.vue'
 import Semainier from '@/components/cycle/Semainier.vue'
 import EtatVide from '@/components/ui/EtatVide.vue'
-import NoteRepliable from '@/components/ui/NoteRepliable.vue'
 import { useEntrainement } from '@/stores/entrainement'
 import { dateCourte, joursDepuis, km } from '@/composables/useFormat'
 import type { Seance, StatutSeance } from '@/api/types'
@@ -46,6 +45,17 @@ const estLaSemaineCourante = computed(
 )
 
 const volumeSemaine = computed(() => (semaine.value ? entrainement.volumeRealise(semaine.value) : 0))
+
+/** Les séances de la semaine affichée : tenues sur prévues, les annulées mises de côté. */
+const seancesSemaine = computed(() => {
+  const seances = (semaine.value?.seances ?? []).filter(
+    (s) => s.type !== 'REPOS' && s.statut !== 'ANNULEE',
+  )
+  return {
+    faites: seances.filter((s) => s.statut === 'REALISEE' || s.statut === 'ANALYSEE').length,
+    total: seances.length,
+  }
+})
 
 const partDeLaCible = computed(() => {
   const cible = semaine.value?.volumeCibleKm
@@ -176,16 +186,18 @@ async function trancherDepuisLaFiche(statut: StatutSeance) {
       </p>
     </section>
 
-    <!-- La semaine. Son en-tête tient sur une ligne : où l'on est, et où en est le volume. -->
+    <!-- La semaine : où l'on en est, ce qu'elle vise, et les sept jours. -->
     <section v-if="semaine">
-      <div class="mb-3 flex items-center gap-2">
-        <h2 class="font-semibold">Semaine {{ semaine.numero }}</h2>
-        <span v-if="phase" class="text-sm text-[var(--color-doux)]">{{ phase }}</span>
-        <span v-if="!estLaSemaineCourante" class="text-sm text-[var(--color-doux)]">
-          {{ dateCourte(semaine.dateDebut) }} – {{ dateCourte(entrainement.finDe(semaine)) }}
-        </span>
+      <div class="mb-2 flex items-baseline gap-2">
+        <h2 class="font-semibold">
+          {{ estLaSemaineCourante ? 'Cette semaine' : `Semaine ${semaine.numero}` }}
+        </h2>
+        <p class="min-w-0 truncate text-sm text-[var(--color-doux)]">
+          <template v-if="phase">S{{ semaine.numero }} · {{ phase }} · </template>
+          {{ dateCourte(semaine.dateDebut) }} → {{ dateCourte(entrainement.finDe(semaine)) }}
+        </p>
 
-        <div class="ml-auto flex items-center gap-1">
+        <div class="ml-auto flex shrink-0 items-center gap-1">
           <button
             class="cursor-pointer rounded-md px-2 py-1 text-sm text-[var(--color-doux)] hover:bg-[var(--color-appui)] disabled:opacity-30"
             :disabled="position <= 0"
@@ -205,12 +217,21 @@ async function trancherDepuisLaFiche(statut: StatutSeance) {
         </div>
       </div>
 
+      <!--
+        Ce que la semaine a déjà donné, en deux compteurs : les séances tenues et les
+        kilomètres courus, chacun contre ce qui était visé. La barre sous eux dit la même
+        chose sans chiffre — c'est elle qu'on lit au premier regard.
+      -->
       <div class="mb-3">
-        <div class="tabulaire flex items-baseline justify-between text-sm">
-          <span class="font-semibold">{{ km(volumeSemaine, 0) }}</span>
-          <span class="text-[var(--color-doux)]">{{ km(semaine.volumeCibleKm, 0) }}</span>
+        <div class="tabulaire flex flex-wrap gap-2 text-sm">
+          <span class="rounded-full bg-[var(--color-appui)] px-2.5 py-0.5">
+            {{ seancesSemaine.faites }}/{{ seancesSemaine.total }} séances
+          </span>
+          <span class="rounded-full bg-[var(--color-appui)] px-2.5 py-0.5">
+            {{ km(volumeSemaine, 0) }} / {{ km(semaine.volumeCibleKm, 0) }}
+          </span>
         </div>
-        <div class="mt-1 h-1.5 overflow-hidden rounded-full bg-[var(--color-appui)]">
+        <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-[var(--color-appui)]">
           <div
             class="h-full rounded-full transition-[width]"
             :class="partDeLaCible >= 90 ? 'bg-[var(--color-succes)]' : 'bg-[var(--color-accent)]'"
@@ -232,7 +253,6 @@ async function trancherDepuisLaFiche(statut: StatutSeance) {
 
       <Semainier v-else :semaine="semaine" @ouvrir="ouvrirFiche" />
 
-      <NoteRepliable v-if="semaine.note" :texte="semaine.note" class="mt-3" />
     </section>
 
     <!-- Une question fermée, posée en une ligne par séance. -->
