@@ -1,8 +1,8 @@
 import { api } from './http'
 import type {
   ActivityDetail, ActivityResume, Athlete, Blessure, Contrainte, Cycle, CycleDetail,
-  EntreeJournal, ProfilSportif, RecordPersonnel, Seance, SeanceSignature, StatutSeance,
-  Synthese, BilanHebdo,
+  EntreeJournal, EtatSyncGlobal, PassageSync, ProfilSportif, RecordPersonnel, Seance,
+  SeanceSignature, StatutSeance, Synthese, BilanHebdo,
 } from './types'
 
 /** Appels de l'API, regroupes par domaine. */
@@ -91,4 +91,21 @@ export const profilApi = {
 export const analyseApi = {
   synthese: (athleteId: string, jours = 90) =>
     api.get<Synthese>(`/athletes/${athleteId}/analysis?jours=${jours}`),
+}
+
+/**
+ * Exploitation de la synchronisation Garmin.
+ *
+ * <p>Sous {@code /admin}, donc accessible au seul role ADMIN : la chaine de filtres de l'API
+ * repondra 403 a un athlete ordinaire, quelle que soit la garde posee cote routage.
+ */
+export const adminSyncApi = {
+  etat: () => api.get<EtatSyncGlobal>('/admin/garmin/etat'),
+  passages: (athleteId?: string, limit = 50) =>
+    api.get<PassageSync[]>(
+      `/admin/garmin/runs?limit=${limit}${athleteId ? `&athleteId=${athleteId}` : ''}`),
+  toutSynchroniser: () => api.post<void>('/admin/garmin/sync', {}),
+  synchroniser: (athleteId: string, depuis?: string) =>
+    api.post<void>(
+      `/admin/garmin/athletes/${athleteId}/sync${depuis ? `?depuis=${depuis}` : ''}`, {}),
 }

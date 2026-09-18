@@ -84,13 +84,13 @@ JSON
 
 Puis `./cli/prepa contexte` pour vérifier, et `/prepa-update` dans Claude Code.
 
-Le sync Garmin ne tourne pas en local : aucun compte Garmin n'est relié, et le worker vit
-sur le serveur. `/prepa-update` le signalera et travaillera sur les données déjà en base.
+Le sync Garmin tourne en local dès qu'un compte est relié — c'est l'API qui s'en charge.
+Sans compte relié, `/prepa-update` le signalera et travaillera sur les données déjà en base.
 
 ## Tests
 
 ```bash
-cd prepa-api && ./mvnw test      # 48 tests, Postgres réel via Testcontainers
+cd prepa-api && ./mvnw test      # 100 tests, Postgres réel via Testcontainers
 cd prepa-web && npm run build    # vérifie aussi les types
 ```
 

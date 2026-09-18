@@ -1,0 +1,26 @@
+{
+  "activityName": "Seuil 3x2000",
+  "locationName": "Parc de la Tête d'Or",
+  "summaryDTO": {
+    "startTimeLocal": "2026-09-15T18:42:11.0",
+    "duration": 3612.44,
+    "movingDuration": 3560.0,
+    "distance": 12043.1,
+    "averageSpeed": 3.3421,
+    "avgGradeAdjustedSpeed": 3.4010,
+    "averageHR": 156.4,
+    "maxHR": 181.0,
+    "minHR": 98.0,
+    "averageRunCadence": 172.8,
+    "elevationGain": 128.7,
+    "elevationLoss": 131.2,
+    "minElevation": 162.4,
+    "maxElevation": 218.9,
+    "calories": 812,
+    "trainingEffect": 3.7,
+    "anaerobicTrainingEffect": 1.2,
+    "trainingEffectLabel": "TEMPO",
+    "activityTrainingLoad": 148.3,
+    "vO2MaxValue": 54.0
+  }
+}

@@ -53,6 +53,12 @@ const router = createRouter({
       meta: { titre: 'Profil', connecte: true },
     },
     {
+      path: '/admin/sync',
+      name: 'admin-sync',
+      component: () => import('@/views/AdminSyncView.vue'),
+      meta: { titre: 'Synchronisation', connecte: true, admin: true },
+    },
+    {
       path: '/connexion',
       name: 'connexion',
       component: () => import('@/views/ConnexionView.vue'),
@@ -65,8 +71,11 @@ const router = createRouter({
 router.beforeEach(async (vers) => {
   const auth = useAuth()
   if (!vers.meta.connecte) return true
-  if (auth.athlete) return true
-  return (await auth.restaurer()) ? true : { name: 'connexion' }
+  if (!auth.athlete && !(await auth.restaurer())) return { name: 'connexion' }
+  // Garde de confort seulement : l'API refuse de toute facon les routes d'administration a un
+  // athlete ordinaire. Elle evite d'afficher un ecran qui ne se remplirait jamais.
+  if (vers.meta.admin && auth.athlete?.role !== 'ADMIN') return { name: 'tableau-de-bord' }
+  return true
 })
 
 router.afterEach((vers) => {

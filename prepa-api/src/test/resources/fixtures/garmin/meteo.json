@@ -1,0 +1,7 @@
+{
+  "temp": 68.0,
+  "apparentTemp": 71.6,
+  "relativeHumidity": 62,
+  "windSpeed": 9.0,
+  "weatherTypeDTO": { "desc": "Partiellement nuageux" }
+}

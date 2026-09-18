@@ -8,7 +8,7 @@ import java.util.UUID;
  *
  * <p>Deux formes coexistent : un athlete connecte via JWT ({@link Kind#ATHLETE}, ou
  * {@link Kind#ADMIN}) et un client machine porteur d'une cle de service
- * ({@link Kind#SERVICE} — skills Claude Code, worker Garmin).
+ * ({@link Kind#SERVICE} — skills Claude Code).
  *
  * <p>La distinction porte la matrice de permissions : seul un principal SERVICE peut
  * toucher a ce qui releve d'une decision de coach (structure du plan, allures, cycles).

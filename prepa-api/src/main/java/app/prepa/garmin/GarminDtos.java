@@ -17,7 +17,7 @@ public final class GarminDtos {
     /**
      * Une activite normalisee, prete a etre persistee.
      *
-     * <p>C'est le contrat commun au parser CSV et au worker Garmin : les deux produisent
+     * <p>C'est le contrat commun au parser CSV et a la synchronisation Garmin : les deux produisent
      * cette forme, le service d'ingestion ne connait qu'elle.
      */
     @Getter

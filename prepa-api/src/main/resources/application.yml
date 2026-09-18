@@ -47,6 +47,27 @@ prepa:
   crypto:
     # cle AES-256 en base64 — generer avec: openssl rand -base64 32
     key: ${CRYPTO_KEY:VDJxegfsPjsEgg2IckmuevFoNSVln87r1HZe6puV/FI=}
+  garmin:
+    # Identifiants de consommateur OAuth1 de l'application mobile Garmin. Constantes publiques,
+    # pas des secrets de ce deploiement. Laisses vides, ils sont recuperes depuis consumer-url.
+    consumer-key: ${GARMIN_CONSUMER_KEY:fc3e99d2-118c-44b8-8ae3-03370dde24c0}
+    consumer-secret: ${GARMIN_CONSUMER_SECRET:E08WAR897WEy2knn7aFBrvegVAf0AFdWBBF}
+    consumer-url: https://thegarth.s3.amazonaws.com/oauth_consumer.json
+    # Respiration entre appels : en dessous, Garmin repond 429 apres quelques dizaines de seances.
+    pause-entre-appels-ms: ${GARMIN_PAUSE_MS:400}
+    # Profondeur reprise pour un athlete jamais synchronise.
+    jours-premier-sync: 120
+  constats:
+    # Au petit matin, apres la nuit laissee aux montres.
+    cron: "0 30 5 * * *"
+  sync:
+    # Releve des demandes posees par les skills : le passage demarre dans la minute.
+    cron-demandes: "0 * * * * *"
+    # Passage complet sur tous les athletes relies.
+    cron-complet: "0 0/30 * * * *"
+    # Purge de l'historique des passages.
+    cron-purge: "0 45 4 * * *"
+    retention-jours: 90
 
 logging:
   level:

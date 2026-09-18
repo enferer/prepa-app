@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * Entree des activites : import CSV manuel et lot normalise venu du worker Garmin.
+ * Entree des activites : import CSV manuel et lot deja normalise.
  *
  * <p>Les deux voies convergent vers le meme service d'ingestion, donc vers les memes regles
  * de deduplication.
@@ -58,7 +58,14 @@ public class IngestController {
         }
     }
 
-    /** Lot d'activites deja normalisees, envoye par le worker Garmin. */
+    /**
+     * Lot d'activites deja normalisees.
+     *
+     * <p>La synchronisation Garmin ne passe plus par ici — elle appelle le service directement,
+     * dans le meme processus. Cette route reste la voie d'entree pour un client tiers qui aurait
+     * deja fait le travail de normalisation, et elle garantit qu'il suivra les memes regles de
+     * deduplication que tout le monde.
+     */
     @PostMapping("/activities/ingest")
     public GarminDtos.ResultatIngestion ingerer(
             @PathVariable UUID athleteId, @Valid @RequestBody List<GarminDtos.ActiviteBrute> lot) {

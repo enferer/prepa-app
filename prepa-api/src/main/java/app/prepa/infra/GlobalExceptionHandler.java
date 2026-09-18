@@ -12,6 +12,7 @@ import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /** Mappe toutes les exceptions vers l'enveloppe d'erreur unique. */
@@ -62,6 +63,20 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ApiErrorResponse> handleDenied(AccessDeniedException ex) {
         return ResponseEntity.status(HttpStatus.FORBIDDEN)
                 .body(ApiErrorResponse.of("FORBIDDEN", "Accès refusé", Map.of()));
+    }
+
+    /**
+     * URL inconnue.
+     *
+     * <p>Sans ce cas, une route supprimee tombait dans le fourre-tout ci-dessous : l'appelant
+     * recevait un 500 — qui signifie « le serveur est en panne », donc « reessaie » — la ou il
+     * fallait lui dire que la route n'existe plus. Et chaque appel d'un client reste sur une
+     * ancienne version noircissait les journaux d'« Erreur non geree ».
+     */
+    @ExceptionHandler(NoResourceFoundException.class)
+    public ResponseEntity<ApiErrorResponse> handleRouteInconnue(NoResourceFoundException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(ApiErrorResponse.of("NOT_FOUND", "Cette route n'existe pas", Map.of()));
     }
 
     @ExceptionHandler(Exception.class)

@@ -28,10 +28,9 @@ prepa-app/
 ├── coach/COACH.md          la méthodologie — fait autorité
 ├── prepa-api/              API Spring Boot 4 / Java 21
 ├── prepa-web/              application Vue 3
-├── worker/                 synchronisation Garmin (Python)
 ├── cli/prepa               client des skills
 ├── migration/              import depuis l'ancienne application
-├── exploitation/           sauvegarde, restauration, passage nocturne
+├── exploitation/           sauvegarde, restauration, déploiement, MAINTENANCE.md
 └── .claude/skills/         prepa-cycle, prepa-update
 ```
 
@@ -138,6 +137,9 @@ Ils passent par `cli/prepa` ([documentation](cli/README.md)), configuré dans
 | **Stats** | volume hebdomadaire contre objectifs, meilleurs efforts, dérive cardiaque |
 | **Journal** | du texte libre, rien d'autre |
 
+Un sixième écran n'apparaît qu'aux comptes `ADMIN` : **Synchronisation** (`#/admin/sync`),
+qui montre l'état des comptes Garmin reliés et l'historique des passages.
+
 Le semainier de l'onglet Aujourd'hui se parcourt avec les flèches : il n'y a pas d'écran
 « plan » séparé, qui redonnait la même information une deuxième fois.
 
@@ -152,13 +154,27 @@ contradictoires.
 
 ## Synchronisation Garmin
 
-Le worker tourne sur le serveur, en continu pour les demandes immédiates et en passage
-nocturne pour le reste. Les identifiants sont chiffrés au repos (AES-GCM) et ne ressortent
-que pour lui. **Garde-fou d'identité** : au premier passage réussi, le compte Garmin est
-mémorisé sur l'athlète ; aux suivants, un compte différent arrête la synchronisation au lieu
-d'écrire les séances d'un athlète dans l'historique d'un autre.
+C'est l'API qui va chercher les séances, sur sa propre cadence : un passage complet toutes
+les trente minutes, et une relève des demandes chaque minute. Il n'y a plus de processus
+tiers — les identifiants et les jetons sont chiffrés au repos (AES-GCM) et ne sortent jamais
+de la base.
 
-## Déploiement
+Le jeton de longue durée obtenu à la première connexion vaut environ un an. C'est lui qui
+évite de rejouer le mot de passe à chaque passage, ce que Garmin finit par sanctionner en
+exigeant une vérification en deux étapes. Le cas échéant, la synchronisation s'arrête sur
+`MFA_REQUISE` et `POST /athletes/{id}/garmin-mfa` la débloque.
 
-Voir [DEPLOIEMENT.md](DEPLOIEMENT.md).
+**Garde-fou d'identité** : au premier passage réussi, le compte Garmin est mémorisé sur
+l'athlète ; aux suivants, un compte différent arrête la synchronisation au lieu d'écrire les
+séances d'un athlète dans l'historique d'un autre.
+
+Chaque passage laisse une trace datée, consultable sur l'**écran d'administration**
+(`#/admin/sync`, réservé au rôle `ADMIN`) : ce qui tourne, l'état de chaque compte relié,
+l'historique, et de quoi relancer.
+
+## Déploiement et exploitation
+
+[DEPLOIEMENT.md](DEPLOIEMENT.md) pour l'installation,
+[exploitation/MAINTENANCE.md](exploitation/MAINTENANCE.md) pour le quotidien — accès au
+serveur, requêtes SQL utiles, dépannage de la synchronisation.
 

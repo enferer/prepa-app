@@ -11,6 +11,7 @@ const theme = useTheme()
 const route = useRoute()
 
 const connecte = computed(() => auth.athlete !== null)
+const admin = computed(() => auth.athlete?.role === 'ADMIN')
 
 const ONGLETS = [
   { nom: 'tableau-de-bord', libelle: 'Aujourd’hui', icone: '◎' },
@@ -69,6 +70,19 @@ watch(
           >
             {{ theme.sombre ? '☀' : '☾' }}
           </button>
+          <!--
+            L'exploitation ne rejoint pas les cinq onglets : ceux-ci sont la navigation de
+            l'athlete, et un administrateur est d'abord un athlete comme les autres.
+          -->
+          <RouterLink
+            v-if="admin"
+            :to="{ name: 'admin-sync' }"
+            class="rounded-md px-2 py-1.5 text-sm text-[var(--color-doux)] hover:bg-[var(--color-appui)]"
+            :class="route.name === 'admin-sync' ? 'text-[var(--color-accent)]' : ''"
+            title="Synchronisation Garmin"
+          >
+            ⟳
+          </RouterLink>
           <RouterLink
             :to="{ name: 'profil' }"
             class="rounded-md px-2 py-1.5 text-sm text-[var(--color-doux)] hover:bg-[var(--color-appui)]"

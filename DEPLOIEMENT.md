@@ -1,8 +1,11 @@
 # Déploiement
 
-Quatre conteneurs sur un serveur : Postgres, l'API, le worker Garmin, et Nginx qui sert
-l'application et relaie `/api`. **Seul le port de l'application est publié** — ni la base,
+Trois conteneurs sur un serveur : Postgres, l'API — qui porte aussi la synchronisation
+Garmin — et Nginx qui sert l'application et relaie `/api`. **Seul le port de l'application est publié** — ni la base,
 ni l'API ne sont joignables directement de l'extérieur.
+
+Une fois en place, le quotidien est décrit dans
+[exploitation/MAINTENANCE.md](exploitation/MAINTENANCE.md).
 
 ## 1. Prérequis
 
@@ -46,7 +49,7 @@ déjà stockés** : il faudrait les ressaisir. Sauvegarde-la ailleurs que sur le
 
 ## 3. Premier démarrage
 
-`WORKER_SERVICE_KEY` n'existe pas encore : laisse-la vide et démarre sans le worker.
+`PREPA_SERVICE_KEY` n'existe pas encore : laisse-la vide, elle ne sert qu'aux skills.
 
 ```bash
 docker compose -f docker-compose.prod.yml up -d --build postgres api
@@ -102,11 +105,11 @@ docker compose -f docker-compose.prod.yml exec -T postgres \
 Cela efface **tout athlète et tout ce qui en dépend**. Une fois des données migrées, ce
 n'est plus une option : il faut alors passer par un administrateur encore accessible.
 
-Les journaux affichent **une seule fois** une clé de service. Note-la : c'est celle du
-worker. L'amorçage se coupe tout seul — il n'est actif que sur cette instance jetable, et
+Les journaux affichent **une seule fois** une clé de service portant tous les droits.
+Note-la. L'amorçage se coupe tout seul — il n'est actif que sur cette instance jetable, et
 il s'abstient dès que la base contient un athlète.
 
-Pour créer d'autres clés — une pour les skills, une par athlète si tu veux les cloisonner :
+Pour créer d'autres clés — une par athlète si tu veux les cloisonner :
 
 ```bash
 docker compose -f docker-compose.prod.yml exec api \
@@ -121,7 +124,7 @@ curl -X POST http://vps-75154aed.vps.ovh.net:8080/api/v1/admin/service-keys \
   -d '{"nom":"claude-code","scopes":["read","coach"]}'
 ```
 
-Renseigne `WORKER_SERVICE_KEY` dans `.env`, puis :
+Renseigne `PREPA_SERVICE_KEY` dans `.env`, puis :
 
 ```bash
 docker compose -f docker-compose.prod.yml up -d --build
@@ -145,9 +148,19 @@ Au premier passage réussi, le compte Garmin connecté est mémorisé sur l'athl
 suivants, un compte qui ne correspond pas **arrête** la synchronisation au lieu d'écrire
 les séances d'un athlète dans l'historique d'un autre.
 
-Si Garmin demande une validation en deux étapes, le worker ne peut pas y répondre seul :
-lance une première fois `python -m worker.sync --athlete <id>` en interactif depuis le
-serveur pour établir le jeton, qui vaut ensuite environ un an.
+Si Garmin demande une validation en deux étapes, la synchronisation s'arrête sur
+`MFA_REQUISE` et met la session de côté quelques minutes. Récupère le code sur le téléphone
+ou dans la boîte mail du compte Garmin, puis transmets-le :
+
+```bash
+curl -X POST http://vps-75154aed.vps.ovh.net:8080/api/v1/athletes/<id>/garmin-mfa \
+  -H "X-Service-Key: $CLE" -H 'Content-Type: application/json' \
+  -d '{"code":"123456"}'
+```
+
+Le jeton ainsi obtenu vaut environ un an : la question ne se reposera pas avant longtemps.
+Passé le délai, la demande expire — relance une synchronisation pour en obtenir une
+nouvelle.
 
 ## 5. Migration depuis l'ancienne application
 
@@ -183,16 +196,23 @@ pas importé tel quel, volontairement — c'est l'occasion de repartir sur une m
 
 ## 6. Synchronisation Garmin et tâches planifiées
 
-Le worker tourne en continu et n'a **pas besoin du planificateur** :
+L'API porte elle-même sa cadence, et n'a **pas besoin du planificateur de la machine** :
 
-- toutes les **30 minutes**, un passage complet sur tous les athlètes reliés
-  (`SYNC_INTERVALLE_S` dans `.env`) ;
-- entre deux passages, il relève toutes les 5 minutes les demandes de synchronisation
-  immédiate déclenchées depuis l'application ou par `/prepa-update` ;
-- au démarrage, le premier passage est complet : après un arrêt, on ne sait pas ce qui a
-  été manqué.
+- toutes les **30 minutes**, un passage complet sur tous les athlètes reliés ;
+- toutes les minutes, la relève des demandes laissées en suspens — un filet, pour le cas
+  où le serveur aurait redémarré en plein passage ;
+- chaque nuit à 4h45, la purge des traces de plus de 90 jours ;
+- chaque matin à 5h30, le constat des séances que rien n'est venu accomplir.
 
-Seule la sauvegarde est planifiée. Cette machine n'a pas de `cron` ; elle est portée par
+Les quatre cadences se règlent sous `prepa.sync` et `prepa.constats` dans
+`application.yml`.
+
+**L'écran d'administration** (`#/admin/sync`, réservé au rôle `ADMIN`) montre ce qui tourne,
+l'état de chaque compte relié et l'historique des passages, et permet de relancer — tout le
+monde ou un athlète précis. C'est le premier endroit à ouvrir quand des séances ne
+remontent plus.
+
+Seule la sauvegarde est planifiée par la machine. Cette machine n'a pas de `cron` ; elle est portée par
 un minuteur systemd, installé une fois :
 
 ```bash
@@ -241,9 +261,10 @@ plus ancienne peut être redémarrée sans perdre de données.
 | Symptôme | Où regarder |
 |---|---|
 | L'API ne démarre pas | `logs api` — souvent une migration ou un secret absent |
-| Pas de nouvelles séances | `GET /athletes/<id>/sync-status` : `AUTH_ERROR` = identifiants à refaire, `IDENTITE_KO` = mauvais compte relié |
+| Pas de nouvelles séances | L'écran `#/admin/sync`, ou `GET /athletes/<id>/sync-status` : `AUTH_ERROR` = identifiants à refaire, `IDENTITE_KO` = mauvais compte relié |
 | L'application affiche une erreur d'authentification | Jeton expiré ; le renouvellement est automatique, sinon se reconnecter |
-| Le worker boucle sur des 429 | Garmin limite le débit ; il reprendra au passage suivant |
+| Une synchronisation échoue sur un 429 | Garmin limite le débit ; le passage suivant reprendra. Augmenter `GARMIN_PAUSE_MS` si cela se répète |
+| Garmin réclame un code | Statut `MFA_REQUISE` : voir §4 |
 | Le site ne répond pas | `logs web`, puis vérifier que `WEB_PORT` n'est pas pris par un autre service |
 | Un conteneur est tué sans raison | `docker inspect <nom> --format '{{.State.OOMKilled}}'` : la mémoire est partagée avec l'autre service |
 

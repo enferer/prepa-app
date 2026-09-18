@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Liste des athletes accessibles au demandeur.
  *
- * <p>Sert surtout aux clients machine : le worker de synchronisation et les skills ont besoin
- * de savoir sur qui ils travaillent. Un athlete connecte ne se voit que lui-meme.
+ * <p>Sert surtout aux clients machine : les skills ont besoin de savoir sur qui ils
+ * travaillent. Un athlete connecte ne se voit que lui-meme.
  */
 @RestController
 @RequestMapping("/api/v1/athletes")

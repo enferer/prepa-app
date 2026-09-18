@@ -1,0 +1,23 @@
+{
+  "lapDTOs": [
+    {
+      "duration": 1200.0, "distance": 3000.0, "averageSpeed": 2.5,
+      "avgGradeAdjustedSpeed": 2.55, "averageHR": 138.0, "maxHR": 152.0,
+      "averageRunCadence": 168.0, "averagePower": 245.0,
+      "elevationGain": 22.0, "elevationLoss": 18.0, "intensityType": "WARMUP"
+    },
+    {
+      "duration": 420.0, "distance": 2000.0, "averageSpeed": 4.7619,
+      "averageHR": 174.0, "maxHR": 181.0, "averageRunCadence": 182.0,
+      "elevationGain": 9.0, "elevationLoss": 11.0, "intensityType": "INTERVAL"
+    },
+    {
+      "duration": 4.0, "distance": 12.0, "averageSpeed": 3.0,
+      "intensityType": "REST"
+    },
+    {
+      "duration": 180.0, "distance": 480.0, "averageSpeed": 0.0,
+      "averageHR": 121.0, "intensityType": "PROMENADE_INCONNUE"
+    }
+  ]
+}

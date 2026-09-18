@@ -1,0 +1,13 @@
+{
+  "activityId": 18234567890,
+  "activityName": "Seuil 3x2000",
+  "startTimeLocal": "2026-09-15 18:42:11",
+  "activityType": { "typeKey": "running" },
+  "duration": 3612.44,
+  "distance": 12043.1,
+  "averageSpeed": 3.3421,
+  "averageHR": 156.4,
+  "maxHR": 181.0,
+  "elevationGain": 128.7,
+  "calories": 812
+}

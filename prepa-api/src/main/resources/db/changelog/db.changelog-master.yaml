@@ -17,3 +17,5 @@ databaseChangeLog:
       file: db/changelog/008-service-keys.sql
   - include:
       file: db/changelog/009-statuts-seance.sql
+  - include:
+      file: db/changelog/010-garmin-sync.sql

@@ -51,33 +51,9 @@ services:
       PREPA_ORIGINES: ${PREPA_ORIGINES:?origine web autorisee requise}
       # Un seul coeur : le ramasse-miettes parallele coute plus qu'il ne rapporte.
       JAVA_OPTS: -Xms128m -Xmx420m -XX:+UseSerialGC -XX:MaxMetaspaceSize=160m
-    mem_limit: 700m
+    mem_limit: 800m
     expose:
       - "8080"
-
-  worker:
-    build:
-      context: .
-      dockerfile: worker/Dockerfile
-    # Ce service-ci reste en vie ; un `docker compose run --rm worker` sans argument fait
-    # au contraire un seul passage complet.
-    command: ["--boucle"]
-    restart: unless-stopped
-    depends_on:
-      # « demarre » ne suffit pas : l'API met une quarantaine de secondes a repondre, et
-      # le worker qui echoue a son premier passage attend ensuite cinq minutes. On
-      # l'attend vraiment prete.
-      api:
-        condition: service_healthy
-    environment:
-      PREPA_API_URL: http://api:8080
-      PREPA_SERVICE_KEY: ${WORKER_SERVICE_KEY:?cle de service du worker requise}
-      # Passage complet toutes les 30 minutes ; les demandes immediates sont relevees
-      # toutes les 5 minutes entre deux passages.
-      PREPA_INTERVALLE_COMPLET_S: ${SYNC_INTERVALLE_S:-1800}
-    volumes:
-      - garmin-tokens:/data/garmin-tokens
-    mem_limit: 256m
 
   web:
     build:
@@ -92,4 +68,3 @@ services:
 
 volumes:
   pgdata:
-  garmin-tokens:

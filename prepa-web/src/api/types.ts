@@ -361,3 +361,47 @@ export interface BilanHebdo {
 export interface ErreurApi {
   error: { code: string; message: string; details?: Record<string, unknown> }
 }
+
+// --- Exploitation de la synchronisation Garmin -------------------------------
+// Reserve au role ADMIN : ces formes ne viennent que de /api/v1/admin/garmin.
+
+export type StatutSync = 'EN_COURS' | 'OK' | 'AUTH_ERROR' | 'IDENTITE_KO' | 'MFA_REQUISE' | 'ERREUR'
+
+export type DeclencheurSync = 'PLANIFIE' | 'DEMANDE' | 'MANUEL'
+
+/** Un compte Garmin relie, et ou en est sa synchronisation. */
+export interface CompteGarmin {
+  athleteId: string
+  athlete: string
+  garminDisplayName?: string
+  derniereSync?: string
+  dernierStatut?: StatutSync
+  dernierMessage?: string
+  syncDemande: boolean
+}
+
+export interface EtatSyncGlobal {
+  enCours: boolean
+  athleteEnCours?: string
+  comptes: CompteGarmin[]
+}
+
+/** Une trace de passage, telle que l'historique la conserve. */
+export interface PassageSync {
+  id: string
+  athleteId: string
+  athlete?: string
+  demarreA: string
+  termineA?: string
+  dureeSec?: number
+  declencheur: DeclencheurSync
+  demandePar?: string
+  fenetreDu?: string
+  fenetreAu?: string
+  statut: StatutSync
+  message?: string
+  recues?: number
+  importees?: number
+  misesAJour?: number
+  doublons?: number
+}

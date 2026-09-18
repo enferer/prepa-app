@@ -27,25 +27,25 @@ Garde la réponse comme grille de lecture pour tout le reste. « RAS » est une 
 
 ## 2. Rapatrier les dernières séances
 
-Le serveur synchronise Garmin chaque nuit. Si l'athlète a couru depuis, déclenche une
-synchronisation avant de lire :
+Le serveur synchronise Garmin toutes les trente minutes. Si l'athlète a couru depuis,
+déclenche une synchronisation avant de lire :
 
 ```bash
 ./cli/prepa POST /athletes/<athleteId>/sync
 ```
 
-Le worker relève la demande à son passage suivant, dans les minutes qui viennent. Relis
-l'état une fois :
+La réponse est immédiate (202) : le passage démarre en tâche de fond et dure quelques
+minutes. Relis l'état une fois :
 
 ```bash
 ./cli/prepa GET /athletes/<athleteId>/sync-status
 ```
 
-S'il est encore en attente, **n'attends pas** : travaille sur ce que la base contient déjà et
+S'il est encore `EN_COURS`, **n'attends pas** : travaille sur ce que la base contient déjà et
 dis-le à l'athlète. Une séance arrivée en retard sera vue au prochain point.
 
-Un statut `AUTH_ERROR` ou `IDENTITE_KO` veut dire que le compte Garmin doit être remis en
-état côté serveur — signale-le sans chercher à le réparer toi-même.
+Un statut `AUTH_ERROR`, `IDENTITE_KO` ou `MFA_REQUISE` veut dire que le compte Garmin doit
+être remis en état — signale-le sans chercher à le réparer toi-même.
 
 ## 3. Lire le contexte
 

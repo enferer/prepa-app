@@ -11,9 +11,9 @@ import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
 /**
- * Cle d'acces machine : skills Claude Code, worker Garmin.
+ * Cle d'acces machine : skills Claude Code.
  *
- * <p>{@code athleteId} nul signifie une cle globale (le worker synchronise tous les athletes) ;
+ * <p>{@code athleteId} nul signifie une cle globale (un skill qui suit plusieurs athletes) ;
  * renseigne, la cle est limitee a cet athlete.
  */
 @Entity
