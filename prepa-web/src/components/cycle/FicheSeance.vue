@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import EtiquetteType from '@/components/ui/EtiquetteType.vue'
 import GrapheStructure from '@/components/cycle/GrapheStructure.vue'
+import NoteRepliable from '@/components/ui/NoteRepliable.vue'
 import PastilleStatut from '@/components/ui/PastilleStatut.vue'
 import { dateLongue, joursDepuis, km } from '@/composables/useFormat'
 import type { Seance } from '@/api/types'
@@ -123,12 +124,13 @@ const aConfirmer = computed(
           </div>
         </dl>
 
-        <p
+        <!-- La fiche est le lieu du détail : la note y est longue, mais plus repliée. -->
+        <NoteRepliable
           v-if="seance.commentaireCoach"
-          class="mt-4 rounded-lg bg-[var(--color-accent-fond)] px-3 py-2 text-sm"
-        >
-          <span class="font-medium text-[var(--color-accent)]">Ton coach — </span>{{ seance.commentaireCoach }}
-        </p>
+          :texte="seance.commentaireCoach"
+          :seuil="Number.MAX_SAFE_INTEGER"
+          class="mt-4"
+        />
 
         <p v-if="seance.commentaireAthlete" class="mt-2 text-sm italic text-[var(--color-doux)]">
           « {{ seance.commentaireAthlete }} »
@@ -140,7 +142,7 @@ const aConfirmer = computed(
             class="rounded-lg bg-[var(--color-accent)] px-4 py-2 text-sm font-medium text-white"
             @click="emit('ouvrirActivite')"
           >
-            Voir ce que tu as fait
+            Ma sortie →
           </button>
 
           <template v-if="aConfirmer">

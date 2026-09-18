@@ -2,15 +2,14 @@
 import { computed, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import BandeauCycle from '@/components/cycle/BandeauCycle.vue'
-import CarteSeance from '@/components/cycle/CarteSeance.vue'
 import FicheSeance from '@/components/cycle/FicheSeance.vue'
+import LigneAConfirmer from '@/components/cycle/LigneAConfirmer.vue'
 import SeanceDuJour from '@/components/cycle/SeanceDuJour.vue'
 import Semainier from '@/components/cycle/Semainier.vue'
-import CarteBase from '@/components/ui/CarteBase.vue'
 import EtatVide from '@/components/ui/EtatVide.vue'
-import TuileChiffre from '@/components/ui/TuileChiffre.vue'
+import NoteRepliable from '@/components/ui/NoteRepliable.vue'
 import { useEntrainement } from '@/stores/entrainement'
-import { dateCourte, joursDepuis, km, pourcentage } from '@/composables/useFormat'
+import { dateCourte, joursDepuis, km } from '@/composables/useFormat'
 import type { Seance, StatutSeance } from '@/api/types'
 
 const entrainement = useEntrainement()
@@ -48,18 +47,27 @@ const estLaSemaineCourante = computed(
 
 const volumeSemaine = computed(() => (semaine.value ? entrainement.volumeRealise(semaine.value) : 0))
 
+const partDeLaCible = computed(() => {
+  const cible = semaine.value?.volumeCibleKm
+  return cible ? Math.min(100, (volumeSemaine.value / cible) * 100) : 0
+})
+
 /**
- * Les phases d'une préparation, en clair. « Spécifique » ne veut rien dire pour qui découvre
- * l'application ; ce que la semaine cherche à produire, si.
+ * Les phases d'une préparation, en un mot.
+ *
+ * <p>« Spécifique » ne veut rien dire pour qui découvre l'application, mais le propos de la
+ * phase — « travailler l'allure de course » — n'a pas sa place à côté de la séance du jour :
+ * c'est une explication, pas une consigne. Le mot seul situe ; l'explication vit dans la
+ * méthodologie.
  */
-const PHASES: Record<string, { nom: string; propos: string }> = {
-  BASE: { nom: 'Fondation', propos: 'construire le socle aérobie' },
-  DEVELOPPEMENT: { nom: 'Développement', propos: 'monter le volume et l’intensité' },
-  SPECIFIQUE: { nom: 'Spécifique', propos: 'travailler l’allure de course' },
-  AFFUTAGE: { nom: 'Affûtage', propos: 'arriver frais le jour J' },
-  DECHARGE: { nom: 'Décharge', propos: 'absorber la charge, récupérer' },
-  LIBRE: { nom: 'Entretien', propos: 'suivre la ligne directrice' },
-  REPRISE: { nom: 'Reprise', propos: 'revenir progressivement' },
+const PHASES: Record<string, string> = {
+  BASE: 'Fondation',
+  DEVELOPPEMENT: 'Développement',
+  SPECIFIQUE: 'Spécifique',
+  AFFUTAGE: 'Affûtage',
+  DECHARGE: 'Décharge',
+  LIBRE: 'Entretien',
+  REPRISE: 'Reprise',
 }
 
 const phase = computed(() => (semaine.value?.bloc ? PHASES[semaine.value.bloc] : null))
@@ -71,7 +79,7 @@ const avancement = computed(() => {
     .filter((s) => s.type !== 'REPOS')
   const faites = seances.filter((s) => s.statut === 'REALISEE' || s.statut === 'ANALYSEE').length
   const restantes = seances.filter((s) => s.statut === 'A_VENIR').length
-  return { faites, restantes, total: seances.length }
+  return { faites, restantes }
 })
 
 /**
@@ -89,7 +97,7 @@ const prochaine = computed(() => {
 const quandProchaine = computed(() => {
   if (!prochaine.value) return ''
   const jours = joursDepuis(prochaine.value.date)
-  return jours === 1 ? 'demain' : `dans ${jours} jours`
+  return jours === 1 ? 'Demain' : `Dans ${jours} jours`
 })
 
 /**
@@ -137,15 +145,15 @@ async function trancherDepuisLaFiche(statut: StatutSeance) {
   <EtatVide
     v-else-if="entrainement.sansCycle"
     titre="Aucun cycle en cours"
-    message="Ton coach n'a pas encore ouvert de cycle. Demande-lui d'en démarrer un — une préparation si tu vises une course, un cycle libre sinon."
+    message="Ton coach n'a pas encore ouvert de cycle."
   />
 
-  <div v-else-if="cycle" class="space-y-5">
+  <div v-else-if="cycle" class="space-y-6">
     <BandeauCycle :cycle="cycle" :semaine-courante="entrainement.semaineCourante?.numero" />
 
     <!--
       La séance du jour passe devant tout le reste. C'est la question qu'on se pose en ouvrant
-      l'application ; les compteurs d'avancement, eux, attendent le bas de l'écran.
+      l'application ; l'avancement, lui, attend le bas de l'écran.
     -->
     <SeanceDuJour
       v-for="seance in entrainement.seancesDuJour"
@@ -157,27 +165,29 @@ async function trancherDepuisLaFiche(statut: StatutSeance) {
       @statut="(s) => trancher(seance, s)"
     />
 
+    <!-- Un jour sans séance se dit en deux mots, pas en deux phrases. -->
     <section
       v-if="!entrainement.seancesDuJour.length"
-      class="rounded-xl border border-[var(--color-bordure)] bg-[var(--color-surface)] p-4 sm:p-5"
+      class="rounded-2xl border border-[var(--color-bordure)] bg-[var(--color-surface)] p-5"
     >
-      <p class="text-xs font-semibold tracking-wide uppercase text-[var(--color-doux)]">
-        Aujourd'hui
-      </p>
-      <h2 class="mt-2 text-xl font-semibold">Rien de prévu</h2>
-      <p class="mt-1 text-sm text-[var(--color-doux)]">
-        Repos, ou sortie libre si l'envie est là.
-        <template v-if="prochaine">
-          Prochaine séance {{ quandProchaine }} : {{ prochaine.titre }}.
-        </template>
+      <h2 class="text-2xl font-semibold">Repos</h2>
+      <p v-if="prochaine" class="mt-1 text-sm text-[var(--color-doux)]">
+        {{ quandProchaine }} · {{ prochaine.titre }}
       </p>
     </section>
 
-    <CarteBase v-if="semaine">
-      <template #entete>
-        <div class="flex items-center gap-1">
+    <!-- La semaine. Son en-tête tient sur une ligne : où l'on est, et où en est le volume. -->
+    <section v-if="semaine">
+      <div class="mb-3 flex items-center gap-2">
+        <h2 class="font-semibold">Semaine {{ semaine.numero }}</h2>
+        <span v-if="phase" class="text-sm text-[var(--color-doux)]">{{ phase }}</span>
+        <span v-if="!estLaSemaineCourante" class="text-sm text-[var(--color-doux)]">
+          {{ dateCourte(semaine.dateDebut) }} – {{ dateCourte(entrainement.finDe(semaine)) }}
+        </span>
+
+        <div class="ml-auto flex items-center gap-1">
           <button
-            class="rounded-md border border-[var(--color-bordure)] px-2 py-1 text-sm disabled:opacity-40"
+            class="cursor-pointer rounded-md px-2 py-1 text-sm text-[var(--color-doux)] hover:bg-[var(--color-appui)] disabled:opacity-30"
             :disabled="position <= 0"
             title="Semaine précédente"
             @click="deplacer(-1)"
@@ -185,7 +195,7 @@ async function trancherDepuisLaFiche(statut: StatutSeance) {
             ◀
           </button>
           <button
-            class="rounded-md border border-[var(--color-bordure)] px-2 py-1 text-sm disabled:opacity-40"
+            class="cursor-pointer rounded-md px-2 py-1 text-sm text-[var(--color-doux)] hover:bg-[var(--color-appui)] disabled:opacity-30"
             :disabled="position >= entrainement.semaines.length - 1"
             title="Semaine suivante"
             @click="deplacer(1)"
@@ -193,81 +203,64 @@ async function trancherDepuisLaFiche(statut: StatutSeance) {
             ▶
           </button>
         </div>
-      </template>
+      </div>
 
       <div class="mb-3">
-        <h2 class="font-semibold">
-          Semaine {{ semaine.numero }}
-          <span v-if="estLaSemaineCourante" class="text-[var(--color-accent)]">— en cours</span>
-        </h2>
-        <p class="text-sm text-[var(--color-doux)]">
-          du {{ dateCourte(semaine.dateDebut) }} au {{ dateCourte(entrainement.finDe(semaine)) }}
-          <template v-if="phase"> · {{ phase.nom.toLowerCase() }}, {{ phase.propos }}</template>
-        </p>
+        <div class="tabulaire flex items-baseline justify-between text-sm">
+          <span class="font-semibold">{{ km(volumeSemaine, 0) }}</span>
+          <span class="text-[var(--color-doux)]">{{ km(semaine.volumeCibleKm, 0) }}</span>
+        </div>
+        <div class="mt-1 h-1.5 overflow-hidden rounded-full bg-[var(--color-appui)]">
+          <div
+            class="h-full rounded-full transition-[width]"
+            :class="partDeLaCible >= 90 ? 'bg-[var(--color-succes)]' : 'bg-[var(--color-accent)]'"
+            :style="{ width: `${partDeLaCible}%` }"
+          />
+        </div>
       </div>
 
       <p
         v-if="!semaine.detaillee"
-        class="mb-3 rounded-lg bg-[var(--color-appui)] px-3 py-2 text-sm text-[var(--color-doux)]"
+        class="rounded-lg bg-[var(--color-appui)] px-3 py-2 text-sm text-[var(--color-doux)]"
       >
-        Semaine encore en objectifs seuls — ton coach la détaillera au prochain point.
-        Vise {{ km(semaine.volumeCibleKm) }}<template v-if="semaine.nbQualiteCible">
-          et {{ semaine.nbQualiteCible }} séance<template v-if="semaine.nbQualiteCible > 1">s</template>
-          de qualité</template>.
+        Pas encore détaillée.
+        <template v-if="semaine.nbQualiteCible">
+          {{ semaine.nbQualiteCible }} séance<template v-if="semaine.nbQualiteCible > 1">s</template>
+          de qualité visée<template v-if="semaine.nbQualiteCible > 1">s</template>.
+        </template>
       </p>
 
-      <Semainier
-        v-else
-        :semaine="semaine"
-        :volume-realise="entrainement.volumeRealise(semaine)"
-        @ouvrir="ouvrirFiche"
-      />
+      <Semainier v-else :semaine="semaine" @ouvrir="ouvrirFiche" />
 
-      <p v-if="semaine.note" class="mt-3 rounded-lg bg-[var(--color-accent-fond)] px-3 py-2 text-sm">
-        <span class="font-medium text-[var(--color-accent)]">Note de ton coach — </span>{{ semaine.note }}
-      </p>
-    </CarteBase>
+      <NoteRepliable v-if="semaine.note" :texte="semaine.note" class="mt-3" />
+    </section>
 
-    <CarteBase
-      v-if="aClarifier.length"
-      titre="À confirmer"
-      sous-titre="Ces séances sont passées sans qu'aucune activité ne leur corresponde. Si tu les as faites sans montre, dis-le."
-    >
-      <div class="space-y-3">
-        <CarteSeance
+    <!-- Une question fermée, posée en une ligne par séance. -->
+    <section v-if="aClarifier.length">
+      <h2 class="mb-1 text-xs font-semibold tracking-wide uppercase text-[var(--color-doux)]">
+        À confirmer
+      </h2>
+      <div class="divide-y divide-[var(--color-bordure)]">
+        <LigneAConfirmer
           v-for="seance in aClarifier"
           :key="seance.id"
           :seance="seance"
-          :lecture-seule="entrainement.lectureSeule"
           @statut="(s) => trancher(seance, s)"
-          @ouvrir="ouvrirActivite(seance)"
+          @ouvrir="ouvrirFiche(seance)"
         />
       </div>
-    </CarteBase>
+    </section>
+
     <!--
-      Où en est la préparation. Utile, mais jamais urgent : ces chiffres ne changent pas ce
-      qu'on fait ce soir, ils racontent le chemin parcouru.
+      Où en est la préparation. Utile, jamais urgent : ces chiffres ne changent pas ce qu'on
+      fait ce soir. Une ligne discrète suffit — le détail vit dans l'onglet Stats.
     -->
-    <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
-      <TuileChiffre
-        libelle="Séances faites"
-        :valeur="String(avancement.faites)"
-        :detail="`${avancement.restantes} encore à faire`"
-      />
-      <TuileChiffre
-        libelle="Séances tenues"
-        :valeur="entrainement.assiduite.pourcentage !== null
-          ? pourcentage(entrainement.assiduite.pourcentage)
-          : '—'"
-        :detail="`${entrainement.assiduite.manquees} non faite${entrainement.assiduite.manquees > 1 ? 's' : ''}`"
-      />
-      <TuileChiffre
-        libelle="Cette semaine"
-        :valeur="km(volumeSemaine)"
-        :detail="semaine ? `objectif ${km(semaine.volumeCibleKm)}` : undefined"
-      />
-      <TuileChiffre libelle="Phase" :valeur="phase?.nom ?? '—'" :detail="phase?.propos" />
-    </div>
+    <p class="tabulaire text-sm text-[var(--color-doux)]">
+      {{ avancement.faites }} séances faites · {{ avancement.restantes }} à venir
+      <template v-if="entrainement.assiduite.pourcentage !== null">
+        · {{ Math.round(entrainement.assiduite.pourcentage) }} % tenues
+      </template>
+    </p>
 
     <FicheSeance
       :seance="seanceOuverte"
