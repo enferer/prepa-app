@@ -68,6 +68,30 @@ export interface Cycle {
   nbSemaines: number
 }
 
+/**
+ * Ce que fait un morceau de seance, et donc la couleur qu'il porte. Le serveur le deduit de
+ * la description ecrite par le coach — voir StructureSeance cote API.
+ */
+export type RoleBloc =
+  | 'ECHAUFFEMENT' | 'ENDURANCE' | 'EFFORT' | 'LIGNES' | 'RECUPERATION' | 'RETOUR_AU_CALME'
+
+/**
+ * Un bloc du deroule d'une seance prevue.
+ *
+ * `dureeEstimeeSec` couvre les repetitions et les recuperations qui les separent : c'est elle
+ * qui donne sa largeur au bloc sur le dessin.
+ */
+export interface BlocPrevu {
+  role: RoleBloc
+  repetitions: number
+  distanceKm?: number
+  dureeSec?: number
+  allureSecKm?: number
+  recupSec?: number
+  dureeEstimeeSec: number
+  libelle: string
+}
+
 export interface Seance {
   id: string
   weekId: string
@@ -85,6 +109,10 @@ export interface Seance {
   commentaireAthlete?: string
   activityId?: string
   rapprochement: 'AUTO' | 'MANUEL' | 'AUCUN'
+  /** Le deroule de la seance, pret a dessiner. Vide pour ce qui ne se court pas. */
+  structure: BlocPrevu[]
+  /** Vrai quand le coach a pose lui-meme le deroule, faux quand il a ete relu dans la consigne. */
+  structureSaisie: boolean
 }
 
 export interface Semaine {
@@ -245,6 +273,10 @@ export interface AllureParType {
   allureCibleSecKm?: number
   ecartSecKm?: number
   surLesBlocsDEffort: boolean
+  /** Sorties laissees de cote faute de pouvoir neutraliser leur relief. */
+  nbEcartees: number
+  /** Au moins une sortie retenue l'a ete par son allure corrigee de la pente. */
+  surAllureCorrigee: boolean
 }
 
 /** Part du volume couru facile, face à la part couru en intensité. */
@@ -267,13 +299,23 @@ export interface EffortNotable {
   denivelePosM?: number
 }
 
+/**
+ * D'ou vient un meilleur temps.
+ *
+ * `SORTIE` : la sortie fait la distance, le chrono est celui de la course elle-meme.
+ * `TOURS` : meilleur segment retrouve en faisant glisser une fenetre sur les tours.
+ * `ESTIMATION` : extrapole de l'allure moyenne d'une sortie plus longue — un ordre de grandeur.
+ */
+export type Provenance = 'SORTIE' | 'TOURS' | 'ESTIMATION'
+
 export interface RecordEstime {
   distanceM: number
   tempsSec?: number
   allureSecKm?: number
   date: string
   activityId: string
-  surTours: boolean
+  provenance: Provenance
+  deniveleNetM?: number
 }
 
 export interface Comparaison {

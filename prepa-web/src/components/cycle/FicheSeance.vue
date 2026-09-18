@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import EtiquetteType from '@/components/ui/EtiquetteType.vue'
+import GrapheStructure from '@/components/cycle/GrapheStructure.vue'
 import PastilleStatut from '@/components/ui/PastilleStatut.vue'
 import { dateLongue, joursDepuis, km } from '@/composables/useFormat'
 import type { Seance } from '@/api/types'
@@ -63,7 +64,22 @@ const aConfirmer = computed(
         </p>
         <h2 class="mt-0.5 text-lg font-semibold">{{ seance.titre }}</h2>
 
-        <p v-if="seance.description" class="mt-3 text-sm whitespace-pre-line">
+        <!--
+          Le déroulé, dessiné, avant la consigne écrite. C'est ce qu'on vient chercher la
+          veille au soir : combien de blocs, à quelle allure, ce qui les encadre. La phrase
+          du coach reste dessous, pour ce que le dessin ne peut pas dire.
+        -->
+        <GrapheStructure v-if="seance.structure.length" :blocs="seance.structure" class="mt-4" />
+
+        <p
+          v-if="seance.structure.length && !seance.structureSaisie"
+          class="mt-1.5 text-xs text-[var(--color-doux)]"
+          title="Ce déroulé a été relu dans la consigne écrite plus bas. Tant que ton coach ne l'a pas posé lui-même, il reste une interprétation."
+        >
+          Déroulé déduit de la consigne ci-dessous.
+        </p>
+
+        <p v-if="seance.description" class="mt-3 text-sm whitespace-pre-line text-[var(--color-doux)]">
           {{ seance.description }}
         </p>
 

@@ -1,5 +1,16 @@
 <script setup lang="ts">
-defineProps<{ titre?: string; sousTitre?: string }>()
+defineProps<{
+  titre?: string
+  sousTitre?: string
+  /**
+   * Sur quelles données la carte est calculée.
+   *
+   * <p>Un filtre de période qui n'agit que sur la moitié des cartes est pire que pas de filtre :
+   * on croit lire ses trente derniers jours alors qu'on lit toute sa vie de coureur. Chaque
+   * carte dit donc ce qu'elle regarde, plutôt que de laisser deviner.
+   */
+  portee?: string
+}>()
 </script>
 
 <template>
@@ -13,6 +24,12 @@ defineProps<{ titre?: string; sousTitre?: string }>()
         </h2>
         <p v-if="sousTitre" class="mt-0.5 text-sm text-[var(--color-doux)]">{{ sousTitre }}</p>
       </div>
+      <span
+        v-if="portee"
+        class="shrink-0 rounded-full bg-[var(--color-appui)] px-2 py-0.5 text-xs whitespace-nowrap text-[var(--color-doux)]"
+      >
+        {{ portee }}
+      </span>
       <slot name="entete" />
     </header>
     <slot />

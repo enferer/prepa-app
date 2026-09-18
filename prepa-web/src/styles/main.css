@@ -19,6 +19,20 @@
   --color-alerte-fond: #fbeee4;
   --color-manque: #a8323b;
   --color-manque-fond: #fbe9ea;
+
+  /*
+   * Rampe d'intensite : trois paliers ordonnes, du plus calme au plus dur. Elle sert a
+   * dessiner le deroule d'une seance, et c'est la meme dans le semainier et dans la fiche —
+   * un bloc orange veut dire la meme chose partout.
+   *
+   * Les ecarts sont verifies, pas estimes : 30 de separation en vision normale et 27 en
+   * vision des couleurs deficiente entre les deux paliers voisins les plus proches. Le
+   * palier calme est volontairement desature et peu contraste — il doit s'effacer — ce que
+   * compensent l'etiquette de chaque bloc et la legende, jamais la couleur seule.
+   */
+  --color-effort-facile: #aeb6c8;
+  --color-effort-endurance: #2f5fe0;
+  --color-effort-fort: #cf7324;
 }
 
 @layer base {
@@ -42,6 +56,11 @@
     --color-alerte-fond: #33261a;
     --color-manque: #e88a92;
     --color-manque-fond: #33191c;
+
+    /* Rampe d'intensite en sombre : des pas choisis pour ce fond, pas un simple inverse. */
+    --color-effort-facile: #6b7384;
+    --color-effort-endurance: #5f86e8;
+    --color-effort-fort: #c47a3a;
   }
 
   body {

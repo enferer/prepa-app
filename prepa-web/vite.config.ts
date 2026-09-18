@@ -11,6 +11,9 @@ export default defineConfig({
   server: {
     port: 5173,
     // L'API tourne a part : on la proxifie pour eviter toute question de CORS en developpement.
-    proxy: { '/api': { target: 'http://localhost:8080', changeOrigin: true } },
+    // PREPA_API permet d'en viser une autre — utile quand deux instances tournent en parallele.
+    proxy: {
+      '/api': { target: process.env.PREPA_API ?? 'http://localhost:8080', changeOrigin: true },
+    },
   },
 })

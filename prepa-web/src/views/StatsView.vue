@@ -6,7 +6,7 @@ import TuileChiffre from '@/components/ui/TuileChiffre.vue'
 import { analyseApi } from '@/api'
 import { useAuth } from '@/stores/auth'
 import { allure, chrono, dateCourte, km, signe } from '@/composables/useFormat'
-import type { Synthese } from '@/api/types'
+import type { Provenance, Synthese } from '@/api/types'
 
 /**
  * Est-ce que je progresse ?
@@ -20,6 +20,43 @@ const auth = useAuth()
 const synthese = ref<Synthese | null>(null)
 const fenetre = ref(90)
 const chargement = ref(true)
+
+const LIBELLES_FENETRE: Record<number, string> = {
+  30: '30 derniers jours',
+  90: '90 derniers jours',
+  365: 'douze derniers mois',
+}
+
+/** Ce que le filtre couvre, écrit tel quel sur chaque carte qui en dépend. */
+const surLaPeriode = computed(() => LIBELLES_FENETRE[fenetre.value] ?? `${fenetre.value} jours`)
+
+/** Ce que le filtre ne couvre pas : les records se cherchent dans tout l'historique. */
+const TOUT = 'tout ton historique'
+
+/**
+ * D'où vient un chrono, dit sans jargon.
+ *
+ * <p>L'ancienne étiquette opposait « mesuré » à « estimé » selon que la montre avait transmis
+ * le détail des tours — ce qui n'a rien à voir avec la confiance qu'on peut accorder au
+ * chiffre. Un dix kilomètres couru pour lui-même s'affichait « estimé », un kilomètre dévalé
+ * en descente « mesuré ».
+ */
+const PROVENANCES: Record<Provenance, { libelle: string; explication: string }> = {
+  SORTIE: {
+    libelle: 'couru',
+    explication: 'Cette sortie fait la distance : le chrono est celui de la course elle-même.',
+  },
+  TOURS: {
+    libelle: 'mesuré',
+    explication: 'Meilleur passage retrouvé dans une sortie plus longue, tour par tour.',
+  },
+  ESTIMATION: {
+    libelle: 'estimé',
+    explication:
+      "Déduit de l'allure moyenne d'une sortie plus longue : un ordre de grandeur, pas un chrono. "
+      + 'Aucun temps réellement couru sur cette distance n’a encore été enregistré.',
+  },
+}
 
 const DISTANCES: Record<number, string> = {
   1000: '1 km',
@@ -105,7 +142,8 @@ onMounted(charger)
         <h1 class="text-lg font-semibold">Est-ce que tu progresses ?</h1>
         <p class="text-sm text-[var(--color-doux)]">
           Ce que ton entraînement produit, et non ce que tu as fait — c'est l'onglet Saison
-          qui le raconte.
+          qui le raconte. Chaque carte indique la période sur laquelle elle est calculée :
+          certaines suivent le filtre, d'autres regardent tout ton historique.
         </p>
       </div>
       <div class="inline-flex rounded-lg border border-[var(--color-bordure)] p-0.5">
@@ -130,7 +168,8 @@ onMounted(charger)
     <CarteBase
       v-if="synthese.alluresParType.length"
       titre="Tes allures, face à tes cibles"
-      sous-titre="Sur une séance à intervalles, l'allure retenue est celle des blocs d'effort — pas la moyenne de la sortie, qui mélange échauffement et récupérations."
+      :portee="surLaPeriode"
+      sous-titre="Sur une séance à intervalles, l'allure retenue est celle des blocs d'effort — pas la moyenne de la sortie, qui mélange échauffement et récupérations. Le relief est neutralisé de la même façon."
     >
       <table class="w-full text-sm">
         <tbody class="divide-y divide-[var(--color-bordure)]">
@@ -138,6 +177,13 @@ onMounted(charger)
             <td class="py-2 font-medium">{{ ligne.libelle }}</td>
             <td class="tabulaire py-2 text-[var(--color-doux)]">
               {{ ligne.nbSeances }} séance{{ ligne.nbSeances > 1 ? 's' : '' }}
+              <span
+                v-if="ligne.nbEcartees"
+                :title="`${ligne.nbEcartees} sortie(s) trop vallonnée(s) pour que l'allure se compare à une cible, et sans allure corrigée disponible.`"
+                class="text-xs"
+              >
+                (+{{ ligne.nbEcartees }} écartée{{ ligne.nbEcartees > 1 ? 's' : '' }})
+              </span>
             </td>
             <td class="tabulaire py-2 font-semibold">{{ allure(ligne.allureReelleSecKm) }}/km</td>
             <td class="tabulaire py-2 text-[var(--color-doux)]">
@@ -164,6 +210,13 @@ onMounted(charger)
       <p class="mt-3 text-xs text-[var(--color-doux)]">
         Un écart de quelques secondes ne veut rien dire : le vent, le terrain et la chaleur en
         valent bien dix.
+        <template v-if="synthese.alluresParType.some((l) => l.surAllureCorrigee)">
+          Les sorties vallonnées sont comptées à leur allure corrigée de la pente ;
+        </template>
+        <template v-if="synthese.alluresParType.some((l) => l.nbEcartees)">
+          celles dont le relief n'a pas pu être neutralisé sont écartées plutôt que de fausser
+          la moyenne.
+        </template>
       </p>
     </CarteBase>
 
@@ -174,6 +227,7 @@ onMounted(charger)
     <CarteBase
       v-if="synthese.repartition"
       titre="Facile ou dur ?"
+      :portee="surLaPeriode"
       sous-titre="Environ quatre cinquièmes du volume devraient être courus en endurance."
     >
       <div class="flex h-8 overflow-hidden rounded-lg">
@@ -200,7 +254,8 @@ onMounted(charger)
     <CarteBase
       v-if="synthese.records.length"
       titre="Tes meilleurs efforts"
-      sous-titre="Mesurés sur les tours quand le détail existe, estimés sinon."
+      :portee="TOUT"
+      sous-titre="Le meilleur de chaque distance depuis que tu enregistres tes sorties — le filtre de période ne s'y applique pas."
     >
       <table class="w-full text-sm">
         <tbody class="tabulaire divide-y divide-[var(--color-bordure)]">
@@ -212,7 +267,9 @@ onMounted(charger)
             <td class="py-2">{{ allure(record.allureSecKm) }}/km</td>
             <td class="py-2 text-[var(--color-doux)]">{{ dateCourte(record.date) }}</td>
             <td class="py-2 text-right text-xs text-[var(--color-doux)]">
-              {{ record.surTours ? 'mesuré' : 'estimé' }}
+              <span :title="PROVENANCES[record.provenance].explication">
+                {{ PROVENANCES[record.provenance].libelle }}
+              </span>
             </td>
           </tr>
         </tbody>
@@ -222,6 +279,7 @@ onMounted(charger)
     <CarteBase
       v-if="tendanceCardiaque"
       titre="Comment tu encaisses"
+      portee="4 semaines contre les 4 précédentes"
       sous-titre="Ta fréquence cardiaque moyenne du mois, comparée au mois précédent."
     >
       <div class="flex flex-wrap items-center gap-4">
@@ -259,6 +317,7 @@ onMounted(charger)
     <CarteBase
       v-if="synthese.avantPendantCycle"
       titre="Ce que ce cycle a changé"
+      portee="avant et depuis le début du cycle"
       :sous-titre="`${synthese.avantPendantCycle.avant.libelle} → ${synthese.avantPendantCycle.pendant.libelle}`"
     >
       <dl class="grid gap-3 sm:grid-cols-3">
@@ -283,7 +342,7 @@ onMounted(charger)
       </dl>
     </CarteBase>
 
-    <CarteBase titre="Ton entraînement en chiffres">
+    <CarteBase titre="Ton entraînement en chiffres" :portee="surLaPeriode">
       <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <TuileChiffre
           libelle="Par semaine"
@@ -297,7 +356,7 @@ onMounted(charger)
           :detail="`${synthese.allureEf.nbSeances} sorties sous ${synthese.allureEf.seuilFcRetenu} bpm`"
         />
         <TuileChiffre
-          libelle="Plus longue sortie"
+          libelle="Plus longue de toujours"
           :valeur="synthese.plusLongueDeToujours ? km(synthese.plusLongueDeToujours.distanceKm) : '—'"
           :detail="synthese.plusLongueDeToujours ? dateCourte(synthese.plusLongueDeToujours.date) : undefined"
         />

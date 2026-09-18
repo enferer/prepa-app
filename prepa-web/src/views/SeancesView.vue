@@ -2,6 +2,7 @@
 import { computed, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import BarreZonesFc from '@/components/activity/BarreZonesFc.vue'
+import ChoixSeance from '@/components/activity/ChoixSeance.vue'
 import TableauTours from '@/components/activity/TableauTours.vue'
 import GrapheSeance from '@/components/charts/GrapheSeance.vue'
 import CarteBase from '@/components/ui/CarteBase.vue'
@@ -56,7 +57,14 @@ function selectionner(activite: ActivityResume) {
 function selectionnerParId(id: string) {
   const activite = liste.value.find((a) => a.id === id)
   if (activite) selectionner(activite)
+  listeOuverte.value = false
 }
+
+/**
+ * Sur téléphone, la liste et le détail ne tiennent pas côte à côte : la liste s'ouvre à la
+ * demande et se referme dès qu'on a choisi. Sur écran large elle reste là, en permanence.
+ */
+const listeOuverte = ref(false)
 
 /**
  * Navigation d'une séance à l'autre. La liste va du plus récent au plus ancien : reculer
@@ -89,27 +97,37 @@ watch(selection, (activite) => {
     message="Les séances arrivent automatiquement depuis ta montre."
   />
 
-  <div v-else class="space-y-4">
+  <div v-else class="lg:grid lg:grid-cols-[17rem_1fr] lg:gap-6">
     <!--
-      La séance choisie occupe tout l'écran ; le choix se fait dans une liste déroulante.
-      Une colonne permanente de deux cents séances prenait le tiers de la largeur pour
-      quelque chose qu'on ne consulte qu'en changeant de séance.
+      Le choix de la séance, permanent sur écran large. La liste déroulante qu'il remplace ne
+      montrait qu'une ligne à la fois et ne se cherchait pas : retrouver le fractionné d'il y a
+      trois semaines demandait de connaître sa date.
     -->
-    <div class="flex flex-wrap items-center gap-2">
-      <select
-        class="min-w-0 flex-1 rounded-lg border border-[var(--color-bordure)] bg-[var(--color-surface)] px-3 py-2 text-sm sm:max-w-md"
-        :value="selection?.id"
-        @change="selectionnerParId(($event.target as HTMLSelectElement).value)"
-      >
-        <option v-for="activite in liste" :key="activite.id" :value="activite.id">
-          {{ dateLongue(activite.date) }} — {{ distance(activite.distanceM) }}
-          {{ activite.titre ? `· ${activite.titre}` : '' }}
-        </option>
-      </select>
+    <aside class="hidden lg:sticky lg:top-4 lg:block">
+      <ChoixSeance
+        :activites="liste"
+        :selection="selection?.id"
+        hauteur="calc(100vh - 14rem)"
+        @choisir="selectionnerParId"
+      />
+    </aside>
 
-      <div class="flex gap-1">
+    <div class="min-w-0 space-y-4">
+    <div class="flex items-center gap-2 lg:justify-end">
+      <button
+        class="flex min-w-0 flex-1 cursor-pointer items-center gap-2 rounded-lg border border-[var(--color-bordure)] bg-[var(--color-surface)] px-3 py-2 text-left text-sm lg:hidden"
+        @click="listeOuverte = !listeOuverte"
+      >
+        <span class="min-w-0 flex-1 truncate">
+          <span class="tabulaire font-medium">{{ dateLongue(selection?.date) }}</span>
+          <span class="text-[var(--color-doux)]"> — {{ distance(selection?.distanceM) }}</span>
+        </span>
+        <span class="shrink-0 text-[var(--color-doux)]">{{ listeOuverte ? '▲' : '▼' }}</span>
+      </button>
+
+      <div class="flex shrink-0 gap-1">
         <button
-          class="rounded-md border border-[var(--color-bordure)] px-2.5 py-2 text-sm disabled:opacity-40"
+          class="cursor-pointer rounded-md border border-[var(--color-bordure)] px-2.5 py-2 text-sm disabled:opacity-40"
           :disabled="position >= liste.length - 1"
           title="Séance précédente (flèche gauche)"
           @click="deplacer(1)"
@@ -117,7 +135,7 @@ watch(selection, (activite) => {
           ◀
         </button>
         <button
-          class="rounded-md border border-[var(--color-bordure)] px-2.5 py-2 text-sm disabled:opacity-40"
+          class="cursor-pointer rounded-md border border-[var(--color-bordure)] px-2.5 py-2 text-sm disabled:opacity-40"
           :disabled="position <= 0"
           title="Séance suivante (flèche droite)"
           @click="deplacer(-1)"
@@ -126,9 +144,25 @@ watch(selection, (activite) => {
         </button>
       </div>
 
-      <span class="tabulaire text-xs text-[var(--color-doux)]">
+      <span class="tabulaire hidden shrink-0 text-xs text-[var(--color-doux)] sm:inline">
         {{ position + 1 }} sur {{ liste.length }}
       </span>
+    </div>
+
+    <!--
+      Sur téléphone la liste se déplie au-dessus du détail : elle doit rester courte et se
+      refermer dès qu'on a choisi, sinon on perd de vue la séance qu'on était en train de lire.
+    -->
+    <div
+      v-if="listeOuverte"
+      class="rounded-lg border border-[var(--color-bordure)] bg-[var(--color-fond)] p-2 lg:hidden"
+    >
+      <ChoixSeance
+        :activites="liste"
+        :selection="selection?.id"
+        hauteur="60vh"
+        @choisir="selectionnerParId"
+      />
     </div>
 
     <section v-if="detail" class="space-y-4">
@@ -212,5 +246,6 @@ watch(selection, (activite) => {
     </section>
 
     <p v-else-if="chargement" class="text-sm text-[var(--color-doux)]">Chargement…</p>
+    </div>
   </div>
 </template>

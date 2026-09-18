@@ -4,12 +4,13 @@ import { useRouter } from 'vue-router'
 import BandeauCycle from '@/components/cycle/BandeauCycle.vue'
 import CarteSeance from '@/components/cycle/CarteSeance.vue'
 import FicheSeance from '@/components/cycle/FicheSeance.vue'
+import SeanceDuJour from '@/components/cycle/SeanceDuJour.vue'
 import Semainier from '@/components/cycle/Semainier.vue'
 import CarteBase from '@/components/ui/CarteBase.vue'
 import EtatVide from '@/components/ui/EtatVide.vue'
 import TuileChiffre from '@/components/ui/TuileChiffre.vue'
 import { useEntrainement } from '@/stores/entrainement'
-import { dateCourte, km, pourcentage } from '@/composables/useFormat'
+import { dateCourte, joursDepuis, km, pourcentage } from '@/composables/useFormat'
 import type { Seance, StatutSeance } from '@/api/types'
 
 const entrainement = useEntrainement()
@@ -74,6 +75,24 @@ const avancement = computed(() => {
 })
 
 /**
+ * Un jour sans séance n'est pas un écran vide : dire quand tombe la suivante évite d'aller
+ * la chercher dans le semainier.
+ */
+const prochaine = computed(() => {
+  const aujourdhui = new Date().toISOString().slice(0, 10)
+  return entrainement.semaines
+    .flatMap((s) => s.seances)
+    .filter((s) => s.date > aujourdhui && s.statut === 'A_VENIR' && s.type !== 'REPOS')
+    .sort((a, b) => a.date.localeCompare(b.date))[0]
+})
+
+const quandProchaine = computed(() => {
+  if (!prochaine.value) return ''
+  const jours = joursDepuis(prochaine.value.date)
+  return jours === 1 ? 'demain' : `dans ${jours} jours`
+})
+
+/**
  * Séances passées que rien n'est venu renseigner : une sortie faite sans montre, ou pas faite.
  * Celles enregistrées par la montre sont déjà comptées et n'apparaissent pas ici.
  */
@@ -122,49 +141,33 @@ async function trancherDepuisLaFiche(statut: StatutSeance) {
   <div v-else-if="cycle" class="space-y-5">
     <BandeauCycle :cycle="cycle" :semaine-courante="entrainement.semaineCourante?.numero" />
 
-    <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
-      <TuileChiffre
-        libelle="Séances faites"
-        :valeur="String(avancement.faites)"
-        :detail="`${avancement.restantes} encore à faire`"
-      />
-      <TuileChiffre
-        libelle="Séances tenues"
-        :valeur="entrainement.assiduite.pourcentage !== null
-          ? pourcentage(entrainement.assiduite.pourcentage)
-          : '—'"
-        :detail="`${entrainement.assiduite.manquees} non faite${entrainement.assiduite.manquees > 1 ? 's' : ''}`"
-      />
-      <TuileChiffre
-        libelle="Cette semaine"
-        :valeur="km(volumeSemaine)"
-        :detail="semaine ? `objectif ${km(semaine.volumeCibleKm)}` : undefined"
-      />
-      <TuileChiffre
-        libelle="Phase"
-        :valeur="phase?.nom ?? '—'"
-        :detail="phase?.propos"
-      />
-    </div>
+    <!--
+      La séance du jour passe devant tout le reste. C'est la question qu'on se pose en ouvrant
+      l'application ; les compteurs d'avancement, eux, attendent le bas de l'écran.
+    -->
+    <SeanceDuJour
+      v-for="seance in entrainement.seancesDuJour"
+      :key="seance.id"
+      :seance="seance"
+      @ouvrir="ouvrirFiche(seance)"
+      @statut="(s) => trancher(seance, s)"
+    />
 
-    <CarteBase v-if="entrainement.seancesDuJour.length" titre="Ta séance du jour">
-      <div class="space-y-3">
-        <CarteSeance
-          v-for="seance in entrainement.seancesDuJour"
-          :key="seance.id"
-          :seance="seance"
-          mise-en-avant
-          @statut="(s) => trancher(seance, s)"
-          @ouvrir="ouvrirActivite(seance)"
-        />
-      </div>
-    </CarteBase>
-
-    <CarteBase v-else titre="Ta séance du jour">
-      <p class="text-sm text-[var(--color-doux)]">
-        Rien de prévu aujourd'hui. Repos, ou sortie libre si l'envie est là.
+    <section
+      v-if="!entrainement.seancesDuJour.length"
+      class="rounded-xl border border-[var(--color-bordure)] bg-[var(--color-surface)] p-4 sm:p-5"
+    >
+      <p class="text-xs font-semibold tracking-wide uppercase text-[var(--color-doux)]">
+        Aujourd'hui
       </p>
-    </CarteBase>
+      <h2 class="mt-2 text-xl font-semibold">Rien de prévu</h2>
+      <p class="mt-1 text-sm text-[var(--color-doux)]">
+        Repos, ou sortie libre si l'envie est là.
+        <template v-if="prochaine">
+          Prochaine séance {{ quandProchaine }} : {{ prochaine.titre }}.
+        </template>
+      </p>
+    </section>
 
     <CarteBase v-if="semaine">
       <template #entete>
@@ -236,6 +239,31 @@ async function trancherDepuisLaFiche(statut: StatutSeance) {
         />
       </div>
     </CarteBase>
+    <!--
+      Où en est la préparation. Utile, mais jamais urgent : ces chiffres ne changent pas ce
+      qu'on fait ce soir, ils racontent le chemin parcouru.
+    -->
+    <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <TuileChiffre
+        libelle="Séances faites"
+        :valeur="String(avancement.faites)"
+        :detail="`${avancement.restantes} encore à faire`"
+      />
+      <TuileChiffre
+        libelle="Séances tenues"
+        :valeur="entrainement.assiduite.pourcentage !== null
+          ? pourcentage(entrainement.assiduite.pourcentage)
+          : '—'"
+        :detail="`${entrainement.assiduite.manquees} non faite${entrainement.assiduite.manquees > 1 ? 's' : ''}`"
+      />
+      <TuileChiffre
+        libelle="Cette semaine"
+        :valeur="km(volumeSemaine)"
+        :detail="semaine ? `objectif ${km(semaine.volumeCibleKm)}` : undefined"
+      />
+      <TuileChiffre libelle="Phase" :valeur="phase?.nom ?? '—'" :detail="phase?.propos" />
+    </div>
+
     <FicheSeance
       :seance="seanceOuverte"
       @fermer="seanceOuverte = null"
