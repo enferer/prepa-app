@@ -74,7 +74,7 @@ public class GarminSyncController {
 
     @GetMapping("/athletes/{athleteId}/sync-status")
     public GarminSyncService.EtatSync etat(@PathVariable UUID athleteId) {
-        athletes.accessible(athleteId, CurrentPrincipal.get());
+        athletes.modifiable(athleteId, CurrentPrincipal.get());
         return sync.etat(athleteId);
     }
 
@@ -82,7 +82,7 @@ public class GarminSyncController {
     @PutMapping("/athletes/{athleteId}/garmin-credentials")
     public GarminSyncService.EtatSync relierCompte(
             @PathVariable UUID athleteId, @Valid @RequestBody IdentifiantsRequest req) {
-        athletes.accessible(athleteId, CurrentPrincipal.get());
+        athletes.modifiable(athleteId, CurrentPrincipal.get());
         sync.enregistrerIdentifiants(athleteId, req.email(), req.motDePasse());
         return sync.etat(athleteId);
     }
@@ -126,7 +126,7 @@ public class GarminSyncController {
         if (!principal.estCoach() || !principal.aLeScope(ServiceKeyService.SCOPE_INGEST)) {
             throw ApiException.forbidden("Réservé au service de synchronisation");
         }
-        athletes.accessible(athleteId, principal);
+        athletes.modifiable(athleteId, principal);
         return principal;
     }
 }

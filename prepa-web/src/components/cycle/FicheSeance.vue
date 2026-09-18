@@ -6,7 +6,7 @@ import PastilleStatut from '@/components/ui/PastilleStatut.vue'
 import { dateLongue, joursDepuis, km } from '@/composables/useFormat'
 import type { Seance } from '@/api/types'
 
-const props = defineProps<{ seance: Seance | null }>()
+const props = defineProps<{ seance: Seance | null; lectureSeule?: boolean }>()
 const emit = defineEmits<{
   fermer: []
   statut: [statut: 'REALISEE' | 'NON_REALISEE']
@@ -32,8 +32,12 @@ const quand = computed(() => {
 
 const passee = computed(() => (props.seance ? joursDepuis(props.seance.date) < 0 : false))
 
+/**
+ * Regarder l'entrainement d'un autre ne donne pas le droit de le renseigner : les gestes de
+ * confirmation disparaissent plutot que d'echouer en 403 une fois cliques.
+ */
 const aConfirmer = computed(
-  () => passee.value && props.seance?.statut === 'A_VENIR',
+  () => !props.lectureSeule && passee.value && props.seance?.statut === 'A_VENIR',
 )
 </script>
 

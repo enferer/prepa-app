@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import CarteBase from '@/components/ui/CarteBase.vue'
 import EtatVide from '@/components/ui/EtatVide.vue'
 import TuileChiffre from '@/components/ui/TuileChiffre.vue'
 import { analyseApi } from '@/api'
-import { useAuth } from '@/stores/auth'
+import { useEntrainement } from '@/stores/entrainement'
 import { allure, chrono, dateCourte, km, signe } from '@/composables/useFormat'
 import type { Provenance, Synthese } from '@/api/types'
 
@@ -15,7 +15,7 @@ import type { Provenance, Synthese } from '@/api/types'
  * l'entraînement produit : les allures réellement tenues face à celles visées, l'équilibre
  * entre facile et intensité, les meilleurs efforts, ce que le cycle a changé.
  */
-const auth = useAuth()
+const entrainement = useEntrainement()
 
 const synthese = ref<Synthese | null>(null)
 const fenetre = ref(90)
@@ -67,10 +67,10 @@ const DISTANCES: Record<number, string> = {
 }
 
 async function charger() {
-  if (!auth.athlete) return
+  if (!entrainement.athleteId) return
   chargement.value = true
   try {
-    synthese.value = await analyseApi.synthese(auth.athlete.id, fenetre.value)
+    synthese.value = await analyseApi.synthese(entrainement.athleteId, fenetre.value)
   } finally {
     chargement.value = false
   }
@@ -129,6 +129,9 @@ function tonDeLEcart(ecart?: number): 'succes' | 'alerte' | 'neutre' {
 }
 
 onMounted(charger)
+
+// Changer de profil consulte doit refaire l'analyse, pas garder celle du precedent.
+watch(() => entrainement.athleteId, charger)
 </script>
 
 <template>

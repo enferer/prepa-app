@@ -15,6 +15,11 @@ export const authApi = {
   moi: () => api.get<Athlete>('/me'),
 }
 
+export const athletesApi = {
+  /** Les athletes visibles : soi, et les autres — dont on peut lire l'entrainement. */
+  lister: () => api.get<Athlete[]>('/athletes'),
+}
+
 export const cyclesApi = {
   lister: (athleteId: string) => api.get<Cycle[]>(`/athletes/${athleteId}/cycles`),
   actif: (athleteId: string) => api.get<CycleDetail>(`/athletes/${athleteId}/cycles/actif`),

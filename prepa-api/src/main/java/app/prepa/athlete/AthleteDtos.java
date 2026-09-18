@@ -19,6 +19,16 @@ public final class AthleteDtos {
                     a.getId(), a.getEmail(), a.getDisplayName(), a.getTimezone(), a.getLocale(), a.getRole(),
                     a.getGarminDisplayName());
         }
+
+        /**
+         * Ce qu'on montre d'un athlete qu'on ne fait que consulter : de quoi le nommer et le
+         * choisir, rien de plus. L'email et le compte Garmin identifient la personne ailleurs
+         * qu'ici — les servir a tout le vestiaire pour alimenter un menu serait gratuit.
+         */
+        public static AthleteResponse publique(Athlete a) {
+            return new AthleteResponse(
+                    a.getId(), null, a.getDisplayName(), a.getTimezone(), a.getLocale(), a.getRole(), null);
+        }
     }
 
     public record UpdateMeRequest(String displayName, String timezone, String locale) {}

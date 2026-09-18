@@ -24,12 +24,28 @@ public class AthleteService {
     }
 
     /**
-     * Charge un athlete apres verification que le principal a le droit d'y acceder.
-     * C'est le point de passage unique du controle d'acces par athlete.
+     * Charge un athlete apres verification que le principal a le droit d'ecrire chez lui.
+     * C'est le point de passage unique du controle d'acces en ecriture.
      */
     @Transactional(readOnly = true)
-    public Athlete accessible(UUID id, Principal principal) {
-        if (!principal.peutAcceder(id)) {
+    public Athlete modifiable(UUID id, Principal principal) {
+        if (!principal.peutModifier(id)) {
+            throw ApiException.forbidden("Cet athlète ne t'est accessible qu'en lecture");
+        }
+        return parId(id);
+    }
+
+    /**
+     * Charge un athlete dont on veut seulement lire l'entrainement.
+     *
+     * <p>Le pendant en lecture de {@link #modifiable(UUID, Principal)}, et volontairement plus
+     * permissif : voir ce que les autres courent est ouvert a tout athlete connecte. A reserver
+     * aux routes d'entrainement — pour le journal, les blessures ou le profil, c'est
+     * {@code modifiable} qui garde la porte, en lecture comme en ecriture.
+     */
+    @Transactional(readOnly = true)
+    public Athlete lisible(UUID id, Principal principal) {
+        if (!principal.peutLire(id)) {
             throw ApiException.forbidden("Cet athlète ne t'est pas accessible");
         }
         return parId(id);

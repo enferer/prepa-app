@@ -47,7 +47,7 @@ public class CycleController {
 
     @GetMapping("/athletes/{athleteId}/cycles")
     public List<CycleDtos.CycleResponse> lister(@PathVariable UUID athleteId) {
-        athletes.accessible(athleteId, CurrentPrincipal.get());
+        athletes.lisible(athleteId, CurrentPrincipal.get());
         return cycleService.lister(athleteId).stream()
                 .map(CycleDtos.CycleResponse::from)
                 .toList();
@@ -55,7 +55,7 @@ public class CycleController {
 
     @GetMapping("/athletes/{athleteId}/cycles/actif")
     public CycleDtos.CycleDetailResponse actif(@PathVariable UUID athleteId) {
-        athletes.accessible(athleteId, CurrentPrincipal.get());
+        athletes.lisible(athleteId, CurrentPrincipal.get());
         Cycle cycle = cycleService
                 .actif(athleteId)
                 .orElseThrow(() -> ApiException.notFound("Cycle actif"));
@@ -72,7 +72,7 @@ public class CycleController {
     @GetMapping("/cycles/{cycleId}")
     public CycleDtos.CycleDetailResponse parId(@PathVariable UUID cycleId) {
         Cycle cycle = cycleService.parId(cycleId);
-        athletes.accessible(cycle.getAthleteId(), CurrentPrincipal.get());
+        athletes.lisible(cycle.getAthleteId(), CurrentPrincipal.get());
         return detail(cycle);
     }
 
@@ -117,7 +117,7 @@ public class CycleController {
             @PathVariable UUID cycleId,
             @RequestParam(defaultValue = "30") double volumeDepartKm) {
         Cycle cycle = cycleService.parId(cycleId);
-        athletes.accessible(cycle.getAthleteId(), CurrentPrincipal.get());
+        athletes.lisible(cycle.getAthleteId(), CurrentPrincipal.get());
         return planGlissant.squelette(cycle, volumeDepartKm);
     }
 
@@ -144,7 +144,7 @@ public class CycleController {
     @GetMapping("/cycles/{cycleId}/summary")
     public RollingPlanService.BilanCycle bilan(@PathVariable UUID cycleId) {
         Cycle cycle = cycleService.parId(cycleId);
-        athletes.accessible(cycle.getAthleteId(), CurrentPrincipal.get());
+        athletes.lisible(cycle.getAthleteId(), CurrentPrincipal.get());
         return planGlissant.bilan(cycleId);
     }
 
@@ -174,7 +174,7 @@ public class CycleController {
     @GetMapping("/weeks/{weekId}")
     public CycleDtos.WeekResponse semaine(@PathVariable UUID weekId) {
         TrainingWeek semaine = planService.semaineParId(weekId);
-        athletes.accessible(cycleService.parId(semaine.getCycleId()).getAthleteId(), CurrentPrincipal.get());
+        athletes.lisible(cycleService.parId(semaine.getCycleId()).getAthleteId(), CurrentPrincipal.get());
         return semaineGarnie(semaine);
     }
 
@@ -210,7 +210,7 @@ public class CycleController {
             @PathVariable UUID sessionId, @RequestBody CycleDtos.CoachSessionPatch patch) {
         Principal principal = CurrentPrincipal.get();
         PlannedSession seance = planService.seanceParId(sessionId);
-        athletes.accessible(planService.athleteDe(seance), principal);
+        athletes.modifiable(planService.athleteDe(seance), principal);
 
         if (principal.estCoach()) {
             return CycleDtos.SessionResponse.from(planService.modifierParCoach(sessionId, patch));
@@ -226,7 +226,7 @@ public class CycleController {
     public CycleDtos.SessionResponse commenterSeance(
             @PathVariable UUID sessionId, @Valid @RequestBody CycleDtos.AthleteSessionPatch patch) {
         PlannedSession seance = planService.seanceParId(sessionId);
-        athletes.accessible(planService.athleteDe(seance), CurrentPrincipal.get());
+        athletes.modifiable(planService.athleteDe(seance), CurrentPrincipal.get());
         return CycleDtos.SessionResponse.from(planService.modifierParAthlete(sessionId, patch));
     }
 
@@ -234,7 +234,7 @@ public class CycleController {
     public CycleDtos.SessionResponse lierActivite(
             @PathVariable UUID sessionId, @RequestBody CycleDtos.LinkActivityRequest req) {
         PlannedSession seance = planService.seanceParId(sessionId);
-        athletes.accessible(planService.athleteDe(seance), CurrentPrincipal.get());
+        athletes.modifiable(planService.athleteDe(seance), CurrentPrincipal.get());
         return CycleDtos.SessionResponse.from(planService.lierActivite(sessionId, req.activityId()));
     }
 
@@ -273,7 +273,7 @@ public class CycleController {
     /** Concevoir un cycle ou un plan releve du coach, jamais de l'athlete. */
     private void exigerCoach(UUID athleteId) {
         Principal principal = CurrentPrincipal.get();
-        athletes.accessible(athleteId, principal);
+        athletes.modifiable(athleteId, principal);
         if (!principal.estCoach()) {
             throw ApiException.forbidden("La construction du plan relève de ton coach");
         }

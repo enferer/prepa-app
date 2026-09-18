@@ -133,6 +133,6 @@ public class AthleteProfileController {
     }
 
     private void autoriser(UUID athleteId) {
-        athletes.accessible(athleteId, CurrentPrincipal.get());
+        athletes.modifiable(athleteId, CurrentPrincipal.get());
     }
 }

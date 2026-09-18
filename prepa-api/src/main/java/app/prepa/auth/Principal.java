@@ -40,13 +40,32 @@ public record Principal(Kind kind, UUID athleteId, Set<String> scopes, String no
 
     /**
      * Peut-on agir sur les donnees de cet athlete ?
-     * Un athlete n'accede qu'a lui-meme ; un admin et une cle de service globale accedent a tous ;
+     * Un athlete n'ecrit que chez lui ; un admin et une cle de service globale ecrivent partout ;
      * une cle de service nominative est limitee a son athlete.
      */
-    public boolean peutAcceder(UUID cible) {
+    public boolean peutModifier(UUID cible) {
         return switch (kind) {
             case ADMIN -> true;
             case ATHLETE -> cible.equals(athleteId);
+            case SERVICE -> athleteId == null || cible.equals(athleteId);
+        };
+    }
+
+    /**
+     * Peut-on lire l'entrainement de cet athlete ?
+     *
+     * <p>Plus large que {@link #peutModifier(UUID)} : les athletes se voient entre eux, parce
+     * que se comparer fait partie de l'entrainement. La lecture ouverte ne porte que sur ce
+     * qui releve de l'entrainement — cycles, seances, activites, analyses. Ce qui appartient
+     * a la personne plutot qu'a sa course — journal, blessures, profil, comptes Garmin —
+     * reste garde par {@code peutModifier}.
+     *
+     * <p>Une cle de service, elle, ne gagne rien ici : nominative, elle reste bornee a son
+     * athlete, faute de quoi un skill ouvert pour l'un lirait l'historique de tous.
+     */
+    public boolean peutLire(UUID cible) {
+        return switch (kind) {
+            case ADMIN, ATHLETE -> true;
             case SERVICE -> athleteId == null || cible.equals(athleteId);
         };
     }

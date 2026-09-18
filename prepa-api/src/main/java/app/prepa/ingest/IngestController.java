@@ -84,6 +84,6 @@ public class IngestController {
         if (principal.estCoach() && !principal.aLeScope(ServiceKeyService.SCOPE_INGEST)) {
             throw ApiException.forbidden("Cette clé de service n'a pas le droit d'ingérer des activités");
         }
-        return athletes.accessible(athleteId, principal);
+        return athletes.modifiable(athleteId, principal);
     }
 }

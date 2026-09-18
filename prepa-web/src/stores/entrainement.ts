@@ -1,15 +1,22 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
-import { activitesApi, cyclesApi, seancesApi } from '@/api'
+import { activitesApi, athletesApi, cyclesApi, seancesApi } from '@/api'
 import { ErreurHttp } from '@/api/http'
-import type { ActivityResume, Cycle, CycleDetail, Seance, Semaine, StatutSeance } from '@/api/types'
+import type {
+  ActivityResume, Athlete, Cycle, CycleDetail, Seance, Semaine, StatutSeance,
+} from '@/api/types'
 import { useAuth } from './auth'
 
 /**
- * Etat d'entrainement de l'athlete connecte : son cycle en cours, son plan, ses activites.
+ * Etat d'entrainement de l'athlete consulte : son cycle en cours, son plan, ses activites.
  *
  * <p>Un athlete n'a qu'un cycle actif a la fois — c'est celui qu'on garde charge. Consulter
  * un cycle termine recharge depuis l'API plutot que de maintenir un cache de tous les cycles.
+ *
+ * <p>L'athlete consulte n'est pas toujours celui qui est connecte : on peut regarder
+ * l'entrainement d'un autre. Ce store porte donc la question « qui regarde-t-on » — d'ou
+ * decoule {@code lectureSeule}, que les ecrans lisent pour retirer les gestes d'ecriture.
+ * Le journal et le profil ne suivent pas ce choix : ils restent ceux de l'athlete connecte.
  */
 export const useEntrainement = defineStore('entrainement', () => {
   const auth = useAuth()
@@ -21,7 +28,14 @@ export const useEntrainement = defineStore('entrainement', () => {
   const sansCycle = ref(false)
   const erreur = ref<string | null>(null)
 
-  const athleteId = computed(() => auth.athlete?.id)
+  /** Les athletes que l'on peut consulter. Vide tant que la session n'est pas ouverte. */
+  const athletes = ref<Athlete[]>([])
+  /** Null quand on se regarde soi-meme — le cas de tres loin le plus frequent. */
+  const consulte = ref<Athlete | null>(null)
+
+  const athleteId = computed(() => consulte.value?.id ?? auth.athlete?.id)
+  const athleteAffiche = computed(() => consulte.value ?? auth.athlete)
+  const lectureSeule = computed(() => consulte.value !== null)
 
   const semaines = computed<Semaine[]>(() => cycleActif.value?.semaines ?? [])
 
@@ -71,6 +85,22 @@ export const useEntrainement = defineStore('entrainement', () => {
       .reduce((total, a) => total + (a.distanceM ?? 0) / 1000, 0)
   }
 
+  /**
+   * Bascule sur un autre athlete, ou revient a soi quand l'identifiant est celui du compte.
+   * Le plan charge n'a plus rien a voir : on recharge tout plutot que de melanger deux plans.
+   */
+  async function consulter(id: string | null) {
+    const cible = id && id !== auth.athlete?.id ? (athletes.value.find((a) => a.id === id) ?? null) : null
+    if (cible?.id === consulte.value?.id) return
+    consulte.value = cible
+    await charger()
+  }
+
+  /** La liste des profils consultables ; son echec ne doit pas priver l'ecran de son plan. */
+  async function chargerAthletes() {
+    athletes.value = await athletesApi.lister().catch(() => [])
+  }
+
   async function charger() {
     if (!athleteId.value) return
     chargement.value = true
@@ -101,11 +131,13 @@ export const useEntrainement = defineStore('entrainement', () => {
   }
 
   async function changerStatut(seance: Seance, statut: StatutSeance) {
+    if (lectureSeule.value) return
     const misAJour = await seancesApi.changerStatut(seance.id, statut)
     remplacerSeance(misAJour)
   }
 
   async function commenter(seance: Seance, commentaire: string) {
+    if (lectureSeule.value) return
     remplacerSeance(await seancesApi.commenter(seance.id, commentaire))
   }
 
@@ -125,7 +157,8 @@ export const useEntrainement = defineStore('entrainement', () => {
 
   return {
     cycleActif, cycles, activites, chargement, erreur, sansCycle,
+    athletes, consulte, athleteId, athleteAffiche, lectureSeule,
     semaines, semaineCourante, seancesDuJour, assiduite,
-    charger, changerStatut, commenter, volumeRealise, finDe,
+    charger, chargerAthletes, consulter, changerStatut, commenter, volumeRealise, finDe,
   }
 })

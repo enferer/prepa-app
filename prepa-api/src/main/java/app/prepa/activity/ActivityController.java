@@ -38,7 +38,7 @@ public class ActivityController {
                     java.time.LocalDate debut,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
                     java.time.LocalDate fin) {
-        autoriser(athleteId);
+        autoriserLecture(athleteId);
         List<Activity> resultat = debut != null && fin != null
                 ? activites.entre(athleteId, debut, fin)
                 : activites.lister(athleteId);
@@ -56,7 +56,7 @@ public class ActivityController {
             @PathVariable UUID athleteId,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
                     java.time.LocalDate depuis) {
-        autoriser(athleteId);
+        autoriserLecture(athleteId);
         java.time.LocalDate borne = depuis != null
                 ? depuis
                 : cycles.actif(athleteId)
@@ -70,20 +70,20 @@ public class ActivityController {
     @PostMapping("/athletes/{athleteId}/activities/mark-analyzed")
     public MarkAnalyzedResponse marquerAnalysees(
             @PathVariable UUID athleteId, @RequestBody MarkAnalyzedRequest req) {
-        autoriser(athleteId);
+        autoriserEcriture(athleteId);
         return new MarkAnalyzedResponse(activites.marquerAnalysees(athleteId, req.activityIds()));
     }
 
     @GetMapping("/activities/{activityId}")
     public ActivityDtos.ActivityDetail detail(@PathVariable UUID activityId) {
-        autoriser(activites.parId(activityId).getAthleteId());
+        autoriserLecture(activites.parId(activityId).getAthleteId());
         return activites.detail(activityId);
     }
 
     @PatchMapping("/activities/{activityId}/feedback")
     public ActivityDtos.ActivityResume ressenti(
             @PathVariable UUID activityId, @Valid @RequestBody ActivityDtos.FeedbackRequest req) {
-        autoriser(activites.parId(activityId).getAthleteId());
+        autoriserEcriture(activites.parId(activityId).getAthleteId());
         return ActivityDtos.ActivityResume.from(activites.enregistrerRessenti(activityId, req));
     }
 
@@ -91,7 +91,13 @@ public class ActivityController {
 
     public record MarkAnalyzedResponse(int marquees) {}
 
-    private void autoriser(UUID athleteId) {
-        athletes.accessible(athleteId, CurrentPrincipal.get());
+    /** Consulter les sorties d'un athlete : ouvert a tout athlete connecte. */
+    private void autoriserLecture(UUID athleteId) {
+        athletes.lisible(athleteId, CurrentPrincipal.get());
+    }
+
+    /** Marquer, commenter, noter un ressenti : seulement chez soi. */
+    private void autoriserEcriture(UUID athleteId) {
+        athletes.modifiable(athleteId, CurrentPrincipal.get());
     }
 }

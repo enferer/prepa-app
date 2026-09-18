@@ -52,14 +52,20 @@ public class AnalysisController {
             @PathVariable UUID athleteId,
             @RequestParam(required = false) Integer jours,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate depuis) {
-        autoriser(athleteId);
+        autoriserLecture(athleteId);
         return analyse.analyser(athleteId, jours, depuis);
     }
 
-    /** Tout ce qu'il faut savoir pour ouvrir un point, et rien de plus. */
+    /**
+     * Tout ce qu'il faut savoir pour ouvrir un point, et rien de plus.
+     *
+     * <p>Reste ferme aux autres athletes, contrairement au reste de cet ecran : le contexte
+     * agrege le journal, les blessures et la memoire du coach — la personne, pas seulement sa
+     * course.
+     */
     @GetMapping("/coach-context")
     public CoachContextService.CoachContext contexte(@PathVariable UUID athleteId) {
-        autoriser(athleteId);
+        athletes.modifiable(athleteId, CurrentPrincipal.get());
         return contexte.construire(athleteId);
     }
 
@@ -72,7 +78,7 @@ public class AnalysisController {
     public ReconciliationService.Rapprochement rapprochement(
             @PathVariable UUID athleteId,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate semaine) {
-        autoriser(athleteId);
+        autoriserLecture(athleteId);
         Cycle cycle = cycles.actif(athleteId).orElseThrow(() -> ApiException.notFound("Cycle actif"));
 
         LocalDate lundi = (semaine == null ? LocalDate.now().minusWeeks(1) : semaine)
@@ -81,7 +87,8 @@ public class AnalysisController {
         return rapprochement.rapprocher(cycle, lundi, lundi.plusDays(6), semainePlan);
     }
 
-    private void autoriser(UUID athleteId) {
-        athletes.accessible(athleteId, CurrentPrincipal.get());
+    /** Volumes, allures et ecarts : de l'entrainement, donc lisible par les autres athletes. */
+    private void autoriserLecture(UUID athleteId) {
+        athletes.lisible(athleteId, CurrentPrincipal.get());
     }
 }

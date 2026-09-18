@@ -15,12 +15,20 @@ import type { Seance } from '@/api/types'
  * <p>La carte entière est cliquable. Auparavant elle ne l'était pas, et l'athlète passait par
  * le semainier pour ouvrir la fiche d'une séance qu'il avait pourtant sous les yeux.
  */
-const props = defineProps<{ seance: Seance }>()
+const props = defineProps<{ seance: Seance; lectureSeule?: boolean }>()
 const emit = defineEmits<{
   ouvrir: []
   ouvrirActivite: []
   statut: [statut: 'REALISEE' | 'NON_REALISEE']
 }>()
+
+/**
+ * Regarder l'entrainement d'un autre ne donne pas le droit de le renseigner : les gestes de
+ * confirmation disparaissent plutot que d'echouer en 403 une fois cliques.
+ */
+const aTrancher = computed(
+  () => !props.lectureSeule && props.seance.statut === 'A_VENIR' && props.seance.type !== 'REPOS',
+)
 
 const faite = computed(
   () => props.seance.statut === 'REALISEE' || props.seance.statut === 'ANALYSEE',
@@ -122,7 +130,7 @@ const allureCle = computed(() => {
 
     <!-- Trancher reste hors du bouton : cliquer « je l'ai faite » ne doit pas ouvrir la fiche. -->
     <div
-      v-if="seance.statut === 'A_VENIR' && seance.type !== 'REPOS'"
+      v-if="aTrancher"
       class="flex gap-2 border-t border-[var(--color-bordure)] px-4 py-3 sm:px-5"
     >
       <button

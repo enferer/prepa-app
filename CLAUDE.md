@@ -87,6 +87,25 @@ réalité, il ne redessine pas l'entraînement.*
 Une tentative interdite renvoie `403 FORBIDDEN_FIELD` **en nommant le champ**, plutôt qu'un
 refus opaque.
 
+### Les athlètes se voient entre eux, en lecture
+
+Une deuxième ligne traverse la première : *l'entraînement se regarde, la personne non.* Tout
+athlète connecté lit le plan, les séances, les sorties et les analyses des autres — se
+comparer fait partie de l'entraînement. Il n'y écrit rien, pas même les constats qu'il pose
+chez lui : confirmer une sortie faite sans montre reste au coureur qui l'a faite.
+
+Restent fermés, en lecture comme en écriture, le **journal**, le **profil sportif**, les
+**blessures et contraintes**, les **comptes Garmin** et le **`coach-context`** — qui agrège
+précisément les trois premiers. La liste des athlètes ne livre d'ailleurs que le nom des
+autres : leur email et leur compte Garmin les identifient ailleurs qu'ici.
+
+Le code porte la distinction en deux permissions, `peutLire` et `peutModifier`, servies par
+`AthleteService.lisible(...)` et `.modifiable(...)`. Une route nouvelle choisit donc son
+garde — et `modifiable` est le bon défaut : c'est l'ouverture qui se décide, pas la
+fermeture. Une clé de service, elle, ne gagne rien à cette ouverture : nominative, elle
+reste bornée à son athlète, faute de quoi un skill ouvert pour l'un lirait l'historique de
+tous.
+
 ## Développement
 
 ```bash
@@ -158,6 +177,11 @@ qui montre l'état des comptes Garmin reliés et l'historique des passages.
 
 Le semainier de l'onglet Aujourd'hui se parcourt avec les flèches : il n'y a pas d'écran
 « plan » séparé, qui redonnait la même information une deuxième fois.
+
+Le nom en tête de page devient un **sélecteur de profil** dès qu'il y a quelqu'un d'autre à
+regarder. Consulter un autre athlète affiche un bandeau « lecture seule », retire les gestes
+de confirmation et masque l'onglet Journal — qui, resté ouvert, aurait montré le sien sous le
+nom d'un autre.
 
 ## La mémoire du coach
 

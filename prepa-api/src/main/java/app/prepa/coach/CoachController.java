@@ -45,7 +45,7 @@ public class CoachController {
 
     @GetMapping("/athletes/{athleteId}/coach-notes")
     public List<CoachNoteDtos.NoteResponse> lister(@PathVariable UUID athleteId) {
-        athletes.accessible(athleteId, CurrentPrincipal.get());
+        athletes.modifiable(athleteId, CurrentPrincipal.get());
         return notes.toutes(athleteId).stream().map(CoachNoteDtos.NoteResponse::from).toList();
     }
 
@@ -65,7 +65,7 @@ public class CoachController {
     @GetMapping("/cycles/{cycleId}/reports")
     public List<CoachNoteDtos.ReportResponse> rapports(@PathVariable UUID cycleId) {
         Cycle cycle = cycles.parId(cycleId);
-        athletes.accessible(cycle.getAthleteId(), CurrentPrincipal.get());
+        athletes.modifiable(cycle.getAthleteId(), CurrentPrincipal.get());
         return rapports.duCycle(cycleId).stream().map(CoachNoteDtos.ReportResponse::from).toList();
     }
 
@@ -79,7 +79,7 @@ public class CoachController {
 
     private void exigerCoach(UUID athleteId) {
         Principal principal = CurrentPrincipal.get();
-        athletes.accessible(athleteId, principal);
+        athletes.modifiable(athleteId, principal);
         if (!principal.estCoach()) {
             throw ApiException.forbidden("Seul ton coach écrit ici");
         }

@@ -97,6 +97,8 @@ const quandProchaine = computed(() => {
  * Celles enregistrées par la montre sont déjà comptées et n'apparaissent pas ici.
  */
 const aClarifier = computed(() => {
+  // Rien a confirmer chez quelqu'un d'autre : ce bloc demande une reponse a l'athlete.
+  if (entrainement.lectureSeule) return []
   const aujourdhui = new Date().toISOString().slice(0, 10)
   return entrainement.semaines
     .flatMap((s) => s.seances)
@@ -149,6 +151,7 @@ async function trancherDepuisLaFiche(statut: StatutSeance) {
       v-for="seance in entrainement.seancesDuJour"
       :key="seance.id"
       :seance="seance"
+      :lecture-seule="entrainement.lectureSeule"
       @ouvrir="ouvrirFiche(seance)"
       @ouvrir-activite="ouvrirActivite(seance)"
       @statut="(s) => trancher(seance, s)"
@@ -235,6 +238,7 @@ async function trancherDepuisLaFiche(statut: StatutSeance) {
           v-for="seance in aClarifier"
           :key="seance.id"
           :seance="seance"
+          :lecture-seule="entrainement.lectureSeule"
           @statut="(s) => trancher(seance, s)"
           @ouvrir="ouvrirActivite(seance)"
         />
@@ -267,6 +271,7 @@ async function trancherDepuisLaFiche(statut: StatutSeance) {
 
     <FicheSeance
       :seance="seanceOuverte"
+      :lecture-seule="entrainement.lectureSeule"
       @fermer="seanceOuverte = null"
       @statut="trancherDepuisLaFiche"
       @ouvrir-activite="seanceOuverte && ouvrirActivite(seanceOuverte)"
