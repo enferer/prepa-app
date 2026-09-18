@@ -115,7 +115,7 @@ class AnalysisIntegrationTest extends IntegrationTestBase {
                 .findFirst()
                 .orElseThrow();
 
-        assertThat(dixKm.surTours()).isTrue();
+        assertThat(dixKm.provenance()).isEqualTo(AnalysisDtos.Provenance.TOURS);
         assertThat(dixKm.tempsSec()).isEqualTo(3000);
         assertThat(dixKm.allureSecKm()).isEqualTo(300);
     }

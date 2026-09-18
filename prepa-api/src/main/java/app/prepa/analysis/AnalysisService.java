@@ -54,6 +54,15 @@ public class AnalysisService {
 
     private static final double DISTANCE_MIN_EFFORT_KM = 8;
 
+    /**
+     * Ecart tolere entre la longueur d'une sortie et la distance du record. Au-dela, la sortie
+     * ne « fait » plus la distance et son allure moyenne ne fait plus que l'approcher.
+     */
+    private static final double MARGE_DISTANCE_SORTIE = 0.03;
+
+    /** Perte d'altitude moyenne au-dela de laquelle un segment doit sa vitesse a la pente. */
+    private static final int DESCENTE_MAX_M_PAR_KM = 15;
+
     private final ActivityRepository activities;
     private final AthleteProfileService profils;
     private final CycleService cycles;
@@ -209,52 +218,89 @@ public class AnalysisService {
      * segment reellement couru — la ou l'ancienne estimation multipliait simplement l'allure
      * moyenne par la distance, et ne pouvait donc jamais reveler mieux que la moyenne.
      */
-    private List<AnalysisDtos.RecordEstime> records(List<Activity> courses) {
+    static List<AnalysisDtos.RecordEstime> records(List<Activity> courses) {
         List<AnalysisDtos.RecordEstime> records = new ArrayList<>();
         for (int distance : DISTANCES_RECORD) {
-            AnalysisDtos.RecordEstime meilleur = null;
+            AnalysisDtos.RecordEstime mesure = null;
+            AnalysisDtos.RecordEstime estimation = null;
             for (Activity a : courses) {
                 AnalysisDtos.RecordEstime candidat = meilleurSegment(a, distance);
-                if (candidat != null && (meilleur == null || candidat.tempsSec() < meilleur.tempsSec())) {
-                    meilleur = candidat;
+                if (candidat == null) {
+                    continue;
+                }
+                if (candidat.provenance() == AnalysisDtos.Provenance.ESTIMATION) {
+                    if (estimation == null || candidat.tempsSec() < estimation.tempsSec()) {
+                        estimation = candidat;
+                    }
+                } else if (mesure == null || candidat.tempsSec() < mesure.tempsSec()) {
+                    mesure = candidat;
                 }
             }
-            if (meilleur != null) {
-                records.add(meilleur);
+            // Une estimation ne passe devant que faute de mesure : preferer un chiffre calcule
+            // a un chrono reellement couru serait prendre le calcul pour la realite.
+            AnalysisDtos.RecordEstime retenu = mesure != null ? mesure : estimation;
+            if (retenu != null) {
+                records.add(retenu);
             }
         }
         return records;
     }
 
-    private AnalysisDtos.RecordEstime meilleurSegment(Activity a, int distanceM) {
+    /**
+     * Ce qu'une sortie a de meilleur sur une distance donnee.
+     *
+     * <p>Trois cas, du plus sur au moins sur. Quand la sortie <em>fait</em> la distance, son
+     * chrono est celui de la distance : un dix kilometres couru pour lui-meme n'a pas besoin
+     * d'etre decoupe. Quand elle est plus longue et detaillee en tours, une fenetre glissante
+     * retrouve le meilleur segment reellement couru. Quand elle est plus longue sans detail, il
+     * ne reste qu'a extrapoler son allure moyenne — et ce n'est plus qu'un ordre de grandeur.
+     */
+    static AnalysisDtos.RecordEstime meilleurSegment(Activity a, int distanceM) {
         if (a.getDistanceM() == null || a.getDistanceM() < distanceM) {
             return null;
         }
-        List<ActivityLap> tours = a.getTours();
-        if (tours.size() > 1) {
-            Integer temps = fenetreGlissante(tours, distanceM);
-            if (temps != null) {
-                return new AnalysisDtos.RecordEstime(
-                        distanceM, temps, allure(temps, distanceM), a.getDateLocale(), a.getId(), true);
-            }
+        AnalysisDtos.RecordEstime surLaSortie = null;
+        if (a.getAllureMoySecKm() != null && a.getDistanceM() <= distanceM * (1 + MARGE_DISTANCE_SORTIE)) {
+            int temps = (int) Math.round(a.getAllureMoySecKm() * (distanceM / 1000.0));
+            surLaSortie = new AnalysisDtos.RecordEstime(
+                    distanceM, temps, a.getAllureMoySecKm(), a.getDateLocale(), a.getId(),
+                    AnalysisDtos.Provenance.SORTIE, a.deniveleNetM());
+        }
+
+        Segment segment = a.getTours().size() > 1 ? fenetreGlissante(a.getTours(), distanceM) : null;
+        if (segment != null && (surLaSortie == null || segment.tempsSec() < surLaSortie.tempsSec())) {
+            return new AnalysisDtos.RecordEstime(
+                    distanceM, segment.tempsSec(), allure(segment.tempsSec(), distanceM), a.getDateLocale(),
+                    a.getId(), AnalysisDtos.Provenance.TOURS, segment.deniveleNetM());
+        }
+        if (surLaSortie != null) {
+            return surLaSortie;
         }
         if (a.getAllureMoySecKm() == null) {
             return null;
         }
         int estime = (int) Math.round(a.getAllureMoySecKm() * (distanceM / 1000.0));
         return new AnalysisDtos.RecordEstime(
-                distanceM, estime, a.getAllureMoySecKm(), a.getDateLocale(), a.getId(), false);
+                distanceM, estime, a.getAllureMoySecKm(), a.getDateLocale(), a.getId(),
+                AnalysisDtos.Provenance.ESTIMATION, a.deniveleNetM());
     }
+
+    /** Un morceau de sortie : ce qu'il a coute en temps, et ce que le relief y a change. */
+    private record Segment(int tempsSec, int deniveleNetM) {}
 
     /**
      * Meilleur temps sur une distance, en faisant glisser une fenetre sur les tours.
-     * Le dernier tour de la fenetre est pris au prorata quand il depasse la distance visee.
+     *
+     * <p>Le dernier tour de la fenetre est pris au prorata quand il depasse la distance visee.
+     * Les segments nettement descendants sont ecartes : un kilometre devale a trois minutes
+     * trente au milieu d'un trail n'est pas un record du kilometre, c'est une pente.
      */
-    private Integer fenetreGlissante(List<ActivityLap> tours, int distanceM) {
-        Integer meilleur = null;
+    private static Segment fenetreGlissante(List<ActivityLap> tours, int distanceM) {
+        Segment meilleur = null;
         for (int debut = 0; debut < tours.size(); debut++) {
             int cumulDistance = 0;
             int cumulTemps = 0;
+            int cumulDenivele = 0;
             for (int i = debut; i < tours.size(); i++) {
                 ActivityLap tour = tours.get(i);
                 int distanceTour = tour.getDistanceM() == null ? 0 : tour.getDistanceM();
@@ -262,15 +308,18 @@ public class AnalysisService {
                     continue;
                 }
                 if (cumulDistance + distanceTour >= distanceM) {
-                    int manquant = distanceM - cumulDistance;
-                    int temps = cumulTemps + Math.round(tour.getDureeSec() * (manquant / (float) distanceTour));
-                    if (meilleur == null || temps < meilleur) {
-                        meilleur = temps;
+                    float part = (distanceM - cumulDistance) / (float) distanceTour;
+                    int temps = cumulTemps + Math.round(tour.getDureeSec() * part);
+                    int denivele = cumulDenivele + Math.round(tour.deniveleNetM() * part);
+                    if (denivele >= -(int) (distanceM / 1000.0 * DESCENTE_MAX_M_PAR_KM)
+                            && (meilleur == null || temps < meilleur.tempsSec())) {
+                        meilleur = new Segment(temps, denivele);
                     }
                     break;
                 }
                 cumulDistance += distanceTour;
                 cumulTemps += tour.getDureeSec();
+                cumulDenivele += tour.deniveleNetM();
             }
         }
         return meilleur;
@@ -378,7 +427,8 @@ public class AnalysisService {
                 .collect(java.util.stream.Collectors.toMap(Activity::getId, a -> a, (a, b) -> a));
 
         Map<TypeSeance, List<Integer>> alluresRetenues = new java.util.EnumMap<>(TypeSeance.class);
-        Map<TypeSeance, Boolean> surBlocs = new java.util.EnumMap<>(TypeSeance.class);
+        Map<TypeSeance, Integer> ecartees = new java.util.EnumMap<>(TypeSeance.class);
+        Map<TypeSeance, Boolean> corrigees = new java.util.EnumMap<>(TypeSeance.class);
 
         for (PlannedSession seance : cycles.seancesDe(cycle.get().getId())) {
             if (seance.getActivityId() == null) {
@@ -388,19 +438,28 @@ public class AnalysisService {
             if (activite == null) {
                 continue;
             }
-            Integer allure = seance.getType().estAllureContinue()
-                    ? activite.getAllureMoySecKm()
-                    : allureDesBlocsDEffort(activite);
+            TypeSeance type = seance.getType();
+            alluresRetenues.computeIfAbsent(type, t -> new ArrayList<>());
+            boolean vallonnee = estVallonnee(activite);
+            Integer allure = type.estAllureContinue()
+                    ? allureContinue(activite, vallonnee)
+                    : allureDesBlocsDEffort(activite, vallonnee);
             if (allure == null) {
+                // Une sortie dont on ne sait pas neutraliser le relief ne dit rien de l'allure
+                // tenue : on la compte a part plutot que de la laisser fausser la moyenne.
+                ecartees.merge(type, 1, Integer::sum);
                 continue;
             }
-            alluresRetenues.computeIfAbsent(seance.getType(), t -> new ArrayList<>()).add(allure);
-            surBlocs.putIfAbsent(seance.getType(), !seance.getType().estAllureContinue());
+            alluresRetenues.get(type).add(allure);
+            corrigees.merge(type, vallonnee, Boolean::logicalOr);
         }
 
         List<AnalysisDtos.AllureParType> resultat = new ArrayList<>();
         for (var entree : alluresRetenues.entrySet()) {
             TypeSeance type = entree.getKey();
+            if (entree.getValue().isEmpty()) {
+                continue;
+            }
             int reelle = (int) Math.round(entree.getValue().stream().mapToInt(Integer::intValue).average().orElse(0));
             Integer cible = allureCible(cycle.get(), type);
             resultat.add(new AnalysisDtos.AllureParType(
@@ -410,10 +469,31 @@ public class AnalysisService {
                     reelle,
                     cible,
                     cible == null ? null : reelle - cible,
-                    Boolean.TRUE.equals(surBlocs.get(type))));
+                    !type.estAllureContinue(),
+                    ecartees.getOrDefault(type, 0),
+                    Boolean.TRUE.equals(corrigees.get(type))));
         }
         resultat.sort(java.util.Comparator.comparing(AnalysisDtos.AllureParType::type));
         return resultat;
+    }
+
+    /** Au-dela du seuil de platitude, l'allure brute ne temoigne plus de l'effort fourni. */
+    private static boolean estVallonnee(Activity activite) {
+        return (activite.getDenivelePosM() == null ? 0 : activite.getDenivelePosM()) >= DENIVELE_MAX_PLAT_M;
+    }
+
+    /**
+     * Allure d'une sortie a allure continue, relief neutralise.
+     *
+     * <p>Sur le plat, l'allure brute suffit. Des que ca monte, c'est l'allure corrigee de la
+     * pente qu'il faut lire — a defaut, rien : un trail a huit cents metres de denivele court
+     * a huit minutes au kilometre n'a pas « rate son endurance », il a monte.
+     */
+    private static Integer allureContinue(Activity activite, boolean vallonnee) {
+        if (!vallonnee) {
+            return activite.getAllureMoySecKm();
+        }
+        return activite.getGapMoySecKm();
     }
 
     /**
@@ -425,7 +505,7 @@ public class AnalysisService {
      * moyenne de la sortie et a la presenter comme une allure de VMA — un chiffre faux vaut
      * moins que pas de chiffre du tout.
      */
-    private Integer allureDesBlocsDEffort(Activity activite) {
+    private Integer allureDesBlocsDEffort(Activity activite, boolean vallonnee) {
         List<ActivityLap> tours = activite.getTours();
         boolean structuree = tours.stream()
                         .map(t -> t.getIntensite() == null ? IntensiteTour.UNKNOWN : t.getIntensite())
@@ -440,18 +520,36 @@ public class AnalysisService {
         if (!structuree) {
             return null;
         }
-        Integer surIntervalles = allurePonderee(tours, java.util.Set.of(IntensiteTour.INTERVAL));
-        return surIntervalles != null ? surIntervalles : allurePonderee(tours, java.util.Set.of(IntensiteTour.ACTIVE));
+        Integer surIntervalles = allurePonderee(tours, java.util.Set.of(IntensiteTour.INTERVAL), vallonnee);
+        return surIntervalles != null
+                ? surIntervalles
+                : allurePonderee(tours, java.util.Set.of(IntensiteTour.ACTIVE), vallonnee);
     }
 
-    private Integer allurePonderee(List<ActivityLap> tours, java.util.Set<IntensiteTour> retenues) {
+    /**
+     * Allure moyenne d'une selection de tours, ponderee par leur distance.
+     *
+     * <p>Sur un parcours vallonne, c'est l'allure corrigee de la pente qui est retenue, tour par
+     * tour. Un seul tour sans correction disponible suffit a rendre la moyenne incomparable a
+     * une cible : on renonce alors plutot que de melanger des grandeurs differentes.
+     */
+    private Integer allurePonderee(
+            List<ActivityLap> tours, java.util.Set<IntensiteTour> retenues, boolean vallonnee) {
         long distance = 0;
         long duree = 0;
         for (ActivityLap tour : tours) {
-            if (retenues.contains(tour.getIntensite()) && tour.getDistanceM() != null && tour.getDistanceM() > 0) {
-                distance += tour.getDistanceM();
+            if (!retenues.contains(tour.getIntensite()) || tour.getDistanceM() == null || tour.getDistanceM() <= 0) {
+                continue;
+            }
+            if (vallonnee) {
+                if (tour.getGapSecKm() == null) {
+                    return null;
+                }
+                duree += Math.round(tour.getGapSecKm() * (tour.getDistanceM() / 1000.0));
+            } else {
                 duree += tour.getDureeSec();
             }
+            distance += tour.getDistanceM();
         }
         return distance > 0 ? (int) Math.round(duree / (distance / 1000.0)) : null;
     }

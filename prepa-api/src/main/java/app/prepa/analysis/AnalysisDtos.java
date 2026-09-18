@@ -32,6 +32,13 @@ public final class AnalysisDtos {
      * a intervalles, l'allure retenue est celle des blocs d'effort et non la moyenne de la
      * sortie : cette derniere melange l'echauffement, les recuperations et le retour au calme,
      * et ne se compare a aucune cible.
+     *
+     * <p>Le relief est neutralise de la meme facon : une sortie vallonnee est ramenee a son
+     * allure corrigee de la pente quand la montre l'a calculee, et ecartee sinon. Sans cela,
+     * deux trails suffisent a faire croire qu'un athlete court son endurance trop lentement.
+     *
+     * @param nbEcartees sorties laissees de cote faute de pouvoir corriger leur relief
+     * @param surAllureCorrigee au moins une sortie retenue l'a ete par son allure corrigee
      */
     public record AllureParType(
             String type,
@@ -40,7 +47,9 @@ public final class AnalysisDtos {
             Integer allureReelleSecKm,
             Integer allureCibleSecKm,
             Integer ecartSecKm,
-            boolean surLesBlocsDEffort) {}
+            boolean surLesBlocsDEffort,
+            int nbEcartees,
+            boolean surAllureCorrigee) {}
 
     /**
      * Part du volume couru facile, face a la part couru en intensite.
@@ -88,9 +97,29 @@ public final class AnalysisDtos {
             Integer denivelePosM) {}
 
     /**
-     * Meilleur temps estime sur une distance, calcule par fenetre glissante sur les tours.
-     * Sans tours, l'estimation retombe sur l'allure moyenne de la sortie — c'est alors une
-     * approximation, signalee comme telle.
+     * D'ou vient un meilleur temps, et donc quelle confiance lui accorder.
+     *
+     * <p>La distinction precedente — « sur les tours » ou non — ne disait pas ce qu'elle avait
+     * l'air de dire : elle refletait seulement si la montre avait transmis le detail des tours.
+     * Un dix kilometres couru pour lui-meme etait annonce « estime » parce qu'il tenait en un
+     * seul tour, tandis qu'un kilometre devale en descente au milieu d'un trail passait pour
+     * « mesure ». Ces trois provenances disent la vraie nature du chiffre.
+     */
+    public enum Provenance {
+        /** La sortie fait la distance : le chrono est celui de la course elle-meme. */
+        SORTIE,
+        /** Meilleur segment retrouve en faisant glisser une fenetre sur les tours. */
+        TOURS,
+        /** Extrapole de l'allure moyenne d'une sortie plus longue — un ordre de grandeur. */
+        ESTIMATION
+    }
+
+    /**
+     * Meilleur temps sur une distance.
+     *
+     * <p>Une estimation ne peut pas battre une mesure : elle n'est retenue que si rien de mieux
+     * n'existe. Annoncer un record tire d'une moyenne devant un chrono reellement couru
+     * reviendrait a preferer le calcul a la realite.
      */
     public record RecordEstime(
             int distanceM,
@@ -98,7 +127,9 @@ public final class AnalysisDtos {
             Integer allureSecKm,
             LocalDate date,
             UUID activityId,
-            boolean surTours) {}
+            Provenance provenance,
+            /** Denivele descendant du segment retenu, quand il explique le chrono. */
+            Integer deniveleNetM) {}
 
     public record TendanceFc(Integer fcMoyRecente, Integer fcMoyPrecedente, Integer ecart, String lecture) {}
 

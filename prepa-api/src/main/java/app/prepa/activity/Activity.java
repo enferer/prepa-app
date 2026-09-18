@@ -203,6 +203,11 @@ public class Activity {
         return distanceM == null ? 0 : distanceM / 1000.0;
     }
 
+    /** Denivele net signe de la sortie : positif si elle monte plus qu'elle ne descend. */
+    public int deniveleNetM() {
+        return (denivelePosM == null ? 0 : denivelePosM) - (deniveleNegM == null ? 0 : deniveleNegM);
+    }
+
     public void remplacerTours(List<ActivityLap> nouveaux) {
         tours.clear();
         nouveaux.forEach(t -> {
