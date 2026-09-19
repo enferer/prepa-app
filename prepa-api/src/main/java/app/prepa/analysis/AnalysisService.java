@@ -445,8 +445,10 @@ public class AnalysisService {
                     ? allureContinue(activite, vallonnee)
                     : allureDesBlocsDEffort(activite, vallonnee);
             if (allure == null) {
-                // Une sortie dont on ne sait pas neutraliser le relief ne dit rien de l'allure
-                // tenue : on la compte a part plutot que de la laisser fausser la moyenne.
+                // Deux sorties ne disent rien de l'allure tenue : celle dont on ne sait pas
+                // neutraliser le relief, et celle courue en tours automatiques, ou l'on ne sait
+                // pas separer les blocs du reste. On les compte a part plutot que de les laisser
+                // fausser la moyenne.
                 ecartees.merge(type, 1, Integer::sum);
                 continue;
             }
@@ -457,10 +459,17 @@ public class AnalysisService {
         List<AnalysisDtos.AllureParType> resultat = new ArrayList<>();
         for (var entree : alluresRetenues.entrySet()) {
             TypeSeance type = entree.getKey();
-            if (entree.getValue().isEmpty()) {
+            int nbEcartees = ecartees.getOrDefault(type, 0);
+
+            // Un type dont aucune sortie n'est mesurable garde sa ligne, sans allure : le
+            // faire disparaitre laisserait croire qu'il n'a pas ete travaille, quand la verite
+            // est qu'on n'a pas su le mesurer.
+            if (entree.getValue().isEmpty() && nbEcartees == 0) {
                 continue;
             }
-            int reelle = (int) Math.round(entree.getValue().stream().mapToInt(Integer::intValue).average().orElse(0));
+            Integer reelle = entree.getValue().isEmpty()
+                    ? null
+                    : (int) Math.round(entree.getValue().stream().mapToInt(Integer::intValue).average().orElse(0));
             Integer cible = allureCible(cycle.get(), type);
             resultat.add(new AnalysisDtos.AllureParType(
                     type.name(),
@@ -468,9 +477,9 @@ public class AnalysisService {
                     entree.getValue().size(),
                     reelle,
                     cible,
-                    cible == null ? null : reelle - cible,
+                    cible == null || reelle == null ? null : reelle - cible,
                     !type.estAllureContinue(),
-                    ecartees.getOrDefault(type, 0),
+                    nbEcartees,
                     Boolean.TRUE.equals(corrigees.get(type))));
         }
         resultat.sort(java.util.Comparator.comparing(AnalysisDtos.AllureParType::type));

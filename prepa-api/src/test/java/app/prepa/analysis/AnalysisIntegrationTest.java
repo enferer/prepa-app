@@ -10,12 +10,24 @@ import app.prepa.athlete.Athlete;
 import app.prepa.athlete.AthleteProfileService;
 import app.prepa.athlete.AthleteRepository;
 import app.prepa.athlete.ProfileDtos;
+import app.prepa.cycle.Cycle;
+import app.prepa.cycle.CycleRepository;
+import app.prepa.cycle.PlannedSession;
+import app.prepa.cycle.PlannedSessionRepository;
+import app.prepa.cycle.TrainingWeek;
+import app.prepa.cycle.TrainingWeekRepository;
+import app.prepa.domain.IntensiteTour;
+import app.prepa.domain.StatutCycle;
 import app.prepa.domain.TypeActivite;
+import app.prepa.domain.TypeCycle;
+import app.prepa.domain.TypeSeance;
+import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -40,10 +52,22 @@ class AnalysisIntegrationTest extends IntegrationTestBase {
     @Autowired
     AthleteProfileService profils;
 
+    @Autowired
+    CycleRepository cycles;
+
+    @Autowired
+    TrainingWeekRepository semaines;
+
+    @Autowired
+    PlannedSessionRepository seances;
+
     private UUID athleteId;
 
     @BeforeEach
     void preparer() {
+        seances.deleteAll();
+        semaines.deleteAll();
+        cycles.deleteAll();
         activities.deleteAll();
         athletes.deleteAll();
         Athlete athlete = new Athlete(UUID.randomUUID(), "analyse@example.com", "x", "Analyse");
@@ -133,6 +157,106 @@ class AnalysisIntegrationTest extends IntegrationTestBase {
         assertThat(ctx.journalRecent()).hasSizeLessThanOrEqualTo(5);
         assertThat(ctx.records()).hasSizeLessThanOrEqualTo(6);
         assertThat(ctx.athlete().nom()).isEqualTo("Analyse");
+    }
+
+    @Test
+    @DisplayName("mesure l'allure marathon sur ses blocs, pas sur la sortie entiere")
+    void allureMarathonSurLesBlocs() {
+        // Une seance d'allure marathon telle qu'elle se court : echauffement, les blocs, retour
+        // au calme. Moyenner la sortie entiere donnait 5:00 la ou l'athlete a tenu 4:30 sur ses
+        // blocs — et l'affichait comme un retard sur une cible qu'il depassait.
+        Activity activite = enregistrerSeanceStructuree(
+                LocalDate.now().minusDays(1),
+                List.of(360, 360),
+                List.of(270, 270, 270, 270, 270, 270),
+                List.of(360, 360));
+        planifier(TypeSeance.AM, activite, 280);
+
+        AnalysisDtos.AllureParType am = allureDe(TypeSeance.AM);
+
+        assertThat(am.surLesBlocsDEffort()).isTrue();
+        assertThat(am.allureReelleSecKm()).isEqualTo(270);
+        assertThat(am.ecartSecKm()).isEqualTo(-10);
+        assertThat(am.nbEcartees()).isZero();
+    }
+
+    @Test
+    @DisplayName("ecarte une seance a allure marathon courue en tours automatiques")
+    void allureMarathonSansStructure() {
+        // Tous les tours de meme intensite : rien ne distingue les blocs du reste, et reprendre
+        // la moyenne de la sortie reviendrait a la presenter comme une allure marathon.
+        Activity activite = enregistrerSeanceStructuree(
+                LocalDate.now().minusDays(1), List.of(), List.of(), List.of());
+        planifier(TypeSeance.AM, activite, 280);
+
+        AnalysisDtos.AllureParType am = allureDe(TypeSeance.AM);
+
+        assertThat(am.allureReelleSecKm()).isNull();
+        assertThat(am.nbEcartees()).isEqualTo(1);
+    }
+
+    private AnalysisDtos.AllureParType allureDe(TypeSeance type) {
+        return analyse.analyser(athleteId, 90, null).alluresParType().stream()
+                .filter(l -> l.type().equals(type.name()))
+                .findFirst()
+                .orElse(new AnalysisDtos.AllureParType(
+                        type.name(), type.name(), 0, null, null, null, true, 0, false));
+    }
+
+    /** Un cycle actif d'une semaine, et la seance qui accomplit l'activite donnee. */
+    private void planifier(TypeSeance type, Activity activite, int allureCibleSecKm) {
+        LocalDate lundi = LocalDate.now().minusDays(7);
+        Cycle cycle = new Cycle(
+                UUID.randomUUID(), athleteId, "test-" + type.name().toLowerCase(java.util.Locale.ROOT),
+                "Cycle de test", TypeCycle.LIBRE, lundi, lundi.plusWeeks(1));
+        cycle.setStatut(StatutCycle.ACTIF);
+        cycle.setLigneDirectrice("Maintenir la charge");
+        cycle.setAlluresCibles(Map.of(type.name(), Map.of("secKm", allureCibleSecKm)));
+        cycles.save(cycle);
+
+        TrainingWeek semaine = new TrainingWeek(
+                UUID.randomUUID(), cycle.getId(), (short) 1, lundi, BigDecimal.valueOf(40));
+        semaines.save(semaine);
+
+        PlannedSession seance = new PlannedSession(
+                UUID.randomUUID(), semaine.getId(), cycle.getId(), activite.getDateLocale(), type, "Seance");
+        seance.rapprocherDe(activite.getId(), false);
+        seances.save(seance);
+    }
+
+    /**
+     * Une sortie decoupee en trois temps, chaque liste donnant les allures de ses kilometres.
+     * Des listes d'echauffement et de retour au calme vides donnent une sortie d'une seule
+     * intensite — le cas des tours automatiques.
+     */
+    private Activity enregistrerSeanceStructuree(
+            LocalDate date, List<Integer> echauffement, List<Integer> effort, List<Integer> retour) {
+        List<ActivityLap> tours = new ArrayList<>();
+        int duree = 0;
+        int index = 1;
+        for (var temps : List.of(
+                Map.entry(IntensiteTour.WARMUP, echauffement.isEmpty() ? List.of(300, 300, 300) : echauffement),
+                Map.entry(IntensiteTour.INTERVAL, effort),
+                Map.entry(IntensiteTour.COOLDOWN, retour))) {
+            for (int allureKm : temps.getValue()) {
+                ActivityLap tour = new ActivityLap(UUID.randomUUID(), (short) index++, allureKm);
+                tour.setDistanceM(1000);
+                tour.setAllureSecKm(allureKm);
+                tour.setIntensite(echauffement.isEmpty() ? IntensiteTour.ACTIVE : temps.getKey());
+                tours.add(tour);
+                duree += allureKm;
+            }
+        }
+
+        Activity activite = new Activity(
+                UUID.randomUUID(), athleteId, UUID.randomUUID().toString(),
+                Instant.now(), date, duree);
+        activite.setType(TypeActivite.RUN);
+        activite.setDistanceM(tours.size() * 1000);
+        activite.setDenivelePosM(20);
+        activite.setAllureMoySecKm(duree / tours.size());
+        activite.remplacerTours(tours);
+        return activities.save(activite);
     }
 
     private void enregistrer(LocalDate date, TypeActivite type, int distanceM, int dureeSec, int fc) {

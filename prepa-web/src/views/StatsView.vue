@@ -172,23 +172,30 @@ watch(() => entrainement.athleteId, charger)
       v-if="synthese.alluresParType.length"
       titre="Tes allures, face à tes cibles"
       :portee="surLaPeriode"
-      sous-titre="Sur une séance à intervalles, l'allure retenue est celle des blocs d'effort — pas la moyenne de la sortie, qui mélange échauffement et récupérations. Le relief est neutralisé de la même façon."
+      sous-titre="Dès qu'une séance se court par blocs — seuil, VMA, côtes, allure marathon — l'allure retenue est celle des blocs d'effort, pas la moyenne de la sortie, qui y mêlerait l'échauffement et le retour au calme. Le relief est neutralisé de la même façon."
     >
       <table class="w-full text-sm">
         <tbody class="divide-y divide-[var(--color-bordure)]">
           <tr v-for="ligne in synthese.alluresParType" :key="ligne.type">
             <td class="py-2 font-medium">{{ ligne.libelle }}</td>
             <td class="tabulaire py-2 text-[var(--color-doux)]">
-              {{ ligne.nbSeances }} séance{{ ligne.nbSeances > 1 ? 's' : '' }}
+              <template v-if="ligne.nbSeances">
+                {{ ligne.nbSeances }} séance{{ ligne.nbSeances > 1 ? 's' : '' }}
+              </template>
               <span
                 v-if="ligne.nbEcartees"
-                :title="`${ligne.nbEcartees} sortie(s) trop vallonnée(s) pour que l'allure se compare à une cible, et sans allure corrigée disponible.`"
+                :title="`${ligne.nbEcartees} sortie(s) dont l'allure ne se compare pas à une cible : trop vallonnée(s) sans allure corrigée disponible, ou courue(s) en tours automatiques, où les blocs d'effort ne se distinguent pas du reste.`"
                 class="text-xs"
               >
-                (+{{ ligne.nbEcartees }} écartée{{ ligne.nbEcartees > 1 ? 's' : '' }})
+                {{ ligne.nbSeances ? '(+' : '' }}{{ ligne.nbEcartees }} écartée{{
+                  ligne.nbEcartees > 1 ? 's' : ''
+                }}{{ ligne.nbSeances ? ')' : '' }}
               </span>
             </td>
-            <td class="tabulaire py-2 font-semibold">{{ allure(ligne.allureReelleSecKm) }}/km</td>
+            <td class="tabulaire py-2 font-semibold">
+              <template v-if="ligne.allureReelleSecKm">{{ allure(ligne.allureReelleSecKm) }}/km</template>
+              <span v-else class="font-normal text-[var(--color-doux)]">non mesurable</span>
+            </td>
             <td class="tabulaire py-2 text-[var(--color-doux)]">
               <template v-if="ligne.allureCibleSecKm">
                 visé {{ allure(ligne.allureCibleSecKm) }}
@@ -217,8 +224,8 @@ watch(() => entrainement.athleteId, charger)
           Les sorties vallonnées sont comptées à leur allure corrigée de la pente ;
         </template>
         <template v-if="synthese.alluresParType.some((l) => l.nbEcartees)">
-          celles dont le relief n'a pas pu être neutralisé sont écartées plutôt que de fausser
-          la moyenne.
+          celles dont le relief n'a pas pu être neutralisé, et celles courues sans séance
+          structurée sur la montre, sont écartées plutôt que de fausser la moyenne.
         </template>
       </p>
     </CarteBase>

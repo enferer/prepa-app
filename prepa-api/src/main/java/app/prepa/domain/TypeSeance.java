@@ -31,9 +31,14 @@ public enum TypeSeance {
     /**
      * Seances dont l'allure moyenne a un sens. Sur une seance a intervalles, la moyenne
      * melange effort et recuperation : elle n'est pas comparable a une allure cible.
+     *
+     * <p>L'allure marathon n'en est pas, malgre les apparences : elle se court par blocs,
+     * encadres d'un echauffement et d'un retour au calme a allure facile. Moyenner la sortie
+     * entiere annoncait une AM plus lente que la cible alors que les blocs etaient tenus —
+     * et comparait a la cible une grandeur qui n'etait pas la sienne.
      */
     public boolean estAllureContinue() {
-        return this == EF || this == SL || this == AM || this == COURSE;
+        return this == EF || this == SL || this == COURSE;
     }
 
     /** Seances de qualite, celles qu'on ne sacrifie pas a la legere. */
