@@ -81,10 +81,24 @@ public class AnalysisController {
         autoriserLecture(athleteId);
         Cycle cycle = cycles.actif(athleteId).orElseThrow(() -> ApiException.notFound("Cycle actif"));
 
-        LocalDate lundi = (semaine == null ? LocalDate.now().minusWeeks(1) : semaine)
-                .with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY));
+        LocalDate lundi = semaine != null
+                ? semaine.with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY))
+                : semaineEcoulee(LocalDate.now());
         TrainingWeek semainePlan = cycles.semaineDe(cycle.getId(), lundi).orElse(null);
         return rapprochement.rapprocher(cycle, lundi, lundi.plusDays(6), semainePlan);
+    }
+
+    /**
+     * Lundi de la derniere semaine (lundi-dimanche) entierement ecoulee a la date donnee.
+     *
+     * <p>{@code aujourdhui.minusWeeks(1)} avant de caler sur le lundi se trompait le dimanche :
+     * ce jour-la, {@code aujourdhui - 7 jours} tombe le dimanche precedent, qui cale sur le
+     * lundi d'ENCORE une semaine plus tot — la semaine qui vient de s'achever (celle du jour
+     * meme, dont le dimanche est aujourdhui) etait sautee entierement.
+     */
+    static LocalDate semaineEcoulee(LocalDate aujourdhui) {
+        LocalDate lundiCourant = aujourdhui.with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY));
+        return aujourdhui.getDayOfWeek() == DayOfWeek.SUNDAY ? lundiCourant : lundiCourant.minusWeeks(1);
     }
 
     /** Volumes, allures et ecarts : de l'entrainement, donc lisible par les autres athletes. */

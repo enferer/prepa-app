@@ -63,7 +63,7 @@ Si le champ `avertissement` est rempli, ta mémoire durable s'alourdit : profite
 
 ```bash
 ./cli/prepa rapprochement          # la semaine qui vient de s'écouler
-./cli/prepa nouvelles              # le déroulé des séances jamais passées en revue
+./cli/prepa nouvelles --jours 14   # le déroulé des séances jamais passées en revue, sur la période du point
 ./cli/prepa analyse --jours 90     # les tendances de fond, si besoin
 ```
 

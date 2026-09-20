@@ -1,6 +1,7 @@
 package app.prepa.infra;
 
 import jakarta.validation.ConstraintViolationException;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import org.slf4j.Logger;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import tools.jackson.databind.exc.InvalidFormatException;
 
 /** Mappe toutes les exceptions vers l'enveloppe d'erreur unique. */
 @RestControllerAdvice
@@ -45,10 +47,25 @@ public class GlobalExceptionHandler {
     /**
      * Corps de requete illisible : JSON malforme, ou valeur hors des valeurs admises pour un
      * champ enumere. C'est une faute de l'appelant, pas une panne du serveur.
+     *
+     * <p>Le cas enum est le plus frequent en pratique (un skill qui devine une categorie) et le
+     * plus facile a rendre actionnable : Jackson sait deja quelles valeurs etaient attendues,
+     *{@code MALFORMED_REQUEST} seul obligeait a aller lire le code source pour les trouver.
      */
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<ApiErrorResponse> handleCorpsIllisible(HttpMessageNotReadableException ex) {
         log.debug("Corps de requête illisible", ex);
+        if (ex.getCause() instanceof InvalidFormatException enumEx && enumEx.getTargetType() != null
+                && enumEx.getTargetType().isEnum()) {
+            Map<String, Object> details = new LinkedHashMap<>();
+            if (!enumEx.getPath().isEmpty()) {
+                details.put("champ", enumEx.getPath().get(enumEx.getPath().size() - 1).getPropertyName());
+            }
+            details.put("valeursAcceptees",
+                    Arrays.stream(enumEx.getTargetType().getEnumConstants()).map(Object::toString).toList());
+            return ResponseEntity.badRequest().body(ApiErrorResponse.of(
+                    "MALFORMED_REQUEST", "Valeur non reconnue pour un champ énuméré", details));
+        }
         return ResponseEntity.badRequest()
                 .body(ApiErrorResponse.of("MALFORMED_REQUEST", "Corps de requête illisible", Map.of()));
     }

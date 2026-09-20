@@ -13,7 +13,8 @@ Usage :
     prepa contexte [--athlete thibaut]          le paquet de depart d'un point
     prepa analyse [--jours 90]                  tendances de fond
     prepa rapprochement [--semaine 2026-09-07]  prevu contre realise, ecarts qualifies
-    prepa nouvelles                             seances jamais passees en revue
+    prepa nouvelles [--jours 14]                seances jamais passees en revue
+                                                 (par defaut : tout le cycle en cours)
     prepa cycles                                liste des cycles
     prepa plan <cycleId>                        plan complet d'un cycle
     prepa GET|POST|PUT|PATCH <chemin> [json]    appel direct, pour le reste
@@ -25,6 +26,7 @@ import os
 import sys
 import urllib.error
 import urllib.request
+from datetime import date, timedelta
 from pathlib import Path
 
 CONFIG = Path(os.environ.get("PREPA_CLI_CONFIG", Path.home() / ".prepa-cli" / "config.json"))
@@ -65,7 +67,10 @@ def appeler(config, methode, chemin, corps=None):
         detail = e.read().decode(errors="replace")
         try:
             erreur = json.loads(detail)["error"]
-            sortir(f"{e.code} {erreur['code']} — {erreur['message']}")
+            message = f"{e.code} {erreur['code']} — {erreur['message']}"
+            if erreur.get("details"):
+                message += "\n" + json.dumps(erreur["details"], ensure_ascii=False, indent=2)
+            sortir(message)
         except (json.JSONDecodeError, KeyError):
             sortir(f"{e.code} — {detail[:400]}")
     except urllib.error.URLError as e:
@@ -102,7 +107,7 @@ def main():
     parser.add_argument("commande")
     parser.add_argument("arguments", nargs="*")
     parser.add_argument("--athlete", help="nom ou identifiant de l'athlete")
-    parser.add_argument("--jours", type=int, default=90)
+    parser.add_argument("--jours", type=int, default=None)
     parser.add_argument("--semaine", help="lundi de la semaine a rapprocher (AAAA-MM-JJ)")
     args = parser.parse_args()
 
@@ -126,12 +131,16 @@ def main():
     if commande == "contexte":
         afficher(appeler(config, "GET", f"/athletes/{athlete_id}/coach-context"))
     elif commande == "analyse":
-        afficher(appeler(config, "GET", f"/athletes/{athlete_id}/analysis?jours={args.jours}"))
+        afficher(appeler(config, "GET", f"/athletes/{athlete_id}/analysis?jours={args.jours or 90}"))
     elif commande == "rapprochement":
         suffixe = f"?semaine={args.semaine}" if args.semaine else ""
         afficher(appeler(config, "GET", f"/athletes/{athlete_id}/reconciliation{suffixe}"))
     elif commande == "nouvelles":
-        afficher(appeler(config, "GET", f"/athletes/{athlete_id}/activities/new"))
+        # Sans --jours : borne au debut du cycle en cours (comportement du serveur), utile pour
+        # rattraper un historique. Avec --jours : ne remonte que les derniers jours, pour ne pas
+        # se retaper les tours de chaque activite depuis le debut de la prepa a chaque point.
+        suffixe = f"?depuis={(date.today() - timedelta(days=args.jours)).isoformat()}" if args.jours else ""
+        afficher(appeler(config, "GET", f"/athletes/{athlete_id}/activities/new{suffixe}"))
     elif commande == "cycles":
         afficher(appeler(config, "GET", f"/athletes/{athlete_id}/cycles"))
     elif commande == "plan":

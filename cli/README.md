@@ -37,7 +37,7 @@ cet athlète ; sans lui, elle vaut pour tous.
 | `prepa contexte` | le paquet de départ d'un point hebdomadaire, borné |
 | `prepa analyse --jours 90` | volume, allures réelles, efforts notables, tendances |
 | `prepa rapprochement [--semaine AAAA-MM-JJ]` | prévu contre réalisé, écarts qualifiés |
-| `prepa nouvelles` | séances jamais passées en revue, avec leur déroulé |
+| `prepa nouvelles [--jours 14]` | séances jamais passées en revue, avec leur déroulé (sans `--jours` : tout le cycle) |
 | `prepa cycles` | les cycles de l'athlète |
 | `prepa plan <cycleId>` | le plan complet d'un cycle |
 | `prepa GET\|POST\|PUT\|PATCH <chemin> [json]` | tout le reste |
@@ -50,7 +50,22 @@ accessible.
 ```bash
 prepa contexte --athlete camille
 prepa rapprochement --semaine 2026-09-07
+prepa nouvelles --jours 14
 prepa PATCH /sessions/<id> '{"statut":"VALIDEE","commentaireCoach":"Allures tenues."}'
 prepa PATCH /weeks/<id> '{"volumeCibleKm":57,"note":"Pic de volume."}'
 prepa POST /athletes/<id>/coach-notes '{"portee":"CYCLE","categorie":"DECISION","titre":"…","contenu":"…"}'
+```
+
+`coach-notes.categorie` accepte `DECISION`, `OBSERVATION`, `CONSIGNE`, `ALERTE` — une autre
+valeur renvoie désormais `400 MALFORMED_REQUEST` avec le détail des valeurs acceptées.
+
+**Apostrophes** : un JSON passé entre guillemets simples ne peut pas contenir de `'` littéral —
+et le français en met partout (`d'habitude`, `l'allure`, `qu'il`). Pour un texte qui en
+contient, préférer un fichier :
+
+```bash
+cat > /tmp/commentaire.json << 'EOF'
+{"commentaireCoach":"FC plus haute que d'habitude, sans signal d'alarme."}
+EOF
+prepa PATCH /sessions/<id> "$(cat /tmp/commentaire.json)"
 ```
